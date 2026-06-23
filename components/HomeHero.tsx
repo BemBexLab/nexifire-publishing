@@ -1,6 +1,7 @@
 "use client";
 
 import Image from "next/image";
+import heroEllipse from "../public/Ellipse 19.png";
 import React from "react";
 import TextFluxUnveil from "./TextFluxUnveil";
 import { motion, Variants } from "motion/react";
@@ -179,10 +180,12 @@ const DesktopHero = () => {
             className="relative isolate mx-auto mt-5 max-w-[1120px] text-center text-[4.45rem] font-medium uppercase leading-[1.08] tracking-[-0.03em] text-black"
           >
             <Image
-              src="/Ellipse 19.png"
+              src={heroEllipse}
               alt=""
               width={500}
               height={500}
+              preload
+              placeholder="blur"
               className="pointer-events-none absolute left-1/2 top-8 -z-10 w-[500px] max-w-none -translate-x-1/2 translate-y-16 rotate-2"
               aria-hidden="true"
             />
@@ -265,10 +268,12 @@ const CompactHero = () => {
             className="relative mt-6 max-w-[1020px]"
           >
             <Image
-              src="/Ellipse 19.png"
+              src={heroEllipse}
               alt=""
               width={500}
               height={500}
+              preload
+              placeholder="blur"
               className="pointer-events-none absolute left-1/2 top-0 -z-10 w-[240px] max-w-none -translate-x-1/2 translate-y-8 rotate-2 opacity-90 sm:w-[320px] md:w-[400px]"
               aria-hidden="true"
             />
