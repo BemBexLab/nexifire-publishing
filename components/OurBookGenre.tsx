@@ -1,5 +1,6 @@
 "use client";
 
+import { useEffect, useState } from "react";
 import Image from "next/image";
 import { motion, type Variants } from "motion/react";
 import TextFluxUnveil from "./TextFluxUnveil";
@@ -56,7 +57,57 @@ const genres = [
   },
 ];
 
+const getCardsPerView = (width: number) => {
+  if (width >= 1024) {
+    return 3;
+  }
+
+  if (width >= 640) {
+    return 2;
+  }
+
+  return 1;
+};
+
 const OurBookGenre = () => {
+  const [cardsPerView, setCardsPerView] = useState(3);
+  const [activeIndex, setActiveIndex] = useState(0);
+
+  useEffect(() => {
+    const updateCardsPerView = () => {
+      setCardsPerView(getCardsPerView(window.innerWidth));
+    };
+
+    updateCardsPerView();
+    window.addEventListener("resize", updateCardsPerView);
+
+    return () => {
+      window.removeEventListener("resize", updateCardsPerView);
+    };
+  }, []);
+
+  const maxIndex = Math.max(0, genres.length - cardsPerView);
+
+  useEffect(() => {
+    setActiveIndex((current) => Math.min(current, maxIndex));
+  }, [maxIndex]);
+
+  useEffect(() => {
+    if (maxIndex === 0) {
+      return;
+    }
+
+    const intervalId = window.setInterval(() => {
+      setActiveIndex((current) => (current >= maxIndex ? 0 : current + 1));
+    }, 3200);
+
+    return () => {
+      window.clearInterval(intervalId);
+    };
+  }, [maxIndex]);
+
+  const slideWidth = 100 / cardsPerView;
+
   return (
     <section className="bg-white px-4 py-10 sm:px-6 md:px-10 lg:px-16 lg:py-12">
       <motion.div
@@ -68,7 +119,7 @@ const OurBookGenre = () => {
       >
         <motion.div
           variants={itemVariants}
-          className="flex w-full max-w-[380px] flex-col items-start text-left"
+          className="flex w-full max-w-[480px] flex-col items-start text-left"
         >
           <motion.div
             className="flex w-fit items-center justify-center rounded-[8px] px-4 py-2 text-center text-sm text-black sm:px-5 sm:text-base"
@@ -80,35 +131,68 @@ const OurBookGenre = () => {
             <TextFluxUnveil text="Our Book Genre" />
           </motion.div>
 
-          <h2 className="mt-4 text-4xl font-normal uppercase leading-[1.06] tracking-[-0.045em] text-[#434343] sm:text-6xl">
-            We Publish
-            <br />
-            Every Genre
+          <h2 className="block w-full max-w-full font-jakarta bg-gradient-to-r from-[#282828] to-[#8C8C8C] bg-clip-text text-left text-[2.2rem] font-normal uppercase leading-[1.08] tracking-[-0.045em] text-transparent sm:text-[2.9rem] md:text-[3.6rem] lg:text-[4rem]">
+            We Publish Every Genre
           </h2>
         </motion.div>
 
         <motion.div
           variants={containerVariants}
-          className="grid w-full grid-cols-1 gap-4 sm:grid-cols-2 lg:max-w-[880px] lg:grid-cols-3"
+          className="flex w-full flex-col gap-4 lg:max-w-[880px]"
         >
-          {genres.map((genre) => (
+          <div className="overflow-hidden">
             <motion.div
-              key={genre.title}
-              variants={itemVariants}
-              className="flex min-h-[148px] flex-col items-center justify-center rounded-[18px] border border-[#efe9e4] bg-white px-6 py-8 text-center shadow-[0_8px_24px_rgba(80,56,40,0.06)]"
+              animate={{ x: `-${activeIndex * slideWidth}%` }}
+              transition={{ duration: 0.65, ease: [0.22, 1, 0.36, 1] }}
+              className="flex"
             >
-              <Image
-                src={genre.icon}
-                alt={genre.title}
-                width={30}
-                height={30}
-                className="h-13 w-13 object-contain"
-              />
-              <h3 className="mt-5 text-lg font-medium leading-none tracking-[-0.03em] text-[#4a4a4a] sm:text-xl">
-                {genre.title}
-              </h3>
+              {genres.map((genre) => (
+                <motion.div
+                  key={genre.title}
+                  variants={itemVariants}
+                  style={{ width: `${slideWidth}%` }}
+                  className="shrink-0 px-2"
+                >
+                  <div
+                    className="relative flex min-h-[178px] flex-col items-center justify-center overflow-hidden rounded-[18px] px-6 py-8 text-center"
+                  >
+                    <Image
+                      src="/Frame 2147225705.png"
+                      alt=""
+                      fill
+                      className="absolute inset-0 h-full w-full object-fill"
+                    />
+                    <Image
+                      src={genre.icon}
+                      alt={genre.title}
+                      width={30}
+                      height={30}
+                      className="relative z-10 h-13 w-13 object-contain"
+                    />
+                    <h3 className="relative z-10 mt-5 text-lg font-semibold leading-none tracking-[-0.03em] text-[#282828] sm:text-xl">
+                      {genre.title}
+                    </h3>
+                  </div>
+                </motion.div>
+              ))}
             </motion.div>
-          ))}
+          </div>
+
+          {/* <div className="flex items-center justify-center gap-2">
+            {Array.from({ length: maxIndex + 1 }).map((_, index) => (
+              <button
+                key={index}
+                type="button"
+                aria-label={`Go to genre slide ${index + 1}`}
+                onClick={() => setActiveIndex(index)}
+                className={`h-2.5 rounded-full transition-all ${
+                  index === activeIndex
+                    ? "w-8 bg-[#b24002]"
+                    : "w-2.5 bg-[#d9d2cb]"
+                }`}
+              />
+            ))}
+          </div> */}
         </motion.div>
       </motion.div>
     </section>

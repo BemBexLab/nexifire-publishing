@@ -4,6 +4,12 @@ import OurBookGenre from "@/components/OurBookGenre";
 import HomeServices from "@/components/HomeServices";
 import WhoWeAre from "@/components/WhoWeAre";
 import OurProcess from "@/components/OurProcess";
+import Portfolio from "@/components/Portfolio";
+import Testimonials from "@/components/Testimonials";
+import FAQs from "@/components/FAQs";
+import PublishYourBook from "@/components/PublishYourBook";
+import LatestBlogs from "@/components/LatestBlogs";
+import GetInTouchContact from "@/components/GetInTouchContact";
 
 export default function Home() {
   return (
@@ -14,6 +20,13 @@ export default function Home() {
       <OurBookGenre />
       <WhoWeAre />
       <OurProcess />
+      <Portfolio />
+      <Testimonials />
+      <FAQs />
+      <PublishYourBook />
+      <div className="h-20"></div>
+      <LatestBlogs />
+      <GetInTouchContact />
     </section>
   );
 }

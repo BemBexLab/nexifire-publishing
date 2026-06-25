@@ -29,8 +29,6 @@ const itemVariants: Variants = {
   },
 };
 
-
-
 const stats = [
   { value: "500+", label: "Books Published" },
   { value: "98%", label: "Client Satisfaction" },
@@ -127,8 +125,8 @@ const WhoWeAre = () => {
               <TextFluxUnveil text="Who We Are" />
             </motion.div>
 
-            <h2 className="w-full max-w-none text-[2.35rem] font-normal uppercase leading-[1.08] tracking-[-0.04em] text-[#4a4a4a] sm:text-[3rem] lg:text-[3.7rem]">
-              Why Authors Choose Nexifire Publishing
+            <h2 className="block w-full max-w-full font-jakarta bg-gradient-to-r from-[#282828] to-[#8C8C8C] bg-clip-text text-left text-[2.2rem] font-normal uppercase leading-[1.08] tracking-[-0.045em] text-transparent sm:text-[2.9rem] md:text-[3.6rem] lg:text-[4rem]">
+              WHY AUTHORS CHOOSE NEXIFIRE PUBLISHING
             </h2>
 
             <p className="body-copy mt-6 w-full max-w-none text-[0.98rem] leading-[1.65] text-[#777777]">

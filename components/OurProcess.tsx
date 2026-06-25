@@ -1,4 +1,8 @@
+"use client";
+
+import { motion } from "motion/react";
 import Image from "next/image";
+import TextFluxUnveil from "./TextFluxUnveil";
 
 const processSteps = [
   {
@@ -6,100 +10,119 @@ const processSteps = [
     title: "Submit Your Manuscript",
     description:
       "Share your manuscript, book idea, or draft with our publishing team for evaluation.",
-    position:
-      "lg:absolute lg:left-0 lg:top-4",
+    outerPosition: "lg:left-[32px] lg:top-[34px]",
+    cardHeight: "lg:h-[160px]",
+    pinPosition: "left-1/2 top-[-20px] -translate-x-1/2",
   },
   {
     number: "02",
     title: "Review & Preparation",
     description:
       "Our experts review your work, provide recommendations, and prepare it through editing.",
-    position:
-      "lg:absolute lg:left-[235px] lg:top-[115px]",
+    outerPosition: "lg:left-[328px] lg:top-[188px]",
+    cardHeight: "lg:h-[160px]",
+    pinPosition: "left-1/2 top-[-20px] -translate-x-1/2",
   },
   {
     number: "03",
     title: "Publish & Distribute",
     description:
       "Your book is professionally published and made available through leading print.",
-    position:
-      "lg:absolute lg:left-[555px] lg:top-0",
+    outerPosition: "lg:left-[710px] lg:top-[34px]",
+    cardHeight: "lg:h-[160px]",
+    pinPosition: "left-1/2 top-[-20px] -translate-x-1/2",
   },
   {
     number: "04",
     title: "Market & Grow",
     description:
       "We help promote your book, expand its reach, and build your author presence.",
-    position:
-      "lg:absolute lg:right-0 lg:top-[115px]",
+    outerPosition: "lg:right-[32px] lg:top-[188px]",
+    cardHeight: "lg:h-[160px]",
+    pinPosition: "left-1/2 top-[-20px] -translate-x-1/2",
   },
 ];
 
-const dashPath =
-  "M2.50024 5.25621C103.5 -7.24379 310.5 13.2538 381.5 259.756C452.125 504.955 698.864 525.93 867.5 128.756C959 -86.7451 1311 76.2545 1311 233.755";
+const dashedPaths = [
+  "M174 142C240 142 274 166 322 212",
+  "M548 214C648 214 684 118 742 118",
+  "M940 118C1048 118 1092 152 1142 202",
+];
 
 const OurProcess = () => {
   return (
-    <section className="bg-[#fffaf6] px-4 py-16 sm:px-6 md:px-10 lg:px-16 lg:py-24">
+    <section className="bg-[#fffaf6] min-h-full px-4 py-16 sm:px-6 md:px-10 lg:px-16 lg:py-24 overflow-hidden">
       <div className="mx-auto max-w-[1314px]">
-        <div className="mx-auto max-w-[760px] text-center">
-          <div className="inline-flex rounded-[10px] bg-[#f7e9df] px-4 py-2 text-sm font-medium uppercase tracking-[-0.02em] text-[#5d5d5d]">
-            Our Process
-          </div>
-          <h2 className="mt-5 text-[2.4rem] font-normal uppercase leading-none tracking-[-0.05em] text-[#4b4b4b] sm:text-[3rem] lg:text-[3.85rem]">
+        <div className="mx-auto max-w-[860px] text-center">
+          <motion.div
+            className="mx-auto mb-3 flex w-fit items-center justify-center rounded-[8px] px-4 py-2 text-center text-sm text-black sm:px-5 sm:text-base"
+            style={{
+              background:
+                "linear-gradient(90deg, rgba(178, 64, 2, 0.13) 0%, rgba(178, 64, 2, 0.00) 79.96%)",
+            }}
+          >
+            <TextFluxUnveil text="OUR PROCESS" />
+          </motion.div>
+          <h2 className="block w-full max-w-full font-jakarta bg-gradient-to-r from-[#282828] to-[#8C8C8C] bg-clip-text text-center text-[2.2rem] font-normal uppercase leading-[1.08] tracking-[-0.045em] text-transparent sm:text-[2.9rem] md:text-[3.6rem] lg:text-[4rem]">
             Our Publishing Process
           </h2>
-          <p className="mx-auto mt-4 max-w-[720px] text-sm leading-7 text-[#8a8a8a] sm:text-base">
-            A streamlined journey designed to take your book from manuscript to
-            published success.
+          <p className="mx-auto mt-4 max-w-[700px] text-[14px] leading-6 text-[#989391] sm:text-[15px]">
+            A streamlined journey designed to take your book from manuscript to published success.
           </p>
         </div>
 
-        <div className="relative mt-14 lg:min-h-[390px]">
+        <div className="relative mt-16 lg:min-h-[420px]">
           <svg
             xmlns="http://www.w3.org/2000/svg"
             width="1314"
-            height="440"
-            viewBox="0 0 1314 440"
+            height="420"
+            viewBox="0 0 1314 420"
             fill="none"
-            className="pointer-events-none absolute left-1/2 top-[38px] z-0 hidden h-auto w-full max-w-[1314px] -translate-x-1/2 lg:block"
+            className="pointer-events-none absolute left-1/2 top-[8px] z-0 hidden h-auto w-full max-w-[1314px] -translate-x-1/2 lg:block"
             aria-hidden="true"
           >
-            <path
-              opacity="0.5"
-              d={dashPath}
-              stroke="#FF5B01"
-              strokeWidth="5"
-              strokeLinecap="round"
-              strokeDasharray="17 17"
-            />
+            {dashedPaths.map((path) => (
+              <path
+                key={path}
+                opacity="0.55"
+                d={path}
+                stroke="#FF8A4A"
+                strokeWidth="3"
+                strokeLinecap="round"
+                strokeDasharray="10 10"
+              />
+            ))}
           </svg>
 
           <div className="grid gap-8 sm:grid-cols-2 lg:block">
             {processSteps.map((step) => (
               <article
                 key={step.number}
-                className={`relative rounded-[28px] bg-[#f8f1eb] p-4 shadow-[0_10px_24px_rgba(77,42,20,0.08)] sm:p-5 lg:h-[224px] lg:w-[220px] ${step.position}`}
+                className={`relative rounded-[24px] bg-[#f6eee8] p-[14px] shadow-[0_8px_18px_rgba(73,47,27,0.06)] lg:absolute lg:h-[220px] lg:w-[236px] ${step.outerPosition}`}
               >
-                <div className="pointer-events-none absolute left-1/2 top-[-20px] z-20 -translate-x-1/2">
+                <div
+                  className={`pointer-events-none absolute z-20 ${step.pinPosition}`}
+                >
                   <Image
                     src="/Frame 344.png"
                     alt=""
-                    width={56}
-                    height={56}
-                    className="h-[56px] w-[56px] object-contain drop-shadow-[0_10px_14px_rgba(0,0,0,0.22)]"
+                    width={58}
+                    height={58}
+                    className="h-[56px] w-[56px] object-contain drop-shadow-[0_10px_12px_rgba(0,0,0,0.22)]"
                     aria-hidden="true"
                   />
                 </div>
 
-                <div className="mt-10 rounded-[18px] bg-white p-5 shadow-[0_3px_0_rgba(209,199,191,0.9),0_10px_24px_rgba(71,49,35,0.10)] sm:p-6">
-                  <div className="text-[1.7rem] font-normal leading-none tracking-[-0.04em] text-[#eb6d2f]">
+                <div
+                  className={`mt-7 rounded-[16px] bg-white px-[14px] py-[14px] shadow-[0_2px_0_rgba(214,205,198,0.92),0_8px_15px_rgba(80,54,37,0.08)] ${step.cardHeight}`}
+                  >
+                  <div className="text-[20px] font-normal leading-none tracking-[-0.04em] text-[#ef6d31]">
                     {step.number}
                   </div>
-                  <h3 className="mt-7 text-[1.55rem] font-medium leading-[1.1] tracking-[-0.04em] text-[#4a4a4a]">
+                  <h3 className="mt-7 text-[15px] font-semibold leading-[1.18] tracking-[-0.03em] text-[#4f4f4f]">
                     {step.title}
                   </h3>
-                  <p className="mt-4 text-[0.96rem] leading-[1.45] text-[#787878]">
+                  <p className="mt-3 text-[12px] leading-[1.36] text-[#444444]">
                     {step.description}
                   </p>
                 </div>

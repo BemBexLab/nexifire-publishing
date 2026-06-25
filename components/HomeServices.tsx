@@ -101,7 +101,7 @@ const HomeServices = () => {
         initial="hidden"
         whileInView="visible"
         viewport={{ once: true, amount: 0.15 }}
-        className="relative z-10 mx-auto flex w-full max-w-full flex-col px-4 pb-12 pt-14 sm:px-6 sm:pb-14 md:px-10 md:pt-18 lg:px-16 lg:pb-24 lg:pt-20"
+        className="relative z-10 mx-auto flex w-full max-w-full flex-col px-4 pb-12 pt-14 sm:pb-14 md:pt-18 lg:pb-24 lg:pt-20"
       >
         <motion.div
           variants={itemVariants}
@@ -129,13 +129,13 @@ const HomeServices = () => {
 
         <motion.div
           variants={sectionVariants}
-          className="mx-auto mt-8 grid w-3/4 grid-cols-1 gap-4 sm:mt-10 sm:grid-cols-2 lg:gap-5 xl:grid-cols-4"
+          className="mt-8 grid w-full max-w-4/5 grid-cols-1 justify-center justify-items-center gap-4 self-center sm:mt-10 sm:grid-cols-2 lg:gap-5 xl:grid-cols-4"
         >
           {services.map((service) => (
             <motion.article
               key={service.title}
               variants={itemVariants}
-              className="rounded-[18px] border border-white/65 bg-white/52 p-5 shadow-[0_10px_26px_rgba(120,92,70,0.08)] backdrop-blur-[4px] sm:p-6"
+              className="flex h-full w-full flex-col rounded-[18px] border border-white/65 bg-white/52 p-5 shadow-[0_10px_26px_rgba(120,92,70,0.08)] backdrop-blur-[4px] sm:p-6"
             >
               <Image
                 src={service.iconSrc || transparentIcon}
