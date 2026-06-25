@@ -207,7 +207,7 @@ const DesktopHero = () => {
 
           <motion.p
             variants={heroItemVariants}
-            className="mx-auto mt-4 max-w-[900px] text-center text-base leading-[1.65] text-[#777777]"
+            className="body-copy mx-auto mt-4 max-w-[900px] text-center text-[#777777]"
           >
             Whether you've written a memoir, business book, novel, self-help guide, or children's story, NexiFire Publishing provides the professional support needed to transform your manuscript into a published book readers will remember.
           </motion.p>
@@ -298,7 +298,7 @@ const CompactHero = () => {
 
           <motion.p
             variants={heroItemVariants}
-            className="mx-auto mt-5 max-w-[340px] text-center text-[15px] leading-[1.75] text-[#6f6f6f] sm:max-w-[620px] sm:text-base md:max-w-[760px]"
+            className="body-copy mx-auto mt-5 max-w-[340px] text-center text-[#777777] sm:max-w-[620px] md:max-w-[760px]"
           >
             Whether you've written a memoir, business book, novel, self-help guide, or children's story, NexiFire Publishing provides the professional support needed to transform your manuscript into a published book readers will remember.
           </motion.p>
