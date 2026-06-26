@@ -43,15 +43,15 @@ const textBackdropPath =
 
 const WhoWeAre = () => {
   return (
-    <section className="relative overflow-hidden bg-white px-4 py-14 sm:px-6 md:px-10 lg:px-16 lg:py-18">
-      <div className="pointer-events-none absolute bottom-[-10rem] left-[-12rem] z-0 opacity-80 sm:left-[-11rem] md:left-[-8rem] lg:bottom-[-16rem] lg:left-[-14rem]">
+    <section className="relative overflow-hidden bg-white px-4 py-12 sm:px-6 sm:py-14 md:px-10 md:py-16 lg:px-16 lg:py-18">
+      <div className="pointer-events-none absolute bottom-[-8rem] left-[-13rem] z-0 opacity-70 sm:left-[-11rem] md:left-[-10rem] lg:bottom-[-14rem] lg:left-[-14rem]">
         <svg
           xmlns="http://www.w3.org/2000/svg"
           width="988"
           height="929"
           viewBox="0 0 988 929"
           fill="none"
-          className="h-[920px] w-[446px] sm:h-[1120px] sm:w-[543px] lg:h-[1320px] lg:w-[640px]"
+          className="h-[720px] w-[350px] sm:h-[900px] sm:w-[438px] lg:h-[1180px] lg:w-[572px] xl:h-[1320px] xl:w-[640px]"
           aria-hidden="true"
         >
           <g opacity="0.1" filter="url(#who-we-are-text-backdrop)">
@@ -108,12 +108,12 @@ const WhoWeAre = () => {
         initial="hidden"
         whileInView="visible"
         viewport={{ once: true, amount: 0.2 }}
-        className="relative z-10 mx-auto flex w-full max-w-[1360px] flex-col"
+        className="relative z-10 mx-auto flex w-full max-w-[1380px] flex-col"
       >
-        <div className="flex flex-col gap-10 lg:flex-row lg:items-center lg:gap-14 xl:gap-20">
+        <div className="flex flex-col gap-10 lg:flex-row lg:items-center lg:gap-10 xl:gap-16">
           <motion.div
             variants={itemVariants}
-            className="flex w-full flex-col items-start text-left lg:max-w-[620px] lg:flex-[1.05]"
+            className="flex w-full max-w-[680px] flex-col items-start text-left lg:max-w-[560px] lg:flex-[1] xl:max-w-[620px] xl:flex-[1.05]"
           >
             <motion.div
               className="mb-3 flex w-fit items-center justify-center rounded-[8px] px-4 py-2 text-center text-sm text-black sm:px-5 sm:text-base"
@@ -129,7 +129,7 @@ const WhoWeAre = () => {
               WHY AUTHORS CHOOSE NEXIFIRE PUBLISHING
             </h2>
 
-            <p className="body-copy mt-6 w-full max-w-none text-[0.98rem] leading-[1.65] text-[#777777]">
+            <p className="body-copy mt-5 w-full max-w-none text-base leading-[1.65] text-[#777777] sm:text-[1.02rem]">
               At NexFire Publishing, we combine creativity, industry expertise,
               and modern publishing solutions to help authors achieve their
               goals. Whether you're publishing your first book or expanding your
@@ -139,7 +139,7 @@ const WhoWeAre = () => {
 
           <motion.div
             variants={itemVariants}
-            className="relative mx-auto flex w-full max-w-[780px] items-center justify-center lg:mx-0 lg:max-w-[700px] lg:flex-[0.95]"
+            className="relative mx-auto flex w-full max-w-[560px] items-center justify-center sm:max-w-[680px] lg:mx-0 lg:max-w-[620px] lg:flex-[0.95] xl:max-w-[700px]"
           >
             <div className="relative flex w-full items-center justify-center overflow-visible">
               <svg
@@ -148,7 +148,7 @@ const WhoWeAre = () => {
                 height="202"
                 viewBox="0 0 202 202"
                 fill="none"
-                className="pointer-events-none absolute left-[5%] top-[8%] z-0 h-[160px] w-[160px] -translate-x-[18%] sm:h-[190px] sm:w-[190px] lg:left-[7%] lg:top-[12%] lg:h-[202px] lg:w-[202px]"
+                className="pointer-events-none absolute left-[4%] top-[7%] z-0 h-[118px] w-[118px] -translate-x-[14%] sm:h-[150px] sm:w-[150px] lg:left-[6%] lg:top-[10%] lg:h-[178px] lg:w-[178px] xl:h-[202px] xl:w-[202px]"
                 aria-hidden="true"
               >
                 <path opacity="0.1" d={imageBackdropPath} fill="#FF5B01" />
@@ -159,19 +159,20 @@ const WhoWeAre = () => {
                 height="202"
                 viewBox="0 0 202 202"
                 fill="none"
-                className="pointer-events-none absolute bottom-[10%] right-[4%] z-0 h-[120px] w-[120px] translate-x-[8%] sm:h-[145px] sm:w-[145px] lg:bottom-[12%] lg:right-[6%] lg:h-[156px] lg:w-[156px]"
+                className="pointer-events-none absolute bottom-[8%] right-[3%] z-0 h-[92px] w-[92px] translate-x-[5%] sm:h-[118px] sm:w-[118px] lg:bottom-[11%] lg:right-[5%] lg:h-[138px] lg:w-[138px] xl:h-[156px] xl:w-[156px]"
                 aria-hidden="true"
               >
                 <path opacity="0.1" d={imageBackdropPath} fill="#FF5B01" />
               </svg>
 
               <div className="relative z-10 w-full max-w-[660px]">
-                <div className="pointer-events-none absolute inset-x-[10%] bottom-[-18px] h-[48px] rounded-full bg-black/18 blur-2xl" />
+                <div className="pointer-events-none absolute inset-x-[10%] bottom-[-14px] h-[36px] rounded-full bg-black/18 blur-2xl sm:bottom-[-18px] sm:h-[48px]" />
                 <Image
                   src="/2f867d55-6678-47c9-b53c-2f54a5cda131 1.png"
                   alt=""
                   width={700}
                   height={420}
+                  sizes="(max-width: 639px) 100vw, (max-width: 1023px) 80vw, (max-width: 1279px) 46vw, 700px"
                   className="relative z-10 h-auto w-full object-contain"
                 />
               </div>
@@ -181,13 +182,13 @@ const WhoWeAre = () => {
 
         <motion.div
           variants={containerVariants}
-          className="mt-10 grid grid-cols-2 gap-y-6 border-t border-[#f2ece8] pt-8 text-center sm:grid-cols-4 sm:gap-x-6 lg:mt-12"
+          className="mt-10 grid grid-cols-2 gap-y-6 border-t border-[#f2ece8] pt-8 text-center sm:grid-cols-4 sm:gap-x-4 lg:mt-12 lg:gap-x-6"
         >
-          {stats.map((stat) => (
+          {stats.map((stat, index) => (
             <motion.div
               key={stat.label}
               variants={itemVariants}
-              className="relative flex flex-col items-center pr-4 text-center sm:pr-6"
+              className="relative flex flex-col items-center px-2 text-center sm:px-4"
             >
               <div className="relative flex items-center justify-center">
                 <div className="pointer-events-none absolute bottom-[-2px] h-[10px] w-[98px] rounded-full bg-black/60 blur-sm" />
@@ -198,7 +199,9 @@ const WhoWeAre = () => {
               <div className="mt-2 inline-block text-sm text-[#777777CC]">
                 {stat.label}
               </div>
-              <div className="pointer-events-none absolute right-0 top-1/2 hidden h-[52px] w-px -translate-y-1/2 bg-[#f1ebe7] sm:block" />
+              {index < stats.length - 1 ? (
+                <div className="pointer-events-none absolute right-0 top-1/2 hidden h-[52px] w-px -translate-y-1/2 bg-[#f1ebe7] sm:block" />
+              ) : null}
             </motion.div>
           ))}
         </motion.div>

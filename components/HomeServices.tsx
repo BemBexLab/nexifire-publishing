@@ -86,11 +86,11 @@ const HomeServices = () => {
   return (
     <section className="relative overflow-hidden bg-white">
       <div
-        className="absolute inset-x-0 top-0 bottom-[240px] opacity-90 sm:bottom-[255px] lg:bottom-[300px]"
+        className="absolute inset-x-0 bottom-[260px] top-0 opacity-90 sm:bottom-[275px] lg:bottom-[320px]"
         style={{
           backgroundImage: "url('/Frame 2147225705 (1).png')",
           backgroundPosition: "center",
-          backgroundSize: "100% 100%",
+          backgroundSize: "cover",
           backgroundRepeat: "no-repeat",
         }}
         aria-hidden="true"
@@ -101,11 +101,11 @@ const HomeServices = () => {
         initial="hidden"
         whileInView="visible"
         viewport={{ once: true, amount: 0.15 }}
-        className="relative z-10 mx-auto flex w-full max-w-full flex-col px-4 pb-12 pt-14 sm:pb-14 md:pt-18 lg:pb-24 lg:pt-20"
+        className="relative z-10 mx-auto flex w-full max-w-[1440px] flex-col px-4 pb-12 pt-14 sm:px-6 sm:pb-14 md:px-10 md:pt-16 lg:px-16 lg:pb-24 lg:pt-20"
       >
         <motion.div
           variants={itemVariants}
-          className="mx-auto flex w-full max-w-1/2 flex-col items-center text-center"
+          className="mx-auto flex w-full max-w-[320px] flex-col items-center text-center sm:max-w-[640px] lg:max-w-[760px]"
         >
           <motion.div
             className="mx-auto mb-3 flex w-fit items-center justify-center rounded-[8px] px-4 py-2 text-center text-sm text-black sm:px-5 sm:text-base"
@@ -121,7 +121,7 @@ const HomeServices = () => {
             Everything You Need To Publish Successfully
           </h2>
 
-          <p className="body-copy mt-4 max-w-full text-[#777777]">
+          <p className="body-copy mt-4 max-w-[620px] text-[#777777] sm:text-lg">
             A complete publishing ecosystem designed to help authors bring their
             books to life.
           </p>
@@ -129,7 +129,7 @@ const HomeServices = () => {
 
         <motion.div
           variants={sectionVariants}
-          className="mt-8 grid w-full max-w-4/5 grid-cols-1 justify-center justify-items-center gap-4 self-center sm:mt-10 sm:grid-cols-2 lg:gap-5 xl:grid-cols-4"
+          className="mt-8 grid w-full max-w-[340px] grid-cols-1 gap-4 self-center sm:mt-10 sm:max-w-[760px] sm:grid-cols-2 md:max-w-[920px] lg:max-w-[1160px] lg:grid-cols-4 lg:gap-5"
         >
           {services.map((service) => (
             <motion.article
@@ -142,6 +142,7 @@ const HomeServices = () => {
                 alt=""
                 width={52}
                 height={52}
+                sizes="52px"
                 className="h-[52px] w-[52px] object-contain"
               />
               <h3 className="mt-5 text-base font-semibold leading-tight text-[#282828] sm:mt-6 sm:text-[1.05rem]">
@@ -154,10 +155,10 @@ const HomeServices = () => {
           ))}
         </motion.div>
 
-        <div className="items-center mt-12 flex w-full flex-col sm:mt-14 lg:mt-16">
+        <div className="mt-12 flex w-full flex-col items-center sm:mt-14 lg:mt-16">
           <motion.div
             variants={itemVariants}
-            className="relative mt-12 w-3/4 overflow-hidden rounded-[18px] border border-black/10 sm:mt-14 lg:mt-16"
+            className="relative mt-12 w-full max-w-[360px] overflow-hidden rounded-[18px] border border-black/10 sm:mt-14 sm:max-w-[760px] lg:mt-16 lg:max-w-[1120px]"
             style={{
               backgroundImage: "url('/Frame 417.png')",
               backgroundPosition: "center",
@@ -166,13 +167,13 @@ const HomeServices = () => {
             }}
           >
             <div className="absolute inset-0 bg-[linear-gradient(180deg,rgba(0,0,0,0.78)_0%,rgba(0,0,0,0.58)_44%,rgba(0,0,0,0.18)_100%)] lg:bg-[linear-gradient(90deg,rgba(0,0,0,0.82)_0%,rgba(0,0,0,0.54)_32%,rgba(0,0,0,0.16)_62%,rgba(0,0,0,0.02)_100%)]" />
-            <div className="relative z-10 flex min-h-[300px] w-full items-end px-5 py-6 sm:min-h-[320px] sm:px-8 sm:py-8 lg:min-h-[384px] lg:items-center lg:px-7">
-              <div className="max-w-[400px] text-white">
-                <h3 className="text-[1.95rem] font-light uppercase leading-[1.03] tracking-[-0.05em] sm:text-[2.35rem] lg:text-[2.8rem]">
+            <div className="relative z-10 flex min-h-[280px] w-full items-end px-5 py-6 sm:min-h-[320px] sm:px-8 sm:py-8 lg:min-h-[384px] lg:items-center lg:px-10">
+              <div className="max-w-[400px] text-white sm:max-w-[460px]">
+                <h3 className="text-[1.85rem] font-light uppercase leading-[1.03] tracking-[-0.05em] sm:text-[2.2rem] lg:text-[2.8rem]">
                     Ready To Publish Your Book?
                 </h3>
 
-                <p className="mt-4 text-sm leading-[1.55] text-white/72 sm:mt-5">
+                <p className="mt-4 text-sm leading-[1.55] text-white/72 sm:mt-5 sm:text-base">
                   Turn your manuscript into a professionally published book with
                   expert editing, design, distribution, and marketing support
                   from start to finish.
@@ -180,7 +181,7 @@ const HomeServices = () => {
 
                 <a
                   href="#"
-                  className="mt-6 inline-flex w-full items-center justify-center rounded-[8px] bg-[linear-gradient(90deg,#B24002_0%,#FF5B01_100%)] px-5 py-3 text-sm font-medium text-white transition hover:brightness-[0.98] sm:w-fit"
+                  className="mt-6 inline-flex min-h-[48px] w-full items-center justify-center rounded-[8px] bg-[linear-gradient(90deg,#B24002_0%,#FF5B01_100%)] px-5 py-3 text-sm font-medium text-white transition hover:brightness-[0.98] sm:w-fit sm:text-base"
                 >
                   Submit Your Manuscript
                   <span className="ml-2 text-lg leading-none">

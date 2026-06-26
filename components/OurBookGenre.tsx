@@ -58,7 +58,7 @@ const genres = [
 ];
 
 const getCardsPerView = (width: number) => {
-  if (width >= 1024) {
+  if (width >= 1280) {
     return 3;
   }
 
@@ -109,17 +109,20 @@ const OurBookGenre = () => {
   const slideWidth = 100 / cardsPerView;
 
   return (
-    <section className="bg-white px-4 py-10 sm:px-6 md:px-10 lg:px-16 lg:py-12">
+    <section
+      id="our-book-genre"
+      className="bg-white px-4 py-12 sm:px-6 sm:py-14 md:px-10 md:py-16 lg:px-16 lg:py-18"
+    >
       <motion.div
         variants={containerVariants}
         initial="hidden"
         whileInView="visible"
         viewport={{ once: true, amount: 0.2 }}
-        className="mx-auto flex w-full max-w-[1360px] flex-col gap-8 lg:flex-row lg:items-center lg:justify-between"
+        className="mx-auto flex w-full max-w-[1380px] flex-col gap-8 xl:flex-row xl:items-center xl:justify-between xl:gap-12 2xl:gap-14"
       >
         <motion.div
           variants={itemVariants}
-          className="flex w-full max-w-[480px] flex-col items-start text-left"
+          className="flex w-full max-w-[340px] flex-col items-start text-left sm:max-w-[560px] xl:max-w-[400px] 2xl:max-w-[480px]"
         >
           <motion.div
             className="flex w-fit items-center justify-center rounded-[8px] px-4 py-2 text-center text-sm text-black sm:px-5 sm:text-base"
@@ -131,16 +134,16 @@ const OurBookGenre = () => {
             <TextFluxUnveil text="Our Book Genre" />
           </motion.div>
 
-          <h2 className="block w-full max-w-full font-jakarta bg-gradient-to-r from-[#282828] to-[#8C8C8C] bg-clip-text text-left text-[2.2rem] font-normal uppercase leading-[1.08] tracking-[-0.045em] text-transparent sm:text-[2.9rem] md:text-[3.6rem] lg:text-[4rem]">
+          <h2 className="block w-full max-w-full font-jakarta bg-gradient-to-r from-[#282828] to-[#8C8C8C] bg-clip-text text-left text-[2.15rem] font-normal uppercase leading-[1.05] tracking-[-0.045em] text-transparent sm:text-[2.75rem] md:text-[3.2rem] xl:text-[3.4rem] 2xl:text-[4rem]">
             We Publish Every Genre
           </h2>
         </motion.div>
 
         <motion.div
           variants={containerVariants}
-          className="flex w-full flex-col gap-4 lg:max-w-[880px]"
+          className="flex w-full flex-col gap-4 sm:gap-5 xl:max-w-[760px] 2xl:max-w-[920px]"
         >
-          <div className="overflow-hidden">
+          <div className="w-full max-w-[360px] overflow-hidden sm:max-w-[760px] md:max-w-[920px] xl:max-w-none">
             <motion.div
               animate={{ x: `-${activeIndex * slideWidth}%` }}
               transition={{ duration: 0.65, ease: [0.22, 1, 0.36, 1] }}
@@ -151,15 +154,16 @@ const OurBookGenre = () => {
                   key={genre.title}
                   variants={itemVariants}
                   style={{ width: `${slideWidth}%` }}
-                  className="shrink-0 px-2"
+                  className="shrink-0 px-2 sm:px-2.5 md:px-3"
                 >
                   <div
-                    className="relative flex min-h-[178px] flex-col items-center justify-center overflow-hidden rounded-[18px] px-6 py-8 text-center"
+                    className="relative flex min-h-[148px] flex-col items-center justify-center overflow-hidden rounded-[18px] px-5 py-6 text-center sm:min-h-[162px] sm:px-6 sm:py-7 md:min-h-[170px] lg:min-h-[178px] lg:py-8"
                   >
                     <Image
                       src="/Frame 2147225705.png"
                       alt=""
                       fill
+                      sizes="(max-width: 639px) 100vw, (max-width: 1023px) 50vw, 33vw"
                       className="absolute inset-0 h-full w-full object-fill"
                     />
                     <Image
@@ -167,9 +171,10 @@ const OurBookGenre = () => {
                       alt={genre.title}
                       width={30}
                       height={30}
-                      className="relative z-10 h-13 w-13 object-contain"
+                      sizes="(max-width: 639px) 48px, 52px"
+                      className="relative z-10 h-11 w-11 object-contain sm:h-12 sm:w-12 md:h-[52px] md:w-[52px]"
                     />
-                    <h3 className="relative z-10 mt-5 text-lg font-semibold leading-none tracking-[-0.03em] text-[#282828] sm:text-xl">
+                    <h3 className="relative z-10 mt-4 text-[15px] font-semibold leading-none tracking-[-0.03em] text-[#282828] sm:mt-5 sm:text-base md:text-lg lg:text-xl">
                       {genre.title}
                     </h3>
                   </div>
@@ -177,22 +182,6 @@ const OurBookGenre = () => {
               ))}
             </motion.div>
           </div>
-
-          {/* <div className="flex items-center justify-center gap-2">
-            {Array.from({ length: maxIndex + 1 }).map((_, index) => (
-              <button
-                key={index}
-                type="button"
-                aria-label={`Go to genre slide ${index + 1}`}
-                onClick={() => setActiveIndex(index)}
-                className={`h-2.5 rounded-full transition-all ${
-                  index === activeIndex
-                    ? "w-8 bg-[#b24002]"
-                    : "w-2.5 bg-[#d9d2cb]"
-                }`}
-              />
-            ))}
-          </div> */}
         </motion.div>
       </motion.div>
     </section>

@@ -10,8 +10,8 @@ const processSteps = [
     title: "Submit Your Manuscript",
     description:
       "Share your manuscript, book idea, or draft with our publishing team for evaluation.",
-    outerPosition: "lg:left-[32px] lg:top-[34px]",
-    cardHeight: "lg:h-[160px]",
+    outerPosition: "xl:left-[32px] xl:top-[34px]",
+    cardHeight: "xl:h-[160px]",
     pinPosition: "left-1/2 top-[-20px] -translate-x-1/2",
   },
   {
@@ -19,8 +19,8 @@ const processSteps = [
     title: "Review & Preparation",
     description:
       "Our experts review your work, provide recommendations, and prepare it through editing.",
-    outerPosition: "lg:left-[328px] lg:top-[188px]",
-    cardHeight: "lg:h-[160px]",
+    outerPosition: "xl:left-[328px] xl:top-[188px]",
+    cardHeight: "xl:h-[160px]",
     pinPosition: "left-1/2 top-[-20px] -translate-x-1/2",
   },
   {
@@ -28,8 +28,8 @@ const processSteps = [
     title: "Publish & Distribute",
     description:
       "Your book is professionally published and made available through leading print.",
-    outerPosition: "lg:left-[710px] lg:top-[34px]",
-    cardHeight: "lg:h-[160px]",
+    outerPosition: "xl:left-[710px] xl:top-[34px]",
+    cardHeight: "xl:h-[160px]",
     pinPosition: "left-1/2 top-[-20px] -translate-x-1/2",
   },
   {
@@ -37,8 +37,8 @@ const processSteps = [
     title: "Market & Grow",
     description:
       "We help promote your book, expand its reach, and build your author presence.",
-    outerPosition: "lg:right-[32px] lg:top-[188px]",
-    cardHeight: "lg:h-[160px]",
+    outerPosition: "xl:right-[32px] xl:top-[188px]",
+    cardHeight: "xl:h-[160px]",
     pinPosition: "left-1/2 top-[-20px] -translate-x-1/2",
   },
 ];
@@ -51,7 +51,7 @@ const dashedPaths = [
 
 const OurProcess = () => {
   return (
-    <section className="bg-[#fffaf6] min-h-full px-4 py-16 sm:px-6 md:px-10 lg:px-16 lg:py-24 overflow-hidden">
+    <section className="min-h-full overflow-hidden bg-[#fffaf6] px-4 py-14 sm:px-6 sm:py-16 md:px-10 lg:px-16 lg:py-20 xl:py-24">
       <div className="mx-auto max-w-[1314px]">
         <div className="mx-auto max-w-[860px] text-center">
           <motion.div
@@ -71,14 +71,14 @@ const OurProcess = () => {
           </p>
         </div>
 
-        <div className="relative mt-16 lg:min-h-[420px]">
+        <div className="relative mt-14 lg:mt-16 xl:min-h-[420px]">
           <svg
             xmlns="http://www.w3.org/2000/svg"
             width="1314"
             height="420"
             viewBox="0 0 1314 420"
             fill="none"
-            className="pointer-events-none absolute left-1/2 top-[8px] z-0 hidden h-auto w-full max-w-[1314px] -translate-x-1/2 lg:block"
+            className="pointer-events-none absolute left-1/2 top-[8px] z-0 hidden h-auto w-full max-w-[1314px] -translate-x-1/2 xl:block"
             aria-hidden="true"
           >
             {dashedPaths.map((path) => (
@@ -94,11 +94,11 @@ const OurProcess = () => {
             ))}
           </svg>
 
-          <div className="grid gap-8 sm:grid-cols-2 lg:block">
+          <div className="grid gap-8 sm:grid-cols-2 sm:gap-10 xl:block">
             {processSteps.map((step) => (
               <article
                 key={step.number}
-                className={`relative rounded-[24px] bg-[#f6eee8] p-[14px] shadow-[0_8px_18px_rgba(73,47,27,0.06)] lg:absolute lg:h-[220px] lg:w-[236px] ${step.outerPosition}`}
+                className={`relative rounded-[24px] bg-[#f6eee8] px-[14px] pb-[14px] pt-[40px] shadow-[0_8px_18px_rgba(73,47,27,0.06)] sm:h-[216px] xl:absolute xl:h-[220px] xl:w-[236px] ${step.outerPosition}`}
               >
                 <div
                   className={`pointer-events-none absolute z-20 ${step.pinPosition}`}
@@ -108,13 +108,14 @@ const OurProcess = () => {
                     alt=""
                     width={58}
                     height={58}
+                    sizes="56px"
                     className="h-[56px] w-[56px] object-contain drop-shadow-[0_10px_12px_rgba(0,0,0,0.22)]"
                     aria-hidden="true"
                   />
                 </div>
 
                 <div
-                  className={`mt-7 rounded-[16px] bg-white px-[14px] py-[14px] shadow-[0_2px_0_rgba(214,205,198,0.92),0_8px_15px_rgba(80,54,37,0.08)] ${step.cardHeight}`}
+                  className={`rounded-[16px] bg-white px-[14px] py-[14px] shadow-[0_2px_0_rgba(214,205,198,0.92),0_8px_15px_rgba(80,54,37,0.08)] sm:min-h-[162px] xl:min-h-0 ${step.cardHeight}`}
                   >
                   <div className="text-[20px] font-normal leading-none tracking-[-0.04em] text-[#ef6d31]">
                     {step.number}

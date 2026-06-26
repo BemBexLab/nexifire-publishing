@@ -127,11 +127,11 @@ const HeroButtons = () => {
   return (
     <motion.div
       variants={heroItemVariants}
-      className="mt-6 flex flex-col items-center justify-center gap-3 sm:mt-7 sm:flex-row"
+      className="mt-6 flex w-full max-w-[720px] flex-col items-center justify-center gap-3 sm:mt-7 sm:flex-row"
     >
       <a
         href="#"
-        className="inline-flex min-h-[48px] items-center justify-center rounded-[7px] bg-[linear-gradient(90deg,#B24002_0%,#FF5B01_100%)] px-6 py-3 text-lg font-extralight text-[#FFFFFF] shadow-[0_8px_20px_rgba(178,64,2,0.22)] transition hover:brightness-[0.98]"
+        className="inline-flex min-h-[48px] w-full items-center justify-center rounded-[7px] bg-[linear-gradient(90deg,#B24002_0%,#FF5B01_100%)] px-5 py-3 text-base font-extralight text-[#FFFFFF] shadow-[0_8px_20px_rgba(178,64,2,0.22)] transition hover:brightness-[0.98] sm:w-auto sm:px-6 sm:text-lg"
       >
         Publish Your Book
         <span className="ml-2 text-xl leading-none">
@@ -140,7 +140,7 @@ const HeroButtons = () => {
       </a>
       <a
         href="#"
-        className="inline-flex min-h-[48px] items-center justify-center rounded-[7px] border border-[#9F9F9F] px-6 py-3 text-lg font-light text-[#4B4B4B] shadow-[0_4px_14px_rgba(0,0,0,0.04)] backdrop-blur-[2px] transition hover:bg-white"
+        className="inline-flex min-h-[48px] w-full items-center justify-center rounded-[7px] border border-[#9F9F9F] px-5 py-3 text-base font-light text-[#4B4B4B] shadow-[0_4px_14px_rgba(0,0,0,0.04)] backdrop-blur-[2px] transition hover:bg-white sm:w-auto sm:px-6 sm:text-lg"
       >
         Book A Free Consultation
         <span className="ml-2 text-xl leading-none">
@@ -153,20 +153,20 @@ const HeroButtons = () => {
 
 const DesktopHero = () => {
   return (
-    <section className="relative hidden h-[calc(100vh+50px)] overflow-hidden bg-[url('/Rectangle%201.png')] bg-cover bg-center bg-no-repeat pb-[92px] pt-6 text-[#1f1f1f] min-[1629px]:block [clip-path:polygon(0%_0%,100%_0%,100%_100%,82%_100%,76%_92%,24%_92%,18%_100%,0%_100%)]">
-      <HeroAccent className="pointer-events-none absolute left-[4%] top-[26%] z-10 h-[176px] w-[176px] -rotate-90" />
-      <HeroAccent className="pointer-events-none absolute right-[4%] top-[14%] z-10 h-[176px] w-[176px]" />
+    <section className="relative hidden min-h-[900px] overflow-hidden bg-[url('/Rectangle%201.png')] bg-cover bg-center bg-no-repeat px-8 pb-[220px] pt-6 text-[#1f1f1f] xl:block 2xl:min-h-[980px] [clip-path:polygon(0%_0%,100%_0%,100%_100%,82%_100%,76%_92%,24%_92%,18%_100%,0%_100%)]">
+      <HeroAccent className="pointer-events-none absolute left-[2%] top-[24%] z-10 h-[150px] w-[150px] -rotate-90 2xl:h-[176px] 2xl:w-[176px]" />
+      <HeroAccent className="pointer-events-none absolute right-[2%] top-[12%] z-10 h-[150px] w-[150px] 2xl:h-[176px] 2xl:w-[176px]" />
 
-      <div className="relative z-30 mx-auto flex w-full max-w-[1280px] flex-col px-8">
+      <div className="relative z-30 mx-auto flex w-full max-w-[1360px] flex-col">
         <motion.div
-          className="relative z-30 mx-auto flex w-full max-w-[1180px] flex-col items-center px-8 pb-[300px] pt-[102px] text-center text-black"
+          className="relative z-30 mx-auto flex w-full max-w-[1180px] flex-col items-center px-4 pb-[220px] pt-[86px] text-center text-black 2xl:pt-[102px]"
           variants={heroContainerVariants}
           initial={false}
           animate="visible"
         >
           <motion.div
             variants={heroItemVariants}
-            className="mx-auto flex w-fit items-center justify-center rounded-[8px] px-5 py-3 text-center text-xl"
+            className="mx-auto flex w-fit items-center justify-center rounded-[8px] px-5 py-3 text-center text-lg 2xl:text-xl"
             style={{
               background:
                 "linear-gradient(90deg, rgba(178, 64, 2, 0.13) 0%, rgba(178, 64, 2, 0.00) 79.96%)",
@@ -177,7 +177,7 @@ const DesktopHero = () => {
 
           <motion.h1
             variants={heroItemVariants}
-            className="relative isolate mx-auto mt-5 max-w-[1120px] text-center text-[4.45rem] font-medium uppercase leading-[1.08] tracking-[-0.03em] text-black"
+            className="relative isolate mx-auto mt-5 max-w-[1120px] text-center text-[3.95rem] font-medium uppercase leading-[1.04] tracking-[-0.035em] text-black 2xl:text-[4.45rem]"
           >
             <Image
               src={heroEllipse}
@@ -186,7 +186,7 @@ const DesktopHero = () => {
               height={500}
               preload
               placeholder="blur"
-              className="pointer-events-none absolute left-1/2 top-8 -z-10 w-[500px] max-w-none -translate-x-1/2 translate-y-16 rotate-2"
+              className="pointer-events-none absolute left-1/2 top-8 -z-10 w-[440px] max-w-none -translate-x-1/2 translate-y-14 rotate-2 2xl:w-[500px] 2xl:translate-y-16"
               aria-hidden="true"
             />
             <span className="relative inline-block w-fit max-w-[920px]">
@@ -195,10 +195,10 @@ const DesktopHero = () => {
                 alt=""
                 width={84}
                 height={84}
-                sizes="66px"
-                className="pointer-events-none absolute -left-[10.6rem] top-[0.94em] h-[66px] w-[66px] -translate-y-1 rounded-full border-4 border-white/70 object-cover shadow-[0_10px_24px_rgba(0,0,0,0.14)]"
+                sizes="(min-width: 1536px) 66px, 58px"
+                className="pointer-events-none absolute -left-[8.75rem] top-[0.96em] h-[58px] w-[58px] -translate-y-1 rounded-full border-4 border-white/70 object-cover shadow-[0_10px_24px_rgba(0,0,0,0.14)] 2xl:-left-[10.6rem] 2xl:h-[66px] 2xl:w-[66px]"
               />
-              <HeroHeadingMark className="absolute -left-[6.5rem] top-[0.8em] h-auto w-[104px] -rotate-16" />
+              <HeroHeadingMark className="absolute -left-[5.25rem] top-[0.82em] h-auto w-[88px] -rotate-16 2xl:-left-[6.5rem] 2xl:w-[104px]" />
               <span className="block max-w-[920px] text-center">
                 Bring Your Story To Life With Nexifire Publishing
               </span>
@@ -207,7 +207,7 @@ const DesktopHero = () => {
 
           <motion.p
             variants={heroItemVariants}
-            className="body-copy mx-auto mt-4 max-w-[900px] text-center text-[#777777]"
+            className="body-copy mx-auto mt-4 max-w-[860px] text-center text-lg text-[#777777] 2xl:max-w-[900px]"
           >
             Whether you've written a memoir, business book, novel, self-help guide, or children's story, NexiFire Publishing provides the professional support needed to transform your manuscript into a published book readers will remember.
           </motion.p>
@@ -216,8 +216,8 @@ const DesktopHero = () => {
         </motion.div>
       </div>
 
-      <div className="pointer-events-none absolute inset-x-0 bottom-[-178px] z-20 h-[64%] w-full">
-        <div className="flex h-full w-full items-end justify-center gap-0 px-10">
+      <div className="pointer-events-none absolute inset-x-0 bottom-[-48px] z-20 h-[44%] w-full 2xl:bottom-[-70px] 2xl:h-[48%]">
+        <div className="flex h-full w-full items-end justify-center gap-0 px-4 2xl:px-10">
           {heroBooks.map((book) => (
             <div
               key={book.src}
@@ -228,6 +228,7 @@ const DesktopHero = () => {
                 alt={book.alt}
                 width={book.width}
                 height={Math.round((book.width * 504) / 355)}
+                sizes="(min-width: 1536px) 22vw, (min-width: 1280px) 19vw, 0px"
                 className="h-auto w-full drop-shadow-[0_20px_36px_rgba(0,0,0,0.22)]"
                 priority
               />
@@ -241,7 +242,7 @@ const DesktopHero = () => {
 
 const CompactHero = () => {
   return (
-    <section className="relative h-[calc(100vh+50px)] overflow-hidden bg-[radial-gradient(circle_at_top,rgba(255,255,255,0.92),rgba(255,255,255,0.76)_40%,rgba(255,255,255,0.88)_100%),url('/Rectangle%201.png')] bg-cover bg-center bg-no-repeat px-4 pb-10 pt-4 text-[#1f1f1f] min-[1629px]:hidden sm:px-6 lg:px-8 [clip-path:polygon(0%_0%,100%_0%,100%_100%,82%_100%,76%_92%,24%_92%,18%_100%,0%_100%)]">
+    <section className="relative min-h-[860px] overflow-hidden bg-[radial-gradient(circle_at_top,rgba(255,255,255,0.92),rgba(255,255,255,0.76)_40%,rgba(255,255,255,0.88)_100%),url('/Rectangle%201.png')] bg-cover bg-center bg-no-repeat px-4 pb-16 pt-4 text-[#1f1f1f] sm:min-h-[920px] sm:px-6 md:min-h-[980px] lg:min-h-[1040px] lg:px-8 xl:hidden [clip-path:polygon(0%_0%,100%_0%,100%_100%,82%_100%,76%_92%,24%_92%,18%_100%,0%_100%)]">
       <HeroAccent className="pointer-events-none absolute left-[-10%] top-[27%] z-10 h-[88px] w-[88px] -rotate-90 opacity-90 sm:left-[-2%] sm:h-[118px] sm:w-[118px]" />
       <HeroAccent className="pointer-events-none absolute right-[-10%] top-[15%] z-10 h-[88px] w-[88px] opacity-90 sm:right-[-2%] sm:h-[118px] sm:w-[118px]" />
 
@@ -277,28 +278,28 @@ const CompactHero = () => {
               className="pointer-events-none absolute left-1/2 top-0 -z-10 w-[240px] max-w-none -translate-x-1/2 translate-y-8 rotate-2 opacity-90 sm:w-[320px] md:w-[400px]"
               aria-hidden="true"
             />
-            <div className="relative mx-auto hidden w-fit items-start justify-center pl-[7.5rem] text-left md:inline-flex lg:pl-[8.75rem]">
+            <div className="relative mx-auto hidden w-fit items-start justify-center pl-[6.5rem] text-left md:inline-flex lg:pl-[7.5rem]">
               <Image
                 src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?auto=format&fit=crop&w=240&q=80"
                 alt=""
                 width={84}
                 height={84}
                 sizes="(max-width: 1024px) 58px, 66px"
-                className="pointer-events-none absolute left-0 top-[0.95em] h-[58px] w-[58px] -translate-y-1 rounded-full border-4 border-white/80 object-cover shadow-[0_14px_28px_rgba(0,0,0,0.14)] lg:h-[66px] lg:w-[66px]"
+                className="pointer-events-none absolute left-0 top-[0.95em] h-[52px] w-[52px] -translate-y-1 rounded-full border-4 border-white/80 object-cover shadow-[0_14px_28px_rgba(0,0,0,0.14)] lg:h-[60px] lg:w-[60px]"
               />
-              <HeroHeadingMark className="absolute left-[3.05rem] top-[0.78em] h-auto w-[88px] -rotate-16 lg:left-[3.6rem] lg:w-[104px]" />
-              <h1 className="max-w-[900px] text-center text-[3.3rem] font-medium uppercase leading-[1.04] tracking-[-0.04em] text-black lg:text-[4rem]">
+              <HeroHeadingMark className="absolute left-[2.7rem] top-[0.8em] h-auto w-[78px] -rotate-16 lg:left-[3.15rem] lg:w-[92px]" />
+              <h1 className="max-w-[900px] text-center text-[3rem] font-medium uppercase leading-[1.04] tracking-[-0.04em] text-black lg:text-[3.65rem]">
                 Bring Your Story To Life With Nexifire Publishing
               </h1>
             </div>
-            <h1 className="mx-auto max-w-[360px] text-center text-[2.75rem] font-medium uppercase leading-[0.98] tracking-[-0.05em] text-black sm:max-w-[520px] sm:text-[3.3rem] md:hidden">
+            <h1 className="mx-auto max-w-[360px] text-center text-[2.5rem] font-medium uppercase leading-[0.98] tracking-[-0.05em] text-black sm:max-w-[520px] sm:text-[3.1rem] md:hidden">
               Bring Your Story To Life With Nexifire Publishing
             </h1>
           </motion.div>
 
           <motion.p
             variants={heroItemVariants}
-            className="body-copy mx-auto mt-5 max-w-[340px] text-center text-[#777777] sm:max-w-[620px] md:max-w-[760px]"
+            className="body-copy mx-auto mt-5 max-w-[340px] text-center text-[#777777] sm:max-w-[620px] sm:text-lg md:max-w-[760px]"
           >
             Whether you've written a memoir, business book, novel, self-help guide, or children's story, NexiFire Publishing provides the professional support needed to transform your manuscript into a published book readers will remember.
           </motion.p>
@@ -310,7 +311,7 @@ const CompactHero = () => {
           variants={heroContainerVariants}
           initial={false}
           animate="visible"
-          className="relative mx-auto mt-12 flex max-w-[1180px] flex-col items-center pb-28 sm:pb-32"
+          className="relative mx-auto mt-12 flex max-w-[1180px] flex-col items-center pb-12 sm:pb-16 md:pb-20"
         >
           <div className="pointer-events-none absolute bottom-[5%] left-1/2 hidden h-[110px] w-[88%] -translate-x-1/2 rounded-[999px] bg-[radial-gradient(circle,rgba(178,64,2,0.14)_0%,rgba(178,64,2,0)_72%)] blur-2xl sm:block" />
 
@@ -330,6 +331,7 @@ const CompactHero = () => {
                   alt={book.alt}
                   width={book.width}
                   height={Math.round((book.width * 504) / 355)}
+                  sizes="(min-width: 1024px) 196px, 172px"
                   className="h-auto w-full drop-shadow-[0_24px_40px_rgba(0,0,0,0.18)]"
                 />
               </motion.div>
@@ -352,6 +354,11 @@ const CompactHero = () => {
                   alt={book.alt}
                   width={book.width}
                   height={Math.round((book.width * 504) / 355)}
+                  sizes={
+                    index === 1
+                      ? "(min-width: 640px) 274px, 228px"
+                      : "(min-width: 640px) 230px, 190px"
+                  }
                   className="h-auto w-full rounded-[10px] drop-shadow-[0_26px_42px_rgba(0,0,0,0.24)]"
                   priority
                 />
