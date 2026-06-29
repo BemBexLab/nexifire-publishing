@@ -13,7 +13,7 @@ import GetInTouchContact from "@/components/GetInTouchContact";
 
 export default function Home() {
   return (
-    <section className="bg-white">
+    <section className="bg-white overflow-hidden">
       <HomeHero />
       <BooksSection />
       <HomeServices />
