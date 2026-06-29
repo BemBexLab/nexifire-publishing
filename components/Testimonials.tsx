@@ -72,7 +72,7 @@ const Testimonials = () => {
 
             <Link
               href="#"
-              className="mt-5 inline-flex items-center justify-center rounded-[8px] bg-[linear-gradient(90deg,#B24002_0%,#FF5B01_100%)] px-5 py-3 text-[15px] font-medium leading-none text-white shadow-[0_10px_20px_rgba(255,91,1,0.22)] transition hover:brightness-[1.03]"
+              className="mt-5 inline-flex items-center justify-center rounded-[8px] bg-[linear-gradient(90deg,#B24002_0%,#FF5B01_100%)] px-5 py-3 text-[15px] font-light leading-none text-white shadow-[0_10px_20px_rgba(255,91,1,0.22)] transition hover:brightness-[1.03]"
             >
               View All Reviews
               <span className="ml-2 text-base leading-none">
