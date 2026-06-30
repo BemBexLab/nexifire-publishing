@@ -39,16 +39,16 @@ const testimonialSlots = [
   {
     zIndex: 10,
     style: {
-      left: "24px",
-      top: "-35px",
+      left: "5px",
+      top: "-65px",
     },
     initial: { x: -120, y: 0 },
   },
   {
     zIndex: 30,
     style: {
-      right: "0px",
-      top: "-13px",
+      right: "-70px",
+      top: "0px",
     },
     initial: { x: 120, y: 0 },
   },
@@ -56,7 +56,7 @@ const testimonialSlots = [
     zIndex: 20,
     style: {
       left: "235px",
-      top: "222px",
+      top: "218px",
     },
     initial: { x: 0, y: 120 },
   },
@@ -110,7 +110,7 @@ const Testimonials = () => {
                       item.featured
                         ? "bg-[linear-gradient(180deg,#C44C00_0%,#BC4C03_100%)] text-white"
                         : "bg-[#f8f3ef] text-[#57514d]"
-                    } w-full max-w-[560px] self-center sm:px-10 md:absolute md:min-h-[245px] md:max-w-none md:w-[300px] md:px-5 md:py-8`}
+                    } w-full max-w-[560px] self-center sm:px-10 md:absolute md:min-h-[305px] md:max-w-none md:w-[360px] md:px-7 md:py-10`}
                   >
                     <div
                       className={`text-[4.9rem] font-semibold leading-none md:text-[3.7rem] ${
