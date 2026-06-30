@@ -169,7 +169,13 @@ const contactItems = [
   // },
 ] as const;
 
-const GetInTouchContact = () => {
+type GetInTouchContactProps = {
+  backgroundClassName?: string;
+};
+
+const GetInTouchContact = ({
+  backgroundClassName = "bg-white",
+}: GetInTouchContactProps) => {
   const [selectedCountryCode, setSelectedCountryCode] = useState("US");
   const [isCountryOpen, setIsCountryOpen] = useState(false);
   const { handleSubmit, isSubmitting, submitMessage, submitStatus } =
@@ -196,7 +202,9 @@ const GetInTouchContact = () => {
   }, []);
 
   return (
-    <section className="flex w-full overflow-hidden items-center justify-center py-14 md:py-20">
+    <section
+      className={`flex w-full items-center justify-center overflow-hidden py-14 md:py-20 ${backgroundClassName}`.trim()}
+    >
       <div className="mx-auto grid w-full max-w-[1139px] grid-cols-1 items-center justify-center gap-12 px-4 sm:px-6 md:px-8 lg:grid-cols-[470px_605px] lg:gap-16">
         <div className="mx-auto w-full max-w-[605px] pt-2 lg:mx-0 lg:max-w-none">
           <div

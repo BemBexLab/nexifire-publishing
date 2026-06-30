@@ -150,7 +150,7 @@ const FAQs = () => {
 
             <Link
               href="#"
-              className="mt-6 inline-flex items-center justify-center rounded-[8px] bg-[linear-gradient(90deg,#B24002_0%,#FF5B01_100%)] px-5 py-[7px] text-[15px] font-medium leading-none text-white shadow-[0_10px_20px_rgba(255,91,1,0.18)] transition hover:brightness-[1.03]"
+              className="mt-6 inline-flex items-center justify-center rounded-[8px] bg-[linear-gradient(90deg,#B24002_0%,#FF5B01_100%)] px-5 py-[7px] text-[15px] font-light leading-none text-white shadow-[0_10px_20px_rgba(255,91,1,0.18)] transition hover:brightness-[1.03]"
             >
               Contact Us
               <span className="ml-1.5 text-sm leading-none">

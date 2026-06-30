@@ -21,7 +21,9 @@ export default function Home() {
       <WhoWeAre />
       <OurProcess />
       <Portfolio />
+      <div className="h-10"></div>
       <Testimonials />
+      <div className="h-10"></div>
       <FAQs />
       <PublishYourBook />
       <div className="h-20"></div>

@@ -11,15 +11,15 @@ import { FaFacebookF, FaInstagram, FaTwitter, FaLinkedinIn } from "react-icons/f
 
 const FooterCTA = () => {
   return (
-    <section className="w-full bg-[#F3F3F3] px-5 pt-12 font-jakarta sm:px-8 sm:pt-16 lg:pt-20">
+    <section className="w-full bg-[#F3F3F3] px-4 pt-12 font-jakarta sm:px-6 sm:pt-16 lg:px-10 lg:pt-20">
       <div className="mx-auto flex w-full max-w-[1600px] flex-col">
-        <div className="grid w-full grid-cols-1 justify-items-center gap-16 xl:grid-cols-[minmax(0,700px)_minmax(0,725px)] xl:items-start xl:justify-center xl:gap-20 2xl:gap-28">
-          <div className="flex w-full max-w-[700px] flex-col items-center text-center font-jakarta lg:items-start lg:text-left">
-            <h2 className="bg-gradient-to-r from-[#282828] to-[#8C8C8C] bg-clip-text py-3 text-center font-jakarta text-4xl font-semibold leading-tight text-transparent sm:text-5xl lg:text-left lg:text-7xl">
-              <span className="whitespace-nowrap">Ready To Publish</span>
+        <div className="grid w-full grid-cols-1 gap-14 lg:gap-16 xl:grid-cols-[minmax(0,700px)_minmax(0,1fr)] xl:items-start xl:justify-between 2xl:gap-24">
+          <div className="flex w-full max-w-[700px] flex-col items-center text-center lg:items-start lg:text-left">
+            <h2 className="bg-gradient-to-r from-[#282828] to-[#8C8C8C] bg-clip-text py-3 text-center text-4xl font-semibold leading-[1.05] text-transparent sm:text-5xl lg:text-left lg:text-6xl xl:text-7xl">
+              <span className="sm:whitespace-nowrap">Ready To Publish</span>
               <br /> Your Story?
             </h2>
-            <p className="mt-5 max-w-xl text-base text-[#777777] sm:text-lg xl:max-w-none xl:whitespace-nowrap">
+            <p className="mt-5 max-w-xl text-base leading-[1.65] text-[#777777] sm:text-lg xl:max-w-[640px]">
               Become a published author with expert support from manuscript to
               marketplace.
             </p>
@@ -53,8 +53,8 @@ const FooterCTA = () => {
             </Link>
           </div>
 
-          <div className="md:mt-15 grid w-full grid-cols-1 justify-center gap-8 sm:grid-cols-2 lg:grid-cols-[130px_180px_280px] lg:gap-x-5">
-            <div className="w-full">
+          <div className="grid w-full grid-cols-1 gap-8 sm:grid-cols-2 sm:gap-x-10 lg:grid-cols-[minmax(0,1fr)_minmax(0,1fr)] lg:gap-y-10 xl:mt-10 xl:grid-cols-[minmax(0,150px)_minmax(0,220px)_minmax(0,320px)] xl:gap-x-8">
+            <div className="w-full min-w-0">
               <h4 className="mb-2 text-lg font-medium text-[#B24002]">
                 Quick Links
               </h4>
@@ -80,7 +80,7 @@ const FooterCTA = () => {
               </ul>
             </div>
 
-            <div className="w-[180px]">
+            <div className="w-full min-w-0">
               <h4 className="mb-2 text-lg font-medium text-[#B24002]">
                 Our Services
               </h4>
@@ -94,14 +94,14 @@ const FooterCTA = () => {
               </ul>
             </div>
 
-            <div className="w-full sm:col-span-2 lg:col-span-1">
+            <div className="w-full min-w-0 sm:col-span-2 xl:col-span-1">
               <h4 className="mb-2 text-lg font-medium text-[#B24002]">
                 Contact Info
               </h4>
               <ul className="space-y-2 text-base font-medium text-[#777777]">
                 <li className="flex items-center">
                   <LuPhoneCall className="shrink-0" />
-                  <a href="tel:+14704707520" className="ml-2 break-words">
+                  <a href="tel:+14704707520" className="ml-2 min-w-0 break-words">
                     (470) 470-7520
                   </a>
                 </li>
@@ -109,14 +109,14 @@ const FooterCTA = () => {
                   <MdOutlineEmail className="shrink-0" />
                   <a
                     href="mailto:contact@nexifire.com"
-                    className="ml-2 break-words"
+                    className="ml-2 min-w-0 break-words"
                   >
                     contact@nexifire.com
                   </a>
                 </li>
                 <li className="flex items-start">
                   <SlLocationPin className="mt-1 shrink-0" />
-                  <a href="" className="ml-2 break-words">
+                  <a href="" className="ml-2 min-w-0 break-words">
                     2300 Lakeview Pkwy Alpharetta, GA 30009
                   </a>
                 </li>
@@ -164,12 +164,12 @@ const FooterCTA = () => {
         <div className="mt-12 w-full">
           <div className="border-t border-[#77777766]" />
 
-          <div className="flex w-full flex-col gap-2 py-3 text-sm font-semibold text-[#777777] sm:flex-row sm:items-center sm:justify-between">
+          <div className="flex w-full flex-col gap-3 py-4 text-sm font-semibold text-[#777777] md:flex-row md:items-center md:justify-between">
             <p className="text-left">
               &copy; 2026 NexiFire Publishing All Rights Reserved.
             </p>
 
-            <p className="text-left sm:text-right">
+            <p className="text-left md:text-right">
               <a className="hover:text-[#B94202]" href="#">
                 Privacy Policy
               </a>

@@ -34,7 +34,7 @@ const page = () => {
       <WhoWeServe />
       <Testimonials />
       <FAQs />
-      <GetInTouchContact />
+      <GetInTouchContact backgroundClassName="bg-[#FDF7F4]" />
     </section>
   )
 }
