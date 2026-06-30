@@ -70,7 +70,7 @@ const Testimonials = () => {
           className="absolute inset-x-0 top-[112px] h-[35vh] w-full bg-cover bg-center bg-no-repeat"
           style={{ backgroundImage: "url('/Frame 2147225735.png')" }}
         >
-          <div className="relative z-10 mx-auto flex h-full w-full max-w-[1120px] flex-col gap-12 px-6 md:flex-row md:items-center md:justify-between md:gap-0 md:px-8">
+          <div className="relative z-10 mx-auto flex h-full w-full max-w-[1440px] flex-col gap-12 px-6 md:flex-row md:items-center md:justify-between md:gap-0 md:px-8">
             <div className="flex flex-col justify-center md:h-full md:w-[380px] md:max-w-full">
               <motion.div
                 className="mb-4 flex w-fit items-center justify-center rounded-[8px] px-4 py-2 text-center text-[12px] text-black"
