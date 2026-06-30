@@ -56,7 +56,7 @@ const testimonialSlots = [
     zIndex: 20,
     style: {
       left: "235px",
-      top: "158px",
+      top: "222px",
     },
     initial: { x: 0, y: 120 },
   },
@@ -65,9 +65,9 @@ const testimonialSlots = [
 const Testimonials = () => {
   return (
     <section id="testimonials" className="overflow-hidden bg-white">
-      <div className="relative h-[55vh] w-full">
+      <div className="relative h-[680px] w-full md:h-[640px] xl:h-[700px]">
         <div
-          className="absolute inset-x-0 top-[112px] h-[35vh] w-full bg-cover bg-center bg-no-repeat"
+          className="absolute inset-x-0 top-[120px] h-[440px] w-full bg-cover bg-center bg-no-repeat md:h-[430px] xl:h-[470px]"
           style={{ backgroundImage: "url('/Frame 2147225735.png')" }}
         >
           <div className="relative z-10 mx-auto flex h-full w-full max-w-[1440px] flex-col gap-12 px-6 md:flex-row md:items-center md:justify-between md:gap-0 md:px-8">
@@ -82,7 +82,7 @@ const Testimonials = () => {
                 Testimonials
               </motion.div>
 
-              <h2 className="block w-full max-w-[10ch] bg-gradient-to-r from-[#282828] to-[#8C8C8C] bg-clip-text font-jakarta text-left text-[2.2rem] font-normal uppercase leading-[1.08] text-transparent sm:text-[2.9rem] md:text-[38px]">
+              <h2 className="block w-full max-w-full font-jakarta bg-gradient-to-r from-[#282828] to-[#8C8C8C] bg-clip-text text-left text-[2.2rem] font-normal uppercase leading-[1.08] tracking-[-0.045em] text-transparent sm:text-[2.9rem] md:text-[3.6rem] lg:text-[4rem]">
                 What Authors Say About Us
               </h2>
 
@@ -110,7 +110,7 @@ const Testimonials = () => {
                       item.featured
                         ? "bg-[linear-gradient(180deg,#C44C00_0%,#BC4C03_100%)] text-white"
                         : "bg-[#f8f3ef] text-[#57514d]"
-                    } w-full max-w-[560px] self-center sm:px-10 md:absolute md:max-w-none md:w-[300px] md:px-5 md:py-5`}
+                    } w-full max-w-[560px] self-center sm:px-10 md:absolute md:min-h-[245px] md:max-w-none md:w-[300px] md:px-5 md:py-8`}
                   >
                     <div
                       className={`text-[4.9rem] font-semibold leading-none md:text-[3.7rem] ${
@@ -144,7 +144,7 @@ const Testimonials = () => {
                     </p>
 
                     {item.showAvatar ? (
-                      <div className="mt-8 flex items-center gap-3.5 md:mt-5 md:gap-2.5">
+                      <div className="mt-8 flex items-center gap-3.5 md:mt-7 md:gap-2.5">
                         <Image
                           src={item.avatarSrc!}
                           alt={item.name}
