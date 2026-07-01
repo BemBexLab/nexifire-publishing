@@ -61,7 +61,7 @@ const OurBelieves = () => {
             >
               <TextFluxUnveil text="Our Believes" />
             </motion.div>
-          <h2 className="mt-6 text-4xl font-medium uppercase leading-none tracking-[-0.04em] text-[#555555] sm:text-5xl lg:text-[3.5rem]">
+          <h2 className="project-h2 mt-6 leading-none">
             What We Believe
           </h2>
         </div>
@@ -95,10 +95,10 @@ const OurBelieves = () => {
                   />
                 ) : null}
               </div>
-              <h3 className="mt-5 text-[1.75rem] font-medium leading-[1.15] tracking-[-0.03em] text-[#4D4D4D]">
+              <h3 className="mt-5 text-3xl font-medium leading-[1.15] tracking-[-0.03em] text-[#4D4D4D] sm:text-4xl">
                 {belief.title}
               </h3>
-              <p className="mt-3 max-w-[350px] text-base leading-[1.55] text-[#7D7D7D] sm:text-[1.05rem]">
+              <p className="mt-3 max-w-[350px] text-base leading-[1.55] text-[#7D7D7D] sm:text-lg">
                 {belief.description}
               </p>
             </article>

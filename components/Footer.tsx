@@ -15,7 +15,7 @@ const FooterCTA = () => {
       <div className="mx-auto flex w-full max-w-[1600px] flex-col">
         <div className="grid w-full grid-cols-1 gap-14 lg:gap-16 xl:grid-cols-[minmax(0,700px)_minmax(0,1fr)] xl:items-start xl:justify-between 2xl:gap-24">
           <div className="flex w-full max-w-[700px] flex-col items-center text-center lg:items-start lg:text-left">
-            <h2 className="bg-gradient-to-r from-[#282828] to-[#8C8C8C] bg-clip-text py-3 text-center text-4xl font-semibold leading-[1.05] text-transparent sm:text-5xl lg:text-left lg:text-6xl xl:text-7xl">
+            <h2 className="project-h2 py-3 text-center leading-[1.05] lg:text-left">
               <span className="sm:whitespace-nowrap">Ready To Publish</span>
               <br /> Your Story?
             </h2>
@@ -63,19 +63,19 @@ const FooterCTA = () => {
                   <a href="/">Home</a>
                 </li>
                 <li>
-                  <a href="/about">About us</a>
+                  <a href="/who-we-are">Who We Are</a>
                 </li>
                 <li>
-                  <a href="#">Our Books</a>
+                  <a href="/our-books">Our Books</a>
                 </li>
-                <li>
-                  <a href="#">Testimonials</a>
-                </li>
+                {/* <li>
+                  <a href="/testimonials">Testimonials</a>
+                </li> */}
                 <li>
                   <a href="/contact">Contact Us</a>
                 </li>
                 <li>
-                  <a href="#">Blogs</a>
+                  <a href="/blogs">Blogs</a>
                 </li>
               </ul>
             </div>

@@ -75,7 +75,7 @@ const WhyChoose = () => {
             <TextFluxUnveil text="Why Choose Our Book Publishing Services" />
           </div>
 
-          <h2 className="text-[2.35rem] font-normal uppercase leading-[1.04] tracking-[-0.055em] text-[#343434] sm:text-[2.9rem] lg:text-[4rem]">
+          <h2 className="project-h2 leading-[1.04] tracking-[-0.055em]">
             <span className="block">Everything You Need Under One Roof</span>
           </h2>
         </div>
@@ -96,11 +96,11 @@ const WhyChoose = () => {
                 </div>
 
                 <div>
-                  <h3 className="text-[1.16rem] font-medium leading-tight text-[#313131] sm:text-[1.24rem]">
+                  <h3 className="text-lg font-medium leading-tight text-[#313131] sm:text-xl">
                     {reason.title}
                   </h3>
 
-                  <p className="mt-2 max-w-[580px] text-[13.5px] leading-[1.6] text-[#666666] sm:text-[15px]">
+                  <p className="mt-2 max-w-[580px] text-sm leading-[1.6] text-[#666666] sm:text-base">
                     {reason.description}
                   </p>
                 </div>

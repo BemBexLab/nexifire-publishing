@@ -134,7 +134,7 @@ const OurBookGenre = () => {
             <TextFluxUnveil text="Our Book Genre" />
           </motion.div>
 
-          <h2 className="block w-full max-w-full font-jakarta bg-gradient-to-r from-[#282828] to-[#8C8C8C] bg-clip-text text-left text-[2.15rem] font-normal uppercase leading-[1.05] tracking-[-0.045em] text-transparent sm:text-[2.75rem] md:text-[3.2rem] xl:text-[3.4rem] 2xl:text-[4rem]">
+          <h2 className="project-h2 block w-full max-w-full text-left leading-[1.05]">
             We Publish Every Genre
           </h2>
         </motion.div>
@@ -174,7 +174,7 @@ const OurBookGenre = () => {
                       sizes="(max-width: 639px) 48px, 52px"
                       className="relative z-10 h-11 w-11 object-contain sm:h-12 sm:w-12 md:h-[52px] md:w-[52px]"
                     />
-                    <h3 className="relative z-10 mt-4 text-[15px] font-semibold leading-none tracking-[-0.03em] text-[#282828] sm:mt-5 sm:text-base md:text-lg lg:text-xl">
+                    <h3 className="relative z-10 mt-4 text-base font-semibold leading-none tracking-[-0.03em] text-[#282828] sm:mt-5 sm:text-lg md:text-xl lg:text-2xl">
                       {genre.title}
                     </h3>
                   </div>

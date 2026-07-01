@@ -45,7 +45,7 @@ const CheckItem = ({ children }: { children: React.ReactNode }) => {
           className="h-full w-full object-contain"
         />
       </div>
-      <span className="text-[15px] leading-[1.5] text-[#6F6F6F]">{children}</span>
+      <span className="text-base leading-[1.5] text-[#6F6F6F] sm:text-lg">{children}</span>
     </li>
   );
 };
@@ -68,14 +68,11 @@ const MosiacCards = () => {
             <TextFluxUnveil text="Lorem Ipsum Dolor Sit Amet" />
           </div>
 
-          <h2
-            className="bg-clip-text text-[2.65rem] font-normal uppercase leading-[1.04] tracking-[-0.06em] text-transparent sm:text-[3.35rem] lg:text-[4.45rem]"
-            style={{ backgroundImage: "linear-gradient(90deg, #282828 0%, #8C8C8C 100%)" }}
-          >
+          <h2 className="project-h2 leading-[1.04] tracking-[-0.06em]">
             Lorem Ipsum Dolor Sit Amet Consectetur. Adipiscing.
           </h2>
 
-          <p className="mx-auto mt-5 max-w-[920px] text-[15px] leading-[1.7] text-[#8B8B8B] sm:text-[17px]">
+          <p className="mx-auto mt-5 max-w-[920px] text-base leading-[1.7] text-[#8B8B8B] sm:text-lg">
             Lorem ipsum dolor sit amet consectetur. Quis sit facilisis neque
             habitant. Bibendum sed faucibus eget lacus etiam. Proin eget rutrum
             sed tortor parturient nisl. Posuere ridiculus adipiscing pulvinar
@@ -89,10 +86,10 @@ const MosiacCards = () => {
             <div
               className={`${cardBaseClassName} flex flex-[0.9] flex-col bg-[#FFF4EC] px-6 py-7 sm:px-7`}
             >
-              <h3 className="text-[1.05rem] font-semibold leading-tight text-[#2E2E2E] sm:text-[1.12rem]">
+              <h3 className="text-lg font-semibold leading-tight text-[#2E2E2E] sm:text-xl">
                 Idea Development & Research
               </h3>
-              <p className="mt-4 max-w-[500px] text-[15px] leading-[1.6] text-[#6F6F6F]">
+              <p className="mt-4 max-w-[500px] text-base leading-[1.6] text-[#6F6F6F] sm:text-lg">
                 Lorem ipsum dolor sit amet consectetur. Quis sit facilisis neque
                 habitant. Bibendum sed faucibus eget lacus etiam. Proin eget
                 rutrum sed tortor parturient nisl.
@@ -102,10 +99,10 @@ const MosiacCards = () => {
             <div
               className={`${cardBaseClassName} flex flex-[1.2] flex-col bg-white px-6 py-7 sm:px-7`}
             >
-              <h3 className="text-[1.05rem] font-semibold leading-tight text-[#2E2E2E] sm:text-[1.12rem]">
+              <h3 className="text-lg font-semibold leading-tight text-[#2E2E2E] sm:text-xl">
                 Genres We Cover
               </h3>
-              <p className="mt-4 text-[15px] leading-[1.6] text-[#6F6F6F]">
+              <p className="mt-4 text-base leading-[1.6] text-[#6F6F6F] sm:text-lg">
                 Ink Founders offers writing services across a wide range of
                 genres, including:
               </p>
@@ -119,7 +116,7 @@ const MosiacCards = () => {
             <div
               className={`${cardBaseClassName} flex flex-1 flex-col bg-[#FFF4EC] px-6 py-7 sm:px-7`}
             >
-              <h3 className="text-[1.05rem] font-semibold leading-tight text-[#2E2E2E] sm:text-[1.12rem]">
+              <h3 className="text-lg font-semibold leading-tight text-[#2E2E2E] sm:text-xl">
                 Our Writing Process
               </h3>
               <ul className="mt-5 grid gap-x-6 gap-y-2.5 sm:grid-cols-2">
@@ -134,10 +131,10 @@ const MosiacCards = () => {
             <div
               className={`${cardBaseClassName} flex flex-[1.15] flex-col bg-white px-6 py-7 sm:px-7`}
             >
-              <h3 className="text-[1.05rem] font-semibold leading-tight text-[#2E2E2E] sm:text-[1.12rem]">
+              <h3 className="text-lg font-semibold leading-tight text-[#2E2E2E] sm:text-xl">
                 Original, High-Quality Writing
               </h3>
-              <p className="mt-4 text-[15px] leading-[1.6] text-[#6F6F6F]">
+              <p className="mt-4 text-base leading-[1.6] text-[#6F6F6F] sm:text-lg">
                 Every eBook is written from scratch, ensuring:
               </p>
               <ul className="mt-4 space-y-2.5">
@@ -150,10 +147,10 @@ const MosiacCards = () => {
             <div
               className={`${cardBaseClassName} flex flex-[0.75] flex-col bg-[#FFF4EC] px-6 py-7 sm:px-7`}
             >
-              <h3 className="text-[1.05rem] font-semibold leading-tight text-[#2E2E2E] sm:text-[1.12rem]">
+              <h3 className="text-lg font-semibold leading-tight text-[#2E2E2E] sm:text-xl">
                 Voice Matching (Ghostwriting)
               </h3>
-              <p className="mt-4 max-w-[500px] text-[15px] leading-[1.6] text-[#6F6F6F]">
+              <p className="mt-4 max-w-[500px] text-base leading-[1.6] text-[#6F6F6F] sm:text-lg">
                 For ghostwriting projects, we carefully adapt to your tone,
                 style, and personality so the book truly feels like you wrote
                 it.
@@ -163,7 +160,7 @@ const MosiacCards = () => {
             <div
               className={`${cardBaseClassName} flex flex-1 flex-col bg-white px-6 py-7 sm:px-7`}
             >
-              <h3 className="text-[1.05rem] font-semibold leading-tight text-[#2E2E2E] sm:text-[1.12rem]">
+              <h3 className="text-lg font-semibold leading-tight text-[#2E2E2E] sm:text-xl">
                 Who This Service Is For
               </h3>
               <ul className="mt-5 space-y-2.5">

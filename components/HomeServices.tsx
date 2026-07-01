@@ -117,11 +117,11 @@ const HomeServices = () => {
             <TextFluxUnveil text="SERVICES" />
           </motion.div>
 
-          <h2 className="block w-full max-w-full font-jakarta bg-gradient-to-r from-[#282828] to-[#8C8C8C] bg-clip-text text-center text-[2.2rem] font-normal uppercase leading-[1.08] tracking-[-0.045em] text-transparent sm:text-[2.9rem] md:text-[3.6rem] lg:text-[4rem]">
+          <h2 className="project-h2 block w-full max-w-full text-center">
             Everything You Need To Publish Successfully
           </h2>
 
-          <p className="body-copy mt-4 max-w-full text-[#777777] sm:text-lg">
+          <p className="mt-4 max-w-full text-[#777777] sm:text-lg">
             A complete publishing ecosystem designed to help authors bring their
             books to life.
           </p>
@@ -145,7 +145,7 @@ const HomeServices = () => {
                 sizes="52px"
                 className="h-[52px] w-[52px] object-contain"
               />
-              <h3 className="mt-5 text-base font-semibold leading-tight text-[#282828] sm:mt-6 sm:text-[1.05rem]">
+              <h3 className="mt-5 text-base font-semibold leading-tight text-[#282828] sm:mt-6 sm:text-lg">
                 {service.title}
               </h3>
               <p className="mt-2 text-sm leading-[1.55] text-[#444444]">
@@ -169,7 +169,7 @@ const HomeServices = () => {
             <div className="absolute inset-0 bg-[linear-gradient(180deg,rgba(0,0,0,0.78)_0%,rgba(0,0,0,0.58)_44%,rgba(0,0,0,0.18)_100%)] lg:bg-[linear-gradient(90deg,rgba(0,0,0,0.82)_0%,rgba(0,0,0,0.54)_32%,rgba(0,0,0,0.16)_62%,rgba(0,0,0,0.02)_100%)]" />
             <div className="relative z-10 flex min-h-[280px] w-full items-end px-5 py-6 sm:min-h-[320px] sm:px-8 sm:py-8 lg:min-h-[384px] lg:items-center lg:px-10">
               <div className="max-w-[400px] text-white sm:max-w-[460px]">
-                <h3 className="text-[1.85rem] font-light uppercase leading-[1.03] tracking-[-0.05em] sm:text-[2.2rem] lg:text-[2.8rem]">
+                <h3 className="text-3xl font-light uppercase leading-[1.03] tracking-[-0.05em] sm:text-4xl lg:text-5xl">
                     Ready To Publish Your Book?
                 </h3>
 

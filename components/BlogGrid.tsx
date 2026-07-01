@@ -88,7 +88,7 @@ const BlogGrid = () => {
   return (
     <section className="bg-white px-4 py-14 sm:px-6 sm:py-16 lg:px-8 lg:py-20">
       <div className="mx-auto max-w-[1000px]">
-        <h2 className="block w-full max-w-full font-jakarta bg-gradient-to-r from-[#282828] to-[#8C8C8C] bg-clip-text text-center text-[2.2rem] font-normal uppercase leading-[1.08] tracking-[-0.045em] text-transparent sm:text-[2.9rem] md:text-[3.6rem] lg:text-[4rem]">
+        <h2 className="project-h2 block w-full max-w-full text-center">
           Our Latest Blogs
         </h2>
 
@@ -110,17 +110,17 @@ const BlogGrid = () => {
               </div>
 
               <div className="px-[18px] pb-[20px] pt-[16px]">
-                <h3 className="text-[18px] font-normal leading-[1.35] tracking-[-0.03em] text-[#373737]">
+                <h3 className="text-lg font-normal leading-[1.35] tracking-[-0.03em] text-[#373737] sm:text-xl">
                   {blog.title}
                 </h3>
 
-                <p className="mt-3 text-[12px] leading-[1.65] text-[#8b8b8b] sm:text-[13px]">
+                <p className="mt-3 text-sm leading-[1.65] text-[#8b8b8b]">
                   {blog.excerpt}
                 </p>
 
                 <a
                   href="#"
-                  className="mt-4 inline-flex items-center gap-2 text-[13px] font-normal text-[#e96d2d]"
+                  className="mt-4 inline-flex items-center gap-2 text-sm font-normal text-[#e96d2d] sm:text-base"
                 >
                   Learn More
                   <SlArrowRight size={11} />

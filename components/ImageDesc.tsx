@@ -24,11 +24,11 @@ const ImageDesc = ({
         }`}
       >
         <div className="w-full min-w-0 lg:basis-[60%] lg:pt-6 lg:max-w-[60%] xl:pt-8">
-          <h2 className="w-full text-[2.45rem] font-normal uppercase leading-[1.08] tracking-[-0.055em] text-[#454545] sm:text-[3rem] lg:text-[4rem]">
+          <h2 className="project-h2 w-full tracking-[-0.055em]">
             <span>{title}</span>
           </h2>
 
-          <div className="mt-8 w-full space-y-5 text-[15px] leading-[1.55] text-[#7E7E7E] sm:text-[16px] sm:leading-[1.6]">
+          <div className="mt-8 w-full space-y-5 text-base leading-[1.55] text-[#7E7E7E] sm:text-lg sm:leading-[1.6]">
             {paragraphs.map((paragraph) => (
               <p key={paragraph}>{paragraph}</p>
             ))}

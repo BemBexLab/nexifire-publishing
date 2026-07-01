@@ -58,14 +58,14 @@ const Introduction = ({
             <TextFluxUnveil text={eyebrow} />
           </motion.div>
 
-          <h2 className="mt-5 max-w-[500px] text-[2.45rem] font-normal uppercase leading-[1.02] tracking-[-0.05em] text-[#333333] sm:text-[3rem] lg:max-w-[620px] lg:text-[3.35rem] xl:max-w-[680px]">
+          <h2 className="project-h2 mt-5 max-w-[500px] leading-[1.02] lg:max-w-[620px] xl:max-w-[680px]">
             {title}
           </h2>
 
           {descriptionParts.map((part, index) => (
             <p
               key={`${part.slice(0, 40)}-${index}`}
-              className={`max-w-[520px] text-[15px] leading-[1.65] text-[#9a9a9a] sm:text-base lg:max-w-[620px] xl:max-w-[680px] ${
+              className={`max-w-[520px] text-base leading-[1.65] text-[#9a9a9a] sm:text-lg lg:max-w-[620px] xl:max-w-[680px] ${
                 index === 0 ? "mt-6" : "mt-5"
               }`}
             >

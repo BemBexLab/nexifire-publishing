@@ -95,7 +95,7 @@ const TestimonialCard = ({
       } ${className ?? ""}`}
     >
       <div
-        className={`text-[4.9rem] font-semibold leading-none lg:text-[3.4rem] xl:text-[3.7rem] ${
+        className={`text-6xl font-semibold leading-none lg:text-5xl xl:text-6xl ${
           item.featured ? "text-white" : "text-[#FF5B01]"
         }`}
       >
@@ -118,7 +118,7 @@ const TestimonialCard = ({
       </div>
 
       <p
-        className={`text-base leading-[1.65] sm:text-[18px] lg:text-[13px] lg:leading-[1.45] xl:text-[14px] ${
+        className={`text-base leading-[1.65] sm:text-lg lg:text-sm lg:leading-[1.45] xl:text-base ${
           item.featured ? "text-white" : "text-[#5b5551]"
         }`}
       >
@@ -134,7 +134,7 @@ const TestimonialCard = ({
           className="h-11 w-11 rounded-full object-cover lg:h-10 lg:w-10"
         />
         <div
-          className={`text-[18px] leading-none lg:text-[14px] ${
+          className={`text-lg leading-none lg:text-base ${
             item.featured ? "text-[#FFFFFF]" : "text-[#444444]"
           }`}
         >
@@ -177,13 +177,13 @@ const Testimonials = () => {
                 <TextFluxUnveil text="Who We Are" />
               </motion.div>
 
-              <h2 className="block w-full max-w-full font-jakarta bg-gradient-to-r from-[#282828] to-[#8C8C8C] bg-clip-text text-left text-[2.2rem] font-normal uppercase leading-[1.08] tracking-[-0.045em] text-transparent sm:text-[2.9rem] lg:w-[520px] lg:max-w-none lg:text-[3.35rem] xl:w-[620px] xl:text-[4rem]">
+              <h2 className="project-h2 block w-full max-w-full text-left lg:w-[520px] lg:max-w-none xl:w-[620px]">
                 What Authors Say About Us
               </h2>
 
               <Link
                 href="#"
-                className="mt-5 inline-flex w-fit items-center justify-center rounded-[8px] bg-[linear-gradient(90deg,#B24002_0%,#FF5B01_100%)] px-4 py-[8px] text-[15px] font-light leading-none text-white shadow-[0_8px_18px_rgba(255,91,1,0.24)] transition hover:brightness-[1.03] lg:mt-6"
+                className="mt-5 inline-flex w-fit items-center justify-center rounded-[8px] bg-[linear-gradient(90deg,#B24002_0%,#FF5B01_100%)] px-4 py-[8px] text-base font-light leading-none text-white shadow-[0_8px_18px_rgba(255,91,1,0.24)] transition hover:brightness-[1.03] lg:mt-6 sm:text-lg"
               >
                 View All Review
                 <span className="ml-1.5 text-sm leading-none">

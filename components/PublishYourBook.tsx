@@ -64,17 +64,17 @@ const PublishYourBook = ({
           <div className={`absolute inset-0 ${overlayClassName}`.trim()} />
           <div className="relative z-10 flex min-h-[320px] w-full items-end px-5 py-6 sm:min-h-[360px] sm:px-8 sm:py-8 md:min-h-[400px] md:px-10 lg:min-h-[384px] lg:items-center lg:px-10 lg:py-10 xl:min-h-[420px] xl:px-12">
             <div className="w-full max-w-[22rem] text-white sm:max-w-[26rem] lg:max-w-[28rem] xl:max-w-[31rem]">
-              <h3 className="text-[1.95rem] font-light uppercase leading-[1.03] tracking-[-0.05em] sm:text-[2.35rem] md:text-[2.65rem] lg:text-[2.8rem] xl:text-[3.15rem]">
+              <h3 className="text-3xl font-light uppercase leading-[1.03] tracking-[-0.05em] sm:text-4xl md:text-5xl lg:text-5xl xl:text-6xl">
                 {title}
               </h3>
 
-              <p className="mt-4 max-w-[34rem] text-sm leading-[1.55] text-white/72 sm:mt-5 sm:text-[15px] md:text-base">
+              <p className="mt-4 max-w-[34rem] text-sm leading-[1.55] text-white sm:mt-5 sm:text-base md:text-lg">
                 {description}
               </p>
 
               <a
                 href={buttonHref}
-                className="mt-6 inline-flex min-h-[46px] w-full items-center justify-center rounded-[8px] bg-[linear-gradient(90deg,#B24002_0%,#FF5B01_100%)] px-5 py-3 text-sm font-light text-white transition hover:brightness-[0.98] sm:w-auto sm:min-w-[190px] sm:px-6 md:min-h-[48px] md:text-[15px]"
+                className="mt-6 inline-flex min-h-[46px] w-full items-center justify-center rounded-[8px] bg-[linear-gradient(90deg,#B24002_0%,#FF5B01_100%)] px-5 py-3 text-sm font-light text-white transition hover:brightness-[0.98] sm:w-auto sm:min-w-[190px] sm:px-6 md:min-h-[48px] md:text-base"
               >
                 {buttonLabel}
                 <span className="ml-2 text-lg leading-none">

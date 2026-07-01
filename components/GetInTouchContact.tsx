@@ -216,7 +216,7 @@ const GetInTouchContact = ({
           >
             <TextFluxUnveil text="Get In Touch" />
           </div>
-          <h2 className="bg-gradient-to-r from-[#282828] to-[#8C8C8C] bg-clip-text text-center text-3xl font-medium uppercase leading-tight text-transparent sm:text-4xl lg:text-left lg:text-5xl">
+          <h2 className="project-h2 text-center leading-tight lg:text-left">
             Ready To Publish Your Book?
           </h2>
 
@@ -230,8 +230,8 @@ const GetInTouchContact = ({
             {contactItems.map((item) => {
               const isAddressItem = item.id.startsWith("address");
               const contentClassName = isAddressItem
-                ? "text-md font-normal tracking-[-0.01em] text-[#777777]"
-                : "text-md font-normal text-[#777777] transition-colors hover:text-[#B24002]";
+                ? "text-base font-normal tracking-[-0.01em] text-[#777777] sm:text-lg"
+                : "text-base font-normal text-[#777777] transition-colors hover:text-[#B24002] sm:text-lg";
 
               return (
                 <div
@@ -280,7 +280,7 @@ const GetInTouchContact = ({
                 type="text"
                 placeholder="Name"
                 required
-                className="h-[42px] w-full font-mulish rounded-[5px] border border-[#bababa] bg-transparent px-3 text-[13px] text-[#4a4a4a] outline-none placeholder:text-[#9a9a9a]"
+                className="h-[42px] w-full rounded-[5px] border border-[#bababa] bg-transparent px-3 font-mulish text-sm text-[#4a4a4a] outline-none placeholder:text-[#9a9a9a] sm:text-base"
               />
 
               <div className="grid grid-cols-1 gap-y-3 sm:grid-cols-[250px_300px] sm:gap-x-3">
@@ -289,7 +289,7 @@ const GetInTouchContact = ({
                   type="email"
                   placeholder="Email"
                   required
-                  className="h-[42px] w-full rounded-[5px] border border-[#bababa] bg-transparent px-3 font-mulish text-[13px] text-[#4a4a4a] outline-none placeholder:text-[#9a9a9a] sm:w-[250px]"
+                  className="h-[42px] w-full rounded-[5px] border border-[#bababa] bg-transparent px-3 font-mulish text-sm text-[#4a4a4a] outline-none placeholder:text-[#9a9a9a] sm:w-[250px] sm:text-base"
                 />
 
                 <div
@@ -311,12 +311,12 @@ const GetInTouchContact = ({
                             className="h-full w-full"
                           />
                         ) : (
-                          <span className="text-[10px] font-semibold text-[#6f6f6f]">
+                          <span className="text-xs font-semibold text-[#6f6f6f]">
                             {selectedCountry.code}
                           </span>
                         )}
                       </span>
-                      <span className="text-[12px] font-medium text-[#6f6f6f]">
+                      <span className="text-sm font-medium text-[#6f6f6f]">
                         {selectedCountry.dialCode}
                       </span>
                       <span className="h-0 w-0 border-l-[4px] border-r-[4px] border-t-[5px] border-l-transparent border-r-transparent border-t-[#b0b0b0]" />
@@ -332,7 +332,7 @@ const GetInTouchContact = ({
                       type="tel"
                       placeholder="Phone Number"
                       required
-                      className="font-mulish min-w-0 flex-1 bg-transparent px-3 text-[13px] text-[#4a4a4a] outline-none placeholder:text-[#9a9a9a]"
+                      className="min-w-0 flex-1 bg-transparent px-3 font-mulish text-sm text-[#4a4a4a] outline-none placeholder:text-[#9a9a9a] sm:text-base"
                     />
                   </div>
 
@@ -354,7 +354,7 @@ const GetInTouchContact = ({
                               setSelectedCountryCode(country.code);
                               setIsCountryOpen(false);
                             }}
-                            className="flex w-full items-center gap-2 px-3 py-2 text-left text-[12px] text-[#4a4a4a] transition hover:bg-[#f2f2f2]"
+                            className="flex w-full items-center gap-2 px-3 py-2 text-left text-sm text-[#4a4a4a] transition hover:bg-[#f2f2f2] sm:text-base"
                           >
                             <span className="flex h-[14px] w-[21px] shrink-0 items-center overflow-hidden rounded-[2px]">
                               {CountryFlag ? (
@@ -363,7 +363,7 @@ const GetInTouchContact = ({
                                   className="h-full w-full"
                                 />
                               ) : (
-                                <span className="text-[10px] font-semibold text-[#6f6f6f]">
+                                <span className="text-xs font-semibold text-[#6f6f6f]">
                                   {country.code}
                                 </span>
                               )}
@@ -387,7 +387,7 @@ const GetInTouchContact = ({
                 placeholder="Message"
                 required
                 rows={5}
-                className="w-full font-mulish rounded-[5px] border border-[#bababa] bg-transparent px-3 py-3 text-[13px] text-[#4a4a4a] outline-none placeholder:text-[#9a9a9a]"
+                className="w-full rounded-[5px] border border-[#bababa] bg-transparent px-3 py-3 font-mulish text-sm text-[#4a4a4a] outline-none placeholder:text-[#9a9a9a] sm:text-base"
               />
 
               {submitMessage ? (

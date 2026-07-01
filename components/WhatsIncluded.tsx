@@ -41,7 +41,7 @@ const WhatsIncluded = () => {
             <TextFluxUnveil text="What's Included" />
           </div>
 
-          <h2 className="bg-[linear-gradient(90deg,#282828_0%,#8C8C8C_100%)] bg-clip-text text-[2.8rem] font-normal uppercase leading-[0.98] tracking-[-0.06em] text-transparent sm:text-[3.4rem] lg:text-[4.2rem]">
+          <h2 className="project-h2 leading-[0.98] tracking-[-0.06em]">
             Complete Publishing Solutions
           </h2>
 
@@ -51,7 +51,7 @@ const WhatsIncluded = () => {
                 <div className="mt-[1px] h-6 w-6 shrink-0">
                   <IncludedIcon src="/Mask group.svg" alt="" />
                 </div>
-                <p className="ml-4 text-[15px] font-light leading-[1.45] text-[#838383] sm:text-[16px]">
+                <p className="ml-4 text-base font-light leading-[1.45] text-[#838383] sm:text-lg">
                   {item}
                 </p>
               </li>

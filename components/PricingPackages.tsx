@@ -92,8 +92,8 @@ const pricingPackages: PricingPackage[] = [
 
 const IncludedItem = ({ text }: { text: string }) => {
   return (
-    <li className="flex items-start gap-2 text-[12.5px] leading-[1.55] text-[#8E8E8E] sm:text-[13px]">
-      <span className="mt-[2px] inline-flex h-4 w-4 shrink-0 items-center justify-center rounded-full border border-[#B24002] text-[10px] text-[#B24002]">
+    <li className="flex items-start gap-2 text-sm leading-[1.55] text-[#8E8E8E] sm:text-base">
+      <span className="mt-[2px] inline-flex h-4 w-4 shrink-0 items-center justify-center rounded-full border border-[#B24002] text-xs text-[#B24002]">
         ✓
       </span>
       <span>{text}</span>
@@ -116,11 +116,11 @@ const PricingPackages = () => {
             <TextFluxUnveil text="Pricing & Packages" />
           </motion.div>
 
-          <h2 className="mt-5 text-[2.35rem] font-normal uppercase leading-[1.06] tracking-[-0.05em] text-[#525252] sm:text-[3rem] lg:text-[3.65rem]">
+          <h2 className="project-h2 mt-5 leading-[1.06] tracking-[-0.05em]">
             Flexible Plans Tailored To Your Needs
           </h2>
 
-          <p className="mx-auto mt-5 max-w-[920px] text-[13px] leading-[1.6] text-[#9A9A9A] sm:text-[14px]">
+          <p className="mx-auto mt-5 max-w-[920px] text-sm leading-[1.6] text-[#9A9A9A] sm:text-base">
             "Pricing may vary depending on the genre, page and word count, and
             your specific needs for publishing, marketing, or ghostwriting. For
             a personalized estimate and detailed consultation, click on 'Custom
@@ -136,11 +136,11 @@ const PricingPackages = () => {
             >
               <div className="grid gap-8 lg:grid-cols-[250px_minmax(0,1fr)] lg:gap-12 xl:grid-cols-[280px_minmax(0,1fr)] xl:gap-16">
                 <div className="pt-1">
-                  <h3 className="text-[2rem] font-normal uppercase leading-none text-[#4A4A4A]">
+                  <h3 className="text-3xl font-normal uppercase leading-none text-[#4A4A4A] sm:text-4xl">
                     {pkg.name}
                   </h3>
 
-                  <p className="mt-4 max-w-[210px] text-[12.5px] leading-[1.55] text-[#777777] sm:max-w-[280px] lg:max-w-[240px] xl:max-w-[255px]">
+                  <p className="mt-4 max-w-[210px] text-sm leading-[1.55] text-[#777777] sm:max-w-[280px] sm:text-base lg:max-w-[240px] xl:max-w-[255px]">
                     {pkg.description}
                   </p>
 
@@ -170,7 +170,7 @@ const PricingPackages = () => {
                 </div>
 
                 <div>
-                  <p className="text-[12px] font-semibold text-[#777777]">
+                  <p className="text-sm font-semibold text-[#777777] sm:text-base">
                     Included:
                   </p>
 

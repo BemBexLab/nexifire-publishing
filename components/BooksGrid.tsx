@@ -1,13 +1,20 @@
 "use client";
 
-import type { CSSProperties } from "react";
+import { motion } from "motion/react";
 import Image from "next/image";
 import Link from "next/link";
-import { MdOutlineArrowOutward } from "react-icons/md";
-import { motion } from "motion/react";
+import React, { useState } from "react";
+import { FaArrowDown } from "react-icons/fa6";
 import TextFluxUnveil from "./TextFluxUnveil";
 
-const portfolioItems = [
+type BookItem = {
+  title: string;
+  author: string;
+  imageSrc: string;
+  amazonHref: string;
+};
+
+const books: BookItem[] = [
   {
     title: "The Bee's Colony",
     author: "Joel B. Gindo",
@@ -109,32 +116,38 @@ const portfolioItems = [
     author: "Dr. Burton Leroy Mack",
     imageSrc: "/books/image 651.png",
     amazonHref: "#",
-  },{
+  },
+  {
     title: "What The Hell is Wrong with My Dog",
     author: "Alisa Peterson-White",
     imageSrc: "/books/image 652.png",
     amazonHref: "#",
-  },{
+  },
+  {
     title: "The Message of Faith And the Love of God From our Blessed Mother",
     author: "J. Bernard Reyes",
     imageSrc: "/books/image 653.png",
     amazonHref: "#",
-  },{
+  },
+  {
     title: "The Bounce Back",
     author: "Craig Powell",
     imageSrc: "/books/image 654.png",
     amazonHref: "#",
-  },{
+  },
+  {
     title: "The Publican",
     author: "David Nava Monreal",
     imageSrc: "/books/image 65 (4).png",
     amazonHref: "#",
-  },{
+  },
+  {
     title: "The Buried Truth",
     author: "Scott J. Miller",
     imageSrc: "/books/image 65 (6).png",
     amazonHref: "#",
-  },{
+  },
+  {
     title: "The Keeper of Tears",
     author: "John C. Blackford",
     imageSrc: "/books/image 655.png",
@@ -142,7 +155,7 @@ const portfolioItems = [
   },
 ];
 
-const PortfolioGlow = () => (
+const BookGlow = () => (
   <svg
     xmlns="http://www.w3.org/2000/svg"
     width="388"
@@ -161,132 +174,124 @@ const PortfolioGlow = () => (
   </svg>
 );
 
-const Portfolio = () => {
-  const carouselItems = [...portfolioItems, ...portfolioItems];
-  const carouselStyle = {
-    "--portfolio-item-count": portfolioItems.length,
-    "--portfolio-duration": `${portfolioItems.length * 4}s`,
-  } as CSSProperties;
+const AmazonBagIcon = () => (
+  <svg
+    xmlns="http://www.w3.org/2000/svg"
+    width="23"
+    height="23"
+    viewBox="0 0 23 23"
+    fill="none"
+    aria-hidden="true"
+  >
+    <path
+      d="M3.58556 19.6981C3.58555 19.6981 3.58556 19.6981 3.58556 19.6981C4.73519 21.0833 6.87487 21.0833 11.1542 21.0833H11.8454C16.1247 21.0833 18.2644 21.0833 19.414 19.6981M3.58556 19.6981C2.43592 18.3129 2.83023 16.2098 3.61887 12.0038C4.17971 9.01266 4.46013 7.5171 5.52474 6.63355M19.414 19.6981C19.414 19.6981 19.414 19.6981 19.414 19.6981C20.5637 18.3129 20.1693 16.2098 19.3807 12.0038C18.8199 9.01266 18.5394 7.5171 17.4748 6.63355M17.4748 6.63355C17.4748 6.63355 17.4748 6.63355 17.4748 6.63355C16.4102 5.75 14.8886 5.75 11.8454 5.75H11.1542C8.11097 5.75 6.58935 5.75 5.52474 6.63355C5.52474 6.63355 5.52474 6.63355 5.52474 6.63355"
+      stroke="white"
+      strokeWidth="1.4375"
+    />
+    <path
+      d="M8.625 5.74984V4.7915C8.625 3.20369 9.91218 1.9165 11.5 1.9165C13.0878 1.9165 14.375 3.20369 14.375 4.7915V5.74984"
+      stroke="white"
+      strokeWidth="1.4375"
+      strokeLinecap="round"
+    />
+  </svg>
+);
+
+const BooksGrid = () => {
+  const initialVisibleCount = 12;
+  const loadMoreCount = 8;
+  const [visibleCount, setVisibleCount] = useState(initialVisibleCount);
+  const visibleBooks = books.slice(0, visibleCount);
+  const allItemsDisplayed = visibleCount >= books.length;
 
   return (
-    <section className="overflow-hidden bg-white px-4 pt-16 sm:px-6 md:px-10 lg:px-16">
-      <div className="mx-auto max-w-[1380px]">
-        <div className="mx-auto mb-9 max-w-[720px] text-center">
+    <section className="bg-white px-4 py-16 sm:px-6 lg:px-8 lg:py-20">
+      <div className="mx-auto max-w-[1260px]">
+        <div className="mx-auto max-w-[720px] text-center">
           <motion.div
-            className="mx-auto mb-3 flex w-fit items-center justify-center rounded-[8px] px-4 py-2 text-center text-sm text-black sm:px-5 sm:text-base"
+            className="mb-3 mx-auto flex w-fit items-center justify-center rounded-[8px] px-4 py-2 text-center text-sm text-black sm:px-5 sm:text-base"
             style={{
               background:
                 "linear-gradient(90deg, rgba(178, 64, 2, 0.13) 0%, rgba(178, 64, 2, 0.00) 79.96%)",
             }}
           >
-            <TextFluxUnveil text="PORTFOLIO" />
+            <TextFluxUnveil text="Featured Collection" />
           </motion.div>
-          <h2 className="project-h2 block w-full max-w-full text-center">
-            OUR PAST wORK
+
+          <h2 className="project-h2 mt-5 leading-[1.05]">
+            Books We&apos;ve
+            <br />
+            Helped Bring To Life
           </h2>
-          <p className="mx-auto mt-4 max-w-[640px] text-base leading-6 text-[#989391] sm:text-lg">
-            Explore a selection of books published through NexiFire
-            Publishing across multiple genres including business,
-            self-development, fiction, memoirs, and children's literature.
+
+          <p className="mx-auto mt-4 max-w-[840px] text-base leading-[1.65] text-[#777777] sm:text-lg">
+            Discover a growing collection of professionally published books
+            created through our publishing, editing, design, and marketing
+            services.
           </p>
         </div>
 
-        <div className="relative left-1/2 w-screen -translate-x-1/2 overflow-hidden pb-4">
-          <div
-            className="portfolio-carousel-track flex w-max px-6 sm:px-8 lg:px-10"
-            style={carouselStyle}
-          >
-            {carouselItems.map((item, index) => (
-              <article
-                key={`${item.title}-${index}`}
-                className="portfolio-carousel-card group flex shrink-0 flex-col items-center text-center"
-                style={{ width: "var(--portfolio-card-width)" }}
-                aria-hidden={index >= portfolioItems.length}
-              >
-                <div className="relative mb-10 w-full pt-3 sm:mb-11 sm:pt-4 lg:mb-12">
-                  <div className="pointer-events-none absolute left-1/2 top-[5.25rem] flex w-[118%] -translate-x-1/2 justify-center sm:top-[5.55rem] sm:w-[120%] lg:top-[5.8rem] lg:w-[122%]">
-                    <div className="w-full">
-                      <PortfolioGlow />
-                    </div>
-                  </div>
-
-                  {item.imageSrc ? (
-                    <Image
-                      src={item.imageSrc}
-                      alt={item.title}
-                      width={327}
-                      height={490}
-                      className="relative z-10 mx-auto h-auto w-[98%] rounded-[4px]"
-                    />
-                  ) : (
-                    <div className="relative z-10 mx-auto aspect-[327/490] w-[98%] rounded-[4px] bg-[#f3ede7]" />
-                  )}
+        <div className="mt-14 grid grid-cols-1 gap-x-8 gap-y-12 sm:grid-cols-2 lg:grid-cols-4 lg:gap-x-8 lg:gap-y-14">
+          {visibleBooks.map((book) => (
+            <article
+              key={book.title}
+              className="flex flex-col items-center text-center"
+            >
+              <div className="relative mb-12 w-full max-w-[258px] pt-3">
+                <div className="pointer-events-none absolute left-1/2 top-[3.9rem] w-[116%] -translate-x-1/2">
+                  <BookGlow />
                 </div>
 
-                <h3 className="mt-5 text-2xl font-semibold leading-[1.12] tracking-[-0.035em] text-[#282828]">
-                  {item.title}
-                </h3>
-                <p className="mt-2 text-base leading-none tracking-[-0.02em] text-[#444444] sm:text-lg">
-                  {item.author}
-                </p>
+                <Image
+                  src={book.imageSrc}
+                  alt={book.title}
+                  width={258}
+                  height={386}
+                  className="relative z-10 mx-auto h-auto w-[90%] rounded-[4px]"
+                />
+              </div>
 
-                <Link
-                  href={item.amazonHref}
-                  className="mt-6 inline-flex items-center justify-center rounded-[8px] bg-[linear-gradient(90deg,#B24002_0%,#FF5B01_100%)] px-4 py-[8px] text-base font-light leading-none text-white shadow-[0_8px_18px_rgba(255,91,1,0.24)] transition hover:brightness-[1.03] sm:text-lg"
-                >
-                  Buy on Amazon
-                  <span className="ml-1.5 text-sm leading-none">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="23" height="23" viewBox="0 0 23 23" fill="none">
-  <path d="M3.58556 19.6981C3.58555 19.6981 3.58556 19.6981 3.58556 19.6981C4.73519 21.0833 6.87487 21.0833 11.1542 21.0833H11.8454C16.1247 21.0833 18.2644 21.0833 19.414 19.6981M3.58556 19.6981C2.43592 18.3129 2.83023 16.2098 3.61887 12.0038C4.17971 9.01266 4.46013 7.5171 5.52474 6.63355M19.414 19.6981C19.414 19.6981 19.414 19.6981 19.414 19.6981C20.5637 18.3129 20.1693 16.2098 19.3807 12.0038C18.8199 9.01266 18.5394 7.5171 17.4748 6.63355M17.4748 6.63355C17.4748 6.63355 17.4748 6.63355 17.4748 6.63355C16.4102 5.75 14.8886 5.75 11.8454 5.75H11.1542C8.11097 5.75 6.58935 5.75 5.52474 6.63355C5.52474 6.63355 5.52474 6.63355 5.52474 6.63355" stroke="white" strokeWidth="1.4375"/>
-  <path d="M8.625 5.74984V4.7915C8.625 3.20369 9.91218 1.9165 11.5 1.9165C13.0878 1.9165 14.375 3.20369 14.375 4.7915V5.74984" stroke="white" strokeWidth="1.4375" strokeLinecap="round"/>
-</svg>
-                  </span>
-                </Link>
-              </article>
-            ))}
-          </div>
+              <h3 className="text-lg font-medium leading-[1.25] tracking-[-0.03em] text-[#272727] sm:text-xl">
+                {book.title}
+              </h3>
+              <p className="mt-2 text-sm leading-none text-[#444444] sm:text-base">
+                {book.author}
+              </p>
+
+              <Link
+                href={book.amazonHref}
+                className="mt-5 inline-flex items-center justify-center rounded-[8px] bg-[linear-gradient(90deg,#B24002_0%,#FF5B01_100%)] px-4 py-[8px] text-sm font-light leading-none text-white shadow-[0_8px_18px_rgba(255,91,1,0.24)] transition hover:brightness-[1.03] sm:text-base"
+              >
+                Buy on Amazon
+                <span className="ml-1.5 text-sm leading-none">
+                  <AmazonBagIcon />
+                </span>
+              </Link>
+            </article>
+          ))}
+        </div>
+
+        <div className="mt-20 flex justify-center">
+          <button
+            type="button"
+            onClick={() =>
+              setVisibleCount((current) =>
+                Math.min(current + loadMoreCount, books.length),
+              )
+            }
+            disabled={allItemsDisplayed}
+            className={`inline-flex items-center justify-center gap-2 rounded-[8px] px-6 py-3 text-base font-light leading-none transition sm:text-lg ${
+              allItemsDisplayed
+                ? "cursor-not-allowed bg-[#ece7e3] text-[#a29a94]"
+                : "bg-[linear-gradient(90deg,#B24002_0%,#FF5B01_100%)] text-white shadow-[0_8px_18px_rgba(255,91,1,0.24)] hover:brightness-[1.03]"
+            }`}
+          >
+            Load More <FaArrowDown />
+          </button>
         </div>
       </div>
-
-      <style jsx>{`
-        .portfolio-carousel-track {
-          --portfolio-card-width: 220px;
-          --portfolio-gap: 5rem;
-          gap: var(--portfolio-gap);
-          animation: portfolio-marquee var(--portfolio-duration) linear infinite;
-        }
-
-        @media (min-width: 640px) {
-          .portfolio-carousel-track {
-            --portfolio-card-width: 240px;
-            --portfolio-gap: 5.5rem;
-          }
-        }
-
-        @media (min-width: 1024px) {
-          .portfolio-carousel-track {
-            --portfolio-card-width: 258px;
-            --portfolio-gap: 6rem;
-          }
-        }
-
-        @keyframes portfolio-marquee {
-          from {
-            transform: translateX(0);
-          }
-
-          to {
-            transform: translateX(
-              calc(
-                -1 * var(--portfolio-item-count) *
-                  (var(--portfolio-card-width) + var(--portfolio-gap))
-              )
-            );
-          }
-        }
-      `}</style>
     </section>
   );
 };
 
-export default Portfolio;
+export default BooksGrid;

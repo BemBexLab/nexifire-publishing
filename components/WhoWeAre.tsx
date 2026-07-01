@@ -125,11 +125,11 @@ const WhoWeAre = () => {
               <TextFluxUnveil text="Who We Are" />
             </motion.div>
 
-            <h2 className="block w-full max-w-full font-jakarta bg-gradient-to-r from-[#282828] to-[#8C8C8C] bg-clip-text text-left text-[2.2rem] font-normal uppercase leading-[1.08] tracking-[-0.045em] text-transparent sm:text-[2.9rem] md:text-[3.6rem] lg:text-[4rem]">
+            <h2 className="project-h2 block w-full max-w-full text-left">
               WHY AUTHORS CHOOSE NEXIFIRE PUBLISHING
             </h2>
 
-            <p className="body-copy mt-5 w-full max-w-none text-base leading-[1.65] text-[#777777] sm:text-[1.02rem]">
+            <p className="mt-5 w-full max-w-none text-md leading-[1.65] text-[#777777] sm:text-lg">
               At NexFire Publishing, we combine creativity, industry expertise,
               and modern publishing solutions to help authors achieve their
               goals. Whether you're publishing your first book or expanding your
@@ -192,7 +192,7 @@ const WhoWeAre = () => {
             >
               <div className="relative flex items-center justify-center">
                 <div className="pointer-events-none absolute bottom-[-2px] h-[10px] w-[98px] rounded-full bg-black/60 blur-sm" />
-                <div className="relative z-10 text-[2.1rem] font-semibold leading-none tracking-[-0.04em] text-black sm:text-[2.4rem]">
+                <div className="relative z-10 text-3xl font-semibold leading-none tracking-[-0.04em] text-black sm:text-4xl">
                   {stat.value}
                 </div>
               </div>

@@ -61,7 +61,7 @@ export default function BooksSection() {
             />
           </div>
 
-          <h2 className="inline-block bg-gradient-to-r from-[#282828] to-[#8C8C8C] bg-clip-text font-jakarta text-[2.3rem] font-normal uppercase leading-[1.02] tracking-[-0.045em] text-transparent sm:text-[2.9rem] md:text-[3.4rem] lg:text-[3.7rem] xl:text-[4rem]">
+          <h2 className="project-h2 inline-block leading-[1.02]">
             Books We Help Bring To Life
           </h2>
 

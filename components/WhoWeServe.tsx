@@ -41,7 +41,7 @@ const WhoWeServe = () => {
                   : "border-[#EEE8E1] bg-white"
               }`}
             >
-              <div className="bg-[linear-gradient(90deg,#282828_0%,#8C8C8C_100%)] bg-clip-text text-[4rem] font-medium leading-none tracking-[-0.06em] text-transparent sm:text-[4.4rem]">
+              <div className="bg-[linear-gradient(90deg,#282828_0%,#8C8C8C_100%)] bg-clip-text text-6xl font-medium leading-none tracking-[-0.06em] text-transparent sm:text-7xl">
                 {stat.value}
               </div>
               <p className="mt-4 text-sm leading-[1.5] text-[#7D7D7D] sm:text-base">
@@ -75,7 +75,7 @@ const WhoWeServe = () => {
               <TextFluxUnveil text="Who We Serve" />
             </motion.div>
 
-            <h2 className="text-[2.35rem] font-normal uppercase leading-[1.04] tracking-[-0.055em] text-[#343434] sm:text-[2.9rem] lg:text-[4rem]">
+            <h2 className="project-h2 leading-[1.04] tracking-[-0.055em]">
               Authors We Support
             </h2>
 

@@ -45,7 +45,7 @@ const LatestBlogs = () => {
       <section className="flex w-full bg-[#FDF7F4] items-center justify-center py-12 sm:py-16 lg:py-20">
         <div className="mx-auto flex w-full max-w-[1180px] flex-col px-4 sm:px-6 lg:px-8">
           <m.h2
-            className="bg-gradient-to-r from-[#282828] to-[#8C8C8C] bg-clip-text pb-8 text-center font-jakarta text-3xl font-medium uppercase leading-tight text-transparent sm:pb-10 sm:text-4xl lg:text-5xl"
+            className="project-h2 pb-8 text-center leading-tight sm:pb-10"
             initial={{ opacity: 0, y: 20, filter: "blur(8px)" }}
             whileInView={{ opacity: 1, y: 0, filter: "blur(0px)" }}
             viewport={{ once: true, amount: 0.6 }}
@@ -81,20 +81,20 @@ const LatestBlogs = () => {
                 </div>
 
                 <div className="px-4 pb-5 pt-4 sm:px-5">
-                  <h3 className="min-h-[56px] text-[16px] font-normal leading-[1.45] text-[#444444] sm:min-h-[64px] sm:text-[17px]">
+                  <h3 className="min-h-[56px] text-base font-normal leading-[1.45] text-[#444444] sm:min-h-[64px] sm:text-lg">
                     {blog.title}
                   </h3>
 
-                  <p className="mt-2 text-[14px] leading-[1.65] text-[#777777]">
+                  <p className="mt-2 text-base leading-[1.65] text-[#777777]">
                     {blog.description}
                   </p>
 
                   <a
                     href="#"
-                    className="mt-4 inline-flex items-center gap-2 border-b border-[#f26a21] pb-[1px] text-[14px] font-normal leading-loose text-[#B24002]"
+                    className="mt-4 inline-flex items-center gap-2 border-b border-[#f26a21] pb-[1px] text-base font-normal leading-loose text-[#B24002]"
                   >
                     Learn More
-                    <span className="text-[16px] leading-none"><SlArrowRight size={13} /></span>
+                    <span className="text-base leading-none"><SlArrowRight size={13} /></span>
                   </a>
                 </div>
               </m.article>

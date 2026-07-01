@@ -113,7 +113,7 @@ const GetInTouchContactV2 = () => {
               <TextFluxUnveil text="Get In Touch" />
             </div>
 
-            <h2 className="max-w-[670px] text-4xl font-medium uppercase leading-[1.08] tracking-[-0.05em] text-[#4C4C4C] sm:text-5xl lg:text-[3.45rem]">
+            <h2 className="project-h2 max-w-[670px]">
               Ready To Publish Your Book?
             </h2>
 
@@ -157,7 +157,7 @@ const GetInTouchContactV2 = () => {
                   type="text"
                   placeholder="Name"
                   required
-                  className="h-[42px] w-full rounded-[5px] border border-[#BCBCBC] bg-transparent px-3 text-[13px] text-[#4a4a4a] outline-none placeholder:text-[#9a9a9a]"
+                  className="h-[42px] w-full rounded-[5px] border border-[#BCBCBC] bg-transparent px-3 text-sm text-[#4a4a4a] outline-none placeholder:text-[#9a9a9a] sm:text-base"
                 />
 
                 <div className="grid grid-cols-1 gap-3 sm:grid-cols-2">
@@ -166,14 +166,14 @@ const GetInTouchContactV2 = () => {
                     type="email"
                     placeholder="Email"
                     required
-                    className="h-[42px] w-full rounded-[5px] border border-[#BCBCBC] bg-transparent px-3 text-[13px] text-[#4a4a4a] outline-none placeholder:text-[#9a9a9a]"
+                    className="h-[42px] w-full rounded-[5px] border border-[#BCBCBC] bg-transparent px-3 text-sm text-[#4a4a4a] outline-none placeholder:text-[#9a9a9a] sm:text-base"
                   />
                   <input
                     name="phone"
                     type="tel"
                     placeholder="Phone Number"
                     required
-                    className="h-[42px] w-full rounded-[5px] border border-[#BCBCBC] bg-transparent px-3 text-[13px] text-[#4a4a4a] outline-none placeholder:text-[#9a9a9a]"
+                    className="h-[42px] w-full rounded-[5px] border border-[#BCBCBC] bg-transparent px-3 text-sm text-[#4a4a4a] outline-none placeholder:text-[#9a9a9a] sm:text-base"
                   />
                 </div>
 
@@ -182,7 +182,7 @@ const GetInTouchContactV2 = () => {
                   placeholder="Message"
                   required
                   rows={7}
-                  className="w-full rounded-[5px] border border-[#BCBCBC] bg-transparent px-3 py-3 text-[13px] text-[#4a4a4a] outline-none placeholder:text-[#9a9a9a]"
+                  className="w-full rounded-[5px] border border-[#BCBCBC] bg-transparent px-3 py-3 text-sm text-[#4a4a4a] outline-none placeholder:text-[#9a9a9a] sm:text-base"
                 />
 
                 {submitMessage ? (
@@ -222,7 +222,7 @@ const GetInTouchContactV2 = () => {
 
         <div className="mx-auto mt-14 flex max-w-[1240px] items-center gap-4">
           <div className="h-[3] flex-1 bg-[linear-gradient(270deg,#FF5B01_0%,rgba(255,91,1,0)_100%)]" />
-          <span className="shrink-0 bg-[linear-gradient(90deg,#282828_0%,#8C8C8C_100%)] bg-clip-text text-[1.05rem] font-medium uppercase leading-none tracking-[-0.02em] text-transparent">
+          <span className="shrink-0 bg-[linear-gradient(90deg,#282828_0%,#8C8C8C_100%)] bg-clip-text text-lg font-medium uppercase leading-none tracking-[-0.02em] text-transparent sm:text-xl">
             Contact Information
           </span>
           <div className="h-[3] flex-1 bg-[linear-gradient(90deg,#FF5B01_0%,rgba(255,91,1,0)_100%)]" />
@@ -241,7 +241,7 @@ const GetInTouchContactV2 = () => {
               <div className="flex h-[36px] w-[36px] items-center justify-center rounded-[6px] bg-[#B24002]">
                 {item.icon}
               </div>
-              <p className="mt-5 max-w-[240px] text-xl leading-[1.45] tracking-[-0.02em] text-[#8B8B8B]">
+              <p className="mt-5 max-w-[240px] text-lg leading-[1.45] tracking-[-0.02em] text-[#8B8B8B] sm:text-xl">
                 {item.label}
               </p>
             </article>

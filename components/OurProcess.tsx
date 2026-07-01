@@ -63,10 +63,10 @@ const OurProcess = () => {
           >
             <TextFluxUnveil text="OUR PROCESS" />
           </motion.div>
-          <h2 className="block w-full max-w-full font-jakarta bg-gradient-to-r from-[#282828] to-[#8C8C8C] bg-clip-text text-center text-[2.2rem] font-normal uppercase leading-[1.08] tracking-[-0.045em] text-transparent sm:text-[2.9rem] md:text-[3.6rem] lg:text-[4rem]">
+          <h2 className="project-h2 block w-full max-w-full text-center">
             Our Publishing Process
           </h2>
-          <p className="mx-auto mt-4 max-w-[700px] text-[14px] leading-6 text-[#989391] sm:text-[15px]">
+          <p className="mx-auto mt-4 max-w-[700px] text-base leading-6 text-[#989391] sm:text-lg">
             A streamlined journey designed to take your book from manuscript to published success.
           </p>
         </div>
@@ -117,13 +117,13 @@ const OurProcess = () => {
                 <div
                   className={`rounded-[16px] bg-white px-[14px] py-[14px] shadow-[0_2px_0_rgba(214,205,198,0.92),0_8px_15px_rgba(80,54,37,0.08)] sm:min-h-[162px] xl:min-h-0 ${step.cardHeight}`}
                   >
-                  <div className="text-[20px] font-normal leading-none tracking-[-0.04em] text-[#ef6d31]">
+                  <div className="text-2xl font-normal leading-none tracking-[-0.04em] text-[#ef6d31]">
                     {step.number}
                   </div>
-                  <h3 className="mt-7 text-[15px] font-semibold leading-[1.18] tracking-[-0.03em] text-[#4f4f4f]">
+                  <h3 className="mt-3 text-base font-semibold leading-[1.18] tracking-[-0.03em] text-[#4f4f4f] sm:text-md">
                     {step.title}
                   </h3>
-                  <p className="mt-3 text-[12px] leading-[1.36] text-[#444444]">
+                  <p className="mt-1 text-sm leading-[1.36] text-[#444444] sm:text-sm">
                     {step.description}
                   </p>
                 </div>

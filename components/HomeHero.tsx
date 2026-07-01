@@ -182,7 +182,7 @@ const DesktopHero = () => {
 
           <motion.h1
             variants={heroItemVariants}
-            className="relative isolate mx-auto mt-5 max-w-[1120px] text-center text-[3.95rem] font-medium uppercase leading-[1.04] tracking-[-0.035em] text-black 2xl:text-[4.45rem]"
+            className="relative isolate mx-auto mt-5 max-w-[1120px] text-center text-6xl font-medium uppercase leading-[1.04] tracking-[-0.035em] text-black 2xl:text-7xl"
           >
             <Image
               src={heroEllipse}
@@ -296,18 +296,18 @@ const CompactHero = () => {
                 className="pointer-events-none absolute left-0 top-[0.95em] h-[52px] w-[52px] -translate-y-1 rounded-full border-4 border-white/80 object-cover shadow-[0_14px_28px_rgba(0,0,0,0.14)] lg:h-[60px] lg:w-[60px]"
               />
               <HeroHeadingMark className="absolute left-[2.7rem] top-[0.8em] h-auto w-[78px] -rotate-16 lg:left-[3.15rem] lg:w-[92px]" />
-              <h1 className="max-w-[900px] text-center text-[3rem] font-medium uppercase leading-[1.04] tracking-[-0.04em] text-black lg:text-[3.65rem]">
+              <h1 className="max-w-[900px] text-center text-5xl font-medium uppercase leading-[1.04] tracking-[-0.04em] text-black lg:text-6xl">
                 Bring Your Story To Life With Nexifire Publishing
               </h1>
             </div>
-            <h1 className="mx-auto max-w-[360px] text-center text-[2.5rem] font-medium uppercase leading-[0.98] tracking-[-0.05em] text-black sm:max-w-[520px] sm:text-[3.1rem] md:hidden">
+            <h1 className="mx-auto max-w-[360px] text-center text-4xl font-medium uppercase leading-[0.98] tracking-[-0.05em] text-black sm:max-w-[520px] sm:text-5xl md:hidden">
               Bring Your Story To Life With Nexifire Publishing
             </h1>
           </motion.div>
 
           <motion.p
             variants={heroItemVariants}
-            className="body-copy mx-auto mt-5 max-w-[340px] text-center text-[#777777] sm:max-w-[620px] sm:text-lg md:max-w-[760px]"
+            className="mx-auto mt-5 max-w-[340px] text-center text-[#777777] sm:max-w-[620px] sm:text-lg md:max-w-[760px]"
           >
             Whether you&apos;ve written a memoir, business book, novel,
             self-help guide, or children&apos;s story, NexiFire Publishing
@@ -381,7 +381,7 @@ const CompactHero = () => {
             variants={heroItemVariants}
             className="relative z-30 -mt-8 w-[88%] max-w-[1040px] rounded-[18px] border border-white/70 bg-white/76 px-4 py-4 shadow-[0_18px_48px_rgba(0,0,0,0.08)] backdrop-blur-xl sm:-mt-10 sm:px-6"
           >
-            <div className="flex flex-wrap items-center justify-center gap-x-8 gap-y-3 text-sm font-medium uppercase tracking-[0.22em] text-[#a7a7a7] sm:text-[15px]">
+            <div className="flex flex-wrap items-center justify-center gap-x-8 gap-y-3 text-sm font-medium uppercase tracking-[0.22em] text-[#a7a7a7] sm:text-base">
               <span>Manuscript</span>
               <span>Design</span>
               <span>Publishing</span>

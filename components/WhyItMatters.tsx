@@ -68,11 +68,7 @@ const WhyItMatters = () => {
                 <TextFluxUnveil text="Why It Matters" />
               </motion.div>
               <h2
-                className="mt-5 max-w-[500px] bg-clip-text text-[2.45rem] font-normal uppercase leading-[1.02] tracking-[-0.05em] text-transparent sm:text-[3rem] lg:max-w-[620px] lg:text-[3.35rem] xl:max-w-[680px]"
-                style={{
-                  backgroundImage:
-                    "linear-gradient(90deg, #282828 0%, #8C8C8C 100%)",
-                }}
+                className="project-h2 mt-5 max-w-[500px] leading-[1.02] tracking-[-0.05em] lg:max-w-[620px] xl:max-w-[680px]"
               >
                 Your Book Has Readers Who Prefer to Listen: Are You Reaching Them?
               </h2>

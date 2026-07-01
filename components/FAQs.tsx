@@ -56,7 +56,7 @@ const FAQs = () => {
             <TextFluxUnveil text="FAQs" />
           </div>
 
-          <h2 className="block w-full max-w-full font-jakarta bg-gradient-to-r from-[#282828] to-[#8C8C8C] bg-clip-text text-left text-[2.2rem] font-normal uppercase leading-[1.08] tracking-[-0.045em] text-transparent sm:text-[2.9rem] md:text-[3.6rem] lg:text-[4rem]">
+          <h2 className="project-h2 block w-full max-w-full text-left">
             Frequently Asked Questions
           </h2>
         </div>
@@ -81,7 +81,7 @@ const FAQs = () => {
                     className="flex w-full items-center justify-between gap-4 px-5 py-[13px] text-left sm:px-6"
                   >
                     <span
-                      className={`pr-4 text-[13px] leading-[1.45] sm:text-[14px] ${
+                      className={`pr-4 text-sm leading-[1.45] sm:text-base ${
                         isOpen ? "text-[#B24002]" : "text-[#777777]"
                       }`}
                     >
@@ -113,7 +113,7 @@ const FAQs = () => {
 
                   {isOpen ? (
                     <div className="border-t border-[#f6eee8] px-5 pb-4 pt-3 sm:px-6">
-                      <p className="max-w-[92%] text-[12px] leading-[1.65] text-[#777777] sm:text-[13px]">
+                      <p className="max-w-[92%] text-sm leading-[1.65] text-[#777777] sm:text-base">
                         {faq.answer}
                       </p>
                     </div>
@@ -139,18 +139,18 @@ const FAQs = () => {
               </svg>
             </div>
 
-            <h3 className="mx-auto mt-5 max-w-[390px] text-[1.7rem] font-normal uppercase leading-[1.04] tracking-[-0.045em] text-[#4a4a4a]">
+            <h3 className="mx-auto mt-5 max-w-[390px] text-3xl font-normal uppercase leading-[1.04] tracking-[-0.045em] text-[#4a4a4a] sm:text-4xl">
               Do You Have More Questions?
             </h3>
 
-            <p className="mx-auto mt-4 max-w-[240px] text-[12px] leading-[1.7] text-[#777777] sm:text-[13px]">
+            <p className="mx-auto mt-4 max-w-[240px] text-sm leading-[1.7] text-[#777777] sm:text-base">
               Lorem Ipsum is simply dummy text of the printing and typesetting
               industry.
             </p>
 
             <Link
               href="#"
-              className="mt-6 inline-flex items-center justify-center rounded-[8px] bg-[linear-gradient(90deg,#B24002_0%,#FF5B01_100%)] px-5 py-[7px] text-[15px] font-light leading-none text-white shadow-[0_10px_20px_rgba(255,91,1,0.18)] transition hover:brightness-[1.03]"
+              className="mt-6 inline-flex items-center justify-center rounded-[8px] bg-[linear-gradient(90deg,#B24002_0%,#FF5B01_100%)] px-5 py-[7px] text-base font-light leading-none text-white shadow-[0_10px_20px_rgba(255,91,1,0.18)] transition hover:brightness-[1.03] sm:text-lg"
             >
               Contact Us
               <span className="ml-1.5 text-sm leading-none">
