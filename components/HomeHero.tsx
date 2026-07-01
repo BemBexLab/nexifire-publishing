@@ -63,6 +63,17 @@ const compactShowcaseBooks = [
 
 const compactShelfBooks = [heroBooks[0], heroBooks[4]];
 
+const heroLogos = [
+  { src: "/clients/clients01.webp", alt: "Client logo 1" },
+  { src: "/clients/clients02.webp", alt: "Client logo 2" },
+  { src: "/clients/clients03.webp", alt: "Client logo 3" },
+  { src: "/clients/clients04.webp", alt: "Client logo 4" },
+  { src: "/clients/clients05.webp", alt: "Client logo 5" },
+  { src: "/clients/clients06.webp", alt: "Client logo 6" },
+  { src: "/clients/clients07.webp", alt: "Client logo 7" },
+  { src: "/clients/clients08.webp", alt: "Client logo 8" },
+];
+
 const HeroAccent = ({ className = "" }: { className?: string }) => {
   return (
     <svg
@@ -156,95 +167,141 @@ const HeroButtons = () => {
   );
 };
 
-const DesktopHero = () => {
+const LogoMarquee = ({
+  className = "",
+  imageClassName = "",
+  cardClassName = "",
+}: {
+  className?: string;
+  imageClassName?: string;
+  cardClassName?: string;
+}) => {
+  const marqueeLogos = [...heroLogos, ...heroLogos];
+
   return (
-    <section className="relative hidden min-h-[940px] overflow-hidden bg-[url('/Rectangle%201.png')] bg-cover bg-center bg-no-repeat px-8 pb-[236px] pt-6 text-[#1f1f1f] xl:block 2xl:min-h-[1020px] [clip-path:polygon(0%_0%,100%_0%,100%_100%,82%_100%,76%_92%,24%_92%,18%_100%,0%_100%)]">
-      <HeroAccent className="pointer-events-none absolute left-[2%] top-[24%] z-10 h-[150px] w-[150px] -rotate-90 2xl:h-[176px] 2xl:w-[176px]" />
-      <HeroAccent className="pointer-events-none absolute right-[2%] top-[12%] z-10 h-[150px] w-[150px] 2xl:h-[176px] 2xl:w-[176px]" />
-
-      <div className="relative z-30 mx-auto flex w-full max-w-[1360px] flex-col">
-        <motion.div
-          className="relative z-30 mx-auto flex w-full max-w-[1180px] flex-col items-center px-4 pb-[248px] pt-[86px] text-center text-black 2xl:pb-[308px] 2xl:pt-[102px]"
-          variants={heroContainerVariants}
-          initial={false}
-          animate="visible"
-        >
-          <motion.div
-            variants={heroItemVariants}
-            className="mx-auto flex w-fit items-center justify-center rounded-[8px] px-5 py-3 text-center text-lg 2xl:text-xl"
-            style={{
-              background:
-                "linear-gradient(90deg, rgba(178, 64, 2, 0.13) 0%, rgba(178, 64, 2, 0.00) 79.96%)",
-            }}
-          >
-            <TextFluxUnveil text="NEXIFIRE PUBLISHING" />
-          </motion.div>
-
-          <motion.h1
-            variants={heroItemVariants}
-            className="relative isolate mx-auto mt-5 max-w-[1120px] text-center text-6xl font-medium uppercase leading-[1.04] tracking-[-0.035em] text-black 2xl:text-7xl"
+    <div
+      className={`pointer-events-none absolute overflow-hidden ${className}`}
+      aria-label="Featured partner logos"
+    >
+      <div className="absolute inset-0 bg-[linear-gradient(90deg,rgba(255,255,255,0.98)_0%,rgba(255,255,255,0)_10%,rgba(255,255,255,0)_90%,rgba(255,255,255,0.98)_100%)]" />
+      <div className="hero-logo-marquee relative flex w-max items-center gap-4 sm:gap-5 lg:gap-7">
+        {marqueeLogos.map((logo, index) => (
+          <div
+            key={`${logo.src}-${index}`}
+            className={`flex h-[68px] min-w-[150px] items-center justify-center px-5 sm:h-[76px] sm:min-w-[170px] lg:h-[84px] lg:min-w-[188px] lg:px-6 ${cardClassName}`}
           >
             <Image
-              src={heroEllipse}
-              alt=""
-              width={500}
-              height={500}
-              preload
-              placeholder="blur"
-              className="pointer-events-none absolute left-1/2 top-8 -z-10 w-[440px] max-w-none -translate-x-1/2 translate-y-14 rotate-2 2xl:w-[500px] 2xl:translate-y-16"
-              aria-hidden="true"
+              src={logo.src}
+              alt={logo.alt}
+              width={132}
+              height={44}
+              sizes="132px"
+              className={`h-auto w-full object-contain opacity-80 grayscale transition ${imageClassName}`}
             />
-            <span className="relative inline-block w-fit max-w-[920px]">
-              <Image
-                src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?auto=format&fit=crop&w=240&q=80"
-                alt=""
-                width={84}
-                height={84}
-                sizes="(min-width: 1536px) 66px, 58px"
-                className="pointer-events-none absolute -left-[8.75rem] top-[0.96em] h-[58px] w-[58px] -translate-y-1 rounded-full border-4 border-white/70 object-cover shadow-[0_10px_24px_rgba(0,0,0,0.14)] 2xl:-left-[10.6rem] 2xl:h-[66px] 2xl:w-[66px]"
-              />
-              <HeroHeadingMark className="absolute -left-[5.25rem] top-[0.82em] h-auto w-[88px] -rotate-16 2xl:-left-[6.5rem] 2xl:w-[104px]" />
-              <span className="block max-w-[920px] text-center">
-                Bring Your Story To Life With Nexifire Publishing
-              </span>
-            </span>
-          </motion.h1>
-
-          <motion.p
-            variants={heroItemVariants}
-            className="body-copy mx-auto mt-4 max-w-[860px] text-center text-lg text-[#777777] 2xl:max-w-[900px]"
-          >
-            Whether you&apos;ve written a memoir, business book, novel,
-            self-help guide, or children&apos;s story, NexiFire Publishing
-            provides the professional support needed to transform your
-            manuscript into a published book readers will remember.
-          </motion.p>
-
-          <HeroButtons />
-        </motion.div>
+          </div>
+        ))}
       </div>
+    </div>
+  );
+};
 
-      <div className="pointer-events-none absolute inset-x-0 bottom-[-54px] z-20 h-[39%] w-full 2xl:bottom-[-88px] 2xl:h-[42%]">
-        <div className="flex h-full w-full items-end justify-center gap-0 px-4 2xl:px-10">
-          {heroBooks.map((book) => (
-            <div
-              key={book.src}
-              className={`${book.className} ${book.offsetClass}`}
+const DesktopHero = () => {
+  return (
+    <div className="relative hidden xl:block">
+      <LogoMarquee
+        className="bottom-0 left-1/2 z-0 w-[74%] max-w-[1180px] -translate-x-1/2"
+        cardClassName="min-w-[144px] rounded-[18px] px-4 sm:min-w-[156px] lg:min-w-[168px] lg:px-5"
+        imageClassName="opacity-70"
+      />
+
+      <section className="relative min-h-[940px] overflow-hidden bg-[url('/Rectangle%201.png')] bg-cover bg-center bg-no-repeat px-8 pb-[236px] pt-6 text-[#1f1f1f] 2xl:min-h-[1020px] [clip-path:polygon(0%_0%,100%_0%,100%_100%,82%_100%,76%_92%,24%_92%,18%_100%,0%_100%)]">
+        <HeroAccent className="pointer-events-none absolute left-[2%] top-[24%] z-10 h-[150px] w-[150px] -rotate-90 2xl:h-[176px] 2xl:w-[176px]" />
+        <HeroAccent className="pointer-events-none absolute right-[2%] top-[12%] z-10 h-[150px] w-[150px] 2xl:h-[176px] 2xl:w-[176px]" />
+
+        <div className="relative z-30 mx-auto flex w-full max-w-[1360px] flex-col">
+          <motion.div
+            className="relative z-30 mx-auto flex w-full max-w-[1180px] flex-col items-center px-4 pb-[248px] pt-[86px] text-center text-black 2xl:pb-[308px] 2xl:pt-[102px]"
+            variants={heroContainerVariants}
+            initial={false}
+            animate="visible"
+          >
+            <motion.div
+              variants={heroItemVariants}
+              className="mx-auto flex w-fit items-center justify-center rounded-[8px] px-5 py-3 text-center text-lg 2xl:text-xl"
+              style={{
+                background:
+                  "linear-gradient(90deg, rgba(178, 64, 2, 0.13) 0%, rgba(178, 64, 2, 0.00) 79.96%)",
+              }}
+            >
+              <TextFluxUnveil text="NEXIFIRE PUBLISHING" />
+            </motion.div>
+
+            <motion.h1
+              variants={heroItemVariants}
+              className="relative isolate mx-auto mt-5 max-w-[1120px] text-center text-6xl font-medium uppercase leading-[1.04] tracking-[-0.035em] text-black 2xl:text-7xl"
             >
               <Image
-                src={book.src}
-                alt={book.alt}
-                width={book.width}
-                height={Math.round((book.width * 504) / 355)}
-                sizes="(min-width: 1536px) 22vw, (min-width: 1280px) 19vw, 0px"
-                className="h-auto w-full drop-shadow-[0_20px_36px_rgba(0,0,0,0.22)]"
-                priority
+                src={heroEllipse}
+                alt=""
+                width={500}
+                height={500}
+                preload
+                placeholder="blur"
+                className="pointer-events-none absolute left-1/2 top-8 -z-10 w-[440px] max-w-none -translate-x-1/2 translate-y-14 rotate-2 2xl:w-[500px] 2xl:translate-y-16"
+                aria-hidden="true"
               />
-            </div>
-          ))}
+              <span className="relative inline-block w-fit max-w-[920px]">
+                <Image
+                  src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?auto=format&fit=crop&w=240&q=80"
+                  alt=""
+                  width={84}
+                  height={84}
+                  sizes="(min-width: 1536px) 66px, 58px"
+                  className="pointer-events-none absolute -left-[8.75rem] top-[0.96em] h-[58px] w-[58px] -translate-y-1 rounded-full border-4 border-white/70 object-cover shadow-[0_10px_24px_rgba(0,0,0,0.14)] 2xl:-left-[10.6rem] 2xl:h-[66px] 2xl:w-[66px]"
+                />
+                <HeroHeadingMark className="absolute -left-[5.25rem] top-[0.82em] h-auto w-[88px] -rotate-16 2xl:-left-[6.5rem] 2xl:w-[104px]" />
+                <span className="block max-w-[920px] text-center">
+                  Bring Your Story To Life With Nexifire Publishing
+                </span>
+              </span>
+            </motion.h1>
+
+            <motion.p
+              variants={heroItemVariants}
+              className="body-copy mx-auto mt-4 max-w-[860px] text-center text-lg text-[#777777] 2xl:max-w-[900px]"
+            >
+              Whether you&apos;ve written a memoir, business book, novel,
+              self-help guide, or children&apos;s story, NexiFire Publishing
+              provides the professional support needed to transform your
+              manuscript into a published book readers will remember.
+            </motion.p>
+
+            <HeroButtons />
+          </motion.div>
         </div>
-      </div>
-    </section>
+
+        <div className="pointer-events-none absolute inset-x-0 bottom-[-54px] z-20 h-[39%] w-full 2xl:bottom-[-88px] 2xl:h-[42%]">
+          <div className="flex h-full w-full items-end justify-center gap-0 px-4 2xl:px-10">
+            {heroBooks.map((book) => (
+              <div
+                key={book.src}
+                className={`${book.className} ${book.offsetClass}`}
+              >
+                <Image
+                  src={book.src}
+                  alt={book.alt}
+                  width={book.width}
+                  height={Math.round((book.width * 504) / 355)}
+                  sizes="(min-width: 1536px) 22vw, (min-width: 1280px) 19vw, 0px"
+                  className="h-auto w-full drop-shadow-[0_20px_36px_rgba(0,0,0,0.22)]"
+                  priority
+                />
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+    </div>
   );
 };
 
@@ -324,6 +381,11 @@ const CompactHero = () => {
           animate="visible"
           className="relative mx-auto mt-12 flex max-w-[1180px] flex-col items-center pb-12 sm:pb-16 md:pb-20"
         >
+          <LogoMarquee
+            className="inset-x-0 bottom-[36px] z-30 py-2 sm:bottom-[42px] md:bottom-[48px]"
+            imageClassName="opacity-75"
+          />
+
           <div className="pointer-events-none absolute bottom-[5%] left-1/2 hidden h-[110px] w-[88%] -translate-x-1/2 rounded-[999px] bg-[radial-gradient(circle,rgba(178,64,2,0.14)_0%,rgba(178,64,2,0)_72%)] blur-2xl sm:block" />
 
           <div className="relative flex w-full max-w-[1020px] items-end justify-center gap-0">
@@ -400,6 +462,21 @@ const HomeHero = () => {
     <>
       <DesktopHero />
       <CompactHero />
+      <style jsx global>{`
+        @keyframes hero-logo-marquee {
+          from {
+            transform: translate3d(0, 0, 0);
+          }
+          to {
+            transform: translate3d(-50%, 0, 0);
+          }
+        }
+
+        .hero-logo-marquee {
+          animation: hero-logo-marquee 28s linear infinite;
+          will-change: transform;
+        }
+      `}</style>
     </>
   );
 };
