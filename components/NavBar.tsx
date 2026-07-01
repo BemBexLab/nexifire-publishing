@@ -7,16 +7,25 @@ import { useEffect, useState } from "react";
 
 const navLinks = [
   { label: "Home", href: "/" },
-  { label: "Publishing Services", href: "/publishing-services" },
+  { label: "Publishing Services", href: "/publishing-services", hasDropdown: true },
   { label: "Our Books", href: "/our-books" },
   { label: "Who We Are", href: "/who-we-are" },
   { label: "Blog", href: "/blogs" },
   { label: "Contact", href: "/contact" },
 ];
 
+const publishingServiceLinks = [
+  { label: "Book Publishing", href: "/publishing-services/book-publishing" },
+  { label: "Ghost Writing", href: "/publishing-services/ghost-writing" },
+  { label: "Book Marketing", href: "/publishing-services/book-marketing" },
+  { label: "Book Editing", href: "/publishing-services/book-editing" },
+  { label: "Book Cover Design", href: "/publishing-services/book-cover-design" },
+  { label: "Audio Book", href: "/publishing-services/audio-book" },
+];
+
 export default function NavBar() {
   const [mobileOpen, setMobileOpen] = useState(false);
-  const [isHidden, setIsHidden] = useState(false);
+  const [mobileServicesOpen, setMobileServicesOpen] = useState(false);
   const pathname = usePathname();
 
   const isActiveLink = (href: string) => {
@@ -28,30 +37,8 @@ export default function NavBar() {
   };
 
   useEffect(() => {
-    let lastY = window.scrollY;
-
-    const onScroll = () => {
-      const currentY = window.scrollY;
-      const scrollingDown = currentY > lastY;
-      const passedThreshold = currentY > 40;
-
-      if (mobileOpen) {
-        setIsHidden(false);
-      } else if (scrollingDown && passedThreshold) {
-        setIsHidden(true);
-      } else {
-        setIsHidden(false);
-      }
-
-      lastY = currentY;
-    };
-
-    window.addEventListener("scroll", onScroll, { passive: true });
-    return () => window.removeEventListener("scroll", onScroll);
-  }, [mobileOpen]);
-
-  useEffect(() => {
     setMobileOpen(false);
+    setMobileServicesOpen(false);
   }, [pathname]);
 
   useEffect(() => {
@@ -62,18 +49,20 @@ export default function NavBar() {
     };
   }, [mobileOpen]);
 
+  const isPublishingServicesActive =
+    pathname === "/publishing-services" ||
+    pathname.startsWith("/publishing-services/");
+
   return (
     <nav
-      className={`fixed inset-x-0 top-0 z-[100] w-full px-3 py-2 transition-transform duration-300 sm:px-4 lg:px-5 ${
-        isHidden ? "-translate-y-full" : "translate-y-0"
-      }`}
+      className="fixed inset-x-0 top-0 z-[100] w-full px-3 py-2 sm:px-4 lg:px-5"
     >
       <div className="mx-auto w-full max-w-[1540px]">
-        <div className="relative overflow-hidden rounded-[20px] border border-white/28 bg-[linear-gradient(135deg,rgba(255,255,255,0.11)_0%,rgba(255,255,255,0.03)_38%,rgba(255,255,255,0.08)_100%)] shadow-[0_12px_28px_rgba(15,23,42,0.05),inset_0_1px_0_rgba(255,255,255,0.48),inset_0_-1px_0_rgba(255,255,255,0.08)] backdrop-blur-[6px] backdrop-saturate-[1.18] sm:rounded-[22px] xl:rounded-[24px]">
-          <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(circle_at_12%_18%,rgba(255,255,255,0.24),transparent_28%),radial-gradient(circle_at_82%_22%,rgba(255,255,255,0.12),transparent_24%),radial-gradient(circle_at_50%_140%,rgba(255,255,255,0.06),transparent_34%)]" />
+        <div className="relative rounded-[20px] border border-white/20 bg-[linear-gradient(135deg,rgba(255,255,255,0.05)_0%,rgba(255,255,255,0.01)_38%,rgba(255,255,255,0.03)_100%)] shadow-[0_10px_22px_rgba(15,23,42,0.03),inset_0_1px_0_rgba(255,255,255,0.38),inset_0_-1px_0_rgba(255,255,255,0.04)] backdrop-blur-[2px] backdrop-saturate-[1.08] sm:rounded-[22px] xl:rounded-[24px]">
+          <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(circle_at_12%_18%,rgba(255,255,255,0.14),transparent_24%),radial-gradient(circle_at_82%_22%,rgba(255,255,255,0.07),transparent_22%),radial-gradient(circle_at_50%_140%,rgba(255,255,255,0.03),transparent_30%)]" />
           <div className="pointer-events-none absolute inset-x-[16%] top-0 h-px bg-[linear-gradient(90deg,transparent,rgba(255,255,255,0.92),transparent)]" />
-          <div className="pointer-events-none absolute -left-10 top-1/2 h-24 w-24 -translate-y-1/2 rounded-full bg-white/6 blur-2xl" />
-          <div className="pointer-events-none absolute -right-6 top-0 h-20 w-28 rounded-full bg-white/5 blur-2xl" />
+          <div className="pointer-events-none absolute -left-10 top-1/2 h-24 w-24 -translate-y-1/2 rounded-full bg-white/[0.03] blur-2xl" />
+          <div className="pointer-events-none absolute -right-6 top-0 h-20 w-28 rounded-full bg-white/[0.02] blur-2xl" />
 
           <div className="relative flex items-center justify-between gap-3 px-3 py-3 sm:px-4 md:px-5 lg:px-6 xl:px-8 2xl:px-10">
           <Link href="/" className="flex shrink-0 items-center">
@@ -90,11 +79,58 @@ export default function NavBar() {
 
           <ul className="hidden min-w-0 flex-1 items-center justify-center gap-6 xl:flex 2xl:gap-10">
             {navLinks.map((link) => {
+              if (link.hasDropdown) {
+                const className = `inline-flex items-center gap-2 whitespace-nowrap text-sm transition-colors duration-150 2xl:text-base ${
+                  isPublishingServicesActive
+                    ? "border-b-2 border-[#c0784a] pb-0.5 font-semibold text-black"
+                    : "font-medium text-[#5f5f5f] hover:text-[#1c1c1c]"
+                }`;
+
+                return (
+                  <li key={link.label} className="group relative">
+                    <button
+                      type="button"
+                      className={className}
+                      aria-haspopup="true"
+                    >
+                      Publishing Services
+                      <span className="text-xs text-[#8a8a8a] transition-transform duration-200 group-hover:rotate-180">
+                        ▼
+                      </span>
+                    </button>
+
+                    <div className="pointer-events-none absolute left-0 top-full z-30 w-[340px] pt-4 opacity-0 transition-all duration-200 group-hover:pointer-events-auto group-hover:opacity-100">
+                      <div className="rounded-[20px] border border-[#e9e9e9] bg-[#FFFFFF] p-[18px] shadow-[0_18px_34px_rgba(31,31,31,0.10)]">
+                        <div className="grid gap-0">
+                          {publishingServiceLinks.map((serviceLink) => {
+                            const isActive = isActiveLink(serviceLink.href);
+
+                            return (
+                              <Link
+                                key={serviceLink.href}
+                                href={serviceLink.href}
+                                className={`border-b border-[#f1f1f1] px-0 py-[18px] text-[15px] leading-none transition-colors duration-150 last:border-b-0 ${
+                                  isActive
+                                    ? "font-medium text-[#c0784a]"
+                                    : "font-normal text-[#1f1f1f] hover:text-[#c0784a]"
+                                }`}
+                              >
+                                {serviceLink.label}
+                              </Link>
+                            );
+                          })}
+                        </div>
+                      </div>
+                    </div>
+                  </li>
+                );
+              }
+
               const isActive = isActiveLink(link.href);
               const className = `whitespace-nowrap text-sm transition-colors duration-150 2xl:text-base ${
                 isActive
-                  ? "border-b-2 border-[#c0784a] pb-0.5 font-normal text-black"
-                  : "font-normal text-[#5f5f5f] hover:text-[#1c1c1c]"
+                  ? "border-b-2 border-[#c0784a] pb-0.5 font-semibold text-black"
+                  : "font-medium text-[#5f5f5f] hover:text-[#1c1c1c]"
               }`;
 
               return (
@@ -119,7 +155,7 @@ export default function NavBar() {
 
           <button
             type="button"
-            className="flex flex-col gap-[5px] rounded-xl border border-white/30 bg-[linear-gradient(180deg,rgba(255,255,255,0.18)_0%,rgba(255,255,255,0.06)_100%)] p-2 shadow-[0_8px_20px_rgba(15,23,42,0.04),inset_0_1px_0_rgba(255,255,255,0.55)] backdrop-blur-[6px] xl:hidden"
+            className="flex flex-col gap-[5px] rounded-xl border border-white/22 bg-[linear-gradient(180deg,rgba(255,255,255,0.10)_0%,rgba(255,255,255,0.03)_100%)] p-2 shadow-[0_6px_16px_rgba(15,23,42,0.03),inset_0_1px_0_rgba(255,255,255,0.42)] backdrop-blur-[2px] xl:hidden"
             onClick={() => setMobileOpen((value) => !value)}
             aria-expanded={mobileOpen}
             aria-controls="mobile-nav-menu"
@@ -146,16 +182,62 @@ export default function NavBar() {
 
         {mobileOpen ? (
           <div id="mobile-nav-menu" className="mt-3 xl:hidden">
-            <div className="relative overflow-hidden rounded-[24px] border border-white/34 bg-[linear-gradient(145deg,rgba(255,255,255,0.30)_0%,rgba(255,255,255,0.12)_42%,rgba(255,255,255,0.22)_100%)] px-5 py-5 shadow-[0_16px_34px_rgba(31,31,31,0.08),inset_0_1px_0_rgba(255,255,255,0.60),inset_0_-1px_0_rgba(255,255,255,0.10)] backdrop-blur-[8px] backdrop-saturate-[1.2] sm:px-6 md:px-7">
-              <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(circle_at_top_left,rgba(255,255,255,0.20),transparent_28%),radial-gradient(circle_at_bottom_right,rgba(255,255,255,0.08),transparent_30%)]" />
+            <div className="relative overflow-hidden rounded-[24px] border border-white/24 bg-[linear-gradient(145deg,rgba(255,255,255,0.14)_0%,rgba(255,255,255,0.05)_42%,rgba(255,255,255,0.10)_100%)] px-5 py-5 shadow-[0_14px_28px_rgba(31,31,31,0.06),inset_0_1px_0_rgba(255,255,255,0.46),inset_0_-1px_0_rgba(255,255,255,0.05)] backdrop-blur-[3px] backdrop-saturate-[1.08] sm:px-6 md:px-7">
+              <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(circle_at_top_left,rgba(255,255,255,0.10),transparent_24%),radial-gradient(circle_at_bottom_right,rgba(255,255,255,0.04),transparent_28%)]" />
               <div className="relative">
               <div className="grid gap-2 md:grid-cols-2 md:gap-x-6">
+                <div className="rounded-xl px-3 py-3">
+                  <button
+                    type="button"
+                    onClick={() =>
+                      setMobileServicesOpen((current) => !current)
+                    }
+                    className={`flex w-full items-center justify-between text-left text-sm transition-colors duration-150 sm:text-base ${
+                      isPublishingServicesActive
+                        ? "font-semibold text-[#c0784a]"
+                        : "font-medium text-[#5a5a5a]"
+                    }`}
+                  >
+                    <span>Publishing Services</span>
+                    <span
+                      className={`text-xs transition-transform duration-200 ${
+                        mobileServicesOpen ? "rotate-180" : ""
+                      }`}
+                    >
+                      ▼
+                    </span>
+                  </button>
+
+                  {mobileServicesOpen ? (
+                    <div className="mt-3 grid gap-0 rounded-[16px] border border-[#ededed] bg-white px-4 py-1">
+                      {publishingServiceLinks.map((link) => {
+                        const isActive = isActiveLink(link.href);
+
+                        return (
+                          <Link
+                            key={link.href}
+                            href={link.href}
+                            onClick={() => setMobileOpen(false)}
+                            className={`border-b border-[#f1f1f1] px-0 py-4 text-sm transition-colors duration-150 last:border-b-0 sm:text-base ${
+                              isActive
+                                ? "font-semibold text-[#c0784a]"
+                                : "font-medium text-[#1f1f1f] hover:text-[#c0784a]"
+                            }`}
+                          >
+                            {link.label}
+                          </Link>
+                        );
+                      })}
+                    </div>
+                  ) : null}
+                </div>
+
                 {navLinks.map((link) => {
                   const isActive = isActiveLink(link.href);
                   const className = `rounded-xl px-3 py-3 text-sm transition-colors duration-150 sm:text-base ${
                     isActive
-                      ? "bg-[linear-gradient(180deg,rgba(255,255,255,0.34)_0%,rgba(255,242,232,0.42)_100%)] font-semibold text-[#c0784a] shadow-[inset_0_1px_0_rgba(255,255,255,0.55)]"
-                      : "text-[#5a5a5a] hover:bg-white/18 hover:text-[#1c1c1c]"
+                      ? "bg-[linear-gradient(180deg,rgba(255,255,255,0.18)_0%,rgba(255,242,232,0.22)_100%)] font-semibold text-[#c0784a] shadow-[inset_0_1px_0_rgba(255,255,255,0.42)]"
+                      : "text-[#5a5a5a] hover:bg-white/10 hover:text-[#1c1c1c]"
                   }`;
 
                   return (
