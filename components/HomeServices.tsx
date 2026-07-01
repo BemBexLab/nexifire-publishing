@@ -105,7 +105,7 @@ const HomeServices = () => {
       >
         <motion.div
           variants={itemVariants}
-          className="mx-auto flex w-full max-w-[320px] flex-col items-center text-center sm:max-w-[640px] lg:max-w-[760px]"
+          className="mx-auto flex w-full max-w-[320px] flex-col items-center text-center sm:max-w-[640px] lg:max-w-full"
         >
           <motion.div
             className="mx-auto mb-3 flex w-fit items-center justify-center rounded-[8px] px-4 py-2 text-center text-sm text-black sm:px-5 sm:text-base"
@@ -121,7 +121,7 @@ const HomeServices = () => {
             Everything You Need To Publish Successfully
           </h2>
 
-          <p className="body-copy mt-4 max-w-[620px] text-[#777777] sm:text-lg">
+          <p className="body-copy mt-4 max-w-full text-[#777777] sm:text-lg">
             A complete publishing ecosystem designed to help authors bring their
             books to life.
           </p>

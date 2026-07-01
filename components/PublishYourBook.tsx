@@ -48,11 +48,11 @@ const PublishYourBook = ({
   overlayClassName = defaultProps.overlayClassName,
 }: PublishYourBookProps) => {
   return (
-    <section>
-      <div className="flex w-full flex-col items-center">
+    <section className="px-4 sm:px-6 lg:px-8">
+      <div className="mx-auto flex w-full max-w-[1240px] flex-col items-center">
         <motion.div
           variants={itemVariants}
-          className="relative w-3/4 overflow-hidden rounded-[18px] border border-black/10"
+          className="relative w-full overflow-hidden rounded-[18px] border border-black/10 sm:rounded-[20px] lg:rounded-[24px]"
           style={{
             backgroundImage: `url('${backgroundImageSrc}')`,
             backgroundPosition: "center",
@@ -62,19 +62,19 @@ const PublishYourBook = ({
           aria-label={backgroundAlt}
         >
           <div className={`absolute inset-0 ${overlayClassName}`.trim()} />
-          <div className="relative z-10 flex min-h-[300px] w-full items-end px-5 py-6 sm:min-h-[320px] sm:px-8 sm:py-8 lg:min-h-[384px] lg:items-center lg:px-7">
-            <div className="max-w-1/3 text-white">
-              <h3 className="text-[1.95rem] font-light uppercase leading-[1.03] tracking-[-0.05em] sm:text-[2.35rem] lg:text-[2.8rem]">
+          <div className="relative z-10 flex min-h-[320px] w-full items-end px-5 py-6 sm:min-h-[360px] sm:px-8 sm:py-8 md:min-h-[400px] md:px-10 lg:min-h-[384px] lg:items-center lg:px-10 lg:py-10 xl:min-h-[420px] xl:px-12">
+            <div className="w-full max-w-[22rem] text-white sm:max-w-[26rem] lg:max-w-[28rem] xl:max-w-[31rem]">
+              <h3 className="text-[1.95rem] font-light uppercase leading-[1.03] tracking-[-0.05em] sm:text-[2.35rem] md:text-[2.65rem] lg:text-[2.8rem] xl:text-[3.15rem]">
                 {title}
               </h3>
 
-              <p className="mt-4 text-sm leading-[1.55] text-white/72 sm:mt-5">
+              <p className="mt-4 max-w-[34rem] text-sm leading-[1.55] text-white/72 sm:mt-5 sm:text-[15px] md:text-base">
                 {description}
               </p>
 
               <a
                 href={buttonHref}
-                className="mt-6 inline-flex w-full items-center justify-center rounded-[8px] bg-[linear-gradient(90deg,#B24002_0%,#FF5B01_100%)] px-5 py-3 text-sm font-light text-white transition hover:brightness-[0.98] sm:w-1/2"
+                className="mt-6 inline-flex min-h-[46px] w-full items-center justify-center rounded-[8px] bg-[linear-gradient(90deg,#B24002_0%,#FF5B01_100%)] px-5 py-3 text-sm font-light text-white transition hover:brightness-[0.98] sm:w-auto sm:min-w-[190px] sm:px-6 md:min-h-[48px] md:text-[15px]"
               >
                 {buttonLabel}
                 <span className="ml-2 text-lg leading-none">

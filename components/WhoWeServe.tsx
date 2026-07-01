@@ -29,7 +29,7 @@ const genres = [
 
 const WhoWeServe = () => {
   return (
-    <section className="overflow-hidden bg-white px-4 py-16 sm:px-6 lg:px-10 lg:py-20">
+    <section className="overflow-hidden bg-transparent px-4 py-16 sm:px-6 lg:px-10 lg:py-20">
       <div className="mx-auto grid max-w-[1380px] items-center gap-12 lg:grid-cols-[1fr_0.92fr] lg:gap-14">
         <div className="grid gap-4 sm:grid-cols-2 sm:gap-5">
           {stats.map((stat) => (

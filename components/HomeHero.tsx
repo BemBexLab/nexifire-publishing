@@ -14,7 +14,8 @@ const heroBooks = [
     width: 188,
     className:
       "w-[19.4%] min-w-[92px] max-w-[158px] sm:min-w-[122px] sm:max-w-[196px] md:min-w-[168px] md:max-w-[270px] lg:w-[22.2%] lg:min-w-[260px] lg:max-w-[390px]",
-    offsetClass: "mb-[-6px] sm:mb-[-8px] md:mb-[-10px] lg:mb-[-12px]",
+    offsetClass:
+      "mb-[-6px] sm:mb-[-8px] md:mb-[-10px] lg:mb-[-12px] xl:mb-[-18px] 2xl:mb-[-12px]",
   },
   {
     src: "/Stephen 3.png",
@@ -22,7 +23,8 @@ const heroBooks = [
     width: 208,
     className:
       "w-[19.4%] min-w-[92px] max-w-[158px] sm:min-w-[122px] sm:max-w-[196px] md:min-w-[168px] md:max-w-[270px] lg:w-[22.2%] lg:min-w-[260px] lg:max-w-[390px]",
-    offsetClass: "mb-[14px] sm:mb-[24px] md:mb-[34px] lg:mb-[50px]",
+    offsetClass:
+      "mb-[14px] sm:mb-[24px] md:mb-[34px] lg:mb-[50px] xl:mb-[22px] 2xl:mb-[50px]",
   },
   {
     src: "/Stephen 4.png",
@@ -30,7 +32,8 @@ const heroBooks = [
     width: 220,
     className:
       "w-[19.4%] min-w-[92px] max-w-[158px] sm:min-w-[122px] sm:max-w-[196px] md:min-w-[168px] md:max-w-[270px] lg:w-[22.2%] lg:min-w-[260px] lg:max-w-[390px]",
-    offsetClass: "mb-[26px] sm:mb-[42px] md:mb-[66px] lg:mb-[100px]",
+    offsetClass:
+      "mb-[26px] sm:mb-[42px] md:mb-[66px] lg:mb-[100px] xl:mb-[46px] 2xl:mb-[100px]",
   },
   {
     src: "/Stephen 6.png",
@@ -38,7 +41,8 @@ const heroBooks = [
     width: 208,
     className:
       "w-[19.4%] min-w-[92px] max-w-[158px] sm:min-w-[122px] sm:max-w-[196px] md:min-w-[168px] md:max-w-[270px] lg:w-[22.2%] lg:min-w-[260px] lg:max-w-[390px]",
-    offsetClass: "mb-[14px] sm:mb-[24px] md:mb-[34px] lg:mb-[50px]",
+    offsetClass:
+      "mb-[14px] sm:mb-[24px] md:mb-[34px] lg:mb-[50px] xl:mb-[22px] 2xl:mb-[50px]",
   },
   {
     src: "/Stephen 5.png",
@@ -46,7 +50,8 @@ const heroBooks = [
     width: 188,
     className:
       "w-[19.4%] min-w-[92px] max-w-[158px] sm:min-w-[122px] sm:max-w-[196px] md:min-w-[168px] md:max-w-[270px] lg:w-[22.2%] lg:min-w-[260px] lg:max-w-[390px]",
-    offsetClass: "mb-[-6px] sm:mb-[-8px] md:mb-[-10px] lg:mb-[-12px]",
+    offsetClass:
+      "mb-[-6px] sm:mb-[-8px] md:mb-[-10px] lg:mb-[-12px] xl:mb-[-18px] 2xl:mb-[-12px]",
   },
 ];
 
@@ -153,13 +158,13 @@ const HeroButtons = () => {
 
 const DesktopHero = () => {
   return (
-    <section className="relative hidden min-h-[900px] overflow-hidden bg-[url('/Rectangle%201.png')] bg-cover bg-center bg-no-repeat px-8 pb-[220px] pt-6 text-[#1f1f1f] xl:block 2xl:min-h-[980px] [clip-path:polygon(0%_0%,100%_0%,100%_100%,82%_100%,76%_92%,24%_92%,18%_100%,0%_100%)]">
+    <section className="relative hidden min-h-[940px] overflow-hidden bg-[url('/Rectangle%201.png')] bg-cover bg-center bg-no-repeat px-8 pb-[236px] pt-6 text-[#1f1f1f] xl:block 2xl:min-h-[1020px] [clip-path:polygon(0%_0%,100%_0%,100%_100%,82%_100%,76%_92%,24%_92%,18%_100%,0%_100%)]">
       <HeroAccent className="pointer-events-none absolute left-[2%] top-[24%] z-10 h-[150px] w-[150px] -rotate-90 2xl:h-[176px] 2xl:w-[176px]" />
       <HeroAccent className="pointer-events-none absolute right-[2%] top-[12%] z-10 h-[150px] w-[150px] 2xl:h-[176px] 2xl:w-[176px]" />
 
       <div className="relative z-30 mx-auto flex w-full max-w-[1360px] flex-col">
         <motion.div
-          className="relative z-30 mx-auto flex w-full max-w-[1180px] flex-col items-center px-4 pb-[220px] pt-[86px] text-center text-black 2xl:pt-[102px]"
+          className="relative z-30 mx-auto flex w-full max-w-[1180px] flex-col items-center px-4 pb-[248px] pt-[86px] text-center text-black 2xl:pb-[308px] 2xl:pt-[102px]"
           variants={heroContainerVariants}
           initial={false}
           animate="visible"
@@ -209,14 +214,17 @@ const DesktopHero = () => {
             variants={heroItemVariants}
             className="body-copy mx-auto mt-4 max-w-[860px] text-center text-lg text-[#777777] 2xl:max-w-[900px]"
           >
-            Whether you've written a memoir, business book, novel, self-help guide, or children's story, NexiFire Publishing provides the professional support needed to transform your manuscript into a published book readers will remember.
+            Whether you&apos;ve written a memoir, business book, novel,
+            self-help guide, or children&apos;s story, NexiFire Publishing
+            provides the professional support needed to transform your
+            manuscript into a published book readers will remember.
           </motion.p>
 
           <HeroButtons />
         </motion.div>
       </div>
 
-      <div className="pointer-events-none absolute inset-x-0 bottom-[-48px] z-20 h-[44%] w-full 2xl:bottom-[-70px] 2xl:h-[48%]">
+      <div className="pointer-events-none absolute inset-x-0 bottom-[-54px] z-20 h-[39%] w-full 2xl:bottom-[-88px] 2xl:h-[42%]">
         <div className="flex h-full w-full items-end justify-center gap-0 px-4 2xl:px-10">
           {heroBooks.map((book) => (
             <div
@@ -301,7 +309,10 @@ const CompactHero = () => {
             variants={heroItemVariants}
             className="body-copy mx-auto mt-5 max-w-[340px] text-center text-[#777777] sm:max-w-[620px] sm:text-lg md:max-w-[760px]"
           >
-            Whether you've written a memoir, business book, novel, self-help guide, or children's story, NexiFire Publishing provides the professional support needed to transform your manuscript into a published book readers will remember.
+            Whether you&apos;ve written a memoir, business book, novel,
+            self-help guide, or children&apos;s story, NexiFire Publishing
+            provides the professional support needed to transform your
+            manuscript into a published book readers will remember.
           </motion.p>
 
           <HeroButtons />
