@@ -6,10 +6,23 @@ import React from "react";
 import TextFluxUnveil from "./TextFluxUnveil";
 
 type IntroductionProps = {
+  eyebrow?: string;
+  title?: string;
+  description?: string;
   imageSrc?: string;
 };
 
-const Introduction = ({ imageSrc = "" }: IntroductionProps) => {
+const Introduction = ({
+  eyebrow = "Introduction",
+  title = "Publish With Confidence",
+  description = "",
+  imageSrc = "",
+}: IntroductionProps) => {
+  const descriptionParts = description
+    .split(/\n\s*\n/)
+    .map((part) => part.trim())
+    .filter(Boolean);
+
   return (
     <section className="bg-white px-4 py-14 sm:px-6 md:py-18 lg:px-8 lg:py-24">
       <div className="mx-auto grid w-full max-w-[1540px] items-center gap-12 lg:grid-cols-[1.12fr_0.88fr] lg:gap-16 xl:gap-24">
@@ -42,24 +55,23 @@ const Introduction = ({ imageSrc = "" }: IntroductionProps) => {
                 "linear-gradient(90deg, rgba(178, 64, 2, 0.13) 0%, rgba(178, 64, 2, 0.00) 79.96%)",
             }}
           >
-            <TextFluxUnveil text="Introduction" />
+            <TextFluxUnveil text={eyebrow} />
           </motion.div>
 
           <h2 className="mt-5 max-w-[500px] text-[2.45rem] font-normal uppercase leading-[1.02] tracking-[-0.05em] text-[#333333] sm:text-[3rem] lg:max-w-[620px] lg:text-[3.35rem] xl:max-w-[680px]">
-            Publish With Confidence
+            {title}
           </h2>
 
-          <p className="mt-6 max-w-[520px] text-[15px] leading-[1.65] text-[#9a9a9a] sm:text-base lg:max-w-[620px] xl:max-w-[680px]">
-            Publishing a book is an exciting milestone, but navigating the
-            process alone can be overwhelming. Our publishing specialists guide
-            you through every stage, ensuring your book is professionally
-            prepared, published, and positioned for success.
-          </p>
-
-          <p className="mt-5 max-w-[520px] text-[15px] leading-[1.65] text-[#9a9a9a] sm:text-base lg:max-w-[620px] xl:max-w-[680px]">
-            From manuscript preparation and formatting to distribution and
-            launch support, we help bring your vision to life.
-          </p>
+          {descriptionParts.map((part, index) => (
+            <p
+              key={`${part.slice(0, 40)}-${index}`}
+              className={`max-w-[520px] text-[15px] leading-[1.65] text-[#9a9a9a] sm:text-base lg:max-w-[620px] xl:max-w-[680px] ${
+                index === 0 ? "mt-6" : "mt-5"
+              }`}
+            >
+              {part}
+            </p>
+          ))}
         </div>
       </div>
     </section>

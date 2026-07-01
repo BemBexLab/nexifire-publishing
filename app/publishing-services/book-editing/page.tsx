@@ -15,22 +15,26 @@ const page = () => {
   return (
     <section className="overflow-hidden bg-white">
       <PageHero
-        eyebrow="Professional Ghostwriting Services"
-        title={`Turn Your Ideas Into\nA Compelling Book`}
-        description="Whether you have a detailed outline, a rough concept, or simply a story to tell, NexiFire Publishing's ghostwriting experts help transform your vision into a professionally written manuscript."
-        buttonLabel="Start Your Publishing Journey"
+        eyebrow="Professional Book Editing Services"
+        title={`Refine Your Manuscript With Expert Editing`}
+        description="Every great book begins with great writing. Our professional editors help improve clarity, structure, consistency, and readability while preserving your unique voice and message."
+        buttonLabel="Edit Your Manuscript Today"
       />
       <Introduction
         eyebrow="Introduction"
         title="Bring Your Story To Life"
         description={`Writing a book takes time, expertise, and dedication. Our professional ghostwriters work closely with you to capture your voice, ideas, and message while creating a polished manuscript ready for publication.
 
-From memoirs and business books to self-help guides and fiction, we help authors turn ideas into impactful books.`}
+            From memoirs and business books to self-help guides and fiction, we help authors turn ideas into impactful books.`}
         imageSrc="/image 67.png"
       />
       <OurProcess />
       <WhyChoose />
       <PublishYourBook />
+      <WhatsIncluded />
+      <div className="bg-[#FDF7F4]">
+        <WhoWeServe />
+      </div>
       <ImageDesc
         title="Expert Self Publishing Services in Australia: Complete Support"
         paragraphs={[
@@ -44,10 +48,6 @@ From memoirs and business books to self-help guides and fiction, we help authors
         reverse={true}
       />
       <div className="h-20" />
-      <div className="bg-[#FDF7F4]">
-        <WhoWeServe />
-      </div>
-      <WhatsIncluded />
       <FAQs />
       <Testimonials />
       <GetInTouchContact />

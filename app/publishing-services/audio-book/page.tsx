@@ -9,26 +9,28 @@ import Testimonials from "@/components/Testimonials";
 import WhatsIncluded from "@/components/WhatsIncluded";
 import WhoWeServe from "@/components/WhoWeServe";
 import WhyChoose from "@/components/WhyChoose";
+import WhyItMatters from "@/components/WhyItMatters";
 import React from "react";
 
 const page = () => {
   return (
     <section className="overflow-hidden bg-white">
       <PageHero
-        eyebrow="Professional Ghostwriting Services"
-        title={`Turn Your Ideas Into\nA Compelling Book`}
-        description="Whether you have a detailed outline, a rough concept, or simply a story to tell, NexiFire Publishing's ghostwriting experts help transform your vision into a professionally written manuscript."
-        buttonLabel="Start Your Publishing Journey"
+        eyebrow="Professional Audiobook Services"
+        title={`Turn Your Book Into An\nEngaging Listening Experience`}
+        description="Expand your reach and connect with modern audiences through professionally produced audiobooks. From narration to final mastering, we help bring your story to life through the power of voice."
+        buttonLabel="Start Your Audiobook Today"
       />
       <Introduction
         eyebrow="Introduction"
         title="Bring Your Story To Life"
         description={`Writing a book takes time, expertise, and dedication. Our professional ghostwriters work closely with you to capture your voice, ideas, and message while creating a polished manuscript ready for publication.
 
-From memoirs and business books to self-help guides and fiction, we help authors turn ideas into impactful books.`}
+            From memoirs and business books to self-help guides and fiction, we help authors turn ideas into impactful books.`}
         imageSrc="/image 67.png"
       />
       <OurProcess />
+      <WhyItMatters />
       <WhyChoose />
       <PublishYourBook />
       <ImageDesc
@@ -43,10 +45,13 @@ From memoirs and business books to self-help guides and fiction, we help authors
         imageAlt=""
         reverse={true}
       />
+
       <div className="h-20" />
+
       <div className="bg-[#FDF7F4]">
         <WhoWeServe />
       </div>
+      
       <WhatsIncluded />
       <FAQs />
       <Testimonials />

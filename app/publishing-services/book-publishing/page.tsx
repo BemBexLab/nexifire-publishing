@@ -4,6 +4,7 @@ import ImageDesc from "@/components/ImageDesc";
 import Introduction from "@/components/Introduction";
 import OurProcess from "@/components/OurProcess";
 import PageHero from "@/components/PageHero";
+import PricingPackages from "@/components/PricingPackages";
 import PublishYourBook from "@/components/PublishYourBook";
 import Testimonials from "@/components/Testimonials";
 import WhatsIncluded from "@/components/WhatsIncluded";
@@ -15,22 +16,29 @@ const page = () => {
   return (
     <section className="overflow-hidden bg-white">
       <PageHero
-        eyebrow="Professional Ghostwriting Services"
-        title={`Turn Your Ideas Into\nA Compelling Book`}
-        description="Whether you have a detailed outline, a rough concept, or simply a story to tell, NexiFire Publishing's ghostwriting experts help transform your vision into a professionally written manuscript."
+        eyebrow="BOOK PUBLISHING"
+        title={`Professional Book\nPublishing Services`}
+        description="Whether you're a first-time author or an experienced writer, NexiFire Publishing provides expert publishing solutions designed to transform your manuscript into a professionally published book that reaches readers worldwide."
         buttonLabel="Start Your Publishing Journey"
       />
       <Introduction
         eyebrow="Introduction"
-        title="Bring Your Story To Life"
-        description={`Writing a book takes time, expertise, and dedication. Our professional ghostwriters work closely with you to capture your voice, ideas, and message while creating a polished manuscript ready for publication.
-
-From memoirs and business books to self-help guides and fiction, we help authors turn ideas into impactful books.`}
-        imageSrc="/image 67.png"
+        title="Publish With Confidence"
+        description={`Publishing a book is an exciting milestone, but navigating the process alone can be overwhelming. Our publishing specialists guide you through every stage, ensuring your book is professionally prepared, published, and positioned for success.
+          
+          From manuscript preparation and formatting to distribution and launch support, we help bring your vision to life.`}
+        imageSrc="/0eee94f7-4643-4e46-8b95-cc9232497a79 1.png"
       />
       <OurProcess />
+      <PricingPackages />
       <WhyChoose />
-      <PublishYourBook />
+      <PublishYourBook
+        backgroundAlt="A girl reading a book"
+        backgroundImageSrc="/Frame 2147225866.png"
+        buttonLabel="Publish Your Book"
+        description="Partner with NexiFire Publishing and take the next step toward publishing your book with confidence."
+        title="Ready To Become A Published Author?"
+      />
       <ImageDesc
         title="Expert Self Publishing Services in Australia: Complete Support"
         paragraphs={[
@@ -39,9 +47,8 @@ From memoirs and business books to self-help guides and fiction, we help authors
           "What sets us apart is our complete, all-in-one approach. With experienced ghostwriters, editors, designers, publishing specialists, and marketing professionals working together under one roof, we make sure your book is created, published, and promoted to the highest professional standards. We provide access to 40+ global publishing platforms, giving your book worldwide reach while you retain full ownership of everything you have written.",
           "At Nexifire Publishing, our mission is simple: to help authors publish with confidence, build credibility, and connect their stories with readers around the world.",
         ]}
-        imageSrc="/Rectangle 23834 (1).png"
-        imageAlt=""
-        reverse={true}
+        imageSrc="/Rectangle 23834.png"
+        imageAlt="Publishing team"
       />
       <div className="h-20" />
       <div className="bg-[#FDF7F4]">

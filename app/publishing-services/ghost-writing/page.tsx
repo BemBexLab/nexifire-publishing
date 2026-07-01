@@ -2,6 +2,7 @@ import FAQs from "@/components/FAQs";
 import GetInTouchContact from "@/components/GetInTouchContact";
 import ImageDesc from "@/components/ImageDesc";
 import Introduction from "@/components/Introduction";
+import MosiacCards from "@/components/MosiacCards";
 import OurProcess from "@/components/OurProcess";
 import PageHero from "@/components/PageHero";
 import PublishYourBook from "@/components/PublishYourBook";
@@ -28,9 +29,15 @@ const page = () => {
 From memoirs and business books to self-help guides and fiction, we help authors turn ideas into impactful books.`}
         imageSrc="/image 67.png"
       />
+      <MosiacCards />
       <OurProcess />
       <WhyChoose />
+      <div className="h-20" />
       <PublishYourBook />
+      <WhatsIncluded />
+      <div className="bg-[#FDF7F4]">
+        <WhoWeServe />
+      </div>
       <ImageDesc
         title="Expert Self Publishing Services in Australia: Complete Support"
         paragraphs={[
@@ -41,13 +48,7 @@ From memoirs and business books to self-help guides and fiction, we help authors
         ]}
         imageSrc="/Rectangle 23834 (1).png"
         imageAlt=""
-        reverse={true}
       />
-      <div className="h-20" />
-      <div className="bg-[#FDF7F4]">
-        <WhoWeServe />
-      </div>
-      <WhatsIncluded />
       <FAQs />
       <Testimonials />
       <GetInTouchContact />

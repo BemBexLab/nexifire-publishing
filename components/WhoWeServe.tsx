@@ -75,12 +75,13 @@ const WhoWeServe = () => {
               <TextFluxUnveil text="Who We Serve" />
             </motion.div>
 
-            <h2 className="text-4xl font-medium uppercase leading-[1.05] tracking-[-0.05em] text-[#555555] sm:text-5xl lg:text-[3.6rem]">
+            <h2 className="text-[2.35rem] font-normal uppercase leading-[1.04] tracking-[-0.055em] text-[#343434] sm:text-[2.9rem] lg:text-[4rem]">
               Authors We Support
             </h2>
 
             <p className="mt-4 max-w-[560px] text-base leading-[1.7] text-[#8C8C8C] sm:text-lg">
-              We proudly work with authors across a wide range of genres, including:
+              We proudly work with authors across a wide range of genres,
+              including:
             </p>
 
             <div className="mt-6 flex flex-wrap gap-3">
