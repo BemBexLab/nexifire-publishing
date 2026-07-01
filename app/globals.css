@@ -24,6 +24,20 @@ body {
   color: var(--foreground);
 }
 
+@media (pointer: fine) {
+  html,
+  body,
+  a,
+  button,
+  input,
+  textarea,
+  select,
+  label,
+  [role="button"] {
+    cursor: url("/busy%20(1).svg") 7 0, auto !important;
+  }
+}
+
 .body-copy {
   font-size: 1rem;
   line-height: 1.65;
