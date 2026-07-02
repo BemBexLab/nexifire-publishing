@@ -45,7 +45,7 @@ const CheckItem = ({ children }: { children: React.ReactNode }) => {
           className="h-full w-full object-contain"
         />
       </div>
-      <span className="text-base leading-[1.5] text-[#6F6F6F] sm:text-lg">{children}</span>
+      <span className="text-base leading-[1.5] text-[#444444] sm:text-lg">{children}</span>
     </li>
   );
 };
@@ -89,7 +89,7 @@ const MosiacCards = () => {
               <h3 className="text-lg font-semibold leading-tight text-[#2E2E2E] sm:text-xl">
                 Idea Development & Research
               </h3>
-              <p className="mt-4 max-w-[500px] text-base leading-[1.6] text-[#6F6F6F] sm:text-lg">
+              <p className="mt-4 max-w-[500px] text-base leading-[1.6] text-[#444444] sm:text-lg">
                 Lorem ipsum dolor sit amet consectetur. Quis sit facilisis neque
                 habitant. Bibendum sed faucibus eget lacus etiam. Proin eget
                 rutrum sed tortor parturient nisl.
@@ -102,7 +102,7 @@ const MosiacCards = () => {
               <h3 className="text-lg font-semibold leading-tight text-[#2E2E2E] sm:text-xl">
                 Genres We Cover
               </h3>
-              <p className="mt-4 text-base leading-[1.6] text-[#6F6F6F] sm:text-lg">
+              <p className="mt-4 text-base leading-[1.6] text-[#444444] sm:text-lg">
                 Ink Founders offers writing services across a wide range of
                 genres, including:
               </p>
@@ -134,7 +134,7 @@ const MosiacCards = () => {
               <h3 className="text-lg font-semibold leading-tight text-[#2E2E2E] sm:text-xl">
                 Original, High-Quality Writing
               </h3>
-              <p className="mt-4 text-base leading-[1.6] text-[#6F6F6F] sm:text-lg">
+              <p className="mt-4 text-base leading-[1.6] text-[#444444] sm:text-lg">
                 Every eBook is written from scratch, ensuring:
               </p>
               <ul className="mt-4 space-y-2.5">
@@ -150,7 +150,7 @@ const MosiacCards = () => {
               <h3 className="text-lg font-semibold leading-tight text-[#2E2E2E] sm:text-xl">
                 Voice Matching (Ghostwriting)
               </h3>
-              <p className="mt-4 max-w-[500px] text-base leading-[1.6] text-[#6F6F6F] sm:text-lg">
+              <p className="mt-4 max-w-[500px] text-base leading-[1.6] text-[#444444] sm:text-lg">
                 For ghostwriting projects, we carefully adapt to your tone,
                 style, and personality so the book truly feels like you wrote
                 it.
