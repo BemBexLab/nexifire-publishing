@@ -139,18 +139,18 @@ const FAQs = () => {
               </svg>
             </div>
 
-            <h3 className="mx-auto mt-5 max-w-[390px] text-3xl font-normal uppercase leading-[1.04] tracking-[-0.045em] text-[#4a4a4a] sm:text-4xl">
+            <h3 className="mx-auto mt-5 max-w-[390px] text-3xl font-normal uppercase leading-[1.04] tracking-[-0.045em] text-[#4a4a4a] sm:text-3xl">
               Do You Have More Questions?
             </h3>
 
-            <p className="mx-auto mt-4 max-w-[240px] text-sm leading-[1.7] text-[#777777] sm:text-base">
+            <p className="mx-auto mt-4 max-w-[240px] text-sm leading-[1.7] text-[#777777] sm:text-md">
               Lorem Ipsum is simply dummy text of the printing and typesetting
               industry.
             </p>
 
             <Link
               href="#"
-              className="mt-6 inline-flex items-center justify-center rounded-[8px] bg-[linear-gradient(90deg,#B24002_0%,#FF5B01_100%)] px-5 py-[7px] text-base font-light leading-none text-white shadow-[0_10px_20px_rgba(255,91,1,0.18)] transition hover:brightness-[1.03] sm:text-lg"
+              className="mt-6 inline-flex items-center justify-center rounded-[8px] bg-[linear-gradient(90deg,#B24002_0%,#FF5B01_100%)] px-5 py-[7px] text-base font-light leading-none text-white shadow-[0_10px_20px_rgba(255,91,1,0.18)] transition hover:brightness-[1.03] sm:text-md"
             >
               Contact Us
               <span className="ml-1.5 text-sm leading-none">

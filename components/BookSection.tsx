@@ -57,7 +57,7 @@ export default function BooksSection() {
           >
             <TextFluxUnveil
               text="Who We Are"
-            //   enabled={shouldAnimate}
+              //   enabled={shouldAnimate}
             />
           </div>
 
@@ -66,25 +66,30 @@ export default function BooksSection() {
           </h2>
 
           <p className="body-copy mt-4 w-full text-base leading-[1.65] text-[#777777] sm:mt-5 sm:text-lg lg:max-w-[34rem]">
-            Explore a collection of books published through NexiFire Publishing. From business and personal development to fiction and memoirs, we help authors create books that inspire, educate, and leave a lasting impact.
+            Explore a collection of books published through NexiFire Publishing.
+            From business and personal development to fiction and memoirs, we
+            help authors create books that inspire, educate, and leave a lasting
+            impact.
           </p>
 
           <a
             href="#"
-            className="mt-6 inline-flex min-h-[46px] items-center gap-2 rounded-[7px] bg-[linear-gradient(90deg,#B24002_0%,#FF5B01_100%)] px-5 py-2.5 text-sm font-medium text-white transition hover:brightness-[0.98] sm:text-base"
+            className="mt-6 inline-flex min-h-[46px] items-center gap-2 rounded-[7px] bg-[linear-gradient(90deg,#B24002_0%,#FF5B01_100%)] px-5 py-2.5 text-sm font-light text-white transition hover:brightness-[0.98] sm:text-base"
           >
             Learn More
             <svg
               xmlns="http://www.w3.org/2000/svg"
-              viewBox="0 0 20 20"
-              fill="currentColor"
-              className="h-4 w-4"
-              aria-hidden="true"
+              width="20"
+              height="20"
+              viewBox="0 0 24 24"
+              fill="none"
             >
               <path
-                fillRule="evenodd"
-                d="M5.22 14.78a.75.75 0 001.06 0l7.25-7.25v4.69a.75.75 0 001.5 0V6a.75.75 0 00-.75-.75H8.5a.75.75 0 000 1.5h4.69L5.22 13.72a.75.75 0 000 1.06z"
-                clipRule="evenodd"
+                d="M6 18L18 6M18 15V6H9"
+                stroke="white"
+                stroke-width="1.5"
+                stroke-linecap="round"
+                stroke-linejoin="round"
               />
             </svg>
           </a>

@@ -181,7 +181,7 @@ const HomeServices = () => {
 
                 <a
                   href="#"
-                  className="mt-6 inline-flex min-h-[48px] w-full items-center justify-center rounded-[8px] bg-[linear-gradient(90deg,#B24002_0%,#FF5B01_100%)] px-5 py-3 text-sm font-medium text-white transition hover:brightness-[0.98] sm:w-fit sm:text-base"
+                  className="mt-6 inline-flex min-h-[48px] w-full items-center justify-center rounded-[8px] bg-[linear-gradient(90deg,#B24002_0%,#FF5B01_100%)] px-5 py-3 text-sm font-light text-white transition hover:brightness-[0.98] sm:w-fit sm:text-base"
                 >
                   Submit Your Manuscript
                   <span className="ml-2 text-lg leading-none">
