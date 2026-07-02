@@ -173,7 +173,7 @@ const HomeServices = () => {
                     Ready To Publish Your Book?
                 </h3>
 
-                <p className="mt-4 text-sm leading-[1.55] text-white/72 sm:mt-5 sm:text-base">
+                <p className="mt-4 text-sm leading-[1.55] text-white sm:mt-5 sm:text-base">
                   Turn your manuscript into a professionally published book with
                   expert editing, design, distribution, and marketing support
                   from start to finish.
