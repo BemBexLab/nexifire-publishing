@@ -9,6 +9,7 @@ type WhatsIncludedItem = {
 type WhatsIncludedProps = {
   badgeText: string;
   title: string;
+  description?: string;
   items: WhatsIncludedItem[];
   imageSrc: string;
   imageAlt: string;
@@ -31,6 +32,7 @@ const IncludedIcon = ({ src, alt = "" }: { src: string; alt?: string }) => {
 const WhatsIncluded = ({
   badgeText,
   title,
+  description,
   items,
   imageSrc,
   imageAlt,
@@ -54,14 +56,17 @@ const WhatsIncluded = ({
           <h2 className="project-h2 max-w-[14ch] leading-[0.98] tracking-[-0.06em] sm:max-w-[16ch] lg:max-w-[18ch] xl:max-w-none">
             {title}
           </h2>
+          <p className="my-5 text-base font-light leading-[1.45] text-[#444444] sm:text-lg">
+            {description}
+          </p>
 
-          <ul className="mt-9 space-y-5">
+          <ul className="space-y-5">
             {items.map((item) => (
               <li key={item.label} className="flex items-center">
                 <div className="mt-[1px] h-6 w-6 shrink-0">
                   <IncludedIcon src={iconSrc} alt={iconAlt} />
                 </div>
-                <p className="ml-4 text-base font-light leading-[1.45] text-[#838383] sm:text-lg">
+                <p className="ml-4 text-base font-light leading-[1.45] text-[#777777] sm:text-lg">
                   {item.label}
                 </p>
               </li>

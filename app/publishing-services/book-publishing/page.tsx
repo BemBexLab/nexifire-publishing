@@ -10,6 +10,7 @@ import Testimonials from "@/components/Testimonials";
 import WhatsIncluded from "@/components/WhatsIncluded";
 import WhoWeServe from "@/components/WhoWeServe";
 import WhyChoose from "@/components/WhyChoose";
+import { defaultWhoWeServeData } from "@/data/whoWeServe";
 import React from "react";
 
 const page = () => {
@@ -25,8 +26,10 @@ const page = () => {
         eyebrow="What's Included"
         title="Complete eBook Publishing Services in Australia"
         description={<>
-          <p>Every eBook published through NexiFire goes through a professional, multi-stage production process. Here is exactly what we deliver for every author we work with.</p>
-          <ul className="list-inside list-disc">
+          <p className="my-5 text-base font-light leading-[1.45] text-[#444444] sm:text-lg">
+            Every eBook published through NexiFire goes through a professional, multi-stage production process. Here is exactly what we deliver for every author we work with.
+          </p>
+          <ul className="list-disc ml-5 space-y-2 text-base font-light leading-[1.45] text-[#777777] sm:text-lg">
             <li>EPUB & MOBI Conversion</li>
             <li>eBook Cover Design</li>
             <li>Amazon Kindle KDP Setup</li>
@@ -72,63 +75,69 @@ const page = () => {
       />
       <PricingPackages />
       <WhyChoose
-        badgeText="Why Choose Nexifire Publishing"
-        title="What Makes Our Publishing Service Different"
-        description="There are many publishing options available in Australia. But the reason authors keep coming back to Nexifire Publishing, and why they recommend us to their colleagues and friends is:"
+        badgeText="The NexiFire Difference"
+        title="Why Australian Authors Choose NexiFire to Publish Their eBook"
+        description=""
         reasons={[
           {
-            title: "Personalised Publishing Guidance",
+            title: "You Keep 100% of Your Royalties",
             description:
-              "Receive expert support throughout your publishing journey with advice tailored to your goals.",
+              "",
           },
           {
-            title: "Global Distribution Reach",
+            title: "Affordable Without Cutting Corners",
             description:
-              "Make your book available through major print and digital platforms across key markets.",
+              "",
           },
           {
-            title: "Professional Production Standards",
+            title: "One Team, Every Platform",
             description:
-              "Your book is prepared with strong editing, formatting, design, and publishing quality controls.",
+              "",
           },
           {
-            title: "Author-First Ownership Model",
+            title: "Files Tested on Real Devices",
             description:
-              "Keep full ownership of your work while benefiting from a professional publishing team.",
+              "",
+          },
+          {
+            title: "Local Knowledge, Global Reach",
+            description:
+              "",
           },
         ]}
       />
       <PublishYourBook
         backgroundAlt="A girl reading a book"
         backgroundImageSrc="/Frame 2147225866.png"
-        buttonLabel="Publish Your Book"
-        description="Partner with NexiFire Publishing and take the next step toward publishing your book with confidence."
-        title="Ready To Become A Published Author?"
+        buttonLabel="Start Your eBook Journey"
+        description="Get a free, no-obligation quote today. Tell us about your manuscript, your preferred platforms, and your timeline, and we'll have a publishing plan ready for you within 24 hours."
+        title="Ready to Publish Your eBook in Australia?"
       />
       <ImageDesc
-        title="Expert Self Publishing Services in Australia: Complete Support"
+        title="Your Manuscript Becomes a Professional eBook, Ready to Sell"
         paragraphs={[
-          "Nexifire Publishing is a complete self-publishing company that helps authors turn their ideas into professionally published books. Our services cover writing, editing, design, publishing, and marketing, and we handle the entire process for you, from the first conversation to the final listing.",
-          "Whether you are a first-time author with just an idea, a writer sitting on a completed manuscript, or a business professional ready to share your expertise with the world, our team is here to guide you at every step, in your genre, with your goals in mind.",
-          "What sets us apart is our complete, all-in-one approach. With experienced ghostwriters, editors, designers, publishing specialists, and marketing professionals working together under one roof, we make sure your book is created, published, and promoted to the highest professional standards. We provide access to 40+ global publishing platforms, giving your book worldwide reach while you retain full ownership of everything you have written.",
-          "At Nexifire Publishing, our mission is simple: to help authors publish with confidence, build credibility, and connect their stories with readers around the world.",
+          "The eBook market in Australia is growing faster than ever. Readers discover, buy, and read digital books across Kindle, Apple Books, Kobo, and Google Play every single day, and the authors who reach them are the ones whose books are formatted correctly, priced strategically, and listed on every platform readers actually use.",
+          "NexiFire Publishing provides end-to-end eBook publishing services in Australia, from converting your raw manuscript into a flawless EPUB3 and MOBI file, to designing a cover that commands attention on a digital shelf, to setting up your Kindle Direct Publishing account and distributing your title globally on launch day.",
+          "We do the technical work so you can focus on writing the next book. And because you retain 100% of your rights and royalties, every sale goes directly into your pocket.",
         ]}
-        imageSrc="/Rectangle 23834.png"
+        imageSrc="/Rectangle 23834 (3).png"
         imageAlt="Publishing team"
       />
       <div className="h-20" />
       <div className="bg-[#FDF7F4]">
-        <WhoWeServe />
+        <WhoWeServe {...defaultWhoWeServeData} />
       </div>
       <WhatsIncluded
-        badgeText="What's Included"
-        title="Complete Publishing Solutions"
+        badgeText="Where Your eBook Will Live"
+        title="The Best eBook Platforms for Australian Authors in 2026"
+        description="NexiFire distributes your eBook to every platform Australian and international readers use. Here's a breakdown of the major platforms, what they offer, and the royalty rates you can expect."
         items={[
-          { label: "Manuscript Assessment" },
-          { label: "Interior Formatting" },
-          { label: "ISBN Registration" },
-          { label: "Print & Digital Publishing" },
-          { label: "Publishing Consultation" },
+          { label: "Amazon Kindle (KDP)" },
+          { label: "Apple Books" },
+          { label: "Kobo / Rakuten" },
+          { label: "Google Play Books" },
+          { label: "Barnes & Noble Nook" },
+          { label: "Scribd & Library Networks" },
         ]}
         imageSrc="/439230f4-7c82-4411-9ce5-487944ae406f 1.png"
         imageAlt="Complete publishing solutions"
@@ -215,9 +224,8 @@ const page = () => {
         ]}
       />
       <GetInTouchContact
-        title="Ready to Publish Your eBook in Australia?"
-        description="Get a free, no-obligation quote today. Tell us about your manuscript, your preferred platforms, and your timeline, and we'll have a publishing plan ready for you within 24 hours."
-        buttonLable="Start Your eBook Journey"
+        title="Ready To Publish Your Book?"
+        description="Tell us where you are and where you want to go. NexiFire will design the system, align the right specialists, and help you move forward with confidence."
       />
     </section>
   );

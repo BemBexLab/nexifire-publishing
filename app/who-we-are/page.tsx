@@ -7,6 +7,7 @@ import Portfolio from '@/components/Portfolio'
 import PublishYourBook from '@/components/PublishYourBook'
 import Testimonials from '@/components/Testimonials'
 import WhoWeServe from '@/components/WhoWeServe'
+import { defaultWhoWeServeData } from '@/data/whoWeServe'
 import React from 'react'
 
 const page = () => {
@@ -31,7 +32,7 @@ const page = () => {
         backgroundAlt="Person Reading Book"
       />
       <div className="h-10" />
-      <WhoWeServe />
+      <WhoWeServe {...defaultWhoWeServeData} />
       <Testimonials
         badgeText="Author Stories"
         title="What Australian Authors Say About NexiFire"

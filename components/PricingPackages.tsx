@@ -170,7 +170,9 @@ const PricingPackages = () => {
                 </div>
 
                 <div>
-                  <p className="text-sm font-semibold text-[#777777] sm:text-base">
+                  <p
+                    className="w-fit bg-[linear-gradient(90deg,#B24002_0%,#FF5B01_100%)] bg-clip-text text-sm font-semibold text-transparent sm:text-base"
+                  >
                     Included:
                   </p>
 

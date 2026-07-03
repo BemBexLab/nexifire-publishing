@@ -10,6 +10,7 @@ import Testimonials from "@/components/Testimonials";
 import WhatsIncluded from "@/components/WhatsIncluded";
 import WhoWeServe from "@/components/WhoWeServe";
 import WhyChoose from "@/components/WhyChoose";
+import { defaultWhoWeServeData } from "@/data/whoWeServe";
 import React from "react";
 
 const page = () => {
@@ -109,7 +110,7 @@ const page = () => {
         iconSrc="/Mask group.svg"
       />
       <div className="bg-[#FDF7F4]">
-        <WhoWeServe />
+        <WhoWeServe {...defaultWhoWeServeData} />
       </div>
       <ImageDesc
         title="WRITE THE BOOK YOU'VE ALWAYS WANTED TO PUBLISH"

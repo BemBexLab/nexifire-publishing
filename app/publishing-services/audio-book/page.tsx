@@ -10,6 +10,7 @@ import WhatsIncluded from "@/components/WhatsIncluded";
 import WhoWeServe from "@/components/WhoWeServe";
 import WhyChoose from "@/components/WhyChoose";
 import WhyItMatters from "@/components/WhyItMatters";
+import { defaultWhoWeServeData } from "@/data/whoWeServe";
 import React from "react";
 
 const page = () => {
@@ -105,7 +106,7 @@ const page = () => {
       <div className="h-20" />
 
       <div className="bg-[#FDF7F4]">
-        <WhoWeServe />
+        <WhoWeServe {...defaultWhoWeServeData} />
       </div>
       
       <WhatsIncluded

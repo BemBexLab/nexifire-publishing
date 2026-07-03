@@ -73,7 +73,7 @@ const OurProcess = ({
           <h2 className="project-h2 block w-full max-w-full text-center">
             {title}
           </h2>
-          <p className="mx-auto mt-4 max-w-[750px] text-base leading-6 text-[#989391] sm:text-lg">
+          <p className="mx-auto mt-4 max-w-[1050px] text-base leading-6 text-[#989391] sm:text-lg">
             {description}
           </p>
         </div>
