@@ -41,13 +41,13 @@ const WhatsIncluded = ({
 }: WhatsIncludedProps) => {
   return (
     <section className="bg-white px-4 py-16 sm:px-6 lg:px-8 lg:py-24">
-      <div className="mx-auto grid w-full max-w-[1820px] items-center gap-10 xl:grid-cols-[minmax(0,700px)_minmax(0,1fr)] xl:gap-16 2xl:grid-cols-[minmax(0,760px)_minmax(0,1fr)] 2xl:gap-20">
-        <div className="max-w-[1150px]">
+      <div className="mx-auto grid w-full max-w-[1460px] items-center gap-6 xl:items-stretch xl:grid-cols-[minmax(0,560px)_minmax(0,1fr)] xl:gap-6 2xl:grid-cols-[minmax(0,600px)_minmax(0,1fr)] 2xl:gap-8">
+        <div className="max-w-[680px]">
           <div
             className="mb-6 flex w-fit items-center justify-center rounded-[9px] px-4 py-2 text-sm text-[#4E4741] sm:px-5 sm:text-base"
             style={{
               background:
-                "linear-gradient(90deg, rgba(178, 64, 2, 0.10) 0%, rgba(178, 64, 2, 0.00) 82%)",
+                  "linear-gradient(90deg, rgba(178, 64, 2, 0.10) 0%, rgba(178, 64, 2, 0.00) 82%)",
             }}
           >
             <TextFluxUnveil text={badgeText} />
@@ -75,7 +75,7 @@ const WhatsIncluded = ({
         </div>
 
         <div className="w-full">
-          <div className="relative mx-auto w-full max-w-[940px] xl:ml-auto xl:mr-0">
+          <div className="relative mx-auto w-full max-w-[760px] xl:ml-0 xl:mr-0">
             <Image
               src={imageSrc}
               alt={imageAlt}

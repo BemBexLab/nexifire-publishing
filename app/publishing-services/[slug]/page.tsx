@@ -39,6 +39,7 @@ export default async function PublishingServicePage({
       <WhyChoose {...pageData.whyChoose} />
       <PublishYourBook {...pageData.publishBanner} />
       <ImageDesc {...pageData.imageDesc} />
+      <div className="h-20" />
       <div className="bg-[#FDF7F4]">
         <WhoWeServe {...(pageData.whoWeServe ?? defaultWhoWeServeData)} />
       </div>

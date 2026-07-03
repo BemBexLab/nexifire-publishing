@@ -6,6 +6,7 @@ type ImageDescProps = {
   badgeText?: string;
   title: string;
   paragraphs: string[];
+  listItems?: string[];
   imageSrc?: string;
   imageAlt?: string;
   reverse?: boolean;
@@ -15,6 +16,7 @@ const ImageDesc = ({
   badgeText,
   title,
   paragraphs,
+  listItems,
   imageSrc = "",
   imageAlt = "Publishing team",
   reverse = false,
@@ -22,7 +24,7 @@ const ImageDesc = ({
   return (
     <section className="bg-white px-4 pt-16 sm:px-6 lg:px-8 lg:pt-24">
       <div
-        className={`mx-auto flex w-full max-w-[1540px] flex-col gap-8 lg:items-start lg:gap-8 xl:gap-10 ${
+        className={`mx-auto flex w-full max-w-[1540px] flex-col gap-8 lg:items-stretch lg:gap-8 xl:gap-10 ${
           reverse ? "lg:flex-row-reverse" : "lg:flex-row"
         }`}
       >
@@ -42,15 +44,22 @@ const ImageDesc = ({
             <span>{title}</span>
           </h2>
 
-          <div className="mt-8 w-full space-y-5 text-base leading-[1.55] text-[#7E7E7E] sm:text-lg sm:leading-[1.6]">
+          <div className="mt-8 w-full space-y-3 text-base leading-[1.55] text-[#7E7E7E] sm:text-lg sm:leading-[1.6]">
             {paragraphs.map((paragraph) => (
               <p key={paragraph}>{paragraph}</p>
             ))}
+            {listItems?.length ? (
+              <ul className="list-disc pl-5 text-base leading-[1.55] text-[#444444] sm:text-lg sm:leading-[1.6]">
+                {listItems.map((item) => (
+                  <li key={item}>{item}</li>
+                ))}
+              </ul>
+            ) : null}
           </div>
         </div>
 
-        <div className="relative w-full max-w-none lg:basis-[40%] lg:max-w-[40%] lg:shrink-0">
-          <div className="relative w-full aspect-[0.84] overflow-hidden rounded-[16px] bg-[linear-gradient(180deg,#f2e8df_0%,#e9ddd2_100%)] shadow-[0_10px_28px_rgba(50,29,11,0.08)]">
+        <div className="relative flex w-full max-w-none lg:basis-[40%] lg:max-w-[40%] lg:shrink-0 lg:self-stretch">
+          <div className="relative w-full overflow-hidden rounded-[16px] bg-[linear-gradient(180deg,#f2e8df_0%,#e9ddd2_100%)] shadow-[0_10px_28px_rgba(50,29,11,0.08)] aspect-[0.84] lg:h-full lg:min-h-full lg:aspect-auto">
             {imageSrc ? (
               <Image
                 src={imageSrc}
