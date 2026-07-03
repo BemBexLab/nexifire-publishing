@@ -174,7 +174,7 @@ const PageHero = ({
           </motion.h1>
           <motion.p
             variants={heroItemVariants}
-            className="font-jakarta relative z-10 mx-auto mt-4 max-w-[1120px] whitespace-pre-line text-center text-base leading-[1.7] [word-spacing:0.3rem] text-[#777777] sm:text-lg md:leading-[1.65]"
+            className="font-jakarta relative z-10 mx-auto mt-4 max-w-[1190px] whitespace-pre-line text-center text-base leading-[1.7] [word-spacing:0.3rem] text-[#777777] sm:text-lg md:leading-[1.65]"
           >
             {description}
           </motion.p>

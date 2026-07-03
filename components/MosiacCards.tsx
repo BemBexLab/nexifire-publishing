@@ -4,13 +4,22 @@ import TextFluxUnveil from "./TextFluxUnveil";
 
 const checkIcon = "/Mask group.svg";
 
+const writingThatReflectsYou = [
+  "Your story, captured in your voice.",
+  "Professional ghostwriting services Australia, Nexifire Publishing",
+  "Non-disclosure agreements included",
+  "Your name on the cover, always",
+  "Full intellectual property transfer",
+  "Dedicated ghostwriter assigned to your project",
+];
+
 const genreItems = [
-  "Business & Entrepreneurship",
-  "Technology & Education",
+  "Memoir & Personal Story",
+  "Business & Leadership Books",
   "Self-Help & Personal Development",
-  "Fiction & Creative Writing",
-  "Health & Wellness",
-  "Biographies & Memoirs",
+  "Children's Books",
+  "Ebook Ghostwriting",
+  "Academic & Professional Books",
 ];
 
 const writingQualityItems = [
@@ -45,7 +54,7 @@ const CheckItem = ({ children }: { children: React.ReactNode }) => {
           className="h-full w-full object-contain"
         />
       </div>
-      <span className="text-base leading-[1.5] text-[#444444] sm:text-lg">{children}</span>
+      <span className="text-base leading-[1.5] text-[#444444] sm:text-md">{children}</span>
     </li>
   );
 };
@@ -65,20 +74,20 @@ const MosiacCards = () => {
                 "linear-gradient(90deg, rgba(178, 64, 2, 0.10) 0%, rgba(178, 64, 2, 0.00) 82%)",
             }}
           >
-            <TextFluxUnveil text="Lorem Ipsum Dolor Sit Amet" />
+            <TextFluxUnveil text="Your Book, Written for You" />
           </div>
 
           <h2 className="project-h2 leading-[1.04] tracking-[-0.06em]">
-            Lorem Ipsum Dolor Sit Amet Consectetur. Adipiscing.
+            Professional Ghostwriting Services in Australia
           </h2>
 
-          <p className="mx-auto mt-5 max-w-[920px] text-base leading-[1.7] text-[#8B8B8B] sm:text-lg">
+          {/* <p className="mx-auto mt-5 max-w-[920px] text-base leading-[1.7] text-[#8B8B8B] sm:text-lg">
             Lorem ipsum dolor sit amet consectetur. Quis sit facilisis neque
             habitant. Bibendum sed faucibus eget lacus etiam. Proin eget rutrum
             sed tortor parturient nisl. Posuere ridiculus adipiscing pulvinar
             suspendisse. Proin turpis in pharetra odio odio ullamcorper elit.
             Massa tristique nec in commodo.
-          </p>
+          </p> */}
         </div>
 
         <div className="mt-12 grid gap-4 lg:grid-cols-2 lg:items-stretch lg:gap-5">
@@ -87,27 +96,20 @@ const MosiacCards = () => {
               className={`${cardBaseClassName} flex flex-[0.9] flex-col bg-[#FFF4EC] px-6 py-7 sm:px-7`}
             >
               <h3 className="text-lg font-semibold leading-tight text-[#2E2E2E] sm:text-xl">
-                Idea Development & Research
+                Writing That Reflects You
               </h3>
-              <p className="mt-4 max-w-[500px] text-base leading-[1.6] text-[#444444] sm:text-lg">
-                Lorem ipsum dolor sit amet consectetur. Quis sit facilisis neque
-                habitant. Bibendum sed faucibus eget lacus etiam. Proin eget
-                rutrum sed tortor parturient nisl.
+              <p className="mt-4 max-w-[500px] text-base leading-[1.6] text-[#444444] sm:text-md">
+                At Nexifire Publishing, we take the time to understand who you are, how you speak, what you want to say, and the readers you want to reach. The result is a book that truly feels like yours, because it is.
               </p>
+              
             </div>
 
             <div
               className={`${cardBaseClassName} flex flex-[1.2] flex-col bg-white px-6 py-7 sm:px-7`}
             >
-              <h3 className="text-lg font-semibold leading-tight text-[#2E2E2E] sm:text-xl">
-                Genres We Cover
-              </h3>
-              <p className="mt-4 text-base leading-[1.6] text-[#444444] sm:text-lg">
-                Ink Founders offers writing services across a wide range of
-                genres, including:
-              </p>
+              
               <ul className="mt-4 grid gap-x-6 gap-y-2.5 sm:grid-cols-2">
-                {genreItems.map((item) => (
+                {writingThatReflectsYou.map((item) => (
                   <CheckItem key={item}>{item}</CheckItem>
                 ))}
               </ul>
@@ -117,13 +119,16 @@ const MosiacCards = () => {
               className={`${cardBaseClassName} flex flex-1 flex-col bg-[#FFF4EC] px-6 py-7 sm:px-7`}
             >
               <h3 className="text-lg font-semibold leading-tight text-[#2E2E2E] sm:text-xl">
-                Our Writing Process
+                Real Australian Ghostwriters
               </h3>
-              <ul className="mt-5 grid gap-x-6 gap-y-2.5 sm:grid-cols-2">
+              <p className="mt-4 text-base leading-[1.6] text-[#444444] sm:text-md">
+                Our ghostwriters are based in Australia. They understand Australian readers, cultural context, colloquialisms, and storytelling sensibilities. You will not receive content written overseas and reworked; every word is written by a skilled local professional who understands your audience.
+              </p>
+              {/* <ul className="mt-5 grid gap-x-6 gap-y-2.5 sm:grid-cols-2">
                 {processItems.map((item) => (
                   <CheckItem key={item}>{item}</CheckItem>
                 ))}
-              </ul>
+              </ul> */}
             </div>
           </div>
 
@@ -132,28 +137,31 @@ const MosiacCards = () => {
               className={`${cardBaseClassName} flex flex-[1.15] flex-col bg-white px-6 py-7 sm:px-7`}
             >
               <h3 className="text-lg font-semibold leading-tight text-[#2E2E2E] sm:text-xl">
-                Original, High-Quality Writing
+                Ghostwriting for Every Genre
               </h3>
-              <p className="mt-4 text-base leading-[1.6] text-[#444444] sm:text-lg">
-                Every eBook is written from scratch, ensuring:
+              <p className="mt-4 text-base leading-[1.6] text-[#444444] sm:text-md">
+                We Write the Books Australians Are Waiting to Read<br />From personal memoirs to business books, children's stories to self-help guides, our team includes experienced ghostwriters who specialise in the genre that matters to you.
               </p>
-              <ul className="mt-4 space-y-2.5">
-                {writingQualityItems.map((item) => (
+              <ul className="mt-4 grid gap-x-6 gap-y-2.5 sm:grid-cols-2">
+                {genreItems.map((item) => (
                   <CheckItem key={item}>{item}</CheckItem>
                 ))}
               </ul>
+              {/* <ul className="mt-4 space-y-2.5">
+                {writingQualityItems.map((item) => (
+                  <CheckItem key={item}>{item}</CheckItem>
+                ))}
+              </ul> */}
             </div>
 
             <div
               className={`${cardBaseClassName} flex flex-[0.75] flex-col bg-[#FFF4EC] px-6 py-7 sm:px-7`}
             >
               <h3 className="text-lg font-semibold leading-tight text-[#2E2E2E] sm:text-xl">
-                Voice Matching (Ghostwriting)
+                Transparent Pricing for Every Budget
               </h3>
-              <p className="mt-4 max-w-[500px] text-base leading-[1.6] text-[#444444] sm:text-lg">
-                For ghostwriting projects, we carefully adapt to your tone,
-                style, and personality so the book truly feels like you wrote
-                it.
+              <p className="mt-4 max-w-[500px] text-base leading-[1.6] text-[#444444] sm:text-md">
+                We believe you should know what you are investing before you commit. Our packages are clearly priced, flexible, and can be customised to match the scope and complexity of your project.
               </p>
             </div>
 
@@ -161,13 +169,11 @@ const MosiacCards = () => {
               className={`${cardBaseClassName} flex flex-1 flex-col bg-white px-6 py-7 sm:px-7`}
             >
               <h3 className="text-lg font-semibold leading-tight text-[#2E2E2E] sm:text-xl">
-                Who This Service Is For
+                Why Ghostwriting?
               </h3>
-              <ul className="mt-5 space-y-2.5">
-                {audienceItems.map((item) => (
-                  <CheckItem key={item}>{item}</CheckItem>
-                ))}
-              </ul>
+              <p className="mt-4 text-base leading-[1.6] text-[#444444] sm:text-md">
+                Many executives, professionals, and thought leaders use ghostwriting services to share their expertise and build authority. A book is one of the most effective ways to establish credibility in any industry, and you don’t have to spend years writing it yourself.
+              </p>
             </div>
           </div>
         </div>

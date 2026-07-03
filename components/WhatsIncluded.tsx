@@ -2,11 +2,21 @@ import Image from "next/image";
 import React from "react";
 import TextFluxUnveil from "./TextFluxUnveil";
 
-const IncludedIcon = ({ src = "", alt = "" }: { src?: string; alt?: string }) => {
-  if (!src) {
-    return <div className="h-full w-full rounded-full border border-dashed border-[#B24002]/30" />;
-  }
+type WhatsIncludedItem = {
+  label: string;
+};
 
+type WhatsIncludedProps = {
+  badgeText: string;
+  title: string;
+  items: WhatsIncludedItem[];
+  imageSrc: string;
+  imageAlt: string;
+  iconSrc: string;
+  iconAlt?: string;
+};
+
+const IncludedIcon = ({ src, alt = "" }: { src: string; alt?: string }) => {
   return (
     <Image
       src={src}
@@ -18,19 +28,19 @@ const IncludedIcon = ({ src = "", alt = "" }: { src?: string; alt?: string }) =>
   );
 };
 
-const includedItems = [
-  "Manuscript Assessment",
-  "Interior Formatting",
-  "ISBN Registration",
-  "Print & Digital Publishing",
-  "Publishing Consultation",
-];
-
-const WhatsIncluded = () => {
+const WhatsIncluded = ({
+  badgeText,
+  title,
+  items,
+  imageSrc,
+  imageAlt,
+  iconSrc,
+  iconAlt = "",
+}: WhatsIncludedProps) => {
   return (
     <section className="bg-white px-4 py-16 sm:px-6 lg:px-8 lg:py-24">
-      <div className="mx-auto grid w-full max-w-[1440px] items-center gap-10 lg:grid-cols-[390px_minmax(0,1fr)] lg:gap-12 xl:grid-cols-[430px_minmax(0,1fr)] xl:gap-16">
-        <div className="max-w-[430px]">
+      <div className="mx-auto grid w-full max-w-[1820px] items-center gap-10 xl:grid-cols-[minmax(0,700px)_minmax(0,1fr)] xl:gap-16 2xl:grid-cols-[minmax(0,760px)_minmax(0,1fr)] 2xl:gap-20">
+        <div className="max-w-[1150px]">
           <div
             className="mb-6 flex w-fit items-center justify-center rounded-[9px] px-4 py-2 text-sm text-[#4E4741] sm:px-5 sm:text-base"
             style={{
@@ -38,21 +48,21 @@ const WhatsIncluded = () => {
                 "linear-gradient(90deg, rgba(178, 64, 2, 0.10) 0%, rgba(178, 64, 2, 0.00) 82%)",
             }}
           >
-            <TextFluxUnveil text="What's Included" />
+            <TextFluxUnveil text={badgeText} />
           </div>
 
-          <h2 className="project-h2 leading-[0.98] tracking-[-0.06em]">
-            Complete Publishing Solutions
+          <h2 className="project-h2 max-w-[14ch] leading-[0.98] tracking-[-0.06em] sm:max-w-[16ch] lg:max-w-[18ch] xl:max-w-none">
+            {title}
           </h2>
 
           <ul className="mt-9 space-y-5">
-            {includedItems.map((item) => (
-              <li key={item} className="flex items-center">
+            {items.map((item) => (
+              <li key={item.label} className="flex items-center">
                 <div className="mt-[1px] h-6 w-6 shrink-0">
-                  <IncludedIcon src="/Mask group.svg" alt="" />
+                  <IncludedIcon src={iconSrc} alt={iconAlt} />
                 </div>
                 <p className="ml-4 text-base font-light leading-[1.45] text-[#838383] sm:text-lg">
-                  {item}
+                  {item.label}
                 </p>
               </li>
             ))}
@@ -60,10 +70,10 @@ const WhatsIncluded = () => {
         </div>
 
         <div className="w-full">
-          <div className="relative mx-auto w-full max-w-[820px] lg:ml-auto lg:mr-0">
+          <div className="relative mx-auto w-full max-w-[940px] xl:ml-auto xl:mr-0">
             <Image
-              src="/439230f4-7c82-4411-9ce5-487944ae406f 1.png"
-              alt="Complete publishing solutions"
+              src={imageSrc}
+              alt={imageAlt}
               width={900}
               height={520}
               sizes="(min-width: 1280px) 820px, (min-width: 1024px) 58vw, 100vw"

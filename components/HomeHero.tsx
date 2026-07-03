@@ -7,9 +7,9 @@ import TextFluxUnveil from "./TextFluxUnveil";
 import { motion, Variants } from "motion/react";
 import { MdOutlineArrowOutward } from "react-icons/md";
 
-const heroTitle = "Bring Your Story To Life With Nexifire Publishing";
+const heroTitle = "Self-Publishing Company, Helping Authors Publish Professionally And Reach Readers Worldwide";
 const heroDescription =
-  "Whether you've written a memoir, business book, novel, self-help guide, or children's story, NexiFire Publishing provides the professional support needed to transform your manuscript into a published book readers will remember.";
+  "NexiFire Publishing delivers professional book publishing services across Australia, from ghostwriting and editing to hardcover printing, global distribution, and audiobook production. We help convert your manuscripts into bestsellers.";
 
 const heroBooks = [
   {
@@ -17,55 +17,47 @@ const heroBooks = [
     alt: "Fresh Paths Unfolding book cover",
     width: 188,
     className:
-      "w-[19.4%] min-w-[92px] max-w-[158px] sm:min-w-[122px] sm:max-w-[196px] md:min-w-[168px] md:max-w-[270px] lg:w-[22.2%] lg:min-w-[260px] lg:max-w-[390px]",
+      "w-[18.2%] min-w-[70px] max-w-[104px] sm:w-[19.4%] sm:min-w-[122px] sm:max-w-[196px] md:min-w-[168px] md:max-w-[270px] lg:w-[22.2%] lg:min-w-[260px] lg:max-w-[390px]",
     offsetClass:
-      "mb-[-6px] sm:mb-[-8px] md:mb-[-10px] lg:mb-[-12px] xl:mb-[-18px] 2xl:mb-[-12px]",
+      "mb-[-2px] sm:mb-[-8px] md:mb-[-10px] lg:mb-[-12px] xl:mb-[-18px] 2xl:mb-[-12px]",
   },
   {
     src: "/Stephen 3.png",
     alt: "The Book of Unfolding Integration book cover",
     width: 208,
     className:
-      "w-[19.4%] min-w-[92px] max-w-[158px] sm:min-w-[122px] sm:max-w-[196px] md:min-w-[168px] md:max-w-[270px] lg:w-[22.2%] lg:min-w-[260px] lg:max-w-[390px]",
+      "w-[18.2%] min-w-[70px] max-w-[104px] sm:w-[19.4%] sm:min-w-[122px] sm:max-w-[196px] md:min-w-[168px] md:max-w-[270px] lg:w-[22.2%] lg:min-w-[260px] lg:max-w-[390px]",
     offsetClass:
-      "mb-[14px] sm:mb-[24px] md:mb-[34px] lg:mb-[50px] xl:mb-[22px] 2xl:mb-[50px]",
+      "mb-[8px] sm:mb-[24px] md:mb-[34px] lg:mb-[50px] xl:mb-[22px] 2xl:mb-[50px]",
   },
   {
     src: "/Stephen 4.png",
     alt: "The Labyrinth book cover",
     width: 220,
     className:
-      "w-[19.4%] min-w-[92px] max-w-[158px] sm:min-w-[122px] sm:max-w-[196px] md:min-w-[168px] md:max-w-[270px] lg:w-[22.2%] lg:min-w-[260px] lg:max-w-[390px]",
+      "w-[18.2%] min-w-[70px] max-w-[104px] sm:w-[19.4%] sm:min-w-[122px] sm:max-w-[196px] md:min-w-[168px] md:max-w-[270px] lg:w-[22.2%] lg:min-w-[260px] lg:max-w-[390px]",
     offsetClass:
-      "mb-[26px] sm:mb-[42px] md:mb-[66px] lg:mb-[100px] xl:mb-[46px] 2xl:mb-[100px]",
+      "mb-[16px] sm:mb-[42px] md:mb-[66px] lg:mb-[100px] xl:mb-[46px] 2xl:mb-[100px]",
   },
   {
     src: "/Stephen 6.png",
     alt: "The Bee's Colony book cover",
     width: 208,
     className:
-      "w-[19.4%] min-w-[92px] max-w-[158px] sm:min-w-[122px] sm:max-w-[196px] md:min-w-[168px] md:max-w-[270px] lg:w-[22.2%] lg:min-w-[260px] lg:max-w-[390px]",
+      "w-[18.2%] min-w-[70px] max-w-[104px] sm:w-[19.4%] sm:min-w-[122px] sm:max-w-[196px] md:min-w-[168px] md:max-w-[270px] lg:w-[22.2%] lg:min-w-[260px] lg:max-w-[390px]",
     offsetClass:
-      "mb-[14px] sm:mb-[24px] md:mb-[34px] lg:mb-[50px] xl:mb-[22px] 2xl:mb-[50px]",
+      "mb-[8px] sm:mb-[24px] md:mb-[34px] lg:mb-[50px] xl:mb-[22px] 2xl:mb-[50px]",
   },
   {
     src: "/Stephen 5.png",
     alt: "Don't Cut the Grass on Sunday book cover",
     width: 188,
     className:
-      "w-[19.4%] min-w-[92px] max-w-[158px] sm:min-w-[122px] sm:max-w-[196px] md:min-w-[168px] md:max-w-[270px] lg:w-[22.2%] lg:min-w-[260px] lg:max-w-[390px]",
+      "w-[18.2%] min-w-[70px] max-w-[104px] sm:w-[19.4%] sm:min-w-[122px] sm:max-w-[196px] md:min-w-[168px] md:max-w-[270px] lg:w-[22.2%] lg:min-w-[260px] lg:max-w-[390px]",
     offsetClass:
-      "mb-[-6px] sm:mb-[-8px] md:mb-[-10px] lg:mb-[-12px] xl:mb-[-18px] 2xl:mb-[-12px]",
+      "mb-[-2px] sm:mb-[-8px] md:mb-[-10px] lg:mb-[-12px] xl:mb-[-18px] 2xl:mb-[-12px]",
   },
 ];
-
-const compactShowcaseBooks = [
-  { ...heroBooks[1], compactClass: "w-[34vw] max-w-[190px] sm:w-[29vw] sm:max-w-[230px]" },
-  { ...heroBooks[2], compactClass: "w-[39vw] max-w-[228px] sm:w-[33vw] sm:max-w-[274px]" },
-  { ...heroBooks[3], compactClass: "w-[34vw] max-w-[190px] sm:w-[29vw] sm:max-w-[230px]" },
-];
-
-const compactShelfBooks = [heroBooks[0], heroBooks[4]];
 
 const heroLogos = [
   { src: "/clients/clients01.webp", alt: "Client logo 1" },
@@ -147,11 +139,11 @@ const HeroButtons = () => {
   return (
     <motion.div
       variants={heroItemVariants}
-      className="mt-6 flex w-full max-w-[760px] flex-col items-center justify-center gap-3 sm:mt-7 sm:gap-4 md:flex-row md:flex-wrap"
+      className="mt-6 flex w-full max-w-[760px] flex-col items-center justify-center gap-3 sm:mt-7 sm:flex-row sm:flex-wrap sm:gap-4"
     >
       <a
-        href="#"
-        className="inline-flex min-h-[48px] w-full items-center justify-center rounded-[7px] bg-[linear-gradient(90deg,#B24002_0%,#FF5B01_100%)] px-5 py-3 text-base font-extralight text-[#FFFFFF] shadow-[0_8px_20px_rgba(178,64,2,0.22)] transition hover:brightness-[0.98] sm:px-6 md:w-auto md:min-w-[220px] md:text-lg"
+        href="/contact"
+        className="inline-flex min-h-[48px] w-full max-w-[286px] items-center justify-center rounded-[7px] bg-[linear-gradient(90deg,#B24002_0%,#FF5B01_100%)] px-5 py-3 text-base font-extralight text-[#FFFFFF] shadow-[0_8px_20px_rgba(178,64,2,0.22)] transition hover:brightness-[0.98] sm:w-auto sm:max-w-none sm:px-6 md:min-w-[220px] md:text-lg"
       >
         Publish Your Book
         <span className="ml-2 text-xl leading-none">
@@ -159,8 +151,8 @@ const HeroButtons = () => {
         </span>
       </a>
       <a
-        href="#"
-        className="inline-flex min-h-[48px] w-full items-center justify-center rounded-[7px] border border-[#9F9F9F] px-5 py-3 text-base font-light text-[#4B4B4B] shadow-[0_4px_14px_rgba(0,0,0,0.04)] backdrop-blur-[2px] transition hover:bg-white sm:px-6 md:w-auto md:min-w-[260px] md:text-lg"
+        href="/contact"
+        className="inline-flex min-h-[48px] w-full max-w-[286px] items-center justify-center rounded-[7px] border border-[#9F9F9F] bg-white/55 px-5 py-3 text-base font-light text-[#4B4B4B] shadow-[0_4px_14px_rgba(0,0,0,0.04)] backdrop-blur-[2px] transition hover:bg-white sm:w-auto sm:max-w-none sm:px-6 md:min-w-[260px] md:text-lg"
       >
         Book A Free Consultation
         <span className="ml-2 text-xl leading-none">
@@ -209,29 +201,57 @@ const LogoMarquee = ({
   );
 };
 
+const MobileBooksCarousel = () => {
+  return (
+    <div
+      className="absolute inset-x-0 bottom-[84px] z-40 w-full sm:hidden"
+      aria-label="Featured books"
+    >
+      <div className="no-scrollbar flex items-end gap-4 overflow-x-auto overflow-y-hidden px-4 pb-2 pt-1 touch-pan-x">
+        {heroBooks.map((book) => (
+          <div
+            key={book.src}
+            className="flex-none first:ml-0 last:pr-4"
+          >
+            <div className="relative aspect-[355/504] w-[30vw] min-w-[112px] max-w-[142px] overflow-hidden">
+              <Image
+                src={book.src}
+                alt={book.alt}
+                fill
+                sizes="(max-width: 639px) 30vw, 0px"
+                className="object-cover"
+                priority
+              />
+            </div>
+          </div>
+        ))}
+      </div>
+    </div>
+  );
+};
+
 const DesktopHero = () => {
   return (
-    <div className="relative hidden xl:block">
+    <div className="relative">
       <LogoMarquee
-        className="bottom-0 left-1/2 z-0 w-[82%] max-w-[1180px] -translate-x-1/2 2xl:w-[74%]"
-        cardClassName="min-w-[136px] px-4 xl:min-w-[148px] 2xl:min-w-[168px] lg:px-5"
-        imageClassName="opacity-70"
+        className="bottom-[-18px] left-1/2 z-0 w-[98%] max-w-none -translate-x-1/2 sm:bottom-0 sm:w-[82%] sm:max-w-[1180px] 2xl:w-[74%]"
+        cardClassName="h-[42px] min-w-[86px] rounded-[12px] px-2.5 sm:h-[68px] sm:min-w-[136px] sm:rounded-none sm:border-0 sm:bg-transparent sm:px-4 sm:shadow-none sm:backdrop-blur-0 xl:min-w-[148px] 2xl:min-w-[168px] lg:px-5"
       />
 
-      <section className="relative min-h-[820px] overflow-hidden bg-[url('/Rectangle%201.png')] bg-cover bg-center bg-no-repeat px-6 pb-[190px] pt-5 text-[#1f1f1f] xl:min-h-[900px] xl:pb-[220px] 2xl:min-h-[1020px] 2xl:px-8 2xl:pb-[236px] 2xl:pt-6 [clip-path:polygon(0%_0%,100%_0%,100%_100%,82%_100%,76%_92%,24%_92%,18%_100%,0%_100%)]">
-        <HeroAccent className="pointer-events-none absolute left-[2%] top-[24%] z-10 h-[124px] w-[124px] -rotate-90 2xl:h-[176px] 2xl:w-[176px]" />
-        <HeroAccent className="pointer-events-none absolute right-[2%] top-[12%] z-10 h-[124px] w-[124px] 2xl:h-[176px] 2xl:w-[176px]" />
+      <section className="relative min-h-[770px] overflow-hidden bg-[url('/Rectangle%201.png')] bg-cover bg-center bg-no-repeat px-4 pb-[168px] pt-24 text-[#1f1f1f] sm:px-5 sm:pb-[160px] sm:pt-28 md:min-h-[900px] md:pb-[185px] md:pt-32 lg:min-h-[960px] lg:px-6 lg:pb-[220px] lg:pt-36 xl:min-h-[900px] xl:px-6 xl:pb-[220px] xl:pt-5 2xl:min-h-[1020px] 2xl:px-8 2xl:pb-[236px] 2xl:pt-6 [clip-path:polygon(0%_0%,100%_0%,100%_100%,82%_100%,76%_92%,24%_92%,18%_100%,0%_100%)]">
+        <HeroAccent className="pointer-events-none absolute left-[-10%] top-[22%] z-10 h-[78px] w-[78px] -rotate-90 opacity-90 sm:left-[2%] sm:h-[124px] sm:w-[124px] 2xl:h-[176px] 2xl:w-[176px]" />
+        <HeroAccent className="pointer-events-none absolute right-[-8%] top-[14%] z-10 h-[84px] w-[84px] opacity-90 sm:right-[2%] sm:top-[12%] sm:h-[124px] sm:w-[124px] 2xl:h-[176px] 2xl:w-[176px]" />
 
         <div className="relative z-30 mx-auto flex w-full max-w-[1360px] flex-col">
           <motion.div
-            className="relative z-30 mx-auto flex w-full max-w-[1180px] flex-col items-center px-3 pb-[210px] pt-16 text-center text-black xl:px-4 xl:pb-[236px] xl:pt-20 2xl:pb-[308px] 2xl:pt-[102px]"
+            className="relative z-30 mx-auto flex w-full max-w-[1180px] flex-col items-center px-1 pb-[138px] pt-6 text-center text-black sm:px-3 sm:pb-[205px] sm:pt-10 md:pb-[205px] md:pt-12 lg:pb-[235px] lg:pt-14 xl:px-4 xl:pb-[236px] xl:pt-20 2xl:pb-[308px] 2xl:pt-[102px]"
             variants={heroContainerVariants}
             initial={false}
             animate="visible"
           >
             <motion.div
               variants={heroItemVariants}
-              className="mx-auto flex w-fit items-center justify-center rounded-[8px] px-4 py-2.5 text-center text-base xl:px-5 xl:py-3 xl:text-lg 2xl:text-xl"
+              className="mx-auto flex w-fit items-center justify-center rounded-[8px] px-3 py-2 text-center text-sm sm:px-4 sm:py-2.5 sm:text-base xl:px-5 xl:py-3 xl:text-lg 2xl:text-xl"
               style={{
                 background:
                   "linear-gradient(90deg, rgba(178, 64, 2, 0.13) 0%, rgba(178, 64, 2, 0.00) 79.96%)",
@@ -242,7 +262,7 @@ const DesktopHero = () => {
 
             <motion.h1
               variants={heroItemVariants}
-              className="relative isolate mx-auto mt-5 max-w-[1040px] text-center text-5xl font-medium uppercase leading-[1.02] tracking-[-0.04em] text-black xl:max-w-[1120px] xl:text-6xl 2xl:text-7xl"
+              className="relative isolate mx-auto mt-4 max-w-[1040px] text-center text-[2.15rem] font-medium uppercase leading-[0.95] tracking-[-0.05em] text-black sm:mt-5 sm:text-5xl sm:leading-[1.02] sm:tracking-[-0.04em] xl:max-w-[1120px] xl:text-6xl 2xl:text-7xl"
             >
               <Image
                 src={heroEllipse}
@@ -251,20 +271,20 @@ const DesktopHero = () => {
                 height={500}
                 preload
                 placeholder="blur"
-                className="pointer-events-none absolute left-1/2 top-8 -z-10 w-[360px] max-w-none -translate-x-1/2 translate-y-10 rotate-2 xl:w-[420px] xl:translate-y-12 2xl:w-[500px] 2xl:translate-y-16"
+                className="pointer-events-none absolute left-1/2 top-2 -z-10 w-[220px] max-w-none -translate-x-1/2 translate-y-5 rotate-2 sm:top-8 sm:w-[320px] sm:translate-y-8 md:w-[360px] md:translate-y-10 xl:w-[420px] xl:translate-y-12 2xl:w-[500px] 2xl:translate-y-16"
                 aria-hidden="true"
               />
-              <span className="relative inline-block w-fit max-w-[860px] xl:max-w-[920px]">
+              <span className="relative inline-block w-fit max-w-[860px] pl-0 xl:max-w-[1120px]">
                 <Image
                   src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?auto=format&fit=crop&w=240&q=80"
                   alt=""
                   width={84}
                   height={84}
                   sizes="(min-width: 1536px) 66px, 58px"
-                  className="pointer-events-none absolute -left-[7.25rem] top-[0.96em] h-[52px] w-[52px] -translate-y-1 rounded-full border-4 border-white/70 object-cover shadow-[0_10px_24px_rgba(0,0,0,0.14)] xl:-left-[8.5rem] xl:h-[58px] xl:w-[58px] 2xl:-left-[10.6rem] 2xl:h-[66px] 2xl:w-[66px]"
+                  className="pointer-events-none absolute -left-2 top-[-2rem] h-[36px] w-[36px] rounded-full border-4 border-white/70 object-cover shadow-[0_10px_24px_rgba(0,0,0,0.14)] sm:-left-10 sm:top-[-1.2rem] sm:h-[48px] sm:w-[48px] md:-left-[5.5rem] md:top-[0.96em] md:-translate-y-1 md:h-[52px] md:w-[52px] xl:-left-[8.5rem] xl:h-[58px] xl:w-[58px] 2xl:-left-[10.6rem] 2xl:h-[66px] 2xl:w-[66px]"
                 />
-                <HeroHeadingMark className="absolute -left-[4.2rem] top-[0.84em] h-auto w-[76px] -rotate-16 xl:-left-[5rem] xl:w-[88px] 2xl:-left-[6.5rem] 2xl:w-[104px]" />
-                <span className="block max-w-[860px] text-center xl:max-w-[920px]">
+                <HeroHeadingMark className="absolute left-6 top-[-1.9rem] h-auto w-[50px] -rotate-16 sm:left-4 sm:top-[-0.8rem] sm:w-[66px] md:-left-[4.2rem] md:top-[0.84em] md:w-[76px] xl:-left-[5rem] xl:w-[88px] 2xl:-left-[6.5rem] 2xl:w-[104px]" />
+                <span className="block max-w-[860px] text-center xl:max-w-[1120px]">
                   {heroTitle}
                 </span>
               </span>
@@ -272,7 +292,7 @@ const DesktopHero = () => {
 
             <motion.p
               variants={heroItemVariants}
-              className="body-copy mx-auto mt-4 max-w-[760px] text-center text-base text-[#777777] xl:max-w-[860px] xl:text-lg 2xl:max-w-[900px]"
+              className="body-copy mx-auto mt-4 max-w-[340px] text-center text-[0.95rem] leading-[1.55] text-[#777777] sm:max-w-[760px] sm:text-base xl:max-w-[860px] xl:text-lg 2xl:max-w-[900px]"
             >
               {heroDescription}
             </motion.p>
@@ -281,8 +301,10 @@ const DesktopHero = () => {
           </motion.div>
         </div>
 
-        <div className="pointer-events-none absolute inset-x-0 bottom-[-34px] z-20 h-[35%] w-full xl:bottom-[-46px] xl:h-[38%] 2xl:bottom-[-88px] 2xl:h-[42%]">
-          <div className="flex h-full w-full items-end justify-center gap-0 px-3 xl:px-4 2xl:px-10">
+        <MobileBooksCarousel />
+
+        <div className="pointer-events-none absolute inset-x-0 bottom-[84px] z-20 hidden h-[13%] w-full sm:bottom-[-18px] sm:flex sm:h-[31%] md:bottom-[-24px] md:h-[32%] lg:bottom-[-30px] lg:h-[34%] xl:bottom-[-46px] xl:h-[38%] 2xl:bottom-[-88px] 2xl:h-[42%]">
+          <div className="flex h-full w-full items-end justify-center gap-[3px] px-2 sm:gap-0 sm:px-3 xl:px-4 2xl:px-10">
             {heroBooks.map((book) => (
               <div
                 key={book.src}
@@ -293,7 +315,7 @@ const DesktopHero = () => {
                   alt={book.alt}
                   width={book.width}
                   height={Math.round((book.width * 504) / 355)}
-                  sizes="(min-width: 1536px) 22vw, (min-width: 1280px) 19vw, 0px"
+                  sizes="(max-width: 639px) 20vw, (min-width: 1536px) 22vw, (min-width: 1280px) 19vw, 0px"
                   className="h-auto w-full drop-shadow-[0_20px_36px_rgba(0,0,0,0.22)]"
                   priority
                 />
@@ -306,160 +328,10 @@ const DesktopHero = () => {
   );
 };
 
-const CompactHero = () => {
-  return (
-    <section className="relative min-h-[760px] overflow-hidden bg-[radial-gradient(circle_at_top,rgba(255,255,255,0.92),rgba(255,255,255,0.76)_40%,rgba(255,255,255,0.88)_100%),url('/Rectangle%201.png')] bg-cover bg-center bg-no-repeat px-4 pb-12 pt-4 text-[#1f1f1f] sm:min-h-[840px] sm:px-6 sm:pb-14 md:min-h-[920px] md:pb-16 lg:min-h-[980px] lg:px-8 lg:pb-20 xl:hidden [clip-path:polygon(0%_0%,100%_0%,100%_100%,82%_100%,76%_92%,24%_92%,18%_100%,0%_100%)]">
-      <HeroAccent className="pointer-events-none absolute left-[-12%] top-[27%] z-10 h-[72px] w-[72px] -rotate-90 opacity-90 sm:left-[-2%] sm:h-[96px] sm:w-[96px] md:h-[108px] md:w-[108px]" />
-      <HeroAccent className="pointer-events-none absolute right-[-12%] top-[15%] z-10 h-[72px] w-[72px] opacity-90 sm:right-[-2%] sm:h-[96px] sm:w-[96px] md:h-[108px] md:w-[108px]" />
-
-      <div className="relative z-30 mx-auto max-w-[1240px]">
-        <motion.div
-          className="mx-auto flex max-w-[1040px] flex-col items-center text-center"
-          variants={heroContainerVariants}
-          initial={false}
-          animate="visible"
-        >
-          <motion.div
-            variants={heroItemVariants}
-            className="mx-auto mt-24 flex w-fit items-center justify-center rounded-[12px] px-4 py-2.5 text-center text-sm shadow-[0_10px_24px_rgba(255,255,255,0.28)] sm:mt-28 sm:text-base md:mt-32 md:px-5 md:py-3 md:text-lg"
-            style={{
-              background:
-                "linear-gradient(90deg, rgba(178, 64, 2, 0.14) 0%, rgba(178, 64, 2, 0.03) 85%)",
-            }}
-          >
-            <TextFluxUnveil text="NEXIFIRE PUBLISHING" />
-          </motion.div>
-
-          <motion.div
-            variants={heroItemVariants}
-            className="relative mt-6 max-w-[1020px]"
-          >
-            <Image
-              src={heroEllipse}
-              alt=""
-              width={500}
-              height={500}
-              preload
-              placeholder="blur"
-              className="pointer-events-none absolute left-1/2 top-0 -z-10 w-[220px] max-w-none -translate-x-1/2 translate-y-8 rotate-2 opacity-90 sm:w-[280px] md:w-[340px] lg:w-[400px]"
-              aria-hidden="true"
-            />
-            <div className="relative mx-auto hidden w-fit items-start justify-center pl-20 text-left md:inline-flex lg:pl-24">
-              <Image
-                src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?auto=format&fit=crop&w=240&q=80"
-                alt=""
-                width={84}
-                height={84}
-                sizes="(max-width: 1024px) 58px, 66px"
-                className="pointer-events-none absolute left-0 top-[0.95em] h-[48px] w-[48px] -translate-y-1 rounded-full border-4 border-white/80 object-cover shadow-[0_14px_28px_rgba(0,0,0,0.14)] md:h-[52px] md:w-[52px] lg:h-[60px] lg:w-[60px]"
-              />
-              <HeroHeadingMark className="absolute left-10 top-[0.82em] h-auto w-[72px] -rotate-16 lg:left-[3.15rem] lg:w-[92px]" />
-              <h1 className="max-w-[780px] text-center text-4xl font-medium uppercase leading-[1.02] tracking-[-0.04em] text-black md:text-5xl lg:max-w-[900px] lg:text-6xl">
-                {heroTitle}
-              </h1>
-            </div>
-            <h1 className="mx-auto max-w-[320px] text-center text-3xl font-medium uppercase leading-[0.98] tracking-[-0.05em] text-black sm:max-w-[460px] sm:text-4xl md:hidden">
-              {heroTitle}
-            </h1>
-          </motion.div>
-
-          <motion.p
-            variants={heroItemVariants}
-            className="mx-auto mt-5 max-w-[340px] text-center text-base text-[#777777] sm:max-w-[620px] sm:text-lg md:max-w-[700px] lg:max-w-[760px]"
-          >
-            {heroDescription}
-          </motion.p>
-
-          <HeroButtons />
-        </motion.div>
-
-        <motion.div
-          variants={heroContainerVariants}
-          initial={false}
-          animate="visible"
-          className="relative mx-auto mt-10 flex max-w-[1180px] flex-col items-center pb-10 sm:mt-12 sm:pb-14 md:pb-16 lg:pb-20"
-        >
-          <LogoMarquee
-            className="inset-x-0 bottom-[28px] z-30 py-2 sm:bottom-[34px] md:bottom-[40px] lg:bottom-[48px]"
-            imageClassName="opacity-75"
-          />
-
-          <div className="pointer-events-none absolute bottom-[5%] left-1/2 hidden h-[110px] w-[88%] -translate-x-1/2 rounded-[999px] bg-[radial-gradient(circle,rgba(178,64,2,0.14)_0%,rgba(178,64,2,0)_72%)] blur-2xl sm:block" />
-
-          <div className="relative flex w-full max-w-[1020px] items-end justify-center gap-0 px-2 sm:px-0">
-            {compactShelfBooks.map((book, index) => (
-              <motion.div
-                key={`${book.src}-shelf`}
-                variants={heroItemVariants}
-                className={`absolute bottom-[6%] hidden opacity-90 md:block ${
-                  index === 0
-                    ? "left-[2%] w-[16vw] max-w-[150px] rotate-[-8deg] lg:left-[5%] lg:max-w-[196px]"
-                    : "right-[2%] w-[16vw] max-w-[150px] rotate-[8deg] lg:right-[5%] lg:max-w-[196px]"
-                }`}
-              >
-                <Image
-                  src={book.src}
-                  alt={book.alt}
-                  width={book.width}
-                  height={Math.round((book.width * 504) / 355)}
-                  sizes="(min-width: 1024px) 196px, 172px"
-                  className="h-auto w-full drop-shadow-[0_24px_40px_rgba(0,0,0,0.18)]"
-                />
-              </motion.div>
-            ))}
-
-            {compactShowcaseBooks.map((book, index) => (
-              <motion.div
-                key={`${book.src}-feature`}
-                variants={heroItemVariants}
-                className={`relative ${book.compactClass} ${
-                  index === 0
-                    ? "z-10 translate-x-[14%] translate-y-[10%] rotate-[-7deg] sm:translate-x-[16%] md:translate-x-[18%]"
-                    : index === 1
-                      ? "z-20"
-                      : "z-10 -translate-x-[14%] translate-y-[10%] rotate-[7deg] sm:-translate-x-[16%] md:-translate-x-[18%]"
-                }`}
-              >
-                <Image
-                  src={book.src}
-                  alt={book.alt}
-                  width={book.width}
-                  height={Math.round((book.width * 504) / 355)}
-                  sizes={
-                    index === 1
-                      ? "(min-width: 640px) 274px, 228px"
-                      : "(min-width: 640px) 230px, 190px"
-                  }
-                  className="h-auto w-full rounded-[10px] drop-shadow-[0_26px_42px_rgba(0,0,0,0.24)]"
-                  priority
-                />
-              </motion.div>
-            ))}
-
-          </div>
-          {/* <motion.div
-            variants={heroItemVariants}
-            className="relative z-30 -mt-8 w-[88%] max-w-[1040px] rounded-[18px] border border-white/70 bg-white/76 px-4 py-4 shadow-[0_18px_48px_rgba(0,0,0,0.08)] backdrop-blur-xl sm:-mt-10 sm:px-6"
-          >
-            <div className="flex flex-wrap items-center justify-center gap-x-8 gap-y-3 text-sm font-medium uppercase tracking-[0.22em] text-[#a7a7a7] sm:text-base">
-              <span>Manuscript</span>
-              <span>Design</span>
-              <span>Publishing</span>
-              <span>Marketing</span>
-            </div>
-          </motion.div> */}
-        </motion.div>
-      </div>
-
-    </section>
-  );
-};
-
 const HomeHero = () => {
   return (
     <>
       <DesktopHero />
-      <CompactHero />
       <style jsx global>{`
         @keyframes hero-logo-marquee {
           from {
@@ -473,6 +345,25 @@ const HomeHero = () => {
         .hero-logo-marquee {
           animation: hero-logo-marquee 28s linear infinite;
           will-change: transform;
+        }
+
+        .no-scrollbar {
+          -ms-overflow-style: none;
+          scrollbar-width: none;
+          -webkit-overflow-scrolling: touch;
+          touch-action: pan-x;
+        }
+
+        .no-scrollbar::-webkit-scrollbar {
+          width: 0;
+          height: 0;
+          display: none;
+        }
+
+        @media (max-width: 639px) {
+          .hero-logo-marquee {
+            opacity: 0.24;
+          }
         }
       `}</style>
     </>

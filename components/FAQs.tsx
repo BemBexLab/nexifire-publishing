@@ -1,45 +1,35 @@
 "use client";
 
-import { useState } from "react";
 import Link from "next/link";
-import { MdOutlineArrowOutward } from "react-icons/md";
+import { useState } from "react";
 import TextFluxUnveil from "./TextFluxUnveil";
 
-const faqs = [
-  {
-    question:
-      "Do I need a completed manuscript before contacting NexiFire Publishing?",
-    answer:
-      "No. Whether you have a completed manuscript, a rough draft, or just a book idea, our team can guide you through the next steps.",
-  },
-  {
-    question: "What types of books do you publish?",
-    answer:
-      "We work across a wide range of genres including fiction, memoirs, children's books, business, self-development, and more.",
-  },
-  {
-    question: "Do I keep the rights to my book?",
-    answer:
-      "Yes. Your authorship and ownership stay protected, and we walk you through the publishing path with transparency.",
-  },
-  {
-    question: "What publishing services do you offer?",
-    answer:
-      "Our services can include editing, formatting, cover design, publishing support, distribution guidance, and marketing assistance.",
-  },
-  {
-    question: "How long does the publishing process take?",
-    answer:
-      "Timelines depend on the manuscript and services selected, but we provide a clear roadmap and milestones once we review your project.",
-  },
-  {
-    question: "Will my book be available on major online retailers?",
-    answer:
-      "Yes. We help position books for distribution through leading online retail platforms and wider availability channels.",
-  },
-];
+export type FAQItem = {
+  question: string;
+  answer: string;
+};
 
-const FAQs = () => {
+export type FAQsProps = {
+  badgeText: string;
+  title: string;
+  description?: string;
+  items: FAQItem[];
+  sidebarTitle: string;
+  sidebarDescription: string;
+  sidebarButtonLabel: string;
+  sidebarButtonHref: string;
+};
+
+const FAQs = ({
+  badgeText,
+  title,
+  description,
+  items,
+  sidebarTitle,
+  sidebarDescription,
+  sidebarButtonLabel,
+  sidebarButtonHref,
+}: FAQsProps) => {
   const [openIndex, setOpenIndex] = useState(0);
 
   return (
@@ -53,17 +43,20 @@ const FAQs = () => {
                 "linear-gradient(90deg, rgba(178, 64, 2, 0.13) 0%, rgba(178, 64, 2, 0.00) 79.96%)",
             }}
           >
-            <TextFluxUnveil text="FAQs" />
+            <TextFluxUnveil text={badgeText} />
           </div>
 
           <h2 className="project-h2 block w-full max-w-full text-left">
-            Frequently Asked Questions
+            {title}
           </h2>
+          <p className="text-[#777777] mt-4 max-w-[92%] text-base leading-[1.55] sm:text-lg sm:leading-[1.6]">
+            {description}
+          </p>
         </div>
 
         <div className="grid gap-6 lg:grid-cols-[minmax(0,1fr)_360px] lg:items-start xl:grid-cols-[minmax(0,1fr)_380px] xl:gap-8">
           <div className="space-y-2.5">
-            {faqs.map((faq, index) => {
+            {items.map((faq, index) => {
               const isOpen = openIndex === index;
 
               return (
@@ -140,19 +133,18 @@ const FAQs = () => {
             </div>
 
             <h3 className="mx-auto mt-5 max-w-[390px] text-3xl font-normal uppercase leading-[1.04] tracking-[-0.045em] text-[#4a4a4a] sm:text-3xl">
-              Do You Have More Questions?
+              {sidebarTitle}
             </h3>
 
             <p className="mx-auto mt-4 max-w-[240px] text-sm leading-[1.7] text-[#777777] sm:text-md">
-              Lorem Ipsum is simply dummy text of the printing and typesetting
-              industry.
+              {sidebarDescription}
             </p>
 
             <Link
-              href="#"
+              href={sidebarButtonHref}
               className="mt-6 inline-flex items-center justify-center rounded-[8px] bg-[linear-gradient(90deg,#B24002_0%,#FF5B01_100%)] px-5 py-[7px] text-base font-light leading-none text-white shadow-[0_10px_20px_rgba(255,91,1,0.18)] transition hover:brightness-[1.03] sm:text-md"
             >
-              Contact Us
+              {sidebarButtonLabel}
               <span className="ml-1.5 text-sm leading-none">
                 <svg
                   xmlns="http://www.w3.org/2000/svg"

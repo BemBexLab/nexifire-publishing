@@ -1,7 +1,9 @@
 import Image from "next/image";
 import React from "react";
+import TextFluxUnveil from "./TextFluxUnveil";
 
 type ImageDescProps = {
+  badgeText?: string;
   title: string;
   paragraphs: string[];
   imageSrc?: string;
@@ -10,6 +12,7 @@ type ImageDescProps = {
 };
 
 const ImageDesc = ({
+  badgeText,
   title,
   paragraphs,
   imageSrc = "",
@@ -24,6 +27,17 @@ const ImageDesc = ({
         }`}
       >
         <div className="w-full min-w-0 lg:basis-[60%] lg:pt-6 lg:max-w-[60%] xl:pt-8">
+          {badgeText ? (
+            <div
+              className="mb-5 flex w-fit items-center justify-center rounded-[8px] px-4 py-2 text-sm text-[#4E4741] sm:px-5 sm:text-base"
+              style={{
+                background:
+                  "linear-gradient(90deg, rgba(178, 64, 2, 0.13) 0%, rgba(178, 64, 2, 0.00) 79.96%)",
+              }}
+            >
+              <TextFluxUnveil text={badgeText} />
+            </div>
+          ) : null}
           <h2 className="project-h2 w-full tracking-[-0.055em]">
             <span>{title}</span>
           </h2>

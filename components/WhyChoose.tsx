@@ -1,30 +1,26 @@
 import React from "react";
 import TextFluxUnveil from "./TextFluxUnveil";
 
-const reasons = [
-  {
-    title: "Professional Guidance",
-    description: "Receive expert support throughout your publishing journey.",
-  },
-  {
-    title: "Global Distribution",
-    description:
-      "Make your book available through major print and digital platforms.",
-  },
-  {
-    title: "Quality Production",
-    description: "Professional formatting and publishing standards.",
-  },
-  {
-    title: "Author-Focused Approach",
-    description:
-      "Keep full ownership of your work with expert support.",
-  },
-];
+export type WhyChooseReason = {
+  title: string;
+  description: string;
+};
 
-const WhyChoose = () => {
+export type WhyChooseProps = {
+  badgeText: string;
+  title: string;
+  description?: string;
+  reasons: WhyChooseReason[];
+};
+
+const WhyChoose = ({
+  badgeText,
+  title,
+  description,
+  reasons,
+}: WhyChooseProps) => {
   return (
-    <section className="relative overflow-hidden bg-white px-4 py-10 sm:px-6 lg:px-8">
+    <section className="relative overflow-hidden bg-white px-4 py-12 sm:px-6 lg:px-8 xl:px-10">
       <div className="pointer-events-none absolute left-[-198px] top-[-18px] hidden lg:block">
         <svg
           xmlns="http://www.w3.org/2000/svg"
@@ -63,8 +59,8 @@ const WhyChoose = () => {
         </svg>
       </div>
 
-      <div className="relative z-10 mx-auto grid w-full max-w-[1540px] gap-12 lg:grid-cols-[460px_minmax(0,1fr)] lg:items-start lg:gap-16 xl:grid-cols-[500px_minmax(0,1fr)] xl:gap-20">
-        <div className="max-w-[360px] sm:max-w-[530px] lg:pt-7 xl:pt-9">
+      <div className="relative z-10 mx-auto grid w-full max-w-[1540px] gap-12 lg:grid-cols-[620px_minmax(0,1fr)] lg:items-start lg:gap-12 xl:grid-cols-[700px_minmax(0,1fr)] xl:gap-16">
+        <div className="max-w-[360px] sm:max-w-[730px] lg:max-w-[620px] lg:pt-7 xl:max-w-[700px] xl:pt-9">
           <div
             className="mb-5 flex w-fit items-center justify-center rounded-[8px] px-4 py-2 text-sm text-[#4E4741] sm:px-5 sm:text-base"
             style={{
@@ -72,16 +68,19 @@ const WhyChoose = () => {
                 "linear-gradient(90deg, rgba(178, 64, 2, 0.13) 0%, rgba(178, 64, 2, 0.00) 79.96%)",
             }}
           >
-            <TextFluxUnveil text="Why Choose Our Book Publishing Services" />
+            <TextFluxUnveil text={badgeText} />
           </div>
 
-          <h2 className="project-h2 leading-[1.04] tracking-[-0.055em]">
-            <span className="block">Everything You Need Under One Roof</span>
+          <h2 className="project-h2 max-w-[340px] leading-[1.02] tracking-[-0.05em] sm:max-w-[620px] lg:max-w-[620px] xl:max-w-[700px]">
+            {title}
           </h2>
+          <p className="mt-5 max-w-[520px] text-base leading-[1.65] text-[#666666] sm:text-lg lg:max-w-[560px] xl:max-w-[620px]">
+            {description}
+          </p>
         </div>
 
-        <div className="relative lg:pt-5 xl:pt-8">
-          <div className="rounded-[22px] px-5 py-6 sm:px-6 sm:py-8 lg:px-7 lg:py-10 xl:px-8 xl:py-12">
+        <div className="relative lg:pt-7 xl:pt-10">
+          <div className="rounded-[22px] px-5 py-6 sm:px-6 sm:py-8 lg:px-7 lg:py-8 xl:px-8 xl:py-10">
             {reasons.map((reason, index) => (
               <div
                 key={reason.title}

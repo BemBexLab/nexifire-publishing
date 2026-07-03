@@ -20,7 +20,7 @@ const heroItemVariants: Variants = {
 export default function BooksSection() {
   return (
     <section className="w-full bg-white px-4 py-14 sm:px-6 sm:py-16 md:px-10 md:py-20 lg:px-16 lg:py-24">
-      <div className="mx-auto flex w-full max-w-[1380px] flex-col items-center gap-10 lg:flex-row lg:items-center lg:justify-between lg:gap-12 xl:gap-16">
+      <div className="mx-auto flex w-full max-w-[1580px] flex-col items-center gap-10 lg:flex-row lg:items-center lg:justify-between lg:gap-12 xl:gap-16">
         <motion.div
           variants={heroItemVariants}
           initial="hidden"
@@ -62,21 +62,24 @@ export default function BooksSection() {
           </div>
 
           <h2 className="project-h2 inline-block leading-[1.02]">
-            Books We Help Bring To Life
+            Australia's Most Trusted Book Publishing Partner
           </h2>
 
-          <p className="body-copy mt-4 w-full text-base leading-[1.65] text-[#777777] sm:mt-5 sm:text-lg lg:max-w-[34rem]">
-            Explore a collection of books published through NexiFire Publishing.
-            From business and personal development to fiction and memoirs, we
-            help authors create books that inspire, educate, and leave a lasting
-            impact.
+          <p className="body-copy mt-4 w-full text-base leading-[1.65] text-[#777777] sm:mt-5 sm:text-lg lg:max-w-[38rem]">
+            NexiFire Publishing is a complete service, Australian-owned
+            self-publishing company dedicated to helping writers of every
+            background create professionally published books from their ideas.
+            If this is your first time as an author with a debut memoir or you
+            are an experienced writer expanding your catalogue, we provide the
+            expertise, tools, and distribution reach to make your book a
+            success.
           </p>
 
           <a
             href="#"
             className="mt-6 inline-flex min-h-[46px] items-center gap-2 rounded-[7px] bg-[linear-gradient(90deg,#B24002_0%,#FF5B01_100%)] px-5 py-2.5 text-sm font-light text-white transition hover:brightness-[0.98] sm:text-base"
           >
-            Learn More
+            Start Your Publishing Journey
             <svg
               xmlns="http://www.w3.org/2000/svg"
               width="20"
@@ -87,9 +90,9 @@ export default function BooksSection() {
               <path
                 d="M6 18L18 6M18 15V6H9"
                 stroke="white"
-                stroke-width="1.5"
-                stroke-linecap="round"
-                stroke-linejoin="round"
+                strokeWidth="1.5"
+                strokeLinecap="round"
+                strokeLinejoin="round"
               />
             </svg>
           </a>

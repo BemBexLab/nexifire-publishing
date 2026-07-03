@@ -36,49 +36,49 @@ const transparentIcon =
 const services = [
   {
     iconSrc: "/image 2.png",
-    title: "Book Cover Design",
+    title: "Ghostwriting",
     description:
-      "Custom book covers designed to attract readers and boost sales.",
+      "Our experienced ghostwriters work closely with you to capture your voice and structure your narrative.",
   },
   {
     iconSrc: "/image 2 (1).png",
-    title: "Ghostwriting Services",
-    description: "Bring your ideas to life with professional writing support.",
+    title: "Editing & Proofreading",
+    description: "Our certified editorial team covers every stage, from developmental editing and line editing to meticulous proofreading.",
   },
   {
     iconSrc: "/image 2 (2).png",
-    title: "Book Editing & Proofreading",
+    title: "Interior Formatting",
     description:
-      "Polish your manuscript for clarity, accuracy, and readability.",
+      "NexiFire's formatters prepare print ready interiors and EPUB/MOBI digital files optimised for all major e-readers.",
   },
   {
     iconSrc: "/image 2 (3).png",
-    title: "Book Formatting",
+    title: "Back Cover Design",
     description:
-      "Professional layouts optimized for print and digital publishing.",
+      "Our designers craft compelling back covers with sharp blurbs, author bios, barcode placement, and visual layouts.",
   },
   {
     iconSrc: "/image 2 (4).png",
-    title: "Book Video Trailer",
+    title: "eBook Publishing",
     description:
-      "Engaging promotional videos that help market your book effectively.",
+      "We handle EPUB3 conversion, metadata optimisation, ISBN assignment, and simultaneous listing across Kindle, Kobo, Apple Books, and Google Play Books.",
   },
   {
     iconSrc: "/image 2 (5).png",
-    title: "Book Printing",
+    title: "Hardcover Printing",
     description:
-      "High-quality printing solutions for paperback and hardcover books.",
+      "Premium hardcover production using quality materials, full-colour dust jackets, and acid-free paper. We do print-on-demand and a full offset print run.",
   },
   {
     iconSrc: "/image 2 (6).png",
-    title: "Book Illustration",
+    title: "Global Distribution",
     description:
-      "Custom illustrations that enhance storytelling and visual appeal.",
+      "Get your book into readers' hands across 40+ countries. NexiFire connects your title to Amazon, Book Depository, Booktopia, Barnes & Noble, Ingram's network of 39,000 retail accounts, and major library systems, in both print and digital formats.",
   },
   {
     iconSrc: "/image 2 (7).png",
-    title: "Audiobook Production",
-    description: "Convert your book into a professionally narrated audiobook.",
+    title: "Audiobook Formation",
+    description: "Our audiobook production service covers professional voice casting and distribution to Audible, Apple Books, Google Play, and Spotify.",
   },
 ];
 
@@ -114,22 +114,21 @@ const HomeServices = () => {
                 "linear-gradient(90deg, rgba(178, 64, 2, 0.13) 0%, rgba(178, 64, 2, 0.00) 79.96%)",
             }}
           >
-            <TextFluxUnveil text="SERVICES" />
+            <TextFluxUnveil text="What We Offer" />
           </motion.div>
 
-          <h2 className="project-h2 block w-full max-w-full text-center">
-            Everything You Need To Publish Successfully
+          <h2 className="project-h2 block w-full max-w-3/4 text-center">
+            Complete Book Publishing Services in Australia
           </h2>
 
-          <p className="mt-4 max-w-full text-[#777777] sm:text-lg">
-            A complete publishing ecosystem designed to help authors bring their
-            books to life.
+          <p className="mt-4 max-w-3/4 text-[#777777] sm:text-lg">
+            From the start to the final sale, NexiFire takes care of every stage of your publishing journey. Our professional publishing services in Australia are created for authors who refuse to compromise on quality.
           </p>
         </motion.div>
 
         <motion.div
           variants={sectionVariants}
-          className="mt-8 grid w-full max-w-[340px] grid-cols-1 gap-4 self-center sm:mt-10 sm:max-w-[760px] sm:grid-cols-2 md:max-w-[920px] lg:max-w-[1160px] lg:grid-cols-4 lg:gap-5"
+          className="mt-8 grid w-full max-w-[340px] grid-cols-1 gap-4 self-center sm:mt-10 sm:max-w-[760px] sm:grid-cols-2 md:max-w-[920px] lg:max-w-[1860px] lg:grid-cols-4 lg:gap-5"
         >
           {services.map((service) => (
             <motion.article
@@ -168,19 +167,17 @@ const HomeServices = () => {
           >
             <div className="absolute inset-0 bg-[linear-gradient(180deg,rgba(0,0,0,0.78)_0%,rgba(0,0,0,0.58)_44%,rgba(0,0,0,0.18)_100%)] lg:bg-[linear-gradient(90deg,rgba(0,0,0,0.82)_0%,rgba(0,0,0,0.54)_32%,rgba(0,0,0,0.16)_62%,rgba(0,0,0,0.02)_100%)]" />
             <div className="relative z-10 flex min-h-[280px] w-full items-end px-5 py-6 sm:min-h-[320px] sm:px-8 sm:py-8 lg:min-h-[384px] lg:items-center lg:px-10">
-              <div className="max-w-[400px] text-white sm:max-w-[460px]">
+              <div className="max-w-[400px] text-white sm:max-w-[560px]">
                 <h3 className="text-3xl font-light uppercase leading-[1.03] tracking-[-0.05em] sm:text-4xl lg:text-5xl">
-                    Ready To Publish Your Book?
+                    Nexifire provides services for Australian Authors
                 </h3>
 
                 <p className="mt-4 text-sm leading-[1.55] text-white sm:mt-5 sm:text-base">
-                  Turn your manuscript into a professionally published book with
-                  expert editing, design, distribution, and marketing support
-                  from start to finish.
+                  We understand the Australian publishing landscape, from local booksellers and library networks to international Amazon rankings. Our team has published over 2,000 titles across every genre and format.
                 </p>
 
                 <a
-                  href="#"
+                  href="/contact"
                   className="mt-6 inline-flex min-h-[48px] w-full items-center justify-center rounded-[8px] bg-[linear-gradient(90deg,#B24002_0%,#FF5B01_100%)] px-5 py-3 text-sm font-light text-white transition hover:brightness-[0.98] sm:w-fit sm:text-base"
                 >
                   Submit Your Manuscript

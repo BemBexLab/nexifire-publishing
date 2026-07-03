@@ -122,18 +122,15 @@ const WhoWeAre = () => {
                   "linear-gradient(90deg, rgba(178, 64, 2, 0.13) 0%, rgba(178, 64, 2, 0.00) 79.96%)",
               }}
             >
-              <TextFluxUnveil text="Who We Are" />
+              <TextFluxUnveil text="Why Choose Us" />
             </motion.div>
 
             <h2 className="project-h2 block w-full max-w-full text-left">
-              WHY AUTHORS CHOOSE NEXIFIRE PUBLISHING
+              The NexiFire Difference for Australian Authors
             </h2>
 
             <p className="mt-5 w-full max-w-none text-md leading-[1.65] text-[#777777] sm:text-lg">
-              At NexFire Publishing, we combine creativity, industry expertise,
-              and modern publishing solutions to help authors achieve their
-              goals. Whether you're publishing your first book or expanding your
-              existing catalog, our team is dedicated to your success.
+              NexiFire's hybrid publishing model gives Australian authors the best of both worlds: full creative freedom, 100% rights retained, and fair royalties, backed by an experienced local team of editors, designers, and consultants. Our transparent, affordable packages cover everything from editing to ISBN registration, while our global distribution network reaches over 40 countries without losing sight of the Australian market we call home.
             </p>
           </motion.div>
 

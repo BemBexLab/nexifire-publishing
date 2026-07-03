@@ -29,9 +29,65 @@ const page = () => {
             From memoirs and business books to self-help guides and fiction, we help authors turn ideas into impactful books.`}
         imageSrc="/image 67.png"
       />
-      <OurProcess />
+      <OurProcess
+        badgeText="How It Works"
+        title="Publish Your Book in 5 Clear Steps"
+        description="Publishing a book in Australia doesn't need to be complicated."
+        steps={[
+          {
+            number: "01",
+            title: "Free Consultation",
+            description:
+              "You will speak with your dedicated publishing consultant. We review your manuscript, discuss your goals, and recommend the right package.",
+          },
+          {
+            number: "02",
+            title: "Edit, Polish & Design",
+            description:
+              "From developmental editing and proofreading to cover design and interior formatting, we refine every word and visual element until your book is publication-ready.",
+          },
+          {
+            number: "03",
+            title: "Print & Convert",
+            description:
+              "Your book goes to print in hardcover or paperback while simultaneously being converted to eBook and audiobook formats.",
+          },
+          {
+            number: "04",
+            title: "Launch & Distribute",
+            description:
+              "Your title is listed globally across 40+ countries, with ISBN registration, metadata optimisation, and launch marketing support.",
+          },
+        ]}
+      />
       <WhyItMatters />
-      <WhyChoose />
+      <WhyChoose
+        badgeText="Why Choose Nexifire Publishing"
+        title="What Makes Our Audiobook Service Different"
+        description="There are many audiobook production options available in Australia. But the reason authors keep coming back to Nexifire Publishing, and why they recommend us to their colleagues and friends is:"
+        reasons={[
+          {
+            title: "Professional Voice & Production Guidance",
+            description:
+              "We help shape the right narration style, pacing, and delivery for your book and audience.",
+          },
+          {
+            title: "High-Quality Audio Standards",
+            description:
+              "Every audiobook is produced, edited, and polished to meet professional listening expectations.",
+          },
+          {
+            title: "Format Expansion Expertise",
+            description:
+              "We transform your written work into an engaging audio experience without losing its intent.",
+          },
+          {
+            title: "Publishing Support Beyond Recording",
+            description:
+              "From production through distribution, we help position your audiobook for a wider reach.",
+          },
+        ]}
+      />
       <PublishYourBook />
       <ImageDesc
         title="Expert Self Publishing Services in Australia: Complete Support"
@@ -52,10 +108,104 @@ const page = () => {
         <WhoWeServe />
       </div>
       
-      <WhatsIncluded />
-      <FAQs />
-      <Testimonials />
-      <GetInTouchContact />
+      <WhatsIncluded
+        badgeText="What's Included"
+        title="Complete Publishing Solutions"
+        items={[
+          { label: "Manuscript Assessment" },
+          { label: "Interior Formatting" },
+          { label: "ISBN Registration" },
+          { label: "Print & Digital Publishing" },
+          { label: "Publishing Consultation" },
+        ]}
+        imageSrc="/439230f4-7c82-4411-9ce5-487944ae406f 1.png"
+        imageAlt="Complete publishing solutions"
+        iconSrc="/Mask group.svg"
+      />
+      <FAQs
+        badgeText="FAQs"
+        title="Frequently Asked Questions"
+        items={[
+          {
+            question: "How do I publish a book in Australia with NexiFire?",
+            answer:
+              "The process of publishing a book with NexiFire begins with a free, no-obligation consultation. We assess your manuscript, discuss your goals and budget, then let you know the right package and team.",
+          },
+          {
+            question:
+              "What's the difference between self-publishing and traditional publishing?",
+            answer:
+              "With traditional publishing, a publisher acquires your rights, controls the timeline, and pays royalties of 8-15%. Self-publishing lets you retain full rights, earn up to 70% royalties, and get your book to market on your own schedule, with professional support from a team like NexiFire handling the rest.",
+          },
+          {
+            question:
+              "Does NexiFire offer children's book publishing services in Australia?",
+            answer:
+              "Yes. NexiFire is one of the most reliable and leading children's book publishing companies in Australia. We offer full-colour illustration sourcing or coordination, age-appropriate formatting, picture book and early reader layouts, hardcover and softcover printing, and full national and international distribution through Booktopia, Amazon, and library networks.",
+          },
+          {
+            question: "Can NexiFire produce an audiobook from my manuscript?",
+            answer:
+              "Absolutely. Our audiobook formation service covers everything: professional voice casting from our Australian narrator network or guidance for author-narrated recordings, studio-quality audio production, editing, mastering, and distribution to Audible, Apple Books, Google Play, Spotify, and Storytel.",
+          },
+          {
+            question:
+              "How much does it cost to self-publish a book in Australia?",
+            answer:
+              "NexiFire offers affordable book publishing packages in Australia, starting from entry-level eBook-only packages through to comprehensive hardcover and global distribution bundles. We provide transparent, flat-rate pricing. Contact us for a custom quote based on your manuscript length, genre, and publishing goals.",
+          },
+          {
+            question:
+              "Do I retain the rights to my book when publishing with NexiFire?",
+            answer:
+              "Yes, always. NexiFire is a publishing services company, not a rights-acquiring publisher. You retain 100% ownership of your manuscript, copyright, ISBN, and all derivative rights. This means you can take your book elsewhere at any time, license it internationally, or adapt it into other formats without restriction.",
+          },
+        ]}
+        sidebarTitle="Do You Have More Questions?"
+        sidebarDescription="Speak with the NexiFire team for clear answers, tailored guidance, and help choosing the right next step for your book."
+        sidebarButtonLabel="Contact Us"
+        sidebarButtonHref="/contact"
+      />
+      <Testimonials
+        badgeText="Author Stories"
+        title="What Australian Authors Say About NexiFire"
+        description="Over 2,000 Australian authors have trusted NexiFire Publishing to bring their books to life. Here's what a few of them have to say."
+        buttonLabel="View All Review"
+        buttonHref="#"
+        testimonials={[
+          {
+            quote:
+              "I'd been sitting on my memoir manuscript for three years, afraid of the publishing process. NexiFire made it feel completely manageable. My editor was thoughtful, the cover design exceeded my expectations, and within 10 weeks, my book was on Booktopia and Amazon. I couldn't recommend them more.",
+            name: "Sarah Phill",
+            avatarSrc:
+              "https://images.unsplash.com/photo-1494790108377-be9c29b29330?auto=format&fit=crop&w=120&q=80",
+            featured: false,
+            showAvatar: true,
+          },
+          {
+            quote:
+              "As a first-time children's book author, I was nervous about finding the right publishing company. NexiFire's children's publishing team understood exactly what illustrations my story needed and handled everything beautifully. My daughter's face when she held the printed book said it all.",
+            name: "James Kelvin",
+            avatarSrc:
+              "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&w=120&q=80",
+            featured: false,
+            showAvatar: true,
+          },
+          {
+            quote:
+              "My business book needed to look credible and professional to stand up next to traditionally published titles. NexiFire delivered on every front; the editing was sharp, the design was contemporary, and my book was in Dymocks within six weeks of final approval. Exceptional service.",
+            name: "Dr. Priya Gary",
+            avatarSrc:
+              "https://images.unsplash.com/photo-1438761681033-6461ffad8d80?auto=format&fit=crop&w=120&q=80",
+            featured: true,
+            showAvatar: true,
+          },
+        ]}
+      />
+      <GetInTouchContact
+        title="Ready To Publish Your Book?"
+        description="Tell us where you are and where you want to go. NexiFire will design the system, align the right specialists, and help you move forward with confidence."
+      />
     </section>
   );
 };

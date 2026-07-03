@@ -16,12 +16,10 @@ const FooterCTA = () => {
         <div className="grid w-full grid-cols-1 gap-14 lg:gap-16 xl:grid-cols-[minmax(0,700px)_minmax(0,1fr)] xl:items-start xl:justify-between 2xl:gap-24">
           <div className="flex w-full max-w-[700px] flex-col items-center text-center lg:items-start lg:text-left">
             <h2 className="project-h2 py-3 text-center leading-[1.05] lg:text-left">
-              <span className="sm:whitespace-nowrap">Ready To Publish</span>
-              <br /> Your Story?
+              NexiFire Publishing
             </h2>
             <p className="mt-5 max-w-xl text-base leading-[1.65] text-[#777777] sm:text-lg xl:max-w-[640px]">
-              Become a published author with expert support from manuscript to
-              marketplace.
+              NexiFire Publishing is Australia's reliable self-publishing partner. We help authors publish eBooks, print books, and audiobooks with professional services including ghostwriting, editing, formatting, cover design, and global distribution.
             </p>
             <Link href="/contact" className="mt-4 w-full sm:w-fit">
               <motion.button
