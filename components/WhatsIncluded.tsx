@@ -56,22 +56,24 @@ const WhatsIncluded = ({
           <h2 className="project-h2 max-w-[14ch] leading-[0.98] tracking-[-0.06em] sm:max-w-[16ch] lg:max-w-[18ch] xl:max-w-none">
             {title}
           </h2>
-          <p className="my-5 text-base font-light leading-[1.45] text-[#444444] sm:text-lg">
-            {description}
-          </p>
+          <div className="mt-5 overflow-y-auto pr-2 lg:max-h-[52vh] xl:max-h-[500px] [scrollbar-width:thin] [scrollbar-color:rgba(178,64,2,0.45)_transparent] [&::-webkit-scrollbar]:w-1 [&::-webkit-scrollbar-track]:bg-transparent [&::-webkit-scrollbar-thumb]:rounded-full [&::-webkit-scrollbar-thumb]:bg-[rgba(178,64,2,0.45)]">
+            <div className="text-base font-light leading-[1.45] text-[#444444] sm:text-lg">
+              {description}
+            </div>
 
-          <ul className="space-y-5">
-            {items?.map((item) => (
-              <li key={item.label} className="flex items-center">
-                <div className="mt-[1px] h-6 w-6 shrink-0">
-                  <IncludedIcon src={iconSrc} alt={iconAlt} />
-                </div>
-                <p className="ml-4 text-base font-light leading-[1.45] text-[#777777] sm:text-lg">
-                  {item.label}
-                </p>
-              </li>
-            ))}
-          </ul>
+            <ul className="mt-5 space-y-5">
+              {items?.map((item) => (
+                <li key={item.label} className="flex items-center">
+                  <div className="mt-[1px] h-6 w-6 shrink-0">
+                    <IncludedIcon src={iconSrc} alt={iconAlt} />
+                  </div>
+                  <p className="ml-4 text-base font-light leading-[1.45] text-[#777777] sm:text-lg">
+                    {item.label}
+                  </p>
+                </li>
+              ))}
+            </ul>
+          </div>
         </div>
 
         <div className="w-full">
