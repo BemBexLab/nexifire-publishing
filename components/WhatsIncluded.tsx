@@ -42,7 +42,7 @@ const WhatsIncluded = ({
   return (
     <section className="bg-white px-4 py-16 sm:px-6 lg:px-8 lg:py-24">
       <div className="mx-auto grid w-full max-w-[1460px] items-center gap-6 xl:items-stretch xl:grid-cols-[minmax(0,560px)_minmax(0,1fr)] xl:gap-6 2xl:grid-cols-[minmax(0,600px)_minmax(0,1fr)] 2xl:gap-8">
-        <div className="max-w-[680px]">
+        <div className="max-w-[680px] xl:flex xl:h-[460px] xl:max-w-none xl:flex-col 2xl:h-[520px]">
           <div
             className="mb-6 flex w-fit items-center justify-center rounded-[9px] px-4 py-2 text-sm text-[#4E4741] sm:px-5 sm:text-base"
             style={{
@@ -56,15 +56,15 @@ const WhatsIncluded = ({
           <h2 className="project-h2 max-w-[14ch] leading-[0.98] tracking-[-0.06em] sm:max-w-[16ch] lg:max-w-[18ch] xl:max-w-none">
             {title}
           </h2>
-          <div className="mt-5 overflow-y-auto pr-2 lg:max-h-[52vh] xl:max-h-[500px] [scrollbar-width:thin] [scrollbar-color:rgba(178,64,2,0.45)_transparent] [&::-webkit-scrollbar]:w-1 [&::-webkit-scrollbar-track]:bg-transparent [&::-webkit-scrollbar-thumb]:rounded-full [&::-webkit-scrollbar-thumb]:bg-[rgba(178,64,2,0.45)]">
+          <div className="mt-5 overflow-y-auto pr-2 xl:min-h-0 xl:flex-1 [scrollbar-width:thin] [scrollbar-color:rgba(178,64,2,0.45)_transparent] [&::-webkit-scrollbar]:w-1 [&::-webkit-scrollbar-track]:bg-transparent [&::-webkit-scrollbar-thumb]:rounded-full [&::-webkit-scrollbar-thumb]:bg-[rgba(178,64,2,0.45)]">
             <div className="text-base font-light leading-[1.45] text-[#444444] sm:text-lg">
               {description}
             </div>
 
-            <ul className="mt-5 space-y-5">
+            <ul className="mt-5 space-y-2">
               {items?.map((item) => (
                 <li key={item.label} className="flex items-center">
-                  <div className="mt-[1px] h-6 w-6 shrink-0">
+                  <div className="mt-[1px] h-4 w-4 shrink-0">
                     <IncludedIcon src={iconSrc} alt={iconAlt} />
                   </div>
                   <p className="ml-4 text-base font-light leading-[1.45] text-[#777777] sm:text-lg">
@@ -77,7 +77,7 @@ const WhatsIncluded = ({
         </div>
 
         <div className="w-full">
-          <div className="relative mx-auto w-full max-w-[760px] xl:ml-0 xl:mr-0">
+          <div className="relative mx-auto w-full max-w-[760px] xl:ml-0 xl:mr-0 xl:h-[460px] 2xl:h-[520px]">
             <Image
               src={imageSrc}
               alt={imageAlt}
