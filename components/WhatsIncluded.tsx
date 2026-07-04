@@ -61,7 +61,7 @@ const WhatsIncluded = ({
               {description}
             </div>
 
-            <ul className="mt-5 space-y-2">
+            <ul className="mt-2 space-y-2">
               {items?.map((item) => (
                 <li key={item.label} className="flex items-center">
                   <div className="mt-[1px] h-4 w-4 shrink-0">
