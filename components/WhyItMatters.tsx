@@ -57,7 +57,7 @@ const WhyItMatters = () => {
 
           {/* Right Side: Text Content */}
           <div className="w-full lg:flex-[1.05]">
-            <div className="mb-8">
+            <div className="mb-3">
               <motion.div
                 className="mb-3 flex w-fit items-center justify-center rounded-[8px] px-4 py-2 text-center text-sm text-black sm:px-5 sm:text-base"
                 style={{
@@ -70,17 +70,26 @@ const WhyItMatters = () => {
               <h2
                 className="project-h2 mt-5 max-w-[500px] leading-[1.02] tracking-[-0.05em] lg:max-w-[620px] xl:max-w-[680px]"
               >
-                Your Book Has Readers Who Prefer to Listen: Are You Reaching Them?
+                Understanding Audiobook Distribution Platforms in Australia
               </h2>
             </div>
 
             <div className="space-y-6 text-[#777777] text-lg md:text-lg leading-relaxed font-light">
               <p>
-                The global audiobook market is growing rapidly, and Australian listeners are part of that shift. Platforms like Audible, Apple Books, Spotify, and Google Play have made it easier than ever for readers to consume books in audio format, which means authors who do not have an audiobook version are missing a growing share of their potential audience every single day.
+                Audible remains the dominant audiobook platform in Australia, but the landscape is diversifying rapidly. Spotify launched audiobooks for Australian subscribers and is aggressively expanding its catalogue. Storytel has established a strong subscription base. Apple Books audiobooks reach a loyal iOS audience. Kobo Audiobooks serves existing Kobo e-reader users. OverDrive distributes to public library systems, connecting your audiobook to readers who access content through their library membership. NexiFire submits to all of these platforms simultaneously, ensuring your audiobook reaches every Australian listener regardless of their preferred platform.
               </p>
-              <p>
-                An audiobook also does something a printed or digital book cannot. It puts a voice behind your words. The right narration makes your story feel alive in a way that changes how listeners experience it. A well produced audiobook builds a deeper connection between your writing and your readers, and that connection translates directly into reviews, loyalty, and sales.
-              </p>
+            </div>
+
+            <div className="text-[#777777] text-lg md:text-lg leading-relaxed font-light mt-2">
+              <h3 className="text-3xl font-bold mt-2 text[#444444]">Professional Audiobook Services Across Australia</h3>
+              <ul className="list-disc pl-5 space-y-1">
+                <li>Audiobook Production Sydney</li>
+                <li>Audiobook Production Melbourne</li>
+                <li>Audiobook Production Brisbane</li>
+                <li>Audiobook Services Perth</li>
+                <li>Audiobook Services Adelaide</li>
+                <li>Regional & Remote Australia</li>
+              </ul>
             </div>
           </div>
         </div>

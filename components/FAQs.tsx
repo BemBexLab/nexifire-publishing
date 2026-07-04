@@ -15,7 +15,7 @@ export type FAQsProps = {
   description?: string;
   items: FAQItem[];
   sidebarTitle: string;
-  sidebarDescription: string;
+  sidebarDescription: string | React.ReactNode;
   sidebarButtonLabel: string;
   sidebarButtonHref: string;
 };
@@ -136,9 +136,9 @@ const FAQs = ({
               {sidebarTitle}
             </h3>
 
-            <p className="mx-auto mt-4 max-w-[240px] text-sm leading-[1.7] text-[#777777] sm:text-md">
+            <div className="mx-auto mt-4 max-w-[240px] overflow-y-auto text-sm leading-[1.7] text-[#777777] sm:text-md lg:h-[120px] lg:pr-2 [scrollbar-width:thin] [scrollbar-color:rgba(178,64,2,0.45)_transparent] [&::-webkit-scrollbar]:w-1 [&::-webkit-scrollbar-track]:bg-transparent [&::-webkit-scrollbar-thumb]:rounded-full [&::-webkit-scrollbar-thumb]:bg-[rgba(178,64,2,0.45)]">
               {sidebarDescription}
-            </p>
+            </div>
 
             <Link
               href={sidebarButtonHref}

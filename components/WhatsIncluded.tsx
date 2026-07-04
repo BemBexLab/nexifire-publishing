@@ -9,8 +9,8 @@ type WhatsIncludedItem = {
 type WhatsIncludedProps = {
   badgeText: string;
   title: string;
-  description?: string;
-  items: WhatsIncludedItem[];
+  description?: string | React.ReactNode;
+  items?: WhatsIncludedItem[];
   imageSrc: string;
   imageAlt: string;
   iconSrc: string;
@@ -61,7 +61,7 @@ const WhatsIncluded = ({
           </p>
 
           <ul className="space-y-5">
-            {items.map((item) => (
+            {items?.map((item) => (
               <li key={item.label} className="flex items-center">
                 <div className="mt-[1px] h-6 w-6 shrink-0">
                   <IncludedIcon src={iconSrc} alt={iconAlt} />

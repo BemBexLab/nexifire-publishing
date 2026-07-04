@@ -207,7 +207,7 @@ const BooksGrid = () => {
   return (
     <section className="bg-white px-4 py-16 sm:px-6 lg:px-8 lg:py-20">
       <div className="mx-auto max-w-[1260px]">
-        <div className="mx-auto max-w-[720px] text-center">
+        <div className="mx-auto max-w-[1020px] text-center">
           <motion.div
             className="mb-3 mx-auto flex w-fit items-center justify-center rounded-[8px] px-4 py-2 text-center text-sm text-black sm:px-5 sm:text-base"
             style={{
@@ -215,19 +215,15 @@ const BooksGrid = () => {
                 "linear-gradient(90deg, rgba(178, 64, 2, 0.13) 0%, rgba(178, 64, 2, 0.00) 79.96%)",
             }}
           >
-            <TextFluxUnveil text="Featured Collection" />
+            <TextFluxUnveil text="View Our Books" />
           </motion.div>
 
           <h2 className="project-h2 mt-5 leading-[1.05]">
-            Books We&apos;ve
-            <br />
-            Helped Bring To Life
+            Books Published Through NexiFire Publishing
           </h2>
 
           <p className="mx-auto mt-4 max-w-[840px] text-base leading-[1.65] text-[#777777] sm:text-lg">
-            Discover a growing collection of professionally published books
-            created through our publishing, editing, design, and marketing
-            services.
+            Our publishing portfolio spans fiction, romance, thriller, fantasy, memoirs, biographies, business books, self-help, children's books, educational titles, cookbooks, poetry, and many more.
           </p>
         </div>
 
