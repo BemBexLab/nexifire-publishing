@@ -17,45 +17,45 @@ const heroBooks = [
     alt: "Fresh Paths Unfolding book cover",
     width: 188,
     className:
-      "w-[18.2%] min-w-[70px] max-w-[104px] sm:w-[19.4%] sm:min-w-[122px] sm:max-w-[196px] md:min-w-[168px] md:max-w-[270px] lg:w-[22.2%] lg:min-w-[260px] lg:max-w-[390px]",
+      "w-[18.2%] min-w-[70px] max-w-[104px] sm:w-[19.4%] sm:min-w-[122px] sm:max-w-[196px] md:min-w-[168px] md:max-w-[270px] lg:w-[20%] lg:min-w-[190px] lg:max-w-[300px] xl:w-[22.2%] xl:min-w-[260px] xl:max-w-[390px]",
     offsetClass:
-      "mb-[-2px] sm:mb-[-8px] md:mb-[-10px] lg:mb-[-12px] xl:mb-[-18px] 2xl:mb-[-12px]",
+      "mb-[-2px] sm:mb-[-8px] md:mb-[-10px] lg:mb-[-10px] xl:mb-[-18px] 2xl:mb-[-12px]",
   },
   {
     src: "/Stephen 3.png",
     alt: "The Book of Unfolding Integration book cover",
     width: 208,
     className:
-      "w-[18.2%] min-w-[70px] max-w-[104px] sm:w-[19.4%] sm:min-w-[122px] sm:max-w-[196px] md:min-w-[168px] md:max-w-[270px] lg:w-[22.2%] lg:min-w-[260px] lg:max-w-[390px]",
+      "w-[18.2%] min-w-[70px] max-w-[104px] sm:w-[19.4%] sm:min-w-[122px] sm:max-w-[196px] md:min-w-[168px] md:max-w-[270px] lg:w-[20%] lg:min-w-[190px] lg:max-w-[300px] xl:w-[22.2%] xl:min-w-[260px] xl:max-w-[390px]",
     offsetClass:
-      "mb-[8px] sm:mb-[24px] md:mb-[34px] lg:mb-[50px] xl:mb-[22px] 2xl:mb-[50px]",
+      "mb-[8px] sm:mb-[24px] md:mb-[34px] lg:mb-[36px] xl:mb-[22px] 2xl:mb-[50px]",
   },
   {
     src: "/Stephen 4.png",
     alt: "The Labyrinth book cover",
     width: 220,
     className:
-      "w-[18.2%] min-w-[70px] max-w-[104px] sm:w-[19.4%] sm:min-w-[122px] sm:max-w-[196px] md:min-w-[168px] md:max-w-[270px] lg:w-[22.2%] lg:min-w-[260px] lg:max-w-[390px]",
+      "w-[18.2%] min-w-[70px] max-w-[104px] sm:w-[19.4%] sm:min-w-[122px] sm:max-w-[196px] md:min-w-[168px] md:max-w-[270px] lg:w-[20%] lg:min-w-[190px] lg:max-w-[300px] xl:w-[22.2%] xl:min-w-[260px] xl:max-w-[390px]",
     offsetClass:
-      "mb-[16px] sm:mb-[42px] md:mb-[66px] lg:mb-[100px] xl:mb-[46px] 2xl:mb-[100px]",
+      "mb-[16px] sm:mb-[42px] md:mb-[66px] lg:mb-[74px] xl:mb-[46px] 2xl:mb-[100px]",
   },
   {
     src: "/Stephen 6.png",
     alt: "The Bee's Colony book cover",
     width: 208,
     className:
-      "w-[18.2%] min-w-[70px] max-w-[104px] sm:w-[19.4%] sm:min-w-[122px] sm:max-w-[196px] md:min-w-[168px] md:max-w-[270px] lg:w-[22.2%] lg:min-w-[260px] lg:max-w-[390px]",
+      "w-[18.2%] min-w-[70px] max-w-[104px] sm:w-[19.4%] sm:min-w-[122px] sm:max-w-[196px] md:min-w-[168px] md:max-w-[270px] lg:w-[20%] lg:min-w-[190px] lg:max-w-[300px] xl:w-[22.2%] xl:min-w-[260px] xl:max-w-[390px]",
     offsetClass:
-      "mb-[8px] sm:mb-[24px] md:mb-[34px] lg:mb-[50px] xl:mb-[22px] 2xl:mb-[50px]",
+      "mb-[8px] sm:mb-[24px] md:mb-[34px] lg:mb-[36px] xl:mb-[22px] 2xl:mb-[50px]",
   },
   {
     src: "/Stephen 5.png",
     alt: "Don't Cut the Grass on Sunday book cover",
     width: 188,
     className:
-      "w-[18.2%] min-w-[70px] max-w-[104px] sm:w-[19.4%] sm:min-w-[122px] sm:max-w-[196px] md:min-w-[168px] md:max-w-[270px] lg:w-[22.2%] lg:min-w-[260px] lg:max-w-[390px]",
+      "w-[18.2%] min-w-[70px] max-w-[104px] sm:w-[19.4%] sm:min-w-[122px] sm:max-w-[196px] md:min-w-[168px] md:max-w-[270px] lg:w-[20%] lg:min-w-[190px] lg:max-w-[300px] xl:w-[22.2%] xl:min-w-[260px] xl:max-w-[390px]",
     offsetClass:
-      "mb-[-2px] sm:mb-[-8px] md:mb-[-10px] lg:mb-[-12px] xl:mb-[-18px] 2xl:mb-[-12px]",
+      "mb-[-2px] sm:mb-[-8px] md:mb-[-10px] lg:mb-[-10px] xl:mb-[-18px] 2xl:mb-[-12px]",
   },
 ];
 
@@ -139,11 +139,11 @@ const HeroButtons = () => {
   return (
     <motion.div
       variants={heroItemVariants}
-      className="mt-6 flex w-full max-w-[760px] flex-col items-center justify-center gap-3 sm:mt-7 sm:flex-row sm:flex-wrap sm:gap-4"
+      className="mt-6 flex w-full max-w-[760px] flex-row items-stretch justify-center gap-3 sm:mt-7 sm:flex-row sm:flex-wrap sm:items-center sm:gap-4"
     >
       <a
         href="/contact"
-        className="inline-flex min-h-[48px] w-full max-w-[286px] items-center justify-center rounded-[7px] bg-[linear-gradient(90deg,#B24002_0%,#FF5B01_100%)] px-5 py-3 text-base font-extralight text-[#FFFFFF] shadow-[0_8px_20px_rgba(178,64,2,0.22)] transition hover:brightness-[0.98] sm:w-auto sm:max-w-none sm:px-6 md:min-w-[220px] md:text-lg"
+        className="inline-flex min-h-[48px] min-w-0 flex-1 items-center justify-center rounded-[7px] bg-[linear-gradient(90deg,#B24002_0%,#FF5B01_100%)] px-3 py-3 text-center text-[0.95rem] font-extralight leading-tight text-[#FFFFFF] shadow-[0_8px_20px_rgba(178,64,2,0.22)] transition hover:brightness-[0.98] sm:w-auto sm:max-w-none sm:flex-none sm:px-6 sm:text-base md:min-w-[220px] md:text-lg"
       >
         Publish Your Book
         <span className="ml-2 text-xl leading-none">
@@ -152,7 +152,7 @@ const HeroButtons = () => {
       </a>
       <a
         href="/contact"
-        className="inline-flex min-h-[48px] w-full max-w-[286px] items-center justify-center rounded-[7px] border border-[#9F9F9F] bg-white/55 px-5 py-3 text-base font-light text-[#4B4B4B] shadow-[0_4px_14px_rgba(0,0,0,0.04)] backdrop-blur-[2px] transition hover:bg-white sm:w-auto sm:max-w-none sm:px-6 md:min-w-[260px] md:text-lg"
+        className="inline-flex min-h-[48px] min-w-0 flex-1 items-center justify-center rounded-[7px] border border-[#9F9F9F] bg-white/55 px-3 py-3 text-center text-[0.95rem] font-light leading-tight text-[#4B4B4B] shadow-[0_4px_14px_rgba(0,0,0,0.04)] backdrop-blur-[2px] transition hover:bg-white sm:w-auto sm:max-w-none sm:flex-none sm:px-6 sm:text-base md:min-w-[260px] md:text-lg"
       >
         Book A Free Consultation
         <span className="ml-2 text-xl leading-none">
@@ -362,7 +362,6 @@ const HomeHero = () => {
 
         @media (max-width: 639px) {
           .hero-logo-marquee {
-            opacity: 0.24;
           }
         }
       `}</style>

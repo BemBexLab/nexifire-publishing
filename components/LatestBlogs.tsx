@@ -42,7 +42,7 @@ const blogs: BlogCard[] = [
 const LatestBlogs = () => {
   return (
     <LazyMotion features={domAnimation}>
-      <section className="flex w-full bg-[#FDF7F4] items-center justify-center py-12 sm:py-16 lg:py-20">
+      <section className="flex w-full items-center justify-center bg-[#FDF7F4] py-12 sm:py-16 lg:py-20">
         <div className="mx-auto flex w-full max-w-[1180px] flex-col px-4 sm:px-6 lg:px-8">
           <m.h2
             className="project-h2 pb-8 text-center leading-tight sm:pb-10"
@@ -54,11 +54,11 @@ const LatestBlogs = () => {
             Our Latest Blogs
           </m.h2>
 
-          <div className="grid grid-cols-1 gap-4 sm:gap-5 md:grid-cols-2 lg:grid-cols-3">
+          <div className="latest-blogs-scroll-view -mx-4 flex snap-x snap-mandatory gap-4 overflow-x-auto overflow-y-hidden px-4 pb-2 md:mx-0 md:grid md:grid-cols-2 md:gap-5 md:overflow-visible md:px-0 md:pb-0 lg:grid-cols-3">
             {blogs.map((blog, index) => (
               <m.article
                 key={blog.id}
-                className="w-full overflow-hidden rounded-2xl border border-[#EEEEEE] bg-[#FEFEFE]"
+                className="w-[82vw] min-w-[280px] max-w-[320px] snap-start overflow-hidden rounded-2xl border border-[#EEEEEE] bg-[#FEFEFE] md:w-full md:min-w-0 md:max-w-none"
                 initial={{ opacity: 0, y: 24 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true, amount: 0.25 }}
@@ -101,6 +101,19 @@ const LatestBlogs = () => {
             ))}
           </div>
         </div>
+
+        <style jsx global>{`
+          .latest-blogs-scroll-view {
+            -webkit-overflow-scrolling: touch;
+            scrollbar-width: none;
+            -ms-overflow-style: none;
+            touch-action: pan-x;
+          }
+
+          .latest-blogs-scroll-view::-webkit-scrollbar {
+            display: none;
+          }
+        `}</style>
       </section>
     </LazyMotion>
   );

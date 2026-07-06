@@ -121,6 +121,7 @@ const GetInTouchContact = ({
   description,
   buttonLable,
 }: GetInTouchContactProps) => {
+  const [hasMounted, setHasMounted] = useState(false);
   const [selectedCountryCode, setSelectedCountryCode] = useState("US");
   const [isCountryOpen, setIsCountryOpen] = useState(false);
   const { handleSubmit, isSubmitting, submitMessage, submitStatus } =
@@ -131,6 +132,10 @@ const GetInTouchContact = ({
       (country) => country.code === selectedCountryCode,
     ) ?? countryPhoneOptions[0];
   const SelectedFlag = flagIcons[selectedCountry.code];
+
+  useEffect(() => {
+    setHasMounted(true);
+  }, []);
 
   useEffect(() => {
     const closeDropdown = (event: MouseEvent) => {
@@ -146,12 +151,45 @@ const GetInTouchContact = ({
     return () => document.removeEventListener("mousedown", closeDropdown);
   }, []);
 
+  if (!hasMounted) {
+    return (
+      <section
+        className={`flex w-full items-center justify-center overflow-hidden py-14 md:py-20 ${backgroundClassName ?? "bg-white"}`.trim()}
+      >
+        <div className="mx-auto grid w-full max-w-[1560px] grid-cols-1 items-start gap-12 px-4 sm:px-6 md:px-8 xl:grid-cols-[minmax(0,840px)_minmax(0,560px)] xl:gap-10">
+          <div className="mx-auto flex w-full max-w-[960px] flex-col items-center pt-2 xl:mx-0 xl:block xl:max-w-none">
+            <div
+              className="mb-3 flex w-fit items-center justify-center rounded-[8px] px-4 py-2 text-center text-sm text-black sm:px-5 sm:text-base"
+              style={{
+                background:
+                  "linear-gradient(90deg, rgba(178, 64, 2, 0.13) 0%, rgba(178, 64, 2, 0.00) 79.96%)",
+              }}
+            >
+              <TextFluxUnveil text="Get In Touch" />
+            </div>
+            <h2 className="project-h2 max-w-[16ch] text-center leading-[1.04] sm:max-w-[18ch] lg:max-w-none xl:max-w-[22ch] xl:text-left">
+              {title}
+            </h2>
+
+            <div className="mx-auto mt-4 max-w-[34rem] text-center text-base font-normal leading-[1.6] text-[#777777] sm:text-lg xl:mx-0 xl:max-w-[840px] xl:text-left xl:leading-[1.35]">
+              {description}
+            </div>
+          </div>
+
+          <div className="w-full max-w-[620px] justify-self-center rounded-[14px] border border-[#e7e7e7] bg-white px-4 py-5 shadow-[0_8px_24px_rgba(0,0,0,0.08)] sm:px-5 sm:py-5 lg:px-6 xl:w-full xl:max-w-none">
+            <div className="h-[420px] w-full animate-pulse rounded-[10px] bg-[#f5f1ee]" />
+          </div>
+        </div>
+      </section>
+    );
+  }
+
   return (
     <section
       className={`flex w-full items-center justify-center overflow-hidden py-14 md:py-20 ${backgroundClassName ?? "bg-white"}`.trim()}
     >
       <div className="mx-auto grid w-full max-w-[1560px] grid-cols-1 items-start gap-12 px-4 sm:px-6 md:px-8 xl:grid-cols-[minmax(0,840px)_minmax(0,560px)] xl:gap-10">
-        <div className="mx-auto w-full max-w-[960px] pt-2 xl:mx-0 xl:max-w-none">
+        <div className="mx-auto flex w-full max-w-[960px] flex-col items-center pt-2 xl:mx-0 xl:block xl:max-w-none">
           <div
             className="mb-3 flex w-fit items-center justify-center rounded-[8px] px-4 py-2 text-center text-sm text-black sm:px-5 sm:text-base"
             style={{
@@ -161,15 +199,15 @@ const GetInTouchContact = ({
           >
             <TextFluxUnveil text="Get In Touch" />
           </div>
-          <h2 className="project-h2 max-w-[13ch] text-center leading-tight lg:max-w-none xl:max-w-[22ch] xl:text-left">
+          <h2 className="project-h2 max-w-[16ch] text-center leading-[1.04] sm:max-w-[18ch] lg:max-w-none xl:max-w-[22ch] xl:text-left">
             {title}
           </h2>
 
-          <div className="mx-auto mt-3 max-w-[780px] text-center text-base font-normal leading-[1.5] text-[#777777] sm:text-lg xl:mx-0 xl:max-w-[840px] xl:text-left xl:leading-[1.35]">
+          <div className="mx-auto mt-4 max-w-[34rem] text-center text-base font-normal leading-[1.6] text-[#777777] sm:text-lg xl:mx-0 xl:max-w-[840px] xl:text-left xl:leading-[1.35]">
             {description}
           </div>
 
-          <div className="mx-auto mt-6 w-full max-w-[840px] space-y-5 xl:mx-0 xl:max-w-none">
+          <div className="mx-auto mt-8 w-full max-w-[840px] space-y-4 sm:space-y-5 xl:mx-0 xl:max-w-none">
             {contactItems.map((item) => {
               const isAddressItem = item.kind === "location";
               const contentClassName = isAddressItem
@@ -179,7 +217,7 @@ const GetInTouchContact = ({
               return (
                 <div
                   key={item.id}
-                  className="flex items-start justify-start gap-4"
+                  className="flex w-full items-start justify-start gap-4 max-xl:max-w-[620px]"
                 >
                   <div className="mt-0.5 flex h-[38px] w-[38px] shrink-0 items-center justify-center rounded-[5px] bg-[#B24002]">
                     <span
@@ -212,18 +250,18 @@ const GetInTouchContact = ({
             <ContactFormCurve />
           </div>
 
-          <div className="relative z-10 w-full max-w-[620px] rounded-[14px] border border-[#e7e7e7] bg-white px-4 py-4 shadow-[0_8px_24px_rgba(0,0,0,0.08)] sm:px-5 sm:py-5 lg:px-6 xl:w-full xl:max-w-none">
-            <h3 className="text-center text-xl font-bold uppercase tracking-wide text-[#444444] sm:text-2xl xl:text-left">
+          <div className="relative z-10 w-full max-w-[620px] rounded-[14px] border border-[#e7e7e7] bg-white px-4 py-5 shadow-[0_8px_24px_rgba(0,0,0,0.08)] sm:px-5 sm:py-5 lg:px-6 xl:w-full xl:max-w-none">
+            <h3 className="mx-auto max-w-[18ch] text-center text-[1.7rem] font-bold uppercase leading-[1.12] tracking-[-0.03em] text-[#444444] sm:max-w-none sm:text-2xl xl:mx-0 xl:text-left">
               Fill This Form To Get Faster Response
             </h3>
 
-            <form className="mt-5 space-y-4" onSubmit={handleSubmit}>
+            <form className="mt-5 space-y-3.5 sm:space-y-4" onSubmit={handleSubmit}>
               <input
                 name="name"
                 type="text"
                 placeholder="Name"
                 required
-                className="h-[42px] w-full rounded-[5px] border border-[#bababa] bg-transparent px-3 font-mulish text-sm text-[#4a4a4a] outline-none placeholder:text-[#9a9a9a] sm:text-base"
+                className="h-[44px] w-full rounded-[5px] border border-[#bababa] bg-transparent px-3 font-mulish text-sm text-[#4a4a4a] outline-none placeholder:text-[#9a9a9a] sm:h-[42px] sm:text-base"
               />
 
               <div className="grid grid-cols-1 gap-3 lg:grid-cols-2">
@@ -232,14 +270,14 @@ const GetInTouchContact = ({
                   type="email"
                   placeholder="Email"
                   required
-                  className="h-[42px] w-full rounded-[5px] border border-[#bababa] bg-transparent px-3 font-mulish text-sm text-[#4a4a4a] outline-none placeholder:text-[#9a9a9a] sm:text-base"
+                  className="h-[44px] w-full rounded-[5px] border border-[#bababa] bg-transparent px-3 font-mulish text-sm text-[#4a4a4a] outline-none placeholder:text-[#9a9a9a] sm:h-[42px] sm:text-base"
                 />
 
                 <div
                   ref={countryDropdownRef}
                   className="relative w-full"
                 >
-                  <div className="flex h-[42px] w-full items-center overflow-hidden rounded-[5px] border border-[#bababa] bg-transparent font-mulish">
+                  <div className="flex h-[44px] w-full items-center overflow-hidden rounded-[5px] border border-[#bababa] bg-transparent font-mulish sm:h-[42px]">
                     <button
                       type="button"
                       aria-expanded={isCountryOpen}
@@ -330,7 +368,7 @@ const GetInTouchContact = ({
                 placeholder="Message"
                 required
                 rows={5}
-                className="w-full rounded-[5px] border border-[#bababa] bg-transparent px-3 py-3 font-mulish text-sm text-[#4a4a4a] outline-none placeholder:text-[#9a9a9a] sm:text-base"
+                className="min-h-[148px] w-full rounded-[5px] border border-[#bababa] bg-transparent px-3 py-3 font-mulish text-sm text-[#4a4a4a] outline-none placeholder:text-[#9a9a9a] sm:min-h-0 sm:text-base"
               />
 
               {submitMessage ? (
