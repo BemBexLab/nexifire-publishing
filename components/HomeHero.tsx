@@ -7,7 +7,7 @@ import TextFluxUnveil from "./TextFluxUnveil";
 import { motion, Variants } from "motion/react";
 import { MdOutlineArrowOutward } from "react-icons/md";
 
-const heroTitle = "Self-Publishing Company, Helping Authors Publish Professionally And Reach Readers Worldwide";
+const heroTitle = "Publish Your Book Professionally and Reach Readers Worldwide";
 const heroDescription =
   "NexiFire Publishing delivers professional book publishing services across Australia, from ghostwriting and editing to hardcover printing, global distribution, and audiobook production. We help convert your manuscripts into bestsellers.";
 
