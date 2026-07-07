@@ -133,7 +133,7 @@ const FAQs = ({
               </svg>
             </div>
 
-            <h3 className="mx-auto mt-4 max-w-[300px] text-[2.1rem] font-normal uppercase leading-[0.98] tracking-[-0.045em] text-[#4a4a4a] sm:mt-5 sm:max-w-[390px] sm:text-3xl">
+            <h3 className="mx-auto mt-4 max-w-[300px] text-[1.8rem] font-normal uppercase leading-[0.98] tracking-[-0.045em] text-[#4a4a4a] sm:mt-5 sm:max-w-[390px] sm:text-[2.2rem]">
               {sidebarTitle}
             </h3>
 

@@ -147,7 +147,7 @@ const GetInTouchContactV2 = () => {
             </div>
 
             <div className="relative z-10 w-full max-w-[690px] rounded-[20px] border border-[#ECE8E2] bg-white p-4 shadow-[0_10px_28px_rgba(0,0,0,0.08)] sm:p-5 lg:p-6">
-              <h3 className="text-xl font-bold uppercase tracking-[-0.02em] text-[#4C4C4C] sm:text-2xl">
+              <h3 className="text-[1.05rem] font-bold uppercase tracking-[-0.02em] text-[#4C4C4C] sm:text-[1.35rem]">
                 Fill This Form To Get Faster Response
               </h3>
 

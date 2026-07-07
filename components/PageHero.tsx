@@ -160,7 +160,7 @@ const PageHero = ({
           )}
           <motion.h1
             variants={heroItemVariants}
-            className="font-jakarta relative isolate z-10 mx-auto mt-5 max-w-[1540px] whitespace-pre-line text-center text-3xl font-medium uppercase leading-[1.08] [word-spacing:0.5rem] text-black sm:text-4xl md:text-5xl lg:text-6xl"
+            className="font-jakarta relative isolate z-10 mx-auto mt-5 max-w-[1040px] whitespace-pre-line text-center text-[1.5rem] font-medium uppercase leading-[0.95] [word-spacing:0.5rem] tracking-[-0.05em] text-black sm:text-[2.5rem] sm:leading-[1.02] sm:tracking-[-0.04em] xl:max-w-[1200px] xl:text-[3.35rem] 2xl:text-[4.05rem]"
           >
             <Image
               src="/Ellipse 19.png"

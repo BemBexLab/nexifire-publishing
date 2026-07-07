@@ -244,7 +244,7 @@ const DesktopHero = () => {
 
         <div className="relative z-30 mx-auto flex w-full max-w-[1360px] flex-col">
           <motion.div
-            className="relative z-30 mx-auto flex w-full max-w-[1180px] flex-col items-center px-1 pb-[138px] pt-6 text-center text-black sm:px-3 sm:pb-[205px] sm:pt-10 md:pb-[205px] md:pt-12 lg:pb-[235px] lg:pt-14 xl:px-4 xl:pb-[236px] xl:pt-20 2xl:pb-[308px] 2xl:pt-[102px]"
+            className="relative z-30 mx-auto flex w-full max-w-[1180px] flex-col items-center px-1 pb-[138px] pt-14 text-center text-black sm:px-3 sm:pb-[205px] sm:pt-18 md:pb-[205px] md:pt-20 lg:pb-[235px] lg:pt-24 xl:px-4 xl:pb-[236px] xl:pt-28 2xl:pb-[308px] 2xl:pt-[132px]"
             variants={heroContainerVariants}
             initial={false}
             animate="visible"
@@ -262,7 +262,7 @@ const DesktopHero = () => {
 
             <motion.h1
               variants={heroItemVariants}
-              className="relative isolate mx-auto mt-4 max-w-[1040px] text-center text-[1.95rem] font-medium uppercase leading-[0.95] tracking-[-0.05em] text-black sm:mt-5 sm:text-4xl sm:leading-[1.02] sm:tracking-[-0.04em] xl:max-w-[1120px] xl:text-5xl 2xl:text-6xl"
+              className="relative isolate mx-auto mt-6 max-w-[980px] text-center text-[1.5rem] font-medium uppercase leading-[0.95] tracking-[-0.05em] text-black sm:mt-7 sm:text-[2.5rem] sm:leading-[1.02] sm:tracking-[-0.04em] xl:max-w-[1040px] xl:text-[3.35rem] 2xl:text-[4.05rem]"
             >
               <Image
                 src={heroEllipse}
@@ -271,7 +271,7 @@ const DesktopHero = () => {
                 height={500}
                 preload
                 placeholder="blur"
-                className="pointer-events-none absolute left-1/2 top-[-18px] -z-10 w-[220px] max-w-none -translate-x-1/2 translate-y-2 rotate-2 sm:top-0 sm:w-[320px] sm:translate-y-5 md:top-1 md:w-[360px] md:translate-y-6 xl:top-2 xl:w-[420px] xl:translate-y-7 2xl:top-3 2xl:w-[500px] 2xl:translate-y-10"
+                className="pointer-events-none absolute left-1/2 top-[-2px] -z-10 w-[220px] max-w-none -translate-x-1/2 translate-y-4 rotate-2 sm:top-4 sm:w-[320px] sm:translate-y-7 md:top-6 md:w-[360px] md:translate-y-8 xl:top-8 xl:w-[420px] xl:translate-y-9 2xl:top-10 2xl:w-[500px] 2xl:translate-y-12"
                 aria-hidden="true"
               />
               <span className="relative inline-block w-fit max-w-[860px] pl-0 xl:max-w-[1120px]">
@@ -281,9 +281,9 @@ const DesktopHero = () => {
                   width={84}
                   height={84}
                   sizes="(min-width: 1536px) 66px, 58px"
-                  className="pointer-events-none absolute -left-2 top-[-2rem] h-[36px] w-[36px] rounded-full border-4 border-white/70 object-cover shadow-[0_10px_24px_rgba(0,0,0,0.14)] sm:-left-10 sm:top-[-1.2rem] sm:h-[48px] sm:w-[48px] md:-left-[5.5rem] md:top-[0.96em] md:-translate-y-1 md:h-[52px] md:w-[52px] xl:-left-[8.5rem] xl:h-[58px] xl:w-[58px] 2xl:-left-[10.6rem] 2xl:h-[66px] 2xl:w-[66px]"
+                  className="pointer-events-none absolute -left-2 top-[-1.1rem] h-[36px] w-[36px] rounded-full border-4 border-white/70 object-cover shadow-[0_10px_24px_rgba(0,0,0,0.14)] sm:-left-10 sm:top-[-0.35rem] sm:h-[48px] sm:w-[48px] md:-left-[5.5rem] md:top-[1.35em] md:-translate-y-1 md:h-[52px] md:w-[52px] xl:-left-[8.5rem] xl:h-[58px] xl:w-[58px] 2xl:-left-[10.6rem] 2xl:h-[66px] 2xl:w-[66px]"
                 />
-                <HeroHeadingMark className="absolute left-6 top-[-1.9rem] h-auto w-[50px] -rotate-16 sm:left-4 sm:top-[-0.8rem] sm:w-[66px] md:-left-[4.2rem] md:top-[0.84em] md:w-[76px] xl:-left-[5rem] xl:w-[88px] 2xl:-left-[6.5rem] 2xl:w-[104px]" />
+                <HeroHeadingMark className="absolute left-6 top-[-1rem] h-auto w-[50px] -rotate-16 sm:left-4 sm:top-[-0.05rem] sm:w-[66px] md:-left-[4.2rem] md:top-[1.18em] md:w-[76px] xl:-left-[5rem] xl:w-[88px] 2xl:-left-[6.5rem] 2xl:w-[104px]" />
                 <span className="block max-w-[860px] text-center xl:max-w-[1120px]">
                   {heroTitle}
                 </span>
@@ -292,7 +292,7 @@ const DesktopHero = () => {
 
             <motion.p
               variants={heroItemVariants}
-              className="body-copy mx-auto mt-4 max-w-[340px] text-center text-[0.95rem] leading-[1.55] text-[#777777] sm:max-w-[760px] sm:text-base xl:max-w-[860px] xl:text-lg 2xl:max-w-[900px]"
+              className="body-copy mx-auto mt-6 max-w-[340px] text-center text-[0.95rem] leading-[1.55] text-[#777777] sm:max-w-[760px] sm:text-base xl:max-w-[860px] xl:text-lg 2xl:max-w-[900px]"
             >
               {heroDescription}
             </motion.p>

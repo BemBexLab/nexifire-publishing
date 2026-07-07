@@ -136,7 +136,7 @@ const PricingPackages = () => {
             >
               <div className="grid gap-8 lg:grid-cols-[250px_minmax(0,1fr)] lg:gap-12 xl:grid-cols-[280px_minmax(0,1fr)] xl:gap-16">
                 <div className="pt-1">
-                  <h3 className="text-3xl font-normal uppercase leading-none text-[#4A4A4A] sm:text-4xl">
+                  <h3 className="text-[1.8rem] font-normal uppercase leading-none text-[#4A4A4A] sm:text-[2.2rem]">
                     {pkg.name}
                   </h3>
 

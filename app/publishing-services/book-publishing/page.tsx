@@ -129,7 +129,7 @@ const page = () => {
       </div>
       <WhatsIncluded
         badgeText="Where Your eBook Will Live"
-        title="The Best eBook Platforms for Australian Authors in 2026"
+        title="eBook Platforms for Australian Authors"
         description="NexiFire distributes your eBook to every platform Australian and international readers use. Here's a breakdown of the major platforms, what they offer, and the royalty rates you can expect."
         items={[
           { label: "Amazon Kindle (KDP)" },

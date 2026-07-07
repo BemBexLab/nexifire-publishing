@@ -112,7 +112,7 @@ const OurStory = () => {
 
         <div className="mt-12 grid gap-5 lg:mt-10 lg:grid-cols-2">
           <article className="rounded-[22px] border border-[#ECE7E1] bg-white px-6 py-6 shadow-[0_12px_30px_rgba(50,50,50,0.08)] sm:px-8 sm:py-7">
-            <h3 className="block w-full max-w-full bg-gradient-to-r from-[#282828] to-[#8C8C8C] bg-clip-text text-left text-3xl font-medium uppercase leading-[1.05] tracking-[-0.045em] text-transparent sm:text-4xl">
+            <h3 className="block w-full max-w-full bg-gradient-to-r from-[#282828] to-[#8C8C8C] bg-clip-text text-left text-[1.8rem] font-medium uppercase leading-[1.05] tracking-[-0.045em] text-transparent sm:text-[2.2rem]">
               Our Mission
             </h3>
             <p className="mt-4 max-w-[520px] text-base leading-[1.7] text-[#909090] sm:text-lg">
@@ -121,7 +121,7 @@ const OurStory = () => {
           </article>
 
           <article className="rounded-[22px] border border-[#ECE7E1] bg-white px-6 py-6 shadow-[0_12px_30px_rgba(50,50,50,0.08)] sm:px-8 sm:py-7">
-            <h3 className="block w-full max-w-full bg-gradient-to-r from-[#282828] to-[#8C8C8C] bg-clip-text text-left text-3xl font-medium uppercase leading-[1.05] tracking-[-0.045em] text-transparent sm:text-4xl">
+            <h3 className="block w-full max-w-full bg-gradient-to-r from-[#282828] to-[#8C8C8C] bg-clip-text text-left text-[1.8rem] font-medium uppercase leading-[1.05] tracking-[-0.045em] text-transparent sm:text-[2.2rem]">
               Our Vision
             </h3>
             <p className="mt-4 max-w-[520px] text-base leading-[1.7] text-[#909090] sm:text-lg">

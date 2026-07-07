@@ -251,7 +251,7 @@ const GetInTouchContact = ({
           </div>
 
           <div className="relative z-10 w-full max-w-[620px] rounded-[14px] border border-[#e7e7e7] bg-white px-4 py-5 shadow-[0_8px_24px_rgba(0,0,0,0.08)] sm:px-5 sm:py-5 lg:px-6 xl:w-full xl:max-w-none">
-            <h3 className="mx-auto max-w-[18ch] text-center text-[1.7rem] font-bold uppercase leading-[1.12] tracking-[-0.03em] text-[#444444] sm:max-w-none sm:text-2xl xl:mx-0 xl:text-left">
+            <h3 className="mx-auto max-w-[18ch] text-center text-[1.5rem] font-bold uppercase leading-[1.12] tracking-[-0.03em] text-[#444444] sm:max-w-none sm:text-[1.85rem] xl:mx-0 xl:text-left">
               Fill This Form To Get Faster Response
             </h3>
 
