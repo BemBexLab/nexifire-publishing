@@ -1,5 +1,6 @@
 "use client";
 
+import { useEffect, useRef, useState } from "react";
 import { motion } from "motion/react";
 import Image from "next/image";
 import TextFluxUnveil from "./TextFluxUnveil";
@@ -15,6 +16,12 @@ export type OurProcessProps = {
   title: string;
   description: string;
   steps: OurProcessStep[];
+};
+
+type ScrollState = {
+  height: number;
+  top: number;
+  visible: boolean;
 };
 
 const dashedPaths = [
@@ -52,10 +59,71 @@ const OurProcess = ({
   description,
   steps,
 }: OurProcessProps) => {
+  const contentRefs = useRef<Record<string, HTMLParagraphElement | null>>({});
+  const [scrollStates, setScrollStates] = useState<Record<string, ScrollState>>(
+    {},
+  );
+
   const displayedSteps = steps.map((step, index) => ({
     ...step,
     ...stepLayoutClasses[index % stepLayoutClasses.length],
   }));
+
+  useEffect(() => {
+    const updateScrollState = (key: string) => {
+      const element = contentRefs.current[key];
+
+      if (!element) {
+        return;
+      }
+
+      const { clientHeight, scrollHeight, scrollTop } = element;
+      const hasOverflow = scrollHeight - clientHeight > 4;
+      const trackHeight = clientHeight;
+      const thumbHeight = hasOverflow
+        ? Math.max((clientHeight / scrollHeight) * trackHeight, 28)
+        : trackHeight;
+      const maxThumbTop = Math.max(trackHeight - thumbHeight, 0);
+      const maxScrollTop = Math.max(scrollHeight - clientHeight, 1);
+      const thumbTop = hasOverflow
+        ? (scrollTop / maxScrollTop) * maxThumbTop
+        : 0;
+
+      setScrollStates((prev) => {
+        const nextState = {
+          height: thumbHeight,
+          top: thumbTop,
+          visible: hasOverflow,
+        };
+
+        const current = prev[key];
+        if (
+          current &&
+          current.height === nextState.height &&
+          current.top === nextState.top &&
+          current.visible === nextState.visible
+        ) {
+          return prev;
+        }
+
+        return {
+          ...prev,
+          [key]: nextState,
+        };
+      });
+    };
+
+    const syncAll = () => {
+      steps.forEach((step) => updateScrollState(step.number));
+    };
+
+    syncAll();
+    window.addEventListener("resize", syncAll);
+
+    return () => {
+      window.removeEventListener("resize", syncAll);
+    };
+  }, [steps]);
 
   return (
     <section className="min-h-full overflow-hidden bg-[#fffaf6] px-4 py-14 sm:px-6 sm:py-16 md:px-10 lg:px-16 lg:py-20 xl:py-24">
@@ -130,9 +198,68 @@ const OurProcess = ({
                   <h3 className="mt-3 text-base font-semibold leading-[1.18] tracking-[-0.03em] text-[#4f4f4f] sm:text-md">
                     {step.title}
                   </h3>
-                  <p className="process-step-scroll mt-1 min-h-0 flex-1 overflow-y-auto pr-1 text-sm leading-[1.36] text-[#444444] sm:text-sm">
-                    {step.description}
-                  </p>
+                  <div className="relative mt-1 min-h-0 flex-1">
+                    <div
+                      aria-hidden="true"
+                      className="pointer-events-none absolute bottom-0 right-0 top-0 w-[3px] rounded-full bg-[#dbd4ad]/35"
+                    >
+                      {scrollStates[step.number]?.visible && (
+                        <span
+                          className="absolute left-0 w-full rounded-full bg-[#b3a62f]"
+                          style={{
+                            height: `${scrollStates[step.number].height}px`,
+                            transform: `translateY(${scrollStates[step.number].top}px)`,
+                          }}
+                        />
+                      )}
+                    </div>
+                    <p
+                      ref={(node) => {
+                        contentRefs.current[step.number] = node;
+                      }}
+                      onScroll={() => {
+                        const element = contentRefs.current[step.number];
+
+                        if (!element) {
+                          return;
+                        }
+
+                        const { clientHeight, scrollHeight, scrollTop } =
+                          element;
+                        const hasOverflow = scrollHeight - clientHeight > 4;
+                        const trackHeight = clientHeight;
+                        const thumbHeight = hasOverflow
+                          ? Math.max(
+                              (clientHeight / scrollHeight) * trackHeight,
+                              28,
+                            )
+                          : trackHeight;
+                        const maxThumbTop = Math.max(
+                          trackHeight - thumbHeight,
+                          0,
+                        );
+                        const maxScrollTop = Math.max(
+                          scrollHeight - clientHeight,
+                          1,
+                        );
+                        const thumbTop = hasOverflow
+                          ? (scrollTop / maxScrollTop) * maxThumbTop
+                          : 0;
+
+                        setScrollStates((prev) => ({
+                          ...prev,
+                          [step.number]: {
+                            height: thumbHeight,
+                            top: thumbTop,
+                            visible: hasOverflow,
+                          },
+                        }));
+                      }}
+                      className="process-step-scroll h-full overflow-y-auto pr-3 text-sm leading-[1.36] text-[#444444] sm:text-sm"
+                    >
+                      {step.description}
+                    </p>
+                  </div>
                 </div>
               </article>
             ))}
@@ -142,21 +269,12 @@ const OurProcess = ({
 
       <style jsx global>{`
         .process-step-scroll {
-          scrollbar-width: thin;
-          scrollbar-color: rgba(178, 64, 2, 0.45) transparent;
+          -ms-overflow-style: none;
+          scrollbar-width: none;
         }
 
         .process-step-scroll::-webkit-scrollbar {
-          width: 4px;
-        }
-
-        .process-step-scroll::-webkit-scrollbar-track {
-          background: transparent;
-        }
-
-        .process-step-scroll::-webkit-scrollbar-thumb {
-          border-radius: 999px;
-          background: rgba(178, 64, 2, 0.45);
+          display: none;
         }
       `}</style>
     </section>

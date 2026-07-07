@@ -156,7 +156,7 @@ const OurBookGenre = () => {
                 variants={itemVariants}
                 className="w-[78vw] min-w-[250px] max-w-[280px] shrink-0 snap-start first:ml-0"
               >
-                <div className="relative flex min-h-[140px] flex-col items-center justify-center overflow-hidden rounded-[18px] px-5 py-6 text-center shadow-[0_12px_28px_rgba(120,92,70,0.08)]">
+                <div className="relative flex min-h-[140px] flex-col items-center justify-center overflow-hidden rounded-[18px] px-5 py-6 text-center">
                   <Image
                     src="/Frame 2147225705.png"
                     alt=""
