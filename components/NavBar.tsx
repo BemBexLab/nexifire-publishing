@@ -102,7 +102,7 @@ export default function NavBar() {
                                 href={serviceLink.href}
                                 className={`border-b border-[#f1f1f1] px-0 py-[18px] text-[15px] transition-colors duration-150 last:border-b-0 ${
                                   isActive
-                                    ? "font-medium text-[#c0784a]"
+                                    ? "font-medium text-[#B24002]"
                                     : "font-normal text-[#1f1f1f] hover:text-[#c0784a]"
                                 }`}
                               >
