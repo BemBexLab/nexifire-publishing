@@ -271,7 +271,7 @@ const DesktopHero = () => {
                 height={500}
                 preload
                 placeholder="blur"
-                className="pointer-events-none absolute left-1/2 top-2 -z-10 w-[220px] max-w-none -translate-x-1/2 translate-y-5 rotate-2 sm:top-8 sm:w-[320px] sm:translate-y-8 md:w-[360px] md:translate-y-10 xl:w-[420px] xl:translate-y-12 2xl:w-[500px] 2xl:translate-y-16"
+                className="pointer-events-none absolute left-1/2 top-[-18px] -z-10 w-[220px] max-w-none -translate-x-1/2 translate-y-2 rotate-2 sm:top-0 sm:w-[320px] sm:translate-y-5 md:top-1 md:w-[360px] md:translate-y-6 xl:top-2 xl:w-[420px] xl:translate-y-7 2xl:top-3 2xl:w-[500px] 2xl:translate-y-10"
                 aria-hidden="true"
               />
               <span className="relative inline-block w-fit max-w-[860px] pl-0 xl:max-w-[1120px]">
