@@ -57,8 +57,8 @@ export default function NavBar() {
   }, [mobileOpen]);
 
   return (
-    <nav className="fixed inset-x-0 top-0 z-[100] w-full px-3 py-2 sm:px-4 lg:px-5">
-      <div className="mx-auto w-full max-w-[1540px] relative rounded-[20px] border border-white/20 bg-white/55 shadow-[0_10px_22px_rgba(15,23,42,0.03),inset_0_1px_0_rgba(255,255,255,0.38),inset_0_-1px_0_rgba(255,255,255,0.04)] backdrop-blur-[2px] backdrop-saturate-[1.08] sm:rounded-[22px] xl:rounded-[24px]">
+    <nav className="fixed inset-x-0 top-0 z-[100] w-full px-3 sm:px-4 lg:px-5">
+      <div className="mx-auto w-full max-w-[1540px] relative rounded-b-[20px] border border-white/20 bg-white/55 shadow-[0_10px_22px_rgba(15,23,42,0.03),inset_0_1px_0_rgba(255,255,255,0.38),inset_0_-1px_0_rgba(255,255,255,0.04)] backdrop-blur-[2px] backdrop-saturate-[1.08] sm:rounded-b-[22px] xl:rounded-b-[24px]">
         <div className="relative flex items-center justify-between px-3 py-3 sm:px-4 md:px-5 lg:px-6 xl:px-8 2xl:px-10">
           <Link href="/" className="flex shrink-0 items-center">
             <Image
