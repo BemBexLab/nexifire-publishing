@@ -103,7 +103,7 @@ const page = () => {
       <PublishYourBook title="Ready to Work With a Professional Book Editor in Australia?" description="Get a free, no-obligation quote for your manuscript today. Tell us your genre, word count, and editing needs, and we'll match you with the right editor within 24 hours." backgroundImageSrc="/Frame 2147225868.png" backgroundAlt="" buttonLabel="Submit Your Manuscript Today"/>
       <WhatsIncluded
         badgeText="What's Included"
-        title="Professional Editing You Can Count On"
+        title="Professional Editing"
         items={[
           { label: "Tracked changes in your original document" },
           { label: "Margin comments and editorial notes" },
