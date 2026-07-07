@@ -262,7 +262,7 @@ const DesktopHero = () => {
 
             <motion.h1
               variants={heroItemVariants}
-              className="relative isolate mx-auto mt-4 max-w-[1040px] text-center text-[2.15rem] font-medium uppercase leading-[0.95] tracking-[-0.05em] text-black sm:mt-5 sm:text-5xl sm:leading-[1.02] sm:tracking-[-0.04em] xl:max-w-[1120px] xl:text-6xl 2xl:text-7xl"
+              className="relative isolate mx-auto mt-4 max-w-[1040px] text-center text-[1.95rem] font-medium uppercase leading-[0.95] tracking-[-0.05em] text-black sm:mt-5 sm:text-4xl sm:leading-[1.02] sm:tracking-[-0.04em] xl:max-w-[1120px] xl:text-5xl 2xl:text-6xl"
             >
               <Image
                 src={heroEllipse}
