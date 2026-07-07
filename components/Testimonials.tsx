@@ -183,7 +183,7 @@ const Testimonials = ({
                   <TextFluxUnveil text={badgeText} />
                 </motion.div>
 
-                <h2 className="project-h2 block w-full max-w-full text-left lg:max-w-[13ch] 2xl:max-w-[13ch]">
+                <h2 className="project-h2 block w-full max-w-full text-left">
                   {title}
                 </h2>
 
