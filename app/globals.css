@@ -24,6 +24,15 @@ body {
   color: var(--foreground);
 }
 
+h1,
+h2 {
+  word-spacing: 10px;
+}
+
+p {
+  word-spacing: 5px;
+}
+
 @media (pointer: fine) {
   html,
   body,
@@ -53,7 +62,7 @@ body {
   font-weight: 400;
   line-height: 1.04;
   letter-spacing: 0px;
-  word-spacing: 2px;
+  word-spacing: 10px;
   text-transform: uppercase;
 }
 

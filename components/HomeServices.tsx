@@ -118,11 +118,11 @@ const HomeServices = () => {
               <TextFluxUnveil text="What We Offer" />
             </motion.div>
 
-            <h2 className="project-h2 block w-full max-w-[340px] text-center sm:max-w-none">
+            <h2 className="project-h2 block w-full max-w-full text-center sm:max-w-none">
               Complete Book Publishing Services in Australia
             </h2>
 
-            <p className="mt-4 max-w-[350px] text-[#777777] sm:max-w-[620px] sm:text-lg">
+            <p className="mt-4 max-w-[350px] text-[#777777] sm:max-w-full sm:text-lg">
               From the start to the final sale, NexiFire takes care of every stage of your publishing journey. Our professional publishing services in Australia are created for authors who refuse to compromise on quality.
             </p>
           </motion.div>
@@ -169,7 +169,7 @@ const HomeServices = () => {
               <div className="absolute inset-0 bg-[linear-gradient(180deg,rgba(0,0,0,0.78)_0%,rgba(0,0,0,0.58)_44%,rgba(0,0,0,0.18)_100%)] lg:bg-[linear-gradient(90deg,rgba(0,0,0,0.82)_0%,rgba(0,0,0,0.54)_32%,rgba(0,0,0,0.16)_62%,rgba(0,0,0,0.02)_100%)]" />
               <div className="relative z-10 flex min-h-[280px] w-full items-end px-5 py-6 sm:min-h-[320px] sm:px-8 sm:py-8 lg:min-h-[384px] lg:items-center lg:px-10">
                 <div className="max-w-[400px] text-white sm:max-w-[560px]">
-                  <h3 className="text-[1.8rem] font-light uppercase leading-[1.03] tracking-[-0.05em] sm:text-[2.2rem] lg:text-[2.8rem]">
+                  <h3 className="text-[1.8rem] font-light uppercase leading-[1.03] tracking-wide sm:text-[2.2rem] lg:text-[2.8rem]">
                       Nexifire provides services for Australian Authors
                   </h3>
 

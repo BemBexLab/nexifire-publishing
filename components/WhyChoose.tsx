@@ -59,8 +59,8 @@ const WhyChoose = ({
         </svg>
       </div>
 
-      <div className="relative z-10 mx-auto grid w-full max-w-[1540px] gap-12 lg:grid-cols-[620px_minmax(0,1fr)] lg:items-start lg:gap-12 xl:grid-cols-[700px_minmax(0,1fr)] xl:gap-16">
-        <div className="max-w-[360px] sm:max-w-[730px] lg:max-w-[620px] lg:pt-7 xl:max-w-[700px] xl:pt-9">
+      <div className="relative z-10 mx-auto grid w-full max-w-[1540px] gap-8 lg:grid-cols-[540px_minmax(0,1fr)] lg:items-start lg:gap-0 xl:grid-cols-[620px_minmax(0,1fr)] xl:gap-1">
+        <div className="max-w-[360px] sm:max-w-[730px] lg:max-w-[540px] lg:pt-7 xl:max-w-[620px] xl:pt-9">
           <div
             className="mb-5 flex w-fit items-center justify-center rounded-[8px] px-4 py-2 text-sm text-[#4E4741] sm:px-5 sm:text-base"
             style={{
@@ -71,16 +71,16 @@ const WhyChoose = ({
             <TextFluxUnveil text={badgeText} />
           </div>
 
-          <h2 className="project-h2 max-w-[340px] leading-[1.02] tracking-[-0.05em] sm:max-w-[620px] lg:max-w-[620px] xl:max-w-[700px]">
+          <h2 className="project-h2 max-w-[340px] leading-[1.02] tracking-[-0.05em] sm:max-w-[620px] lg:max-w-[540px] xl:max-w-[620px]">
             {title}
           </h2>
-          <p className="mt-5 max-w-[520px] text-base leading-[1.65] text-[#666666] sm:text-lg lg:max-w-[560px] xl:max-w-[620px]">
+          <p className="mt-5 max-w-[520px] text-base leading-[1.65] text-[#666666] sm:text-lg lg:max-w-[500px] xl:max-w-[560px]">
             {description}
           </p>
         </div>
 
         <div className="relative lg:pt-7 xl:pt-10">
-          <div className="rounded-[22px] px-5 py-6 sm:px-6 sm:py-8 lg:px-7 lg:py-8 xl:px-8 xl:py-10">
+          <div className="rounded-[22px] px-5 py-6 sm:px-6 sm:py-8 lg:px-2 lg:py-8 xl:px-3 xl:py-10">
             {reasons.map((reason, index) => (
               <div
                 key={reason.title}
@@ -99,7 +99,7 @@ const WhyChoose = ({
                     {reason.title}
                   </h3>
 
-                  <p className="mt-2 max-w-[580px] text-sm leading-[1.6] text-[#666666] sm:text-base">
+                  <p className="mt-2 text-sm leading-[1.6] text-[#666666] sm:text-base">
                     {reason.description}
                   </p>
                 </div>
