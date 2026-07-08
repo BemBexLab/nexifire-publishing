@@ -63,12 +63,12 @@ const PublishYourBook = ({
         >
           <div className={`absolute inset-0 ${overlayClassName}`.trim()} />
           <div className="relative z-10 flex min-h-[320px] w-full items-end px-5 py-6 sm:min-h-[360px] sm:px-8 sm:py-8 md:min-h-[400px] md:px-10 lg:min-h-[384px] lg:items-center lg:px-10 lg:py-10 xl:min-h-[420px] xl:px-12">
-            <div className="w-full max-w-[22rem] text-white sm:max-w-[26rem] lg:max-w-[28rem] xl:max-w-[36rem]">
+            <div className="w-full max-w-[22rem] text-white sm:max-w-[45rem]">
               <h3 className="text-[1.8rem] font-light uppercase leading-[1.03] tracking-normal sm:text-[2.2rem] md:text-[2.8rem] lg:text-[3rem] xl:text-[3.6rem]">
                 {title}
               </h3>
 
-              <p className="mt-4 max-w-[34rem] text-sm leading-[1.55] text-white sm:mt-5 sm:text-base md:text-lg">
+              <p className="mt-4 max-w-full text-sm leading-[1.55] text-white sm:mt-5 sm:text-base md:text-lg">
                 {description}
               </p>
 

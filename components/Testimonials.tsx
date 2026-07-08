@@ -171,8 +171,8 @@ const Testimonials = ({
             className="relative w-full bg-cover bg-center bg-no-repeat px-5 py-5 sm:px-6 sm:py-6 lg:px-8 lg:py-8 2xl:absolute 2xl:inset-x-0 2xl:top-[120px] 2xl:h-[470px] 2xl:px-0 2xl:py-0"
             style={{ backgroundImage: "url('/Frame 2147225735.png')" }}
           >
-            <div className="relative z-10 mx-auto flex h-full w-full max-w-[1540px] flex-col gap-7 md:gap-8 lg:flex-row lg:items-start lg:justify-between lg:gap-10 2xl:items-center 2xl:px-10">
-              <div className="relative z-20 flex flex-col justify-center lg:h-full lg:w-[min(52vw,720px)] lg:max-w-[720px] 2xl:w-[min(44vw,680px)] 2xl:max-w-[680px]">
+            <div className="relative z-10 mx-auto flex h-full w-full max-w-[1540px] flex-col gap-7 md:gap-8 xl:flex-row xl:items-start xl:justify-between xl:gap-10 2xl:items-center 2xl:px-10">
+              <div className="relative z-20 flex flex-col justify-center xl:h-full xl:w-[min(46vw,620px)] xl:max-w-[620px] 2xl:w-[min(44vw,680px)] 2xl:max-w-[680px]">
                 <motion.div
                   className="mb-3 flex w-fit items-center justify-center rounded-[8px] px-4 py-2 text-center text-sm text-black sm:px-5 sm:text-base"
                   style={{
@@ -204,8 +204,8 @@ const Testimonials = ({
                 </Link>
               </div>
 
-              <div className="mt-2 w-full 2xl:hidden lg:mt-4 lg:w-[360px] lg:shrink-0">
-                <div className="relative mx-auto min-h-[360px] w-full max-w-[560px] sm:min-h-[390px] lg:min-h-[420px] lg:max-w-[340px]">
+              <div className="mt-2 w-full xl:hidden">
+                <div className="relative mx-auto min-h-[360px] w-full max-w-[560px] sm:min-h-[390px] lg:min-h-[420px] lg:max-w-[640px]">
                   {mobileTestimonial ? (
                     <motion.div
                       key={mobileTestimonial.name}
@@ -226,7 +226,7 @@ const Testimonials = ({
                 </div>
               </div>
 
-              <div className="relative hidden min-h-[520px] w-[760px] shrink-0 2xl:block">
+              <div className="relative hidden min-h-[520px] w-full max-w-[760px] shrink-0 xl:block 2xl:max-w-[760px]">
                 {hasTestimonials
                   ? testimonialSlots.map((slot, index) => {
                       const item =
@@ -245,7 +245,7 @@ const Testimonials = ({
                             ease: [0.22, 1, 0.36, 1],
                           }}
                           style={{ zIndex: slot.zIndex }}
-                          className="absolute left-0 top-0 xl:hidden"
+                          className="absolute left-0 top-0 2xl:hidden"
                         >
                           <TestimonialCard
                             item={item}
@@ -274,7 +274,7 @@ const Testimonials = ({
                             ease: [0.22, 1, 0.36, 1],
                           }}
                           style={{ zIndex: slot.zIndex }}
-                          className="absolute left-0 top-0 hidden xl:block"
+                          className="absolute left-0 top-0 hidden 2xl:block"
                         >
                           <TestimonialCard
                             item={item}
