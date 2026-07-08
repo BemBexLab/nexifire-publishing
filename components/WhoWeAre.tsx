@@ -1,29 +1,159 @@
 "use client";
 
 import Image from "next/image";
-import { motion, type Variants } from "motion/react";
+import { animate, motion, type Variants, useInView } from "motion/react";
+import { useEffect, useMemo, useRef, useState } from "react";
 import TextFluxUnveil from "./TextFluxUnveil";
 
 const containerVariants: Variants = {
-  hidden: { opacity: 0, y: 20 },
+  hidden: {},
   visible: {
-    opacity: 1,
-    y: 0,
     transition: {
-      duration: 0.7,
-      ease: [0.22, 1, 0.36, 1],
-      staggerChildren: 0.08,
+      staggerChildren: 0.14,
+      delayChildren: 0.06,
     },
   },
 };
 
 const itemVariants: Variants = {
-  hidden: { opacity: 0, y: 16 },
+  hidden: { opacity: 0, y: 22, filter: "blur(8px)" },
   visible: {
     opacity: 1,
     y: 0,
+    filter: "blur(0px)",
     transition: {
-      duration: 0.55,
+      duration: 0.72,
+      ease: [0.22, 1, 0.36, 1],
+    },
+  },
+};
+
+const backdropVariants: Variants = {
+  hidden: {
+    opacity: 0,
+    x: -36,
+    scale: 1.05,
+    filter: "blur(10px)",
+  },
+  visible: {
+    opacity: 0.7,
+    x: 0,
+    scale: 1,
+    filter: "blur(0px)",
+    transition: {
+      duration: 1.15,
+      ease: [0.22, 1, 0.36, 1],
+    },
+  },
+};
+
+const textClusterVariants: Variants = {
+  hidden: {},
+  visible: {
+    transition: {
+      staggerChildren: 0.12,
+      delayChildren: 0.08,
+    },
+  },
+};
+
+const textRevealVariants: Variants = {
+  hidden: {
+    opacity: 0,
+    y: 28,
+    filter: "blur(10px)",
+    clipPath: "inset(0 0 100% 0)",
+  },
+  visible: {
+    opacity: 1,
+    y: 0,
+    filter: "blur(0px)",
+    clipPath: "inset(0 0 0% 0)",
+    transition: {
+      duration: 0.82,
+      ease: [0.22, 1, 0.36, 1],
+    },
+  },
+};
+
+const imageClusterVariants: Variants = {
+  hidden: {},
+  visible: {
+    transition: {
+      staggerChildren: 0.14,
+      delayChildren: 0.12,
+    },
+  },
+};
+
+const imageAccentVariants: Variants = {
+  hidden: {
+    opacity: 0,
+    scale: 0.72,
+    rotate: -12,
+    filter: "blur(10px)",
+  },
+  visible: {
+    opacity: 0.1,
+    scale: 1,
+    rotate: 0,
+    filter: "blur(0px)",
+    transition: {
+      duration: 0.9,
+      ease: [0.22, 1, 0.36, 1],
+    },
+  },
+};
+
+const imageRevealVariants: Variants = {
+  hidden: {
+    opacity: 0,
+    x: 36,
+    y: 24,
+    scale: 0.95,
+    rotate: 1.5,
+    filter: "blur(12px)",
+  },
+  visible: {
+    opacity: 1,
+    x: 0,
+    y: 0,
+    scale: 1,
+    rotate: 0,
+    filter: "blur(0px)",
+    transition: {
+      duration: 0.95,
+      ease: [0.22, 1, 0.36, 1],
+    },
+  },
+};
+
+const statsContainerVariants: Variants = {
+  hidden: {},
+  visible: {
+    transition: {
+      staggerChildren: 0.1,
+      delayChildren: 0.18,
+    },
+  },
+};
+
+const statCardVariants: Variants = {
+  hidden: (index: number) => ({
+    opacity: 0,
+    y: 32,
+    scale: 0.94,
+    x: index % 2 === 0 ? -14 : 14,
+    filter: "blur(8px)",
+  }),
+  visible: {
+    opacity: 1,
+    y: 0,
+    x: 0,
+    scale: 1,
+    filter: "blur(0px)",
+    transition: {
+      duration: 0.72,
       ease: [0.22, 1, 0.36, 1],
     },
   },
@@ -41,10 +171,57 @@ const imageBackdropPath =
 const textBackdropPath =
   "M961.12 495.915C841.551 285.709 558.042 -96.2483 380.564 57.5702C158.716 249.843 629.994 579.14 723.196 766.961C797.758 917.218 690.066 908.319 626.901 885.087C500.644 809.211 226.301 640.14 138.982 570.863C69.0392 522.18 -8.43626 526.401 42.3503 595.528C105.833 681.937 276.985 793.327 386.666 810.484C474.411 824.21 327.177 594.781 242.592 478.351";
 
+const parseStatValue = (value: string) => {
+  const numericValue = Number.parseInt(value.replace(/\D/g, ""), 10);
+  const prefixMatch = value.match(/^[^\d]+/);
+  const suffixMatch = value.match(/[^\d]+$/);
+
+  return {
+    target: Number.isNaN(numericValue) ? 0 : numericValue,
+    prefix: prefixMatch?.[0] ?? "",
+    suffix: suffixMatch?.[0] ?? "",
+  };
+};
+
+const AnimatedStatValue = ({ value }: { value: string }) => {
+  const ref = useRef<HTMLDivElement | null>(null);
+  const isInView = useInView(ref, { once: true, amount: 0.6 });
+  const { target, prefix, suffix } = useMemo(() => parseStatValue(value), [value]);
+  const [displayValue, setDisplayValue] = useState(0);
+
+  useEffect(() => {
+    if (!isInView) {
+      return;
+    }
+
+    const controls = animate(0, target, {
+      duration: 1.15,
+      ease: [0.22, 1, 0.36, 1],
+      onUpdate: (latest) => setDisplayValue(Math.round(latest)),
+    });
+
+    return () => controls.stop();
+  }, [isInView, target]);
+
+  return (
+    <div ref={ref} className="relative z-10 text-3xl font-semibold leading-none tracking-[-0.04em] text-black sm:text-4xl">
+      {prefix}
+      {displayValue}
+      {suffix}
+    </div>
+  );
+};
+
 const WhoWeAre = () => {
   return (
     <section className="relative overflow-hidden bg-white px-4 py-12 sm:px-6 sm:py-14 md:px-10 md:py-16 lg:px-16 lg:py-18">
-      <div className="pointer-events-none absolute bottom-[-8rem] left-[-13rem] z-0 opacity-70 sm:left-[-11rem] md:left-[-10rem] lg:bottom-[-14rem] lg:left-[-14rem]">
+      <motion.div
+        variants={backdropVariants}
+        initial="hidden"
+        whileInView="visible"
+        viewport={{ once: true, amount: 0.15 }}
+        className="pointer-events-none absolute bottom-[-8rem] left-[-13rem] z-0 opacity-70 sm:left-[-11rem] md:left-[-10rem] lg:bottom-[-14rem] lg:left-[-14rem]"
+      >
         <svg
           xmlns="http://www.w3.org/2000/svg"
           width="988"
@@ -101,7 +278,7 @@ const WhoWeAre = () => {
             </filter>
           </defs>
         </svg>
-      </div>
+      </motion.div>
 
       <motion.div
         variants={containerVariants}
@@ -112,10 +289,11 @@ const WhoWeAre = () => {
       >
         <div className="flex flex-col gap-10 lg:flex-row lg:items-center lg:gap-10 xl:gap-16">
           <motion.div
-            variants={itemVariants}
+            variants={textClusterVariants}
             className="flex w-full max-w-[680px] flex-col items-start text-left lg:max-w-[560px] lg:flex-[1] xl:max-w-[620px] xl:flex-[1.05]"
           >
             <motion.div
+              variants={textRevealVariants}
               className="mb-3 flex w-fit items-center justify-center rounded-[8px] px-4 py-2 text-center text-sm text-black sm:px-5 sm:text-base"
               style={{
                 background:
@@ -125,21 +303,28 @@ const WhoWeAre = () => {
               <TextFluxUnveil text="Why Choose Us" />
             </motion.div>
 
-            <h2 className="project-h2 block w-full max-w-full text-left">
+            <motion.h2
+              variants={textRevealVariants}
+              className="project-h2 block w-full max-w-full text-left"
+            >
               The NexiFire Difference for Australian Authors
-            </h2>
+            </motion.h2>
 
-            <p className="mt-5 w-full max-w-none text-md leading-[1.65] text-[#777777] sm:text-lg">
+            <motion.p
+              variants={textRevealVariants}
+              className="mt-5 w-full max-w-none text-md leading-[1.65] text-[#777777] sm:text-lg"
+            >
               NexiFire's hybrid publishing model gives Australian authors the best of both worlds: full creative freedom, 100% rights retained, and fair royalties, backed by an experienced local team of editors, designers, and consultants. Our transparent, affordable packages cover everything from editing to ISBN registration, while our global distribution network reaches over 40 countries without losing sight of the Australian market we call home.
-            </p>
+            </motion.p>
           </motion.div>
 
           <motion.div
-            variants={itemVariants}
+            variants={imageClusterVariants}
             className="relative mx-auto flex w-full max-w-[560px] items-center justify-center sm:max-w-[680px] lg:mx-0 lg:max-w-[620px] lg:flex-[0.95] xl:max-w-[700px]"
           >
             <div className="relative flex w-full items-center justify-center overflow-visible">
-              <svg
+              <motion.svg
+                variants={imageAccentVariants}
                 xmlns="http://www.w3.org/2000/svg"
                 width="202"
                 height="202"
@@ -149,8 +334,9 @@ const WhoWeAre = () => {
                 aria-hidden="true"
               >
                 <path opacity="0.1" d={imageBackdropPath} fill="#FF5B01" />
-              </svg>
-              <svg
+              </motion.svg>
+              <motion.svg
+                variants={imageAccentVariants}
                 xmlns="http://www.w3.org/2000/svg"
                 width="202"
                 height="202"
@@ -160,9 +346,12 @@ const WhoWeAre = () => {
                 aria-hidden="true"
               >
                 <path opacity="0.1" d={imageBackdropPath} fill="#FF5B01" />
-              </svg>
+              </motion.svg>
 
-              <div className="relative z-10 w-full max-w-[660px]">
+              <motion.div
+                variants={imageRevealVariants}
+                className="relative z-10 w-full max-w-[660px]"
+              >
                 <div className="pointer-events-none absolute inset-x-[10%] bottom-[-14px] h-[36px] rounded-full bg-black/18 blur-2xl sm:bottom-[-18px] sm:h-[48px]" />
                 <Image
                   src="/2f867d55-6678-47c9-b53c-2f54a5cda131 1.png"
@@ -172,26 +361,27 @@ const WhoWeAre = () => {
                   sizes="(max-width: 639px) 100vw, (max-width: 1023px) 80vw, (max-width: 1279px) 46vw, 700px"
                   className="relative z-10 h-auto w-full object-contain"
                 />
-              </div>
+              </motion.div>
             </div>
           </motion.div>
         </div>
 
         <motion.div
-          variants={containerVariants}
+          variants={statsContainerVariants}
           className="mt-10 grid grid-cols-2 gap-y-6 border-t border-[#f2ece8] pt-8 text-center sm:grid-cols-4 sm:gap-x-4 lg:mt-12 lg:gap-x-6"
         >
           {stats.map((stat, index) => (
             <motion.div
               key={stat.label}
-              variants={itemVariants}
+              custom={index}
+              variants={statCardVariants}
               className="relative flex flex-col items-center px-2 text-center sm:px-4"
+              whileHover={{ y: -6, scale: 1.02 }}
+              transition={{ type: "spring", stiffness: 260, damping: 20 }}
             >
               <div className="relative flex items-center justify-center">
                 {/* <div className="pointer-events-none absolute bottom-[-2px] h-[10px] w-[98px] rounded-full bg-black/60 blur-sm" /> */}
-                <div className="relative z-10 text-3xl font-semibold leading-none tracking-[-0.04em] text-black sm:text-4xl">
-                  {stat.value}
-                </div>
+                <AnimatedStatValue value={stat.value} />
               </div>
               <div className="mt-2 inline-block text-sm text-[#777777CC]">
                 {stat.label}

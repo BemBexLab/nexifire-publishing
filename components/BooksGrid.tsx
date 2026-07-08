@@ -1,6 +1,6 @@
 "use client";
 
-import { motion } from "motion/react";
+import { motion, type Variants } from "motion/react";
 import Image from "next/image";
 import Link from "next/link";
 import React, { useState } from "react";
@@ -197,6 +197,104 @@ const AmazonBagIcon = () => (
   </svg>
 );
 
+const booksEase = [0.22, 1, 0.36, 1] as const;
+
+const sectionVariants: Variants = {
+  hidden: {},
+  visible: {
+    transition: {
+      staggerChildren: 0.16,
+    },
+  },
+};
+
+const introVariants: Variants = {
+  hidden: {
+    opacity: 0,
+    y: 36,
+  },
+  visible: {
+    opacity: 1,
+    y: 0,
+    transition: {
+      duration: 0.8,
+      ease: booksEase,
+    },
+  },
+};
+
+const gridVariants: Variants = {
+  hidden: {},
+  visible: {
+    transition: {
+      staggerChildren: 0.08,
+      delayChildren: 0.12,
+    },
+  },
+};
+
+const cardVariants: Variants = {
+  hidden: {
+    opacity: 0,
+    y: 34,
+    scale: 0.96,
+  },
+  visible: {
+    opacity: 1,
+    y: 0,
+    scale: 1,
+    transition: {
+      duration: 0.72,
+      ease: booksEase,
+    },
+  },
+};
+
+const imageWrapVariants: Variants = {
+  hidden: {
+    opacity: 0,
+    y: 28,
+  },
+  visible: {
+    opacity: 1,
+    y: 0,
+    transition: {
+      duration: 0.78,
+      ease: booksEase,
+    },
+  },
+};
+
+const textVariants: Variants = {
+  hidden: {
+    opacity: 0,
+    y: 18,
+  },
+  visible: {
+    opacity: 1,
+    y: 0,
+    transition: {
+      duration: 0.58,
+      ease: booksEase,
+    },
+  },
+};
+
+const ctaVariants: Variants = {
+  hidden: {
+    opacity: 0,
+    y: 22,
+  },
+  visible: {
+    opacity: 1,
+    y: 0,
+    transition: {
+      duration: 0.62,
+      ease: booksEase,
+    },
+  },
+};
+
 const BooksGrid = () => {
   const initialVisibleCount = 12;
   const loadMoreCount = 8;
@@ -206,69 +304,122 @@ const BooksGrid = () => {
 
   return (
     <section className="bg-white px-4 py-16 sm:px-6 lg:px-8 lg:py-20">
-      <div className="mx-auto max-w-[1260px]">
-        <div className="mx-auto max-w-[1020px] text-center">
+      <motion.div
+        className="mx-auto max-w-[1260px]"
+        variants={sectionVariants}
+        initial="hidden"
+        whileInView="visible"
+        viewport={{ once: true, amount: 0.14 }}
+      >
+        <motion.div
+          className="mx-auto max-w-[1020px] text-center"
+          variants={introVariants}
+        >
           <motion.div
             className="mb-3 mx-auto flex w-fit items-center justify-center rounded-[8px] px-4 py-2 text-center text-sm text-black sm:px-5 sm:text-base"
             style={{
               background:
                 "linear-gradient(90deg, rgba(178, 64, 2, 0.13) 0%, rgba(178, 64, 2, 0.00) 79.96%)",
             }}
+            variants={textVariants}
           >
             <TextFluxUnveil text="View Our Books" />
           </motion.div>
 
-          <h2 className="project-h2 mt-5 leading-[1.05]">
+          <motion.h2
+            className="project-h2 mt-5 leading-[1.05]"
+            variants={textVariants}
+          >
             Books Published Through NexiFire Publishing
-          </h2>
+          </motion.h2>
 
-          <p className="mx-auto mt-4 max-w-[840px] text-base leading-[1.65] text-[#777777] sm:text-lg">
+          <motion.p
+            className="mx-auto mt-4 max-w-[890px] text-base leading-[1.65] text-[#777777] sm:text-lg"
+            variants={textVariants}
+          >
             Our publishing portfolio spans fiction, romance, thriller, fantasy, memoirs, biographies, business books, self-help, children's books, educational titles, cookbooks, poetry, and many more.
-          </p>
-        </div>
+          </motion.p>
+        </motion.div>
 
-        <div className="mt-14 grid grid-cols-1 gap-x-8 gap-y-12 sm:grid-cols-2 lg:grid-cols-4 lg:gap-x-8 lg:gap-y-14">
+        <motion.div
+          className="mt-14 grid grid-cols-1 gap-x-8 gap-y-12 sm:grid-cols-2 lg:grid-cols-4 lg:gap-x-8 lg:gap-y-14"
+          variants={gridVariants}
+        >
           {visibleBooks.map((book) => (
-            <article
+            <motion.article
               key={book.title}
               className="flex flex-col items-center text-center"
+              variants={cardVariants}
+              initial="hidden"
+              animate="visible"
+              whileHover={{ y: -8 }}
             >
-              <div className="relative mb-12 w-full max-w-[258px] pt-3">
-                <div className="pointer-events-none absolute left-1/2 top-[3.9rem] w-[116%] -translate-x-1/2">
-                  <BookGlow />
-                </div>
-
-                <Image
-                  src={book.imageSrc}
-                  alt={book.title}
-                  width={258}
-                  height={386}
-                  className="relative z-10 mx-auto h-auto w-[90%] rounded-[4px]"
-                />
-              </div>
-
-              <h3 className="text-lg font-medium leading-[1.25] tracking-[-0.03em] text-[#272727] sm:text-xl">
-                {book.title}
-              </h3>
-              <p className="mt-2 text-sm leading-none text-[#444444] sm:text-base">
-                {book.author}
-              </p>
-
-              <Link
-                href={book.amazonHref}
-                className="mt-5 inline-flex items-center justify-center rounded-[8px] bg-[linear-gradient(90deg,#B24002_0%,#FF5B01_100%)] px-4 py-[8px] text-sm font-light leading-none text-white shadow-[0_8px_18px_rgba(255,91,1,0.24)] transition hover:brightness-[1.03] sm:text-base"
+              <motion.div
+                className="relative mb-12 w-full max-w-[258px] pt-3"
+                variants={imageWrapVariants}
               >
-                Buy on Amazon
-                <span className="ml-1.5 text-sm leading-none">
-                  <AmazonBagIcon />
-                </span>
-              </Link>
-            </article>
-          ))}
-        </div>
+                <motion.div
+                  className="pointer-events-none absolute left-1/2 top-[3.9rem] w-[116%] -translate-x-1/2"
+                  initial={{ opacity: 0, scale: 0.9 }}
+                  animate={{ opacity: 1, scale: 1 }}
+                  transition={{ duration: 0.9, delay: 0.08, ease: booksEase }}
+                >
+                  <BookGlow />
+                </motion.div>
 
-        <div className="mt-20 flex justify-center">
-          <button
+                <motion.div
+                  className="relative z-10 mx-auto w-[90%]"
+                  initial={{ opacity: 0, y: 30, rotate: -2, scale: 0.94 }}
+                  animate={{ opacity: 1, y: 0, rotate: 0, scale: 1 }}
+                  transition={{ duration: 0.85, ease: booksEase }}
+                >
+                  <Image
+                    src={book.imageSrc}
+                    alt={book.title}
+                    width={258}
+                    height={386}
+                    className="h-auto w-full rounded-[4px]"
+                  />
+                </motion.div>
+              </motion.div>
+
+              <motion.h3
+                className="text-lg font-medium leading-[1.25] tracking-[-0.03em] text-[#272727] sm:text-xl"
+                variants={textVariants}
+              >
+                {book.title}
+              </motion.h3>
+              <motion.p
+                className="mt-2 text-sm leading-none text-[#444444] sm:text-base"
+                variants={textVariants}
+              >
+                {book.author}
+              </motion.p>
+
+              <motion.div
+                variants={ctaVariants}
+                whileHover={{ y: -2 }}
+                whileTap={{ scale: 0.98 }}
+              >
+                <Link
+                  href={book.amazonHref}
+                  className="mt-5 inline-flex items-center justify-center rounded-[8px] bg-[linear-gradient(90deg,#B24002_0%,#FF5B01_100%)] px-4 py-[8px] text-sm font-light leading-none text-white shadow-[0_8px_18px_rgba(255,91,1,0.24)] transition hover:brightness-[1.03] sm:text-base"
+                >
+                  Buy on Amazon
+                  <span className="ml-1.5 text-sm leading-none">
+                    <AmazonBagIcon />
+                  </span>
+                </Link>
+              </motion.div>
+            </motion.article>
+          ))}
+        </motion.div>
+
+        <motion.div
+          className="mt-20 flex justify-center"
+          variants={introVariants}
+        >
+          <motion.button
             type="button"
             onClick={() =>
               setVisibleCount((current) =>
@@ -276,6 +427,8 @@ const BooksGrid = () => {
               )
             }
             disabled={allItemsDisplayed}
+            whileHover={allItemsDisplayed ? undefined : { y: -3, scale: 1.01 }}
+            whileTap={allItemsDisplayed ? undefined : { scale: 0.98 }}
             className={`inline-flex items-center justify-center gap-2 rounded-[8px] px-6 py-3 text-base font-light leading-none transition sm:text-lg ${
               allItemsDisplayed
                 ? "cursor-not-allowed bg-[#ece7e3] text-[#a29a94]"
@@ -283,9 +436,9 @@ const BooksGrid = () => {
             }`}
           >
             Load More <FaArrowDown />
-          </button>
-        </div>
-      </div>
+          </motion.button>
+        </motion.div>
+      </motion.div>
     </section>
   );
 };

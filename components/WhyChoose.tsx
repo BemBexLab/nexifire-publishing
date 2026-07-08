@@ -1,3 +1,6 @@
+"use client";
+
+import { motion, type Variants } from "motion/react";
 import React from "react";
 import TextFluxUnveil from "./TextFluxUnveil";
 
@@ -13,6 +16,70 @@ export type WhyChooseProps = {
   reasons: WhyChooseReason[];
 };
 
+const chooseEase = [0.22, 1, 0.36, 1] as const;
+
+const sectionVariants: Variants = {
+  hidden: {},
+  visible: {
+    transition: {
+      staggerChildren: 0.16,
+    },
+  },
+};
+
+const introVariants: Variants = {
+  hidden: {},
+  visible: {
+    transition: {
+      staggerChildren: 0.12,
+    },
+  },
+};
+
+const revealItemVariants: Variants = {
+  hidden: {
+    opacity: 0,
+    y: 26,
+    filter: "blur(10px)",
+  },
+  visible: {
+    opacity: 1,
+    y: 0,
+    filter: "blur(0px)",
+    transition: {
+      duration: 0.72,
+      ease: chooseEase,
+    },
+  },
+};
+
+const reasonsListVariants: Variants = {
+  hidden: {},
+  visible: {
+    transition: {
+      staggerChildren: 0.1,
+      delayChildren: 0.08,
+    },
+  },
+};
+
+const reasonCardVariants: Variants = {
+  hidden: {
+    opacity: 0,
+    x: 24,
+    y: 16,
+  },
+  visible: {
+    opacity: 1,
+    x: 0,
+    y: 0,
+    transition: {
+      duration: 0.64,
+      ease: chooseEase,
+    },
+  },
+};
+
 const WhyChoose = ({
   badgeText,
   title,
@@ -21,7 +88,13 @@ const WhyChoose = ({
 }: WhyChooseProps) => {
   return (
     <section className="relative overflow-hidden bg-white px-4 py-12 sm:px-6 lg:px-8 xl:px-10">
-      <div className="pointer-events-none absolute left-[-198px] top-[-18px] hidden lg:block">
+      <motion.div
+        initial={{ opacity: 0, x: -42, y: -18 }}
+        whileInView={{ opacity: 1, x: 0, y: 0 }}
+        viewport={{ once: true, amount: 0.15 }}
+        transition={{ duration: 0.9, ease: chooseEase }}
+        className="pointer-events-none absolute left-[-198px] top-[-18px] hidden lg:block"
+      >
         <svg
           xmlns="http://www.w3.org/2000/svg"
           width="462"
@@ -39,9 +112,15 @@ const WhyChoose = ({
             strokeLinecap="round"
           />
         </svg>
-      </div>
+      </motion.div>
 
-      <div className="pointer-events-none absolute right-[-44px] top-[52px] hidden lg:block">
+      <motion.div
+        initial={{ opacity: 0, x: 42, y: 20 }}
+        whileInView={{ opacity: 1, x: 0, y: 0 }}
+        viewport={{ once: true, amount: 0.15 }}
+        transition={{ duration: 0.95, ease: chooseEase, delay: 0.08 }}
+        className="pointer-events-none absolute right-[-44px] top-[52px] hidden lg:block"
+      >
         <svg
           xmlns="http://www.w3.org/2000/svg"
           width="303"
@@ -57,11 +136,21 @@ const WhyChoose = ({
             fill="#FF5B01"
           />
         </svg>
-      </div>
+      </motion.div>
 
-      <div className="relative z-10 mx-auto grid w-full max-w-[1540px] gap-8 lg:grid-cols-[540px_minmax(0,1fr)] lg:items-start lg:gap-0 xl:grid-cols-[620px_minmax(0,1fr)] xl:gap-1">
-        <div className="max-w-[360px] sm:max-w-[730px] lg:max-w-[540px] lg:pt-7 xl:max-w-[620px] xl:pt-9">
-          <div
+      <motion.div
+        className="relative z-10 mx-auto grid w-full max-w-[1540px] gap-8 lg:grid-cols-[540px_minmax(0,1fr)] lg:items-start lg:gap-0 xl:grid-cols-[620px_minmax(0,1fr)] xl:gap-1"
+        variants={sectionVariants}
+        initial="hidden"
+        whileInView="visible"
+        viewport={{ once: true, amount: 0.14 }}
+      >
+        <motion.div
+          variants={introVariants}
+          className="max-w-[360px] sm:max-w-[730px] lg:max-w-[540px] lg:pt-7 xl:max-w-[620px] xl:pt-9"
+        >
+          <motion.div
+            variants={revealItemVariants}
             className="mb-5 flex w-fit items-center justify-center rounded-[8px] px-4 py-2 text-sm text-[#4E4741] sm:px-5 sm:text-base"
             style={{
               background:
@@ -69,21 +158,35 @@ const WhyChoose = ({
             }}
           >
             <TextFluxUnveil text={badgeText} />
-          </div>
+          </motion.div>
 
-          <h2 className="project-h2 max-w-[340px] leading-[1.02] tracking-[-0.05em] sm:max-w-[620px] lg:max-w-[540px] xl:max-w-[620px]">
+          <motion.h2
+            variants={revealItemVariants}
+            className="project-h2 max-w-[340px] leading-[1.02] tracking-[-0.05em] sm:max-w-[620px] lg:max-w-[540px] xl:max-w-[620px]"
+          >
             {title}
-          </h2>
-          <p className="mt-5 max-w-[520px] text-base leading-[1.65] text-[#666666] sm:text-lg lg:max-w-[500px] xl:max-w-[560px]">
+          </motion.h2>
+          <motion.p
+            variants={revealItemVariants}
+            className="mt-5 max-w-[520px] text-base leading-[1.65] text-[#666666] sm:text-lg lg:max-w-[500px] xl:max-w-[560px]"
+          >
             {description}
-          </p>
-        </div>
+          </motion.p>
+        </motion.div>
 
-        <div className="relative lg:pt-7 xl:pt-10">
+        <motion.div
+          variants={reasonsListVariants}
+          className="relative lg:pt-7 xl:pt-10"
+        >
           <div className="rounded-[22px] px-5 py-6 sm:px-6 sm:py-8 lg:px-2 lg:py-8 xl:px-3 xl:py-10">
             {reasons.map((reason, index) => (
-              <div
+              <motion.div
                 key={reason.title}
+                variants={reasonCardVariants}
+                whileHover={{
+                  x: 4,
+                  transition: { duration: 0.2, ease: "easeOut" },
+                }}
                 className={`grid grid-cols-[12px_minmax(0,1fr)] gap-4 py-5 sm:gap-5 sm:py-6 lg:grid-cols-[18px_minmax(0,1fr)] lg:gap-6 ${
                   index !== reasons.length - 1
                     ? "border-b border-[#EEE6E0]"
@@ -91,23 +194,35 @@ const WhyChoose = ({
                 }`}
               >
                 <div className="flex justify-start pt-[2px]">
-                  <span className="h-[42px] w-[2px] rounded-full sm:h-[44px]" />
+                  <motion.span
+                    initial={{ opacity: 0, scaleY: 0.2 }}
+                    whileInView={{ opacity: 1, scaleY: 1 }}
+                    viewport={{ once: true, amount: 0.3 }}
+                    transition={{ duration: 0.5, ease: chooseEase, delay: 0.08 }}
+                    className="h-[42px] w-[2px] origin-top rounded-full bg-[linear-gradient(180deg,#B24002_0%,#FF5B01_100%)] sm:h-[44px]"
+                  />
                 </div>
 
                 <div>
-                  <h3 className="text-lg font-medium leading-tight text-[#313131] sm:text-xl">
+                  <motion.h3
+                    variants={revealItemVariants}
+                    className="text-lg font-medium leading-tight text-[#313131] sm:text-xl"
+                  >
                     {reason.title}
-                  </h3>
+                  </motion.h3>
 
-                  <p className="mt-2 text-sm leading-[1.6] text-[#666666] sm:text-base">
+                  <motion.p
+                    variants={revealItemVariants}
+                    className="mt-2 text-sm leading-[1.6] text-[#666666] sm:text-base"
+                  >
                     {reason.description}
-                  </p>
+                  </motion.p>
                 </div>
-              </div>
+              </motion.div>
             ))}
           </div>
-        </div>
-      </div>
+        </motion.div>
+      </motion.div>
     </section>
   );
 };

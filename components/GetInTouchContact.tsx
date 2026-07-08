@@ -3,7 +3,7 @@
 import React, { useEffect, useRef, useState } from "react";
 import * as FlagIcons from "country-flag-icons/react/3x2";
 import { countryPhoneOptions } from "@/data/countryPhoneOptions";
-import { motion } from "motion/react";
+import { AnimatePresence, motion, type Variants } from "motion/react";
 import { TfiArrowTopRight } from "react-icons/tfi";
 import { useContactForm } from "@/components/useContactForm";
 import TextFluxUnveil from "./TextFluxUnveil";
@@ -53,6 +53,104 @@ const ContactAccentShape = () => (
 );
 
 type ContactItemKind = "phone" | "email" | "location";
+
+const sectionEase = [0.22, 1, 0.36, 1] as const;
+
+const sectionVariants: Variants = {
+  hidden: {},
+  visible: {
+    transition: {
+      staggerChildren: 0.16,
+    },
+  },
+};
+
+const contentClusterVariants: Variants = {
+  hidden: {},
+  visible: {
+    transition: {
+      staggerChildren: 0.12,
+    },
+  },
+};
+
+const revealItemVariants: Variants = {
+  hidden: {
+    opacity: 0,
+    y: 28,
+    filter: "blur(12px)",
+  },
+  visible: {
+    opacity: 1,
+    y: 0,
+    filter: "blur(0px)",
+    transition: {
+      duration: 0.75,
+      ease: sectionEase,
+    },
+  },
+};
+
+const contactListVariants: Variants = {
+  hidden: {},
+  visible: {
+    transition: {
+      staggerChildren: 0.1,
+      delayChildren: 0.1,
+    },
+  },
+};
+
+const contactItemVariants: Variants = {
+  hidden: {
+    opacity: 0,
+    x: -18,
+  },
+  visible: {
+    opacity: 1,
+    x: 0,
+    transition: {
+      duration: 0.55,
+      ease: sectionEase,
+    },
+  },
+};
+
+const formWrapVariants: Variants = {
+  hidden: {
+    opacity: 0,
+    x: 34,
+    y: 18,
+    filter: "blur(14px)",
+  },
+  visible: {
+    opacity: 1,
+    x: 0,
+    y: 0,
+    filter: "blur(0px)",
+    transition: {
+      duration: 0.85,
+      ease: sectionEase,
+      staggerChildren: 0.08,
+      delayChildren: 0.12,
+    },
+  },
+};
+
+const formItemVariants: Variants = {
+  hidden: {
+    opacity: 0,
+    y: 18,
+  },
+  visible: {
+    opacity: 1,
+    y: 0,
+    transition: {
+      duration: 0.52,
+      ease: sectionEase,
+    },
+  },
+};
 
 const contactItemIcons: Record<ContactItemKind, React.ReactNode> = {
   phone: (
@@ -188,9 +286,19 @@ const GetInTouchContact = ({
     <section
       className={`flex w-full items-center justify-center overflow-hidden py-14 md:py-20 ${backgroundClassName ?? "bg-white"}`.trim()}
     >
-      <div className="mx-auto grid w-full max-w-[1560px] grid-cols-1 items-start gap-12 px-4 sm:px-6 md:px-8 xl:grid-cols-[minmax(0,840px)_minmax(0,560px)] xl:gap-10">
-        <div className="mx-auto flex w-full max-w-[960px] flex-col items-center pt-2 xl:mx-0 xl:block xl:max-w-none">
-          <div
+      <motion.div
+        className="mx-auto grid w-full max-w-[1560px] grid-cols-1 items-start gap-12 px-4 sm:px-6 md:px-8 xl:grid-cols-[minmax(0,840px)_minmax(0,560px)] xl:gap-10"
+        variants={sectionVariants}
+        initial="hidden"
+        whileInView="visible"
+        viewport={{ once: true, amount: 0.15 }}
+      >
+        <motion.div
+          className="mx-auto flex w-full max-w-[960px] flex-col items-center pt-2 xl:mx-0 xl:block xl:max-w-none"
+          variants={contentClusterVariants}
+        >
+          <motion.div
+            variants={revealItemVariants}
             className="mb-3 flex w-fit items-center justify-center rounded-[8px] px-4 py-2 text-center text-sm text-black sm:px-5 sm:text-base"
             style={{
               background:
@@ -198,16 +306,25 @@ const GetInTouchContact = ({
             }}
           >
             <TextFluxUnveil text="Get In Touch" />
-          </div>
-          <h2 className="project-h2 max-w-[16ch] text-center leading-[1.04] sm:max-w-[18ch] lg:max-w-none xl:max-w-[22ch] xl:text-left">
+          </motion.div>
+          <motion.h2
+            variants={revealItemVariants}
+            className="project-h2 max-w-[16ch] text-center leading-[1.04] sm:max-w-[18ch] lg:max-w-none xl:max-w-[22ch] xl:text-left"
+          >
             {title}
-          </h2>
+          </motion.h2>
 
-          <div className="mx-auto mt-4 max-w-[34rem] text-center text-base font-normal leading-[1.6] text-[#777777] sm:text-lg xl:mx-0 xl:max-w-[840px] xl:text-left xl:leading-[1.35]">
+          <motion.div
+            variants={revealItemVariants}
+            className="mx-auto mt-4 max-w-[34rem] text-center text-base font-normal leading-[1.6] text-[#777777] sm:text-lg xl:mx-0 xl:max-w-[840px] xl:text-left xl:leading-[1.35]"
+          >
             {description}
-          </div>
+          </motion.div>
 
-          <div className="mx-auto mt-8 w-full max-w-[840px] space-y-4 sm:space-y-5 xl:mx-0 xl:max-w-none">
+          <motion.div
+            variants={contactListVariants}
+            className="mx-auto mt-8 w-full max-w-[840px] space-y-4 sm:space-y-5 xl:mx-0 xl:max-w-none"
+          >
             {contactItems.map((item) => {
               const isAddressItem = item.kind === "location";
               const contentClassName = isAddressItem
@@ -215,18 +332,26 @@ const GetInTouchContact = ({
                 : "text-base font-normal text-[#777777] transition-colors hover:text-[#B24002] sm:text-lg";
 
               return (
-                <div
+                <motion.div
                   key={item.id}
+                  variants={contactItemVariants}
                   className="flex w-full items-start justify-start gap-4 max-xl:max-w-[620px]"
                 >
-                  <div className="mt-0.5 flex h-[38px] w-[38px] shrink-0 items-center justify-center rounded-[5px] bg-[#B24002]">
+                  <motion.div
+                    whileHover={{
+                      y: -2,
+                      scale: 1.04,
+                      transition: { duration: 0.2, ease: "easeOut" },
+                    }}
+                    className="mt-0.5 flex h-[38px] w-[38px] shrink-0 items-center justify-center rounded-[5px] bg-[#B24002]"
+                  >
                     <span
                       aria-label={item.kind}
                       className="flex h-[20px] w-[20px] items-center justify-center [&>svg]:h-full [&>svg]:w-full"
                     >
                       {contactItemIcons[item.kind]}
                     </span>
-                  </div>
+                  </motion.div>
 
                   {item.href ? (
                     <a href={item.href} className={contentClassName}>
@@ -235,28 +360,54 @@ const GetInTouchContact = ({
                   ) : (
                     <span className={contentClassName}>{item.label}</span>
                   )}
-                </div>
+                </motion.div>
               );
             })}
-          </div>
-        </div>
+          </motion.div>
+        </motion.div>
 
-        <div className="relative flex w-full justify-center xl:justify-start">
-          <div className="pointer-events-none absolute -left-[18px] bottom-[18px] z-0 hidden w-[96px] lg:block xl:-left-[66px] xl:bottom-[18px] xl:w-[138px]">
+        <motion.div
+          variants={formWrapVariants}
+          className="relative flex w-full justify-center xl:justify-start"
+        >
+          <motion.div
+            initial={{ opacity: 0, scale: 0.82, rotate: -12 }}
+            whileInView={{ opacity: 1, scale: 1, rotate: 0 }}
+            viewport={{ once: true, amount: 0.2 }}
+            transition={{ duration: 0.8, ease: sectionEase, delay: 0.12 }}
+            className="pointer-events-none absolute -left-[18px] bottom-[18px] z-0 hidden w-[96px] lg:block xl:-left-[66px] xl:bottom-[18px] xl:w-[138px]"
+          >
             <ContactAccentShape />
-          </div>
+          </motion.div>
 
-          <div className="pointer-events-none absolute -right-[110px] -top-[56px] z-0 hidden w-[320px] lg:block xl:-right-[340px] xl:-top-[94px] xl:w-[720px]">
+          <motion.div
+            initial={{ opacity: 0, x: 36, y: -24 }}
+            whileInView={{ opacity: 1, x: 0, y: 0 }}
+            viewport={{ once: true, amount: 0.15 }}
+            transition={{ duration: 0.95, ease: sectionEase, delay: 0.2 }}
+            className="pointer-events-none absolute -right-[110px] -top-[56px] z-0 hidden w-[320px] lg:block xl:-right-[340px] xl:-top-[94px] xl:w-[720px]"
+          >
             <ContactFormCurve />
-          </div>
+          </motion.div>
 
-          <div className="relative z-10 w-full max-w-[620px] rounded-[14px] border border-[#e7e7e7] bg-white px-4 py-5 shadow-[0_8px_24px_rgba(0,0,0,0.08)] sm:px-5 sm:py-5 lg:px-6 xl:w-full xl:max-w-none">
-            <h3 className="mx-auto max-w-[18ch] text-center text-[1.5rem] font-bold uppercase leading-[1.12] tracking-[-0.03em] text-[#444444] sm:max-w-none sm:text-[1.85rem] xl:mx-0 xl:text-left">
+          <motion.div
+            variants={formWrapVariants}
+            className="relative z-10 w-full max-w-[620px] rounded-[14px] border border-[#e7e7e7] bg-white px-4 py-5 shadow-[0_8px_24px_rgba(0,0,0,0.08)] sm:px-5 sm:py-5 lg:px-6 xl:w-full xl:max-w-none"
+          >
+            <motion.h3
+              variants={formItemVariants}
+              className="mx-auto max-w-[18ch] text-center text-[1.5rem] font-bold uppercase leading-[1.12] tracking-[-0.03em] text-[#444444] sm:max-w-none sm:text-[1.85rem] xl:mx-0 xl:text-left"
+            >
               Fill This Form To Get Faster Response
-            </h3>
+            </motion.h3>
 
-            <form className="mt-5 space-y-3.5 sm:space-y-4" onSubmit={handleSubmit}>
-              <input
+            <motion.form
+              variants={contentClusterVariants}
+              className="mt-5 space-y-3.5 sm:space-y-4"
+              onSubmit={handleSubmit}
+            >
+              <motion.input
+                variants={formItemVariants}
                 name="name"
                 type="text"
                 placeholder="Name"
@@ -264,7 +415,7 @@ const GetInTouchContact = ({
                 className="h-[44px] w-full rounded-[5px] border border-[#bababa] bg-transparent px-3 font-mulish text-sm text-[#4a4a4a] outline-none placeholder:text-[#9a9a9a] sm:h-[42px] sm:text-base"
               />
 
-              <div className="grid grid-cols-1 gap-3 lg:grid-cols-2">
+              <motion.div variants={formItemVariants} className="grid grid-cols-1 gap-3 lg:grid-cols-2">
                 <input
                   name="email"
                   type="email"
@@ -317,53 +468,61 @@ const GetInTouchContact = ({
                     />
                   </div>
 
-                  {isCountryOpen && (
-                    <div
-                      role="listbox"
-                      className="absolute left-0 top-[46px] z-50 max-h-[220px] w-full overflow-y-auto rounded-[5px] border border-[#bababa] bg-white py-1 shadow-[0_10px_24px_rgba(0,0,0,0.12)]"
-                    >
-                      {countryPhoneOptions.map((country) => {
-                        const CountryFlag = flagIcons[country.code];
+                  <AnimatePresence>
+                    {isCountryOpen ? (
+                      <motion.div
+                        key="country-dropdown"
+                        role="listbox"
+                        initial={{ opacity: 0, y: 8, scale: 0.98 }}
+                        animate={{ opacity: 1, y: 0, scale: 1 }}
+                        exit={{ opacity: 0, y: 6, scale: 0.98 }}
+                        transition={{ duration: 0.22, ease: sectionEase }}
+                        className="absolute left-0 top-[46px] z-50 max-h-[220px] w-full overflow-y-auto rounded-[5px] border border-[#bababa] bg-white py-1 shadow-[0_10px_24px_rgba(0,0,0,0.12)]"
+                      >
+                        {countryPhoneOptions.map((country) => {
+                          const CountryFlag = flagIcons[country.code];
 
-                        return (
-                          <button
-                            key={country.code}
-                            type="button"
-                            role="option"
-                            aria-selected={country.code === selectedCountryCode}
-                            onClick={() => {
-                              setSelectedCountryCode(country.code);
-                              setIsCountryOpen(false);
-                            }}
-                            className="flex w-full items-center gap-2 px-3 py-2 text-left text-sm text-[#4a4a4a] transition hover:bg-[#f2f2f2] sm:text-base"
-                          >
-                            <span className="flex h-[14px] w-[21px] shrink-0 items-center overflow-hidden rounded-[2px]">
-                              {CountryFlag ? (
-                                <CountryFlag
-                                  title={country.name}
-                                  className="h-full w-full"
-                                />
-                              ) : (
-                                <span className="text-xs font-semibold text-[#6f6f6f]">
-                                  {country.code}
-                                </span>
-                              )}
-                            </span>
-                            <span className="min-w-0 flex-1 truncate">
-                              {country.name}
-                            </span>
-                            <span className="shrink-0 font-medium text-[#6f6f6f]">
-                              {country.dialCode}
-                            </span>
-                          </button>
-                        );
-                      })}
-                    </div>
-                  )}
+                          return (
+                            <button
+                              key={country.code}
+                              type="button"
+                              role="option"
+                              aria-selected={country.code === selectedCountryCode}
+                              onClick={() => {
+                                setSelectedCountryCode(country.code);
+                                setIsCountryOpen(false);
+                              }}
+                              className="flex w-full items-center gap-2 px-3 py-2 text-left text-sm text-[#4a4a4a] transition hover:bg-[#f2f2f2] sm:text-base"
+                            >
+                              <span className="flex h-[14px] w-[21px] shrink-0 items-center overflow-hidden rounded-[2px]">
+                                {CountryFlag ? (
+                                  <CountryFlag
+                                    title={country.name}
+                                    className="h-full w-full"
+                                  />
+                                ) : (
+                                  <span className="text-xs font-semibold text-[#6f6f6f]">
+                                    {country.code}
+                                  </span>
+                                )}
+                              </span>
+                              <span className="min-w-0 flex-1 truncate">
+                                {country.name}
+                              </span>
+                              <span className="shrink-0 font-medium text-[#6f6f6f]">
+                                {country.dialCode}
+                              </span>
+                            </button>
+                          );
+                        })}
+                      </motion.div>
+                    ) : null}
+                  </AnimatePresence>
                 </div>
-              </div>
+              </motion.div>
 
-              <textarea
+              <motion.textarea
+                variants={formItemVariants}
                 name="message"
                 placeholder="Message"
                 required
@@ -372,7 +531,10 @@ const GetInTouchContact = ({
               />
 
               {submitMessage ? (
-                <p
+                <motion.p
+                  initial={{ opacity: 0, y: 8 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.24, ease: sectionEase }}
                   className={`text-sm ${
                     submitStatus === "success"
                       ? "text-[#247a39]"
@@ -380,10 +542,11 @@ const GetInTouchContact = ({
                   }`}
                 >
                   {submitMessage}
-                </p>
+                </motion.p>
               ) : null}
 
               <motion.button
+                variants={formItemVariants}
                 type="submit"
                 disabled={isSubmitting}
                 style={{
@@ -411,10 +574,10 @@ const GetInTouchContact = ({
                   <TfiArrowTopRight size={20} />
                 </motion.span>
               </motion.button>
-            </form>
-          </div>
-        </div>
-      </div>
+            </motion.form>
+          </motion.div>
+        </motion.div>
+      </motion.div>
     </section>
   );
 };

@@ -1,7 +1,7 @@
 "use client";
 
 import { useEffect, useRef, useState } from "react";
-import { motion } from "motion/react";
+import { motion, type Variants } from "motion/react";
 import Image from "next/image";
 import TextFluxUnveil from "./TextFluxUnveil";
 
@@ -30,6 +30,134 @@ const dashedPaths = [
   "M940 118C1048 118 1092 152 1142 202",
 ];
 
+const sectionVariants: Variants = {
+  hidden: {},
+  visible: {
+    transition: {
+      staggerChildren: 0.14,
+      delayChildren: 0.08,
+    },
+  },
+};
+
+const headingClusterVariants: Variants = {
+  hidden: {},
+  visible: {
+    transition: {
+      staggerChildren: 0.12,
+      delayChildren: 0.04,
+    },
+  },
+};
+
+const headingRevealVariants: Variants = {
+  hidden: {
+    opacity: 0,
+    y: 30,
+    filter: "blur(10px)",
+    clipPath: "inset(0 0 100% 0)",
+  },
+  visible: {
+    opacity: 1,
+    y: 0,
+    filter: "blur(0px)",
+    clipPath: "inset(0 0 0% 0)",
+    transition: {
+      duration: 0.82,
+      ease: [0.22, 1, 0.36, 1],
+    },
+  },
+};
+
+const connectorVariants: Variants = {
+  hidden: {
+    opacity: 0,
+    pathLength: 0,
+  },
+  visible: {
+    opacity: 0.55,
+    pathLength: 1,
+    transition: {
+      duration: 1.25,
+      ease: [0.22, 1, 0.36, 1],
+    },
+  },
+};
+
+const cardsContainerVariants: Variants = {
+  hidden: {},
+  visible: {
+    transition: {
+      staggerChildren: 0.12,
+      delayChildren: 0.16,
+    },
+  },
+};
+
+const stepCardVariants: Variants = {
+  hidden: (index: number) => ({
+    opacity: 0,
+    y: 40,
+    x: index % 2 === 0 ? -20 : 20,
+    rotate: index % 2 === 0 ? -1.8 : 1.8,
+    scale: 0.95,
+    filter: "blur(10px)",
+  }),
+  visible: {
+    opacity: 1,
+    y: 0,
+    x: 0,
+    rotate: 0,
+    scale: 1,
+    filter: "blur(0px)",
+    transition: {
+      duration: 0.82,
+      ease: [0.22, 1, 0.36, 1],
+    },
+  },
+};
+
+const stepPinVariants: Variants = {
+  hidden: {
+    opacity: 0,
+    y: -20,
+    scale: 0.8,
+    rotate: -8,
+  },
+  visible: {
+    opacity: 1,
+    y: 0,
+    scale: 1,
+    rotate: 0,
+    transition: {
+      duration: 0.7,
+      ease: [0.22, 1, 0.36, 1],
+    },
+  },
+};
+
+const stepContentVariants: Variants = {
+  hidden: {},
+  visible: {
+    transition: {
+      staggerChildren: 0.08,
+      delayChildren: 0.08,
+    },
+  },
+};
+
+const stepTextVariants: Variants = {
+  hidden: { opacity: 0, y: 14 },
+  visible: {
+    opacity: 1,
+    y: 0,
+    transition: {
+      duration: 0.55,
+      ease: [0.22, 1, 0.36, 1],
+    },
+  },
+};
+
 const stepLayoutClasses = [
   {
     outerPosition: "xl:left-[32px] xl:top-[34px]",
@@ -37,7 +165,7 @@ const stepLayoutClasses = [
     pinPosition: "left-1/2 top-[-20px] -translate-x-1/2",
   },
   {
-    outerPosition: "xl:left-[328px] xl:top-[188px]",
+    outerPosition: "xl:left-[313px] xl:top-[188px]",
     cardHeight: "xl:h-[160px]",
     pinPosition: "left-1/2 top-[-20px] -translate-x-1/2",
   },
@@ -127,9 +255,19 @@ const OurProcess = ({
 
   return (
     <section className="min-h-full overflow-hidden bg-[#fffaf6] px-4 py-14 sm:px-6 sm:py-16 md:px-10 lg:px-16 lg:py-20 xl:py-24">
-      <div className="mx-auto max-w-[1314px]">
-        <div className="mx-auto max-w-[1260px] text-center">
+      <motion.div
+        variants={sectionVariants}
+        initial="hidden"
+        whileInView="visible"
+        viewport={{ once: true, amount: 0.18 }}
+        className="mx-auto max-w-[1314px]"
+      >
+        <motion.div
+          variants={headingClusterVariants}
+          className="mx-auto max-w-[1260px] text-center"
+        >
           <motion.div
+            variants={headingRevealVariants}
             className="mx-auto mb-3 flex w-fit items-center justify-center rounded-[8px] px-4 py-2 text-center text-sm text-black sm:px-5 sm:text-base"
             style={{
               background:
@@ -138,13 +276,19 @@ const OurProcess = ({
           >
             <TextFluxUnveil text={badgeText} />
           </motion.div>
-          <h2 className="project-h2 block w-full max-w-full text-center">
+          <motion.h2
+            variants={headingRevealVariants}
+            className="project-h2 block w-full max-w-full text-center"
+          >
             {title}
-          </h2>
-          <p className="mx-auto mt-4 max-w-[1050px] text-base leading-6 text-[#989391] sm:text-lg">
+          </motion.h2>
+          <motion.p
+            variants={headingRevealVariants}
+            className="mx-auto mt-4 max-w-[1050px] text-base leading-6 text-[#989391] sm:text-lg"
+          >
             {description}
-          </p>
-        </div>
+          </motion.p>
+        </motion.div>
 
         <div className="relative mt-14 lg:mt-16 xl:min-h-[420px]">
           <svg
@@ -157,9 +301,9 @@ const OurProcess = ({
             aria-hidden="true"
           >
             {dashedPaths.map((path) => (
-              <path
+              <motion.path
                 key={path}
-                opacity="0.55"
+                variants={connectorVariants}
                 d={path}
                 stroke="#FF8A4A"
                 strokeWidth="3"
@@ -169,13 +313,21 @@ const OurProcess = ({
             ))}
           </svg>
 
-          <div className="grid gap-8 sm:grid-cols-2 sm:gap-10 xl:block">
-            {displayedSteps.map((step) => (
-              <article
+          <motion.div
+            variants={cardsContainerVariants}
+            className="grid gap-8 sm:grid-cols-2 sm:gap-10 xl:block"
+          >
+            {displayedSteps.map((step, index) => (
+              <motion.article
                 key={step.number}
+                custom={index}
+                variants={stepCardVariants}
                 className={`relative rounded-[24px] bg-[#f6eee8] px-[14px] pb-[14px] pt-[40px] shadow-[0_8px_18px_rgba(73,47,27,0.06)] sm:h-[216px] xl:absolute xl:h-[220px] xl:w-[236px] ${step.outerPosition}`}
+                whileHover={{ y: -8, scale: 1.015 }}
+                transition={{ type: "spring", stiffness: 260, damping: 22 }}
               >
-                <div
+                <motion.div
+                  variants={stepPinVariants}
                   className={`pointer-events-none absolute z-20 ${step.pinPosition}`}
                 >
                   <Image
@@ -187,18 +339,25 @@ const OurProcess = ({
                     className="h-[56px] w-[56px] object-contain drop-shadow-[0_10px_12px_rgba(0,0,0,0.22)]"
                     aria-hidden="true"
                   />
-                </div>
+                </motion.div>
 
-                <div
+                <motion.div
+                  variants={stepContentVariants}
                   className={`flex h-full flex-col rounded-[16px] bg-white px-[14px] py-[14px] shadow-[0_2px_0_rgba(214,205,198,0.92),0_8px_15px_rgba(80,54,37,0.08)] sm:min-h-[162px] xl:min-h-0 ${step.cardHeight}`}
+                >
+                  <motion.div
+                    variants={stepTextVariants}
+                    className="text-2xl font-normal leading-none tracking-[-0.04em] text-[#ef6d31]"
                   >
-                  <div className="text-2xl font-normal leading-none tracking-[-0.04em] text-[#ef6d31]">
                     {step.number}
-                  </div>
-                  <h3 className="mt-3 text-base font-semibold leading-[1.18] tracking-[-0.03em] text-[#4f4f4f] sm:text-md">
+                  </motion.div>
+                  <motion.h3
+                    variants={stepTextVariants}
+                    className="mt-3 text-base font-semibold leading-[1.18] tracking-[-0.03em] text-[#4f4f4f] sm:text-md"
+                  >
                     {step.title}
-                  </h3>
-                  <div className="relative mt-1 min-h-0 flex-1">
+                  </motion.h3>
+                  <motion.div variants={stepTextVariants} className="relative mt-1 min-h-0 flex-1">
                     <div
                       aria-hidden="true"
                       className="pointer-events-none absolute bottom-0 right-0 top-0 w-[3px] rounded-full bg-[#dbd4ad]/35"
@@ -259,13 +418,13 @@ const OurProcess = ({
                     >
                       {step.description}
                     </p>
-                  </div>
-                </div>
-              </article>
+                  </motion.div>
+                </motion.div>
+              </motion.article>
             ))}
-          </div>
+          </motion.div>
         </div>
-      </div>
+      </motion.div>
 
       <style jsx global>{`
         .process-step-scroll {

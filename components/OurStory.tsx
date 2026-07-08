@@ -1,6 +1,6 @@
 "use client";
 
-import { motion } from "motion/react";
+import { motion, type Variants } from "motion/react";
 import Image from "next/image";
 import Link from "next/link";
 import React from "react";
@@ -12,44 +12,207 @@ const leftAccentPath =
 const rightAccentPath =
   "M236.012 438.518C254.429 427.944 271.732 419.042 288.018 411.907L267.732 439.057C261.598 447.265 249.971 448.948 241.762 442.814L236.012 438.518ZM156.698 379.253C166.631 375.631 176.586 370.579 186.494 363.892C249.314 321.493 301.213 292.972 344.821 280.939C361.278 276.398 376.509 274.217 390.68 274.515L349.199 330.029C344.451 330.979 339.611 332.136 334.678 333.497C294.272 344.646 247.315 369.497 192.041 405.662L156.698 379.253ZM77.3227 319.942C114.372 332.98 155.087 332.575 195.056 305.598C257.875 263.2 309.775 234.679 353.383 222.646C382.588 214.588 407.934 213.954 430.339 221.439L395.001 268.733C378.978 267.853 361.771 270.093 343.238 275.207C298.65 287.511 246.084 316.499 183.168 358.963C172.452 366.195 161.68 371.434 150.937 374.948L77.3227 319.942ZM18.4696 221.984C29.78 231.32 41.9414 239.968 54.7486 247.275C99.3069 272.698 152.081 282.088 203.616 247.306C266.435 204.908 318.334 176.387 361.942 164.354C379.774 159.434 396.167 157.283 411.331 158.057L439.057 178.774C447.266 184.908 448.947 196.536 442.813 204.745L434.077 216.436C409.9 207.844 382.692 208.389 351.8 216.913C307.212 229.217 254.646 258.205 191.73 300.669C145.472 331.89 98.177 325.968 56.6092 304.465L7.44981 267.732C-0.759247 261.598 -2.44196 249.971 3.69177 241.762L18.4696 221.984ZM197.114 409.452C251.42 374.051 297.171 350.016 336.26 339.23C338.789 338.532 341.29 337.892 343.761 337.306L295.063 402.479C275.154 410.559 253.797 421.355 230.827 434.643L197.114 409.452ZM49.5001 180.456C54.0801 183.515 58.759 186.424 63.5277 189.146C108.163 214.627 161.009 224.075 212.578 189.316C266.058 153.269 311.634 127.268 350.926 112.921L403.193 151.976C389.749 152.186 375.496 154.445 360.36 158.621C315.771 170.925 263.205 199.913 200.289 242.377C151.236 275.485 101.015 266.827 57.6952 242.111C45.1192 234.936 33.1614 226.42 22.033 217.216L49.5001 180.456ZM82.9389 135.705C125.278 156.837 174.008 162.454 221.648 130.344C252.029 109.866 279.859 92.6293 305.435 78.93L345.257 108.686C306.076 123.547 261.187 149.381 209.255 184.385C160.172 217.469 109.877 208.759 66.4757 183.982C61.9211 181.382 57.448 178.605 53.0646 175.686L82.9389 135.705ZM118.369 88.2897C153.837 99.2596 192.368 97.5575 230.209 72.0509C242.36 63.8612 254.102 56.1902 265.455 49.0564L300.182 75.0048C275.002 88.6342 247.798 105.547 218.325 125.413C173.34 155.734 127.338 150.948 86.5572 130.863L118.369 88.2897ZM157.445 35.9941C180.312 37.8393 203.949 33.6148 227.467 20.6704L260.352 45.2428C249.532 52.0731 238.381 59.3718 226.885 67.1203C191.596 90.9066 155.68 93.0894 122.15 83.229L157.445 35.9941ZM178.774 7.44979C184.908 -0.759382 196.536 -2.44171 204.745 3.69233L222.21 16.7423C201.929 27.3656 181.568 31.2903 161.69 30.3131L178.774 7.44979Z";
 
+const storyEase = [0.22, 1, 0.36, 1] as const;
+
+const sectionVariants: Variants = {
+  hidden: {},
+  visible: {
+    transition: {
+      staggerChildren: 0.18,
+    },
+  },
+};
+
+const contentVariants: Variants = {
+  hidden: {
+    opacity: 0,
+    y: 40,
+  },
+  visible: {
+    opacity: 1,
+    y: 0,
+    transition: {
+      duration: 0.82,
+      ease: storyEase,
+      staggerChildren: 0.12,
+    },
+  },
+};
+
+const itemVariants: Variants = {
+  hidden: {
+    opacity: 0,
+    y: 22,
+  },
+  visible: {
+    opacity: 1,
+    y: 0,
+    transition: {
+      duration: 0.62,
+      ease: storyEase,
+    },
+  },
+};
+
+const imageShellVariants: Variants = {
+  hidden: {
+    opacity: 0,
+    x: 34,
+    scale: 0.97,
+  },
+  visible: {
+    opacity: 1,
+    x: 0,
+    scale: 1,
+    transition: {
+      duration: 0.95,
+      ease: storyEase,
+      staggerChildren: 0.12,
+    },
+  },
+};
+
+const accentLeftVariants: Variants = {
+  hidden: {
+    opacity: 0,
+    x: -28,
+    y: 18,
+    rotate: -8,
+    scale: 0.92,
+  },
+  visible: {
+    opacity: 1,
+    x: 0,
+    y: 0,
+    rotate: 0,
+    scale: 1,
+    transition: {
+      duration: 0.9,
+      ease: storyEase,
+    },
+  },
+};
+
+const accentRightVariants: Variants = {
+  hidden: {
+    opacity: 0,
+    x: 30,
+    y: -18,
+    rotate: 7,
+    scale: 0.94,
+  },
+  visible: {
+    opacity: 1,
+    x: 0,
+    y: 0,
+    rotate: 0,
+    scale: 1,
+    transition: {
+      duration: 1,
+      ease: storyEase,
+    },
+  },
+};
+
+const imageVariants: Variants = {
+  hidden: {
+    opacity: 0,
+    y: 28,
+    scale: 0.96,
+  },
+  visible: {
+    opacity: 1,
+    y: 0,
+    scale: 1,
+    transition: {
+      duration: 0.9,
+      ease: storyEase,
+    },
+  },
+};
+
+const cardsVariants: Variants = {
+  hidden: {},
+  visible: {
+    transition: {
+      staggerChildren: 0.12,
+    },
+  },
+};
+
+const cardVariants: Variants = {
+  hidden: {
+    opacity: 0,
+    y: 32,
+    scale: 0.97,
+  },
+  visible: {
+    opacity: 1,
+    y: 0,
+    scale: 1,
+    transition: {
+      duration: 0.72,
+      ease: storyEase,
+    },
+  },
+};
+
 const OurStory = () => {
   return (
     <section className="bg-white px-4 py-16 sm:px-6 lg:px-10 lg:py-20">
-      <div className="mx-auto max-w-[1480px]">
+      <motion.div
+        className="mx-auto max-w-[1480px]"
+        variants={sectionVariants}
+        initial="hidden"
+        whileInView="visible"
+        viewport={{ once: true, amount: 0.14 }}
+      >
         <div className="grid items-center gap-12 lg:grid-cols-[1.02fr_1fr] lg:gap-14">
-          <div className="max-w-[710px]">
+          <motion.div className="max-w-[710px]" variants={contentVariants}>
             <motion.div
-              className="flex mb-2 w-fit items-center justify-center rounded-[8px] px-4 py-2 text-center text-sm text-black sm:px-5 sm:text-base"
+              className="mb-2 flex w-fit items-center justify-center rounded-[8px] px-4 py-2 text-center text-sm text-black sm:px-5 sm:text-base"
               style={{
                 background:
                   "linear-gradient(90deg, rgba(178, 64, 2, 0.13) 0%, rgba(178, 64, 2, 0.00) 79.96%)",
               }}
+              variants={itemVariants}
             >
               <TextFluxUnveil text="Our Story" />
             </motion.div>
-            <h2 className="project-h2 block w-full max-w-full text-left leading-[1.05]">
+            <motion.h2
+              className="project-h2 block w-full max-w-full text-left leading-[1.05]"
+              variants={itemVariants}
+            >
               Where Stories Find Their Voice
-            </h2>
-            <div className="mt-8 space-y-4 text-base leading-[1.75] text-[#8A8A8A] sm:text-lg">
-              <p>
+            </motion.h2>
+            <motion.div
+              className="mt-8 space-y-4 text-base leading-[1.75] text-[#8A8A8A] sm:text-lg"
+              variants={contentVariants}
+            >
+              <motion.p variants={itemVariants}>
                 NexiFire Publishing was created with a simple mission: to make
                 professional publishing accessible to authors at every stage of
                 their journey.
-              </p>
-              <p>
+              </motion.p>
+              <motion.p variants={itemVariants}>
                 We understand that publishing a book can feel overwhelming. From
                 editing and design to distribution and promotion, there are
                 countless steps involved. That's why we've built a team of
                 publishing professionals dedicated to guiding authors through
                 every phase of the process.
-              </p>
-              <p>
+              </motion.p>
+              <motion.p variants={itemVariants}>
                 Whether you're publishing your first book or growing your
                 portfolio as an established author, we're here to help transform
                 your vision into a professionally published work.
-              </p>
-            </div>
-            <Link
+              </motion.p>
+            </motion.div>
+            <motion.div
+              variants={itemVariants}
+              whileHover={{ y: -3 }}
+              whileTap={{ scale: 0.98 }}
+            >
+              <Link
               href="#"
               className="mt-8 inline-flex min-h-[52px] items-center gap-1 rounded-[10px] bg-[linear-gradient(90deg,#B24002_0%,#FF5B01_100%)] px-5 text-sm font-light text-white shadow-[0_10px_24px_rgba(178,64,2,0.28)] transition-all duration-200 hover:-translate-y-0.5 hover:shadow-[0_14px_30px_rgba(178,64,2,0.34)] sm:px-6 sm:text-base"
             >
@@ -69,11 +232,15 @@ const OurStory = () => {
                   strokeLinejoin="round"
                 />
               </svg>
-            </Link>
-          </div>
+              </Link>
+            </motion.div>
+          </motion.div>
 
-          <div className="relative flex min-h-[360px] items-center justify-center lg:min-h-[540px]">
-            <svg
+          <motion.div
+            className="relative flex min-h-[360px] items-center justify-center lg:min-h-[540px]"
+            variants={imageShellVariants}
+          >
+            <motion.svg
               xmlns="http://www.w3.org/2000/svg"
               width="184"
               height="184"
@@ -81,11 +248,12 @@ const OurStory = () => {
               fill="none"
               className="absolute bottom-[6%] left-[2%] z-0 w-[120px] sm:w-[150px] lg:w-[184px]"
               aria-hidden="true"
+              variants={accentLeftVariants}
             >
               <path opacity="0.2" d={leftAccentPath} fill="#FF5B01" />
-            </svg>
+            </motion.svg>
 
-            <svg
+            <motion.svg
               xmlns="http://www.w3.org/2000/svg"
               width="447"
               height="447"
@@ -93,11 +261,17 @@ const OurStory = () => {
               fill="none"
               className="absolute right-0 top-0 z-0 w-[240px] sm:w-[320px] lg:w-[410px]"
               aria-hidden="true"
+              variants={accentRightVariants}
             >
               <path opacity="0.1" d={rightAccentPath} fill="#FF5B01" />
-            </svg>
+            </motion.svg>
 
-            <div className="relative z-10 w-full max-w-[760px] lg:max-w-[820px]">
+            <motion.div
+              className="relative z-10 w-full max-w-[760px] lg:max-w-[820px]"
+              variants={imageVariants}
+              whileHover={{ y: -8, scale: 1.01 }}
+              transition={{ duration: 0.32, ease: storyEase }}
+            >
               <Image
                 src="/1f39dee2-1fd2-4031-ad86-1021d36ac2e6 1.png"
                 alt="Books and lantern composition for NexiFire Publishing"
@@ -106,30 +280,55 @@ const OurStory = () => {
                 className="h-auto w-full object-contain"
                 priority
               />
-            </div>
-          </div>
+            </motion.div>
+          </motion.div>
         </div>
 
-        <div className="mt-12 grid gap-5 lg:mt-10 lg:grid-cols-2">
-          <article className="rounded-[22px] border border-[#ECE7E1] bg-white px-6 py-6 shadow-[0_12px_30px_rgba(50,50,50,0.08)] sm:px-8 sm:py-7">
-            <h3 className="block w-full max-w-full bg-gradient-to-r from-[#282828] to-[#8C8C8C] bg-clip-text text-left text-[1.8rem] font-medium uppercase leading-[1.05] tracking-[-0.045em] text-transparent sm:text-[2.2rem]">
+        <motion.div
+          className="mt-12 grid gap-5 lg:mt-10 lg:grid-cols-2"
+          variants={cardsVariants}
+        >
+          <motion.article
+            className="rounded-[22px] border border-[#ECE7E1] bg-white px-6 py-6 shadow-[0_12px_30px_rgba(50,50,50,0.08)] sm:px-8 sm:py-7"
+            variants={cardVariants}
+            whileHover={{ y: -6 }}
+            transition={{ duration: 0.28, ease: storyEase }}
+          >
+            <motion.h3
+              className="block w-full max-w-full bg-gradient-to-r from-[#282828] to-[#8C8C8C] bg-clip-text text-left text-[1.8rem] font-medium uppercase leading-[1.05] tracking-[-0.045em] text-transparent sm:text-[2.2rem]"
+              variants={itemVariants}
+            >
               Our Mission
-            </h3>
-            <p className="mt-4 max-w-[520px] text-base leading-[1.7] text-[#909090] sm:text-lg">
+            </motion.h3>
+            <motion.p
+              className="mt-4 max-w-[520px] text-base leading-[1.7] text-[#909090] sm:text-lg"
+              variants={itemVariants}
+            >
               To empower authors with the tools, expertise, and support needed to publish exceptional books and reach readers around the world.
-            </p>
-          </article>
+            </motion.p>
+          </motion.article>
 
-          <article className="rounded-[22px] border border-[#ECE7E1] bg-white px-6 py-6 shadow-[0_12px_30px_rgba(50,50,50,0.08)] sm:px-8 sm:py-7">
-            <h3 className="block w-full max-w-full bg-gradient-to-r from-[#282828] to-[#8C8C8C] bg-clip-text text-left text-[1.8rem] font-medium uppercase leading-[1.05] tracking-[-0.045em] text-transparent sm:text-[2.2rem]">
+          <motion.article
+            className="rounded-[22px] border border-[#ECE7E1] bg-white px-6 py-6 shadow-[0_12px_30px_rgba(50,50,50,0.08)] sm:px-8 sm:py-7"
+            variants={cardVariants}
+            whileHover={{ y: -6 }}
+            transition={{ duration: 0.28, ease: storyEase }}
+          >
+            <motion.h3
+              className="block w-full max-w-full bg-gradient-to-r from-[#282828] to-[#8C8C8C] bg-clip-text text-left text-[1.8rem] font-medium uppercase leading-[1.05] tracking-[-0.045em] text-transparent sm:text-[2.2rem]"
+              variants={itemVariants}
+            >
               Our Vision
-            </h3>
-            <p className="mt-4 max-w-[520px] text-base leading-[1.7] text-[#909090] sm:text-lg">
+            </motion.h3>
+            <motion.p
+              className="mt-4 max-w-[520px] text-base leading-[1.7] text-[#909090] sm:text-lg"
+              variants={itemVariants}
+            >
               To become a trusted publishing partner for authors worldwide by delivering innovative publishing solutions and helping meaningful stories find their audience.
-            </p>
-          </article>
-        </div>
-      </div>
+            </motion.p>
+          </motion.article>
+        </motion.div>
+      </motion.div>
     </section>
   );
 };

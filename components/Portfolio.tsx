@@ -4,7 +4,7 @@ import type { CSSProperties } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import { MdOutlineArrowOutward } from "react-icons/md";
-import { motion } from "motion/react";
+import { motion, type Variants } from "motion/react";
 import TextFluxUnveil from "./TextFluxUnveil";
 
 const portfolioItems = [
@@ -161,6 +161,34 @@ const PortfolioGlow = () => (
   </svg>
 );
 
+const introEase = [0.22, 1, 0.36, 1] as const;
+
+const introContainerVariants: Variants = {
+  hidden: {},
+  visible: {
+    transition: {
+      staggerChildren: 0.14,
+    },
+  },
+};
+
+const introItemVariants: Variants = {
+  hidden: {
+    opacity: 0,
+    y: 24,
+    filter: "blur(10px)",
+  },
+  visible: {
+    opacity: 1,
+    y: 0,
+    filter: "blur(0px)",
+    transition: {
+      duration: 0.7,
+      ease: introEase,
+    },
+  },
+};
+
 const Portfolio = () => {
   const carouselItems = [...portfolioItems, ...portfolioItems];
   const carouselStyle = {
@@ -171,8 +199,15 @@ const Portfolio = () => {
   return (
     <section className="overflow-hidden bg-white px-4 pt-16 sm:px-6 md:px-10 lg:px-16">
       <div className="mx-auto max-w-[1380px]">
-        <div className="mx-auto mb-9 max-w-[720px] text-center">
+        <motion.div
+          className="mx-auto mb-9 max-w-[920px] text-center"
+          variants={introContainerVariants}
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true, amount: 0.5 }}
+        >
           <motion.div
+            variants={introItemVariants}
             className="mx-auto mb-3 flex w-fit items-center justify-center rounded-[8px] px-4 py-2 text-center text-sm text-black sm:px-5 sm:text-base"
             style={{
               background:
@@ -181,15 +216,21 @@ const Portfolio = () => {
           >
             <TextFluxUnveil text="PORTFOLIO" />
           </motion.div>
-          <h2 className="project-h2 block w-full max-w-full text-center">
+          <motion.h2
+            variants={introItemVariants}
+            className="project-h2 block w-full max-w-full text-center"
+          >
             OUR PAST wORK
-          </h2>
-          <p className="mx-auto mt-4 max-w-[640px] text-base leading-6 text-[#989391] sm:text-lg">
+          </motion.h2>
+          <motion.p
+            variants={introItemVariants}
+            className="mx-auto mt-4 max-w-full text-base leading-6 text-[#989391] sm:text-lg"
+          >
             Explore a selection of books published through NexiFire
             Publishing across multiple genres including business,
             self-development, fiction, memoirs, and children's literature.
-          </p>
-        </div>
+          </motion.p>
+        </motion.div>
 
         <div className="relative left-1/2 w-screen -translate-x-1/2 overflow-hidden pb-4">
           <div

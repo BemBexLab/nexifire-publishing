@@ -1,6 +1,6 @@
 "use client";
 
-import { motion } from "motion/react";
+import { motion, type Variants } from "motion/react";
 import React from "react";
 import Link from "next/link";
 import { TfiArrowTopRight } from "react-icons/tfi";
@@ -9,19 +9,167 @@ import { MdOutlineEmail } from "react-icons/md";
 import { SlLocationPin } from "react-icons/sl";
 import { FaFacebookF, FaInstagram, FaTwitter, FaLinkedinIn } from "react-icons/fa";
 
+const footerEase = [0.22, 1, 0.36, 1] as const;
+
+const footerVariants: Variants = {
+  hidden: {},
+  visible: {
+    transition: {
+      staggerChildren: 0.16,
+    },
+  },
+};
+
+const heroColumnVariants: Variants = {
+  hidden: {},
+  visible: {
+    transition: {
+      staggerChildren: 0.12,
+    },
+  },
+};
+
+const revealVariants: Variants = {
+  hidden: {
+    opacity: 0,
+    y: 26,
+    filter: "blur(10px)",
+  },
+  visible: {
+    opacity: 1,
+    y: 0,
+    filter: "blur(0px)",
+    transition: {
+      duration: 0.72,
+      ease: footerEase,
+    },
+  },
+};
+
+const linksGridVariants: Variants = {
+  hidden: {},
+  visible: {
+    transition: {
+      staggerChildren: 0.1,
+      delayChildren: 0.08,
+    },
+  },
+};
+
+const linkColumnVariants: Variants = {
+  hidden: {
+    opacity: 0,
+    x: 22,
+    filter: "blur(10px)",
+  },
+  visible: {
+    opacity: 1,
+    x: 0,
+    filter: "blur(0px)",
+    transition: {
+      duration: 0.65,
+      ease: footerEase,
+    },
+  },
+};
+
+const listVariants: Variants = {
+  hidden: {},
+  visible: {
+    transition: {
+      staggerChildren: 0.07,
+      delayChildren: 0.06,
+    },
+  },
+};
+
+const listItemVariants: Variants = {
+  hidden: {
+    opacity: 0,
+    y: 12,
+  },
+  visible: {
+    opacity: 1,
+    y: 0,
+    transition: {
+      duration: 0.42,
+      ease: footerEase,
+    },
+  },
+};
+
+const socialsVariants: Variants = {
+  hidden: {},
+  visible: {
+    transition: {
+      staggerChildren: 0.06,
+      delayChildren: 0.08,
+    },
+  },
+};
+
+const socialItemVariants: Variants = {
+  hidden: {
+    opacity: 0,
+    scale: 0.82,
+    y: 10,
+  },
+  visible: {
+    opacity: 1,
+    scale: 1,
+    y: 0,
+    transition: {
+      duration: 0.38,
+      ease: footerEase,
+    },
+  },
+};
+
+const footerBarVariants: Variants = {
+  hidden: {
+    opacity: 0,
+    y: 20,
+  },
+  visible: {
+    opacity: 1,
+    y: 0,
+    transition: {
+      duration: 0.65,
+      ease: footerEase,
+      delay: 0.12,
+    },
+  },
+};
+
 const FooterCTA = () => {
   return (
     <section className="w-full bg-[#F3F3F3] px-4 pt-12 font-jakarta sm:px-6 sm:pt-14 lg:px-8 lg:pt-16 xl:px-12 xl:pt-20">
-      <div className="mx-auto flex w-full max-w-[1640px] flex-col">
+      <motion.div
+        className="mx-auto flex w-full max-w-[1640px] flex-col"
+        variants={footerVariants}
+        initial="hidden"
+        whileInView="visible"
+        viewport={{ once: true, amount: 0.16 }}
+      >
         <div className="grid w-full grid-cols-1 gap-12 lg:gap-14 xl:grid-cols-[minmax(0,1.1fr)_minmax(0,0.9fr)] xl:items-start xl:gap-16 2xl:gap-24">
-          <div className="flex w-full max-w-[760px] flex-col items-center text-center md:items-start md:text-left xl:max-w-[720px]">
-            <h2 className="project-h2 py-2 text-center leading-[1.02] tracking-[-0.05em] md:text-left">
+          <motion.div
+            className="flex w-full max-w-[760px] flex-col items-center text-center md:items-start md:text-left xl:max-w-[720px]"
+            variants={heroColumnVariants}
+          >
+            <motion.h2
+              variants={revealVariants}
+              className="project-h2 py-2 text-center leading-[1.02] tracking-[-0.05em] md:text-left"
+            >
               NexiFire Publishing
-            </h2>
-            <p className="mt-5 max-w-[670px] text-base leading-[1.7] text-[#7D7D7D] sm:text-lg">
+            </motion.h2>
+            <motion.p
+              variants={revealVariants}
+              className="mt-5 max-w-[670px] text-base leading-[1.7] text-[#7D7D7D] sm:text-lg"
+            >
               NexiFire Publishing is Australia's reliable self-publishing partner. We help authors publish eBooks, print books, and audiobooks with professional services including ghostwriting, editing, formatting, cover design, and global distribution.
-            </p>
-            <Link href="/contact" className="mt-6 w-full sm:w-fit">
+            </motion.p>
+            <motion.div variants={revealVariants} className="mt-6 w-full sm:w-fit">
+              <Link href="/contact" className="w-full sm:w-fit">
               <motion.button
                 style={{
                   background:
@@ -48,56 +196,78 @@ const FooterCTA = () => {
                   <TfiArrowTopRight size={20} />
                 </motion.span>
               </motion.button>
-            </Link>
-          </div>
+              </Link>
+            </motion.div>
+          </motion.div>
 
-          <div className="grid w-full grid-cols-1 gap-8 sm:grid-cols-2 sm:gap-x-8 sm:gap-y-8 lg:grid-cols-[minmax(0,1.2fr)_minmax(0,0.8fr)] lg:gap-x-10 xl:grid-cols-[minmax(0,240px)_minmax(0,230px)_minmax(0,240px)] xl:items-start xl:gap-x-8">
-            <div className="w-full min-w-0">
-              <h4 className="mb-3 text-[1.2rem] font-medium text-[#B24002] sm:text-[1.35rem]">
+          <motion.div
+            className="grid w-full grid-cols-1 gap-8 sm:grid-cols-2 sm:gap-x-8 sm:gap-y-8 lg:grid-cols-[minmax(0,1.2fr)_minmax(0,0.8fr)] lg:gap-x-10 xl:grid-cols-[minmax(0,240px)_minmax(0,230px)_minmax(0,240px)] xl:items-start xl:gap-x-8"
+            variants={linksGridVariants}
+          >
+            <motion.div className="w-full min-w-0" variants={linkColumnVariants}>
+              <motion.h4
+                variants={revealVariants}
+                className="mb-3 text-[1.2rem] font-medium text-[#B24002] sm:text-[1.35rem]"
+              >
                 Quick Links
-              </h4>
-              <ul className="list-inside list-disc space-y-2.5 text-base font-medium text-[#777777]">
-                <li className="pl-1">
+              </motion.h4>
+              <motion.ul
+                variants={listVariants}
+                className="list-inside list-disc space-y-2.5 text-base font-medium text-[#777777]"
+              >
+                <motion.li variants={listItemVariants} className="pl-1">
                   <a className="transition hover:text-[#B24002]" href="/">Home</a>
-                </li>
-                <li className="pl-1">
+                </motion.li>
+                <motion.li variants={listItemVariants} className="pl-1">
                   <a className="transition hover:text-[#B24002]" href="/who-we-are">Who We Are</a>
-                </li>
-                <li className="pl-1">
+                </motion.li>
+                <motion.li variants={listItemVariants} className="pl-1">
                   <a className="transition hover:text-[#B24002]" href="/our-books">Our Books</a>
-                </li>
-                <li className="pl-1">
+                </motion.li>
+                <motion.li variants={listItemVariants} className="pl-1">
                   <a className="transition hover:text-[#B24002]" href="/pricing-packages">Pricing & Packages</a>
-                </li>
-                <li className="pl-1">
+                </motion.li>
+                <motion.li variants={listItemVariants} className="pl-1">
                   <a className="transition hover:text-[#B24002]" href="/contact">Contact Us</a>
-                </li>
-                <li className="pl-1">
+                </motion.li>
+                <motion.li variants={listItemVariants} className="pl-1">
                   <a className="transition hover:text-[#B24002]" href="/blogs">Blogs</a>
-                </li>
-              </ul>
-            </div>
+                </motion.li>
+              </motion.ul>
+            </motion.div>
 
-            <div className="w-full min-w-0">
-              <h4 className="mb-3 text-[1.2rem] font-medium text-[#B24002] sm:text-[1.35rem]">
+            <motion.div className="w-full min-w-0" variants={linkColumnVariants}>
+              <motion.h4
+                variants={revealVariants}
+                className="mb-3 text-[1.2rem] font-medium text-[#B24002] sm:text-[1.35rem]"
+              >
                 Our Services
-              </h4>
-              <ul className="list-inside list-disc space-y-2.5 text-base font-medium text-[#777777]">
-                <li className="pl-1">
+              </motion.h4>
+              <motion.ul
+                variants={listVariants}
+                className="list-inside list-disc space-y-2.5 text-base font-medium text-[#777777]"
+              >
+                <motion.li variants={listItemVariants} className="pl-1">
                   <a className="transition hover:text-[#B24002]" href="/privacy-policy">Privacy policy</a>
-                </li>
-                <li className="pl-1">
+                </motion.li>
+                <motion.li variants={listItemVariants} className="pl-1">
                   <a className="transition hover:text-[#B24002]" href="/terms-condition">Terms & Conditions</a>
-                </li>
-              </ul>
-            </div>
+                </motion.li>
+              </motion.ul>
+            </motion.div>
 
-            <div className="w-full min-w-0 sm:col-span-2 lg:col-span-2 xl:col-span-1">
-              <h4 className="mb-3 text-[1.2rem] font-medium text-[#B24002] sm:text-[1.35rem]">
+            <motion.div
+              className="w-full min-w-0 sm:col-span-2 lg:col-span-2 xl:col-span-1"
+              variants={linkColumnVariants}
+            >
+              <motion.h4
+                variants={revealVariants}
+                className="mb-3 text-[1.2rem] font-medium text-[#B24002] sm:text-[1.35rem]"
+              >
                 Contact Info
-              </h4>
-              <ul className="space-y-3 text-base font-medium text-[#777777]">
-                <li className="flex items-start">
+              </motion.h4>
+              <motion.ul variants={listVariants} className="space-y-3 text-base font-medium text-[#777777]">
+                <motion.li variants={listItemVariants} className="flex items-start">
                   <LuPhoneCall className="mt-1 shrink-0" />
                   <a
                     href="tel:+61468285539"
@@ -105,8 +275,8 @@ const FooterCTA = () => {
                   >
                     (0468) 285-539
                   </a>
-                </li>
-                <li className="flex items-start">
+                </motion.li>
+                <motion.li variants={listItemVariants} className="flex items-start">
                   <MdOutlineEmail className="mt-1 shrink-0" />
                   <a
                     href="mailto:contact@nexifire.com"
@@ -114,55 +284,70 @@ const FooterCTA = () => {
                   >
                     contact@nexifire.com
                   </a>
-                </li>
-                <li className="flex items-start">
+                </motion.li>
+                <motion.li variants={listItemVariants} className="flex items-start">
                   <SlLocationPin className="mt-1 shrink-0" />
                   <a href="" className="ml-2 min-w-0 break-words">
                     16A Fox Cl, Kariong NSW 2250, Australia
                   </a>
-                </li>
-              </ul>
+                </motion.li>
+              </motion.ul>
 
-              <div className="mt-8 sm:mt-10">
-                <h4 className="mb-4 text-[1.2rem] font-medium text-[#B24002] sm:text-[1.35rem]">
+              <motion.div variants={revealVariants} className="mt-8 sm:mt-10">
+                <motion.h4
+                  variants={revealVariants}
+                  className="mb-4 text-[1.2rem] font-medium text-[#B24002] sm:text-[1.35rem]"
+                >
                   Social Media
-                </h4>
-                <div className="flex flex-wrap items-center gap-3">
-                  <a
+                </motion.h4>
+                <motion.div variants={socialsVariants} className="flex flex-wrap items-center gap-3">
+                  <motion.a
+                    variants={socialItemVariants}
+                    whileHover={{ y: -3, scale: 1.04 }}
+                    transition={{ duration: 0.2, ease: "easeOut" }}
                     href="#"
                     aria-label="Facebook"
                     className="flex h-9 w-9 items-center justify-center bg-[#8d8d8d] text-white shadow-[0_4px_10px_rgba(0,0,0,0.18)] transition hover:bg-[#B24002]"
                   >
                     <FaFacebookF size={20} />
-                  </a>
-                  <a
+                  </motion.a>
+                  <motion.a
+                    variants={socialItemVariants}
+                    whileHover={{ y: -3, scale: 1.04 }}
+                    transition={{ duration: 0.2, ease: "easeOut" }}
                     href="#"
                     aria-label="Instagram"
                     className="flex h-9 w-9 items-center justify-center bg-[#8d8d8d] text-white shadow-[0_4px_10px_rgba(0,0,0,0.18)] transition hover:bg-[#B24002]"
                   >
                     <FaInstagram size={20} />
-                  </a>
-                  <a
+                  </motion.a>
+                  <motion.a
+                    variants={socialItemVariants}
+                    whileHover={{ y: -3, scale: 1.04 }}
+                    transition={{ duration: 0.2, ease: "easeOut" }}
                     href="#"
                     aria-label="Twitter"
                     className="flex h-9 w-9 items-center justify-center bg-[#8d8d8d] text-white shadow-[0_4px_10px_rgba(0,0,0,0.18)] transition hover:bg-[#B24002]"
                   >
                     <FaTwitter size={20} />
-                  </a>
-                  <a
+                  </motion.a>
+                  <motion.a
+                    variants={socialItemVariants}
+                    whileHover={{ y: -3, scale: 1.04 }}
+                    transition={{ duration: 0.2, ease: "easeOut" }}
                     href="#"
                     aria-label="LinkedIn"
                     className="flex h-9 w-9 items-center justify-center bg-[#8d8d8d] text-white shadow-[0_4px_10px_rgba(0,0,0,0.18)] transition hover:bg-[#B24002]"
                   >
                     <FaLinkedinIn size={20} />
-                  </a>
-                </div>
-              </div>
-            </div>
-          </div>
+                  </motion.a>
+                </motion.div>
+              </motion.div>
+            </motion.div>
+          </motion.div>
         </div>
 
-        <div className="mt-14 w-full">
+        <motion.div variants={footerBarVariants} className="mt-14 w-full">
           <div className="border-t border-[#77777766]" />
 
           <div className="flex w-full flex-col gap-3 py-5 text-sm font-semibold text-[#777777] md:flex-row md:items-center md:justify-between">
@@ -180,8 +365,8 @@ const FooterCTA = () => {
               </a>
             </p>
           </div>
-        </div>
-      </div>
+        </motion.div>
+      </motion.div>
     </section>
   );
 };

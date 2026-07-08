@@ -1,8 +1,8 @@
 "use client";
 
-import React from "react";
+import React, { useEffect, useMemo, useRef, useState } from "react";
 import TextFluxUnveil from "./TextFluxUnveil";
-import { motion } from "motion/react";
+import { animate, motion, type Variants, useInView } from "motion/react";
 import { defaultWhoWeServeData } from "@/data/whoWeServe";
 
 const accentPath =
@@ -22,6 +22,152 @@ export type WhoWeServeProps = {
   genres: string[];
 };
 
+const serveEase = [0.22, 1, 0.36, 1] as const;
+
+const sectionVariants: Variants = {
+  hidden: {},
+  visible: {
+    transition: {
+      staggerChildren: 0.16,
+    },
+  },
+};
+
+const statsGridVariants: Variants = {
+  hidden: {},
+  visible: {
+    transition: {
+      staggerChildren: 0.1,
+      delayChildren: 0.06,
+    },
+  },
+};
+
+const statCardVariants: Variants = {
+  hidden: {
+    opacity: 0,
+    y: 26,
+    scale: 0.98,
+  },
+  visible: {
+    opacity: 1,
+    y: 0,
+    scale: 1,
+    transition: {
+      duration: 0.7,
+      ease: serveEase,
+    },
+  },
+};
+
+const contentVariants: Variants = {
+  hidden: {},
+  visible: {
+    transition: {
+      staggerChildren: 0.12,
+      delayChildren: 0.08,
+    },
+  },
+};
+
+const revealItemVariants: Variants = {
+  hidden: {
+    opacity: 0,
+    y: 24,
+    filter: "blur(10px)",
+  },
+  visible: {
+    opacity: 1,
+    y: 0,
+    filter: "blur(0px)",
+    transition: {
+      duration: 0.68,
+      ease: serveEase,
+    },
+  },
+};
+
+const chipsVariants: Variants = {
+  hidden: {},
+  visible: {
+    transition: {
+      staggerChildren: 0.06,
+      delayChildren: 0.08,
+    },
+  },
+};
+
+const chipVariants: Variants = {
+  hidden: {
+    opacity: 0,
+    y: 12,
+    scale: 0.96,
+  },
+  visible: {
+    opacity: 1,
+    y: 0,
+    scale: 1,
+    transition: {
+      duration: 0.42,
+      ease: serveEase,
+    },
+  },
+};
+
+const parseStatValue = (value: string) => {
+  const trimmedValue = value.trim();
+  const numericPortion = trimmedValue.match(/[\d.]+/)?.[0] ?? "0";
+  const numberValue = Number.parseFloat(numericPortion);
+  const hasK = trimmedValue.toUpperCase().includes("K");
+  const suffix = trimmedValue.replace(/[\d.\s]/g, "");
+
+  return {
+    numericValue: Number.isFinite(numberValue) ? numberValue : 0,
+    suffix,
+    hasK,
+  };
+};
+
+const AnimatedStatValue = ({ value }: { value: string }) => {
+  const ref = useRef<HTMLDivElement>(null);
+  const isInView = useInView(ref, { once: true, amount: 0.55 });
+  const { numericValue, suffix, hasK } = useMemo(
+    () => parseStatValue(value),
+    [value],
+  );
+  const [displayValue, setDisplayValue] = useState(0);
+
+  useEffect(() => {
+    if (!isInView) {
+      return;
+    }
+
+    const controls = animate(0, numericValue, {
+      duration: hasK ? 1.6 : 1.35,
+      ease: "easeOut",
+      onUpdate: (latest) => setDisplayValue(latest),
+    });
+
+    return () => controls.stop();
+  }, [hasK, isInView, numericValue]);
+
+  const formattedValue = hasK
+    ? `${Math.round(displayValue)}K`
+    : Number.isInteger(numericValue)
+      ? `${Math.round(displayValue)}`
+      : `${displayValue.toFixed(1).replace(/\.0$/, "")}`;
+
+  return (
+    <div
+      ref={ref}
+      className="bg-[linear-gradient(90deg,#282828_0%,#8C8C8C_100%)] bg-clip-text text-6xl font-medium leading-none tracking-[-0.06em] text-transparent sm:text-7xl"
+    >
+      {formattedValue}
+      {!hasK && suffix}
+    </div>
+  );
+};
+
 const WhoWeServe = ({
   badgeText = defaultWhoWeServeData.badgeText,
   title = defaultWhoWeServeData.title,
@@ -31,29 +177,41 @@ const WhoWeServe = ({
 }: WhoWeServeProps) => {
   return (
     <section className="overflow-hidden bg-transparent px-4 py-16 sm:px-6 lg:px-10 lg:py-20">
-      <div className="mx-auto grid max-w-[1380px] items-center gap-12 lg:grid-cols-[1fr_0.92fr] lg:gap-14">
-        <div className="grid gap-4 sm:grid-cols-2 sm:gap-5">
+      <motion.div
+        className="mx-auto grid max-w-[1380px] items-center gap-12 lg:grid-cols-[1fr_0.92fr] lg:gap-14"
+        variants={sectionVariants}
+        initial="hidden"
+        whileInView="visible"
+        viewport={{ once: true, amount: 0.16 }}
+      >
+        <motion.div
+          variants={statsGridVariants}
+          className="grid gap-4 sm:grid-cols-2 sm:gap-5"
+        >
           {stats.map((stat) => (
-            <article
+            <motion.article
               key={stat.label}
+              variants={statCardVariants}
+              whileHover={{
+                y: -4,
+                transition: { duration: 0.22, ease: "easeOut" },
+              }}
               className={`rounded-[22px] border px-7 py-8 shadow-[0_8px_24px_rgba(44,44,44,0.08)] ${
                 stat.highlighted
                   ? "border-[#F3E4D7] bg-[linear-gradient(180deg,#FFF9F5_0%,#FFF2E8_100%)]"
                   : "border-[#EEE8E1] bg-white"
               }`}
             >
-              <div className="bg-[linear-gradient(90deg,#282828_0%,#8C8C8C_100%)] bg-clip-text text-6xl font-medium leading-none tracking-[-0.06em] text-transparent sm:text-7xl">
-                {stat.value}
-              </div>
+              <AnimatedStatValue value={stat.value} />
               <p className="mt-4 text-sm leading-[1.5] text-[#7D7D7D] sm:text-base">
                 {stat.label}
               </p>
-            </article>
+            </motion.article>
           ))}
-        </div>
+        </motion.div>
 
-        <div className="relative">
-          <svg
+        <motion.div variants={contentVariants} className="relative">
+          <motion.svg
             xmlns="http://www.w3.org/2000/svg"
             width="282"
             height="282"
@@ -61,12 +219,17 @@ const WhoWeServe = ({
             fill="none"
             className="pointer-events-none absolute right-[-3%] -top-[5%] z-0 w-[190px] max-w-none sm:w-[230px] lg:w-[310px]"
             aria-hidden="true"
+            initial={{ opacity: 0, scale: 0.82, rotate: 8 }}
+            whileInView={{ opacity: 1, scale: 1, rotate: 0 }}
+            viewport={{ once: true, amount: 0.18 }}
+            transition={{ duration: 0.9, ease: serveEase, delay: 0.08 }}
           >
             <path opacity="0.1" d={accentPath} fill="#FF5B01" />
-          </svg>
+          </motion.svg>
 
           <div className="relative z-10 max-w-[640px]">
             <motion.div
+              variants={revealItemVariants}
               className="mb-3 flex w-fit items-center justify-center rounded-[8px] px-4 py-2 text-center text-sm text-black sm:px-5 sm:text-base"
               style={{
                 background:
@@ -76,29 +239,43 @@ const WhoWeServe = ({
               <TextFluxUnveil text={badgeText} />
             </motion.div>
 
-            <h2 className="project-h2 leading-[1.04] tracking-[-0.055em]">{title}</h2>
+            <motion.h2
+              variants={revealItemVariants}
+              className="project-h2 leading-[1.04] tracking-[-0.055em]"
+            >
+              {title}
+            </motion.h2>
 
-            <p className="mt-4 max-w-[560px] text-base leading-[1.7] text-[#8C8C8C] sm:text-lg">
+            <motion.p
+              variants={revealItemVariants}
+              className="mt-4 max-w-[560px] text-base leading-[1.7] text-[#8C8C8C] sm:text-lg"
+            >
               {description}
-            </p>
+            </motion.p>
 
-            <div className="mt-6 flex flex-wrap gap-3">
+            <motion.div variants={chipsVariants} className="mt-6 flex flex-wrap gap-3">
               {genres.map((genre) => (
-                <span
+                <motion.span
                   key={genre}
+                  variants={chipVariants}
+                  whileHover={{
+                    y: -2,
+                    scale: 1.02,
+                    transition: { duration: 0.18, ease: "easeOut" },
+                  }}
                   className="inline-flex items-center rounded-[10px] border border-[#EEE7E1] bg-white px-4 py-2 text-sm text-[#7C7C7C] shadow-[0_3px_10px_rgba(40,40,40,0.04)] sm:text-base"
                 >
                   <span
                     aria-hidden="true"
-                    className="mr-2 inline-block h-2.5 w-2.5 rounded-full bg-[#FF5B01]"
+                    className="mr-2 inline-block h-2.5 w-2.5 animate-pulse rounded-full bg-[#FF5B01]"
                   />
                   {genre}
-                </span>
+                </motion.span>
               ))}
-            </div>
+            </motion.div>
           </div>
-        </div>
-      </div>
+        </motion.div>
+      </motion.div>
     </section>
   );
 };

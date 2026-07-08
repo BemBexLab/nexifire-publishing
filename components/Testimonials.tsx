@@ -1,6 +1,6 @@
 "use client";
 
-import { motion } from "motion/react";
+import { motion, type Variants } from "motion/react";
 import Image from "next/image";
 import Link from "next/link";
 import { useEffect, useState } from "react";
@@ -63,6 +63,33 @@ const testimonialSlots = [
 ];
 
 const rotationStep = 1;
+const introEase = [0.22, 1, 0.36, 1] as const;
+
+const introContainerVariants: Variants = {
+  hidden: {},
+  visible: {
+    transition: {
+      staggerChildren: 0.14,
+    },
+  },
+};
+
+const introItemVariants: Variants = {
+  hidden: {
+    opacity: 0,
+    y: 24,
+    filter: "blur(10px)",
+  },
+  visible: {
+    opacity: 1,
+    y: 0,
+    filter: "blur(0px)",
+    transition: {
+      duration: 0.7,
+      ease: introEase,
+    },
+  },
+};
 
 const TestimonialCard = ({
   item,
@@ -172,8 +199,15 @@ const Testimonials = ({
             style={{ backgroundImage: "url('/Frame 2147225735.png')" }}
           >
             <div className="relative z-10 mx-auto flex h-full w-full max-w-[1540px] flex-col gap-7 md:gap-8 xl:flex-row xl:items-start xl:justify-between xl:gap-10 2xl:items-center 2xl:px-10">
-              <div className="relative z-20 flex flex-col justify-center xl:h-full xl:w-[min(46vw,620px)] xl:max-w-[620px] 2xl:w-[min(44vw,680px)] 2xl:max-w-[680px]">
+              <motion.div
+                className="relative z-20 flex flex-col justify-center xl:h-full xl:w-[min(46vw,620px)] xl:max-w-[620px] 2xl:w-[min(44vw,680px)] 2xl:max-w-[680px]"
+                variants={introContainerVariants}
+                initial="hidden"
+                whileInView="visible"
+                viewport={{ once: true, amount: 0.45 }}
+              >
                 <motion.div
+                  variants={introItemVariants}
                   className="mb-3 flex w-fit items-center justify-center rounded-[8px] px-4 py-2 text-center text-sm text-black sm:px-5 sm:text-base"
                   style={{
                     background:
@@ -183,26 +217,34 @@ const Testimonials = ({
                   <TextFluxUnveil text={badgeText} />
                 </motion.div>
 
-                <h2 className="project-h2 block w-full max-w-full text-left">
-                  {title}
-                </h2>
-
-                <p className="mt-4 block w-full max-w-[620px] text-base leading-6 text-[#444444] sm:text-lg lg:max-w-[600px] 2xl:max-w-[560px]">
-                  {description}
-                </p>
-
-                <Link
-                  href={buttonHref}
-                  className="mt-5 inline-flex w-fit items-center justify-center rounded-[8px] bg-[linear-gradient(90deg,#B24002_0%,#FF5B01_100%)] px-4 py-[8px] text-base font-light leading-none text-white shadow-[0_8px_18px_rgba(255,91,1,0.24)] transition hover:brightness-[1.03] lg:mt-6 sm:text-lg"
+                <motion.h2
+                  variants={introItemVariants}
+                  className="project-h2 block w-full max-w-full text-left"
                 >
-                  {buttonLabel}
-                  <span className="ml-1.5 text-sm leading-none">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
-                      <path d="M6 18L18 6M18 15V6H9" stroke="white" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
-                    </svg>
-                  </span>
-                </Link>
-              </div>
+                  {title}
+                </motion.h2>
+
+                <motion.p
+                  variants={introItemVariants}
+                  className="mt-4 block w-full max-w-[620px] text-base leading-6 text-[#444444] sm:text-lg lg:max-w-[600px] 2xl:max-w-[560px]"
+                >
+                  {description}
+                </motion.p>
+
+                <motion.div variants={introItemVariants}>
+                  <Link
+                    href={buttonHref}
+                    className="mt-5 inline-flex w-fit items-center justify-center rounded-[8px] bg-[linear-gradient(90deg,#B24002_0%,#FF5B01_100%)] px-4 py-[8px] text-base font-light leading-none text-white shadow-[0_8px_18px_rgba(255,91,1,0.24)] transition hover:brightness-[1.03] lg:mt-6 sm:text-lg"
+                  >
+                    {buttonLabel}
+                    <span className="ml-1.5 text-sm leading-none">
+                      <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
+                        <path d="M6 18L18 6M18 15V6H9" stroke="white" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
+                      </svg>
+                    </span>
+                  </Link>
+                </motion.div>
+              </motion.div>
 
               <div className="mt-2 w-full xl:hidden">
                 <div className="relative mx-auto min-h-[360px] w-full max-w-[560px] sm:min-h-[390px] lg:min-h-[420px] lg:max-w-[640px]">

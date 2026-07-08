@@ -63,6 +63,7 @@ const defaultDescription =
   "This is Default Text Fix the Hero Section";
 const defaultButtonLabel = "Start Your Publishing Journey";
 const defaultButtonHref = "/contact";
+const heroEase = [0.22, 1, 0.36, 1] as const;
 
 const heroContainerVariants: Variants = {
   hidden: { opacity: 0, y: 28, scale: 0.985 },
@@ -72,7 +73,7 @@ const heroContainerVariants: Variants = {
     scale: 1,
     transition: {
       duration: 0.8,
-      ease: [0.22, 1, 0.36, 1],
+      ease: heroEase,
       staggerChildren: 0.14,
     },
   },
@@ -85,7 +86,40 @@ const heroItemVariants: Variants = {
     y: 0,
     transition: {
       duration: 0.7,
-      ease: [0.22, 1, 0.36, 1],
+      ease: heroEase,
+    },
+  },
+};
+
+const heroBackdropVariants: Variants = {
+  hidden: {
+    opacity: 0,
+    scale: 1.08,
+  },
+  visible: {
+    opacity: 1,
+    scale: 1,
+    transition: {
+      duration: 1.15,
+      ease: heroEase,
+    },
+  },
+};
+
+const heroGlowVariants: Variants = {
+  hidden: {
+    opacity: 0,
+    scale: 0.82,
+    rotate: -6,
+  },
+  visible: {
+    opacity: 1,
+    scale: 1,
+    rotate: 2,
+    transition: {
+      duration: 0.95,
+      delay: 0.18,
+      ease: heroEase,
     },
   },
 };
@@ -99,7 +133,7 @@ const logoBarVariants: Variants = {
     transition: {
       duration: 0.75,
       delay: 0.45,
-      ease: [0.22, 1, 0.36, 1],
+      ease: heroEase,
     },
   },
 };
@@ -112,7 +146,7 @@ const logoItemVariants: Variants = {
     transition: {
       duration: 0.45,
       delay: 0.65 + (index % 6) * 0.04,
-      ease: [0.22, 1, 0.36, 1],
+      ease: heroEase,
     },
   }),
 };
@@ -137,15 +171,20 @@ const PageHero = ({
           initial="hidden"
           animate="visible"
         >
-          <Image
-            src="/Rectangle 23820.png"
-            alt=""
-            fill
-            priority
-            sizes="100vw"
-            className="pointer-events-none absolute inset-0 object-cover"
-            aria-hidden="true"
-          />
+          <motion.div
+            variants={heroBackdropVariants}
+            className="pointer-events-none absolute inset-0"
+          >
+            <Image
+              src="/Rectangle 23820.png"
+              alt=""
+              fill
+              priority
+              sizes="100vw"
+              className="absolute inset-0 object-cover"
+              aria-hidden="true"
+            />
+          </motion.div>
           {hasEyebrow && (
             <motion.div
               variants={heroItemVariants}
@@ -162,19 +201,34 @@ const PageHero = ({
             variants={heroItemVariants}
             className="font-jakarta relative isolate z-10 mx-auto mt-5 max-w-[1040px] whitespace-pre-line text-center text-[1.5rem] font-medium uppercase leading-[0.95] [word-spacing:0.5rem] tracking-[-0.05em] text-black sm:text-[2.5rem] sm:leading-[1.02] sm:tracking-[-0.04em] xl:max-w-[1200px] xl:text-[3.35rem] 2xl:text-[4.05rem]"
           >
-            <Image
-              src="/Ellipse 19.png"
-              alt=""
-              width={500}
-              height={500}
-              className="pointer-events-none rotate-2 absolute left-1/2 top-10 -z-10 w-[260px] max-w-none -translate-x-1/2 -translate-y-1/2 sm:w-[350px] md:w-[350px] lg:w-[400px]"
-              aria-hidden="true"
-            />
+            <motion.div
+              variants={heroGlowVariants}
+              animate={{
+                y: [0, -10, 0],
+                rotate: [2, 4, 2],
+              }}
+              transition={{
+                duration: 7.2,
+                repeat: Infinity,
+                repeatType: "mirror",
+                ease: "easeInOut",
+              }}
+              className="pointer-events-none absolute left-1/2 top-10 -z-10 -translate-x-1/2 -translate-y-1/2"
+            >
+              <Image
+                src="/Ellipse 19.png"
+                alt=""
+                width={500}
+                height={500}
+                className="w-[260px] max-w-none sm:w-[350px] md:w-[350px] lg:w-[400px]"
+                aria-hidden="true"
+              />
+            </motion.div>
             {title}
           </motion.h1>
           <motion.p
             variants={heroItemVariants}
-            className="font-jakarta relative z-10 mx-auto mt-4 max-w-[1190px] whitespace-pre-line text-center text-base leading-[1.7] [word-spacing:0.3rem] text-[#777777] sm:text-lg md:leading-[1.65]"
+            className="font-jakarta relative z-10 mx-auto mt-4 max-w-[1000px] whitespace-pre-line text-center text-base leading-[1.7] [word-spacing:0.3rem] text-[#777777] sm:text-lg md:leading-[1.65]"
           >
             {description}
           </motion.p>
@@ -187,12 +241,18 @@ const PageHero = ({
               className="inline-flex min-h-[52px] items-center gap-1 rounded-[10px] bg-[linear-gradient(90deg,#B24002_0%,#FF5B01_100%)] px-5 text-sm font-light text-white shadow-[0_10px_24px_rgba(178,64,2,0.28)] transition-all duration-200 hover:-translate-y-0.5 hover:shadow-[0_14px_30px_rgba(178,64,2,0.34)] sm:px-6 sm:text-base"
             >
               <span>{buttonLabel}</span>
-              <span
+              <motion.span
                 aria-hidden="true"
                 className="text-base leading-none sm:text-lg"
+                whileHover={{ x: 4, y: -2 }}
+                transition={{
+                  type: "spring",
+                  stiffness: 320,
+                  damping: 20,
+                }}
               >
                 <GoArrowUpRight className="text-white size-6" />
-              </span>
+              </motion.span>
             </Link>
           </motion.div>
         </motion.div>

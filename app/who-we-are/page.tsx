@@ -1,21 +1,21 @@
-import FAQs from '@/components/FAQs'
-import GetInTouchContact from '@/components/GetInTouchContact'
-import OurBelieves from '@/components/OurBelieves'
-import OurStory from '@/components/OurStory'
-import PageHero from '@/components/PageHero'
-import Portfolio from '@/components/Portfolio'
-import PublishYourBook from '@/components/PublishYourBook'
-import Testimonials from '@/components/Testimonials'
-import WhoWeServe from '@/components/WhoWeServe'
-import { defaultWhoWeServeData } from '@/data/whoWeServe'
-import React from 'react'
+import FAQs from "@/components/FAQs";
+import GetInTouchContact from "@/components/GetInTouchContact";
+import OurBelieves from "@/components/OurBelieves";
+import OurStory from "@/components/OurStory";
+import PageHero from "@/components/PageHero";
+import Portfolio from "@/components/Portfolio";
+import PublishYourBook from "@/components/PublishYourBook";
+import Testimonials from "@/components/Testimonials";
+import WhoWeServe from "@/components/WhoWeServe";
+import { defaultWhoWeServeData } from "@/data/whoWeServe";
+import React from "react";
 
 const page = () => {
   return (
-    <section className='overflow-hidden bg-white'>
-        <PageHero
+    <section className="overflow-hidden bg-white">
+      <PageHero
         eyebrow="About"
-        title={`About NexiFire\nPublishing`}
+        title={`About NexiFire Publishing`}
         description="At NexiFire Publishing, we help authors turn their ideas into professionally published books that reach and inspire readers worldwide."
         buttonLabel="Start Your Publishing Journey"
       />
@@ -119,7 +119,7 @@ const page = () => {
         description="Tell us where you are and where you want to go. NexiFire will design the system, align the right specialists, and help you move forward with confidence."
       />
     </section>
-  )
-}
+  );
+};
 
-export default page
+export default page;

@@ -1,5 +1,6 @@
 "use client";
 
+import { AnimatePresence, motion, type Variants } from "motion/react";
 import Link from "next/link";
 import { useState } from "react";
 import TextFluxUnveil from "./TextFluxUnveil";
@@ -20,6 +21,85 @@ export type FAQsProps = {
   sidebarButtonHref: string;
 };
 
+const sectionEase = [0.22, 1, 0.36, 1] as const;
+
+const sectionVariants: Variants = {
+  hidden: {},
+  visible: {
+    transition: {
+      staggerChildren: 0.16,
+    },
+  },
+};
+
+const introVariants: Variants = {
+  hidden: {},
+  visible: {
+    transition: {
+      staggerChildren: 0.12,
+    },
+  },
+};
+
+const itemRevealVariants: Variants = {
+  hidden: {
+    opacity: 0,
+    y: 26,
+    filter: "blur(10px)",
+  },
+  visible: {
+    opacity: 1,
+    y: 0,
+    filter: "blur(0px)",
+    transition: {
+      duration: 0.72,
+      ease: sectionEase,
+    },
+  },
+};
+
+const faqListVariants: Variants = {
+  hidden: {},
+  visible: {
+    transition: {
+      staggerChildren: 0.08,
+      delayChildren: 0.14,
+    },
+  },
+};
+
+const faqCardVariants: Variants = {
+  hidden: {
+    opacity: 0,
+    y: 22,
+  },
+  visible: {
+    opacity: 1,
+    y: 0,
+    transition: {
+      duration: 0.58,
+      ease: sectionEase,
+    },
+  },
+};
+
+const sidebarVariants: Variants = {
+  hidden: {
+    opacity: 0,
+    x: 28,
+    filter: "blur(12px)",
+  },
+  visible: {
+    opacity: 1,
+    x: 0,
+    filter: "blur(0px)",
+    transition: {
+      duration: 0.78,
+      ease: sectionEase,
+    },
+  },
+};
+
 const FAQs = ({
   badgeText,
   title,
@@ -34,9 +114,16 @@ const FAQs = ({
 
   return (
     <section className="bg-white px-4 pb-14 sm:px-6 sm:pb-16 md:px-10 lg:px-16 lg:pb-20">
-      <div className="mx-auto w-full max-w-[1440px]">
-        <div className="mb-8 lg:mb-7">
-          <div
+      <motion.div
+        className="mx-auto w-full max-w-[1440px]"
+        variants={sectionVariants}
+        initial="hidden"
+        whileInView="visible"
+        viewport={{ once: true, amount: 0.16 }}
+      >
+        <motion.div className="mb-8 lg:mb-7" variants={introVariants}>
+          <motion.div
+            variants={itemRevealVariants}
             className="mb-3 flex w-fit items-center justify-center rounded-[8px] px-4 py-2 text-center text-sm text-black sm:px-5 sm:text-base"
             style={{
               background:
@@ -44,24 +131,35 @@ const FAQs = ({
             }}
           >
             <TextFluxUnveil text={badgeText} />
-          </div>
+          </motion.div>
 
-          <h2 className="project-h2 block w-full max-w-full text-left">
+          <motion.h2
+            variants={itemRevealVariants}
+            className="project-h2 block w-full max-w-full text-left"
+          >
             {title}
-          </h2>
-          <p className="text-[#777777] mt-4 max-w-[92%] text-base leading-[1.55] sm:text-lg sm:leading-[1.6]">
+          </motion.h2>
+          <motion.p
+            variants={itemRevealVariants}
+            className="text-[#777777] mt-4 max-w-[92%] text-base leading-[1.55] sm:text-lg sm:leading-[1.6]"
+          >
             {description}
-          </p>
-        </div>
+          </motion.p>
+        </motion.div>
 
         <div className="grid gap-6 lg:grid-cols-[minmax(0,1fr)_360px] lg:items-start xl:grid-cols-[minmax(0,1fr)_380px] xl:gap-8">
-          <div className="space-y-2.5">
+          <motion.div className="space-y-2.5" variants={faqListVariants}>
             {items.map((faq, index) => {
               const isOpen = openIndex === index;
 
               return (
-                <article
+                <motion.article
                   key={faq.question}
+                  variants={faqCardVariants}
+                  whileHover={{
+                    y: -2,
+                    transition: { duration: 0.2, ease: "easeOut" },
+                  }}
                   className={`overflow-hidden rounded-[14px] border transition ${
                     isOpen
                       ? "border-[#f0d7c6] bg-white"
@@ -104,20 +202,46 @@ const FAQs = ({
                     </span>
                   </button>
 
-                  {isOpen ? (
-                    <div className="border-t border-[#f6eee8] px-5 pb-4 pt-3 sm:px-6">
-                      <p className="max-w-[92%] text-sm leading-[1.65] text-[#777777] sm:text-base">
-                        {faq.answer}
-                      </p>
-                    </div>
-                  ) : null}
-                </article>
+                  <AnimatePresence initial={false}>
+                    {isOpen ? (
+                      <motion.div
+                        key="answer"
+                        initial={{ height: 0, opacity: 0 }}
+                        animate={{ height: "auto", opacity: 1 }}
+                        exit={{ height: 0, opacity: 0 }}
+                        transition={{ duration: 0.34, ease: sectionEase }}
+                        className="overflow-hidden"
+                      >
+                        <div className="border-t border-[#f6eee8] px-5 pb-4 pt-3 sm:px-6">
+                          <motion.p
+                            initial={{ y: 8, opacity: 0 }}
+                            animate={{ y: 0, opacity: 1 }}
+                            exit={{ y: -6, opacity: 0 }}
+                            transition={{ duration: 0.24, ease: sectionEase }}
+                            className="max-w-[92%] text-sm leading-[1.65] text-[#777777] sm:text-base"
+                          >
+                            {faq.answer}
+                          </motion.p>
+                        </div>
+                      </motion.div>
+                    ) : null}
+                  </AnimatePresence>
+                </motion.article>
               );
             })}
-          </div>
+          </motion.div>
 
-          <aside className="rounded-[18px] bg-[#fdf7f3] px-5 py-8 text-center sm:px-8 lg:min-h-[340px] lg:px-9">
-            <div className="mx-auto flex h-[56px] w-[56px] items-center justify-center rounded-[20px] sm:h-[62px] sm:w-[62px]">
+          <motion.aside
+            variants={sidebarVariants}
+            className="rounded-[18px] bg-[#fdf7f3] px-5 py-8 text-center sm:px-8 lg:min-h-[340px] lg:px-9"
+          >
+            <motion.div
+              initial={{ scale: 0.88, opacity: 0, rotate: -8 }}
+              whileInView={{ scale: 1, opacity: 1, rotate: 0 }}
+              viewport={{ once: true, amount: 0.45 }}
+              transition={{ duration: 0.7, ease: sectionEase }}
+              className="mx-auto flex h-[56px] w-[56px] items-center justify-center rounded-[20px] sm:h-[62px] sm:w-[62px]"
+            >
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 width="124"
@@ -131,53 +255,72 @@ const FAQs = ({
                   fill="#FF5B01"
                 />
               </svg>
-            </div>
+            </motion.div>
 
-            <h3 className="mx-auto mt-4 max-w-[300px] text-[1.8rem] font-normal uppercase leading-[0.98] tracking-[-0.045em] text-[#4a4a4a] sm:mt-5 sm:max-w-[390px] sm:text-[2.2rem]">
-              {sidebarTitle}
-            </h3>
-
-            <div className="mx-auto mt-4 max-w-[280px] text-base leading-[1.7] text-[#777777] sm:max-w-[240px] sm:text-sm lg:h-[120px] lg:overflow-y-auto lg:pr-2 lg:[scrollbar-width:thin] lg:[scrollbar-color:rgba(178,64,2,0.45)_transparent] lg:[&::-webkit-scrollbar]:w-1 lg:[&::-webkit-scrollbar-track]:bg-transparent lg:[&::-webkit-scrollbar-thumb]:rounded-full lg:[&::-webkit-scrollbar-thumb]:bg-[rgba(178,64,2,0.45)]">
-              {sidebarDescription}
-            </div>
-
-            <Link
-              href={sidebarButtonHref}
-              className="mt-6 inline-flex min-h-[46px] items-center justify-center rounded-[8px] bg-[linear-gradient(90deg,#B24002_0%,#FF5B01_100%)] px-6 py-2 text-lg font-light leading-none text-white shadow-[0_10px_20px_rgba(255,91,1,0.18)] transition hover:brightness-[1.03] sm:min-h-0 sm:px-5 sm:py-[7px] sm:text-base"
+            <motion.h3
+              initial={{ opacity: 0, y: 18 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true, amount: 0.45 }}
+              transition={{ duration: 0.6, ease: sectionEase, delay: 0.08 }}
+              className="mx-auto mt-4 max-w-[300px] text-[1.8rem] font-normal uppercase leading-[0.98] tracking-[-0.045em] text-[#4a4a4a] sm:mt-5 sm:max-w-[390px] sm:text-[2.2rem]"
             >
-              {sidebarButtonLabel}
-              <span className="ml-1.5 text-sm leading-none">
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  width="24"
-                  height="24"
-                  viewBox="0 0 24 24"
-                  fill="none"
-                >
-                  <path
-                    d="M14 2C14 2 16.2 2.2 19 5C21.8 7.8 22 10 22 10"
-                    stroke="white"
-                    strokeWidth="1.5"
-                    strokeLinecap="round"
-                  />
-                  <path
-                    d="M14.207 5.53516C14.207 5.53516 15.197 5.818 16.6819 7.30292C18.1668 8.78785 18.4497 9.7778 18.4497 9.7778"
-                    stroke="white"
-                    strokeWidth="1.5"
-                    strokeLinecap="round"
-                  />
-                  <path
-                    d="M10.0376 5.31617L10.6866 6.4791C11.2723 7.52858 11.0372 8.90533 10.1147 9.8278C10.1147 9.8278 8.99578 10.9467 11.0245 12.9755C13.0532 15.0042 14.1722 13.8853 14.1722 13.8853C15.0947 12.9628 16.4714 12.7277 17.5209 13.3134L18.6838 13.9624C20.2686 14.8468 20.4557 17.0692 19.0628 18.4622C18.2258 19.2992 17.2004 19.9505 16.0669 19.9934C14.1588 20.0658 10.9183 19.5829 7.6677 16.3323C4.41713 13.0817 3.93421 9.84122 4.00655 7.93309C4.04952 6.7996 4.7008 5.77423 5.53781 4.93723C6.93076 3.54428 9.15317 3.73144 10.0376 5.31617Z"
-                    stroke="white"
-                    strokeWidth="1.5"
-                    strokeLinecap="round"
-                  />
-                </svg>
-              </span>
-            </Link>
-          </aside>
+              {sidebarTitle}
+            </motion.h3>
+
+            <motion.div
+              initial={{ opacity: 0, y: 18 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true, amount: 0.45 }}
+              transition={{ duration: 0.6, ease: sectionEase, delay: 0.14 }}
+              className="mx-auto mt-4 max-w-[280px] text-base leading-[1.7] text-[#777777] sm:max-w-[240px] sm:text-sm lg:h-[120px] lg:overflow-y-auto lg:pr-2 lg:[scrollbar-width:thin] lg:[scrollbar-color:rgba(178,64,2,0.45)_transparent] lg:[&::-webkit-scrollbar]:w-1 lg:[&::-webkit-scrollbar-track]:bg-transparent lg:[&::-webkit-scrollbar-thumb]:rounded-full lg:[&::-webkit-scrollbar-thumb]:bg-[rgba(178,64,2,0.45)]"
+            >
+              {sidebarDescription}
+            </motion.div>
+
+            <motion.div
+              initial={{ opacity: 0, y: 18 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true, amount: 0.45 }}
+              transition={{ duration: 0.6, ease: sectionEase, delay: 0.2 }}
+            >
+              <Link
+                href={sidebarButtonHref}
+                className="mt-6 inline-flex min-h-[46px] items-center justify-center rounded-[8px] bg-[linear-gradient(90deg,#B24002_0%,#FF5B01_100%)] px-6 py-2 text-lg font-light leading-none text-white shadow-[0_10px_20px_rgba(255,91,1,0.18)] transition hover:brightness-[1.03] sm:min-h-0 sm:px-5 sm:py-[7px] sm:text-base"
+              >
+                {sidebarButtonLabel}
+                <span className="ml-1.5 text-sm leading-none">
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="24"
+                    height="24"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                  >
+                    <path
+                      d="M14 2C14 2 16.2 2.2 19 5C21.8 7.8 22 10 22 10"
+                      stroke="white"
+                      strokeWidth="1.5"
+                      strokeLinecap="round"
+                    />
+                    <path
+                      d="M14.207 5.53516C14.207 5.53516 15.197 5.818 16.6819 7.30292C18.1668 8.78785 18.4497 9.7778 18.4497 9.7778"
+                      stroke="white"
+                      strokeWidth="1.5"
+                      strokeLinecap="round"
+                    />
+                    <path
+                      d="M10.0376 5.31617L10.6866 6.4791C11.2723 7.52858 11.0372 8.90533 10.1147 9.8278C10.1147 9.8278 8.99578 10.9467 11.0245 12.9755C13.0532 15.0042 14.1722 13.8853 14.1722 13.8853C15.0947 12.9628 16.4714 12.7277 17.5209 13.3134L18.6838 13.9624C20.2686 14.8468 20.4557 17.0692 19.0628 18.4622C18.2258 19.2992 17.2004 19.9505 16.0669 19.9934C14.1588 20.0658 10.9183 19.5829 7.6677 16.3323C4.41713 13.0817 3.93421 9.84122 4.00655 7.93309C4.04952 6.7996 4.7008 5.77423 5.53781 4.93723C6.93076 3.54428 9.15317 3.73144 10.0376 5.31617Z"
+                      stroke="white"
+                      strokeWidth="1.5"
+                      strokeLinecap="round"
+                    />
+                  </svg>
+                </span>
+              </Link>
+            </motion.div>
+          </motion.aside>
         </div>
-      </div>
+      </motion.div>
     </section>
   );
 };

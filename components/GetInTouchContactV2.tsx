@@ -1,11 +1,17 @@
 "use client";
 
 import React from "react";
-import { motion } from "motion/react";
-import { FaFacebookF, FaInstagram, FaLinkedinIn, FaTwitter } from "react-icons/fa";
+import { motion, type Variants } from "motion/react";
+import {
+  FaFacebookF,
+  FaInstagram,
+  FaLinkedinIn,
+  FaTwitter,
+} from "react-icons/fa";
 import { TfiArrowTopRight } from "react-icons/tfi";
 import TextFluxUnveil from "./TextFluxUnveil";
 import { useContactForm } from "@/components/useContactForm";
+import Link from "next/link";
 
 const ContactFormCurve = () => (
   <svg
@@ -56,9 +62,16 @@ const infoCards = [
   {
     id: "phone",
     label: "(0468) 285-539",
+    link: "tel:+61468285539",
     highlighted: false,
     icon: (
-      <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none">
+      <svg
+        xmlns="http://www.w3.org/2000/svg"
+        width="22"
+        height="22"
+        viewBox="0 0 24 24"
+        fill="none"
+      >
         <path
           d="M19.1757 20.1848C17.1732 20.1848 15.1948 19.7484 13.2404 18.8757C11.2861 18.0029 9.50788 16.7653 7.90592 15.1627C6.30397 13.5601 5.06662 11.7819 4.19387 9.82815C3.32112 7.8744 2.88443 5.89599 2.88379 3.8929C2.88379 3.60455 2.97991 3.36425 3.17214 3.17202C3.36438 2.97978 3.60467 2.88367 3.89302 2.88367H7.78578C8.01005 2.88367 8.2103 2.95992 8.38651 3.11243C8.56273 3.26493 8.66685 3.44499 8.69889 3.65261L9.32366 7.01672C9.3557 7.27303 9.34769 7.48929 9.29963 7.66551C9.25157 7.84172 9.16346 7.99391 9.0353 8.12207L6.70446 10.4769C7.02485 11.0697 7.40515 11.6422 7.84537 12.1946C8.28559 12.7469 8.77034 13.2797 9.29963 13.793C9.79623 14.2896 10.3169 14.7503 10.8615 15.1752C11.4062 15.6 11.9829 15.9883 12.5916 16.3401L14.8504 14.0813C14.9946 13.9372 15.183 13.8292 15.4156 13.7574C15.6482 13.6857 15.8763 13.6655 16.0999 13.6969L19.416 14.3697C19.6403 14.4338 19.8245 14.5501 19.9687 14.7186C20.1128 14.8871 20.1849 15.0752 20.1849 15.2828V19.1756C20.1849 19.4639 20.0888 19.7042 19.8966 19.8965C19.7043 20.0887 19.464 20.1848 19.1757 20.1848Z"
           fill="white"
@@ -69,9 +82,16 @@ const infoCards = [
   {
     id: "email",
     label: "contact@nexifire.com",
+    link: "mailto:contact@nexifire.com",
     highlighted: true,
     icon: (
-      <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none">
+      <svg
+        xmlns="http://www.w3.org/2000/svg"
+        width="22"
+        height="22"
+        viewBox="0 0 24 24"
+        fill="none"
+      >
         <path
           d="M19.224 3.84485H3.8452C2.78791 3.84485 1.93246 4.70991 1.93246 5.7672L1.92285 17.3013C1.92285 18.3586 2.78791 19.2236 3.8452 19.2236H19.224C20.2813 19.2236 21.1463 18.3586 21.1463 17.3013V5.7672C21.1463 4.70991 20.2813 3.84485 19.224 3.84485ZM19.224 7.68955L11.5346 12.4954L3.8452 7.68955V5.7672L11.5346 10.5731L19.224 5.7672V7.68955Z"
           fill="white"
@@ -82,9 +102,16 @@ const infoCards = [
   {
     id: "address",
     label: "16A FOX CL, KARIONG NSW 2250, AUSTRALIA",
+    link: "#",
     highlighted: false,
     icon: (
-      <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none">
+      <svg
+        xmlns="http://www.w3.org/2000/svg"
+        width="22"
+        height="22"
+        viewBox="0 0 24 24"
+        fill="none"
+      >
         <path
           d="M11.5339 11.0535C10.8966 11.0535 10.2854 10.8004 9.83475 10.3497C9.38411 9.89908 9.13095 9.28788 9.13095 8.65058C9.13095 8.01328 9.38411 7.40209 9.83475 6.95145C10.2854 6.50081 10.8966 6.24765 11.5339 6.24765C12.1712 6.24765 12.7824 6.50081 13.233 6.95145C13.6837 7.40209 13.9368 8.01328 13.9368 8.65058C13.9368 8.96614 13.8747 9.27861 13.7539 9.57015C13.6331 9.86168 13.4561 10.1266 13.233 10.3497C13.0099 10.5728 12.745 10.7498 12.4534 10.8706C12.1619 10.9914 11.8494 11.0535 11.5339 11.0535ZM11.5339 1.92236C9.74945 1.92236 8.0381 2.63123 6.77631 3.89301C5.51453 5.1548 4.80566 6.86615 4.80566 8.65058C4.80566 13.6967 11.5339 21.1458 11.5339 21.1458C11.5339 21.1458 18.2621 13.6967 18.2621 8.65058C18.2621 6.86615 17.5532 5.1548 16.2915 3.89301C15.0297 2.63123 13.3183 1.92236 11.5339 1.92236Z"
           fill="white"
@@ -94,107 +121,328 @@ const infoCards = [
   },
 ];
 
+const contactEase = [0.22, 1, 0.36, 1] as const;
+
+const sectionVariants: Variants = {
+  hidden: {},
+  visible: {
+    transition: {
+      staggerChildren: 0.18,
+    },
+  },
+};
+
+const contentVariants: Variants = {
+  hidden: {
+    opacity: 0,
+    y: 36,
+  },
+  visible: {
+    opacity: 1,
+    y: 0,
+    transition: {
+      duration: 0.82,
+      ease: contactEase,
+      staggerChildren: 0.12,
+    },
+  },
+};
+
+const itemVariants: Variants = {
+  hidden: {
+    opacity: 0,
+    y: 20,
+  },
+  visible: {
+    opacity: 1,
+    y: 0,
+    transition: {
+      duration: 0.6,
+      ease: contactEase,
+    },
+  },
+};
+
+const formAreaVariants: Variants = {
+  hidden: {
+    opacity: 0,
+    x: 34,
+  },
+  visible: {
+    opacity: 1,
+    x: 0,
+    transition: {
+      duration: 0.9,
+      ease: contactEase,
+      staggerChildren: 0.12,
+    },
+  },
+};
+
+const accentLeftVariants: Variants = {
+  hidden: {
+    opacity: 0,
+    x: -24,
+    y: 20,
+    scale: 0.9,
+    rotate: -8,
+  },
+  visible: {
+    opacity: 1,
+    x: 0,
+    y: 0,
+    scale: 1,
+    rotate: 0,
+    transition: {
+      duration: 0.86,
+      ease: contactEase,
+    },
+  },
+};
+
+const accentRightVariants: Variants = {
+  hidden: {
+    opacity: 0,
+    x: 42,
+    y: -24,
+    scale: 0.94,
+  },
+  visible: {
+    opacity: 1,
+    x: 0,
+    y: 0,
+    scale: 1,
+    transition: {
+      duration: 1,
+      ease: contactEase,
+    },
+  },
+};
+
+const formCardVariants: Variants = {
+  hidden: {
+    opacity: 0,
+    y: 34,
+    scale: 0.98,
+  },
+  visible: {
+    opacity: 1,
+    y: 0,
+    scale: 1,
+    transition: {
+      duration: 0.84,
+      ease: contactEase,
+      staggerChildren: 0.08,
+    },
+  },
+};
+
+const dividerVariants: Variants = {
+  hidden: {
+    opacity: 0,
+    scaleX: 0.4,
+  },
+  visible: {
+    opacity: 1,
+    scaleX: 1,
+    transition: {
+      duration: 0.72,
+      ease: contactEase,
+    },
+  },
+};
+
+const infoGridVariants: Variants = {
+  hidden: {},
+  visible: {
+    transition: {
+      staggerChildren: 0.1,
+      delayChildren: 0.12,
+    },
+  },
+};
+
+const infoCardVariants: Variants = {
+  hidden: {
+    opacity: 0,
+    y: 28,
+    scale: 0.97,
+  },
+  visible: {
+    opacity: 1,
+    y: 0,
+    scale: 1,
+    transition: {
+      duration: 0.72,
+      ease: contactEase,
+      staggerChildren: 0.08,
+    },
+  },
+};
+
 const GetInTouchContactV2 = () => {
   const { handleSubmit, isSubmitting, submitMessage, submitStatus } =
     useContactForm("Contact page v2");
 
   return (
-    <section className="overflow-hidden bg-white px-4 py-16 sm:px-6 lg:px-10 lg:py-20">
+    <motion.section
+      className="overflow-hidden bg-white px-4 py-16 sm:px-6 lg:px-10 lg:py-20"
+      variants={sectionVariants}
+      initial="hidden"
+      whileInView="visible"
+      viewport={{ once: true, amount: 0.14 }}
+    >
       <div className="mx-auto max-w-[1380px]">
         <div className="grid items-start gap-14 lg:grid-cols-[0.88fr_1fr] lg:gap-16">
-          <div className="pt-3">
-            <div
+          <motion.div className="pt-3" variants={contentVariants}>
+            <motion.div
               className="mb-4 flex w-fit items-center justify-center rounded-[8px] px-4 py-2 text-center text-sm text-black sm:px-5 sm:text-base"
               style={{
                 background:
                   "linear-gradient(90deg, rgba(178, 64, 2, 0.13) 0%, rgba(178, 64, 2, 0.00) 79.96%)",
               }}
+              variants={itemVariants}
             >
               <TextFluxUnveil text="Get In Touch" />
-            </div>
+            </motion.div>
 
-            <h2 className="project-h2 max-w-[670px]">
+            <motion.h2
+              className="project-h2 max-w-[670px]"
+              variants={itemVariants}
+            >
               Ready To Publish Your Book?
-            </h2>
+            </motion.h2>
 
-            <p className="mt-5 max-w-[570px] text-base leading-[1.75] text-[#888888] sm:text-lg">
-              Whether you're starting with an idea or have a completed manuscript, our publishing specialists are here to help. Contact NexiFire Publishing today and take the first step toward becoming a published author.
-            </p>
-            <div className="h-px mt-5 border border-1 max-w-6/7" />
-            <div className="mt-5">
-              <h3 className="text-lg font-semibold text-[#C95A10]">Social Media</h3>
-              <div className="mt-4 flex items-center gap-3">
+            <motion.p
+              className="mt-5 max-w-[570px] text-base leading-[1.75] text-[#888888] sm:text-lg"
+              variants={itemVariants}
+            >
+              Whether you're starting with an idea or have a completed
+              manuscript, our publishing specialists are here to help. Contact
+              NexiFire Publishing today and take the first step toward becoming
+              a published author.
+            </motion.p>
+            <motion.div
+              className="mt-5 h-px max-w-6/7 border border-1"
+              variants={dividerVariants}
+              style={{ originX: 0 }}
+            />
+            <motion.div className="mt-5" variants={itemVariants}>
+              <motion.h3
+                className="text-lg font-semibold text-[#C95A10]"
+                variants={itemVariants}
+              >
+                Social Media
+              </motion.h3>
+              <motion.div
+                className="mt-4 flex items-center gap-3"
+                variants={itemVariants}
+              >
                 {socialLinks.map((item) => (
-                  <a
+                  <motion.a
                     key={item.id}
                     href={item.href}
                     className="flex h-9 w-9 items-center justify-center rounded-[4px] bg-[#7D7D7D] text-sm text-white transition hover:bg-[#B24002]"
+                    whileHover={{ y: -3, scale: 1.06 }}
+                    whileTap={{ scale: 0.96 }}
+                    transition={{ duration: 0.22, ease: contactEase }}
                   >
                     {item.icon}
-                  </a>
+                  </motion.a>
                 ))}
-              </div>
-            </div>
-          </div>
+              </motion.div>
+            </motion.div>
+          </motion.div>
 
-          <div className="relative flex w-full justify-center lg:justify-start">
-            <div className="pointer-events-none absolute -left-[24px] bottom-[24px] z-0 hidden w-[110px] sm:block lg:-left-[66px] lg:bottom-[18px] lg:w-[138px]">
+          <motion.div
+            className="relative flex w-full justify-center lg:justify-start"
+            variants={formAreaVariants}
+          >
+            <motion.div
+              className="pointer-events-none absolute -left-[24px] bottom-[24px] z-0 hidden w-[110px] sm:block lg:-left-[66px] lg:bottom-[18px] lg:w-[138px]"
+              variants={accentLeftVariants}
+            >
               <ContactAccentShape />
-            </div>
+            </motion.div>
 
-            <div className="pointer-events-none absolute -right-[200px] -top-[72px] z-0 hidden w-[440px] sm:block lg:-right-[340px] lg:-top-[94px] lg:w-[720px]">
+            <motion.div
+              className="pointer-events-none absolute -right-[200px] -top-[72px] z-0 hidden w-[440px] sm:block lg:-right-[340px] lg:-top-[94px] lg:w-[720px]"
+              variants={accentRightVariants}
+            >
               <ContactFormCurve />
-            </div>
+            </motion.div>
 
-            <div className="relative z-10 w-full max-w-[690px] rounded-[20px] border border-[#ECE8E2] bg-white p-4 shadow-[0_10px_28px_rgba(0,0,0,0.08)] sm:p-5 lg:p-6">
-              <h3 className="text-[1.05rem] font-bold uppercase tracking-[-0.02em] text-[#4C4C4C] sm:text-[1.35rem]">
+            <motion.div
+              className="relative z-10 w-full max-w-[690px] rounded-[20px] border border-[#ECE8E2] bg-white p-4 shadow-[0_10px_28px_rgba(0,0,0,0.08)] sm:p-5 lg:p-6"
+              variants={formCardVariants}
+              whileHover={{ y: -4 }}
+              transition={{ duration: 0.28, ease: contactEase }}
+            >
+              <motion.h3
+                className="text-[1.05rem] font-bold uppercase tracking-[-0.02em] text-[#4C4C4C] sm:text-[1.35rem]"
+                variants={itemVariants}
+              >
                 Fill This Form To Get Faster Response
-              </h3>
+              </motion.h3>
 
-              <form className="mt-5 space-y-4" onSubmit={handleSubmit}>
-                <input
+              <motion.form
+                className="mt-5 space-y-4"
+                onSubmit={handleSubmit}
+                variants={contentVariants}
+              >
+                <motion.input
                   name="name"
                   type="text"
                   placeholder="Name"
                   required
                   className="h-[42px] w-full rounded-[5px] border border-[#BCBCBC] bg-transparent px-3 text-sm text-[#4a4a4a] outline-none placeholder:text-[#9a9a9a] sm:text-base"
+                  variants={itemVariants}
+                  whileFocus={{ scale: 1.01 }}
                 />
 
-                <div className="grid grid-cols-1 gap-3 sm:grid-cols-2">
-                  <input
+                <motion.div
+                  className="grid grid-cols-1 gap-3 sm:grid-cols-2"
+                  variants={itemVariants}
+                >
+                  <motion.input
                     name="email"
                     type="email"
                     placeholder="Email"
                     required
                     className="h-[42px] w-full rounded-[5px] border border-[#BCBCBC] bg-transparent px-3 text-sm text-[#4a4a4a] outline-none placeholder:text-[#9a9a9a] sm:text-base"
+                    whileFocus={{ scale: 1.01 }}
                   />
-                  <input
+                  <motion.input
                     name="phone"
                     type="tel"
                     placeholder="Phone Number"
                     required
                     className="h-[42px] w-full rounded-[5px] border border-[#BCBCBC] bg-transparent px-3 text-sm text-[#4a4a4a] outline-none placeholder:text-[#9a9a9a] sm:text-base"
+                    whileFocus={{ scale: 1.01 }}
                   />
-                </div>
+                </motion.div>
 
-                <textarea
+                <motion.textarea
                   name="message"
                   placeholder="Message"
                   required
                   rows={7}
                   className="w-full rounded-[5px] border border-[#BCBCBC] bg-transparent px-3 py-3 text-sm text-[#4a4a4a] outline-none placeholder:text-[#9a9a9a] sm:text-base"
+                  variants={itemVariants}
+                  whileFocus={{ scale: 1.01 }}
                 />
 
                 {submitMessage ? (
-                  <p
+                  <motion.p
                     className={`text-sm ${
                       submitStatus === "success"
                         ? "text-[#247a39]"
                         : "text-[#b3261e]"
                     }`}
+                    variants={itemVariants}
                   >
                     {submitMessage}
-                  </p>
+                  </motion.p>
                 ) : null}
 
                 <motion.button
@@ -215,40 +463,68 @@ const GetInTouchContactV2 = () => {
                   {isSubmitting ? "Sending..." : "Let's Talk"}
                   <TfiArrowTopRight size={16} />
                 </motion.button>
-              </form>
-            </div>
-          </div>
+              </motion.form>
+            </motion.div>
+          </motion.div>
         </div>
 
-        <div className="mx-auto mt-14 flex max-w-[1240px] items-center gap-4">
-          <div className="h-[3] flex-1 bg-[linear-gradient(270deg,#FF5B01_0%,rgba(255,91,1,0)_100%)]" />
-          <span className="shrink-0 bg-[linear-gradient(90deg,#282828_0%,#8C8C8C_100%)] bg-clip-text text-lg font-medium uppercase leading-none tracking-[-0.02em] text-transparent sm:text-xl">
+        <motion.div
+          className="mx-auto mt-14 flex max-w-[1240px] items-center gap-4"
+          variants={contentVariants}
+        >
+          <motion.div
+            className="h-[3] flex-1 bg-[linear-gradient(270deg,#FF5B01_0%,rgba(255,91,1,0)_100%)]"
+            variants={dividerVariants}
+            style={{ originX: 1 }}
+          />
+          <motion.span
+            className="shrink-0 bg-[linear-gradient(90deg,#282828_0%,#8C8C8C_100%)] bg-clip-text text-lg font-medium uppercase leading-none tracking-[-0.02em] text-transparent sm:text-xl"
+            variants={itemVariants}
+          >
             Contact Information
-          </span>
-          <div className="h-[3] flex-1 bg-[linear-gradient(90deg,#FF5B01_0%,rgba(255,91,1,0)_100%)]" />
-        </div>
+          </motion.span>
+          <motion.div
+            className="h-[3] flex-1 bg-[linear-gradient(90deg,#FF5B01_0%,rgba(255,91,1,0)_100%)]"
+            variants={dividerVariants}
+            style={{ originX: 0 }}
+          />
+        </motion.div>
 
-        <div className="mt-8 grid gap-5 md:grid-cols-3">
+        <motion.div
+          className="mt-8 grid gap-5 md:grid-cols-3"
+          variants={infoGridVariants}
+        >
           {infoCards.map((item) => (
-            <article
+            <motion.article
               key={item.id}
               className={`flex min-h-[158px] flex-col items-center justify-center rounded-[20px] border px-6 py-8 text-center shadow-[0_10px_24px_rgba(0,0,0,0.06)] ${
                 item.highlighted
                   ? "border-[#F3E4D7] bg-[linear-gradient(180deg,#FFF9F5_0%,#FFF2E8_100%)]"
                   : "border-[#ECE8E2] bg-white"
               }`}
+              variants={infoCardVariants}
+              whileHover={{ y: -6 }}
+              transition={{ duration: 0.28, ease: contactEase }}
             >
-              <div className="flex h-[36px] w-[36px] items-center justify-center rounded-[6px] bg-[#B24002]">
+              <motion.div
+                className="flex h-[36px] w-[36px] items-center justify-center rounded-[6px] bg-[#B24002]"
+                variants={itemVariants}
+              >
                 {item.icon}
-              </div>
-              <p className="mt-5 max-w-[240px] text-lg leading-[1.45] tracking-[-0.02em] text-[#8B8B8B] sm:text-xl">
-                {item.label}
-              </p>
-            </article>
+              </motion.div>
+              <Link href={item.link}>
+                <motion.p
+                  className="mt-5 max-w-[240px] text-lg leading-[1.45] tracking-[-0.02em] text-[#8B8B8B] sm:text-xl"
+                  variants={itemVariants}
+                >
+                  {item.label}
+                </motion.p>
+              </Link>
+            </motion.article>
           ))}
-        </div>
+        </motion.div>
       </div>
-    </section>
+    </motion.section>
   );
 };
 

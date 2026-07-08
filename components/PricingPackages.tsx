@@ -1,6 +1,6 @@
 "use client";
 
-import { motion } from "motion/react";
+import { motion, type Variants } from "motion/react";
 import Link from "next/link";
 import React from "react";
 import TextFluxUnveil from "./TextFluxUnveil";
@@ -22,6 +22,90 @@ const defaultEyebrow = "Pricing & Packages";
 const defaultTitle = "Flexible Plans Tailored To Your Needs";
 const defaultDescription =
   "Pricing may vary depending on the genre, page and word count, and your specific needs for publishing, marketing, or ghostwriting. For a personalized estimate and detailed consultation, click on 'Custom Quote' to speak with a publishing expert.";
+
+const pricingEase = [0.22, 1, 0.36, 1] as const;
+
+const sectionVariants: Variants = {
+  hidden: {},
+  visible: {
+    transition: {
+      staggerChildren: 0.16,
+    },
+  },
+};
+
+const headerVariants: Variants = {
+  hidden: {},
+  visible: {
+    transition: {
+      staggerChildren: 0.12,
+    },
+  },
+};
+
+const revealItemVariants: Variants = {
+  hidden: {
+    opacity: 0,
+    y: 26,
+    filter: "blur(10px)",
+  },
+  visible: {
+    opacity: 1,
+    y: 0,
+    filter: "blur(0px)",
+    transition: {
+      duration: 0.72,
+      ease: pricingEase,
+    },
+  },
+};
+
+const cardsContainerVariants: Variants = {
+  hidden: {},
+  visible: {
+    transition: {
+      staggerChildren: 0.12,
+      delayChildren: 0.1,
+    },
+  },
+};
+
+const cardVariants: Variants = {
+  hidden: {
+    opacity: 0,
+    y: 34,
+    scale: 0.985,
+  },
+  visible: {
+    opacity: 1,
+    y: 0,
+    scale: 1,
+    transition: {
+      duration: 0.78,
+      ease: pricingEase,
+    },
+  },
+};
+
+const cardInnerVariants: Variants = {
+  hidden: {},
+  visible: {
+    transition: {
+      staggerChildren: 0.1,
+      delayChildren: 0.06,
+    },
+  },
+};
+
+const packageListVariants: Variants = {
+  hidden: {},
+  visible: {
+    transition: {
+      staggerChildren: 0.05,
+      delayChildren: 0.04,
+    },
+  },
+};
 
 const defaultPricingPackages: PricingPackage[] = [
   {
@@ -103,7 +187,10 @@ const defaultPricingPackages: PricingPackage[] = [
 
 const IncludedItem = ({ text }: { text: string }) => {
   return (
-    <li className="flex items-start gap-3 text-[15px] leading-[1.5] text-[#8A8A8A] sm:text-base">
+    <motion.li
+      variants={revealItemVariants}
+      className="flex items-start gap-3 text-[15px] leading-[1.5] text-[#8A8A8A] sm:text-base"
+    >
       <span className="mt-0.5 inline-flex h-[18px] w-[18px] shrink-0 items-center justify-center rounded-full border border-[#E45C11] text-[#E45C11]">
         <svg
           aria-hidden="true"
@@ -123,7 +210,7 @@ const IncludedItem = ({ text }: { text: string }) => {
         </svg>
       </span>
       <span>{text}</span>
-    </li>
+    </motion.li>
   );
 };
 
@@ -135,9 +222,19 @@ const PricingPackages = ({
 }: PricingPackagesProps) => {
   return (
     <section className="bg-white px-4 py-14 sm:px-6 lg:px-8 lg:py-20">
-      <div className="mx-auto w-full max-w-[1540px]">
-        <div className="mx-auto max-w-[1340px] text-center">
+      <motion.div
+        className="mx-auto w-full max-w-[1540px]"
+        variants={sectionVariants}
+        initial="hidden"
+        whileInView="visible"
+        viewport={{ once: true, amount: 0.14 }}
+      >
+        <motion.div
+          className="mx-auto max-w-[1340px] text-center"
+          variants={headerVariants}
+        >
           <motion.div
+            variants={revealItemVariants}
             className="mx-auto mb-3 flex w-fit items-center justify-center rounded-[8px] px-4 py-2 text-center text-sm text-black sm:px-5 sm:text-base"
             style={{
               background:
@@ -147,80 +244,108 @@ const PricingPackages = ({
             <TextFluxUnveil text={eyebrow} />
           </motion.div>
 
-          <h2 className="project-h2 mt-5 leading-[1.06] tracking-[-0.05em]">
+          <motion.h2
+            variants={revealItemVariants}
+            className="project-h2 mt-5 leading-[1.06] tracking-[-0.05em]"
+          >
             {title}
-          </h2>
+          </motion.h2>
 
-          <p className="mx-auto mt-5 max-w-[920px] text-sm leading-[1.6] text-[#9A9A9A] sm:text-base">
+          <motion.p
+            variants={revealItemVariants}
+            className="mx-auto mt-5 max-w-[920px] text-sm leading-[1.6] text-[#9A9A9A] sm:text-base"
+          >
             {description}
-          </p>
-        </div>
+          </motion.p>
+        </motion.div>
 
-        <div className="mt-10 space-y-4 sm:space-y-5 lg:mt-12">
+        <motion.div
+          variants={cardsContainerVariants}
+          className="mt-10 space-y-4 sm:space-y-5 lg:mt-12"
+        >
           {packages.map((pkg) => (
-            <article
+            <motion.article
               key={pkg.name}
+              variants={cardVariants}
+              whileHover={{
+                y: -4,
+                transition: { duration: 0.24, ease: "easeOut" },
+              }}
               className="overflow-hidden rounded-[24px] border border-[#F0E8E1] bg-[#FFFEFD] px-6 py-8 shadow-[0_14px_34px_rgba(41,27,16,0.06)] sm:px-8 sm:py-9 lg:px-12 lg:py-10 xl:px-14"
             >
-              <div className="grid gap-8 lg:grid-cols-[380px_minmax(0,1fr)] lg:gap-12 xl:grid-cols-[460px_minmax(0,1fr)] xl:gap-20">
-                <div className="flex flex-col items-start pt-1">
-                  <h3 className="text-[2rem] font-normal uppercase leading-[0.95] tracking-[-0.04em] text-[#4A4A4A] sm:text-[2.5rem] xl:text-[2.7rem]">
-                    {pkg.name}
-                  </h3>
-
-                  <p className="mt-5 max-w-full text-[15px] leading-[1.55] text-[#7E7E7E] sm:text-[17px]">
-                    {pkg.description}
-                  </p>
-
-                  <Link
-                    href="/contact"
-                    className="mt-6 inline-flex min-h-11 items-center justify-center rounded-[10px] bg-[linear-gradient(90deg,#B24002_0%,#FF5B01_100%)] px-5 py-2.5 text-[15px] font-medium text-white shadow-[0_10px_20px_rgba(178,64,2,0.2)] transition-transform duration-200 hover:-translate-y-0.5"
+              <motion.div
+                variants={cardInnerVariants}
+                className="grid gap-8 lg:grid-cols-[380px_minmax(0,1fr)] lg:gap-12 xl:grid-cols-[460px_minmax(0,1fr)] xl:gap-20"
+              >
+                <motion.div variants={cardInnerVariants} className="flex flex-col items-start pt-1">
+                  <motion.h3
+                    variants={revealItemVariants}
+                    className="text-[2rem] font-normal uppercase leading-[0.95] tracking-[-0.04em] text-[#4A4A4A] sm:text-[2.5rem] xl:text-[2.7rem]"
                   >
-                    Custom Quote
-                    <span className="ml-1.5 leading-none">
-                      <svg
-                        xmlns="http://www.w3.org/2000/svg"
-                        width="20"
-                        height="20"
-                        viewBox="0 0 24 24"
-                        fill="none"
-                      >
-                        <path
-                          d="M6 18L18 6M18 15V6H9"
-                          stroke="white"
-                          strokeWidth="1.5"
-                          strokeLinecap="round"
-                          strokeLinejoin="round"
-                        />
-                      </svg>
-                    </span>
-                  </Link>
-                </div>
+                    {pkg.name}
+                  </motion.h3>
 
-                <div>
-                  <p className="w-fit bg-[linear-gradient(90deg,#B24002_0%,#FF5B01_100%)] bg-clip-text text-[17px] font-semibold text-transparent">
+                  <motion.p
+                    variants={revealItemVariants}
+                    className="mt-5 max-w-full text-[15px] leading-[1.55] text-[#7E7E7E] sm:text-[17px]"
+                  >
+                    {pkg.description}
+                  </motion.p>
+
+                  <motion.div variants={revealItemVariants}>
+                    <Link
+                      href="/contact"
+                      className="mt-6 inline-flex min-h-11 items-center justify-center rounded-[10px] bg-[linear-gradient(90deg,#B24002_0%,#FF5B01_100%)] px-5 py-2.5 text-[15px] font-medium text-white shadow-[0_10px_20px_rgba(178,64,2,0.2)] transition-transform duration-200 hover:-translate-y-0.5"
+                    >
+                      Custom Quote
+                      <span className="ml-1.5 leading-none">
+                        <svg
+                          xmlns="http://www.w3.org/2000/svg"
+                          width="20"
+                          height="20"
+                          viewBox="0 0 24 24"
+                          fill="none"
+                        >
+                          <path
+                            d="M6 18L18 6M18 15V6H9"
+                            stroke="white"
+                            strokeWidth="1.5"
+                            strokeLinecap="round"
+                            strokeLinejoin="round"
+                          />
+                        </svg>
+                      </span>
+                    </Link>
+                  </motion.div>
+                </motion.div>
+
+                <motion.div variants={cardInnerVariants}>
+                  <motion.p
+                    variants={revealItemVariants}
+                    className="w-fit bg-[linear-gradient(90deg,#B24002_0%,#FF5B01_100%)] bg-clip-text text-[17px] font-semibold text-transparent"
+                  >
                     Included:
-                  </p>
+                  </motion.p>
 
                   <div className="mt-4 grid gap-x-10 gap-y-4 sm:grid-cols-2 xl:gap-x-16">
-                    <ul className="space-y-3">
+                    <motion.ul variants={packageListVariants} className="space-y-3">
                       {pkg.included[0].map((item) => (
                         <IncludedItem key={item} text={item} />
                       ))}
-                    </ul>
+                    </motion.ul>
 
-                    <ul className="space-y-3">
+                    <motion.ul variants={packageListVariants} className="space-y-3">
                       {pkg.included[1].map((item) => (
                         <IncludedItem key={item} text={item} />
                       ))}
-                    </ul>
+                    </motion.ul>
                   </div>
-                </div>
-              </div>
-            </article>
+                </motion.div>
+              </motion.div>
+            </motion.article>
           ))}
-        </div>
-      </div>
+        </motion.div>
+      </motion.div>
     </section>
   );
 };
