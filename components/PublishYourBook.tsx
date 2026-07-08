@@ -6,7 +6,7 @@ import { MdOutlineArrowOutward } from "react-icons/md";
 
 type PublishYourBookProps = {
   title?: string;
-  description?: string;
+  description?: string | React.ReactNode;
   buttonLabel?: string;
   buttonHref?: string;
   backgroundImageSrc?: string;

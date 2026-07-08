@@ -92,8 +92,8 @@ const contactItems: GetInTouchContactItem[] = [
   {
     id: "phone-us",
     kind: "phone",
-    label: "(470) 470-7520",
-    href: "tel:+14704707520",
+    label: "(0468) 285-539",
+    href: "tel:+61468285539",
   },
   {
     id: "email",
@@ -104,7 +104,7 @@ const contactItems: GetInTouchContactItem[] = [
   {
     id: "address-us",
     kind: "location",
-    label: "2300 Lakeview Pkwy Alpharetta, GA 30009",
+    label: "16A Fox Cl, Kariong NSW 2250, Australia",
   },
 ];
 

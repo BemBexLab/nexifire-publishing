@@ -17,9 +17,9 @@ const page = () => {
   return (
     <section className="overflow-hidden bg-white">
       <PageHero
-        eyebrow="eBook Publishing Services Australia"
-        title={`Publish Your eBook. Reach Readers Everywhere.`}
-        description="NexiFire Publishing handles everything Australian authors need to get their eBook into the world, professional EPUB and MOBI conversion, cover design built for digital storefronts, Kindle KDP setup, and simultaneous distribution to every major platform. Your book lives globally, without the guesswork."
+        eyebrow="Nexfire Publishing"
+        title={`eBook Publishing Services Australia`}
+        description={<><span className="font-bold text-black">Publish Your eBook. Reach Readers Everywhere.</span> NexiFire Publishing handles everything Australian authors need to get their eBook into the world, professional EPUB and MOBI conversion, cover design built for digital storefronts, Kindle KDP setup, and simultaneous distribution to every major platform. Your book lives globally, without the guesswork.</>}
         buttonLabel="Publish Your Book Now"
       />
       <Introduction

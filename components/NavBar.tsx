@@ -1,5 +1,6 @@
 "use client";
 
+import { label } from "motion/react-client";
 import Image from "next/image";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
@@ -13,6 +14,7 @@ const navLinks = [
     hasDropdown: true,
   },
   { label: "Our Books", href: "/our-books" },
+  { label: "Pricing & Packages", href: "/pricing-packages" },
   { label: "Who We Are", href: "/who-we-are" },
   { label: "Blog", href: "/blogs" },
   { label: "Contact", href: "/contact" },

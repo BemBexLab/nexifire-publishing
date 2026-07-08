@@ -17,7 +17,7 @@ const page = () => {
   return (
     <section className="overflow-hidden bg-white">
       <PageHero
-        eyebrow="Professional Audiobook Services"
+        eyebrow="NexiFire Publishing"
         title={`Audiobook Production Services Australia`}
         description="NexiFire Publishing provides complete audiobook production services for Australian authors, professional narration, studio-quality recording, expert audio mastering, and global distribution to Audible, Apple Books, Spotify, and 20+ platforms. We produce a professional audiobook from your manuscript, start to finish."
         buttonLabel="Start My Audiobook Today"

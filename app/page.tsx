@@ -21,7 +21,7 @@ export default function Home() {
       <WhoWeAre />
       <OurProcess
         badgeText="How It Works"
-        title="Publish Your Book in 5 Clear Steps"
+        title="Publish Your Book in 4 Clear Steps"
         description="Publishing a book in Australia doesn't need to be complicated."
         steps={[
           {

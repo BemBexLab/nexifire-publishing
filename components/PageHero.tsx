@@ -16,7 +16,7 @@ type Logo = {
 type PageHeroProps = {
   eyebrow?: string;
   title?: string;
-  description?: string;
+  description?: string | React.ReactNode;
   logos?: Logo[];
   buttonLabel?: string;
   buttonHref?: string;

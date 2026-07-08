@@ -13,7 +13,7 @@ import { defaultWhoWeServeData } from "@/data/whoWeServe";
 type PageHeroContent = {
   eyebrow: string;
   title: string;
-  description: string;
+  description: string | React.ReactNode;
   buttonLabel: string;
   buttonHref?: string;
 };
@@ -27,7 +27,7 @@ type IntroductionContent = {
 
 type PublishBannerContent = {
   title: string;
-  description: string;
+  description: string | React.ReactNode;
   buttonLabel: string;
   buttonHref: string;
   backgroundImageSrc: string;
@@ -94,9 +94,9 @@ export const publishingServicePageData: Record<
   "book-marketing": {
     slug: "book-marketing",
     hero: {
-      eyebrow: "Book Marketing Services Australia",
-      title: "Your Book is Written. Now Let's Make Sure Readers Find It.",
-      description: "",
+      eyebrow: "NexiFire Publishing",
+      title: "Book Marketing Services Australia",
+      description: "Your Book is Written. Now Let's Make Sure Readers Find It.",
       buttonLabel: "Get a Marketing Plan",
       buttonHref: "/contact",
     },
@@ -314,10 +314,10 @@ export const publishingServicePageData: Record<
   "book-cover-design": {
     slug: "book-cover-design",
     hero: {
-      eyebrow: "Book Cover Design Services Australia",
-      title: "A Great Book Deserves a Cover That Stops the Scroll",
+      eyebrow: "NexiFire Publishing",
+      title: "Book Cover Design Services Australia",
       description:
-        'NexiFire Publishing connects Australian authors with professional book cover designers who understand genre, typography, and what actually makes readers click "buy." From custom eBook covers to full hardcover jackets, every design we create is built to sell your book before a single page is read.',
+        (<><span className="font-bold text-black">A Great Book Deserves a Cover That Stops the Scroll</span> NexiFire Publishing connects Australian authors with professional book cover designers who understand genre, typography, and what actually makes readers click "buy." From custom eBook covers to full hardcover jackets, every design we create is built to sell your book before a single page is read.</>),
       buttonLabel: "Start the Design Process",
       buttonHref: "/contact",
     },

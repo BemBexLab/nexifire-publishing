@@ -55,7 +55,7 @@ const socialLinks = [
 const infoCards = [
   {
     id: "phone",
-    label: "(470) 470-7520",
+    label: "(0468) 285-539",
     highlighted: false,
     icon: (
       <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none">
@@ -81,7 +81,7 @@ const infoCards = [
   },
   {
     id: "address",
-    label: "2300 LAKEVIEW PKWY ALPHARETTA, GA 30009",
+    label: "16A FOX CL, KARIONG NSW 2250, AUSTRALIA",
     highlighted: false,
     icon: (
       <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none">

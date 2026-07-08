@@ -3,16 +3,27 @@
 import { motion } from "motion/react";
 import Link from "next/link";
 import React from "react";
-import { MdOutlineArrowOutward } from "react-icons/md";
 import TextFluxUnveil from "./TextFluxUnveil";
 
-type PricingPackage = {
+export type PricingPackage = {
   name: string;
   description: string;
   included: [string[], string[]];
 };
 
-const pricingPackages: PricingPackage[] = [
+type PricingPackagesProps = {
+  eyebrow?: string;
+  title?: string;
+  description?: string;
+  packages?: PricingPackage[];
+};
+
+const defaultEyebrow = "Pricing & Packages";
+const defaultTitle = "Flexible Plans Tailored To Your Needs";
+const defaultDescription =
+  "Pricing may vary depending on the genre, page and word count, and your specific needs for publishing, marketing, or ghostwriting. For a personalized estimate and detailed consultation, click on 'Custom Quote' to speak with a publishing expert.";
+
+const defaultPricingPackages: PricingPackage[] = [
   {
     name: "SILVER",
     description:
@@ -92,16 +103,36 @@ const pricingPackages: PricingPackage[] = [
 
 const IncludedItem = ({ text }: { text: string }) => {
   return (
-    <li className="flex items-start gap-2 text-sm leading-[1.55] text-[#8E8E8E] sm:text-base">
-      <span className="mt-[2px] inline-flex h-4 w-4 shrink-0 items-center justify-center rounded-full border border-[#B24002] text-xs text-[#B24002]">
-        ✓
+    <li className="flex items-start gap-3 text-[15px] leading-[1.5] text-[#8A8A8A] sm:text-base">
+      <span className="mt-0.5 inline-flex h-[18px] w-[18px] shrink-0 items-center justify-center rounded-full border border-[#E45C11] text-[#E45C11]">
+        <svg
+          aria-hidden="true"
+          xmlns="http://www.w3.org/2000/svg"
+          width="10"
+          height="10"
+          viewBox="0 0 12 12"
+          fill="none"
+        >
+          <path
+            d="M2.5 6.2 4.8 8.5 9.5 3.5"
+            stroke="currentColor"
+            strokeWidth="1.4"
+            strokeLinecap="round"
+            strokeLinejoin="round"
+          />
+        </svg>
       </span>
       <span>{text}</span>
     </li>
   );
 };
 
-const PricingPackages = () => {
+const PricingPackages = ({
+  eyebrow = defaultEyebrow,
+  title = defaultTitle,
+  description = defaultDescription,
+  packages = defaultPricingPackages,
+}: PricingPackagesProps) => {
   return (
     <section className="bg-white px-4 py-14 sm:px-6 lg:px-8 lg:py-20">
       <div className="mx-auto w-full max-w-[1540px]">
@@ -113,40 +144,37 @@ const PricingPackages = () => {
                 "linear-gradient(90deg, rgba(178, 64, 2, 0.13) 0%, rgba(178, 64, 2, 0.00) 79.96%)",
             }}
           >
-            <TextFluxUnveil text="Pricing & Packages" />
+            <TextFluxUnveil text={eyebrow} />
           </motion.div>
 
           <h2 className="project-h2 mt-5 leading-[1.06] tracking-[-0.05em]">
-            Flexible Plans Tailored To Your Needs
+            {title}
           </h2>
 
           <p className="mx-auto mt-5 max-w-[920px] text-sm leading-[1.6] text-[#9A9A9A] sm:text-base">
-            "Pricing may vary depending on the genre, page and word count, and
-            your specific needs for publishing, marketing, or ghostwriting. For
-            a personalized estimate and detailed consultation, click on 'Custom
-            Quote' to speak with a publishing expert."
+            {description}
           </p>
         </div>
 
         <div className="mt-10 space-y-4 sm:space-y-5 lg:mt-12">
-          {pricingPackages.map((pkg) => (
+          {packages.map((pkg) => (
             <article
               key={pkg.name}
-              className="rounded-[18px] border border-[#F1ECE8] bg-white px-6 py-7 shadow-[0_10px_28px_rgba(41,27,16,0.06)] sm:px-8 lg:px-10 lg:py-8 xl:px-12"
+              className="overflow-hidden rounded-[24px] border border-[#F0E8E1] bg-[#FFFEFD] px-6 py-8 shadow-[0_14px_34px_rgba(41,27,16,0.06)] sm:px-8 sm:py-9 lg:px-12 lg:py-10 xl:px-14"
             >
-              <div className="grid gap-8 lg:grid-cols-[250px_minmax(0,1fr)] lg:gap-12 xl:grid-cols-[280px_minmax(0,1fr)] xl:gap-16">
-                <div className="pt-1">
-                  <h3 className="text-[1.8rem] font-normal uppercase leading-none text-[#4A4A4A] sm:text-[2.2rem]">
+              <div className="grid gap-8 lg:grid-cols-[380px_minmax(0,1fr)] lg:gap-12 xl:grid-cols-[460px_minmax(0,1fr)] xl:gap-20">
+                <div className="flex flex-col items-start pt-1">
+                  <h3 className="text-[2rem] font-normal uppercase leading-[0.95] tracking-[-0.04em] text-[#4A4A4A] sm:text-[2.5rem] xl:text-[2.7rem]">
                     {pkg.name}
                   </h3>
 
-                  <p className="mt-4 max-w-[210px] text-sm leading-[1.55] text-[#777777] sm:max-w-[280px] sm:text-base lg:max-w-[240px] xl:max-w-[255px]">
+                  <p className="mt-5 max-w-full text-[15px] leading-[1.55] text-[#7E7E7E] sm:text-[17px]">
                     {pkg.description}
                   </p>
 
                   <Link
                     href="/contact"
-                    className="mt-5 inline-flex items-center justify-center rounded-[7px] bg-[linear-gradient(90deg,#B24002_0%,#FF5B01_100%)] px-4 py-[9px] text-sm font-light text-white shadow-[0_8px_18px_rgba(178,64,2,0.2)]"
+                    className="mt-6 inline-flex min-h-11 items-center justify-center rounded-[10px] bg-[linear-gradient(90deg,#B24002_0%,#FF5B01_100%)] px-5 py-2.5 text-[15px] font-medium text-white shadow-[0_10px_20px_rgba(178,64,2,0.2)] transition-transform duration-200 hover:-translate-y-0.5"
                   >
                     Custom Quote
                     <span className="ml-1.5 leading-none">
@@ -170,20 +198,18 @@ const PricingPackages = () => {
                 </div>
 
                 <div>
-                  <p
-                    className="w-fit bg-[linear-gradient(90deg,#B24002_0%,#FF5B01_100%)] bg-clip-text text-sm font-semibold text-transparent sm:text-base"
-                  >
+                  <p className="w-fit bg-[linear-gradient(90deg,#B24002_0%,#FF5B01_100%)] bg-clip-text text-[17px] font-semibold text-transparent">
                     Included:
                   </p>
 
-                  <div className="mt-3 grid gap-x-10 gap-y-2 sm:grid-cols-2 xl:gap-x-14">
-                    <ul className="space-y-2">
+                  <div className="mt-4 grid gap-x-10 gap-y-4 sm:grid-cols-2 xl:gap-x-16">
+                    <ul className="space-y-3">
                       {pkg.included[0].map((item) => (
                         <IncludedItem key={item} text={item} />
                       ))}
                     </ul>
 
-                    <ul className="space-y-2">
+                    <ul className="space-y-3">
                       {pkg.included[1].map((item) => (
                         <IncludedItem key={item} text={item} />
                       ))}

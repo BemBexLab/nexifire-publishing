@@ -11,23 +11,23 @@ import { FaFacebookF, FaInstagram, FaTwitter, FaLinkedinIn } from "react-icons/f
 
 const FooterCTA = () => {
   return (
-    <section className="w-full bg-[#F3F3F3] px-4 pt-12 font-jakarta sm:px-6 sm:pt-16 lg:px-10 lg:pt-20">
-      <div className="mx-auto flex w-full max-w-[1600px] flex-col">
-        <div className="grid w-full grid-cols-1 gap-14 lg:gap-16 xl:grid-cols-[minmax(0,700px)_minmax(0,1fr)] xl:items-start xl:justify-between 2xl:gap-24">
-          <div className="flex w-full max-w-[700px] flex-col items-center text-center lg:items-start lg:text-left">
-            <h2 className="project-h2 py-3 text-center leading-[1.05] lg:text-left">
+    <section className="w-full bg-[#F3F3F3] px-4 pt-12 font-jakarta sm:px-6 sm:pt-14 lg:px-8 lg:pt-16 xl:px-12 xl:pt-20">
+      <div className="mx-auto flex w-full max-w-[1640px] flex-col">
+        <div className="grid w-full grid-cols-1 gap-12 lg:gap-14 xl:grid-cols-[minmax(0,1.1fr)_minmax(0,0.9fr)] xl:items-start xl:gap-16 2xl:gap-24">
+          <div className="flex w-full max-w-[760px] flex-col items-center text-center md:items-start md:text-left xl:max-w-[720px]">
+            <h2 className="project-h2 py-2 text-center leading-[1.02] tracking-[-0.05em] md:text-left">
               NexiFire Publishing
             </h2>
-            <p className="mt-5 max-w-xl text-base leading-[1.65] text-[#777777] sm:text-lg xl:max-w-[640px]">
+            <p className="mt-5 max-w-[670px] text-base leading-[1.7] text-[#7D7D7D] sm:text-lg">
               NexiFire Publishing is Australia's reliable self-publishing partner. We help authors publish eBooks, print books, and audiobooks with professional services including ghostwriting, editing, formatting, cover design, and global distribution.
             </p>
-            <Link href="/contact" className="mt-4 w-full sm:w-fit">
+            <Link href="/contact" className="mt-6 w-full sm:w-fit">
               <motion.button
                 style={{
                   background:
                     "linear-gradient(90deg, #B24002 0%, #FF5B01 100%)",
                 }}
-                className="mt-2 flex min-h-[38px] w-full items-center justify-center gap-2 rounded-lg px-5 py-2 text-sm font-light text-white sm:w-auto sm:text-base"
+                className="flex min-h-[40px] w-full items-center justify-center gap-2 rounded-[9px] px-5 py-2 text-sm font-medium text-white sm:w-auto sm:px-6 sm:text-base"
                 whileHover={{
                   y: -3,
                   scale: 1.02,
@@ -51,63 +51,66 @@ const FooterCTA = () => {
             </Link>
           </div>
 
-          <div className="grid w-full grid-cols-1 gap-8 sm:grid-cols-2 sm:gap-x-10 lg:grid-cols-[minmax(0,1fr)_minmax(0,1fr)] lg:gap-y-10 xl:mt-10 xl:grid-cols-[minmax(0,150px)_minmax(0,220px)_minmax(0,320px)] xl:gap-x-8">
+          <div className="grid w-full grid-cols-1 gap-8 sm:grid-cols-2 sm:gap-x-8 sm:gap-y-8 lg:grid-cols-[minmax(0,1.2fr)_minmax(0,0.8fr)] lg:gap-x-10 xl:grid-cols-[minmax(0,240px)_minmax(0,230px)_minmax(0,240px)] xl:items-start xl:gap-x-8">
             <div className="w-full min-w-0">
-              <h4 className="mb-2 text-lg font-medium text-[#B24002]">
+              <h4 className="mb-3 text-[1.2rem] font-medium text-[#B24002] sm:text-[1.35rem]">
                 Quick Links
               </h4>
-              <ul className="list-inside list-disc space-y-2 text-base font-medium text-[#777777]">
-                <li>
-                  <a href="/">Home</a>
+              <ul className="list-inside list-disc space-y-2.5 text-base font-medium text-[#777777]">
+                <li className="pl-1">
+                  <a className="transition hover:text-[#B24002]" href="/">Home</a>
                 </li>
-                <li>
-                  <a href="/who-we-are">Who We Are</a>
+                <li className="pl-1">
+                  <a className="transition hover:text-[#B24002]" href="/who-we-are">Who We Are</a>
                 </li>
-                <li>
-                  <a href="/our-books">Our Books</a>
+                <li className="pl-1">
+                  <a className="transition hover:text-[#B24002]" href="/our-books">Our Books</a>
                 </li>
-                {/* <li>
-                  <a href="/testimonials">Testimonials</a>
-                </li> */}
-                <li>
-                  <a href="/contact">Contact Us</a>
+                <li className="pl-1">
+                  <a className="transition hover:text-[#B24002]" href="/pricing-packages">Pricing & Packages</a>
                 </li>
-                <li>
-                  <a href="/blogs">Blogs</a>
+                <li className="pl-1">
+                  <a className="transition hover:text-[#B24002]" href="/contact">Contact Us</a>
+                </li>
+                <li className="pl-1">
+                  <a className="transition hover:text-[#B24002]" href="/blogs">Blogs</a>
                 </li>
               </ul>
             </div>
 
             <div className="w-full min-w-0">
-              <h4 className="mb-2 text-lg font-medium text-[#B24002]">
+              <h4 className="mb-3 text-[1.2rem] font-medium text-[#B24002] sm:text-[1.35rem]">
                 Our Services
               </h4>
-              <ul className="list-inside list-disc space-y-2 text-base font-medium text-[#777777]">
-                <li>
-                  <a href="/privacy-policy">Privacy policy</a>
+              <ul className="list-inside list-disc space-y-2.5 text-base font-medium text-[#777777]">
+                <li className="pl-1">
+                  <a className="transition hover:text-[#B24002]" href="/privacy-policy">Privacy policy</a>
                 </li>
-                <li>
-                  <a href="/terms-condition">Terms & Conditions</a>
+                <li className="pl-1">
+                  <a className="transition hover:text-[#B24002]" href="/terms-condition">Terms & Conditions</a>
                 </li>
               </ul>
             </div>
 
-            <div className="w-full min-w-0 sm:col-span-2 xl:col-span-1">
-              <h4 className="mb-2 text-lg font-medium text-[#B24002]">
+            <div className="w-full min-w-0 sm:col-span-2 lg:col-span-2 xl:col-span-1">
+              <h4 className="mb-3 text-[1.2rem] font-medium text-[#B24002] sm:text-[1.35rem]">
                 Contact Info
               </h4>
-              <ul className="space-y-2 text-base font-medium text-[#777777]">
-                <li className="flex items-center">
-                  <LuPhoneCall className="shrink-0" />
-                  <a href="tel:+14704707520" className="ml-2 min-w-0 break-words">
-                    (470) 470-7520
+              <ul className="space-y-3 text-base font-medium text-[#777777]">
+                <li className="flex items-start">
+                  <LuPhoneCall className="mt-1 shrink-0" />
+                  <a
+                    href="tel:+61468285539"
+                    className="ml-2 min-w-0 break-words transition hover:text-[#B24002]"
+                  >
+                    (0468) 285-539
                   </a>
                 </li>
-                <li className="flex items-center">
-                  <MdOutlineEmail className="shrink-0" />
+                <li className="flex items-start">
+                  <MdOutlineEmail className="mt-1 shrink-0" />
                   <a
                     href="mailto:contact@nexifire.com"
-                    className="ml-2 min-w-0 break-words"
+                    className="ml-2 min-w-0 break-words transition hover:text-[#B24002]"
                   >
                     contact@nexifire.com
                   </a>
@@ -115,16 +118,16 @@ const FooterCTA = () => {
                 <li className="flex items-start">
                   <SlLocationPin className="mt-1 shrink-0" />
                   <a href="" className="ml-2 min-w-0 break-words">
-                    2300 Lakeview Pkwy Alpharetta, GA 30009
+                    16A Fox Cl, Kariong NSW 2250, Australia
                   </a>
                 </li>
               </ul>
 
-              <div className="mt-8">
-                <h4 className="mb-4 text-lg font-medium text-[#B24002]">
+              <div className="mt-8 sm:mt-10">
+                <h4 className="mb-4 text-[1.2rem] font-medium text-[#B24002] sm:text-[1.35rem]">
                   Social Media
                 </h4>
-                <div className="flex items-center gap-3">
+                <div className="flex flex-wrap items-center gap-3">
                   <a
                     href="#"
                     aria-label="Facebook"
@@ -159,15 +162,15 @@ const FooterCTA = () => {
           </div>
         </div>
 
-        <div className="mt-12 w-full">
+        <div className="mt-14 w-full">
           <div className="border-t border-[#77777766]" />
 
-          <div className="flex w-full flex-col gap-3 py-4 text-sm font-semibold text-[#777777] md:flex-row md:items-center md:justify-between">
-            <p className="text-left">
+          <div className="flex w-full flex-col gap-3 py-5 text-sm font-semibold text-[#777777] md:flex-row md:items-center md:justify-between">
+            <p className="text-center md:text-left">
               &copy; 2026 NexiFire Publishing All Rights Reserved.
             </p>
 
-            <p className="text-left md:text-right">
+            <p className="text-center leading-relaxed md:text-right">
               <a className="hover:text-[#B94202]" href="#">
                 Privacy Policy
               </a>

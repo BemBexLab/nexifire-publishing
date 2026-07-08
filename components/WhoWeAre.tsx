@@ -188,7 +188,7 @@ const WhoWeAre = () => {
               className="relative flex flex-col items-center px-2 text-center sm:px-4"
             >
               <div className="relative flex items-center justify-center">
-                <div className="pointer-events-none absolute bottom-[-2px] h-[10px] w-[98px] rounded-full bg-black/60 blur-sm" />
+                {/* <div className="pointer-events-none absolute bottom-[-2px] h-[10px] w-[98px] rounded-full bg-black/60 blur-sm" /> */}
                 <div className="relative z-10 text-3xl font-semibold leading-none tracking-[-0.04em] text-black sm:text-4xl">
                   {stat.value}
                 </div>
