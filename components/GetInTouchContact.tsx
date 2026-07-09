@@ -220,7 +220,7 @@ const GetInTouchContact = ({
   buttonLable,
 }: GetInTouchContactProps) => {
   const [hasMounted, setHasMounted] = useState(false);
-  const [selectedCountryCode, setSelectedCountryCode] = useState("US");
+  const [selectedCountryCode, setSelectedCountryCode] = useState("AU");
   const [isCountryOpen, setIsCountryOpen] = useState(false);
   const { handleSubmit, isSubmitting, submitMessage, submitStatus } =
     useContactForm("Contact page", () => setSelectedCountryCode("US"));
