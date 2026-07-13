@@ -9,136 +9,142 @@ import TextFluxUnveil from "./TextFluxUnveil";
 
 const portfolioItems = [
   {
-    title: "The Bee's Colony",
-    author: "Joel B. Gindo",
-    imageSrc: "/books/image 65.png",
-    amazonHref: "#",
+    title: "Messi and Ronaldo: The soccer Goats",
+    author: "The Scribbling Stricker",
+    imageSrc: "/books2/image 65.png",
+    amazonHref: "https://a.co/d/06WVsHpw",
   },
   {
-    title: "The Labyrinth",
-    author: "Keith Cuvo",
-    imageSrc: "/books/image 65 (1).png",
-    amazonHref: "#",
+    title: "The Secret Playbook of Life",
+    author: "Renee Marie",
+    imageSrc: "/books2/image 65 (1).png",
+    amazonHref: "https://a.co/d/06bhKLJU",
   },
   {
-    title: "It Was Never You Fault",
-    author: "Jerry L. Morgan",
-    imageSrc: "/books/image 65 (2).png",
-    amazonHref: "#",
+    title: "Exit Without Selling",
+    author: "Renee Marie",
+    imageSrc: "/books2/image 65 (2).png",
+    amazonHref: "https://a.co/d/07pktj32",
   },
   {
-    title: "Growing Together",
-    author: "Allison Sullins",
-    imageSrc: "/books/image 65 (3).png",
-    amazonHref: "#",
+    title: "Eliminate: A Murder Mystery Puzzle Book",
+    author: "Kimberley Kreates",
+    imageSrc: "/books2/image 65 (3).png",
+    amazonHref: "https://a.co/d/0hfTGRA5",
   },
   {
-    title: "Don't Cut The Grass",
-    author: "K. Stephen",
-    imageSrc: "/books/image 65 (5).png",
-    amazonHref: "#",
+    title: "God Will Make A Way",
+    author: "Stephen Sainato",
+    imageSrc: "/books2/image 65 (4).png",
+    amazonHref: "https://a.co/d/0dBtO9Hb",
   },
   {
-    title: "God Carried Me",
-    author: "Bertha Brooks",
-    imageSrc: "/books/Bertha 1.png",
-    amazonHref: "#",
+    title: "The Blueprint of Leadership",
+    author: "Gifford Thomas",
+    imageSrc: "/books2/image 65 (5).png",
+    amazonHref: "https://a.co/d/0dSYJpfm",
   },
   {
-    title: "El Color del Renacer",
-    author: "Luz Diaz",
-    imageSrc: "/books/Luis Diaz 1.png",
-    amazonHref: "#",
+    title: "The Lottery Killer",
+    author: "A. S. Remington",
+    imageSrc: "/books2/image 65 (6).png",
+    amazonHref: "https://a.co/d/03LlPskE",
   },
   {
-    title: "The Time Capsule Mystery",
-    author: "Jenny Lynn",
-    imageSrc: "/books/Jenny Lynn 1.png",
-    amazonHref: "#",
+    title: "Detoxify",
+    author: "Robert M. Drake",
+    imageSrc: "/books2/image 65 (7).png",
+    amazonHref: "https://a.co/d/0fChdSx0",
   },
   {
-    title: "LAFLAPS",
-    author: "Gary Alan Early",
-    imageSrc: "/books/Laflaps 1.png",
-    amazonHref: "#",
+    title: "The Art of Intentional Living",
+    author: "Connect With GROWTH",
+    imageSrc: "/books2/image 70.png",
+    amazonHref: "https://a.co/d/06rMje5a",
   },
   {
-    title: "THROUGH THE EYE OF THE STORM",
-    author: "Andre Goldson",
-    imageSrc: "/books/The Storm 1.png",
-    amazonHref: "#",
+    title: "Pope Leo XIV Magnifica Humanitas",
+    author: "Pope Leo XIV",
+    imageSrc: "/books2/image 71.png",
+    amazonHref: "https://a.co/d/03pCwbIX",
   },
   {
-    title: "Fresh Paths Unfolding",
-    author: "Sara Tessier",
-    imageSrc: "/books/Sara 2.png",
-    amazonHref: "#",
+    title: "Necesitaba Perderte",
+    author: "Fabian Garcia",
+    imageSrc: "/books2/image 72.png",
+    amazonHref: "https://a.co/d/0bAxsxJQ",
   },
   {
-    title: "Forged in the Mountains",
-    author: "Wilma Gibson Smith",
-    imageSrc: "/books/Wilma 1.png",
-    amazonHref: "#",
+    title: "Tactical Barbell III: Operational Athlete",
+    author: "K. Black",
+    imageSrc: "/books2/image 73.png",
+    amazonHref: "https://a.co/d/0gyPZUvf",
   },
   {
-    title: "Discovering the Root Cause of Cancer",
-    author: "Valerie B. Irons",
-    imageSrc: "/books/Laflaps 1 (1).png",
-    amazonHref: "#",
+    title: "Quédate contigo",
+    author: "Skye Reeds",
+    imageSrc: "/books2/image 74.png",
+    amazonHref: "https://a.co/d/0gdY10iv",
   },
   {
-    title: "Dreams from my Grandfather",
-    author: "A. D. Bradley",
-    imageSrc: "/books/The Storm 1 (1).png",
-    amazonHref: "#",
+    title: "SAFE: The Minimum Standard for Intimacy",
+    author: "Scott Austin Martin",
+    imageSrc: "/books2/image 76.png",
+    amazonHref: "https://a.co/d/0aYJEGvA",
   },
   {
-    title: "The Book of Unfolding Integration",
-    author: "Anthony Deans",
-    imageSrc: "/books/Sara 2 (1).png",
-    amazonHref: "#",
+    title: "Rule Your Tech",
+    author: "Jedd Medefind",
+    imageSrc: "/books2/image 77.png",
+    amazonHref: "https://a.co/d/0fVHddjU",
   },
   {
-    title: "Broken Dreams",
-    author: "Bobby Bee",
-    imageSrc: "/books/Wilma 1 (1).png",
-    amazonHref: "#",
+    title: "The Last of the Dawson Gang",
+    author: "Dr. Gerald Murray",
+    imageSrc: "/books2/image 78.png",
+    amazonHref: "https://a.co/d/07adIJwm",
   },
   {
-    title: "Hip Hop Hermeneutics",
-    author: "Dr. Burton Leroy Mack",
-    imageSrc: "/books/image 651.png",
-    amazonHref: "#",
-  },{
-    title: "What The Hell is Wrong with My Dog",
-    author: "Alisa Peterson-White",
-    imageSrc: "/books/image 652.png",
-    amazonHref: "#",
-  },{
-    title: "The Message of Faith And the Love of God From our Blessed Mother",
-    author: "J. Bernard Reyes",
-    imageSrc: "/books/image 653.png",
-    amazonHref: "#",
-  },{
-    title: "The Bounce Back",
-    author: "Craig Powell",
-    imageSrc: "/books/image 654.png",
-    amazonHref: "#",
-  },{
-    title: "The Publican",
-    author: "David Nava Monreal",
-    imageSrc: "/books/image 65 (4).png",
-    amazonHref: "#",
-  },{
-    title: "The Buried Truth",
-    author: "Scott J. Miller",
-    imageSrc: "/books/image 65 (6).png",
-    amazonHref: "#",
-  },{
-    title: "The Keeper of Tears",
-    author: "John C. Blackford",
-    imageSrc: "/books/image 655.png",
-    amazonHref: "#",
+    title: "The Art Of Legal Tax Avoidance",
+    author: "Karlton Dennis",
+    imageSrc: "/books2/image 79.png",
+    amazonHref: "https://a.co/d/0iBqZjUf",
+  },
+  {
+    title: "The Christian Nationalist Vision",
+    author: "Andrew Torba",
+    imageSrc: "/books2/image 80.png",
+    amazonHref: "https://a.co/d/02Fb9wH3",
+  },
+  {
+    title: "Bow Your Neck",
+    author: "Matt Courson",
+    imageSrc: "/books2/image 81.png",
+    amazonHref: "https://a.co/d/0dv0aPQA",
+  },
+  {
+    title: "Are You Talking To Me?",
+    author: "Joanie Floethe Morrison",
+    imageSrc: "/books2/image 86.png",
+    amazonHref: "https://a.co/d/090wP3tP",
+  },
+  {
+    title: "10-Minute Tai Chi Walking for Weight Loss",
+    author: "Laura Mei Turner",
+    imageSrc: "/books2/image 82.png",
+    amazonHref: "https://a.co/d/08JOlKxR",
+  },
+  {
+    title: "The Qur’an Speaks: will you listen?",
+    author: "Aiisha Dahir",
+    imageSrc: "/books2/image 87.png",
+    amazonHref: "https://a.co/d/0eVu9ZKt",
+  },
+  {
+    title: "Our Happy Valley Home",
+    author: "Susannah B. Lewis",
+    imageSrc: "/books2/image 84.png",
+    amazonHref: "https://a.co/d/07e1c9XE",
   },
 ];
 
@@ -226,9 +232,9 @@ const Portfolio = () => {
             variants={introItemVariants}
             className="mx-auto mt-4 max-w-full text-base leading-6 text-[#989391] sm:text-lg"
           >
-            Explore a selection of books published through NexiFire
-            Publishing across multiple genres including business,
-            self-development, fiction, memoirs, and children's literature.
+            Explore a selection of books published through NexiFire Publishing
+            across multiple genres including business, self-development,
+            fiction, memoirs, and children's literature.
           </motion.p>
         </motion.div>
 
@@ -277,10 +283,25 @@ const Portfolio = () => {
                 >
                   Buy on Amazon
                   <span className="ml-1.5 text-sm leading-none">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="23" height="23" viewBox="0 0 23 23" fill="none">
-  <path d="M3.58556 19.6981C3.58555 19.6981 3.58556 19.6981 3.58556 19.6981C4.73519 21.0833 6.87487 21.0833 11.1542 21.0833H11.8454C16.1247 21.0833 18.2644 21.0833 19.414 19.6981M3.58556 19.6981C2.43592 18.3129 2.83023 16.2098 3.61887 12.0038C4.17971 9.01266 4.46013 7.5171 5.52474 6.63355M19.414 19.6981C19.414 19.6981 19.414 19.6981 19.414 19.6981C20.5637 18.3129 20.1693 16.2098 19.3807 12.0038C18.8199 9.01266 18.5394 7.5171 17.4748 6.63355M17.4748 6.63355C17.4748 6.63355 17.4748 6.63355 17.4748 6.63355C16.4102 5.75 14.8886 5.75 11.8454 5.75H11.1542C8.11097 5.75 6.58935 5.75 5.52474 6.63355C5.52474 6.63355 5.52474 6.63355 5.52474 6.63355" stroke="white" strokeWidth="1.4375"/>
-  <path d="M8.625 5.74984V4.7915C8.625 3.20369 9.91218 1.9165 11.5 1.9165C13.0878 1.9165 14.375 3.20369 14.375 4.7915V5.74984" stroke="white" strokeWidth="1.4375" strokeLinecap="round"/>
-</svg>
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      width="23"
+                      height="23"
+                      viewBox="0 0 23 23"
+                      fill="none"
+                    >
+                      <path
+                        d="M3.58556 19.6981C3.58555 19.6981 3.58556 19.6981 3.58556 19.6981C4.73519 21.0833 6.87487 21.0833 11.1542 21.0833H11.8454C16.1247 21.0833 18.2644 21.0833 19.414 19.6981M3.58556 19.6981C2.43592 18.3129 2.83023 16.2098 3.61887 12.0038C4.17971 9.01266 4.46013 7.5171 5.52474 6.63355M19.414 19.6981C19.414 19.6981 19.414 19.6981 19.414 19.6981C20.5637 18.3129 20.1693 16.2098 19.3807 12.0038C18.8199 9.01266 18.5394 7.5171 17.4748 6.63355M17.4748 6.63355C17.4748 6.63355 17.4748 6.63355 17.4748 6.63355C16.4102 5.75 14.8886 5.75 11.8454 5.75H11.1542C8.11097 5.75 6.58935 5.75 5.52474 6.63355C5.52474 6.63355 5.52474 6.63355 5.52474 6.63355"
+                        stroke="white"
+                        strokeWidth="1.4375"
+                      />
+                      <path
+                        d="M8.625 5.74984V4.7915C8.625 3.20369 9.91218 1.9165 11.5 1.9165C13.0878 1.9165 14.375 3.20369 14.375 4.7915V5.74984"
+                        stroke="white"
+                        strokeWidth="1.4375"
+                        strokeLinecap="round"
+                      />
+                    </svg>
                   </span>
                 </Link>
               </article>

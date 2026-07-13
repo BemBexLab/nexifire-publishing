@@ -13,8 +13,8 @@ const heroDescription =
 
 const heroBooks = [
   {
-    src: "/Stephen 2.png",
-    alt: "Fresh Paths Unfolding book cover",
+    src: "/books2/Stephen 2.png",
+    alt: "Messi & Ronaldo: The Soccer Goats",
     width: 188,
     className:
       "w-[18.2%] min-w-[70px] max-w-[104px] sm:w-[19.4%] sm:min-w-[122px] sm:max-w-[196px] md:min-w-[168px] md:max-w-[270px] lg:w-[20%] lg:min-w-[190px] lg:max-w-[300px] xl:w-[22.2%] xl:min-w-[260px] xl:max-w-[390px]",
@@ -22,8 +22,8 @@ const heroBooks = [
       "mb-[-2px] sm:mb-[-8px] md:mb-[-10px] lg:mb-[-10px] xl:mb-[-18px] 2xl:mb-[-12px]",
   },
   {
-    src: "/Stephen 3.png",
-    alt: "The Book of Unfolding Integration book cover",
+    src: "/books2/Stephen 3.png",
+    alt: "My Secret Playbook of Life",
     width: 208,
     className:
       "w-[18.2%] min-w-[70px] max-w-[104px] sm:w-[19.4%] sm:min-w-[122px] sm:max-w-[196px] md:min-w-[168px] md:max-w-[270px] lg:w-[20%] lg:min-w-[190px] lg:max-w-[300px] xl:w-[22.2%] xl:min-w-[260px] xl:max-w-[390px]",
@@ -31,8 +31,8 @@ const heroBooks = [
       "mb-[8px] sm:mb-[24px] md:mb-[34px] lg:mb-[36px] xl:mb-[22px] 2xl:mb-[50px]",
   },
   {
-    src: "/Stephen 4.png",
-    alt: "The Labyrinth book cover",
+    src: "/books2/Stephen 4.png",
+    alt: "Eliminate: A Murder Mystery Puzzle Book",
     width: 220,
     className:
       "w-[18.2%] min-w-[70px] max-w-[104px] sm:w-[19.4%] sm:min-w-[122px] sm:max-w-[196px] md:min-w-[168px] md:max-w-[270px] lg:w-[20%] lg:min-w-[190px] lg:max-w-[300px] xl:w-[22.2%] xl:min-w-[260px] xl:max-w-[390px]",
@@ -40,8 +40,8 @@ const heroBooks = [
       "mb-[16px] sm:mb-[42px] md:mb-[66px] lg:mb-[74px] xl:mb-[46px] 2xl:mb-[100px]",
   },
   {
-    src: "/Stephen 6.png",
-    alt: "The Bee's Colony book cover",
+    src: "/books2/Stephen 6.png",
+    alt: "The Blueprint Of Leadership",
     width: 208,
     className:
       "w-[18.2%] min-w-[70px] max-w-[104px] sm:w-[19.4%] sm:min-w-[122px] sm:max-w-[196px] md:min-w-[168px] md:max-w-[270px] lg:w-[20%] lg:min-w-[190px] lg:max-w-[300px] xl:w-[22.2%] xl:min-w-[260px] xl:max-w-[390px]",
@@ -49,8 +49,8 @@ const heroBooks = [
       "mb-[8px] sm:mb-[24px] md:mb-[34px] lg:mb-[36px] xl:mb-[22px] 2xl:mb-[50px]",
   },
   {
-    src: "/Stephen 5.png",
-    alt: "Don't Cut the Grass on Sunday book cover",
+    src: "/books2/Stephen 5.png",
+    alt: "The Lottery Killer",
     width: 188,
     className:
       "w-[18.2%] min-w-[70px] max-w-[104px] sm:w-[19.4%] sm:min-w-[122px] sm:max-w-[196px] md:min-w-[168px] md:max-w-[270px] lg:w-[20%] lg:min-w-[190px] lg:max-w-[300px] xl:w-[22.2%] xl:min-w-[260px] xl:max-w-[390px]",
@@ -60,14 +60,22 @@ const heroBooks = [
 ];
 
 const heroLogos = [
-  { src: "/clients/clients01.webp", alt: "Client logo 1" },
-  { src: "/clients/clients02.webp", alt: "Client logo 2" },
-  { src: "/clients/clients03.webp", alt: "Client logo 3" },
-  { src: "/clients/clients04.webp", alt: "Client logo 4" },
-  { src: "/clients/clients05.webp", alt: "Client logo 5" },
-  { src: "/clients/clients06.webp", alt: "Client logo 6" },
-  { src: "/clients/clients07.webp", alt: "Client logo 7" },
-  { src: "/clients/clients08.webp", alt: "Client logo 8" },
+  { src: "/clients/logo01.webp", alt: "Client logo 1" },
+  { src: "/clients/logo02.webp", alt: "Client logo 2" },
+  { src: "/clients/logo03.webp", alt: "Client logo 3" },
+  { src: "/clients/logo04.webp", alt: "Client logo 4" },
+  { src: "/clients/logo05.webp", alt: "Client logo 5" },
+  // { src: "/clients/logo06.webp", alt: "Client logo 6" },
+  // { src: "/clients/logo07.webp", alt: "Client logo 7" },
+  { src: "/clients/logo08.webp", alt: "Client logo 8" },
+  { src: "/clients/logo09.webp", alt: "Client logo 9" },
+  { src: "/clients/logo10.webp", alt: "Client logo 10" },
+  { src: "/clients/logo11.webp", alt: "Client logo 11" },
+  { src: "/clients/logo12.webp", alt: "Client logo 12" },
+  { src: "/clients/logo13.webp", alt: "Client logo 13" },
+  { src: "/clients/logo14.webp", alt: "Client logo 14" },
+  { src: "/clients/logo15.webp", alt: "Client logo 15" },
+  { src: "/clients/logo16.webp", alt: "Client logo 16" },
 ];
 
 const HeroAccent = ({ className = "" }: { className?: string }) => {
@@ -465,7 +473,7 @@ const HomeHero = () => {
         }
 
         .hero-logo-marquee {
-          animation: hero-logo-marquee 28s linear infinite;
+          animation: hero-logo-marquee 42s linear infinite;
           will-change: transform;
         }
 

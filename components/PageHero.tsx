@@ -25,35 +25,67 @@ type PageHeroProps = {
 const defaultLogos: Logo[] = [
   {
     id: 1,
-    src: "/clients/clients01.webp",
+    src: "/clients/logo01.webp",
   },
   {
     id: 2,
-    src: "/clients/clients02.webp",
+    src: "/clients/logo02.webp",
   },
   {
     id: 3,
-    src: "/clients/clients03.webp",
+    src: "/clients/logo03.webp",
   },
   {
     id: 4,
-    src: "/clients/clients04.webp",
+    src: "/clients/logo04.webp",
   },
   {
     id: 5,
-    src: "/clients/clients05.webp",
+    src: "/clients/logo05.webp",
   },
   {
     id: 6,
-    src: "/clients/clients06.webp",
+    src: "/clients/logo06.webp",
   },
   {
     id: 7,
-    src: "/clients/clients07.webp",
+    src: "/clients/logo07.webp",
   },
   {
     id: 8,
-    src: "/clients/clients08.webp",
+    src: "/clients/logo08.webp",
+  },
+  {
+    id: 9,
+    src: "/clients/logo09.webp",
+  },
+  {
+    id: 10,
+    src: "/clients/logo10.webp",
+  },
+  {
+    id: 11,
+    src: "/clients/logo11.webp",
+  },
+  {
+    id: 12,
+    src: "/clients/logo12.webp",
+  },
+  {
+    id: 13,
+    src: "/clients/logo13.webp",
+  },
+  {
+    id: 14,
+    src: "/clients/logo14.webp",
+  },
+  {
+    id: 15,
+    src: "/clients/logo15.webp",
+  },
+  {
+    id: 16,
+    src: "/clients/logo16.webp",
   },
 ];
 
@@ -336,7 +368,7 @@ const PageHero = ({
         }
 
         .logo-track {
-          animation: aboutLogoMarquee 36s linear infinite;
+          animation: aboutLogoMarquee 54s linear infinite;
         }
 
         .logo-group {
