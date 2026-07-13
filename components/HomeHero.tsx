@@ -1,7 +1,7 @@
 "use client";
 
 import Image from "next/image";
-import heroEllipse from "../public/Ellipse 19.png";
+import heroEllipse from "../public/Ellipse 19.webp";
 import React from "react";
 import TextFluxUnveil from "./TextFluxUnveil";
 import { motion, Variants } from "motion/react";
@@ -13,7 +13,7 @@ const heroDescription =
 
 const heroBooks = [
   {
-    src: "/books2/Stephen 2.png",
+    src: "/books2/Stephen 2.webp",
     alt: "Messi & Ronaldo: The Soccer Goats",
     width: 188,
     className:
@@ -22,7 +22,7 @@ const heroBooks = [
       "mb-[-2px] sm:mb-[-8px] md:mb-[-10px] lg:mb-[-10px] xl:mb-[-18px] 2xl:mb-[-12px]",
   },
   {
-    src: "/books2/Stephen 3.png",
+    src: "/books2/Stephen 3.webp",
     alt: "My Secret Playbook of Life",
     width: 208,
     className:
@@ -31,7 +31,7 @@ const heroBooks = [
       "mb-[8px] sm:mb-[24px] md:mb-[34px] lg:mb-[36px] xl:mb-[22px] 2xl:mb-[50px]",
   },
   {
-    src: "/books2/Stephen 4.png",
+    src: "/books2/Stephen 4.webp",
     alt: "Eliminate: A Murder Mystery Puzzle Book",
     width: 220,
     className:
@@ -40,7 +40,7 @@ const heroBooks = [
       "mb-[16px] sm:mb-[42px] md:mb-[66px] lg:mb-[74px] xl:mb-[46px] 2xl:mb-[100px]",
   },
   {
-    src: "/books2/Stephen 6.png",
+    src: "/books2/Stephen 6.webp",
     alt: "The Blueprint Of Leadership",
     width: 208,
     className:
@@ -49,7 +49,7 @@ const heroBooks = [
       "mb-[8px] sm:mb-[24px] md:mb-[34px] lg:mb-[36px] xl:mb-[22px] 2xl:mb-[50px]",
   },
   {
-    src: "/books2/Stephen 5.png",
+    src: "/books2/Stephen 5.webp",
     alt: "The Lottery Killer",
     width: 188,
     className:
@@ -357,7 +357,7 @@ const DesktopHero = () => {
         cardClassName="h-[42px] min-w-[86px] rounded-[12px] px-2.5 sm:h-[68px] sm:min-w-[136px] sm:rounded-none sm:border-0 sm:bg-transparent sm:px-4 sm:shadow-none sm:backdrop-blur-0 xl:min-w-[148px] 2xl:min-w-[168px] lg:px-5"
       />
 
-      <section className="relative min-h-[770px] overflow-hidden bg-[url('/Rectangle%201.png')] bg-cover bg-center bg-no-repeat px-4 pb-[168px] pt-24 text-[#1f1f1f] sm:px-5 sm:pb-[160px] sm:pt-28 md:min-h-[900px] md:pb-[185px] md:pt-32 lg:min-h-[960px] lg:px-6 lg:pb-[220px] lg:pt-36 xl:min-h-[900px] xl:px-6 xl:pb-[220px] xl:pt-5 2xl:min-h-[1020px] 2xl:px-8 2xl:pb-[236px] 2xl:pt-6 [clip-path:polygon(0%_0%,100%_0%,100%_100%,82%_100%,76%_92%,24%_92%,18%_100%,0%_100%)]">
+      <section className="relative min-h-[770px] overflow-hidden bg-[url('/Rectangle%201.webp')] bg-cover bg-center bg-no-repeat px-4 pb-[168px] pt-24 text-[#1f1f1f] sm:px-5 sm:pb-[160px] sm:pt-28 md:min-h-[900px] md:pb-[185px] md:pt-32 lg:min-h-[960px] lg:px-6 lg:pb-[220px] lg:pt-36 xl:min-h-[900px] xl:px-6 xl:pb-[220px] xl:pt-5 2xl:min-h-[1020px] 2xl:px-8 2xl:pb-[236px] 2xl:pt-6 [clip-path:polygon(0%_0%,100%_0%,100%_100%,82%_100%,76%_92%,24%_92%,18%_100%,0%_100%)]">
         <HeroAccent className="pointer-events-none absolute left-[-10%] top-[22%] z-10 h-[78px] w-[78px] -rotate-90 opacity-90 sm:left-[2%] sm:h-[124px] sm:w-[124px] 2xl:h-[176px] 2xl:w-[176px]" />
         <HeroAccent className="pointer-events-none absolute right-[-8%] top-[14%] z-10 h-[84px] w-[84px] opacity-90 sm:right-[2%] sm:top-[12%] sm:h-[124px] sm:w-[124px] 2xl:h-[176px] 2xl:w-[176px]" />
 

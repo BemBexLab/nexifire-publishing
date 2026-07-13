@@ -42,14 +42,14 @@ const page = () => {
             </p>
           </div>
         }
-        imageSrc="/Rectangle 23830 (3).png"
+        imageSrc="/Rectangle 23830 (3).webp"
         imageAlt="Complete publishing solutions"
         iconSrc="/Mask group.svg"
       />
       <PublishYourBook
         title="Your Book Could Be Our Next Success Story"
         description="Join hundreds of authors who have trusted NexiFire Publishing to professionally publish, distribute, and promote their books worldwide. Whether you're writing your first manuscript or preparing your next release, we're here to help you publish with confidence."
-        backgroundImageSrc="/Frame 2147225872.png"
+        backgroundImageSrc="/Frame 2147225872.webp"
         backgroundAlt="Book Reading"
         buttonLabel="Start Your Publishing Journey"
       />

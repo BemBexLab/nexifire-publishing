@@ -273,7 +273,7 @@ const OurStory = () => {
               transition={{ duration: 0.32, ease: storyEase }}
             >
               <Image
-                src="/1f39dee2-1fd2-4031-ad86-1021d36ac2e6 1.png"
+                src="/1f39dee2-1fd2-4031-ad86-1021d36ac2e6 1.webp"
                 alt="Books and lantern composition for NexiFire Publishing"
                 width={920}
                 height={680}

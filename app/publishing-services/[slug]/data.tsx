@@ -105,7 +105,7 @@ export const publishingServicePageData: Record<
       title: "Book Marketing",
       description:
         "Publishing your book is only half the journey. NexiFire Publishing delivers professional book marketing services for Australian authors, from Amazon advertising and social media campaigns to global print-on-demand distribution across 40+ countries. We get your book in front of the readers who are already looking for it.",
-      imageSrc: "/image 69.png",
+      imageSrc: "/image 69.webp",
     },
     process: {
       badgeText: "How It Works",
@@ -172,7 +172,7 @@ export const publishingServicePageData: Record<
         "NexiFire never promises specific sales numbers; no ethical book marketing company can guarantee sales. What we do promise is a clearly defined set of deliverables, a transparent strategy, and a dedicated marketing consultant who treats your book as seriously as you do.",
       buttonLabel: "Start Marketing Today",
       buttonHref: "/contact",
-      backgroundImageSrc: "/Frame 2147225869.png",
+      backgroundImageSrc: "/Frame 2147225869.webp",
       backgroundAlt: "Book marketing banner",
     },
     imageDesc: {
@@ -182,7 +182,7 @@ export const publishingServicePageData: Record<
         "There are over ten thousand new books published in Australia every year. Without a deliberate, well-executed marketing strategy behind your title, even the best-written book can sit unseen on a digital shelf, discovered by almost nobody. The authors who build real readerships, the ones who earn consistent royalties month after month, aren't always the ones who wrote the most brilliant prose. They're the ones who invested in getting their book in front of the right readers.",
         "NexiFire Publishing provides full-service book marketing for Australian authors at every stage of their career. Whether you're a first-time author who has just published your debut title, a self-published author looking to reach a wider audience, or an established writer launching your next release, we build a marketing strategy that fits your book, your genre, and your readership, not a generic template applied to every title regardless of what it is.",
       ],
-      imageSrc: "/Rectangle 23834 (4).png",
+      imageSrc: "/Rectangle 23834 (4).webp",
       imageAlt: "Book marketing support",
       reverse: true,
     },
@@ -218,7 +218,7 @@ export const publishingServicePageData: Record<
         { label: "ARC Distribution & Early Reviews" },
         { label: "Book Launch Campaign Management" },
       ],
-      imageSrc: "/Rectangle 23830 (1).png",
+      imageSrc: "/Rectangle 23830 (1).webp",
       imageAlt: "Book marketing deliverables",
       iconSrc: "/Mask group.svg",
     },
@@ -342,7 +342,7 @@ export const publishingServicePageData: Record<
           </ul>
         </>
       ),
-      imageSrc: "/0eee94f7-4643-4e46-8b95-cc9232497a79 1 (1).png",
+      imageSrc: "/0eee94f7-4643-4e46-8b95-cc9232497a79 1 (1).webp",
     },
     process: {
       badgeText: "How It Works",
@@ -415,7 +415,7 @@ export const publishingServicePageData: Record<
         "Revision rounds included vary by package. Every NexiFire cover design project includes at least two full revision rounds, with additional rounds available on request.",
       buttonLabel: "Start My Cover Design",
       buttonHref: "/contact",
-      backgroundImageSrc: "/Frame 2147225868.png",
+      backgroundImageSrc: "/Frame 2147225868.webp",
       backgroundAlt: "Book cover design banner",
     },
     imageDesc: {
@@ -434,7 +434,7 @@ export const publishingServicePageData: Record<
         "3D mockups for marketing and social media use",
         "Revision rounds included until you're genuinely happy with the result",
       ],
-      imageSrc: "/Rectangle 23834 (5).png",
+      imageSrc: "/Rectangle 23834 (5).webp",
       imageAlt: "Book cover design showcase",
       reverse: true,
     },
@@ -472,7 +472,7 @@ export const publishingServicePageData: Record<
         { label: "Fast revision turnaround" },
         { label: "Transparent flat-rate pricing" },
       ],
-      imageSrc: "/Rectangle 23830 (2).png",
+      imageSrc: "/Rectangle 23830 (2).webp",
       imageAlt: "Book cover design deliverables",
       iconSrc: "/Mask group.svg",
     },

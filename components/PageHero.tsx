@@ -208,7 +208,7 @@ const PageHero = ({
             className="pointer-events-none absolute inset-0"
           >
             <Image
-              src="/Rectangle 23820.png"
+              src="/Rectangle 23820.webp"
               alt=""
               fill
               priority
@@ -248,7 +248,7 @@ const PageHero = ({
               className="pointer-events-none absolute left-1/2 top-10 -z-10 -translate-x-1/2 -translate-y-1/2"
             >
               <Image
-                src="/Ellipse 19.png"
+                src="/Ellipse 19.webp"
                 alt=""
                 width={500}
                 height={500}
@@ -368,7 +368,7 @@ const PageHero = ({
         }
 
         .logo-track {
-          animation: aboutLogoMarquee 54s linear infinite;
+          animation: aboutLogoMarquee 78s linear infinite;
         }
 
         .logo-group {

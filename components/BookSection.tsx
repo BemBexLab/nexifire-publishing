@@ -2,7 +2,7 @@
 
 import Image from "next/image";
 import { motion, Variants } from "motion/react";
-import booksDisplay from "../public/196ebd2f-51ba-42c8-926d-bed044c542a7 1.png";
+import booksDisplay from "../public/196ebd2f-51ba-42c8-926d-bed044c542a7 1.webp";
 import TextFluxUnveil from "./TextFluxUnveil";
 
 const sectionContainerVariants: Variants = {

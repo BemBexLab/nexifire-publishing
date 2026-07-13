@@ -111,7 +111,7 @@ export default function NavBar() {
         <div className="relative flex items-center justify-between gap-2 px-3 py-3 sm:px-4 md:px-5 lg:px-6 xl:px-8 2xl:px-10">
           <Link href="/" className="flex shrink-0 items-center">
             <Image
-              src="/Group 427320871.png"
+              src="/Group 427320871.webp"
               alt="NexiFire Logo"
               width={240}
               height={64}

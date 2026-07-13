@@ -40,7 +40,7 @@ const page = () => {
             <li>Pricing Strategy & Royalty Advice</li>
           </ul>
         </>}
-        imageSrc="/0eee94f7-4643-4e46-8b95-cc9232497a79 1.png"
+        imageSrc="/0eee94f7-4643-4e46-8b95-cc9232497a79 1.webp"
       />
       <OurProcess
         badgeText="How It Works"
@@ -108,7 +108,7 @@ const page = () => {
       />
       <PublishYourBook
         backgroundAlt="A girl reading a book"
-        backgroundImageSrc="/Frame 2147225866.png"
+        backgroundImageSrc="/Frame 2147225866.webp"
         buttonLabel="Start Your eBook Journey"
         description="Get a free, no-obligation quote today. Tell us about your manuscript, your preferred platforms, and your timeline, and we'll have a publishing plan ready for you within 24 hours."
         title="Ready to Publish Your eBook in Australia?"
@@ -120,7 +120,7 @@ const page = () => {
           "NexiFire Publishing provides end-to-end eBook publishing services in Australia, from converting your raw manuscript into a flawless EPUB3 and MOBI file, to designing a cover that commands attention on a digital shelf, to setting up your Kindle Direct Publishing account and distributing your title globally on launch day.",
           "We do the technical work so you can focus on writing the next book. And because you retain 100% of your rights and royalties, every sale goes directly into your pocket.",
         ]}
-        imageSrc="/Rectangle 23834 (3).png"
+        imageSrc="/Rectangle 23834 (3).webp"
         imageAlt="Publishing team"
       />
       <div className="h-20" />
@@ -139,7 +139,7 @@ const page = () => {
           { label: "Barnes & Noble Nook" },
           { label: "Scribd & Library Networks" },
         ]}
-        imageSrc="/439230f4-7c82-4411-9ce5-487944ae406f 1.png"
+        imageSrc="/439230f4-7c82-4411-9ce5-487944ae406f 1.webp"
         imageAlt="Complete publishing solutions"
         iconSrc="/Mask group.svg"
       />

@@ -48,7 +48,7 @@ const page = () => {
             </p>
           </div>
         }
-        imageSrc="/0eee94f7-4643-4e46-8b95-cc9232497a79 1 (2).png"
+        imageSrc="/0eee94f7-4643-4e46-8b95-cc9232497a79 1 (2).webp"
       />
       <OurProcess
         badgeText="How It Works"
@@ -116,7 +116,7 @@ const page = () => {
       <PublishYourBook
         title="Keep 100% of Your Audiobook Royalties"
         description="NexiFire never takes a commission from your audiobook royalties. We charge a flat-rate production fee; every cent your audiobook earns on Audible, Apple Books, Spotify, and every other platform is paid directly to you."
-        backgroundImageSrc="/Frame 2147225871.png"
+        backgroundImageSrc="/Frame 2147225871.webp"
         backgroundAlt="headphones"
         buttonLabel="Start Your Audiobook Today"
       />
@@ -128,7 +128,7 @@ const page = () => {
           "An audiobook doesn't replace your print or eBook. It opens your book to an entirely different audience, one that might never have discovered you otherwise. And for authors building a long-term readership, being present across every format is no longer a luxury. It's a competitive baseline.",
           "NexiFire's audiobook production service in Australia manages every step of the conversion process. From preparing your manuscript for narration to selecting the right voice, recording and mastering to studio quality, and distributing to every platform your listeners actually use, we take care of all of it so you don't have to navigate the technical complexity alone.",
         ]}
-        imageSrc="/Rectangle 23834 (6).png"
+        imageSrc="/Rectangle 23834 (6).webp"
         imageAlt=""
         reverse={true}
       />
@@ -171,7 +171,7 @@ const page = () => {
           { label: "Kobo Audiobooks" },
           { label: "Scribd & More 20+ Platforms" },
         ]}
-        imageSrc="/Rectangle 23830 (3).png"
+        imageSrc="/Rectangle 23830 (3).webp"
         imageAlt="Complete publishing solutions"
         iconSrc="/Mask group.svg"
       />

@@ -29,7 +29,7 @@ const page = () => {
           
           It is far more common than most people realise. Some of the world's most celebrated memoirs, business bestsellers, and motivational books were created this way. There is absolutely nothing misleading about it; you have the knowledge, the experience, and the story. A skilled ghostwriter simply has the proficiency to bring it to the page in a way that is readable, engaging, and professionally structured.
 `}
-        imageSrc="/image 67.png"
+        imageSrc="/image 67.webp"
       />
       <MosiacCards />
       <OurProcess
@@ -90,7 +90,7 @@ const page = () => {
         ]}
       />
       <div className="h-10" />
-      <PublishYourBook title="Your Book Is Waiting to Be Written" description="Every author we have worked with is glad they made the call. Whether you have a full concept or just a feeling that you have something worth saying, reach out. The first conversation is always free." backgroundImageSrc="/Frame 2147225867.png" backgroundAlt="A girl reading a book" buttonLabel="Book a Free Discovery Call" />
+      <PublishYourBook title="Your Book Is Waiting to Be Written" description="Every author we have worked with is glad they made the call. Whether you have a full concept or just a feeling that you have something worth saying, reach out. The first conversation is always free." backgroundImageSrc="/Frame 2147225867.webp" backgroundAlt="A girl reading a book" buttonLabel="Book a Free Discovery Call" />
       <div className="h-10" />
       <WhatsIncluded
         badgeText="What's Included"
@@ -105,7 +105,7 @@ const page = () => {
           { label: "Full Copyright & Intellectual Property Transfer" },
           { label: "Confidentiality & Non-Disclosure Agreement" },
         ]}
-        imageSrc="/439230f4-7c82-4411-9ce5-487944ae406f 1.png"
+        imageSrc="/439230f4-7c82-4411-9ce5-487944ae406f 1.webp"
         imageAlt="Complete publishing solutions"
         iconSrc="/Mask group.svg"
       />
@@ -120,7 +120,7 @@ const page = () => {
           "Our collaborative approach means you remain involved throughout the entire writing process. You'll review outlines, provide feedback on drafts, and approve each stage before moving forward, ensuring the finished manuscript genuinely reflects your ideas and personality.",
           "As part of Nexifire Publishing's complete self-publishing services, ghostwriting is only the beginning. Once your manuscript is complete, our in-house team can also assist with professional editing, proofreading, cover design, formatting, audiobook production, and worldwide publishing across more than 40 major platforms, helping you move seamlessly from concept to published author.",
         ]}
-        imageSrc="/Rectangle 23834 (1).png"
+        imageSrc="/Rectangle 23834 (1).webp"
         imageAlt=""
       />
       <div className="h-20" />

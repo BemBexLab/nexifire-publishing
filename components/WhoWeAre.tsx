@@ -354,7 +354,7 @@ const WhoWeAre = () => {
               >
                 <div className="pointer-events-none absolute inset-x-[10%] bottom-[-14px] h-[36px] rounded-full bg-black/18 blur-2xl sm:bottom-[-18px] sm:h-[48px]" />
                 <Image
-                  src="/2f867d55-6678-47c9-b53c-2f54a5cda131 1.png"
+                  src="/2f867d55-6678-47c9-b53c-2f54a5cda131 1.webp"
                   alt=""
                   width={700}
                   height={420}

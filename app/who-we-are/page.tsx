@@ -28,7 +28,7 @@ const page = () => {
         description="Whether you're writing your first manuscript or preparing your next release, NexiFire Publishing is ready to help you bring your vision to life."
         buttonLabel="Publish Your Book"
         buttonHref="/contact"
-        backgroundImageSrc="/Frame 2147225865.png"
+        backgroundImageSrc="/Frame 2147225865.webp"
         backgroundAlt="Person Reading Book"
       />
       <div className="h-10" />

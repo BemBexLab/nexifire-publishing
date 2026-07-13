@@ -91,7 +91,7 @@ const defaultProps = {
     "From editing and design to distribution and promotion, we provide the expertise and support needed to bring your book to readers worldwide.",
   buttonLabel: "Publish Your Book",
   buttonHref: "#",
-  backgroundImageSrc: "/Frame 2147225864.png",
+  backgroundImageSrc: "/Frame 2147225864.webp",
   backgroundAlt: "Publishing banner background",
   overlayClassName:
     "bg-[linear-gradient(180deg,rgba(0,0,0,0.78)_0%,rgba(0,0,0,0.58)_44%,rgba(0,0,0,0.18)_100%)] lg:bg-[linear-gradient(90deg,rgba(0,0,0,0.82)_0%,rgba(0,0,0,0.54)_32%,rgba(0,0,0,0.16)_62%,rgba(0,0,0,0.02)_100%)]",

@@ -331,7 +331,7 @@ const OurProcess = ({
                   className={`pointer-events-none absolute z-20 ${step.pinPosition}`}
                 >
                   <Image
-                    src="/Frame 344.png"
+                    src="/Frame 344.webp"
                     alt=""
                     width={58}
                     height={58}

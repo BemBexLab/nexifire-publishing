@@ -158,7 +158,7 @@ const OurBookGenre = () => {
               >
                 <div className="relative flex min-h-[140px] flex-col items-center justify-center overflow-hidden rounded-[18px] px-5 py-6 text-center">
                   <Image
-                    src="/Frame 2147225705.png"
+                    src="/Frame 2147225705.webp"
                     alt=""
                     fill
                     sizes="(max-width: 639px) 78vw, 0px"
@@ -197,7 +197,7 @@ const OurBookGenre = () => {
                     className="relative flex min-h-[148px] flex-col items-center justify-center overflow-hidden rounded-[18px] px-5 py-6 text-center sm:min-h-[162px] sm:px-6 sm:py-7 md:min-h-[170px] lg:min-h-[178px] lg:py-8"
                   >
                     <Image
-                      src="/Frame 2147225705.png"
+                      src="/Frame 2147225705.webp"
                       alt=""
                       fill
                       sizes="(max-width: 1023px) 50vw, 33vw"

@@ -35,7 +35,7 @@ const page = () => {
           <li>Editing & Formatting Bundle</li>
         </ul>
         </>}
-        imageSrc="/image 67.png"
+        imageSrc="/image 67.webp"
       />
       <OurProcess
         badgeText="How It Works"
@@ -100,7 +100,7 @@ const page = () => {
           },
         ]}
       />
-      <PublishYourBook title="Ready to Work With a Professional Book Editor in Australia?" description="Get a free, no-obligation quote for your manuscript today. Tell us your genre, word count, and editing needs, and we'll match you with the right editor within 24 hours." backgroundImageSrc="/Frame 2147225868.png" backgroundAlt="" buttonLabel="Submit Your Manuscript Today"/>
+      <PublishYourBook title="Ready to Work With a Professional Book Editor in Australia?" description="Get a free, no-obligation quote for your manuscript today. Tell us your genre, word count, and editing needs, and we'll match you with the right editor within 24 hours." backgroundImageSrc="/Frame 2147225868.webp" backgroundAlt="" buttonLabel="Submit Your Manuscript Today"/>
       <WhatsIncluded
         badgeText="What's Included"
         title="Professional Editing"
@@ -115,7 +115,7 @@ const page = () => {
           { label: "Australian English style as the default" },
           { label: "Transparent Flat-Rate Pricing" },
         ]}
-        imageSrc="/Rectangle 23830.png"
+        imageSrc="/Rectangle 23830.webp"
         imageAlt="Complete Editing solutions"
         iconSrc="/Mask group.svg"
       />
@@ -130,7 +130,7 @@ const page = () => {
           "At NexiFire Publishing, our manuscript editing services in Australia are delivered by qualified editors with deep genre knowledge and a genuine passion for the written word. Whether you are preparing a debut novel, a business book, a children's picture book, or a personal memoir, we match you with an editor who understands your audience and your goals.",
           "Every manuscript that leaves our editorial desk is publication-ready, polished, consistent, and crafted to meet the expectations of today's readers and reviewers.",
         ]}
-        imageSrc="/Rectangle 23834 (2).png"
+        imageSrc="/Rectangle 23834 (2).webp"
         imageAlt=""
         reverse={true}
       />

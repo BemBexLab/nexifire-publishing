@@ -180,48 +180,48 @@ const transparentIcon =
 
 const services = [
   {
-    iconSrc: "/image 2.png",
+    iconSrc: "/image 2.webp",
     title: "Ghostwriting",
     description:
       "Our experienced ghostwriters work closely with you to capture your voice and structure your narrative.",
   },
   {
-    iconSrc: "/image 2 (1).png",
+    iconSrc: "/image 2 (1).webp",
     title: "Editing & Proofreading",
     description: "Our certified editorial team covers every stage, from developmental editing and line editing to meticulous proofreading.",
   },
   {
-    iconSrc: "/image 2 (2).png",
+    iconSrc: "/image 2 (2).webp",
     title: "Interior Formatting",
     description:
       "NexiFire's formatters prepare print ready interiors and EPUB/MOBI digital files optimised for all major e-readers.",
   },
   {
-    iconSrc: "/image 2 (3).png",
+    iconSrc: "/image 2 (3).webp",
     title: "Back Cover Design",
     description:
       "Our designers craft compelling back covers with sharp blurbs, author bios, barcode placement, and visual layouts.",
   },
   {
-    iconSrc: "/image 2 (4).png",
+    iconSrc: "/image 2 (4).webp",
     title: "eBook Publishing",
     description:
       "We handle EPUB3 conversion, metadata optimisation, ISBN assignment, and simultaneous listing across Kindle, Kobo, Apple Books, and Google Play Books.",
   },
   {
-    iconSrc: "/image 2 (5).png",
+    iconSrc: "/image 2 (5).webp",
     title: "Hardcover Printing",
     description:
       "Premium hardcover production using quality materials, full-colour dust jackets, and acid-free paper. We do print-on-demand and a full offset print run.",
   },
   {
-    iconSrc: "/image 2 (6).png",
+    iconSrc: "/image 2 (6).webp",
     title: "Global Distribution",
     description:
       "Get your book into readers' hands across 40+ countries. NexiFire connects your title to Amazon, Book Depository, Booktopia, Barnes & Noble, Ingram's network of 39,000 retail accounts, and major library systems, in both print and digital formats.",
   },
   {
-    iconSrc: "/image 2 (7).png",
+    iconSrc: "/image 2 (7).webp",
     title: "Audiobook Formation",
     description: "Our audiobook production service covers professional voice casting and distribution to Audible, Apple Books, Google Play, and Spotify.",
   },
@@ -235,7 +235,7 @@ const HomeServices = () => {
           variants={backgroundVariants}
           className="absolute inset-x-0 bottom-[260px] top-0 opacity-90 sm:bottom-[275px] lg:bottom-[320px]"
           style={{
-            backgroundImage: "url('/Frame 2147225705 (1).png')",
+            backgroundImage: "url('/Frame 2147225705 (1).webp')",
             backgroundPosition: "center",
             backgroundSize: "cover",
             backgroundRepeat: "no-repeat",
@@ -333,7 +333,7 @@ const HomeServices = () => {
               variants={bannerVariants}
               className="relative mt-12 w-full max-w-[360px] overflow-hidden rounded-[18px] border border-black/10 sm:mt-14 sm:max-w-[760px] lg:mt-16 lg:max-w-[1120px]"
               style={{
-                backgroundImage: "url('/Frame 417.png')",
+                backgroundImage: "url('/Frame 417.webp')",
                 backgroundPosition: "center",
                 backgroundSize: "cover",
                 backgroundRepeat: "no-repeat",
