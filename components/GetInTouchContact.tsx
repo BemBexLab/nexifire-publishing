@@ -335,7 +335,7 @@ const GetInTouchContact = ({
                 <motion.div
                   key={item.id}
                   variants={contactItemVariants}
-                  className="flex w-full items-start justify-start gap-4 max-xl:max-w-[620px]"
+                  className="flex w-full items-center justify-start gap-4 max-xl:max-w-[620px]"
                 >
                   <motion.div
                     whileHover={{

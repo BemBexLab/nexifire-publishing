@@ -7,5 +7,5 @@ test("capture settled home hero", async ({ page }) => {
   await expect(page.getByRole("heading", { level: 1 })).toContainText(
     "Bring Your Story To Life"
   );
-  await page.screenshot({ path: ".playwright-home-settled.png" });
+  await page.screenshot({ path: ".playwright-home-settled.jpeg", type: "jpeg" });
 });
