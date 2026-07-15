@@ -19,9 +19,9 @@ type PricingPackagesProps = {
 };
 
 const defaultEyebrow = "Pricing & Packages";
-const defaultTitle = "Flexible Plans Tailored To Your Needs";
+const defaultTitle = "Flexible Plans";
 const defaultDescription =
-  "Pricing may vary depending on the genre, page and word count, and your specific needs for publishing, marketing, or ghostwriting. For a personalized estimate and detailed consultation, click on 'Custom Quote' to speak with a publishing expert.";
+  "Pricing may vary depending on the genre, page and word count, and your specific needs for publishing, marketing, or ghostwriting. For a personalised estimate and detailed consultation, click on 'Custom Quote' to speak with a publishing expert.";
 
 const pricingEase = [0.22, 1, 0.36, 1] as const;
 
@@ -111,7 +111,7 @@ const defaultPricingPackages: PricingPackage[] = [
   {
     name: "SILVER",
     description:
-      "Lorem ipsum dolor sit amet consectetur. Quis sit facilisis neque habitant. Bibendum sed faucibus eget lacus etiam. Proin eget rutrum sed tortor parturient nisl.",
+      "The perfect starting point for authors who have a finished manuscript and need professional publishing support to get their eBook live across all major platforms quickly and affordably.",
     included: [
       [
         "Author profile setup on major platforms",
@@ -136,7 +136,7 @@ const defaultPricingPackages: PricingPackage[] = [
   {
     name: "GOLD",
     description:
-      "Lorem ipsum dolor sit amet consectetur. Quis sit facilisis neque habitant. Bibendum sed faucibus eget lacus etiam. Proin eget rutrum sed tortor parturient nisl.",
+      "Ideal for authors who want a fully guided publishing experience with hands-on editorial support, professional cover design, and simultaneous eBook and print distribution through Amazon and global retailers.",
     included: [
       [
         "Amazon Author Central setup",
@@ -161,7 +161,7 @@ const defaultPricingPackages: PricingPackage[] = [
   {
     name: "PLATINUM",
     description:
-      "Lorem ipsum dolor sit amet consectetur. Quis sit facilisis neque habitant. Bibendum sed faucibus eget lacus etiam. Proin eget rutrum sed tortor parturient nisl.",
+      "The complete, premium publishing package for authors who want a professional ghostwriting and publishing experience from start to finish, with unlimited revisions, full creative collaboration, and every format covered.",
     included: [
       [
         "One-on-one interviews & story development",
