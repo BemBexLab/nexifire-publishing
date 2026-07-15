@@ -248,10 +248,21 @@ const FooterCTA = () => {
                 className="list-inside list-disc space-y-2.5 text-base font-medium text-[#777777]"
               >
                 <motion.li variants={listItemVariants} className="pl-1">
-                  <a className="transition hover:text-[#B24002]" href="/privacy-policy">Privacy policy</a>
+                  <a className="transition hover:text-[#B24002]" href="/publishing-services/book-publishing">Book Publishing</a>
                 </motion.li>
                 <motion.li variants={listItemVariants} className="pl-1">
-                  <a className="transition hover:text-[#B24002]" href="/terms-condition">Terms & Conditions</a>
+                  <a className="transition hover:text-[#B24002]" href="/publishing-services/ghost-writing">Ghost Writing</a>
+                </motion.li>
+                <motion.li variants={listItemVariants} className="pl-1">
+                  <a className="transition hover:text-[#B24002]" href="/publishing-services/book-marketing">Book Marketing</a>
+                </motion.li><motion.li variants={listItemVariants} className="pl-1">
+                  <a className="transition hover:text-[#B24002]" href="/publishing-services/book-editing">Book Editing</a>
+                </motion.li>
+                <motion.li variants={listItemVariants} className="pl-1">
+                  <a className="transition hover:text-[#B24002]" href="/publishing-services/book-cover-design">Book Cover Design</a>
+                </motion.li>
+                <motion.li variants={listItemVariants} className="pl-1">
+                  <a className="transition hover:text-[#B24002]" href="/publishing-services/audio-book">Audio Book</a>
                 </motion.li>
               </motion.ul>
             </motion.div>
