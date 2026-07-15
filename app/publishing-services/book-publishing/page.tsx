@@ -19,7 +19,7 @@ const page = () => {
       <PageHero
         eyebrow="Nexfire Publishing"
         title={`eBook Publishing Services Australia`}
-        description={<><span className="font-bold text-black">Publish Your eBook. Reach Readers Everywhere.</span> NexiFire Publishing handles everything Australian authors need to get their eBook into the world, professional EPUB and MOBI conversion, cover design built for digital storefronts, Kindle KDP setup, and simultaneous distribution to every major platform. Your book lives globally, without the guesswork.</>}
+        description={<><span className="font-bold text-black text-2xl">Publish Your eBook. Reach Readers Everywhere.</span> <br /> NexiFire Publishing handles everything Australian authors need to get their eBook into the world, professional EPUB and MOBI conversion, cover design built for digital storefronts, Kindle KDP setup, and simultaneous distribution to every major platform. Your book lives globally, without the guesswork.</>}
         buttonLabel="Publish Your Book Now"
       />
       <Introduction

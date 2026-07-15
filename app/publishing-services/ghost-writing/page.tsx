@@ -19,7 +19,7 @@ const page = () => {
       <PageHero
         eyebrow="Nexifire Publishing"
         title={`Ghostwriting Services Australia`}
-        description={<><span className="text-black"><b>Your Story Deserves to Be Told:</b></span> We Write It Brilliantly. Whether you have a complete manuscript or just a spark of an idea, our expert ghostwriters help you produce a professionally written book that sounds exactly like you, only polished, powerful, and ready to publish on multiple platforms.</>}
+        description={<><span className="text-black text-2xl"><b>Your Story Deserves to Be Told:</b></span> <br /> We Write It Brilliantly. Whether you have a complete manuscript or just a spark of an idea, our expert ghostwriters help you produce a professionally written book that sounds exactly like you, only polished, powerful, and ready to publish on multiple platforms.</>}
         buttonLabel="Publish Your Book Today"
       />
       <Introduction

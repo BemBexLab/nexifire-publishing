@@ -317,7 +317,7 @@ export const publishingServicePageData: Record<
       eyebrow: "NexiFire Publishing",
       title: "Book Cover Design Services Australia",
       description:
-        (<><span className="font-bold text-black">A Great Book Deserves a Cover That Stops the Scroll</span> NexiFire Publishing connects Australian authors with professional book cover designers who understand genre, typography, and what actually makes readers click "buy." From custom eBook covers to full hardcover jackets, every design we create is built to sell your book before a single page is read.</>),
+        (<><span className="font-bold text-black text-2xl">A Great Book Deserves a Cover That Stops the Scroll</span> <br /> NexiFire Publishing connects Australian authors with professional book cover designers who understand genre, typography, and what actually makes readers click "buy." From custom eBook covers to full hardcover jackets, every design we create is built to sell your book before a single page is read.</>),
       buttonLabel: "Start the Design Process",
       buttonHref: "/contact",
     },

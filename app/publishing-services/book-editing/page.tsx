@@ -18,7 +18,7 @@ const page = () => {
       <PageHero
         eyebrow="Nexifire Publishing"
         title={`Professional Book Editing Services Australia`}
-        description={<><span className="text-black font-bold">Your Manuscript Deserves a Professional Editor</span> NexiFire Publishing connects Australian authors with experienced, qualified book editors and proofreaders who bring out the very best in every manuscript, from the first structural read to the final word-by-word review before print.</>}
+        description={<><span className="text-black font-bold text-2xl">Your Manuscript Deserves a Professional Editor</span> <br /> NexiFire Publishing connects Australian authors with experienced, qualified book editors and proofreaders who bring out the very best in every manuscript, from the first structural read to the final word-by-word review before print.</>}
         buttonLabel="Edit Your Book Today"
       />
       <Introduction
