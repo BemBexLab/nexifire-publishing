@@ -19,6 +19,8 @@ export function generateStaticParams() {
   return publishingServiceSlugs.map((slug) => ({ slug }));
 }
 
+export const dynamicParams = false;
+
 export default async function PublishingServicePage({
   params,
 }: {

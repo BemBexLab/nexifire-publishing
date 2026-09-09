@@ -312,7 +312,7 @@ const WhoWeAre = () => {
 
             <motion.div
               variants={textRevealVariants}
-              className="mt-5 h-[200px] w-full max-w-none space-y-3 overflow-y-auto overscroll-contain pr-3 text-md leading-[1.65] text-[#777777] [scrollbar-color:rgba(178,64,2,0.45)_transparent] [scrollbar-width:thin] [&::-webkit-scrollbar]:w-1 [&::-webkit-scrollbar-track]:bg-transparent [&::-webkit-scrollbar-thumb]:rounded-full [&::-webkit-scrollbar-thumb]:bg-[rgba(178,64,2,0.45)] sm:text-lg"
+              className="mt-5 h-[200px] w-full max-w-none space-y-3 overflow-y-auto pr-3 text-md leading-[1.65] text-[#777777] [scrollbar-color:rgba(178,64,2,0.45)_transparent] [scrollbar-width:thin] [&::-webkit-scrollbar]:w-1 [&::-webkit-scrollbar-track]:bg-transparent [&::-webkit-scrollbar-thumb]:rounded-full [&::-webkit-scrollbar-thumb]:bg-[rgba(178,64,2,0.45)] sm:text-lg"
             >
               <div><h3 className="text-black font-semibold">You Keep 100% of Your Rights and Royalties</h3>
               <p>We never take a commission, a royalty percentage, or any ownership stake in your book. Every dollar it earns anywhere belongs to you.</p></div>
