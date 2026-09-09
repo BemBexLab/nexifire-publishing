@@ -7,9 +7,9 @@ import TextFluxUnveil from "./TextFluxUnveil";
 import { motion, Variants } from "motion/react";
 import { MdOutlineArrowOutward } from "react-icons/md";
 
-const heroTitle = "Publish Your Book Professionally and Reach Readers Worldwide";
+const heroTitle = "Publish Your Book. Keep Your Rights. Keep Your Royalties";
 const heroDescription =
-  "NexiFire Publishing delivers professional book publishing services across Australia, from ghostwriting and editing to hardcover printing, global distribution, and audiobook production. We help convert your manuscripts into bestsellers.";
+  "NexiFire Publishing is a full service self-publishing company for authors who want their book done right, without giving up their rights or royalties. From your first draft to a finished book on Amazon and multiple platforms. We provide every service a book needs under one company.";
 
 const heroBooks = [
   {
@@ -264,16 +264,16 @@ const HeroButtons = () => {
         href="/contact"
         className="inline-flex min-h-[48px] min-w-0 flex-1 items-center justify-center rounded-[7px] bg-[linear-gradient(90deg,#B24002_0%,#FF5B01_100%)] px-3 py-3 text-center text-[0.95rem] font-extralight leading-tight text-[#FFFFFF] shadow-[0_8px_20px_rgba(178,64,2,0.22)] transition hover:brightness-[0.98] sm:w-auto sm:max-w-none sm:flex-none sm:px-6 sm:text-base md:min-w-[220px] md:text-lg"
       >
-        Publish Your Book
+        Get My Free Publishing Consultation
         <span className="ml-2 text-xl leading-none">
           <MdOutlineArrowOutward />
         </span>
       </a>
       <a
-        href="/contact"
+        href="/pricing-packages"
         className="inline-flex min-h-[48px] min-w-0 flex-1 items-center justify-center rounded-[7px] border border-[#9F9F9F] bg-white/55 px-3 py-3 text-center text-[0.95rem] font-light leading-tight text-[#4B4B4B] shadow-[0_4px_14px_rgba(0,0,0,0.04)] backdrop-blur-[2px] transition hover:bg-white sm:w-auto sm:max-w-none sm:flex-none sm:px-6 sm:text-base md:min-w-[260px] md:text-lg"
       >
-        Book A Free Consultation
+        See Our Publishing Packages
         <span className="ml-2 text-xl leading-none">
           <MdOutlineArrowOutward />
         </span>

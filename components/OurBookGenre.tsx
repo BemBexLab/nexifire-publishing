@@ -5,6 +5,17 @@ import Image from "next/image";
 import { motion, type Variants } from "motion/react";
 import TextFluxUnveil from "./TextFluxUnveil";
 
+export type OurBookGenreItem = {
+  title: string;
+  icon: string;
+};
+
+export type OurBookGenreProps = {
+  badgeText: string;
+  title: string;
+  genres: OurBookGenreItem[];
+};
+
 const containerVariants: Variants = {
   hidden: { opacity: 0, y: 20 },
   visible: {
@@ -30,33 +41,6 @@ const itemVariants: Variants = {
   },
 };
 
-const genres = [
-  {
-    title: "Fiction",
-    icon: "/Rectangle 23818.svg",
-  },
-  {
-    title: "Nonfiction",
-    icon: "/Rectangle 23818 (1).svg",
-  },
-  {
-    title: "Memoir",
-    icon: "/Rectangle 23818 (2).svg",
-  },
-  {
-    title: "Comic",
-    icon: "/Rectangle 23818 (3).svg",
-  },
-  {
-    title: "Children's",
-    icon: "/Rectangle 23818 (4).svg",
-  },
-  {
-    title: "Other",
-    icon: "/Rectangle 23818 (5).svg",
-  },
-];
-
 const getCardsPerView = (width: number) => {
   if (width >= 1280) {
     return 3;
@@ -69,7 +53,7 @@ const getCardsPerView = (width: number) => {
   return 1;
 };
 
-const OurBookGenre = () => {
+const OurBookGenre = ({ badgeText, title, genres }: OurBookGenreProps) => {
   const [cardsPerView, setCardsPerView] = useState(3);
   const [activeIndex, setActiveIndex] = useState(0);
 
@@ -87,19 +71,10 @@ const OurBookGenre = () => {
   }, []);
 
   const maxIndex = Math.max(0, genres.length - cardsPerView);
+  const visibleActiveIndex = Math.min(activeIndex, maxIndex);
 
   useEffect(() => {
-    setActiveIndex((current) => Math.min(current, maxIndex));
-  }, [maxIndex]);
-
-  const autoRotateKey = `${cardsPerView}:${maxIndex}`;
-
-  useEffect(() => {
-    if (cardsPerView === 1) {
-      return;
-    }
-
-    if (maxIndex === 0) {
+    if (cardsPerView === 1 || maxIndex === 0) {
       return;
     }
 
@@ -110,7 +85,7 @@ const OurBookGenre = () => {
     return () => {
       window.clearInterval(intervalId);
     };
-  }, [autoRotateKey]);
+  }, [cardsPerView, maxIndex]);
 
   const slideWidth = 100 / cardsPerView;
 
@@ -137,11 +112,11 @@ const OurBookGenre = () => {
                 "linear-gradient(90deg, rgba(178, 64, 2, 0.13) 0%, rgba(178, 64, 2, 0.00) 79.96%)",
             }}
           >
-            <TextFluxUnveil text="Our Book Genre" />
+            <TextFluxUnveil text={badgeText} />
           </motion.div>
 
           <h2 className="project-h2 block w-full max-w-full text-left leading-[1.05] max-sm:mt-1 max-sm:text-center">
-            We Publish Every Genre
+            {title}
           </h2>
         </motion.div>
 
@@ -182,7 +157,7 @@ const OurBookGenre = () => {
 
           <div className="hidden w-full max-w-[360px] overflow-hidden sm:block sm:max-w-[760px] md:max-w-[920px] xl:max-w-none">
             <motion.div
-              animate={{ x: `-${activeIndex * slideWidth}%` }}
+              animate={{ x: `-${visibleActiveIndex * slideWidth}%` }}
               transition={{ duration: 0.65, ease: [0.22, 1, 0.36, 1] }}
               className="flex"
             >

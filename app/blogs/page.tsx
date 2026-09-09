@@ -13,7 +13,7 @@ const page = () => {
         buttonLabel="Start Your Publishing Journey"
       />
       <BlogGrid />
-      <PublishYourBook />
+      <PublishYourBook eyebrow="Publish With NexiFire" />
       <div className="h-20" />
     </section>
   );

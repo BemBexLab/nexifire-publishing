@@ -26,6 +26,7 @@ type IntroductionContent = {
 };
 
 type PublishBannerContent = {
+  eyebrow: string;
   title: string;
   description: string | React.ReactNode;
   buttonLabel: string;
@@ -167,6 +168,7 @@ export const publishingServicePageData: Record<
       ] satisfies WhyChooseReason[],
     },
     publishBanner: {
+      eyebrow: "Book Marketing With NexiFire",
       title: "Book Marketing Results That Matter",
       description:
         "NexiFire never promises specific sales numbers; no ethical book marketing company can guarantee sales. What we do promise is a clearly defined set of deliverables, a transparent strategy, and a dedicated marketing consultant who treats your book as seriously as you do.",
@@ -410,6 +412,7 @@ export const publishingServicePageData: Record<
       ] satisfies WhyChooseReason[],
     },
     publishBanner: {
+      eyebrow: "Book Cover Design With NexiFire",
       title: "REVISION ROUNDS INCLUDED",
       description:
         "Revision rounds included vary by package. Every NexiFire cover design project includes at least two full revision rounds, with additional rounds available on request.",

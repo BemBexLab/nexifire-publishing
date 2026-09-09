@@ -24,6 +24,7 @@ const page = () => {
       <Portfolio />
       <div className="h-10" />
       <PublishYourBook
+        eyebrow="Publish With NexiFire"
         title="Your Story Could Be Next"
         description="Whether you're writing your first manuscript or preparing your next release, NexiFire Publishing is ready to help you bring your vision to life."
         buttonLabel="Publish Your Book"

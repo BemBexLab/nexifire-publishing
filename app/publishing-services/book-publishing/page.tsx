@@ -107,6 +107,7 @@ const page = () => {
         ]}
       />
       <PublishYourBook
+        eyebrow="eBook Publishing With NexiFire"
         backgroundAlt="A girl reading a book"
         backgroundImageSrc="/Frame 2147225866.webp"
         buttonLabel="Start Your eBook Journey"

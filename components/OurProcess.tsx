@@ -12,7 +12,7 @@ export type OurProcessStep = {
 };
 
 export type OurProcessProps = {
-  badgeText: string;
+  badgeText?: string;
   title: string;
   description: string;
   steps: OurProcessStep[];
@@ -24,10 +24,26 @@ type ScrollState = {
   visible: boolean;
 };
 
-const dashedPaths = [
+const fourStepDashedPaths = [
   "M174 142C240 142 274 166 322 212",
   "M548 214C648 214 684 118 742 118",
   "M940 118C1048 118 1092 152 1142 202",
+];
+
+const fiveStepDashedPaths = [
+  "M160 142C210 142 238 166 290 212",
+  "M494 214C520 214 536 118 565 118",
+  "M707 118C760 118 786 166 837 212",
+  "M1041 214C1062 214 1082 118 1112 118",
+];
+
+const nineStepDashedPaths = [
+  ...fourStepDashedPaths,
+  "M1200 350C1300 360 1300 452 1200 486",
+  "M1112 554C1082 554 1062 650 1041 650",
+  "M837 648C786 648 760 554 707 554",
+  "M565 554C536 554 520 650 494 650",
+  "M290 648C238 648 210 578 160 578",
 ];
 
 const sectionVariants: Variants = {
@@ -158,25 +174,96 @@ const stepTextVariants: Variants = {
   },
 };
 
-const stepLayoutClasses = [
+const fourStepLayoutClasses = [
   {
     outerPosition: "xl:left-[32px] xl:top-[34px]",
     cardHeight: "xl:h-[160px]",
+    cardWidth: "xl:w-[236px]",
     pinPosition: "left-1/2 top-[-20px] -translate-x-1/2",
   },
   {
     outerPosition: "xl:left-[313px] xl:top-[188px]",
     cardHeight: "xl:h-[160px]",
+    cardWidth: "xl:w-[236px]",
     pinPosition: "left-1/2 top-[-20px] -translate-x-1/2",
   },
   {
     outerPosition: "xl:left-[710px] xl:top-[34px]",
     cardHeight: "xl:h-[160px]",
+    cardWidth: "xl:w-[236px]",
     pinPosition: "left-1/2 top-[-20px] -translate-x-1/2",
   },
   {
     outerPosition: "xl:right-[32px] xl:top-[188px]",
     cardHeight: "xl:h-[160px]",
+    cardWidth: "xl:w-[236px]",
+    pinPosition: "left-1/2 top-[-20px] -translate-x-1/2",
+  },
+];
+
+const fiveStepLayoutClasses = [
+  {
+    outerPosition: "xl:left-0 xl:top-[34px]",
+    cardHeight: "xl:h-[160px]",
+    cardWidth: "xl:w-[220px]",
+    pinPosition: "left-1/2 top-[-20px] -translate-x-1/2",
+  },
+  {
+    outerPosition: "xl:left-[274px] xl:top-[188px]",
+    cardHeight: "xl:h-[160px]",
+    cardWidth: "xl:w-[220px]",
+    pinPosition: "left-1/2 top-[-20px] -translate-x-1/2",
+  },
+  {
+    outerPosition: "xl:left-[547px] xl:top-[34px]",
+    cardHeight: "xl:h-[160px]",
+    cardWidth: "xl:w-[220px]",
+    pinPosition: "left-1/2 top-[-20px] -translate-x-1/2",
+  },
+  {
+    outerPosition: "xl:left-[821px] xl:top-[188px]",
+    cardHeight: "xl:h-[160px]",
+    cardWidth: "xl:w-[220px]",
+    pinPosition: "left-1/2 top-[-20px] -translate-x-1/2",
+  },
+  {
+    outerPosition: "xl:right-0 xl:top-[34px]",
+    cardHeight: "xl:h-[160px]",
+    cardWidth: "xl:w-[220px]",
+    pinPosition: "left-1/2 top-[-20px] -translate-x-1/2",
+  },
+];
+
+const nineStepLayoutClasses = [
+  ...fourStepLayoutClasses,
+  {
+    outerPosition: "xl:right-0 xl:top-[470px]",
+    cardHeight: "xl:h-[160px]",
+    cardWidth: "xl:w-[220px]",
+    pinPosition: "left-1/2 top-[-20px] -translate-x-1/2",
+  },
+  {
+    outerPosition: "xl:left-[821px] xl:top-[624px]",
+    cardHeight: "xl:h-[160px]",
+    cardWidth: "xl:w-[220px]",
+    pinPosition: "left-1/2 top-[-20px] -translate-x-1/2",
+  },
+  {
+    outerPosition: "xl:left-[547px] xl:top-[470px]",
+    cardHeight: "xl:h-[160px]",
+    cardWidth: "xl:w-[220px]",
+    pinPosition: "left-1/2 top-[-20px] -translate-x-1/2",
+  },
+  {
+    outerPosition: "xl:left-[274px] xl:top-[624px]",
+    cardHeight: "xl:h-[160px]",
+    cardWidth: "xl:w-[220px]",
+    pinPosition: "left-1/2 top-[-20px] -translate-x-1/2",
+  },
+  {
+    outerPosition: "xl:left-0 xl:top-[470px]",
+    cardHeight: "xl:h-[160px]",
+    cardWidth: "xl:w-[220px]",
     pinPosition: "left-1/2 top-[-20px] -translate-x-1/2",
   },
 ];
@@ -192,6 +279,18 @@ const OurProcess = ({
     {},
   );
 
+  const isNineStepLayout = steps.length === 9;
+  const stepLayoutClasses = isNineStepLayout
+    ? nineStepLayoutClasses
+    : steps.length === 5
+      ? fiveStepLayoutClasses
+      : fourStepLayoutClasses;
+  const dashedPaths = isNineStepLayout
+    ? nineStepDashedPaths
+    : steps.length === 5
+      ? fiveStepDashedPaths
+      : fourStepDashedPaths;
+  const canvasHeight = isNineStepLayout ? 860 : 420;
   const displayedSteps = steps.map((step, index) => ({
     ...step,
     ...stepLayoutClasses[index % stepLayoutClasses.length],
@@ -254,7 +353,7 @@ const OurProcess = ({
   }, [steps]);
 
   return (
-    <section className="min-h-full overflow-hidden bg-[#fffaf6] px-4 py-14 sm:px-6 sm:py-16 md:px-10 lg:px-16 lg:py-20 xl:py-24">
+    <section className="min-h-full overflow-hidden bg-[#fffaf6] px-4 sm:px-6 md:px-10 lg:px-16">
       <motion.div
         variants={sectionVariants}
         initial="hidden"
@@ -266,16 +365,18 @@ const OurProcess = ({
           variants={headingClusterVariants}
           className="mx-auto max-w-[1260px] text-center"
         >
-          <motion.div
-            variants={headingRevealVariants}
-            className="mx-auto mb-3 flex w-fit items-center justify-center rounded-[8px] px-4 py-2 text-center text-sm text-black sm:px-5 sm:text-base"
-            style={{
-              background:
-                "linear-gradient(90deg, rgba(178, 64, 2, 0.13) 0%, rgba(178, 64, 2, 0.00) 79.96%)",
-            }}
-          >
-            <TextFluxUnveil text={badgeText} />
-          </motion.div>
+          {badgeText && (
+            <motion.div
+              variants={headingRevealVariants}
+              className="mx-auto mb-3 flex w-fit items-center justify-center rounded-[8px] px-4 py-2 text-center text-sm text-black sm:px-5 sm:text-base"
+              style={{
+                background:
+                  "linear-gradient(90deg, rgba(178, 64, 2, 0.13) 0%, rgba(178, 64, 2, 0.00) 79.96%)",
+              }}
+            >
+              <TextFluxUnveil text={badgeText} />
+            </motion.div>
+          )}
           <motion.h2
             variants={headingRevealVariants}
             className="project-h2 block w-full max-w-full text-center"
@@ -290,12 +391,16 @@ const OurProcess = ({
           </motion.p>
         </motion.div>
 
-        <div className="relative mt-14 lg:mt-16 xl:min-h-[420px]">
+        <div
+          className={`relative mt-14 lg:mt-16 ${
+            isNineStepLayout ? "xl:min-h-[860px]" : "xl:min-h-[420px]"
+          }`}
+        >
           <svg
             xmlns="http://www.w3.org/2000/svg"
             width="1314"
-            height="420"
-            viewBox="0 0 1314 420"
+            height={canvasHeight}
+            viewBox={`0 0 1314 ${canvasHeight}`}
             fill="none"
             className="pointer-events-none absolute left-1/2 top-[8px] z-0 hidden h-auto w-full max-w-[1314px] -translate-x-1/2 xl:block"
             aria-hidden="true"
@@ -322,7 +427,7 @@ const OurProcess = ({
                 key={step.number}
                 custom={index}
                 variants={stepCardVariants}
-                className={`relative rounded-[24px] bg-[#f6eee8] px-[14px] pb-[14px] pt-[40px] shadow-[0_8px_18px_rgba(73,47,27,0.06)] sm:h-[216px] xl:absolute xl:h-[220px] xl:w-[236px] ${step.outerPosition}`}
+                className={`relative rounded-[24px] bg-[#f6eee8] px-[14px] pb-[14px] pt-[40px] shadow-[0_8px_18px_rgba(73,47,27,0.06)] sm:h-[216px] xl:absolute xl:h-[220px] ${step.cardWidth} ${step.outerPosition}`}
                 whileHover={{ y: -8, scale: 1.015 }}
                 transition={{ type: "spring", stiffness: 260, damping: 22 }}
               >

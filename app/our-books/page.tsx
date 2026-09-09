@@ -47,6 +47,7 @@ const page = () => {
         iconSrc="/Mask group.svg"
       />
       <PublishYourBook
+        eyebrow="Publish With NexiFire"
         title="Your Book Could Be Our Next Success Story"
         description="Join hundreds of authors who have trusted NexiFire Publishing to professionally publish, distribute, and promote their books worldwide. Whether you're writing your first manuscript or preparing your next release, we're here to help you publish with confidence."
         backgroundImageSrc="/Frame 2147225872.webp"

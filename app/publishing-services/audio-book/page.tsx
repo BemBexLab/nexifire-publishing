@@ -52,14 +52,14 @@ const page = () => {
       />
       <OurProcess
         badgeText="How It Works"
-        title="Converting Your Book to an Audiobook in 4 Steps"
+        title="Converting Your Book to an Audiobook in clear Steps"
         description="NexiFire's audiobook production process covers every technical and creative stage between your manuscript and a live, globally distributed audiobook"
         steps={[
           {
             number: "01",
             title: "Consultation & Planning",
             description:
-              "We assess your manuscript, study your goals, and create a audiobook production plan accordingly.",
+              "We assess your manuscript, study your goals, and create an audiobook production plan accordingly.",
           },
           {
             number: "02",
@@ -104,7 +104,7 @@ const page = () => {
           {
             title: "One Team, Manuscript to Distribution",
             description:
-              "NexiFire manages your audiobook from the moment your manuscript arrives to it goes live on Audible and Apple Books.",
+              "NexiFire manages your audiobook from the moment your manuscript arrives until it goes live on Audible and Apple Books.",
           },
           {
             title: "Support for Author-Narrated Projects",
@@ -114,6 +114,7 @@ const page = () => {
         ]}
       />
       <PublishYourBook
+        eyebrow="Audiobook Publishing With NexiFire"
         title="Keep 100% of Your Audiobook Royalties"
         description="NexiFire never takes a commission from your audiobook royalties. We charge a flat-rate production fee; every cent your audiobook earns on Audible, Apple Books, Spotify, and every other platform is paid directly to you."
         backgroundImageSrc="/Frame 2147225871.webp"

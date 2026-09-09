@@ -181,49 +181,107 @@ const transparentIcon =
 const services = [
   {
     iconSrc: "/image 2.webp",
-    title: "Ghostwriting",
+    title: "Manuscript Development & Ghostwriting Support",
     description:
-      "Our experienced ghostwriters work closely with you to capture your voice and structure your narrative.",
+      "Not sure your manuscript is ready, or still working from an idea instead of a draft? Our writers and story editors help shape, structure, or even ghostwrite your book so it's ready for the next stage.",
   },
   {
     iconSrc: "/image 2 (1).webp",
-    title: "Editing & Proofreading",
-    description: "Our certified editorial team covers every stage, from developmental editing and line editing to meticulous proofreading.",
+    title: "Professional Editing & Proofreading",
+    description:
+      "Every manuscript goes through developmental editing, line editing, and a final proofread by editors who work in your genre, so your book reads clean, tight, and professional before it ever reaches a reader.",
   },
   {
     iconSrc: "/image 2 (2).webp",
-    title: "Interior Formatting",
+    title: "Interior Formatting for Print, Hardcover & Ebook",
     description:
-      "NexiFire's formatters prepare print ready interiors and EPUB/MOBI digital files optimised for all major e-readers.",
+      "We format your interior to meet Amazon KDP and IngramSpark specs across every edition, so your book looks properly published whether someone's holding it or reading it on a Kindle.",
   },
   {
     iconSrc: "/image 2 (3).webp",
-    title: "Back Cover Design",
+    title: "Custom Book Cover Design & Illustration",
     description:
-      "Our designers craft compelling back covers with sharp blurbs, author bios, barcode placement, and visual layouts.",
+      "Your cover gets one shot to stop a scroll or catch an eye on a shelf. We design covers (and full interior illustrations for children's books) built to actually sell, not just look nice.",
   },
   {
     iconSrc: "/image 2 (4).webp",
-    title: "eBook Publishing",
+    title: "ISBN Assignment & U.S. Copyright Office Registration",
     description:
-      "We handle EPUB3 conversion, metadata optimisation, ISBN assignment, and simultaneous listing across Kindle, Kobo, Apple Books, and Google Play Books.",
+      "We register your ISBN and file your copyright with the U.S. Copyright Office, so your book is legally protected and properly credited to you from day one.",
   },
   {
     iconSrc: "/image 2 (5).webp",
-    title: "Hardcover Printing",
+    title: "Print-on-Demand, Hardcover, Paperback & Ebook Production",
     description:
-      "Premium hardcover production using quality materials, full-colour dust jackets, and acid-free paper. We do print-on-demand and a full offset print run.",
+      "Whatever format your readers prefer, we produce it, print-on-demand, hardcover, paperback, or ebook, so you are never limited to just one edition.",
   },
   {
     iconSrc: "/image 2 (6).webp",
-    title: "Global Distribution",
+    title: "Audiobook Narration & Production",
     description:
-      "Get your book into readers' hands across 40+ countries. NexiFire connects your title to Amazon, Book Depository, Booktopia, Barnes & Noble, Ingram's network of 39,000 retail accounts, and major library systems, in both print and digital formats.",
+      "We match you with a professional narrator or coach you through narrating it yourself, then handle recording, editing, and mastering to Audible (ACX) standards.",
   },
   {
     iconSrc: "/image 2 (7).webp",
-    title: "Audiobook Formation",
-    description: "Our audiobook production service covers professional voice casting and distribution to Audible, Apple Books, Google Play, and Spotify.",
+    title: "Book Translation Into Multiple Languages",
+    description:
+      "Want your book read outside English-speaking markets? Our translators adapt your book into other languages while keeping your voice and message intact.",
+  },
+
+  {
+    iconSrc: "/image 2.webp",
+    title:
+      "Digital Distribution to Amazon, Audible, Apple Books & 40+ Platforms",
+    description:
+      "We publish your book across every major platform readers actually use, simultaneously, so it's available worldwide from day one instead of trickling out over months.",
+  },
+  {
+    iconSrc: "/image 2 (1).webp",
+    title: "Retail & Bookstore Book Placement",
+    description:
+      "We pursue opportunities to get your book onto physical bookstore shelves, not just an online listing, so browsing readers can discover it too.",
+  },
+  {
+    iconSrc: "/image 2 (2).webp",
+    title: "Book Signing Event Coordination",
+    description:
+      "We help plan and coordinate signing events, handling venue outreach and logistics so you can focus on meeting your readers, not managing the details.",
+  },
+  {
+    iconSrc: "/image 2 (3).webp",
+    title: "Book Fair & Exhibition Placement",
+    description:
+      "We identify and secure spots at relevant book fairs and exhibitions, putting your title in front of industry contacts and readers actively looking for new books.",
+  },
+  {
+    iconSrc: "/image 2 (4).webp",
+    title: "Amazon A+ Content Optimization",
+    description:
+      "We build out enhanced Amazon product content, better images, layout, and copy, designed to turn browsers into buyers once they land on your book's page.",
+  },
+  {
+    iconSrc: "/image 2 (5).webp",
+    title: "Social Media Marketing, Reels & Video Content",
+    description:
+      "We create social content and promotional video built specifically to sell books, not just generate likes, so your launch keeps momentum well past week one.",
+  },
+  {
+    iconSrc: "/image 2 (6).webp",
+    title: "Author Website Design & Setup",
+    description:
+      "We build you a professional author website that showcases your book, your bio, and your future titles, your home base beyond any single retailer.",
+  },
+  {
+    iconSrc: "/image 2 (7).webp",
+    title: "Times Square Display",
+    description:
+      "Get your book featured on a digital billboard in Times Square, real-world visibility most authors never get access to.",
+  },
+  {
+    iconSrc: "/image 2 (7).webp",
+    title: "Amazon Paid Ads",
+    description:
+      "We run targeted Amazon PPC campaigns to put your book in front of buyers actively searching your category.",
   },
 ];
 
@@ -272,14 +330,14 @@ const HomeServices = () => {
               variants={headingRevealVariants}
               className="project-h2 block w-full max-w-full text-center sm:max-w-none"
             >
-              Complete Book Publishing Services in Australia
+              Full-Service Book Publishing, All in One Company
             </motion.h2>
 
             <motion.p
               variants={headingRevealVariants}
               className="mt-4 max-w-[350px] text-[#777777] sm:max-w-full sm:text-lg"
             >
-              From the start to the final sale, NexiFire takes care of every stage of your publishing journey. Our professional publishing services in Australia are created for authors who refuse to compromise on quality.
+              Everything a self-publishing company should offer
             </motion.p>
           </motion.div>
 
@@ -300,7 +358,10 @@ const HomeServices = () => {
                 }}
                 transition={{ type: "spring", stiffness: 260, damping: 22 }}
               >
-                <motion.div variants={serviceCardContentVariants} className="flex h-full flex-col">
+                <motion.div
+                  variants={serviceCardContentVariants}
+                  className="flex h-full flex-col"
+                >
                   <motion.div variants={serviceCardTextVariants}>
                     <Image
                       src={service.iconSrc || transparentIcon}
@@ -343,20 +404,31 @@ const HomeServices = () => {
               <div className="relative z-10 flex min-h-[280px] w-full items-end px-5 py-6 sm:min-h-[320px] sm:px-8 sm:py-8 lg:min-h-[384px] lg:items-center lg:px-10">
                 <motion.div
                   variants={bannerContentVariants}
-                  className="max-w-[400px] text-white sm:max-w-[760px]"
+                  className="max-w-[400px] text-white sm:max-w-[809px]"
                 >
+                  <motion.p
+                    variants={itemVariants}
+                    className="mb-3 text-sm font-medium uppercase tracking-[0.16em] text-white/80 sm:text-base"
+                  >
+                    Why Self-Publishing Wins Today
+                  </motion.p>
                   <motion.h3
                     variants={headingRevealVariants}
                     className="text-[1.8rem] font-light uppercase leading-[1.03] tracking-wide sm:text-[2.2rem] lg:text-[2.8rem]"
                   >
-                    Nexifire provides services for Australian Authors
+                    Skip the Wait. Skip the Rejection.
                   </motion.h3>
 
                   <motion.p
                     variants={headingRevealVariants}
                     className="mt-4 text-sm leading-[1.55] text-white sm:mt-5 sm:text-base"
                   >
-                    We understand the Australian publishing landscape, from local booksellers and library networks to international Amazon rankings. Our team has published over 2,000 titles across every genre and format.
+                    Traditional publishing can take years, rejects most
+                    manuscripts, and leaves you with a small royalty share and
+                    little control. Self-publishing gives you speed, ownership,
+                    and a book available as a paperback, ebook, audiobook, and
+                    translated edition, reaching more readers than a single
+                    format ever could.
                   </motion.p>
 
                   <motion.a

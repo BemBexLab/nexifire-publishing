@@ -4,7 +4,8 @@ import { motion, type Variants } from "motion/react";
 import React from "react";
 import { MdOutlineArrowOutward } from "react-icons/md";
 
-type PublishYourBookProps = {
+export type PublishYourBookProps = {
+  eyebrow: string;
   title?: string;
   description?: string | React.ReactNode;
   buttonLabel?: string;
@@ -98,6 +99,7 @@ const defaultProps = {
 };
 
 const PublishYourBook = ({
+  eyebrow,
   title = defaultProps.title,
   description = defaultProps.description,
   buttonLabel = defaultProps.buttonLabel,
@@ -135,6 +137,13 @@ const PublishYourBook = ({
               variants={contentVariants}
               className="w-full max-w-[22rem] text-white sm:max-w-[45rem]"
             >
+              <motion.p
+                variants={itemVariants}
+                className="mb-3 text-sm font-medium uppercase tracking-[0.16em] text-white/80 sm:text-base"
+              >
+                {eyebrow}
+              </motion.p>
+
               <motion.h3
                 variants={itemVariants}
                 className="text-[1.8rem] font-light uppercase leading-[1.03] tracking-normal sm:text-[2.2rem] md:text-[2.8rem] lg:text-[3rem] xl:text-[3.6rem]"

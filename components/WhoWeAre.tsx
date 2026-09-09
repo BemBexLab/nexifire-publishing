@@ -292,7 +292,7 @@ const WhoWeAre = () => {
             variants={textClusterVariants}
             className="flex w-full max-w-[680px] flex-col items-start text-left lg:max-w-[560px] lg:flex-[1] xl:max-w-[620px] xl:flex-[1.05]"
           >
-            <motion.div
+            {/* <motion.div
               variants={textRevealVariants}
               className="mb-3 flex w-fit items-center justify-center rounded-[8px] px-4 py-2 text-center text-sm text-black sm:px-5 sm:text-base"
               style={{
@@ -300,22 +300,35 @@ const WhoWeAre = () => {
                   "linear-gradient(90deg, rgba(178, 64, 2, 0.13) 0%, rgba(178, 64, 2, 0.00) 79.96%)",
               }}
             >
-              <TextFluxUnveil text="Why Choose Us" />
-            </motion.div>
+              <TextFluxUnveil text="Who We Are" />
+            </motion.div> */}
 
             <motion.h2
               variants={textRevealVariants}
               className="project-h2 block w-full max-w-full text-left"
             >
-              The NexiFire Difference for Australian Authors
+              What Makes NexiFire Different
             </motion.h2>
 
-            <motion.p
+            <motion.div
               variants={textRevealVariants}
-              className="mt-5 w-full max-w-none text-md leading-[1.65] text-[#777777] sm:text-lg"
+              className="mt-5 h-[200px] w-full max-w-none space-y-3 overflow-y-auto overscroll-contain pr-3 text-md leading-[1.65] text-[#777777] [scrollbar-color:rgba(178,64,2,0.45)_transparent] [scrollbar-width:thin] [&::-webkit-scrollbar]:w-1 [&::-webkit-scrollbar-track]:bg-transparent [&::-webkit-scrollbar-thumb]:rounded-full [&::-webkit-scrollbar-thumb]:bg-[rgba(178,64,2,0.45)] sm:text-lg"
             >
-              NexiFire's hybrid publishing model gives Australian authors the best of both worlds: full creative freedom, 100% rights retained, and fair royalties, backed by an experienced local team of editors, designers, and consultants. Our transparent, affordable packages cover everything from editing to ISBN registration, while our global distribution network reaches over 40 countries without losing sight of the Australian market we call home.
-            </motion.p>
+              <div><h3 className="text-black font-semibold">You Keep 100% of Your Rights and Royalties</h3>
+              <p>We never take a commission, a royalty percentage, or any ownership stake in your book. Every dollar it earns anywhere belongs to you.</p></div>
+
+              <div><h3 className="text-black font-semibold">One Team, Every Format, Start to Finish</h3>
+              <p>One project team manages your book across every format and every touchpoint with readers, so nothing falls through the cracks between departments.</p></div>
+
+              <div><h3 className="text-black font-semibold">Affordable Packages Built for First-Time Authors</h3>
+              <p>Flat, upfront pricing on editing, formatting, and cover design, no hidden add-ons, ever.</p></div>
+
+              <div><h3 className="text-black font-semibold">Real Distribution, Not Just an Upload</h3>
+              <p>We optimize your metadata and Amazon A+ Content, and pursue bookstore, fair, and exhibition placement, so you&apos;re discoverable online and off.</p></div>
+
+              <div><h3 className="text-black font-semibold">Marketing That Doesn&apos;t Stop at Launch Day</h3>
+              <p>Social content, promotional video, Amazon optimization, and signing events keep your book selling well past launch week.</p></div>
+            </motion.div>
           </motion.div>
 
           <motion.div

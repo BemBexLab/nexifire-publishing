@@ -90,7 +90,7 @@ const page = () => {
         ]}
       />
       <div className="h-10" />
-      <PublishYourBook title="Your Book Is Waiting to Be Written" description="Every author we have worked with is glad they made the call. Whether you have a full concept or just a feeling that you have something worth saying, reach out. The first conversation is always free." backgroundImageSrc="/Frame 2147225867.webp" backgroundAlt="A girl reading a book" buttonLabel="Book a Free Discovery Call" />
+      <PublishYourBook eyebrow="Ghostwriting With NexiFire" title="Your Book Is Waiting to Be Written" description="Every author we have worked with is glad they made the call. Whether you have a full concept or just a feeling that you have something worth saying, reach out. The first conversation is always free." backgroundImageSrc="/Frame 2147225867.webp" backgroundAlt="A girl reading a book" buttonLabel="Book a Free Discovery Call" />
       <div className="h-10" />
       <WhatsIncluded
         badgeText="What's Included"
