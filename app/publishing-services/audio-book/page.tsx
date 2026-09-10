@@ -50,37 +50,39 @@ const page = () => {
         }
         imageSrc="/0eee94f7-4643-4e46-8b95-cc9232497a79 1 (2).webp"
       />
-      <OurProcess
-        badgeText="How It Works"
-        title="Converting Your Book to an Audiobook in clear Steps"
-        description="NexiFire's audiobook production process covers every technical and creative stage between your manuscript and a live, globally distributed audiobook"
-        steps={[
-          {
-            number: "01",
-            title: "Consultation & Planning",
-            description:
-              "We assess your manuscript, study your goals, and create an audiobook production plan accordingly.",
-          },
-          {
-            number: "02",
-            title: "Script Preparation & Narrator Selection",
-            description:
-              "We prepare your manuscript for narration and help you choose the perfect voice for your book.",
-          },
-          {
-            number: "03",
-            title: "Recording & Audio Production",
-            description:
-              "Your audiobook is professionally recorded, edited, and mastered to meet industry standards.",
-          },
-          {
-            number: "04",
-            title: "Distribution & Launch",
-            description:
-              "We publish your audiobook on leading global platforms and ensure it's ready for listeners worldwide.",
-          },
-        ]}
-      />
+      <div className="bg-[#fffaf6] py-14 sm:py-16 md:py-20 lg:py-24">
+        <OurProcess
+          badgeText="How It Works"
+          title="Converting Your Book to an Audiobook in clear Steps"
+          description="NexiFire's audiobook production process covers every technical and creative stage between your manuscript and a live, globally distributed audiobook"
+          steps={[
+            {
+              number: "01",
+              title: "Consultation & Planning",
+              description:
+                "We assess your manuscript, study your goals, and create an audiobook production plan accordingly.",
+            },
+            {
+              number: "02",
+              title: "Script Preparation & Narrator Selection",
+              description:
+                "We prepare your manuscript for narration and help you choose the perfect voice for your book.",
+            },
+            {
+              number: "03",
+              title: "Recording & Audio Production",
+              description:
+                "Your audiobook is professionally recorded, edited, and mastered to meet industry standards.",
+            },
+            {
+              number: "04",
+              title: "Distribution & Launch",
+              description:
+                "We publish your audiobook on leading global platforms and ensure it's ready for listeners worldwide.",
+            },
+          ]}
+        />
+      </div>
       <WhyItMatters />
       <WhyChoose
         badgeText="The NexiFire Difference"
@@ -181,30 +183,29 @@ const page = () => {
         title="Frequently Asked Questions"
         items={[
           {
-            question: "How much does audiobook production cost in the United States?",
+            question:
+              "How much does audiobook production cost in the United States?",
             answer:
               "Audiobook production costs in the United States depend on your manuscript's word count, the narrator selected, and the level of production required. NexiFire charges transparent flat-rate fees; contact us with your word count and narration preference for an accurate quote with no hidden fees and no royalty commission deducted from your earnings.",
           },
           {
-            question:
-              "How long does audiobook production take?",
+            question: "How long does audiobook production take?",
             answer:
               "A standard audiobook production timeline with NexiFire ranges from four to eight weeks from manuscript receipt to a live, distributed title. This covers manuscript preparation, narrator casting, studio recording, audio editing and mastering, quality control, and platform submission. Exact timelines depend on manuscript length and narrator availability.",
           },
           {
-            question:
-              "Can I narrate my own audiobook with NexiFire?",
+            question: "Can I narrate my own audiobook with NexiFire?",
             answer:
               "Yes. NexiFire fully supports author-narrated audiobooks with a structured workflow that includes pre-recording coaching, technical setup guidance, chapter-by-chapter recording review, professional audio editing, and full mastering to ACX and platform specifications. Your home recordings are transformed into professionally produced audio that passes platform quality checks the first time.",
           },
           {
-            question: "Which audiobook platforms will my title be distributed to?",
+            question:
+              "Which audiobook platforms will my title be distributed to?",
             answer:
               "NexiFire distributes your audiobook to Audible (ACX), Apple Books, Google Play Books, Spotify, Storytel, Kobo Audiobooks, Scribd, OverDrive (library network), Bibliotheca, and 15+ additional platforms simultaneously, giving your title global availability from its launch day.",
           },
           {
-            question:
-              "Do I keep my audiobook rights and royalties?",
+            question: "Do I keep my audiobook rights and royalties?",
             answer:
               "Yes, completely. NexiFire charges a flat-rate production fee and takes no commission from your audiobook royalties. You retain 100% of your intellectual property rights and every cent earned through Audible, Apple Books, Spotify, and every other distribution platform, forever.",
           },
@@ -216,18 +217,20 @@ const page = () => {
           },
         ]}
         sidebarTitle="Do You Have More Questions?"
-        sidebarDescription={<>
-        <ul className="list-outside space-y-2 text-left">
-          <li>Manuscript preparation and narration script</li>
-          <li>Narrator matching and sample auditions</li>
-          <li>Certified studio or guided home recording</li>
-          <li>Professional audio editing and cleaning</li>
-          <li>Full mastering to ACX specification</li>
-          <li>QC listen on every chapter before submission</li>
-          <li>Distribution to 20+ platforms simultaneously</li>
-          <li>100% royalties to author, no commission</li>
-        </ul>
-        </>}
+        sidebarDescription={
+          <>
+            <ul className="list-outside space-y-2 text-left">
+              <li>Manuscript preparation and narration script</li>
+              <li>Narrator matching and sample auditions</li>
+              <li>Certified studio or guided home recording</li>
+              <li>Professional audio editing and cleaning</li>
+              <li>Full mastering to ACX specification</li>
+              <li>QC listen on every chapter before submission</li>
+              <li>Distribution to 20+ platforms simultaneously</li>
+              <li>100% royalties to author, no commission</li>
+            </ul>
+          </>
+        }
         sidebarButtonLabel="Contact Us"
         sidebarButtonHref="/contact"
       />

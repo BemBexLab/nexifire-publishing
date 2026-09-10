@@ -152,19 +152,19 @@ export const publishingServicePageData: Record<
     },
     whyChoose: {
       badgeText: "Global Distribution",
-      title: "Get Your Book Into Readers' Hands Across 40+ Countries",
+      title: "Get Your Book Into Readers' Hands, Worldwide",
       description:
-        "Your book is distributed worldwide through major retailers, libraries, and digital platforms, making sure readers can easily find and purchase it in their preferred format.",
+        "",
       reasons: [
         {
-          title: "United States Retail",
+          title: "US & International Retail",
           description:
-            "Amazon, Barnes & Noble, Bookshop.org, and independent American bookstores",
+            "Amazon, Barnes & Noble, Books-A-Million, and 39,000+ retail partners worldwide",
         },
         {
-          title: "International Retail",
+          title: "Library Networks",
           description:
-            "Amazon US, UK, EU and Canada, Barnes & Noble, Waterstones, and 39,000+ retailers",
+            "Public library systems, OverDrive, Bibliotheca, and international library distributors",
         },
         {
           title: "Library Networks",
@@ -174,16 +174,16 @@ export const publishingServicePageData: Record<
         {
           title: "Digital Platforms",
           description:
-            "Amazon Kindle, Apple Books, Kobo, Google Play, Scribd, and 40+digital platforms",
+            "Amazon Kindle, Apple Books, Kobo, Google Play, Scribd, and 40+ digital platforms",
         },
       ] satisfies WhyChooseReason[],
     },
     publishBanner: {
-      eyebrow: "Book Marketing With NexiFire",
-      title: "Book Marketing Results That Matter",
+      eyebrow: "",
+      title: "Ready to Build Your Readership?",
       description:
-        "NexiFire never promises specific sales numbers; no ethical book marketing company can guarantee sales. What we do promise is a clearly defined set of deliverables, a transparent strategy, and a dedicated marketing consultant who treats your book as seriously as you do.",
-      buttonLabel: "Start Marketing Today",
+        "Talk to a marketing specialist today. We'll look at your book, your genre, and your goals, and build a plan that actually gives it visibility, not a boilerplate package.",
+      buttonLabel: "Get My Free Marketing Consultation",
       buttonHref: "/contact",
       backgroundImageSrc: "/Frame 2147225869.webp",
       backgroundAlt: "Book marketing banner",
@@ -192,17 +192,18 @@ export const publishingServicePageData: Record<
       badgeText: "Why Book Marketing Matters",
       title: "Writing the Book Was the Hard Part. Getting It Found Is the Next One.",
       paragraphs: [
-        "There are over ten thousand new books published in the United States every year. Without a deliberate, well-executed marketing strategy behind your title, even the best-written book can sit unseen on a digital shelf, discovered by almost nobody. The authors who build real readerships, the ones who earn consistent royalties month after month, aren't always the ones who wrote the most brilliant prose. They're the ones who invested in getting their book in front of the right readers.",
-        "NexiFire Publishing provides full-service book marketing for American authors at every stage of their career. Whether you're a first-time author who has just published your debut title, a self-published author looking to reach a wider audience, or an established writer launching your next release, we build a marketing strategy that fits your book, your genre, and your readership, not a generic template applied to every title regardless of what it is.",
+        "Tens of thousands of new books get published every year. Without a real strategy behind it, even a genuinely great book can sit unseen, not because it's bad, but because nobody knew it existed. The authors earning consistent royalties month after month aren't always the ones who wrote the best prose. They're usually the ones who treated getting readers as seriously as they treated writing.",
+        "As a book marketing expert working across every genre, I build a strategy around your book, not a template we run for everyone. First-time author with a debut title? Self-published author trying to reach past your existing circle? Established writer with a backlist and a new release coming? The plan looks different each time, because it should.",
+        "We won't promise you'll hit a bestseller list; no honest book marketing service can promise that. What we do promise is a clear set of deliverables, a transparent strategy, and a marketing consultant who actually reads your book before pitching it to anyone.",
       ],
       imageSrc: "/Rectangle 23834 (4).webp",
-      imageAlt: "Book marketing support",
+      imageAlt: "Start Marketing Today",
       reverse: true,
     },
     whoWeServe: {
-      badgeText: "The NexiFire Difference",
-      title: "Why American Authors Choose NexiFire for Book Marketing",
-      description: "",
+      badgeText: "Print-on-Demand",
+      title: "Sell Physical Books Without Printing Costs or Inventory Risk",
+      description: "Nobody needs to order 500 copies and stack boxes in a garage anymore. Every time a reader orders your book, it's printed and shipped directly to them; you never touch a copy, and there's no upfront cost sitting on a shelf.",
       stats: [
         { value: "7+", label: "Years of experience", highlighted: true },
         { value: "130+", label: "Professional ghostwriters" },
@@ -216,6 +217,8 @@ export const publishingServicePageData: Record<
         "United States Market Knowledge",
         "Long-Term Author Brand Building",
       ],
+      buttonLabel: "Start Marketing Today",
+      buttonHref: "/contact",
     },
     whatsIncluded: {
       badgeText: "What's Included",
@@ -225,7 +228,7 @@ export const publishingServicePageData: Record<
         { label: "Amazon KDP Advertising" },
         { label: "Social Media Book Marketing" },
         { label: "BookTok & Bookstagram Outreach" },
-        { label: "Book PR & Media Pitching" },
+        { label: "Book PR & Media Pitching — real book publicity, not just a press release nobody opens" },
         { label: "Author Website & SEO" },
         { label: "Email Marketing for Authors" },
         { label: "ARC Distribution & Early Reviews" },
@@ -241,38 +244,44 @@ export const publishingServicePageData: Record<
       items: [
         {
           question:
-            "What book marketing services does NexiFire offer for self-published authors in the United States?",
+            "What book marketing services does NexiFire offer for self-published authors?",
           answer:
-            "NexiFire offers a comprehensive range of book marketing services for self-published authors in the United States, including Amazon KDP advertising, social media campaigns on Instagram, TikTok, Facebook, and LinkedIn, BookTok and bookstagram influencer outreach, press releases and media pitching, ARC distribution for early reviews, author website design and SEO, email marketing, and complete global distribution through IngramSpark and print-on-demand via Amazon KDP Print.",
+            "Amazon KDP advertising, social campaigns across Instagram, TikTok, Facebook, and LinkedIn, BookTok and Bookstagram outreach, press releases and media pitching, ARC distribution for early reviews, author website design and SEO, email marketing, and full global distribution with print-on-demand.",
         },
         {
           question:
-            "What is print-on-demand and how does it work for American authors?",
+            "What does book promotion cost for self-published authors in 2025–2026?",
           answer:
-            "Print-on-demand (POD) publishing means your book is printed only when a reader orders a physical copy, eliminating upfront printing costs and inventory risk entirely. NexiFire sets up your POD through Amazon KDP Print and IngramSpark, making your paperback and hardcover available to readers in the United States and worldwide through 39,000+ retail and library partners, with no minimum print run and no stock to manage.",
+            "Pricing depends on scope; a single-channel push (say, Amazon ads only) costs less than a full launch campaign with PR, influencer outreach, and email marketing running together. We quote flat, upfront packages once we know your book and goals, rather than a one-size number that doesn't reflect what you actually need. No hidden fees, no surprise invoices mid-campaign.",
         },
         {
           question:
-            "How does global book distribution work for self-published authors?",
+            "What is print-on-demand and how does it work?",
           answer:
-            "NexiFire's global distribution service submits your book to IngramSpark, the world's largest book distribution network with 39,000+ retail and library partners, as well as Amazon's global storefronts, Booktopia, Barnes & Noble, and all major digital platforms. This means your book is available for purchase in print and digital formats across 40+ countries from the day it launches.",
+            "Your book gets printed only when a reader orders a physical copy, no upfront printing costs, no inventory risk. We set this up so your paperback and hardcover are available through tens of thousands of retail and library partners worldwide, with no minimum print run.",
         },
         {
           question:
-            "Do you offer book marketing services for children's books in the United States?",
+            "How does global book distribution actually work?",
           answer:
-            "Yes. NexiFire provides specialist children's book marketing services in the United States including school and library outreach campaigns, distribution through IngramSpark to educational suppliers, Facebook and Pinterest advertising targeted at parents and educators, submission to United States children's literary awards, school book fair coordination, and BookTok campaigns to the parent and teacher communities that influence children's book purchases.",
+            "Your book gets submitted into a distribution network reaching 39,000+ retail and library partners, plus Amazon's storefronts and every major digital platform, available in print and digital across 40+ countries from launch day.",
         },
         {
-          question: "Can NexiFire guarantee my book will become a bestseller?",
+          question: "Do you offer marketing for self-help and nonfiction books specifically?",
           answer:
-            "No ethical book marketing company can guarantee specific sales outcomes. What NexiFire guarantees is a clearly defined set of campaign deliverables, specific ad campaigns, media pitches, influencer contacts, email sequences, and distribution setups, executed to a professional standard by an experienced team. We focus on building real, sustainable readership rather than short-term vanity metrics.",
+            "Yes. Self-help and nonfiction marketing looks different from fiction; it's usually more about building author authority than chasing reviews, so we lean into podcast outreach, LinkedIn and media pitching, and email marketing that builds a list around your expertise, not just your book.",
         },
         {
           question:
-            "How is NexiFire different from other book marketing companies in the United States?",
+            "Can you guarantee my book becomes a bestseller?",
           answer:
-            "NexiFire combines book marketing with full publishing services, meaning our marketing team works from a position of intimate knowledge of your book, its production, its metadata, and its distribution. Unlike standalone marketing companies, we can align your marketing strategy with the full technical and distribution setup of your title from the ground up, rather than inheriting a publishing situation created by someone else.",
+            "No honest book marketing company can guarantee that, and anyone who does is overselling you. What we guarantee is real deliverables, specific ad campaigns, media pitches, influencer contacts, email sequences, and distribution setups, executed properly, aimed at building sustainable readership rather than a one-week vanity spike.",
+        },
+        {
+          question:
+            "What makes NexiFire different from other book marketing services?",
+          answer:
+            "We combine marketing with full publishing services, so the marketing team already knows your book's production, metadata, and distribution setup. A lot of standalone book marketing services work with a file someone else built and hope the metadata's right. We're not guessing.",
         },
       ],
       sidebarTitle: "Need A Marketing Plan For Your Book?",
@@ -282,15 +291,15 @@ export const publishingServicePageData: Record<
       sidebarButtonHref: "/contact",
     },
     testimonials: {
-      badgeText: "Author Results",
-      title: "American Authors Who Found Their Readers With NexiFire",
+      badgeText: "",
+      title: "What Authors Say",
       description: "",
       buttonLabel: "View All Review",
       buttonHref: "#",
       testimonials: [
         {
           quote:
-            "Real results from real American authors who trusted NexiFire to market their books and build their readership. I published my self-help book through NexiFire and was honest with them that I had no existing platform, no Instagram, no email list, nothing. They weren't fazed. They built my Amazon listing properly, set up my email marketing from scratch, and launched a targeted Instagram campaign. Within three months, I had 800 subscribers and consistent weekly sales. Extraordinary.",
+            "I told NexiFire straight up, no platform, no Instagram, no email list, nothing. They weren't fazed. Built my Amazon listing properly, set up email marketing from scratch, ran a targeted Instagram campaign. Three months in, I had 800 subscribers and consistent weekly sales.",
           name: "Leila Allen",
           avatarSrc:
             "https://images.unsplash.com/photo-1494790108377-be9c29b29330?auto=format&fit=crop&w=120&q=80",
@@ -299,7 +308,7 @@ export const publishingServicePageData: Record<
         },
         {
           quote:
-            "As a business consultant, I needed my book to generate leads, not just sales. NexiFire's marketing team understood the difference immediately. They focused on LinkedIn PR and podcast outreach, and within six weeks I was being interviewed on three business podcasts and had two speaking enquiries directly referencing the book. Exactly the outcome I needed.",
+            "As a business consultant, I needed my book generating leads, not just sales. They got that immediately, focused on LinkedIn PR and podcast outreach. Six weeks in, I'd been interviewed on three business podcasts with two speaking inquiries that came directly from the book." ,
           name: "Greg Thomas",
           avatarSrc:
             "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&w=120&q=80",
@@ -308,7 +317,7 @@ export const publishingServicePageData: Record<
         },
         {
           quote:
-            "My children's picture book needed to reach schools and libraries, not just Amazon. NexiFire handled the IngramSpark distribution setup and coordinated school library outreach. My book is now in three public libraries and two school collections. For a self-published children's book in the United States, that is a real achievement.",
+            "My children's picture book needed to reach schools and libraries, not just Amazon. They handled the distribution setup, got it submitted to the right retail channels, and coordinated school outreach. It's now sitting in three public libraries and two school collections — for a self-published kids' book, that's a real win.",
           name: "Mei Lenny",
           avatarSrc:
             "https://images.unsplash.com/photo-1438761681033-6461ffad8d80?auto=format&fit=crop&w=120&q=80",
@@ -318,9 +327,10 @@ export const publishingServicePageData: Record<
       ],
     },
     contact: {
-      title: "Ready to Build Your Readership?",
+      
+      title: "READY TO PUBLISH YOUR BOOK?",
       description:
-        "Talk to a NexiFire marketing specialist today. We'll review your book, your genre, and your goals, and build a marketing plan that gives your title the visibility it deserves.",
+        "Tell us where you are and where you want to go. As a self-publishing company built for authors, NexiFire Publishing will design the right plan, bring in the right specialists, and help you move forward with confidence, whether this is your first book or your fifth.",
       buttonLable: "Get My Free Marketing Consultation",
     },
   },

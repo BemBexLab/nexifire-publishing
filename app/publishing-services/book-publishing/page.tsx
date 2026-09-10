@@ -19,60 +19,78 @@ const page = () => {
       <PageHero
         eyebrow="Nexfire Publishing"
         title={`Book Publishing Services United States`}
-        description={<><span className="font-bold text-black text-2xl">Publish Your eBook. Reach Readers Everywhere.</span> <br /> NexiFire Publishing handles everything American authors need to get their eBook into the world, professional EPUB and MOBI conversion, cover design built for digital storefronts, Kindle KDP setup, and simultaneous distribution to every major platform. Your book lives globally, without the guesswork.</>}
+        description={
+          <>
+            <span className="font-bold text-black text-2xl">
+              Publish Your eBook. Reach Readers Everywhere.
+            </span>{" "}
+            <br /> NexiFire Publishing handles everything American authors need
+            to get their eBook into the world, professional EPUB and MOBI
+            conversion, cover design built for digital storefronts, Kindle KDP
+            setup, and simultaneous distribution to every major platform. Your
+            book lives globally, without the guesswork.
+          </>
+        }
         buttonLabel="Publish Your Book Now"
       />
       <Introduction
         eyebrow="What's Included"
         title="Complete eBook Publishing Services in the United States"
-        description={<>
-          <p className="my-5 text-base font-light leading-[1.45] text-[#444444] sm:text-lg">
-            Every eBook published through NexiFire goes through a professional, multi-stage production process. Here is exactly what we deliver for every author we work with.
-          </p>
-          <ul className="list-disc ml-5 space-y-2 text-base font-light leading-[1.45] text-[#777777] sm:text-lg">
-            <li>EPUB & MOBI Conversion</li>
-            <li>eBook Cover Design</li>
-            <li>Amazon Kindle KDP Setup</li>
-            <li>Apple Books Publishing</li>
-            <li>Global eBook Distribution</li>
-            <li>Metadata & SEO Optimisation</li>
-            <li>ISBN Registration</li>
-            <li>Pricing Strategy & Royalty Advice</li>
-          </ul>
-        </>}
+        description={
+          <>
+            <p className="my-5 text-base font-light leading-[1.45] text-[#444444] sm:text-lg">
+              Every eBook published through NexiFire goes through a
+              professional, multi-stage production process. Here is exactly what
+              we deliver for every author we work with.
+            </p>
+            <ul className="list-disc ml-5 space-y-2 text-base font-light leading-[1.45] text-[#777777] sm:text-lg">
+              <li>EPUB & MOBI Conversion</li>
+              <li>eBook Cover Design</li>
+              <li>Amazon Kindle KDP Setup</li>
+              <li>Apple Books Publishing</li>
+              <li>Global eBook Distribution</li>
+              <li>Metadata & SEO Optimisation</li>
+              <li>ISBN Registration</li>
+              <li>Pricing Strategy & Royalty Advice</li>
+            </ul>
+          </>
+        }
         imageSrc="/0eee94f7-4643-4e46-8b95-cc9232497a79 1.webp"
       />
-      <OurProcess
-        badgeText="How It Works"
-        title="Publish Your Book in 4 Clear Steps"
-        description="Publishing a book in the United States doesn't need to be complicated."
-        steps={[
-          {
-            number: "01",
-            title: "Free Consultation",
-            description:
-              "You will speak with your dedicated publishing consultant. We review your manuscript, discuss your goals, and recommend the right package.",
-          },
-          {
-            number: "02",
-            title: "Edit, Polish & Design",
-            description:
-              "From developmental editing and proofreading to cover design and interior formatting, we refine every word and visual element until your book is publication-ready.",
-          },
-          {
-            number: "03",
-            title: "Print & Convert",
-            description:
-              "Your book goes to print in hardcover or paperback while simultaneously being converted to eBook and audiobook formats.",
-          },
-          {
-            number: "04",
-            title: "Launch & Distribute",
-            description:
-              "Your title is listed globally across 40+ countries, with ISBN registration, metadata optimisation, and launch marketing support.",
-          },
-        ]}
-      />
+      <div className="bg-[#fffaf6] py-14 sm:py-16 md:py-20 lg:py-24">
+        <OurProcess
+          badgeText="How It Works"
+          title="Publish Your Book in 4 Clear Steps"
+          description="Publishing a book in the United States doesn't need to be complicated."
+          steps={[
+            {
+              number: "01",
+              title: "Free Consultation",
+              description:
+                "You will speak with your dedicated publishing consultant. We review your manuscript, discuss your goals, and recommend the right package.",
+            },
+            {
+              number: "02",
+              title: "Edit, Polish & Design",
+              description:
+                "From developmental editing and proofreading to cover design and interior formatting, we refine every word and visual element until your book is publication-ready.",
+            },
+            {
+              number: "03",
+              title: "Print & Convert",
+              description:
+                "Your book goes to print in hardcover or paperback while simultaneously being converted to eBook and audiobook formats.",
+            },
+            {
+              number: "04",
+              title: "Launch & Distribute",
+              description:
+                "Your title is listed globally across 40+ countries, with ISBN registration, metadata optimisation, and launch marketing support.",
+            },
+          ]}
+        />
+      </div>
+
       <PricingPackages />
       <WhyChoose
         badgeText="The NexiFire Difference"
@@ -81,28 +99,23 @@ const page = () => {
         reasons={[
           {
             title: "You Keep 100% of Your Royalties",
-            description:
-              "",
+            description: "",
           },
           {
             title: "Affordable Without Cutting Corners",
-            description:
-              "",
+            description: "",
           },
           {
             title: "One Team, Every Platform",
-            description:
-              "",
+            description: "",
           },
           {
             title: "Files Tested on Real Devices",
-            description:
-              "",
+            description: "",
           },
           {
             title: "Local Knowledge, Global Reach",
-            description:
-              "",
+            description: "",
           },
         ]}
       />
@@ -166,7 +179,8 @@ const page = () => {
               "Yes, absolutely. NexiFire is a publishing services company, we never acquire, share, or claim any rights to your eBook. You retain 100% of your copyright, your digital rights, and every cent of royalties your book earns. You can withdraw your title from distribution at any time, update it, or use the files we produce elsewhere without restriction.",
           },
           {
-            question: "What royalties will I earn from eBook sales in the United States?",
+            question:
+              "What royalties will I earn from eBook sales in the United States?",
             answer:
               "Royalty rates vary by platform. Amazon KDP pays 70% on books priced between $2.99 and $9.99 USD, and 35% outside that range. Apple Books and Kobo both pay 70% royalties. Google Play pays approximately 52%. As NexiFire takes no commission from your sales, every dollar from these platforms comes directly to you as the author-publisher.",
           },
