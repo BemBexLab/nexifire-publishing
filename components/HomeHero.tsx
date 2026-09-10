@@ -254,33 +254,36 @@ const AnimatedText = ({
   );
 };
 
+
 const HeroButtons = () => {
   return (
     <motion.div
       variants={heroItemVariants}
-      className="mt-6 flex w-full max-w-[760px] flex-row items-stretch justify-center gap-3 sm:mt-7 sm:flex-row sm:flex-wrap sm:items-center sm:gap-4"
+      className="mt-6 flex w-full max-w-[760px] flex-col items-stretch justify-center gap-3 px-4 sm:mt-7 sm:flex-row sm:flex-wrap sm:items-center sm:gap-4 sm:px-0"
     >
       <a
         href="/contact"
-        className="inline-flex min-h-[48px] min-w-0 flex-1 items-center justify-center rounded-[7px] bg-[linear-gradient(90deg,#B24002_0%,#FF5B01_100%)] px-3 py-3 text-center text-[0.95rem] font-extralight leading-tight text-[#FFFFFF] shadow-[0_8px_20px_rgba(178,64,2,0.22)] transition hover:brightness-[0.98] sm:w-auto sm:max-w-none sm:flex-none sm:px-6 sm:text-base md:min-w-[220px] md:text-lg"
+        className="inline-flex min-h-[48px] w-full items-center justify-center rounded-[7px] bg-[linear-gradient(90deg,#B24002_0%,#FF5B01_100%)] px-0 py-3 text-center text-[0.95rem] font-extralight leading-tight text-[#FFFFFF] shadow-[0_8px_20px_rgba(178,64,2,0.22)] transition hover:brightness-[0.98] max-[372px]:min-h-[40px] max-[372px]:px-3 max-[372px]:py-2 max-[372px]:text-[0.78rem] sm:w-auto sm:max-w-none sm:flex-none sm:px-6 sm:text-base md:min-w-[220px] md:text-lg"
       >
         Get My Free Publishing Consultation
-        <span className="ml-2 text-xl leading-none">
+        <span className="ml-2 shrink-0 text-xl leading-none">
           <MdOutlineArrowOutward />
         </span>
       </a>
+
       <a
         href="/pricing-packages"
-        className="inline-flex min-h-[48px] min-w-0 flex-1 items-center justify-center rounded-[7px] border border-[#9F9F9F] bg-white/55 px-3 py-3 text-center text-[0.95rem] font-light leading-tight text-[#4B4B4B] shadow-[0_4px_14px_rgba(0,0,0,0.04)] backdrop-blur-[2px] transition hover:bg-white sm:w-auto sm:max-w-none sm:flex-none sm:px-6 sm:text-base md:min-w-[260px] md:text-lg"
+        className="inline-flex min-h-[48px] w-full items-center justify-center rounded-[7px] border border-[#9F9F9F] bg-white/55 px-0 py-3 text-center text-[0.95rem] font-light leading-tight text-[#4B4B4B] shadow-[0_4px_14px_rgba(0,0,0,0.04)] backdrop-blur-[2px] transition hover:bg-white max-[372px]:min-h-[40px] max-[372px]:px-3 max-[372px]:py-2 max-[372px]:text-[0.78rem] sm:w-auto sm:max-w-none sm:flex-none sm:px-6 sm:text-base md:min-w-[260px] md:text-lg"
       >
         See Our Publishing Packages
-        <span className="ml-2 text-xl leading-none">
+        <span className="ml-2 shrink-0 text-xl leading-none">
           <MdOutlineArrowOutward />
         </span>
       </a>
     </motion.div>
   );
 };
+
 
 const LogoMarquee = ({
   className = "",
@@ -303,7 +306,7 @@ const LogoMarquee = ({
         {marqueeLogos.map((logo, index) => (
           <div
             key={`${logo.src}-${index}`}
-            className={`flex h-[68px] min-w-[150px] items-center justify-center px-5 sm:h-[76px] sm:min-w-[170px] lg:h-[84px] lg:min-w-[188px] lg:px-6 ${cardClassName}`}
+            className={`flex h-[90px] sm:h-[38px] min-w-[150px] items-center justify-center px-5 sm:h-[76px] sm:min-w-[170px] lg:h-[84px] lg:min-w-[188px] lg:px-6 ${cardClassName}`}
           >
             <Image
               src={logo.src}
@@ -311,7 +314,7 @@ const LogoMarquee = ({
               width={132}
               height={44}
               sizes="132px"
-              className={`h-auto w-full object-contain opacity-80 grayscale transition ${imageClassName}`}
+              className={`h-[40px] sm:h-auto w-full object-contain opacity-80 grayscale transition ${imageClassName}`}
             />
           </div>
         ))}
@@ -323,21 +326,26 @@ const LogoMarquee = ({
 const MobileBooksCarousel = () => {
   return (
     <div
-      className="absolute inset-x-0 bottom-[84px] z-40 w-full sm:hidden"
+      className="absolute inset-x-0 bottom-[1px] z-0 w-full sm:hidden"
       aria-label="Featured books"
     >
-      <div className="no-scrollbar flex items-end gap-4 overflow-x-auto overflow-y-hidden px-4 pb-2 pt-1 touch-pan-x">
-        {heroBooks.map((book) => (
+      <div className="flex w-full items-end justify-center px-2">
+        {heroBooks.slice(1, 4).map((book, index) => (
           <div
             key={book.src}
-            className="flex-none first:ml-0 last:pr-4"
+            className={`
+              relative flex-none
+              ${index === 0 ? "-mr-3 translate-y-[18px]" : ""}
+              ${index === 1 ? "z-10 -mx-3 -translate-y-[8px]" : ""}
+              ${index === 2 ? "-ml-3 translate-y-[18px]" : ""}
+            `}
           >
-            <div className="relative aspect-[355/504] w-[30vw] min-w-[112px] max-w-[142px] overflow-hidden">
+            <div className="relative aspect-[355/504] w-[36vw] min-w-[130px] max-w-[165px] overflow-hidden">
               <Image
                 src={book.src}
                 alt={book.alt}
                 fill
-                sizes="(max-width: 639px) 30vw, 0px"
+                sizes="(max-width: 639px) 26vw, 0px"
                 className="object-cover"
                 priority
               />
@@ -357,13 +365,13 @@ const DesktopHero = () => {
         cardClassName="h-[42px] min-w-[86px] rounded-[12px] px-2.5 sm:h-[68px] sm:min-w-[136px] sm:rounded-none sm:border-0 sm:bg-transparent sm:px-4 sm:shadow-none sm:backdrop-blur-0 xl:min-w-[148px] 2xl:min-w-[168px] lg:px-5"
       />
 
-      <section className="relative min-h-[770px] overflow-hidden bg-[url('/Rectangle%201.webp')] bg-cover bg-center bg-no-repeat px-4 pb-[168px] pt-24 text-[#1f1f1f] sm:px-5 sm:pb-[160px] sm:pt-28 md:min-h-[900px] md:pb-[185px] md:pt-32 lg:min-h-[960px] lg:px-6 lg:pb-[220px] lg:pt-36 xl:min-h-[900px] xl:px-6 xl:pb-[220px] xl:pt-5 2xl:min-h-[1020px] 2xl:px-8 2xl:pb-[236px] 2xl:pt-6 [clip-path:polygon(0%_0%,100%_0%,100%_100%,82%_100%,76%_92%,24%_92%,18%_100%,0%_100%)]">
+      <section className="relative min-h-[770px] overflow-hidden bg-[url('/Rectangle%201.webp')] bg-cover bg-center bg-no-repeat px-2 pb-[168px] pt-12 text-[#1f1f1f] sm:px-5 sm:pb-[160px] sm:pt-15 md:min-h-[900px] md:pb-[185px] md:pt-15 lg:min-h-[960px] lg:px-6 lg:pb-[220px] lg:pt-15 xl:min-h-[900px] xl:px-6 xl:pb-[220px] xl:pt-5 2xl:min-h-[1020px] 2xl:px-8 2xl:pb-[236px] 2xl:pt-6 [clip-path:polygon(0%_0%,100%_0%,100%_100%,82%_100%,76%_92%,24%_92%,18%_100%,0%_100%)]">
         <HeroAccent className="pointer-events-none absolute left-[-10%] top-[22%] z-10 h-[78px] w-[78px] -rotate-90 opacity-90 sm:left-[2%] sm:h-[124px] sm:w-[124px] 2xl:h-[176px] 2xl:w-[176px]" />
         <HeroAccent className="pointer-events-none absolute right-[-8%] top-[14%] z-10 h-[84px] w-[84px] opacity-90 sm:right-[2%] sm:top-[12%] sm:h-[124px] sm:w-[124px] 2xl:h-[176px] 2xl:w-[176px]" />
 
         <div className="relative z-30 mx-auto flex w-full flex-col">
           <motion.div
-            className="relative z-30 mx-auto flex w-full flex-col items-center px-1 pb-[138px] pt-14 text-center text-black sm:px-3 sm:pb-[205px] sm:pt-18 md:pb-[205px] md:pt-20 lg:pb-[235px] lg:pt-24 xl:px-4 xl:pb-[236px] xl:pt-28 2xl:pb-[308px] 2xl:pt-[132px]"
+            className="relative z-30 mx-auto flex w-full flex-col items-center px-1 pb-[70px] min-[380px]:pb-[100px] pt-14 text-center text-black sm:px-3 sm:pb-[105px] sm:pt-18 md:pb-[70px] md:pt-20 lg:pb-[200px] lg:pt-24 xl:px-4 xl:pb-[230px] xl:pt-28 2xl:pb-[350px] 2xl:pt-[132px]"
             variants={heroContainerVariants}
             initial="hidden"
             animate="visible"
@@ -415,7 +423,7 @@ const DesktopHero = () => {
 
             <motion.p
               variants={heroTextRevealVariants}
-              className="body-copy mx-auto mt-6 max-w-[1050px] text-center text-[0.95rem] leading-[1.55] text-[#777777] sm:text-base xl:text-lg]"
+              className="body-copy mx-auto mt-6 max-w-[1050px] text-center text-[0.95rem] leading-[1.55] text-[#777777] sm:text-base xl:text-lg"
             >
               <AnimatedText text={heroDescription} />
             </motion.p>
