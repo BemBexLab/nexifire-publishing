@@ -166,7 +166,7 @@ const FooterCTA = () => {
               variants={revealVariants}
               className="mt-5 max-w-[670px] text-base leading-[1.7] text-[#7D7D7D] sm:text-lg"
             >
-              NexiFire Publishing is Australia's reliable self-publishing partner. We help authors publish eBooks, print books, and audiobooks with professional services including ghostwriting, editing, formatting, cover design, and global distribution.
+              NexiFire Publishing is United States reliable self-publishing partner. We help authors publish eBooks, print books, and audiobooks with professional services including ghostwriting, editing, formatting, cover design, and global distribution.
             </motion.p>
             <motion.div variants={revealVariants} className="mt-6 w-full sm:w-fit">
               <Link href="/contact" className="w-full sm:w-fit">
@@ -299,7 +299,7 @@ const FooterCTA = () => {
                 <motion.li variants={listItemVariants} className="flex items-start">
                   <SlLocationPin className="mt-1 shrink-0" />
                   <a href="" className="ml-2 min-w-0 break-words">
-                    16A Fox Cl, Kariong NSW 2250, Australia
+                    United States
                   </a>
                 </motion.li>
               </motion.ul>

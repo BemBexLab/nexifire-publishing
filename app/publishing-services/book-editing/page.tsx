@@ -17,15 +17,15 @@ const page = () => {
     <section className="overflow-hidden bg-white">
       <PageHero
         eyebrow="Nexifire Publishing"
-        title={`Professional Book Editing Services Australia`}
-        description={<><span className="text-black font-bold text-2xl">Your Manuscript Deserves a Professional Editor</span> <br /> NexiFire Publishing connects Australian authors with experienced, qualified book editors and proofreaders who bring out the very best in every manuscript, from the first structural read to the final word-by-word review before print.</>}
+        title={`Professional Book Editing Services United States`}
+        description={<><span className="text-black font-bold text-2xl">Your Manuscript Deserves a Professional Editor</span> <br /> NexiFire Publishing connects American authors with experienced, qualified book editors and proofreaders who bring out the very best in every manuscript, from the first structural read to the final word-by-word review before print.</>}
         buttonLabel="Edit Your Book Today"
       />
       <Introduction
         eyebrow="Our Editorial Services"
         title="At Nexifire, We Do Every Level of Book Editing"
         description={<>
-        <p>Not all editing is the same. NexiFire offers four distinct levels of manuscript editing services in Australia, each designed to address a specific stage of your book's development.</p>
+        <p>Not all editing is the same. NexiFire offers four distinct levels of manuscript editing services in the United States, each designed to address a specific stage of your book's development.</p>
         <ul className="list-inside list-disc mt-4 text-[#444444] sm:text-lg">
           <li>Developmental Editing</li>
           <li>Line Editing</li>
@@ -40,7 +40,7 @@ const page = () => {
       <OurProcess
         badgeText="How It Works"
         title="Our Editing Process, Step by Step"
-        description="Working with a professional book editor in Australia should feel straightforward and collaborative. Here is exactly what you can expect when you work with NexiFire."
+        description="Working with a professional book editor in the United States should feel straightforward and collaborative. Here is exactly what you can expect when you work with NexiFire."
         steps={[
           {
             number: "01",
@@ -70,7 +70,7 @@ const page = () => {
       />
       <WhyChoose
         badgeText="The NexiFire Difference"
-        title="Why Australian Authors Choose NexiFire for Book Editing"
+        title="Why American Authors Choose NexiFire for Book Editing"
         description=""
         reasons={[
           {
@@ -79,14 +79,14 @@ const page = () => {
               "Every manuscript is edited by a qualified human professional.",
           },
           {
-            title: "Australian English, Australian Readers",
+            title: "American English, American Readers",
             description:
-              "Our editors write and edit in Australian English.",
+              "Our editors write and edit in American English.",
           },
           {
             title: "Affordable, Transparent Pricing",
             description:
-              "We believe affordable book editing in Australia should not mean substandard work.",
+              "We believe affordable book editing in the United States should not mean substandard work.",
           },
           {
             title: "Your Voice Stays Yours",
@@ -100,7 +100,7 @@ const page = () => {
           },
         ]}
       />
-      <PublishYourBook eyebrow="Book Editing With NexiFire" title="Ready to Work With a Professional Book Editor in Australia?" description="Get a free, no-obligation quote for your manuscript today. Tell us your genre, word count, and editing needs, and we'll match you with the right editor within 24 hours." backgroundImageSrc="/Frame 2147225868.webp" backgroundAlt="" buttonLabel="Submit Your Manuscript Today"/>
+      <PublishYourBook eyebrow="Book Editing With NexiFire" title="Ready to Work With a Professional Book Editor in the United States?" description="Get a free, no-obligation quote for your manuscript today. Tell us your genre, word count, and editing needs, and we'll match you with the right editor within 24 hours." backgroundImageSrc="/Frame 2147225868.webp" backgroundAlt="" buttonLabel="Submit Your Manuscript Today"/>
       <WhatsIncluded
         badgeText="What's Included"
         title="Professional Editing"
@@ -112,7 +112,7 @@ const page = () => {
           { label: "Confidentiality agreement before commencement" },
           { label: "Dedicated editor contact throughout" },
           { label: "Delivery by agreed deadline, guaranteed" },
-          { label: "Australian English style as the default" },
+          { label: "American English style as the default" },
           { label: "Transparent Flat-Rate Pricing" },
         ]}
         imageSrc="/Rectangle 23830.webp"
@@ -127,7 +127,7 @@ const page = () => {
         title="A Great Story Still Needs a Great Editor"
         paragraphs={[
           "Even the most talented writers benefit from a second pair of expert eyes. A professional book editor doesn't just fix typos; they make your story stronger, your argument clearer, and your voice sharper. They catch the things you have read past a hundred times and never noticed. They ask the questions your readers will ask, before your readers get the chance.",
-          "At NexiFire Publishing, our manuscript editing services in Australia are delivered by qualified editors with deep genre knowledge and a genuine passion for the written word. Whether you are preparing a debut novel, a business book, a children's picture book, or a personal memoir, we match you with an editor who understands your audience and your goals.",
+          "At NexiFire Publishing, our manuscript editing services in the United States are delivered by qualified editors with deep genre knowledge and a genuine passion for the written word. Whether you are preparing a debut novel, a business book, a children's picture book, or a personal memoir, we match you with an editor who understands your audience and your goals.",
           "Every manuscript that leaves our editorial desk is publication-ready, polished, consistent, and crafted to meet the expectations of today's readers and reviewers.",
         ]}
         imageSrc="/Rectangle 23834 (2).webp"
@@ -140,7 +140,7 @@ const page = () => {
         title="Frequently Asked Questions"
         items={[
           {
-            question: "How much does book editing cost in Australia?",
+            question: "How much does book editing cost in the United States?",
             answer:
               "Cost is completely depend on the type of book editing, the length of your manuscript. Nexifire uses transparent flat rate. Contact us with your manuscript details for a free, accurate quote with no obligation.",
           },
@@ -157,9 +157,9 @@ const page = () => {
               "If your manuscript is at an early or mid-draft stage, or if you are uncertain whether the structure and story are working, a developmental edit is the right for you at this point. If you are confident in the structure and just need language, grammar, and consistency refined, copy editing is appropriate. Our free consultation helps identify exactly where your manuscript is and what level of editing it needs for ready to publish.",
           },
           {
-            question: "Do you offer children's book editing services in Australia?",
+            question: "Do you offer children's book editing services in the United States?",
             answer:
-              "Yes. NexiFire has specialist children's book editors in Australia who work across picture books, early readers, chapter books, and middle-grade fiction. Children's editing requires particular attention to age-appropriate vocabulary, sentence length, page turns, and the relationship between text and illustration, all areas our editors are experienced in.",
+              "Yes. NexiFire has specialist children's book editors in the United States who work across picture books, early readers, chapter books, and middle-grade fiction. Children's editing requires particular attention to age-appropriate vocabulary, sentence length, page turns, and the relationship between text and illustration, all areas our editors are experienced in.",
           },
           {
             question:
@@ -182,7 +182,7 @@ const page = () => {
       <Testimonials
         badgeText="Author Experiences"
         title="What Authors Say About Our Editing Services"
-        description="Thousands of Australian authors have worked with NexiFire's editorial team. Here are a few of their experiences."
+        description="Thousands of American authors have worked with NexiFire's editorial team. Here are a few of their experiences."
         buttonLabel="View All Review"
         buttonHref="#"
         testimonials={[
@@ -217,7 +217,7 @@ const page = () => {
       />
       <GetInTouchContact
         title="Ready to Publish Your Book?"
-        description={<><p>Whether you have a finished manuscript, a half-written draft, or just a powerful idea you don't know how to start, our publishing specialists are here to help. At NexiFire Publishing, we work with Australian authors at every stage of their journey, from first conversation to final distribution.</p>
+        description={<><p>Whether you have a finished manuscript, a half-written draft, or just a powerful idea you don't know how to start, our publishing specialists are here to help. At NexiFire Publishing, we work with American authors at every stage of their journey, from first conversation to final distribution.</p>
         <p className="mt-2">Tell us about your project today and take the first step toward becoming a published author.</p>
 </>}
       />

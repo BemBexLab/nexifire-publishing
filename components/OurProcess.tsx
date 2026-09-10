@@ -37,6 +37,16 @@ const fiveStepDashedPaths = [
   "M1041 214C1062 214 1082 118 1112 118",
 ];
 
+const sixStepDashedPaths = [
+  "M220 142C326 142 438 142 547 142",
+  "M767 142C876 142 988 142 1094 142",
+  "M220 398C326 398 438 398 547 398",
+  "M767 398C876 398 988 398 1094 398",
+  "M110 254C110 268 110 276 110 290",
+  "M657 254C657 268 657 276 657 290",
+  "M1204 254C1204 268 1204 276 1204 290",
+];
+
 const nineStepDashedPaths = [
   ...fourStepDashedPaths,
   "M1200 350C1300 360 1300 452 1200 486",
@@ -234,6 +244,45 @@ const fiveStepLayoutClasses = [
   },
 ];
 
+const sixStepLayoutClasses = [
+  {
+    outerPosition: "xl:left-0 xl:top-[34px]",
+    cardHeight: "xl:h-[160px]",
+    cardWidth: "xl:w-[220px]",
+    pinPosition: "left-1/2 top-[-20px] -translate-x-1/2",
+  },
+  {
+    outerPosition: "xl:left-[547px] xl:top-[34px]",
+    cardHeight: "xl:h-[160px]",
+    cardWidth: "xl:w-[220px]",
+    pinPosition: "left-1/2 top-[-20px] -translate-x-1/2",
+  },
+  {
+    outerPosition: "xl:right-0 xl:top-[34px]",
+    cardHeight: "xl:h-[160px]",
+    cardWidth: "xl:w-[220px]",
+    pinPosition: "left-1/2 top-[-20px] -translate-x-1/2",
+  },
+  {
+    outerPosition: "xl:left-0 xl:top-[290px]",
+    cardHeight: "xl:h-[160px]",
+    cardWidth: "xl:w-[220px]",
+    pinPosition: "left-1/2 top-[-20px] -translate-x-1/2",
+  },
+  {
+    outerPosition: "xl:left-[547px] xl:top-[290px]",
+    cardHeight: "xl:h-[160px]",
+    cardWidth: "xl:w-[220px]",
+    pinPosition: "left-1/2 top-[-20px] -translate-x-1/2",
+  },
+  {
+    outerPosition: "xl:right-0 xl:top-[290px]",
+    cardHeight: "xl:h-[160px]",
+    cardWidth: "xl:w-[220px]",
+    pinPosition: "left-1/2 top-[-20px] -translate-x-1/2",
+  },
+];
+
 const nineStepLayoutClasses = [
   ...fourStepLayoutClasses,
   {
@@ -280,17 +329,22 @@ const OurProcess = ({
   );
 
   const isNineStepLayout = steps.length === 9;
+  const isSixStepLayout = steps.length === 6;
   const stepLayoutClasses = isNineStepLayout
     ? nineStepLayoutClasses
+    : isSixStepLayout
+      ? sixStepLayoutClasses
     : steps.length === 5
       ? fiveStepLayoutClasses
       : fourStepLayoutClasses;
   const dashedPaths = isNineStepLayout
     ? nineStepDashedPaths
+    : isSixStepLayout
+      ? sixStepDashedPaths
     : steps.length === 5
       ? fiveStepDashedPaths
       : fourStepDashedPaths;
-  const canvasHeight = isNineStepLayout ? 860 : 420;
+  const canvasHeight = isNineStepLayout ? 860 : isSixStepLayout ? 540 : 420;
   const displayedSteps = steps.map((step, index) => ({
     ...step,
     ...stepLayoutClasses[index % stepLayoutClasses.length],
@@ -393,7 +447,11 @@ const OurProcess = ({
 
         <div
           className={`relative mt-14 lg:mt-16 ${
-            isNineStepLayout ? "xl:min-h-[860px]" : "xl:min-h-[420px]"
+            isNineStepLayout
+              ? "xl:min-h-[860px]"
+              : isSixStepLayout
+                ? "xl:min-h-[540px]"
+                : "xl:min-h-[420px]"
           }`}
         >
           <svg

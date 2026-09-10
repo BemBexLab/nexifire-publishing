@@ -36,8 +36,8 @@ const page = () => {
       <WhoWeServe {...defaultWhoWeServeData} />
       <Testimonials
         badgeText="Author Stories"
-        title="What Australian Authors Say About NexiFire"
-        description="Over 2,000 Australian authors have trusted NexiFire Publishing to bring their books to life. Here's what a few of them have to say."
+        title="What American Authors Say About NexiFire"
+        description="Over 2,000 American authors have trusted NexiFire Publishing to bring their books to life. Here's what a few of them have to say."
         buttonLabel="View All Review"
         buttonHref="#"
         testimonials={[
@@ -75,7 +75,7 @@ const page = () => {
         title="Frequently Asked Questions"
         items={[
           {
-            question: "How do I publish a book in Australia with NexiFire?",
+            question: "How do I publish a book in the United States with NexiFire?",
             answer:
               "The process of publishing a book with NexiFire begins with a free, no-obligation consultation. We assess your manuscript, discuss your goals and budget, then let you know the right package and team.",
           },
@@ -87,20 +87,20 @@ const page = () => {
           },
           {
             question:
-              "Does NexiFire offer children's book publishing services in Australia?",
+              "Does NexiFire offer children's book publishing services in the United States?",
             answer:
-              "Yes. NexiFire is one of the most reliable and leading children's book publishing companies in Australia. We offer full-colour illustration sourcing or coordination, age-appropriate formatting, picture book and early reader layouts, hardcover and softcover printing, and full national and international distribution through Booktopia, Amazon, and library networks.",
+              "Yes. NexiFire is one of the most reliable and leading children's book publishing companies in the United States. We offer full-colour illustration sourcing or coordination, age-appropriate formatting, picture book and early reader layouts, hardcover and softcover printing, and full national and international distribution through Amazon and library networks.",
           },
           {
             question: "Can NexiFire produce an audiobook from my manuscript?",
             answer:
-              "Absolutely. Our audiobook formation service covers everything: professional voice casting from our Australian narrator network or guidance for author-narrated recordings, studio-quality audio production, editing, mastering, and distribution to Audible, Apple Books, Google Play, Spotify, and Storytel.",
+              "Absolutely. Our audiobook formation service covers everything: professional voice casting from our American narrator network or guidance for author-narrated recordings, studio-quality audio production, editing, mastering, and distribution to Audible, Apple Books, Google Play, Spotify, and Storytel.",
           },
           {
             question:
-              "How much does it cost to self-publish a book in Australia?",
+              "How much does it cost to self-publish a book in the United States?",
             answer:
-              "NexiFire offers affordable book publishing packages in Australia, starting from entry-level eBook-only packages through to comprehensive hardcover and global distribution bundles. We provide transparent, flat-rate pricing. Contact us for a custom quote based on your manuscript length, genre, and publishing goals.",
+              "NexiFire offers affordable book publishing packages in the United States, starting from entry-level eBook-only packages through to comprehensive hardcover and global distribution bundles. We provide transparent, flat-rate pricing. Contact us for a custom quote based on your manuscript length, genre, and publishing goals.",
           },
           {
             question:

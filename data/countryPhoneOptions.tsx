@@ -16,7 +16,6 @@ export const countryPhoneOptions: CountryPhoneOption[] = [
   { code: "AR", name: "Argentina", dialCode: "+54" },
   { code: "AM", name: "Armenia", dialCode: "+374" },
   { code: "AW", name: "Aruba", dialCode: "+297" },
-  { code: "AU", name: "Australia", dialCode: "+61" },
   { code: "AT", name: "Austria", dialCode: "+43" },
   { code: "AZ", name: "Azerbaijan", dialCode: "+994" },
   { code: "BS", name: "Bahamas", dialCode: "+1-242" },

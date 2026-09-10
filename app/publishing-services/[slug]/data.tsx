@@ -39,7 +39,7 @@ type PublishBannerContent = {
 type ImageDescContent = {
   badgeText?: string;
   title: string;
-  paragraphs: string[];
+  paragraphs: ReactNode[];
   listItems?: string[];
   imageSrc: string;
   imageAlt: string;
@@ -96,7 +96,7 @@ export const publishingServicePageData: Record<
     slug: "book-marketing",
     hero: {
       eyebrow: "NexiFire Publishing",
-      title: "Book Marketing Services Australia",
+      title: "Book Marketing Services United States",
       description: "Your Book is Written. Now Let's Make Sure Readers Find It.",
       buttonLabel: "Get a Marketing Plan",
       buttonHref: "/contact",
@@ -105,7 +105,7 @@ export const publishingServicePageData: Record<
       eyebrow: "Book Marketing Support",
       title: "Book Marketing",
       description:
-        "Publishing your book is only half the journey. NexiFire Publishing delivers professional book marketing services for Australian authors, from Amazon advertising and social media campaigns to global print-on-demand distribution across 40+ countries. We get your book in front of the readers who are already looking for it.",
+        "Publishing your book is only half the journey. NexiFire Publishing delivers professional book marketing services for American authors, from Amazon advertising and social media campaigns to global print-on-demand distribution across 40+ countries. We get your book in front of the readers who are already looking for it.",
       imageSrc: "/image 69.webp",
     },
     process: {
@@ -146,9 +146,9 @@ export const publishingServicePageData: Record<
         "Your book is distributed worldwide through major retailers, libraries, and digital platforms, making sure readers can easily find and purchase it in their preferred format.",
       reasons: [
         {
-          title: "Australian Retail",
+          title: "United States Retail",
           description:
-            "Booktopia, Dymocks, QBD, Big W, and independent Australian bookstores",
+            "Amazon, Barnes & Noble, Bookshop.org, and independent American bookstores",
         },
         {
           title: "International Retail",
@@ -158,7 +158,7 @@ export const publishingServicePageData: Record<
         {
           title: "Library Networks",
           description:
-            "National Library of Australia, public library systems, OverDrive, Bibliotheca, and international library distributors.",
+            "Library of Congress, public library systems, OverDrive, Bibliotheca, and international library distributors.",
         },
         {
           title: "Digital Platforms",
@@ -181,8 +181,8 @@ export const publishingServicePageData: Record<
       badgeText: "Why Book Marketing Matters",
       title: "Writing the Book Was the Hard Part. Now It Needs to Be Found.",
       paragraphs: [
-        "There are over ten thousand new books published in Australia every year. Without a deliberate, well-executed marketing strategy behind your title, even the best-written book can sit unseen on a digital shelf, discovered by almost nobody. The authors who build real readerships, the ones who earn consistent royalties month after month, aren't always the ones who wrote the most brilliant prose. They're the ones who invested in getting their book in front of the right readers.",
-        "NexiFire Publishing provides full-service book marketing for Australian authors at every stage of their career. Whether you're a first-time author who has just published your debut title, a self-published author looking to reach a wider audience, or an established writer launching your next release, we build a marketing strategy that fits your book, your genre, and your readership, not a generic template applied to every title regardless of what it is.",
+        "There are over ten thousand new books published in the United States every year. Without a deliberate, well-executed marketing strategy behind your title, even the best-written book can sit unseen on a digital shelf, discovered by almost nobody. The authors who build real readerships, the ones who earn consistent royalties month after month, aren't always the ones who wrote the most brilliant prose. They're the ones who invested in getting their book in front of the right readers.",
+        "NexiFire Publishing provides full-service book marketing for American authors at every stage of their career. Whether you're a first-time author who has just published your debut title, a self-published author looking to reach a wider audience, or an established writer launching your next release, we build a marketing strategy that fits your book, your genre, and your readership, not a generic template applied to every title regardless of what it is.",
       ],
       imageSrc: "/Rectangle 23834 (4).webp",
       imageAlt: "Book marketing support",
@@ -190,7 +190,7 @@ export const publishingServicePageData: Record<
     },
     whoWeServe: {
       badgeText: "The NexiFire Difference",
-      title: "Why Australian Authors Choose NexiFire for Book Marketing",
+      title: "Why American Authors Choose NexiFire for Book Marketing",
       description: "",
       stats: [
         { value: "7+", label: "Years of experience", highlighted: true },
@@ -202,7 +202,7 @@ export const publishingServicePageData: Record<
         "Marketing That's Built Around Your Book",
         "Publishing and Marketing Under One Roof",
         "Transparent Deliverables, Not Vague Promises",
-        "Australian Market Knowledge",
+        "United States Market Knowledge",
         "Long-Term Author Brand Building",
       ],
     },
@@ -230,15 +230,15 @@ export const publishingServicePageData: Record<
       items: [
         {
           question:
-            "What book marketing services does NexiFire offer for self-published authors in Australia?",
+            "What book marketing services does NexiFire offer for self-published authors in the United States?",
           answer:
-            "NexiFire offers a comprehensive range of book marketing services for self-published authors in Australia, including Amazon KDP advertising, social media campaigns on Instagram, TikTok, Facebook, and LinkedIn, BookTok and bookstagram influencer outreach, press releases and media pitching, ARC distribution for early reviews, author website design and SEO, email marketing, and complete global distribution through IngramSpark and print-on-demand via Amazon KDP Print.",
+            "NexiFire offers a comprehensive range of book marketing services for self-published authors in the United States, including Amazon KDP advertising, social media campaigns on Instagram, TikTok, Facebook, and LinkedIn, BookTok and bookstagram influencer outreach, press releases and media pitching, ARC distribution for early reviews, author website design and SEO, email marketing, and complete global distribution through IngramSpark and print-on-demand via Amazon KDP Print.",
         },
         {
           question:
-            "What is print-on-demand and how does it work for Australian authors?",
+            "What is print-on-demand and how does it work for American authors?",
           answer:
-            "Print-on-demand (POD) publishing means your book is printed only when a reader orders a physical copy, eliminating upfront printing costs and inventory risk entirely. NexiFire sets up your POD through Amazon KDP Print and IngramSpark, making your paperback and hardcover available to readers in Australia and worldwide through 39,000+ retail and library partners, with no minimum print run and no stock to manage.",
+            "Print-on-demand (POD) publishing means your book is printed only when a reader orders a physical copy, eliminating upfront printing costs and inventory risk entirely. NexiFire sets up your POD through Amazon KDP Print and IngramSpark, making your paperback and hardcover available to readers in the United States and worldwide through 39,000+ retail and library partners, with no minimum print run and no stock to manage.",
         },
         {
           question:
@@ -248,9 +248,9 @@ export const publishingServicePageData: Record<
         },
         {
           question:
-            "Do you offer book marketing services for children's books in Australia?",
+            "Do you offer book marketing services for children's books in the United States?",
           answer:
-            "Yes. NexiFire provides specialist children's book marketing services in Australia including school and library outreach campaigns, distribution through IngramSpark to educational suppliers, Facebook and Pinterest advertising targeted at parents and educators, submission to Australian children's literary awards, school book fair coordination, and BookTok campaigns to the parent and teacher communities that influence children's book purchases.",
+            "Yes. NexiFire provides specialist children's book marketing services in the United States including school and library outreach campaigns, distribution through IngramSpark to educational suppliers, Facebook and Pinterest advertising targeted at parents and educators, submission to United States children's literary awards, school book fair coordination, and BookTok campaigns to the parent and teacher communities that influence children's book purchases.",
         },
         {
           question: "Can NexiFire guarantee my book will become a bestseller?",
@@ -259,7 +259,7 @@ export const publishingServicePageData: Record<
         },
         {
           question:
-            "How is NexiFire different from other book marketing companies in Australia?",
+            "How is NexiFire different from other book marketing companies in the United States?",
           answer:
             "NexiFire combines book marketing with full publishing services, meaning our marketing team works from a position of intimate knowledge of your book, its production, its metadata, and its distribution. Unlike standalone marketing companies, we can align your marketing strategy with the full technical and distribution setup of your title from the ground up, rather than inheriting a publishing situation created by someone else.",
         },
@@ -272,14 +272,14 @@ export const publishingServicePageData: Record<
     },
     testimonials: {
       badgeText: "Author Results",
-      title: "Australian Authors Who Found Their Readers With NexiFire",
+      title: "American Authors Who Found Their Readers With NexiFire",
       description: "",
       buttonLabel: "View All Review",
       buttonHref: "#",
       testimonials: [
         {
           quote:
-            "Real results from real Australian authors who trusted NexiFire to market their books and build their readership. I published my self-help book through NexiFire and was honest with them that I had no existing platform, no Instagram, no email list, nothing. They weren't fazed. They built my Amazon listing properly, set up my email marketing from scratch, and launched a targeted Instagram campaign. Within three months, I had 800 subscribers and consistent weekly sales. Extraordinary.",
+            "Real results from real American authors who trusted NexiFire to market their books and build their readership. I published my self-help book through NexiFire and was honest with them that I had no existing platform, no Instagram, no email list, nothing. They weren't fazed. They built my Amazon listing properly, set up my email marketing from scratch, and launched a targeted Instagram campaign. Within three months, I had 800 subscribers and consistent weekly sales. Extraordinary.",
           name: "Leila Allen",
           avatarSrc:
             "https://images.unsplash.com/photo-1494790108377-be9c29b29330?auto=format&fit=crop&w=120&q=80",
@@ -297,7 +297,7 @@ export const publishingServicePageData: Record<
         },
         {
           quote:
-            "My children's picture book needed to reach schools and libraries, not just Amazon. NexiFire handled the IngramSpark distribution setup, submitted my book to Booktopia, and coordinated school library outreach. My book is now in three public libraries and two school collections. For a self-published children's book in Australia, that is a real achievement.",
+            "My children's picture book needed to reach schools and libraries, not just Amazon. NexiFire handled the IngramSpark distribution setup and coordinated school library outreach. My book is now in three public libraries and two school collections. For a self-published children's book in the United States, that is a real achievement.",
           name: "Mei Lenny",
           avatarSrc:
             "https://images.unsplash.com/photo-1438761681033-6461ffad8d80?auto=format&fit=crop&w=120&q=80",
@@ -317,9 +317,9 @@ export const publishingServicePageData: Record<
     slug: "book-cover-design",
     hero: {
       eyebrow: "NexiFire Publishing",
-      title: "Book Cover Design Services Australia",
+      title: "Book Cover Design Services United States",
       description:
-        (<><span className="font-bold text-black text-2xl">A Great Book Deserves a Cover That Stops the Scroll</span> <br /> NexiFire Publishing connects Australian authors with professional book cover designers who understand genre, typography, and what actually makes readers click "buy." From custom eBook covers to full hardcover jackets, every design we create is built to sell your book before a single page is read.</>),
+        (<><span className="font-bold text-black text-2xl">A Great Book Deserves a Cover That Stops the Scroll</span> <br /> NexiFire Publishing connects American authors with professional book cover designers who understand genre, typography, and what actually makes readers click "buy." From custom eBook covers to full hardcover jackets, every design we create is built to sell your book before a single page is read.</>),
       buttonLabel: "Start the Design Process",
       buttonHref: "/contact",
     },
@@ -330,7 +330,7 @@ export const publishingServicePageData: Record<
         <>
           <p>
             Different formats have different technical and creative
-            requirements. NexiFire designs every cover type Australian authors
+            requirements. NexiFire designs every cover type American authors
             need, built correctly for the platform it's destined for from the
             very first draft.
           </p>
@@ -380,7 +380,7 @@ export const publishingServicePageData: Record<
     },
     whyChoose: {
       badgeText: "The NexiFire Difference",
-      title: "Why Australian Authors Choose NexiFire for Their Book Cover",
+      title: "Why American Authors Choose NexiFire for Their Book Cover",
       description:
         "",
       reasons: [
@@ -405,9 +405,9 @@ export const publishingServicePageData: Record<
             "We build every cover against the exact technical specifications of Amazon KDP, IngramSpark, and Apple Books.",
         },
         {
-          title: "Local Designers Who Understand Australian Readers",
+          title: "Local Designers Who Understand American Readers",
           description:
-            "Our designers understand Australian visual sensibilities and local market expectations.",
+            "Our designers understand American visual sensibilities and local market expectations.",
         },
       ] satisfies WhyChooseReason[],
     },
@@ -426,7 +426,7 @@ export const publishingServicePageData: Record<
       title: "Your Cover Is the First Page Every Reader Actually Reads",
       paragraphs: [
         "They say not to judge a book by its cover, but every reader does it anyway, every single time. On Amazon, Apple Books, and bookstore shelves, your cover has roughly two seconds to convince a browsing reader that your book is worth a second look. Get it wrong, and even brilliant writing can go completely unnoticed.",
-        "NexiFire Publishing's custom book cover design service in Australia is built around one simple principle: your cover should look like it belongs on the same shelf as the bestsellers in your genre. Our designers study what's currently working in your category, understand the typography conventions that signal genre and tone, and create covers that are genuinely competitive, not generic templates with your title dropped on top.",
+        "NexiFire Publishing's custom book cover design service in the United States is built around one simple principle: your cover should look like it belongs on the same shelf as the bestsellers in your genre. Our designers study what's currently working in your category, understand the typography conventions that signal genre and tone, and create covers that are genuinely competitive, not generic templates with your title dropped on top.",
         "Whether you need an eBook cover, a paperback wraparound, a full hardcover jacket, or all three formats from a single design, we deliver professional, print-ready, platform-compliant files every time.",
       ],
       listItems: [
@@ -485,14 +485,14 @@ export const publishingServicePageData: Record<
       items: [
         {
           question:
-            "How much does book cover design cost in Australia?",
+            "How much does book cover design cost in the United States?",
           answer:
-            "Book cover design prices in Australia typically range from around $249 for a simple eBook-only cover to $750 or more for a full hardcover jacket with custom illustration, spine calculation, and flap design. The price depends on genre complexity, whether original illustration or photography is required, and how many formats you need. NexiFire offers transparent, flat-rate packages so you know the full cost before work begins.",
+            "Book cover design prices in the United States typically range from around $249 for a simple eBook-only cover to $750 or more for a full hardcover jacket with custom illustration, spine calculation, and flap design. The price depends on genre complexity, whether original illustration or photography is required, and how many formats you need. NexiFire offers transparent, flat-rate packages so you know the full cost before work begins.",
         },
         {
           question: "Do I really need a professional book cover designer?",
           answer:
-            "Yes. Your cover is the single biggest factor influencing whether a browsing reader clicks on your book or scrolls past it. Self-designed or template-based covers are usually easy to spot and can quietly undermine reader confidence, no matter how well-written the book is. A professional book cover designer in Australia understands genre conventions, typography hierarchy, and current market trends that most authors simply don't have visibility into.",
+            "Yes. Your cover is the single biggest factor influencing whether a browsing reader clicks on your book or scrolls past it. Self-designed or template-based covers are usually easy to spot and can quietly undermine reader confidence, no matter how well-written the book is. A professional book cover designer in the United States understands genre conventions, typography hierarchy, and current market trends that most authors simply don't have visibility into.",
         },
         {
           question: "What's the difference between an eBook cover and a print cover?",
@@ -525,7 +525,7 @@ export const publishingServicePageData: Record<
       badgeText: "Author Results",
       title: "What Authors Say About Their NexiFire Book Cover",
       description:
-        "Real feedback from Australian authors who trusted NexiFire to design the cover of their book.",
+        "Real feedback from American authors who trusted NexiFire to design the cover of their book.",
       buttonLabel: "View All Review",
       buttonHref: "#",
       testimonials: [

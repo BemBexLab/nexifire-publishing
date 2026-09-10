@@ -18,8 +18,8 @@ const page = () => {
     <section className="overflow-hidden bg-white">
       <PageHero
         eyebrow="NexiFire Publishing"
-        title={`Audiobook Production Services Australia`}
-        description="NexiFire Publishing provides complete audiobook production services for Australian authors, professional narration, studio-quality recording, expert audio mastering, and global distribution to Audible, Apple Books, Spotify, and 20+ platforms. We produce a professional audiobook from your manuscript, start to finish."
+        title={`Audiobook Production Services United States`}
+        description="NexiFire Publishing provides complete audiobook production services for American authors, professional narration, studio-quality recording, expert audio mastering, and global distribution to Audible, Apple Books, Spotify, and 20+ platforms. We produce a professional audiobook from your manuscript, start to finish."
         buttonLabel="Start My Audiobook Today"
       />
       <Introduction
@@ -84,13 +84,13 @@ const page = () => {
       <WhyItMatters />
       <WhyChoose
         badgeText="The NexiFire Difference"
-        title="Why Australian Authors Choose NexiFire for Audiobook Production"
+        title="Why American Authors Choose NexiFire for Audiobook Production"
         description=""
         reasons={[
           {
-            title: "Australian Narrators Who Know Your Audience",
+            title: "American Narrators Who Know Your Audience",
             description:
-              "Professional Australian narrators, naturally delivered.",
+              "Professional American narrators, naturally delivered.",
           },
           {
             title: "Certified Studio Quality Every Time",
@@ -127,7 +127,7 @@ const page = () => {
         paragraphs={[
           "Nexifire Publishing is a complete self-publishing company that helps authors turn their ideas into professionally published books. Our services cover writing, editing, design, publishing, and marketing, and we handle the entire process for you, from the first conversation to the final listing.",
           "An audiobook doesn't replace your print or eBook. It opens your book to an entirely different audience, one that might never have discovered you otherwise. And for authors building a long-term readership, being present across every format is no longer a luxury. It's a competitive baseline.",
-          "NexiFire's audiobook production service in Australia manages every step of the conversion process. From preparing your manuscript for narration to selecting the right voice, recording and mastering to studio quality, and distributing to every platform your listeners actually use, we take care of all of it so you don't have to navigate the technical complexity alone.",
+          "NexiFire's audiobook production service in the United States manages every step of the conversion process. From preparing your manuscript for narration to selecting the right voice, recording and mastering to studio quality, and distributing to every platform your listeners actually use, we take care of all of it so you don't have to navigate the technical complexity alone.",
         ]}
         imageSrc="/Rectangle 23834 (6).webp"
         imageAlt=""
@@ -160,7 +160,7 @@ const page = () => {
 
       <WhatsIncluded
         badgeText="Where Your Audiobook Will Live"
-        title="Distributed to Every Platform Australian Listeners Use"
+        title="Distributed to Every Platform American Listeners Use"
         description="NexiFire distributes your audiobook to every major listening platform simultaneously, so wherever your readers choose to consume audiobooks, your title will be waiting for them."
         items={[
           { label: "Audible (ACX)" },
@@ -181,9 +181,9 @@ const page = () => {
         title="Frequently Asked Questions"
         items={[
           {
-            question: "How much does audiobook production cost in Australia?",
+            question: "How much does audiobook production cost in the United States?",
             answer:
-              "Audiobook production costs in Australia depend on your manuscript's word count, the narrator selected, and the level of production required. NexiFire charges transparent flat-rate fees; contact us with your word count and narration preference for an accurate quote with no hidden fees and no royalty commission deducted from your earnings.",
+              "Audiobook production costs in the United States depend on your manuscript's word count, the narrator selected, and the level of production required. NexiFire charges transparent flat-rate fees; contact us with your word count and narration preference for an accurate quote with no hidden fees and no royalty commission deducted from your earnings.",
           },
           {
             question:
@@ -210,9 +210,9 @@ const page = () => {
           },
           {
             question:
-              "Does NexiFire produce children's audiobooks in Australia?",
+              "Does NexiFire produce children's audiobooks in the United States?",
             answer:
-              "Yes. NexiFire produces children's audiobooks in Australia with narrators who specialise in engaging young listeners, covering picture books, early readers, chapter books, and middle-grade fiction with the energy, character voices, and clear pacing that children's audiobooks require to hold a young audience's attention.",
+              "Yes. NexiFire produces children's audiobooks in the United States with narrators who specialise in engaging young listeners, covering picture books, early readers, chapter books, and middle-grade fiction with the energy, character voices, and clear pacing that children's audiobooks require to hold a young audience's attention.",
           },
         ]}
         sidebarTitle="Do You Have More Questions?"
@@ -233,7 +233,7 @@ const page = () => {
       />
       <Testimonials
         badgeText="Author Results"
-        title="What Australian Authors Say About Their NexiFire Audiobook"
+        title="What American Authors Say About Their NexiFire Audiobook"
         description="Real experiences from authors who trusted NexiFire to convert their book into a professionally produced audiobook."
         buttonLabel="View All Review"
         buttonHref="#"

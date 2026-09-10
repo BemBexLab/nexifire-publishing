@@ -70,7 +70,7 @@ const itemVariants: Variants = {
 };
 
 const Introduction = ({
-  eyebrow = "Introduction",
+  eyebrow,
   title = "Publish With Confidence",
   description = "",
   imageSrc = "",
@@ -140,20 +140,22 @@ const Introduction = ({
           variants={contentVariants}
           className="order-1 max-w-[520px] lg:order-2 lg:max-w-[760px] xl:max-w-[860px]"
         >
-          <motion.div
-            variants={itemVariants}
-            className="mb-3 flex w-fit items-center justify-center rounded-[8px] px-4 py-2 text-center text-sm text-black sm:px-5 sm:text-base"
-            style={{
-              background:
-                "linear-gradient(90deg, rgba(178, 64, 2, 0.13) 0%, rgba(178, 64, 2, 0.00) 79.96%)",
-            }}
-          >
-            <TextFluxUnveil text={eyebrow} />
-          </motion.div>
+          {eyebrow ? (
+            <motion.div
+              variants={itemVariants}
+              className="mb-3 flex w-fit items-center justify-center rounded-[8px] px-4 py-2 text-center text-sm text-black sm:px-5 sm:text-base"
+              style={{
+                background:
+                  "linear-gradient(90deg, rgba(178, 64, 2, 0.13) 0%, rgba(178, 64, 2, 0.00) 79.96%)",
+              }}
+            >
+              <TextFluxUnveil text={eyebrow} />
+            </motion.div>
+          ) : null}
 
           <motion.h2
             variants={itemVariants}
-            className="project-h2 mt-5 max-w-[500px] leading-[1.02] lg:max-w-[760px] xl:max-w-[860px]"
+            className={`project-h2 max-w-[500px] leading-[1.02] lg:max-w-[760px] xl:max-w-[860px] ${eyebrow ? "mt-5" : ""}`}
           >
             {title}
           </motion.h2>

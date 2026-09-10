@@ -8,7 +8,7 @@ import TextFluxUnveil from "./TextFluxUnveil";
 type ImageDescProps = {
   badgeText?: string;
   title: string;
-  paragraphs: string[];
+  paragraphs: React.ReactNode[];
   listItems?: string[];
   imageSrc?: string;
   imageAlt?: string;
@@ -130,11 +130,23 @@ const ImageDesc = ({
             variants={listVariants}
             className="mt-8 w-full space-y-3 text-base leading-[1.55] text-[#7E7E7E] sm:text-lg sm:leading-[1.6]"
           >
-            {paragraphs.map((paragraph) => (
-              <motion.p key={paragraph} variants={revealItemVariants}>
-                {paragraph}
-              </motion.p>
-            ))}
+            {paragraphs.map((paragraph, index) =>
+              React.isValidElement(paragraph) ? (
+                <motion.div
+                  key={`paragraph-${index}`}
+                  variants={revealItemVariants}
+                >
+                  {paragraph}
+                </motion.div>
+              ) : (
+                <motion.p
+                  key={`paragraph-${index}`}
+                  variants={revealItemVariants}
+                >
+                  {paragraph}
+                </motion.p>
+              ),
+            )}
             {listItems?.length ? (
               <motion.ul
                 variants={listVariants}

@@ -70,25 +70,25 @@ const WhyItMatters = () => {
               <h2
                 className="project-h2 mt-5 max-w-[500px] leading-[1.02] tracking-[-0.05em] lg:max-w-[620px] xl:max-w-[680px]"
               >
-                Understanding Audiobook Distribution Platforms in Australia
+                Understanding Audiobook Distribution Platforms in the United States
               </h2>
             </div>
 
             <div className="space-y-6 text-[#777777] text-lg md:text-lg leading-relaxed font-light">
               <p>
-                Audible remains the dominant audiobook platform in Australia, but the landscape is diversifying rapidly. Spotify launched audiobooks for Australian subscribers and is aggressively expanding its catalogue. Storytel has established a strong subscription base. Apple Books audiobooks reach a loyal iOS audience. Kobo Audiobooks serves existing Kobo e-reader users. OverDrive distributes to public library systems, connecting your audiobook to readers who access content through their library membership. NexiFire submits to all of these platforms simultaneously, ensuring your audiobook reaches every Australian listener regardless of their preferred platform.
+                Audible remains the dominant audiobook platform in the United States, but the landscape is diversifying rapidly. Spotify launched audiobooks for American subscribers and is aggressively expanding its catalogue. Storytel has established a strong subscription base. Apple Books audiobooks reach a loyal iOS audience. Kobo Audiobooks serves existing Kobo e-reader users. OverDrive distributes to public library systems, connecting your audiobook to readers who access content through their library membership. NexiFire submits to all of these platforms simultaneously, ensuring your audiobook reaches every American listener regardless of their preferred platform.
               </p>
             </div>
 
             <div className="text-[#777777] text-lg md:text-lg leading-relaxed font-light mt-2">
-              <h3 className="text-3xl font-bold mt-2 text[#444444]">Professional Audiobook Services Across Australia</h3>
+              <h3 className="text-3xl font-bold mt-2 text[#444444]">Professional Audiobook Services Across the United States</h3>
               <ul className="list-disc pl-5 space-y-1">
                 <li>Audiobook Production Sydney</li>
                 <li>Audiobook Production Melbourne</li>
                 <li>Audiobook Production Brisbane</li>
                 <li>Audiobook Services Perth</li>
                 <li>Audiobook Services Adelaide</li>
-                <li>Regional & Remote Australia</li>
+                <li>Regional & Remote United States</li>
               </ul>
             </div>
           </div>

@@ -101,7 +101,7 @@ const infoCards = [
   },
   {
     id: "address",
-    label: "16A FOX CL, KARIONG NSW 2250, AUSTRALIA",
+    label: "UNITED STATES",
     link: "#",
     highlighted: false,
     icon: (

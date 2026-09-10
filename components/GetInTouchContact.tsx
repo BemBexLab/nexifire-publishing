@@ -202,7 +202,7 @@ const contactItems: GetInTouchContactItem[] = [
   {
     id: "address-us",
     kind: "location",
-    label: "16A Fox Cl, Kariong NSW 2250, Australia",
+    label: "United States",
   },
 ];
 
@@ -220,7 +220,7 @@ const GetInTouchContact = ({
   buttonLable,
 }: GetInTouchContactProps) => {
   const [hasMounted, setHasMounted] = useState(false);
-  const [selectedCountryCode, setSelectedCountryCode] = useState("AU");
+  const [selectedCountryCode, setSelectedCountryCode] = useState("US");
   const [isCountryOpen, setIsCountryOpen] = useState(false);
   const { handleSubmit, isSubmitting, submitMessage, submitStatus } =
     useContactForm("Contact page", () => setSelectedCountryCode("US"));

@@ -24,7 +24,7 @@ const page = () => {
             <p>
               Every successful book begins with a great story, but reaching
               readers requires much more than simply uploading a manuscript. At
-              NexiFire Publishing, we guide Australian authors through every
+              NexiFire Publishing, we guide American authors through every
               stage of professional self-publishing, combining editorial
               expertise, industry-standard production, and strategic publishing
               support to create books that compete confidently in today's
@@ -56,8 +56,8 @@ const page = () => {
       />
       <Testimonials
         badgeText="Author Stories"
-        title="What Australian Authors Say About NexiFire"
-        description="Over 2,000 Australian authors have trusted NexiFire Publishing to bring their books to life. Here's what a few of them have to say."
+        title="What American Authors Say About NexiFire"
+        description="Over 2,000 American authors have trusted NexiFire Publishing to bring their books to life. Here's what a few of them have to say."
         buttonLabel="View All Review"
         buttonHref="#"
         testimonials={[

@@ -18,85 +18,101 @@ const page = () => {
     <section className="overflow-hidden bg-white">
       <PageHero
         eyebrow="Nexifire Publishing"
-        title={`Ghostwriting Services Australia`}
-        description={<><span className="text-black text-2xl"><b>Your Story Deserves to Be Told:</b></span> <br /> We Write It Brilliantly. Whether you have a complete manuscript or just a spark of an idea, our expert ghostwriters help you produce a professionally written book that sounds exactly like you, only polished, powerful, and ready to publish on multiple platforms.</>}
-        buttonLabel="Publish Your Book Today"
+        title={`Ghostwriting Services USA`}
+        description={<><span className="text-black text-2xl"><b>We Write It. You Publish It.</b></span> <br />Professional ghostwriting services for authors, entrepreneurs, coaches, and first-time writers across the USA: your story, your voice, your name on the cover.</>}
+        buttonLabel="Get a Free Ghostwriting Consultation"
       />
       <Introduction
         eyebrow="What Is Ghostwriting?"
-        title="You Bring the Story. We Write the Book."
-        description={`Ghostwriting is the collaborative process where a professional writer captures your ideas, voice, and story and produces a professionally written book that is published under your name.
+        title="What Is Ghostwriting, Really?"
+        description={`Ghostwriting is simple: you bring the story, the ideas, or the expertise; we turn it into a professionally written book, published entirely under your name. It's not deceptive, and it's not new. Some of the most successful memoirs, business books, and self-help bestsellers on shelves today were written this way.
           
-          It is far more common than most people realise. Some of the world's most celebrated memoirs, business bestsellers, and motivational books were created this way. There is absolutely nothing misleading about it; you have the knowledge, the experience, and the story. A skilled ghostwriter simply has the proficiency to bring it to the page in a way that is readable, engaging, and professionally structured.
+          You already have what matters most: the knowledge, experience, voice. Our job is to capture that and shape it into a manuscript that reads like the best version of how you'd tell it yourself.
+          
+          Whether you are looking to hire a ghostwriter for a book, a full nonfiction book, a fiction book, or a memoir, NexiFire pairs you with a writer who works specifically in your genre, not a generalist juggling five projects at once.
 `}
         imageSrc="/image 67.webp"
       />
       <MosiacCards />
-      <OurProcess
-        badgeText="How It Works"
-        title="A Simple, Transparent Process From Idea to Finished Book"
-        description="We have refined our ghostwriting process over hundreds of projects to make it collaborative, clear, and stress-free for every author we work with."
-        steps={[
-          {
-            number: "01",
-            title: "Free Discovery Call",
-            description:
-              "Free consultation call to know your book idea, goals, and support you need.",
-          },
-          {
-            number: "02",
-            title: "Writer Matching",
-            description:
-              "We match you with a ghostwriter who has expertise in your genre.",
-          },
-          {
-            number: "03",
-            title: "Outline & Draft",
-            description:
-              "Provide a chapter-by-chapter outline for your approval, then begin writing in stages.",
-          },
-          {
-            number: "04",
-            title: "Revisions & Final Manuscript",
-            description:
-              "You receive a polished, complete manuscript. The finished book is entirely yours.",
-          },
-        ]}
-      />
+      <div className="bg-[#fffaf6] py-14 sm:py-16 md:py-20 lg:py-24">
+        <OurProcess
+          badgeText="How It Works"
+          title="Why Authors Choose NexiFire's Ghostwriting Services"
+          description=""
+          steps={[
+            {
+              number: "01",
+              title: "Free Discovery Call",
+              description:
+                "We talk through your idea, your goals, and what kind of book you're picturing, no pressure, no cost.",
+            },
+            {
+              number: "02",
+              title: "Writer Matching",
+              description:
+                "You are paired with a ghostwriter who has real experience in your genre, whether that's a business book, memoir, self help or any other genre.",
+            },
+            {
+              number: "03",
+              title: "Outline & Approval",
+              description:
+                "We build a chapter-by-chapter outline first, so you approve the direction before a single chapter is written.",
+            },
+            {
+              number: "04",
+              title: "Drafting in Stages",
+              description:
+                "Your ghostwriter writes in stages, not all at once, so you're reviewing and giving feedback along the way, not waiting months to see a full draft.",
+            },
+            {
+              number: "05",
+              title: "Unlimited Revisions",
+              description:
+                "We refine the manuscript with you until it actually sounds like you, this is a ghostwriting service with unlimited revisions built into every package, not billed as an extra.",
+            },
+            {
+              number: "06",
+              title: "Final Manuscript, Fully Yours",
+              description:
+                "You receive a polished, publish-ready manuscript, along with full copyright and intellectual property transfer. It was always yours; now it's on paper.",
+            },
+          ]}
+        />
+      </div>
       <WhyChoose
-        badgeText="Why Choose Nexifire Publishing"
-        title="What Makes Our Ghostwriting Service Different"
-        description="There are many ghostwriting options available in Australia. But the reason authors keep coming back to Nexifire Publishing, and why they recommend us to their colleagues and friends is:"
+        badgeText=""
+        title="Why Authors Choose NexiFire's Ghostwriting Services"
+        description=""
         reasons={[
           {
-            title: "Absolute Confidentiality, Guaranteed",
+            title: "Voice-Matching Expertise",
             description:
-              "Every project is covered by a signed non-disclosure agreement.",
+              "We don't write a generic book with your name slapped on it. We study how you talk, what you emphasize, and how you want to come across, so the finished manuscript actually sounds like you.",
           },
           {
-            title: "Voice Matching Expertise",
-            description: "Write a book in your voice.",
+            title: "Affordable Ghostwriting, Without Cutting Corners",
+            description: "Our packages are built to make professional ghostwriting accessible to first-time authors and small business owners, not just executives with a marketing budget.",
           },
           {
-            title: "Affordable Ghostwriting Services",
+            title: "Complete Publishing Support, One Team",
             description:
-              "Structured our services to make high-quality ghostwriting accessible.",
+              "Ghostwriting is only the starting point. Once your manuscript is done, the same team can handle editing, cover design, formatting, audiobook production, and distribution to Amazon, Apple Books, Barnes & Noble, and more, so you never have to hand your book off to a second company.",
           },
           {
-            title: "Complete Publishing Support",
+            title: "Absolute Confidentiality",
             description:
-              "From idea to published book, all under one roof, with one trusted team.",
+              "Every project is covered by an NDA from day one. Whether or not you ever tell anyone you worked with a ghostwriter is entirely up to you.",
           },
         ]}
       />
       <div className="h-10" />
-      <PublishYourBook eyebrow="Ghostwriting With NexiFire" title="Your Book Is Waiting to Be Written" description="Every author we have worked with is glad they made the call. Whether you have a full concept or just a feeling that you have something worth saying, reach out. The first conversation is always free." backgroundImageSrc="/Frame 2147225867.webp" backgroundAlt="A girl reading a book" buttonLabel="Book a Free Discovery Call" />
+      <PublishYourBook eyebrow="" title="Your Book Is Waiting to Be Written" description="Whether you have a finished outline or just a feeling that you have something worth saying, the first conversation is always free." backgroundImageSrc="/Frame 2147225867.webp" backgroundAlt="A girl reading a book" buttonLabel="Book a Free Discovery Call" buttonHref="/contact" />
       <div className="h-10" />
       <WhatsIncluded
         badgeText="What's Included"
         title="PROFESSIONAL GHOSTWRITING SERVICES DESIGNED FOR EVERY AUTHOR"
         items={[
-          { label: "Dedicated Australian Ghostwriter" },
+          { label: "Dedicated American Ghostwriter" },
           { label: "Discovery & Strategy Sessions" },
           { label: "Chapter Planning & Book Outline" },
           { label: "Professional Manuscript Writing" },
@@ -113,15 +129,33 @@ const page = () => {
         <WhoWeServe {...defaultWhoWeServeData} />
       </div>
       <ImageDesc
-        title="WRITE THE BOOK YOU'VE ALWAYS WANTED TO PUBLISH"
+        title="What Makes a Ghostwritten Book Actually Good"
         paragraphs={[
-          "Every successful book begins with a story worth telling, but turning that story into a professionally written manuscript takes time, structure, and experience. At Nexifire Publishing, we provide complete ghostwriting services for Australian authors, entrepreneurs, business leaders, professionals, educators, and first-time writers who want to publish a book without having to write every word themselves.",
-          "Whether you have detailed notes, recorded conversations, a rough outline, or simply an idea you've been carrying for years, our experienced ghostwriters work with you to capture your unique voice and transform it into a compelling manuscript. Every chapter is carefully researched, professionally structured, and written to engage your target audience while remaining authentic to your message.",
-          "Our collaborative approach means you remain involved throughout the entire writing process. You'll review outlines, provide feedback on drafts, and approve each stage before moving forward, ensuring the finished manuscript genuinely reflects your ideas and personality.",
-          "As part of Nexifire Publishing's complete self-publishing services, ghostwriting is only the beginning. Once your manuscript is complete, our in-house team can also assist with professional editing, proofreading, cover design, formatting, audiobook production, and worldwide publishing across more than 40 major platforms, helping you move seamlessly from concept to published author.",
+          "Not every ghostwriting service produces the same quality of book. A rushed, generic manuscript is easy to spot: flat voice, disconnected chapters, no real structure. Here's what separates a book that reads like you from one that reads like a template:",
+          <div className="space-y-3">
+            <div className="">
+              <h3 className="text-black font-semibold">Real Interviews, Not a Questionnaire</h3>
+              <p>Your ghostwriter spends real time talking with you, not a five-question form, so your voice, phrasing, and personality actually make it onto the page.</p>
+            </div>
+
+            <div className="">
+              <h3 className="text-black font-semibold">A Structure Built Before Writing Starts</h3>
+              <p>Every project begins with a chapter-by-chapter outline you approve, so the book has a clear arc before a single sentence is drafted.</p>
+            </div>
+
+            <div className="">
+              <h3 className="text-black font-semibold">Genre-Specific Writers</h3>
+              <p>A memoir and a business book require completely different pacing, structure, and tone. We match your project with a ghostwriter experienced in that specific genre, not a generalist.</p>
+            </div>
+
+            <div className="">
+              <h3 className="text-black font-semibold">Revisions Until It's Right</h3>
+              <p>Unlimited revisions means the manuscript isn't "finished" until it actually sounds like you, not just when the writer runs out of allotted drafts.</p>
+            </div>
+          </div>,
         ]}
         imageSrc="/Rectangle 23834 (1).webp"
-        imageAlt=""
+        imageAlt="A guy writing a book"
       />
       <div className="h-20" />
       <FAQs
@@ -129,26 +163,61 @@ const page = () => {
         title="Frequently Asked Questions"
         items={[
           {
+            question: "What are book ghostwriting services, exactly?",
+            answer:
+              "Book ghostwriting is when a professional writer interviews you, researches your topic, and writes a complete book manuscript on your behalf, based on your ideas, expertise, or story, published entirely under your name.",
+          },
+          {
+            question:
+              "How much does it cost to hire a ghostwriter for an book?",
+            answer:
+              "Cost depends on your book's length, genre, and how much research or interviewing is required. NexiFire offers transparent, flat-rate pricing for book ghostwriting, so you know the investment upfront, with no hidden fees added later.",
+          },
+          {
+            question:
+              "Do you offer ghostwriting services for first-time authors specifically?",
+            answer:
+              'Yes. Most of the authors we work with have never published a book before. Our process, free discovery call, outline approval, staged drafting, unlimited revisions, is built specifically to make ghostwriting approachable for someone doing this for the first time.',
+          },
+          {
+            question: "Can I hire a ghostwriter to write my book if I only have a rough idea?",
+            answer:
+              `Absolutely. You don't need a finished outline or even a clear structure. Many of our best projects start as a handful of notes, a recorded conversation, or simply "I know I have a book in me." Your ghostwriter draws the structure out through guided conversations.`,
+          },
+          {
+            question: "Do you offer ghostwriting with unlimited revisions?",
+            answer:
+              `Yes. Every NexiFire ghostwriting package includes unlimited collaboration and revisions during the drafting process, because a manuscript that doesn't sound like you isn't finished yet, regardless of how many drafts it takes.`,
+          },
+          {
+            question: "What's the difference between a general ghostwriter and a specialist, like a ghostwriter for a self-help book or memoir?",
+            answer:
+              `Genre matters. A ghostwriter experienced in memoir knows how to structure emotional pacing and personal narrative; a ghostwriter for a self-help book knows how to structure frameworks, exercises, and actionable takeaways. We match you with a writer experienced specifically in your genre, not a generalist.`,
+          },
+          {
             question: "Is ghostwriting legal and ethical?",
             answer:
-              "Absolutely. Ghostwriting is a completely legitimate professional service that has existed for centuries. Publishing under your name a book written in collaboration with a ghostwriter is not deceptive; it is a standard industry practice. You own the ideas, the experience, and the intellectual property. The ghostwriter is a skilled craftsperson who helps you communicate those ideas effectively. Every client receives a full intellectual property transfer agreement confirming that you own the work entirely.",
+              `Yes, completely. Ghostwriting is a long-established, legitimate professional service. You own the ideas and the experience; the ghostwriter is simply the professional who helps put them into publishable form. Every NexiFire client receives a full intellectual property transfer confirming they own the finished work outright.`,
           },
           {
-            question:
-              "Will anyone know I used a ghostwriter?",
+            question: "Will anyone know I used a ghostwriter?",
             answer:
-              "Not unless you tell them. Every project at Nexifire Publishing is protected by a signed non-disclosure agreement. Your ghostwriter is contractually bound to keep your project confidential, and we never use client work in our own marketing or portfolio without explicit written permission. Confidential ghostwriting is at the core of what we do.",
+              `Not unless you choose to tell them. Every project is protected by a signed non-disclosure agreement, and we never reference client projects publicly without written permission.`,
           },
           {
-            question:
-              "What if I do not have a complete idea, just the beginning of one?",
+            question: "Do you provide ghostwriting services for business owners, coaches, and entrepreneurs?",
             answer:
-              'That is perfectly fine, and actually very common. Many of our most successful projects started as a vague idea, a collection of notes, or simply a strong feeling that "I have a book in me somewhere." Our ghostwriters are skilled at drawing out your ideas through structured conversations, identifying the most compelling angles, and shaping raw material into a clear, engaging book concept before a single chapter is written.',
+              `Yes. Book ghostwriting for business owners, coaches, and entrepreneurs is one of our most requested services, usually built around turning an existing framework, program, or expertise into a book that supports lead generation or establishes authority.`,
           },
           {
-            question: "Can you help me publish the book once it is written?",
+            question: "Do you offer academic or medical ghostwriting services?",
             answer:
-              "Yes. Nexifire Publishing team is here to provide you with every service required to publish your book, including professional editing, proofreading, interior formatting, cover design, hardcover production, audiobook creation, and global distribution through major retailers, including Amazon, Apple Books, Barnes & Noble, and more. You can take your book from a raw idea all the way to published author without ever leaving our team.",
+              `Yes, for professional and educational manuscripts requiring subject-matter accuracy and formal structure. These projects are matched with ghostwriters experienced in academic or technical writing specifically.`,
+          },
+          {
+            question: "Can you also publish the book once the manuscript is finished?",
+            answer:
+              `Yes. Once your manuscript is complete, our team can handle editing, proofreading, formatting, cover design, ISBN and copyright registration, audiobook production, and global distribution, so you can go from idea to published author without switching companies.`,
           },
         ]}
         sidebarTitle="Do You Have More Questions?"
@@ -158,14 +227,14 @@ const page = () => {
       />
       <Testimonials
         badgeText="Author Stories"
-        title="Words from Authors Who Have Been Where You Are"
-        description="Our clients come to us with an idea, a story, or a body of expertise. They leave with a book they are proud to put their name on."
+        title="What Authors Are Saying"
+        description=""
         buttonLabel="View All Review"
         buttonHref="#"
         testimonials={[
           {
             quote:
-              "I had the story inside me for twenty years,s but never knew how to get it onto the page. My Nexifire ghostwriter made me feel completely at ease from the first interview. The finished memoir reads exactly as I would have written it, only far better than I ever could have managed alone. I am so proud of this book.",
+              "I had the story in me for twenty years but never knew how to get it onto the page. My NexiFire ghostwriter made me feel at ease from the very first call. The finished memoir reads exactly how I would have written it, only better than I could have managed alone.",
             name: "Margaret H.",
             avatarSrc:
               "https://images.unsplash.com/photo-1494790108377-be9c29b29330?auto=format&fit=crop&w=120&q=80",
@@ -174,8 +243,8 @@ const page = () => {
           },
           {
             quote:
-              "As a business consultant, I had the content and the expertise, but I simply did not have the time to sit down and write a full book. The team at Nexifire understood that immediately. They interviewed me over several sessions, structured everything logically, and produced a manuscript I am using as the centrepiece of my client acquisition strategy. Exceptional service.",
-            name: "David R.",
+              "As a business consultant, I had the expertise but not the time to write a full book. NexiFire interviewed me over a few sessions, structured everything logically, and delivered a manuscript I now use as the centerpiece of my client acquisition strategy." ,
+            name: "David Reginald",
             avatarSrc:
               "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&w=120&q=80",
             featured: false,
@@ -183,8 +252,8 @@ const page = () => {
           },
           {
             quote:
-              "I wanted to create a children's book for my grandchildren based on characters from our family history. The ghostwriter Nexifire matched me with was warm, patient, and genuinely enthusiastic about the project. The result is a beautiful little book that we have now had printed and shared with the whole family. I cannot recommend this service enough.",
-            name: "Sandra L.",
+              "I wanted an book that captured my coaching framework so I could hand it to new clients. The ghostwriter I was matched with understood my voice almost immediately, and the unlimited revisions meant we got it exactly right before it ever went to print.",
+            name: "Priya Anand",
             avatarSrc:
               "https://images.unsplash.com/photo-1438761681033-6461ffad8d80?auto=format&fit=crop&w=120&q=80",
             featured: true,
@@ -195,7 +264,7 @@ const page = () => {
       <GetInTouchContact
         title="Ready to Publish Your Book?"
         description={
-          <>Whether you have a finished manuscript, a half-written draft, or just a powerful idea you don't know how to start, our publishing specialists are here to help. At NexiFire Publishing, we work with Australian authors at every stage of their journey, from first conversation to final distribution. <br />
+          <>Whether you have a finished manuscript, a half-written draft, or just a powerful idea you don't know how to start, our publishing specialists are here to help. At NexiFire Publishing, we work with American authors at every stage of their journey, from first conversation to final distribution. <br />
         <div className="h-2" /> Tell us about your project today and take the first step toward becoming a published author.</>
         }
       />

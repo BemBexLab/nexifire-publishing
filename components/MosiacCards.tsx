@@ -9,7 +9,7 @@ const checkIcon = "/Mask group.svg";
 
 const writingThatReflectsYou = [
   "Your story, captured in your voice.",
-  "Professional ghostwriting services Australia, Nexifire Publishing",
+  "Professional ghostwriting services United States, Nexifire Publishing",
   "Non-disclosure agreements included",
   "Your name on the cover, always",
   "Full intellectual property transfer",
@@ -17,12 +17,25 @@ const writingThatReflectsYou = [
 ];
 
 const genreItems = [
-  "Memoir & Personal Story",
-  "Business & Leadership Books",
-  "Self-Help & Personal Development",
-  "Children's Books",
-  "Ebook Ghostwriting",
-  "Academic & Professional Books",
+  "Dedicated ghostwriter assigned to your project",
+  "Discovery and strategy sessions",
+  "Chapter-by-chapter outline and planning",
+  "Professional manuscript writing",
+  "Unlimited collaboration and feedback",
+  "Editing and manuscript refinement",
+  "Full copyright and intellectual property transfer",
+  "Signed non-disclosure agreement on every project"
+];
+
+const ghostwritingServiceItems = [
+  "Ebook Ghostwriting Services",
+  "Nonfiction & Business Ghostwriting",
+  "Memoir & Personal Story Ghostwriting",
+  "Self-Help & Personal Development Ghostwriting",
+  "Ghostwriting for Coaches & Entrepreneurs",
+  "Children's Book Ghostwriting",
+  "Academic & Professional Ghostwriting",
+  "Executive & Christian Ghostwriting",
 ];
 
 const writingQualityItems = [
@@ -177,7 +190,7 @@ const MosiacCards = () => {
             variants={revealItemVariants}
             className="project-h2 leading-[1.04] tracking-[-0.06em]"
           >
-            Professional Ghostwriting Services in Australia
+            Professional Ghostwriting Services in the United States
           </motion.h2>
 
           {/* <p className="mx-auto mt-5 max-w-[920px] text-base leading-[1.7] text-[#8B8B8B] sm:text-lg">
@@ -209,17 +222,16 @@ const MosiacCards = () => {
                 variants={revealItemVariants}
                 className="text-lg font-semibold leading-tight text-[#2E2E2E] sm:text-xl"
               >
-                Writing That Reflects You
+                Ghostwriting Services for Every Kind of Author
               </motion.h3>
-              <motion.p
-                variants={revealItemVariants}
-                className="mt-4 max-w-[500px] text-base leading-[1.6] text-[#444444] sm:text-md"
+              <motion.ul
+                variants={listVariants}
+                className="mt-4 grid gap-x-6 gap-y-2.5 sm:grid-cols-2"
               >
-                At Nexifire Publishing, we take the time to understand who you
-                are, how you speak, what you want to say, and the readers you
-                want to reach. The result is a book that truly feels like yours,
-                because it is.
-              </motion.p>
+                {ghostwritingServiceItems.map((item) => (
+                  <CheckItem key={item}>{item}</CheckItem>
+                ))}
+              </motion.ul>
             </motion.div>
 
             <motion.div
@@ -230,14 +242,26 @@ const MosiacCards = () => {
               }}
               className={`${cardBaseClassName} flex flex-[1.2] flex-col bg-white px-6 py-7 sm:px-7`}
             >
-              <motion.ul
+              <motion.h3
+                variants={revealItemVariants}
+                className="text-lg font-semibold leading-tight text-[#2E2E2E] sm:text-xl"
+              >
+                Confidential. Contracted. Completely Yours.
+              </motion.h3>
+              <motion.p
+                variants={revealItemVariants}
+                className="mt-4 text-base leading-[1.6] text-[#444444] sm:text-md"
+              >
+                Every project is covered by a signed NDA, and we never reference your work publicly without permission. When it's done, you get full IP transfer; your name is the only name on the cover.
+              </motion.p>
+              {/* <motion.ul
                 variants={listVariants}
                 className="mt-4 grid gap-x-6 gap-y-2.5 sm:grid-cols-2"
               >
                 {writingThatReflectsYou.map((item) => (
                   <CheckItem key={item}>{item}</CheckItem>
                 ))}
-              </motion.ul>
+              </motion.ul> */}
             </motion.div>
 
             <motion.div
@@ -252,17 +276,13 @@ const MosiacCards = () => {
                 variants={revealItemVariants}
                 className="text-lg font-semibold leading-tight text-[#2E2E2E] sm:text-xl"
               >
-                Real Australian Ghostwriters
+                Transparent Ghostwriting Services Rates
               </motion.h3>
               <motion.p
                 variants={revealItemVariants}
                 className="mt-4 text-base leading-[1.6] text-[#444444] sm:text-md"
               >
-                Our ghostwriters are based in Australia. They understand
-                Australian readers, cultural context, colloquialisms, and
-                storytelling sensibilities. You will not receive content written
-                overseas and reworked; every word is written by a skilled local
-                professional who understands your audience.
+                Pricing depends on length, genre, and research depth, not a mystery quote after three sales calls. Our flexible, flat-rate packages scale from a short book to a full-length book, so you know the cost upfront.
               </motion.p>
               {/* <ul className="mt-5 grid gap-x-6 gap-y-2.5 sm:grid-cols-2">
                 {processItems.map((item) => (
@@ -288,17 +308,12 @@ const MosiacCards = () => {
                 variants={revealItemVariants}
                 className="text-lg font-semibold leading-tight text-[#2E2E2E] sm:text-xl"
               >
-                Ghostwriting for Every Genre
+                What's Included
               </motion.h3>
               <motion.p
                 variants={revealItemVariants}
                 className="mt-4 text-base leading-[1.6] text-[#444444] sm:text-md"
               >
-                We Write the Books Australians Are Waiting to Read
-                <br />
-                From personal memoirs to business books, children&apos;s stories
-                to self-help guides, our team includes experienced ghostwriters
-                who specialise in the genre that matters to you.
               </motion.p>
               <motion.ul
                 variants={listVariants}
@@ -327,19 +342,17 @@ const MosiacCards = () => {
                 variants={revealItemVariants}
                 className="text-lg font-semibold leading-tight text-[#2E2E2E] sm:text-xl"
               >
-                Transparent Pricing for Every Budget
+                Why Authors Hire a Ghostwriter Instead of Writing It Alone
               </motion.h3>
               <motion.p
                 variants={revealItemVariants}
                 className="mt-4 max-w-[500px] text-base leading-[1.6] text-[#444444] sm:text-md"
               >
-                We believe you should know what you are investing before you
-                commit. Our packages are clearly priced, flexible, and can be
-                customised to match the scope and complexity of your project.
+                You don't need more time; you need someone to turn what's in your head into a finished manuscript. That's why business owners, coaches, and first-time authors hire a ghostwriter instead of carving out eighteen months they don't have.
               </motion.p>
             </motion.div>
 
-            <motion.div
+            {/* <motion.div
               variants={cardVariants}
               whileHover={{
                 y: -4,
@@ -363,7 +376,7 @@ const MosiacCards = () => {
                 establish credibility in any industry, and you don&apos;t have to
                 spend years writing it yourself.
               </motion.p>
-            </motion.div>
+            </motion.div> */}
           </motion.div>
         </motion.div>
       </motion.div>
