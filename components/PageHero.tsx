@@ -192,6 +192,8 @@ const PageHero = ({
   buttonHref = defaultButtonHref,
 }: PageHeroProps) => {
   const hasEyebrow = eyebrow.trim().length > 0;
+  const descriptionIsText =
+    typeof description === "string" || typeof description === "number";
   const marqueeLogos = [...logos, ...logos, ...logos, ...logos];
 
   return (
@@ -258,12 +260,21 @@ const PageHero = ({
             </motion.div>
             {title}
           </motion.h1>
-          <motion.p
-            variants={heroItemVariants}
-            className="font-jakarta relative z-10 mx-auto mt-4 max-w-[1200px] whitespace-pre-line text-center text-base leading-[1.7] [word-spacing:0.3rem] text-[#777777] sm:text-lg md:leading-[1.65]"
-          >
-            {description}
-          </motion.p>
+          {descriptionIsText ? (
+            <motion.p
+              variants={heroItemVariants}
+              className="font-jakarta relative z-10 mx-auto mt-4 max-w-[1200px] whitespace-pre-line text-center text-base leading-[1.7] [word-spacing:0.3rem] text-[#777777] sm:text-lg md:leading-[1.65]"
+            >
+              {description}
+            </motion.p>
+          ) : (
+            <motion.div
+              variants={heroItemVariants}
+              className="font-jakarta relative z-10 mx-auto mt-4 max-w-[1200px] text-center text-base leading-[1.7] [word-spacing:0.3rem] text-[#777777] sm:text-lg md:leading-[1.65]"
+            >
+              {description}
+            </motion.div>
+          )}
           <motion.div
             variants={heroItemVariants}
             className="relative z-10 mt-8"
