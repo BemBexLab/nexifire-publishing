@@ -100,46 +100,53 @@ export const publishingServicePageData: Record<
     slug: "book-marketing",
     hero: {
       eyebrow: "NexiFire Publishing",
-      title: "Book Marketing Services United States",
-      description: "Your Book is Written. Now Let's Make Sure Readers Find It.",
-      buttonLabel: "Get a Marketing Plan",
+      title: "Book Marketing Services for Authors in the USA",
+      description: <div className="">
+        <h3 className="text-black font-semibold text-xl">
+          Your Book Is Written. Now Let's Make Sure Readers Find It.
+        </h3>
+        <p>Publishing your book is only half the job. NexiFire Publishing delivers real book marketing services for authors in the USA, Amazon advertising, social media campaigns, book publicity, and global print-on-demand distribution across 40+ countries. We are not here to just list your book somewhere. We are here to get it in front of readers who are already looking for something like it.</p>
+      </div>,
+      buttonLabel: "Get a Free Marketing Consultation",
       buttonHref: "/contact",
     },
     introduction: {
-      eyebrow: "Book Marketing Support",
-      title: "Book Marketing",
+      eyebrow: "",
+      title: "Why Authors Choose Us for Book Marketing",
       description:
-        "Publishing your book is only half the journey. NexiFire Publishing delivers professional book marketing services for American authors, from Amazon advertising and social media campaigns to global print-on-demand distribution across 40+ countries. We get your book in front of the readers who are already looking for it.",
+        `Marketing built around your actual book, not a script we reuse. Publishing and marketing under one roof, so your marketing team already knows your metadata, your production, and your distribution setup instead of inheriting a mess from somewhere else. Transparent deliverables instead of vague promises about "visibility." And we're thinking about your author brand long-term, not just this one launch.
+        
+        Among book marketers in the USA, that combination, full publishing knowledge plus real marketing execution, is honestly not that common. Most marketing companies are working blind, without ever having touched your file, your ISBN, or your metadata.`,
       imageSrc: "/image 69.webp",
     },
     process: {
-      badgeText: "How It Works",
-      title: "Your Book Marketing Journey, Step by Step",
+      badgeText: "",
+      title: "How It Works",
       description:
         "NexiFire's book marketing process is built around your book, genre, and goals, not a standard package applied to every author regardless of what they've written",
       steps: [
         {
           number: "01",
-          title: "Discovery & Strategy",
+          title: "Strategy",
           description:
-            "Target audience analysis and a tailored marketing plan.",
+            "A customized plan built around your book and audience.",
         },
         {
           number: "02",
-          title: "Platform Optimisation",
+          title: "Optimization",
           description:
-            "Optimised Amazon listing, metadata, keywords, and categories.",
+            "Amazon listing, keywords, metadata, and categories refined.",
         },
         {
           number: "03",
-          title: "Launch Campaign",
-          description: "Pre-launch preparation and multi-channel marketing.",
+          title: "Launch",
+          description: "Focused marketing to reach the right readers.",
         },
         {
           number: "04",
-          title: "Distribution & Optimisation",
+          title: "Growth",
           description:
-            "Global distribution, performance monitoring, campaign optimisation, and ongoing marketing support.",
+            "Global distribution, tracking, and ongoing optimization.",
         },
       ] satisfies OurProcessStep[],
     },
@@ -183,7 +190,7 @@ export const publishingServicePageData: Record<
     },
     imageDesc: {
       badgeText: "Why Book Marketing Matters",
-      title: "Writing the Book Was the Hard Part. Now It Needs to Be Found.",
+      title: "Writing the Book Was the Hard Part. Getting It Found Is the Next One.",
       paragraphs: [
         "There are over ten thousand new books published in the United States every year. Without a deliberate, well-executed marketing strategy behind your title, even the best-written book can sit unseen on a digital shelf, discovered by almost nobody. The authors who build real readerships, the ones who earn consistent royalties month after month, aren't always the ones who wrote the most brilliant prose. They're the ones who invested in getting their book in front of the right readers.",
         "NexiFire Publishing provides full-service book marketing for American authors at every stage of their career. Whether you're a first-time author who has just published your debut title, a self-published author looking to reach a wider audience, or an established writer launching your next release, we build a marketing strategy that fits your book, your genre, and your readership, not a generic template applied to every title regardless of what it is.",
