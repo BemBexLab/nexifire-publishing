@@ -327,6 +327,9 @@ const OurProcess = ({
   const [scrollStates, setScrollStates] = useState<Record<string, ScrollState>>(
     {},
   );
+  
+  // New state for mobile carousel navigation
+  const [currentIndex, setCurrentIndex] = useState(0);
 
   const isNineStepLayout = steps.length === 9;
   const isSixStepLayout = steps.length === 6;
@@ -445,15 +448,154 @@ const OurProcess = ({
           </motion.p>
         </motion.div>
 
-        <div
-          className={`relative mt-14 lg:mt-16 ${
-            isNineStepLayout
-              ? "xl:min-h-[860px]"
-              : isSixStepLayout
-                ? "xl:min-h-[540px]"
-                : "xl:min-h-[420px]"
-          }`}
-        >
+        {/* ========================================== */}
+        {/* MOBILE CAROUSEL (< md screens)             */}
+        {/* ========================================== */}
+        <div className="md:hidden relative mt-8 flex flex-col items-center">
+          <button
+            onClick={() => setCurrentIndex((prev) => (prev - 1 + steps.length) % steps.length)}
+            className="absolute left-0 top-1/2 -translate-y-1/2 z-20 p-2 rounded-full bg-white shadow-md text-[#ef6d31] hover:bg-[#f6eee8] transition-colors"
+            aria-label="Previous step"
+          >
+            <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="m15 18-6-6 6-6"/></svg>
+          </button>
+
+          <div className="w-full px-12">
+            <motion.div
+              key={currentIndex}
+              initial={{ opacity: 0, x: 20 }}
+              animate={{ opacity: 1, x: 0 }}
+              exit={{ opacity: 0, x: -20 }}
+              transition={{ duration: 0.3 }}
+              className="w-full"
+            >
+              {(() => {
+                const step = displayedSteps[currentIndex];
+                return (
+                  <motion.article
+                    key={step.number}
+                    custom={currentIndex}
+                    variants={stepCardVariants}
+                    initial="hidden"
+                    animate="visible"
+                    className="relative rounded-[24px] bg-[#f6eee8] px-[14px] pb-[14px] pt-[40px] shadow-[0_8px_18px_rgba(73,47,27,0.06)] min-h-[216px] w-full"
+                    whileHover={{ y: -8, scale: 1.015 }}
+                    transition={{ type: "spring", stiffness: 260, damping: 22 }}
+                  >
+                    <motion.div
+                      variants={stepPinVariants}
+                      initial="hidden"
+                      animate="visible"
+                      className="pointer-events-none absolute z-20 left-1/2 top-[-20px] -translate-x-1/2"
+                    >
+                      <Image
+                        src="/Frame 344.webp"
+                        alt=""
+                        width={58}
+                        height={58}
+                        sizes="56px"
+                        className="h-[56px] w-[56px] object-contain drop-shadow-[0_10px_12px_rgba(0,0,0,0.22)]"
+                        aria-hidden="true"
+                      />
+                    </motion.div>
+
+                    <motion.div
+                      variants={stepContentVariants}
+                      initial="hidden"
+                      animate="visible"
+                      className="flex h-full flex-col rounded-[16px] bg-white px-[14px] py-[14px] shadow-[0_2px_0_rgba(214,205,198,0.92),0_8px_15px_rgba(80,54,37,0.08)] min-h-[162px]"
+                    >
+                      <motion.div
+                        variants={stepTextVariants}
+                        className="text-2xl font-normal leading-none tracking-[-0.04em] text-[#ef6d31]"
+                      >
+                        {step.number}
+                      </motion.div>
+                      <motion.h3
+                        variants={stepTextVariants}
+                        className="mt-3 text-base font-semibold leading-[1.18] tracking-[-0.03em] text-[#4f4f4f] sm:text-md"
+                      >
+                        {step.title}
+                      </motion.h3>
+                      <motion.div variants={stepTextVariants} className="relative mt-1 min-h-0 flex-1">
+                        <div
+                          aria-hidden="true"
+                          className="pointer-events-none absolute bottom-0 right-0 top-0 w-[3px] rounded-full bg-[#dbd4ad]/35"
+                        >
+                          {scrollStates[step.number]?.visible && (
+                            <span
+                              className="absolute left-0 w-full rounded-full bg-[#b3a62f]"
+                              style={{
+                                height: `${scrollStates[step.number].height}px`,
+                                transform: `translateY(${scrollStates[step.number].top}px)`,
+                              }}
+                            />
+                          )}
+                        </div>
+                        <p
+                          ref={(node) => {
+                            contentRefs.current[step.number] = node;
+                          }}
+                          onScroll={() => {
+                            const element = contentRefs.current[step.number];
+                            if (!element) return;
+                            const { clientHeight, scrollHeight, scrollTop } = element;
+                            const hasOverflow = scrollHeight - clientHeight > 4;
+                            const trackHeight = clientHeight;
+                            const thumbHeight = hasOverflow
+                              ? Math.max((clientHeight / scrollHeight) * trackHeight, 28)
+                              : trackHeight;
+                            const maxThumbTop = Math.max(trackHeight - thumbHeight, 0);
+                            const maxScrollTop = Math.max(scrollHeight - clientHeight, 1);
+                            const thumbTop = hasOverflow
+                              ? (scrollTop / maxScrollTop) * maxThumbTop
+                              : 0;
+
+                            setScrollStates((prev) => ({
+                              ...prev,
+                              [step.number]: {
+                                height: thumbHeight,
+                                top: thumbTop,
+                                visible: hasOverflow,
+                              },
+                            }));
+                          }}
+                          className="process-step-scroll h-full overflow-y-auto pr-3 text-sm leading-[1.36] text-[#444444] sm:text-sm"
+                        >
+                          {step.description}
+                        </p>
+                      </motion.div>
+                    </motion.div>
+                  </motion.article>
+                );
+              })()}
+            </motion.div>
+          </div>
+
+          <button
+            onClick={() => setCurrentIndex((prev) => (prev + 1) % steps.length)}
+            className="absolute right-0 top-1/2 -translate-y-1/2 z-20 p-2 rounded-full bg-white shadow-md text-[#ef6d31] hover:bg-[#f6eee8] transition-colors"
+            aria-label="Next step"
+          >
+            <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="m9 18 6-6-6-6"/></svg>
+          </button>
+
+          <div className="flex gap-2 mt-8">
+            {steps.map((_, idx) => (
+              <button
+                key={idx}
+                onClick={() => setCurrentIndex(idx)}
+                className={`h-2 rounded-full transition-all duration-300 ${idx === currentIndex ? 'w-6 bg-[#ef6d31]' : 'w-2 bg-[#dbd4ad]'}`}
+                aria-label={`Go to step ${idx + 1}`}
+              />
+            ))}
+          </div>
+        </div>
+
+        {/* ========================================== */}
+        {/* DESKTOP/TABLET VIEW (>= md screens)        */}
+        {/* ========================================== */}
+        <div className={`hidden md:block relative mt-14 lg:mt-16 ${isNineStepLayout ? "xl:min-h-[860px]" : isSixStepLayout ? "xl:min-h-[540px]" : "xl:min-h-[420px]"}`}>
           <svg
             xmlns="http://www.w3.org/2000/svg"
             width="1314"
