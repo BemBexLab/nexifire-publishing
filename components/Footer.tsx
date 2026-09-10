@@ -1,13 +1,84 @@
 "use client";
 
 import { motion, type Variants } from "motion/react";
-import React from "react";
 import Link from "next/link";
 import { TfiArrowTopRight } from "react-icons/tfi";
 import { LuPhoneCall } from "react-icons/lu";
 import { MdOutlineEmail } from "react-icons/md";
 import { SlLocationPin } from "react-icons/sl";
 import { FaFacebookF, FaInstagram, FaTwitter, FaLinkedinIn } from "react-icons/fa";
+
+type FooterLink = {
+  label: string;
+  href: string;
+};
+
+type FooterSocialLink = FooterLink & {
+  icon: "facebook" | "instagram" | "twitter" | "linkedin";
+};
+
+type FooterContactLink = FooterLink;
+
+type FooterData = {
+  title: string;
+  description: string;
+  ctaLabel: string;
+  ctaHref: string;
+  quickLinks: FooterLink[];
+  serviceLinks: FooterLink[];
+  phone: FooterContactLink;
+  email: FooterContactLink;
+  location: FooterContactLink;
+  socialLinks: FooterSocialLink[];
+  copyrightText: string;
+  privacyPolicy: FooterLink;
+  termsAndConditions: FooterLink;
+};
+
+export type FooterProps = Partial<FooterData>;
+
+const defaultFooterData: FooterData = {
+  title: "NexiFire Publishing",
+  description:
+    "NexiFire Publishing is United States reliable self-publishing partner. We help authors publish eBooks, print books, and audiobooks with professional services including ghostwriting, editing, formatting, cover design, and global distribution.",
+  ctaLabel: "Publish Your Book",
+  ctaHref: "/contact",
+  quickLinks: [
+    { label: "Home", href: "/" },
+    { label: "Who We Are", href: "/who-we-are" },
+    { label: "Our Books", href: "/our-books" },
+    { label: "Pricing & Packages", href: "/pricing-packages" },
+    { label: "Contact Us", href: "/contact" },
+    { label: "Blogs", href: "/blogs" },
+  ],
+  serviceLinks: [
+    { label: "Book Publishing", href: "/publishing-services/book-publishing" },
+    { label: "Ghost Writing", href: "/publishing-services/ghost-writing" },
+    { label: "Book Marketing", href: "/publishing-services/book-marketing" },
+    { label: "Book Editing", href: "/publishing-services/book-editing" },
+    { label: "Book Cover Design", href: "/publishing-services/book-cover-design" },
+    { label: "Audio Book", href: "/publishing-services/audio-book" },
+  ],
+  phone: { label: "(0468) 285-539", href: "tel:+61468285539" },
+  email: { label: "contact@nexifire.com", href: "mailto:contact@nexifire.com" },
+  location: { label: "United States", href: "" },
+  socialLinks: [
+    { label: "Facebook", href: "#", icon: "facebook" },
+    { label: "Instagram", href: "#", icon: "instagram" },
+    { label: "Twitter", href: "#", icon: "twitter" },
+    { label: "LinkedIn", href: "#", icon: "linkedin" },
+  ],
+  copyrightText: "© 2026 NexiFire Publishing All Rights Reserved.",
+  privacyPolicy: { label: "Privacy Policy", href: "#" },
+  termsAndConditions: { label: "Terms & Conditions", href: "#" },
+};
+
+const socialIcons = {
+  facebook: FaFacebookF,
+  instagram: FaInstagram,
+  twitter: FaTwitter,
+  linkedin: FaLinkedinIn,
+} as const;
 
 const footerEase = [0.22, 1, 0.36, 1] as const;
 
@@ -141,7 +212,12 @@ const footerBarVariants: Variants = {
   },
 };
 
-const FooterCTA = () => {
+const FooterCTA = (props: FooterProps) => {
+  const data: FooterData = {
+    ...defaultFooterData,
+    ...props,
+  };
+
   return (
     <section className="w-full bg-[#F3F3F3] px-4 pt-12 font-jakarta sm:px-6 sm:pt-14 lg:px-8 lg:pt-16 xl:px-12 xl:pt-20">
       <motion.div
@@ -160,22 +236,16 @@ const FooterCTA = () => {
               variants={revealVariants}
               className="project-h2 py-2 text-center leading-[1.02] tracking-[-0.05em] md:text-left"
             >
-              NexiFire Publishing
+              {data.title}
             </motion.h2>
             <motion.p
               variants={revealVariants}
               className="mt-5 max-w-[670px] text-base leading-[1.7] text-[#7D7D7D] sm:text-lg"
             >
-              NexiFire Publishing is United States reliable self-publishing partner. We help authors publish eBooks, print books, and audiobooks with professional services including ghostwriting, editing, formatting, cover design, and global distribution.
+              {data.description}
             </motion.p>
             <motion.div variants={revealVariants} className="mt-6 w-full sm:w-fit">
-              <Link href="/contact" className="w-full sm:w-fit">
-              <motion.button
-                style={{
-                  background:
-                    "linear-gradient(90deg, #B24002 0%, #FF5B01 100%)",
-                }}
-                className="flex min-h-[40px] w-full items-center justify-center gap-2 rounded-[9px] px-5 py-2 text-sm font-medium text-white sm:w-auto sm:px-6 sm:text-base"
+              <motion.div
                 whileHover={{
                   y: -3,
                   scale: 1.02,
@@ -184,19 +254,23 @@ const FooterCTA = () => {
                 whileTap={{ y: 0, scale: 0.98 }}
                 transition={{ type: "spring", stiffness: 320, damping: 20 }}
               >
-                Publish Your Book
-                <motion.span
-                  whileHover={{ x: 4, y: -2 }}
-                  transition={{
-                    type: "spring",
-                    stiffness: 300,
-                    damping: 18,
-                  }}
+                <Link
+                  href={data.ctaHref}
+                  className="flex min-h-[40px] w-full items-center justify-center gap-2 rounded-[9px] bg-[linear-gradient(90deg,#B24002_0%,#FF5B01_100%)] px-5 py-2 text-sm font-medium text-white sm:w-auto sm:px-6 sm:text-base"
                 >
-                  <TfiArrowTopRight size={20} />
-                </motion.span>
-              </motion.button>
-              </Link>
+                  {data.ctaLabel}
+                  <motion.span
+                    whileHover={{ x: 4, y: -2 }}
+                    transition={{
+                      type: "spring",
+                      stiffness: 300,
+                      damping: 18,
+                    }}
+                  >
+                    <TfiArrowTopRight size={20} />
+                  </motion.span>
+                </Link>
+              </motion.div>
             </motion.div>
           </motion.div>
 
@@ -215,24 +289,20 @@ const FooterCTA = () => {
                 variants={listVariants}
                 className="list-inside list-disc space-y-2.5 text-base font-medium text-[#777777]"
               >
-                <motion.li variants={listItemVariants} className="pl-1">
-                  <a className="transition hover:text-[#B24002]" href="/">Home</a>
-                </motion.li>
-                <motion.li variants={listItemVariants} className="pl-1">
-                  <a className="transition hover:text-[#B24002]" href="/who-we-are">Who We Are</a>
-                </motion.li>
-                <motion.li variants={listItemVariants} className="pl-1">
-                  <a className="transition hover:text-[#B24002]" href="/our-books">Our Books</a>
-                </motion.li>
-                <motion.li variants={listItemVariants} className="pl-1">
-                  <a className="transition hover:text-[#B24002]" href="/pricing-packages">Pricing & Packages</a>
-                </motion.li>
-                <motion.li variants={listItemVariants} className="pl-1">
-                  <a className="transition hover:text-[#B24002]" href="/contact">Contact Us</a>
-                </motion.li>
-                <motion.li variants={listItemVariants} className="pl-1">
-                  <a className="transition hover:text-[#B24002]" href="/blogs">Blogs</a>
-                </motion.li>
+                {data.quickLinks.map((link) => (
+                  <motion.li
+                    key={`${link.href}-${link.label}`}
+                    variants={listItemVariants}
+                    className="pl-1"
+                  >
+                    <Link
+                      className="transition hover:text-[#B24002]"
+                      href={link.href}
+                    >
+                      {link.label}
+                    </Link>
+                  </motion.li>
+                ))}
               </motion.ul>
             </motion.div>
 
@@ -247,23 +317,20 @@ const FooterCTA = () => {
                 variants={listVariants}
                 className="list-inside list-disc space-y-2.5 text-base font-medium text-[#777777]"
               >
-                <motion.li variants={listItemVariants} className="pl-1">
-                  <a className="transition hover:text-[#B24002]" href="/publishing-services/book-publishing">Book Publishing</a>
-                </motion.li>
-                <motion.li variants={listItemVariants} className="pl-1">
-                  <a className="transition hover:text-[#B24002]" href="/publishing-services/ghost-writing">Ghost Writing</a>
-                </motion.li>
-                <motion.li variants={listItemVariants} className="pl-1">
-                  <a className="transition hover:text-[#B24002]" href="/publishing-services/book-marketing">Book Marketing</a>
-                </motion.li><motion.li variants={listItemVariants} className="pl-1">
-                  <a className="transition hover:text-[#B24002]" href="/publishing-services/book-editing">Book Editing</a>
-                </motion.li>
-                <motion.li variants={listItemVariants} className="pl-1">
-                  <a className="transition hover:text-[#B24002]" href="/publishing-services/book-cover-design">Book Cover Design</a>
-                </motion.li>
-                <motion.li variants={listItemVariants} className="pl-1">
-                  <a className="transition hover:text-[#B24002]" href="/publishing-services/audio-book">Audio Book</a>
-                </motion.li>
+                {data.serviceLinks.map((link) => (
+                  <motion.li
+                    key={`${link.href}-${link.label}`}
+                    variants={listItemVariants}
+                    className="pl-1"
+                  >
+                    <Link
+                      className="transition hover:text-[#B24002]"
+                      href={link.href}
+                    >
+                      {link.label}
+                    </Link>
+                  </motion.li>
+                ))}
               </motion.ul>
             </motion.div>
 
@@ -281,25 +348,25 @@ const FooterCTA = () => {
                 <motion.li variants={listItemVariants} className="flex items-start">
                   <LuPhoneCall className="mt-1 shrink-0" />
                   <a
-                    href="tel:+61468285539"
+                    href={data.phone.href}
                     className="ml-2 min-w-0 break-words transition hover:text-[#B24002]"
                   >
-                    (0468) 285-539
+                    {data.phone.label}
                   </a>
                 </motion.li>
                 <motion.li variants={listItemVariants} className="flex items-start">
                   <MdOutlineEmail className="mt-1 shrink-0" />
                   <a
-                    href="mailto:contact@nexifire.com"
+                    href={data.email.href}
                     className="ml-2 min-w-0 break-words transition hover:text-[#B24002]"
                   >
-                    contact@nexifire.com
+                    {data.email.label}
                   </a>
                 </motion.li>
                 <motion.li variants={listItemVariants} className="flex items-start">
                   <SlLocationPin className="mt-1 shrink-0" />
-                  <a href="" className="ml-2 min-w-0 break-words">
-                    United States
+                  <a href={data.location.href} className="ml-2 min-w-0 break-words">
+                    {data.location.label}
                   </a>
                 </motion.li>
               </motion.ul>
@@ -312,46 +379,23 @@ const FooterCTA = () => {
                   Social Media
                 </motion.h4>
                 <motion.div variants={socialsVariants} className="flex flex-wrap items-center gap-3">
-                  <motion.a
-                    variants={socialItemVariants}
-                    whileHover={{ y: -3, scale: 1.04 }}
-                    transition={{ duration: 0.2, ease: "easeOut" }}
-                    href="#"
-                    aria-label="Facebook"
-                    className="flex h-9 w-9 items-center justify-center bg-[#8d8d8d] text-white shadow-[0_4px_10px_rgba(0,0,0,0.18)] transition hover:bg-[#B24002]"
-                  >
-                    <FaFacebookF size={20} />
-                  </motion.a>
-                  <motion.a
-                    variants={socialItemVariants}
-                    whileHover={{ y: -3, scale: 1.04 }}
-                    transition={{ duration: 0.2, ease: "easeOut" }}
-                    href="#"
-                    aria-label="Instagram"
-                    className="flex h-9 w-9 items-center justify-center bg-[#8d8d8d] text-white shadow-[0_4px_10px_rgba(0,0,0,0.18)] transition hover:bg-[#B24002]"
-                  >
-                    <FaInstagram size={20} />
-                  </motion.a>
-                  <motion.a
-                    variants={socialItemVariants}
-                    whileHover={{ y: -3, scale: 1.04 }}
-                    transition={{ duration: 0.2, ease: "easeOut" }}
-                    href="#"
-                    aria-label="Twitter"
-                    className="flex h-9 w-9 items-center justify-center bg-[#8d8d8d] text-white shadow-[0_4px_10px_rgba(0,0,0,0.18)] transition hover:bg-[#B24002]"
-                  >
-                    <FaTwitter size={20} />
-                  </motion.a>
-                  <motion.a
-                    variants={socialItemVariants}
-                    whileHover={{ y: -3, scale: 1.04 }}
-                    transition={{ duration: 0.2, ease: "easeOut" }}
-                    href="#"
-                    aria-label="LinkedIn"
-                    className="flex h-9 w-9 items-center justify-center bg-[#8d8d8d] text-white shadow-[0_4px_10px_rgba(0,0,0,0.18)] transition hover:bg-[#B24002]"
-                  >
-                    <FaLinkedinIn size={20} />
-                  </motion.a>
+                  {data.socialLinks.map((social) => {
+                    const SocialIcon = socialIcons[social.icon];
+
+                    return (
+                      <motion.a
+                        key={`${social.href}-${social.label}`}
+                        variants={socialItemVariants}
+                        whileHover={{ y: -3, scale: 1.04 }}
+                        transition={{ duration: 0.2, ease: "easeOut" }}
+                        href={social.href}
+                        aria-label={social.label}
+                        className="flex h-9 w-9 items-center justify-center bg-[#8d8d8d] text-white shadow-[0_4px_10px_rgba(0,0,0,0.18)] transition hover:bg-[#B24002]"
+                      >
+                        <SocialIcon size={20} />
+                      </motion.a>
+                    );
+                  })}
                 </motion.div>
               </motion.div>
             </motion.div>
@@ -363,17 +407,17 @@ const FooterCTA = () => {
 
           <div className="flex w-full flex-col gap-3 py-5 text-sm font-semibold text-[#777777] md:flex-row md:items-center md:justify-between">
             <p className="text-center md:text-left">
-              &copy; 2026 NexiFire Publishing All Rights Reserved.
+              {data.copyrightText}
             </p>
 
             <p className="text-center leading-relaxed md:text-right">
-              <a className="hover:text-[#B94202]" href="#">
-                Privacy Policy
-              </a>
+              <Link className="hover:text-[#B94202]" href={data.privacyPolicy.href}>
+                {data.privacyPolicy.label}
+              </Link>
               <span className="px-3">|</span>
-              <a className="hover:text-[#B94202]" href="#">
-                Terms &amp; Conditions
-              </a>
+              <Link className="hover:text-[#B94202]" href={data.termsAndConditions.href}>
+                {data.termsAndConditions.label}
+              </Link>
             </p>
           </div>
         </motion.div>

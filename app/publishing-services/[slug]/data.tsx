@@ -8,7 +8,7 @@ import type {
 } from "@/components/Testimonials";
 import type { WhoWeServeProps } from "@/components/WhoWeServe";
 import type { WhyChooseProps, WhyChooseReason } from "@/components/WhyChoose";
-import { defaultWhoWeServeData } from "@/data/whoWeServe";
+import type { FooterProps } from "@/components/Footer";
 
 type PageHeroContent = {
   eyebrow: string;
@@ -41,6 +41,9 @@ type ImageDescContent = {
   title: string;
   paragraphs: ReactNode[];
   listItems?: string[];
+  footnote?: ReactNode;
+  buttonLabel?: string;
+  buttonHref?: string;
   imageSrc: string;
   imageAlt: string;
   reverse?: boolean;
@@ -86,6 +89,7 @@ export type PublishingServicePageData = {
   faqs: FAQsContent;
   testimonials: TestimonialsContent;
   contact: ContactContent;
+  footer?: FooterProps;
 };
 
 export const publishingServicePageData: Record<
@@ -317,29 +321,27 @@ export const publishingServicePageData: Record<
     slug: "book-cover-design",
     hero: {
       eyebrow: "NexiFire Publishing",
-      title: "Book Cover Design Services United States",
+      title: "Book Cover Design Services in the USA",
       description:
-        (<><span className="font-bold text-black text-2xl">A Great Book Deserves a Cover That Stops the Scroll</span> <br /> NexiFire Publishing connects American authors with professional book cover designers who understand genre, typography, and what actually makes readers click "buy." From custom eBook covers to full hardcover jackets, every design we create is built to sell your book before a single page is read.</>),
+        (<><span className="font-bold text-black text-2xl">A Cover That Stops the Scroll</span> <br /> NexiFire Publishing connects authors with professional book cover designers who actually understand genre, typography, and what makes a browsing reader stop and click. Whether you need custom book cover design for indie authors, a full hardcover jacket, or an ebook cover design service with unlimited revisions, every design we create is built to sell your book before a single page gets read.</>),
       buttonLabel: "Start the Design Process",
       buttonHref: "/contact",
     },
     introduction: {
       eyebrow: "Cover Design Services",
-      title: "Every Cover Format, Designed to Platform Specification",
+      title: "Every Format, Built to Platform Spec",
       description: (
         <>
           <p>
-            Different formats have different technical and creative
-            requirements. NexiFire designs every cover type American authors
-            need, built correctly for the platform it's destined for from the
-            very first draft.
+            Different formats need different things technically and creatively. We design every cover type authors actually need, built correctly for its destination platform from the first draft.
           </p>
           <ul className="mt-4 list-inside list-disc text-[#444444]">
-            <li>eBook Cover Design</li>
+            <li>Ebook Cover Design</li>
             <li>Paperback Cover Design</li>
             <li>Hardcover Book Jacket Design</li>
-            <li>KDP Book Cover Design</li>
-            <li>3D Book Cover Mockups</li>
+            <li>Amazon KDP Book Cover Design</li>
+            <li>3D Ebook Cover Design</li>
+            <li>Book Series Cover Design</li>
             <li>Back Cover & Blurb Design</li>
           </ul>
         </>
@@ -347,104 +349,108 @@ export const publishingServicePageData: Record<
       imageSrc: "/0eee94f7-4643-4e46-8b95-cc9232497a79 1 (1).webp",
     },
     process: {
-      badgeText: "How It Works",
-      title: "Our Book Cover Design Process, Step by Step",
+      badgeText: "",
+      title: "How It Works",
       description:
         "",
       steps: [
         {
           number: "01",
-          title: "Design Brief & Research",
+          title: "Share Your Vision",
           description:
-            "Share your vision while we analyse your genre and market to create a strategically positioned cover.",
+            "We review your genre, audience, and market.",
         },
         {
           number: "02",
-          title: "Concept Development",
+          title: "Explore Concepts",
           description:
-            "Receive multiple original cover concepts and choose the design direction that best fits your book.",
+            "Choose from multiple original cover directions.",
         },
         {
           number: "03",
-          title: "Design Refinement",
+          title: "Refine the Design",
           description:
-            "We perfect your selected concept through collaborative revisions until every detail is right.",
+            "We revise your selected concept until it feels right.",
         },
         {
           number: "04",
           title: "Final Delivery",
           description:
-            "Get print-ready files for all required formats, fully optimised for major publishing platforms.",
+            "Receive print-ready files for all required formats and platforms.",
         },
       ] satisfies OurProcessStep[],
     },
     whyChoose: {
-      badgeText: "The NexiFire Difference",
-      title: "Why American Authors Choose NexiFire for Their Book Cover",
+      badgeText: "",
+      title: "Why Authors Choose Us",
       description:
         "",
       reasons: [
         {
-          title: "Designers Who Read Before They Design",
+          title: "Designers who actually read before they design",
           description:
-            "Create a cover that reflects what your book is actually about.",
+            "A cover should reflect what your book's actually about, not a generic mood board.",
         },
         {
-          title: "Genre Benchmarking",
+          title: "Real genre benchmarking",
           description:
-            "We research what's currently working in your specific genre and sub-genre.",
+            `We look at what's currently working in your specific sub-genre, not just "romance" broadly.`,
         },
         {
-          title: "No Generic Templates",
+          title: "No templates, ever",
           description:
-            "Every NexiFire cover starts as an original concept.",
+            "Every concept starts from scratch; this isn't Canva-with-extra-steps or a premade cover with your title swapped in.",
         },
         {
-          title: "Platform Compliance, Guaranteed",
+          title: "Platform compliance, guaranteed",
           description:
-            "We build every cover against the exact technical specifications of Amazon KDP, IngramSpark, and Apple Books.",
+            "Every cover is built to Amazon KDP, IngramSpark, and Apple Books specs, so files don't get rejected or bounced back.",
         },
         {
-          title: "Local Designers Who Understand American Readers",
+          title: "A real designer contact, not a queue",
           description:
-            "Our designers understand American visual sensibilities and local market expectations.",
+            "You're not submitting a brief into a void and hoping — you have someone to actually talk to.",
         },
       ] satisfies WhyChooseReason[],
     },
     publishBanner: {
-      eyebrow: "Book Cover Design With NexiFire",
-      title: "REVISION ROUNDS INCLUDED",
+      eyebrow: "",
+      title: "Ready to Design a Cover Your Book Deserves?",
       description:
-        "Revision rounds included vary by package. Every NexiFire cover design project includes at least two full revision rounds, with additional rounds available on request.",
-      buttonLabel: "Start My Cover Design",
+        "Tell us about your book, your genre, and your style preferences — we'll come back with original concepts within days, not weeks.",
+      buttonLabel: "Get My Cover Concepts",
       buttonHref: "/contact",
       backgroundImageSrc: "/Frame 2147225868.webp",
       backgroundAlt: "Book cover design banner",
     },
     imageDesc: {
       badgeText: "",
-      title: "Your Cover Is the First Page Every Reader Actually Reads",
+      title: "Why Your Cover Matters",
       paragraphs: [
-        "They say not to judge a book by its cover, but every reader does it anyway, every single time. On Amazon, Apple Books, and bookstore shelves, your cover has roughly two seconds to convince a browsing reader that your book is worth a second look. Get it wrong, and even brilliant writing can go completely unnoticed.",
-        "NexiFire Publishing's custom book cover design service in the United States is built around one simple principle: your cover should look like it belongs on the same shelf as the bestsellers in your genre. Our designers study what's currently working in your category, understand the typography conventions that signal genre and tone, and create covers that are genuinely competitive, not generic templates with your title dropped on top.",
-        "Whether you need an eBook cover, a paperback wraparound, a full hardcover jacket, or all three formats from a single design, we deliver professional, print-ready, platform-compliant files every time.",
+        <h3 className="text-xl text-black text-semibold">Your Cover Is the First Page Every Reader Actually Reads</h3>,
+        `Nobody actually follows "don't judge a book by its cover." On Amazon, Apple Books, or a bookstore shelf, you've got about two seconds to convince someone your book's worth a second look. Get it wrong, and even great writing goes unnoticed.`,
+        "This is professional book cover design built on one idea: your cover should look like it belongs next to the bestsellers in your genre, not like a template with your title dropped on top. Our designers actually look at what's working in your category right now, understand the typography that signals tone and genre, and build something genuinely competitive.",
+        "Need an ebook cover, a paperback wraparound, a hardcover jacket, or all three from one design? We deliver professional, print-ready, platform-compliant files, every time."
       ],
       listItems: [
-        "Genre research and competitive cover analysis before design begins",
-        "Multiple original concepts, not a single take-it-or-leave-it design",
-        "Custom typography selected for your genre and tone",
+        "Genre research and competitive analysis before design starts",
+        "Multiple original concepts, not one take-it-or-leave-it draft",
+        "Custom typography chosen for your genre and tone",
         "Print-ready files for Amazon KDP, IngramSpark, and Apple Books",
-        "3D mockups for marketing and social media use",
-        "Revision rounds included until you're genuinely happy with the result",
+        "3D ebook cover design mockups for marketing and social",
+        "Revisions included until you're genuinely happy with it",
       ],
       imageSrc: "/Rectangle 23834 (5).webp",
       imageAlt: "Book cover design showcase",
       reverse: true,
+      footnote: <>Revision rounds vary by package. Every cover project includes at least two full rounds, with more available on request.</>,
+      buttonLabel: "Start My Cover Design",
+      buttonHref: "/",
     },
     whoWeServe: {
       badgeText: "Genre Expertise",
-      title: "Book Cover Design Across Every Genre",
-      description: "Each genre has its own visual language, colour palettes, typography conventions, and imagery that signal quality to readers browsing that category. NexiFire's designers know the difference.",
+      title: "Genre-Specific Book Cover Design",
+      description: "Every genre has its own color palette, typography rules, and imagery that signals quality to readers browsing that category, and readers notice fast when a cover doesn't fit. This is where a lot of DIY and template covers fall apart.",
       stats: [
         { value: "7+", label: "Years of experience", highlighted: true },
         { value: "130+", label: "Professional ghostwriters" },
@@ -453,7 +459,8 @@ export const publishingServicePageData: Record<
       ],
       genres: [
         "Fiction & Thriller",
-        "Business & Non-Fiction",
+        "Dark Romance",
+        "Business & Nonfiction",
         "Children's Books",
         "Memoir & Biography",
         "Self-Help & Wellness",
@@ -461,19 +468,19 @@ export const publishingServicePageData: Record<
       ],
     },
     whatsIncluded: {
-      badgeText: "What Every Cover Package Includes",
-      title: "Regardless of which package you choose, NexiFire always delivers:",
+      badgeText: "",
+      title: "What Every Package Includes",
       description:
-        "",
+        "No matter the package, you get:",
       items: [
-        { label: "Original, custom concept design, never templated" },
-        { label: "Genre and market research before drafting" },
+        { label: "An original, custom concept, never templated" },
+        { label: "Genre and market research before drafting starts" },
         { label: "Platform-compliant, print-ready files" },
-        { label: "Full commercial usage rights, no royalties" },
+        { label: "Full commercial usage rights, no royalties, ever" },
         { label: "Source files available on request" },
-        { label: "Dedicated designer contact throughout" },
+        { label: "A dedicated designer for the whole project" },
         { label: "Fast revision turnaround" },
-        { label: "Transparent flat-rate pricing" },
+        { label: "Transparent, flat-rate pricing, no surprise add-ons" },
       ],
       imageSrc: "/Rectangle 23830 (2).webp",
       imageAlt: "Book cover design deliverables",
@@ -485,34 +492,44 @@ export const publishingServicePageData: Record<
       items: [
         {
           question:
-            "How much does book cover design cost in the United States?",
+            "How much does ebook cover design cost in the USA?",
           answer:
-            "Book cover design prices in the United States typically range from around $249 for a simple eBook-only cover to $750 or more for a full hardcover jacket with custom illustration, spine calculation, and flap design. The price depends on genre complexity, whether original illustration or photography is required, and how many formats you need. NexiFire offers transparent, flat-rate packages so you know the full cost before work begins.",
+            "Ebook cover design cost typically ranges from around $249 for a simple ebook-only cover to $750 or more for a full hardcover jacket with custom illustration, spine calculation, and flap design. It depends on genre complexity, whether original illustration is involved, and how many formats you need. We keep pricing flat-rate and upfront so there's no guessing.",
         },
         {
-          question: "Do I really need a professional book cover designer?",
+          question: "Do I really need a professional ebook cover designer?",
           answer:
-            "Yes. Your cover is the single biggest factor influencing whether a browsing reader clicks on your book or scrolls past it. Self-designed or template-based covers are usually easy to spot and can quietly undermine reader confidence, no matter how well-written the book is. A professional book cover designer in the United States understands genre conventions, typography hierarchy, and current market trends that most authors simply don't have visibility into.",
+            "Yes. Your cover is the single biggest factor in whether a browsing reader clicks or scrolls past. Self-designed or template covers are usually easy to spot, and they can quietly undercut reader confidence no matter how good the writing is. A professional designer understands genre conventions and typography hierarchy that most authors just don't have visibility into.",
         },
         {
-          question: "What's the difference between an eBook cover and a print cover?",
+          question: "What's the difference between an ebook cover and a print cover?",
           answer:
-            "An eBook cover is a single front-cover image designed to work as a small thumbnail on digital platforms like Kindle and Apple Books. A print cover includes the front cover, spine, and back cover combined into a single wraparound design, with the spine width precisely calculated based on your book's page count, trim size, and paper stock to ensure accurate printing.",
+            "An ebook cover is a single front-cover image built to work as a small thumbnail on Kindle, Apple Books, and similar platforms. A print cover includes the front, spine, and back combined into one wraparound design, with spine width calculated from your page count, trim size, and paper stock so it prints correctly.",
         },
         {
-          question: "Will my cover work correctly with Amazon KDP and IngramSpark?",
+          question: "Will my cover work with Amazon KDP and IngramSpark?",
           answer:
-            "Yes. NexiFire designs every cover to meet the exact technical specifications required by Amazon KDP, IngramSpark, and Apple Books, including correct bleed, resolution, colour profile, and file formatting, so your cover uploads and prints correctly the first time, with no rejected files or delays during the publishing process.",
+            "Yes. Every cover is built to meet the exact specs Amazon KDP, IngramSpark, and Apple Books require: correct bleed, resolution, color profile, and file formatting, so it uploads and prints right the first time, no rejected files.",
         },
         {
-          question: "What makes a great book cover in 2026?",
+          question: "What makes a great ebook cover in 2026?",
           answer:
-            "A great book cover in 2026 communicates genre instantly, uses bold and legible typography that reads clearly even at thumbnail size, avoids overused stock imagery cliches, and reflects current design trends within its specific category without looking dated. Equally important is technical execution, correct colour profiles, sharp resolution, and platform-compliant formatting that ensures the cover looks as intended across every device and print format.",
+            "It communicates genre instantly, uses bold typography that's still legible at thumbnail size, skips the overused stock-photo clichés, and looks current within its category without chasing a trend that'll date fast. Just as important: correct color profiles, sharp resolution, and platform-compliant formatting so it looks right everywhere it's displayed.",
         },
         {
-          question: "How many revisions are included in book cover design packages?",
+          question: "How many revisions are included?",
           answer:
-            "NexiFire's entry-level eBook cover package includes two revision rounds. Our Print & Digital Complete and Hardcover Premium packages include unlimited revision rounds, ensuring you're genuinely satisfied with your final design rather than settling for the first or second draft.",
+            "The entry-level ebook cover package includes two revision rounds. Our Print & Digital Complete and Hardcover Premium packages include unlimited revisions, so you're not stuck settling for the first or second draft.",
+        },
+        {
+          question: "Do you design covers for a book series?",
+          answer:
+            "Yes, book series cover design is one of the trickier jobs in this space, since each cover needs to stand alone and still read as part of a set. We build a shared visual system (typography, layout, color logic) up front so book two and book three don't feel like an afterthought.",
+        },
+        {
+          question: "Can I bundle cover design with formatting?",
+          answer:
+            "Yes. Our book cover design and formatting package covers the cover plus interior layout for print and ebook, so you're not coordinating two separate vendors and hoping the trim size matches.",
         },
       ],
       sidebarTitle: "Want A Better First Impression For Your Book?",
@@ -531,7 +548,7 @@ export const publishingServicePageData: Record<
       testimonials: [
         {
           quote:
-            "I had tried a budget cover design service before NexiFire, and the result looked exactly like what it was, a cheap template. The difference in quality was night and day. My designer actually read my manuscript synopsis and the concepts she sent back genuinely captured the tone of my thriller. My sales improved noticeably after the rebrand.",
+            "I'd tried a cheap ebook cover design service before this, and it looked exactly like what it was: a template with my name on it. My designer actually read my synopsis, and the concepts genuinely captured the tone of my thriller. Sales improved noticeably after the rebrand.",
           name: "Hannah Paul",
           avatarSrc:
             "https://images.unsplash.com/photo-1494790108377-be9c29b29330?auto=format&fit=crop&w=120&q=80",
@@ -540,7 +557,7 @@ export const publishingServicePageData: Record<
         },
         {
           quote:
-            "I needed a hardcover jacket design that could genuinely sit next to traditionally published business books on a shelf, and that's exactly what I got. The flap copy layout and the foil finish recommendation made the final printed book look properly premium. Worth every dollar.",
+            "I needed a hardcover jacket that could sit next to traditionally published business books on a shelf, and that's what I got. The flap copy layout and foil finish suggestion made the final book look genuinely premium." ,
           name: "Oliver Daniel",
           avatarSrc:
             "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&w=120&q=80",
@@ -549,7 +566,7 @@ export const publishingServicePageData: Record<
         },
         {
           quote:
-            "My children's picture book cover needed to appeal to kids and convince parents at the same time. NexiFire nailed the balance: bright, fun illustration style but still polished enough to look professionally published. The 3D mockup they included has been brilliant for my Instagram promotion too.",
+            "My children's picture book cover needed to appeal to kids and reassure parents at the same time. They nailed that balance, bright and fun, but still polished. The 3D mockup has been great for Instagram too.",
           name: "Grace Blackford",
           avatarSrc:
             "https://images.unsplash.com/photo-1438761681033-6461ffad8d80?auto=format&fit=crop&w=120&q=80",
@@ -559,10 +576,16 @@ export const publishingServicePageData: Record<
       ],
     },
     contact: {
-      title: "Ready to Design a Cover Your Book Deserves?",
+      title: "Ready to Publish Your Book?",
       description:
-        "Tell us about your book, your genre, and your style preferences, and we'll come back with original cover concepts within days, not weeks.",
+        "Tell us where you are and where you want to go. As a self-publishing company built for authors, NexiFire Publishing will design the right plan, bring in the right specialists, and help you move forward with confidence, whether this is your first book or your fifth.",
       buttonLable: "Let's Talk",
+    },
+    footer: {
+      title: "Book Marketing Experts",
+      description: "Grow your readership with a tailored marketing strategy.",
+      ctaLabel: "Get a Marketing Plan",
+      ctaHref: "/contact",
     },
   },
 };

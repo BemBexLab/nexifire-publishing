@@ -2,14 +2,19 @@
 
 import { motion, type Variants } from "motion/react";
 import Image from "next/image";
+import Link from "next/link";
 import React from "react";
 import TextFluxUnveil from "./TextFluxUnveil";
+import { FiArrowUpRight } from "react-icons/fi";
 
 type ImageDescProps = {
   badgeText?: string;
   title: string;
   paragraphs: React.ReactNode[];
   listItems?: string[];
+  footnote?: React.ReactNode;
+  buttonLabel?: string;
+  buttonHref?: string;
   imageSrc?: string;
   imageAlt?: string;
   reverse?: boolean;
@@ -88,6 +93,9 @@ const ImageDesc = ({
   title,
   paragraphs,
   listItems,
+  footnote,
+  buttonLabel,
+  buttonHref = "/",
   imageSrc = "",
   imageAlt = "Publishing team",
   reverse = false,
@@ -158,6 +166,30 @@ const ImageDesc = ({
                   </motion.li>
                 ))}
               </motion.ul>
+            ) : null}
+
+            {footnote ? (
+              <motion.p variants={revealItemVariants} className="italic">
+                {footnote}
+              </motion.p>
+            ) : null}
+
+            {buttonLabel ? (
+              <motion.div
+                variants={revealItemVariants}
+                whileHover={{ y: -3 }}
+                whileTap={{ scale: 0.98 }}
+              >
+                <Link
+                  href={buttonHref}
+                  className="mt-8 inline-flex min-h-[52px] items-center gap-1 rounded-[10px] bg-[linear-gradient(90deg,#B24002_0%,#FF5B01_100%)] px-5 text-sm font-light text-white shadow-[0_10px_24px_rgba(178,64,2,0.28)] transition-all duration-200 hover:-translate-y-0.5 hover:shadow-[0_14px_30px_rgba(178,64,2,0.34)] sm:px-6 sm:text-base"
+                >
+                  <span>{buttonLabel}</span>
+                  <span aria-hidden="true" className="text-lg leading-none">
+                    <FiArrowUpRight />
+                  </span>
+                </Link>
+              </motion.div>
             ) : null}
           </motion.div>
         </motion.div>

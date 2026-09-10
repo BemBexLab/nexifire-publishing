@@ -12,6 +12,7 @@ import WhatsIncluded from "@/components/WhatsIncluded";
 import WhoWeServe from "@/components/WhoWeServe";
 import WhyChoose from "@/components/WhyChoose";
 import { defaultWhoWeServeData } from "@/data/whoWeServe";
+import Footer from "@/components/Footer";
 
 import { publishingServicePageData, publishingServiceSlugs } from "./data";
 
@@ -37,7 +38,9 @@ export default async function PublishingServicePage({
     <section className="overflow-hidden bg-white">
       <PageHero {...pageData.hero} />
       <Introduction {...pageData.introduction} />
-      <OurProcess {...pageData.process} />
+      <div className="bg-[#fffaf6] py-14 sm:py-16 md:py-20 lg:py-24">
+        <OurProcess {...pageData.process} />
+      </div>
       <WhyChoose {...pageData.whyChoose} />
       <PublishYourBook {...pageData.publishBanner} />
       <ImageDesc {...pageData.imageDesc} />
@@ -49,6 +52,7 @@ export default async function PublishingServicePage({
       <FAQs {...pageData.faqs} />
       <Testimonials {...pageData.testimonials} />
       <GetInTouchContact {...pageData.contact} />
+      <Footer {...pageData.footer} />
     </section>
   );
 }

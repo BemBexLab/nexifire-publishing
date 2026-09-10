@@ -169,7 +169,7 @@ const page = () => {
           },
           {
             question:
-              "How much does it cost to hire a ghostwriter for an book?",
+              "How much does it cost to hire a ghostwriter for a book?",
             answer:
               "Cost depends on your book's length, genre, and how much research or interviewing is required. NexiFire offers transparent, flat-rate pricing for book ghostwriting, so you know the investment upfront, with no hidden fees added later.",
           },
@@ -252,7 +252,7 @@ const page = () => {
           },
           {
             quote:
-              "I wanted an book that captured my coaching framework so I could hand it to new clients. The ghostwriter I was matched with understood my voice almost immediately, and the unlimited revisions meant we got it exactly right before it ever went to print.",
+              "I wanted a book that captured my coaching framework so I could hand it to new clients. The ghostwriter I was matched with understood my voice almost immediately, and the unlimited revisions meant we got it exactly right before it ever went to print.",
             name: "Priya Anand",
             avatarSrc:
               "https://images.unsplash.com/photo-1438761681033-6461ffad8d80?auto=format&fit=crop&w=120&q=80",
