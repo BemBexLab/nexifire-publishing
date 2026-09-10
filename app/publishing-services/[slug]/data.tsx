@@ -582,10 +582,8 @@ export const publishingServicePageData: Record<
       buttonLable: "Let's Talk",
     },
     footer: {
-      title: "Book Marketing Experts",
-      description: "Grow your readership with a tailored marketing strategy.",
-      ctaLabel: "Get a Marketing Plan",
-      ctaHref: "/contact",
+      title: "NEXIFIRE PUBLISHING",
+      description: "NexiFire Publishing is a trusted self-publishing company for authors ready to get their book into the world. We help authors publish ebooks, print books, and audiobooks with full-service support, ghostwriting, editing, formatting, cover design, and global distribution, all under one roof. As one of the best self-publishing companies for first-time authors, we handle the parts that usually trip people up, so you can focus on the book itself.",
     },
   },
 };
