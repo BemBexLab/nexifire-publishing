@@ -181,7 +181,7 @@ const WhyChoose = ({
           <div className="rounded-[22px] px-5 py-6 sm:px-6 sm:py-8 lg:px-2 lg:py-8 xl:px-3 xl:py-10">
             {reasons.map((reason, index) => (
               <motion.div
-                key={reason.title}
+                key={`${reason.title}-${index}`}
                 variants={reasonCardVariants}
                 whileHover={{
                   x: 4,

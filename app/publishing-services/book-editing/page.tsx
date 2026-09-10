@@ -16,119 +16,246 @@ const page = () => {
   return (
     <section className="overflow-hidden bg-white">
       <PageHero
-        eyebrow="Nexifire Publishing"
-        title={`Professional Book Editing Services United States`}
-        description={<><span className="text-black font-bold text-2xl">Your Manuscript Deserves a Professional Editor</span> <br /> NexiFire Publishing connects American authors with experienced, qualified book editors and proofreaders who bring out the very best in every manuscript, from the first structural read to the final word-by-word review before print.</>}
-        buttonLabel="Edit Your Book Today"
+        eyebrow=""
+        title={`Professional Book Editing Services USA`}
+        description={
+          <>
+            <span className="text-black font-bold text-2xl">
+              Your Manuscript Deserves a Real Editor
+            </span>{" "}
+            <br /> Professional book editing and proofreading services for
+            authors across the USA, from the first structural read to the final
+            line before print.
+          </>
+        }
+        buttonLabel="Get a Free Manuscript Quote"
       />
       <Introduction
-        eyebrow="Our Editorial Services"
-        title="At Nexifire, We Do Every Level of Book Editing"
-        description={<>
-        <p>Not all editing is the same. NexiFire offers four distinct levels of manuscript editing services in the United States, each designed to address a specific stage of your book's development.</p>
-        <ul className="list-inside list-disc mt-4 text-[#444444] sm:text-lg">
-          <li>Developmental Editing</li>
-          <li>Line Editing</li>
-          <li>Copy Editing</li>
-          <li>Proofreading</li>
-          <li>Manuscript Assessment</li>
-          <li>Editing & Formatting Bundle</li>
-        </ul>
-        </>}
+        eyebrow=""
+        title="Not All Editing Is the Same"
+        description={
+          <>
+            <p>
+              A lot of authors search for "book editing" without realizing there
+              are actually several distinct stages, each solving a different
+              problem. NexiFire offers every level of manuscript editing
+              service, so you get exactly what your book needs, not a
+              one-size-fits-all pass that misses what actually matters.
+            </p>
+            <ul className="mt-4 list-disc space-y-1.5 pl-5 text-[#444444] sm:text-lg">
+              <li>
+                <div className="inline">
+                  <span className="mr-1 font-semibold">
+                    Developmental Editing:
+                  </span>{" "}
+                  Big-picture structure, pacing, and story or argument strength
+                </div>
+              </li>
+              <li>
+                <div className="inline">
+                  <span className="mr-1 font-semibold">Line Editing:</span>{" "}
+                  Sentence-level flow, tone, and voice, especially for fiction
+                </div>
+              </li>
+              <li>
+                <div className="inline">
+                  <span className="mr-1 font-semibold">Copy Editing:</span>{" "}
+                  Grammar, consistency, and clarity throughout the manuscript
+                </div>
+              </li>
+              <li>
+                <div className="inline">
+                  <span className="mr-1 font-semibold">Proofreading:</span> The
+                  final quality check after formatting, catching what slipped
+                  through
+                </div>
+              </li>
+              <li>
+                <div className="inline">
+                  <span className="mr-1 font-semibold">
+                    Manuscript Evaluation:
+                  </span>{" "}
+                  An honest assessment of where your book stands and what it
+                  needs next
+                </div>
+              </li>
+              <li>
+                <div className="inline">
+                  <span className="mr-1 font-semibold">
+                    Editing & Formatting Bundle:
+                  </span>{" "}
+                  Editorial work and interior layout handled together seamlessly
+                </div>
+              </li>
+            </ul>
+          </>
+        }
         imageSrc="/image 67.webp"
       />
-      <OurProcess
-        badgeText="How It Works"
-        title="Our Editing Process, Step by Step"
-        description="Working with a professional book editor in the United States should feel straightforward and collaborative. Here is exactly what you can expect when you work with NexiFire."
-        steps={[
-          {
-            number: "01",
-            title: "Free Consultation & Manuscript Submission",
-            description:
-              "After getting your manuscript and goals, we’ll recommend the right editing service and editor for your project.",
-          },
-          {
-            number: "02",
-            title: "Editorial Review",
-            description:
-              "The editor works through your manuscript thoroughly, using tracked changes and editorial notes so every suggestion is clear.",
-          },
-          {
-            number: "03",
-            title: "Author Review",
-            description:
-              "You receive the edited manuscript with an editorial summary. Review the changes, accept or query any suggestions, and request a revision call if needed.",
-          },
-          {
-            number: "04",
-            title: "Final Delivery",
-            description:
-              "After approval, we deliver your clean, finalised manuscript, ready for formatting, printing, and global distribution.",
-          },
-        ]}
-      />
+      <div className="bg-[#fffaf6] py-14 sm:py-16 md:py-20 lg:py-24">
+        <OurProcess
+          badgeText="How It Works"
+          title="How Our Editing Process Works"
+          description=""
+          steps={[
+            {
+              number: "01",
+              title: "Free Consultation & Manuscript Submission",
+              description:
+                "Send us your manuscript and goals, and we'll recommend the right editing service and editor for your project.",
+            },
+            {
+              number: "02",
+              title: "Editorial Review",
+              description:
+                "Your editor works through the manuscript using tracked changes and margin notes, so every suggestion is clear and easy to follow.",
+            },
+            {
+              number: "03",
+              title: "Author Review",
+              description:
+                "You receive the edited manuscript along with an editorial summary. Review the changes, accept or query anything, and request a revision call if you need one.",
+            },
+            {
+              number: "04",
+              title: "Final Delivery",
+              description:
+                "Once approved, we deliver your clean, finalized manuscript, ready for formatting, printing, and distribution.",
+            },
+          ]}
+        />
+      </div>
       <WhyChoose
-        badgeText="The NexiFire Difference"
-        title="Why American Authors Choose NexiFire for Book Editing"
+        badgeText=""
+        title="Why a Professional Editor Matters More Than You Think"
         description=""
         reasons={[
           {
-            title: "Real Editors, Not Algorithms",
+            title: "",
             description:
-              "Every manuscript is edited by a qualified human professional.",
+              "Even talented writers benefit from a second pair of expert eyes. A professional book editor doesn't just fix typos; they strengthen your story, sharpen your argument, and catch the things you've read past a hundred times without noticing. They ask the questions your readers will ask before your readers get the chance to ask them.",
           },
           {
-            title: "American English, American Readers",
+            title: "",
             description:
-              "Our editors write and edit in American English.",
+              "At NexiFire, our manuscript editing service for authors is delivered by qualified editors with real genre knowledge, not a generic pass run by whoever's available. Whether you're preparing a debut novel, a nonfiction business book, a children's picture book, or a personal memoir, you're matched with an editor who understands your genre and your audience, not one working outside their depth.",
           },
           {
-            title: "Affordable, Transparent Pricing",
+            title: "",
             description:
-              "We believe affordable book editing in the United States should not mean substandard work.",
-          },
-          {
-            title: "Your Voice Stays Yours",
-            description:
-              "A good editor enhances your voice; they don't replace it with their own",
-          },
-          {
-            title: "Full Publishing Support Available",
-            description:
-              "NexiFire can take your manuscript all the way through formatting, cover design, ISBN registration, and global distribution.",
+              "Every manuscript that leaves our editorial desk is publication-ready: polished, consistent, and built to meet the expectations of today's readers.",
           },
         ]}
       />
-      <PublishYourBook eyebrow="Book Editing With NexiFire" title="Ready to Work With a Professional Book Editor in the United States?" description="Get a free, no-obligation quote for your manuscript today. Tell us your genre, word count, and editing needs, and we'll match you with the right editor within 24 hours." backgroundImageSrc="/Frame 2147225868.webp" backgroundAlt="" buttonLabel="Submit Your Manuscript Today"/>
+      <PublishYourBook
+        eyebrow=""
+        title="Not Sure What Level of Editing You Need?"
+        description="Send us your manuscript and we will tell you honestly, developmental edit, copy edit, or just a proofread, no guesswork, no upsell."
+        backgroundImageSrc="/Frame 2147225868.webp"
+        backgroundAlt=""
+        buttonLabel="Get My Free Manuscript Assessment"
+        buttonHref="/contact"
+      />
       <WhatsIncluded
         badgeText="What's Included"
-        title="Professional Editing"
+        title="What's Included in Every Editing Package"
         items={[
           { label: "Tracked changes in your original document" },
           { label: "Margin comments and editorial notes" },
           { label: "Editorial summary letter on completion" },
           { label: "One round of revision queries included" },
-          { label: "Confidentiality agreement before commencement" },
-          { label: "Dedicated editor contact throughout" },
-          { label: "Delivery by agreed deadline, guaranteed" },
-          { label: "American English style as the default" },
-          { label: "Transparent Flat-Rate Pricing" },
+          { label: "Confidentiality agreement before we begin" },
+          { label: "Dedicated editor contact throughout your project" },
+          { label: "Guaranteed delivery by an agreed deadline" },
+          { label: "Transparent, flat-rate pricing" },
         ]}
         imageSrc="/Rectangle 23830.webp"
         imageAlt="Complete Editing solutions"
         iconSrc="/Mask group.svg"
       />
       <div className="bg-[#FDF7F4]">
-        <WhoWeServe {...defaultWhoWeServeData} />
+        <WhoWeServe
+          {...{
+            badgeText: "Who We Serve",
+            title: "Editing for Every Genre",
+            description:
+              "Fiction requires a different editorial eye than a business book, and a memoir requires something different again. Our editors specialize by genre:",
+            stats: [
+              { value: "7+", label: "Years of experience", highlighted: true },
+              { value: "130+", label: "Professional ghostwriters" },
+              { value: "5K+", label: "Happy Clients" },
+              { value: "2K+", label: "Books Published", highlighted: true },
+            ],
+            genres: [
+              "Fiction & Novels (line editing for voice and pacing)",
+              "Nonfiction & Business Books",
+              "Memoir & Personal Story",
+              "Christian & Faith-Based Books",
+              "Self-Help & Personal Development",
+              "Children's Books & Picture Books",
+              "Academic & Dissertation Editing",
+            ],
+          }}
+        />
       </div>
       <ImageDesc
-        badgeText="Why Editing Matters"
-        title="A Great Story Still Needs a Great Editor"
+        badgeText=""
+        title="Why Authors Choose NexiFire for Book Editing"
         paragraphs={[
-          "Even the most talented writers benefit from a second pair of expert eyes. A professional book editor doesn't just fix typos; they make your story stronger, your argument clearer, and your voice sharper. They catch the things you have read past a hundred times and never noticed. They ask the questions your readers will ask, before your readers get the chance.",
-          "At NexiFire Publishing, our manuscript editing services in the United States are delivered by qualified editors with deep genre knowledge and a genuine passion for the written word. Whether you are preparing a debut novel, a business book, a children's picture book, or a personal memoir, we match you with an editor who understands your audience and your goals.",
-          "Every manuscript that leaves our editorial desk is publication-ready, polished, consistent, and crafted to meet the expectations of today's readers and reviewers.",
+          <div className="space-y-3">
+            <div>
+              <h3 className="text-black font-semibold">
+                Real Editors, Not Algorithms
+              </h3>
+              <p>
+                Every manuscript is edited by a qualified human professional,
+                not run through software and called done.
+              </p>
+            </div>
+
+            <div>
+              <h3 className="text-black font-semibold">
+                An Editing Service That Keeps Your Voice
+              </h3>
+              <p>
+                A good editor sharpens your voice; they don't replace it with
+                their own. You'll still sound like you, just clearer.
+              </p>
+            </div>
+
+            <div>
+              <h3 className="text-black font-semibold">
+                Affordable, Transparent Pricing
+              </h3>
+              <p>
+                Affordable book editing shouldn't mean lower quality. Our
+                flat-rate pricing means no surprise invoices after the work is
+                done.
+              </p>
+            </div>
+
+            <div>
+              <h3 className="text-black font-semibold">
+                Unlimited Revisions Where It Counts
+              </h3>
+              <p>
+                Our book editing packages include revision rounds built in, so
+                the manuscript isn't "finished" until it actually reads the way
+                you intended.
+              </p>
+            </div>
+
+            <div>
+              <h3 className="text-black font-semibold">
+                Full Publishing Support Available
+              </h3>
+              <p>
+                Once editing is complete, the same team can handle formatting,
+                cover design, ISBN registration, and full distribution, so your
+                book doesn't have to change hands between companies.
+              </p>
+            </div>
+          </div>,
         ]}
         imageSrc="/Rectangle 23834 (2).webp"
         imageAlt=""
@@ -140,38 +267,73 @@ const page = () => {
         title="Frequently Asked Questions"
         items={[
           {
-            question: "How much does book editing cost in the United States?",
+            question:
+              "What's included in book editing and proofreading services?",
             answer:
-              "Cost is completely depend on the type of book editing, the length of your manuscript. Nexifire uses transparent flat rate. Contact us with your manuscript details for a free, accurate quote with no obligation.",
+              "A full editing and proofreading service typically includes a structural or line edit for content and flow, a copy edit for grammar and consistency, and a final proofread after formatting to catch layout errors. NexiFire offers each stage individually or bundled, depending on what your manuscript needs.",
           },
           {
             question:
-              "What is the difference between copy editing and proofreading?",
+              "How much does professional manuscript editing cost in the USA?",
             answer:
-              "Copy editing is performed on your manuscript before formatting. It addresses grammar, style, consistency, and clarity throughout the text. Proofreading happens after the book has been typeset or formatted, and is the final quality check for any errors introduced during layout, including typesetting mistakes, spacing issues, and page number inconsistencies. Both are important, and many authors choose both as part of a complete editorial process.",
+              "Cost depends on manuscript length and the type of editing required. NexiFire uses transparent, flat-rate pricing, contact us with your manuscript details for a free, accurate quote with no obligation.",
           },
           {
             question:
-              "Do I need developmental editing or copy editing?",
+              "What's the difference between copy editing and proofreading?",
             answer:
-              "If your manuscript is at an early or mid-draft stage, or if you are uncertain whether the structure and story are working, a developmental edit is the right for you at this point. If you are confident in the structure and just need language, grammar, and consistency refined, copy editing is appropriate. Our free consultation helps identify exactly where your manuscript is and what level of editing it needs for ready to publish.",
-          },
-          {
-            question: "Do you offer children's book editing services in the United States?",
-            answer:
-              "Yes. NexiFire has specialist children's book editors in the United States who work across picture books, early readers, chapter books, and middle-grade fiction. Children's editing requires particular attention to age-appropriate vocabulary, sentence length, page turns, and the relationship between text and illustration, all areas our editors are experienced in.",
+              "Copy editing happens before formatting and addresses grammar, style, consistency, and clarity throughout the text. Proofreading happens after the book is typeset and is the final check for errors introduced during layout, like spacing issues or page number inconsistencies. Most authors use both as part of a complete editorial process.",
           },
           {
             question:
-              "How long does the editing process take?",
+              "Do I need developmental editing or copy editing for my book?",
             answer:
-              "Turnaround time depends on manuscript length and the type of editing. Developmental editing takes longer due to the depth of structural analysis involved. We agree on and guarantee a delivery date before every project begins. Contact us, we will review and let you the estimate time period.",
+              "If your manuscript is early or mid-draft, or you're unsure whether the structure is working, developmental editing is the right starting point. If the structure is solid and you just need language and consistency refined, copy editing is the better fit. Our free consultation identifies exactly where your manuscript stands.",
+          },
+          {
+            question: "Will editing change my writing voice?",
+            answer:
+              "No. A professional editor sharpens and clarifies your voice, they don't overwrite it with their own. Any manuscript editing service worth using should return your book sounding more like you, not less.",
           },
           {
             question:
-              "Can I get editing and formatting together?",
+              "Do you offer proofreading services for self-published authors specifically?",
             answer:
-              "Yes, and many authors choose this option. NexiFire's editing and formatting bundle moves your manuscript seamlessly from the editorial stage to interior layout, cover design, and publication-ready files. Bundling services saves time, reduces back-and-forth, and keeps your entire project under one experienced roof.",
+              "Yes. Self-published authors don't have a traditional publishing house doing this quality check for them, which makes a final proofreading pass essential before your book goes live on Amazon or any other platform.",
+          },
+          {
+            question:
+              "Do you offer a manuscript evaluation for new authors who aren't sure what their book needs?",
+            answer:
+              "Yes. A manuscript evaluation gives you an honest, professional assessment of your book's current state and a clear recommendation on what level of editing to pursue next, before you commit to a full edit.",
+          },
+          {
+            question:
+              "Can I get a book editing package with unlimited revisions?",
+            answer:
+              "Our packages include revision rounds built into the process, and we work with you until the manuscript genuinely reflects what you intended, rather than cutting you off after one pass.",
+          },
+          {
+            question:
+              "Do you edit Christian and faith-based books specifically?",
+            answer:
+              "Yes. Christian book editing and proofreading is handled by editors experienced in faith-based tone, message, and audience expectations, so nothing gets flattened or misread in translation.",
+          },
+          {
+            question:
+              "Do you offer academic, thesis, or dissertation editing and proofreading?",
+            answer:
+              "Yes. We offer academic and dissertation editing and proofreading for authors and students who need formal structure, citation consistency, and language precision reviewed by a professional editor.",
+          },
+          {
+            question: "Can I get editing and formatting done together?",
+            answer:
+              "Yes, and many authors choose this route. Our editing and formatting bundle moves your manuscript from editorial review straight into interior layout and publication-ready files, all under one team.",
+          },
+          {
+            question: "How long does the editing process take?",
+            answer:
+              "Turnaround depends on manuscript length and editing type; developmental editing takes longer due to the depth of structural work involved. We agree on and guarantee a delivery date before every project begins.",
           },
         ]}
         sidebarTitle="Do You Have More Questions?"
@@ -181,14 +343,14 @@ const page = () => {
       />
       <Testimonials
         badgeText="Author Experiences"
-        title="What Authors Say About Our Editing Services"
-        description="Thousands of American authors have worked with NexiFire's editorial team. Here are a few of their experiences."
+        title="What Authors Say"
+        description=""
         buttonLabel="View All Review"
         buttonHref="#"
         testimonials={[
           {
             quote:
-              "I submitted my debut novel to NexiFire after two rejections from traditional publishers. The developmental feedback I received was honest, detailed, and genuinely transformative. My editor identified a structural issue in Act Two that I'd completely missed. After revisions, the book was picked up by a small press. I cannot thank the team enough.",
+              "I submitted my debut novel to NexiFire after two rejections from traditional publishers. The developmental feedback was honest, detailed, and genuinely transformative — my editor caught a structural issue in Act Two I'd completely missed. After revisions, the book was picked up by a small press.",
             name: "Rachel Tim",
             avatarSrc:
               "https://images.unsplash.com/photo-1494790108377-be9c29b29330?auto=format&fit=crop&w=120&q=80",
@@ -197,7 +359,7 @@ const page = () => {
           },
           {
             quote:
-              "As a business consultant writing my first book, I needed an editor who understood corporate communication as well as narrative. NexiFire matched me perfectly. The copy edit was thorough without being heavy-handed, and the editorial notes were always constructive. My book went from solid to genuinely impressive.",
+              "As a business consultant writing my first book, I needed an editor who understood corporate communication as well as narrative. NexiFire matched me perfectly. The copy edit was thorough without being heavy-handed, and my book went from solid to genuinely impressive.",
             name: "Marcus Lenny",
             avatarSrc:
               "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&w=120&q=80",
@@ -206,7 +368,7 @@ const page = () => {
           },
           {
             quote:
-              "I was nervous about having someone else work on my memoir; it's deeply personal. But my NexiFire editor handled it with such care and professionalism. She understood what I was trying to say, helped me say it better, and never once made me feel judged. The proofreading pass was spotless. Highly recommend.",
+              "I was nervous about handing over my memoir; it's deeply personal. My NexiFire editor handled it with real care, helped me say things better without ever making me feel judged, and the proofreading pass was spotless.",
             name: "Anita Ken",
             avatarSrc:
               "https://images.unsplash.com/photo-1438761681033-6461ffad8d80?auto=format&fit=crop&w=120&q=80",
@@ -217,9 +379,21 @@ const page = () => {
       />
       <GetInTouchContact
         title="Ready to Publish Your Book?"
-        description={<><p>Whether you have a finished manuscript, a half-written draft, or just a powerful idea you don't know how to start, our publishing specialists are here to help. At NexiFire Publishing, we work with American authors at every stage of their journey, from first conversation to final distribution.</p>
-        <p className="mt-2">Tell us about your project today and take the first step toward becoming a published author.</p>
-</>}
+        description={
+          <>
+            <p>
+              Whether you have a finished manuscript, a half-written draft, or
+              just a powerful idea you don't know how to start, our publishing
+              specialists are here to help. At NexiFire Publishing, we work with
+              American authors at every stage of their journey, from first
+              conversation to final distribution.
+            </p>
+            <p className="mt-2">
+              Tell us about your project today and take the first step toward
+              becoming a published author.
+            </p>
+          </>
+        }
       />
     </section>
   );
