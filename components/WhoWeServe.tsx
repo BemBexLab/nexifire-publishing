@@ -186,22 +186,22 @@ const WhoWeServe = ({
       >
         <motion.div
           variants={statsGridVariants}
-          className="grid gap-4 sm:grid-cols-2 sm:gap-5"
+          className="grid grid-cols-2 gap-3 sm:gap-5"
         >
           {stats.map((stat) => (
             <motion.article
-              key={stat.label}
-              variants={statCardVariants}
-              whileHover={{
-                y: -4,
-                transition: { duration: 0.22, ease: "easeOut" },
-              }}
-              className={`rounded-[22px] border px-7 py-8 shadow-[0_8px_24px_rgba(44,44,44,0.08)] ${
-                stat.highlighted
-                  ? "border-[#F3E4D7] bg-[linear-gradient(180deg,#FFF9F5_0%,#FFF2E8_100%)]"
-                  : "border-[#EEE8E1] bg-white"
-              }`}
-            >
+  key={stat.label}
+  variants={statCardVariants}
+  whileHover={{
+    y: -4,
+    transition: { duration: 0.22, ease: "easeOut" },
+  }}
+  className={`rounded-[16px] border px-3 py-5 shadow-[0_8px_24px_rgba(44,44,44,0.08)] sm:rounded-[22px] sm:px-7 sm:py-8 ${
+    stat.highlighted
+      ? "border-[#F3E4D7] bg-[linear-gradient(180deg,#FFF9F5_0%,#FFF2E8_100%)]"
+      : "border-[#EEE8E1] bg-white"
+  }`}
+>
               <AnimatedStatValue value={stat.value} />
               <p className="mt-4 text-sm leading-[1.5] text-[#7D7D7D] sm:text-base">
                 {stat.label}
