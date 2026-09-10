@@ -6,85 +6,103 @@ const page = () => {
   return (
     <section className="overflow-hidden bg-white">
       <PageHero
-        eyebrow="Pricing & Packages"
-        title={`Flexible Plans Tailored to Your Needs`}
-        description="Pricing may vary depending on the genre, page and word count, and your specific needs for publishing, marketing, or ghostwriting. For a personalised estimate and detailed consultation, click on 'Custom Quote' to speak with a publishing expert."
+        eyebrow=""
+        title={`Pricing & Packages`}
+        description=""
         buttonLabel="Publish Your Book"
       />
       <PricingPackages
+      title="Flexible Publishing Plans Built Around Your Needs"
+      description={<div className="space-y-3">
+          <p className="">Every book is different, which is why NexiFire Publishing offers customized solutions based on your manuscript, publishing goals, and marketing requirements.</p>
+
+          <p className="">Pricing may vary depending on your book’s genre, word count, page count, project complexity, and the specific publishing, marketing, or ghostwriting services you require.</p>
+
+          <p className="">For a personalized estimate, select <b>Custom Quote</b> to speak with a NexiFire Publishing expert about your project.</p>
+        </div>}
         packages={[
           {
             name: "SILVER",
             description:
-              "The perfect starting point for authors who have a finished manuscript and need professional publishing support to get their eBook live across all major platforms quickly and affordably.",
+              "Ideal for authors looking for professional Amazon publishing support.",
             included: [
               [
-                "Author profile setup on major platforms",
+                "Amazon Author Central setup",
                 "Book outline creation or revision",
-                "Manuscript review & feedback",
-                "Line editing & professional proofreading",
-                "Interior formatting & layout design",
-                "Custom-designed book cover",
-                "Publish on 40+ platforms (Amazon, B&N, Apple Books, Kobo, etc.)",
+                "Professional manuscript review",
+                "Line-by-line editing & proofreading",
+                "Interior formatting & layout",
+                "Custom book cover design",
+                "Amazon Kindle publishing",
+                "Paperback & hardcover publishing",
               ],
               [
-                "Print-on-Demand integration",
-                "Author bio creation",
-                "Marketing consultation",
-                "Access to Ink Founders author portal",
+                
+                "Print-on-Demand setup",
+                "Professional author bio creation",
+                "Publishing & marketing consultation",
+                "Access to the NexiFire Author Portal",
                 "100% copyright ownership",
-                "ISBN & barcode generation",
-                "eBook, Paperback & Hardcover formats",
+                "100% author rights",
+                "ISBN & barcode assistance",
+                "eBook, Paperback & Hardcover formats"
               ],
             ],
           },
           {
             name: "GOLD",
             description:
-              "Ideal for authors who want a fully guided publishing experience with hands-on editorial support, professional cover design, and simultaneous eBook and print distribution through Amazon and global retailers.",
+              "Ideal for authors seeking wider distribution and greater global reach.",
             included: [
               [
-                "Amazon Author Central setup",
-                "Outline creation or revision",
-                "Manuscript review",
-                "Line-by-line editing & proofreading",
-                "Interior formatting & layout",
-                "Custom book cover design",
-                "Amazon Kindle & Print publishing",
+                "Author profile setup across major publishing platforms",
+                "Book outline creation or revision",
+                "Comprehensive manuscript review & editorial feedback",
+                "Professional line editing & proofreading",
+                "Interior formatting & layout design",
+                "Custom-designed book cover",
+                "Publishing across 40+ platforms",
+                "Distribution through Amazon, Barnes & Noble, Apple Books, Kobo, and other major platforms",
               ],
               [
                 "Global Print-on-Demand setup",
-                "Author bio writing",
-                "Personalized marketing consultation",
-                "Access to Ink Founders author portal",
-                "100% ownership & full copyright rights",
-                "ISBN and barcode generation",
-                "Available in eBook, Paperback & Hardcover",
+                "Professional author bio writing",
+                "Personalized publishing & marketing consultation",
+                "Access to the NexiFire Author Portal",
+                "100% ownership of your work",
+                "100% copyright rights",
+                "ISBN & barcode assistance",
+                "eBook, Paperback & Hardcover formats"
               ],
             ],
           },
           {
-            name: "PLATINUM",
+            name: "Platinum",
             description:
-              "The complete, premium publishing package for authors who want a professional ghostwriting and publishing experience from start to finish, with unlimited revisions, full creative collaboration, and every format covered.",
+              "Ideal for authors who need professional assistance turning their ideas or unfinished manuscript into a complete book.",
             included: [
               [
-                "One-on-one interviews & story development",
-                "Custom book outline creation",
-                "Manuscript review",
-                "Complete ghostwriting in your voice",
-                "Unlimited revisions during writing",
-                "Line editing & professional proofreading",
+                "One-on-one author interviews",
+                "Story development & concept planning",
+                "Custom book outline development",
+                "Comprehensive manuscript review",
+                "Professional ghostwriting in your voice",
+                "Collaborative manuscript development",
+                "Revisions throughout the writing process",
+                "Professional line editing & proofreading",
                 "Interior formatting & layout design",
+                "Custom book cover design",
               ],
               [
-                "Custom book cover design",
-                "Amazon publishing (Kindle & Print)",
+                "Amazon Kindle publishing",
+                "Paperback & hardcover publishing",
                 "Print-on-Demand setup",
-                "Author bio writing",
-                "Marketing consultation sessions",
-                "Access to Ink Founders author portal",
-                "100% ownership & copyright rights",
+                "Professional author bio writing",
+                "Publishing & marketing consultation",
+                "Access to the NexiFire Author Portal",
+                "100% ownership of your manuscript",
+                "100% copyright rights",
+                "ISBN & barcode assistance"
               ],
             ],
           },

@@ -14,7 +14,7 @@ export type PricingPackage = {
 type PricingPackagesProps = {
   eyebrow?: string;
   title?: string;
-  description?: string;
+  description?: React.ReactNode;
   packages?: PricingPackage[];
 };
 
@@ -220,6 +220,9 @@ const PricingPackages = ({
   description = defaultDescription,
   packages = defaultPricingPackages,
 }: PricingPackagesProps) => {
+  const descriptionIsText =
+    typeof description === "string" || typeof description === "number";
+
   return (
     <section className="bg-white px-4 py-14 sm:px-6 lg:px-8 lg:py-20">
       <motion.div
@@ -251,12 +254,21 @@ const PricingPackages = ({
             {title}
           </motion.h2>
 
-          <motion.p
-            variants={revealItemVariants}
-            className="mx-auto mt-5 max-w-[920px] text-sm leading-[1.6] text-[#9A9A9A] sm:text-base"
-          >
-            {description}
-          </motion.p>
+          {descriptionIsText ? (
+            <motion.p
+              variants={revealItemVariants}
+              className="mx-auto mt-5 max-w-[1320px] text-sm leading-[1.6] text-[#9A9A9A] sm:text-base"
+            >
+              {description}
+            </motion.p>
+          ) : (
+            <motion.div
+              variants={revealItemVariants}
+              className="mx-auto mt-5 max-w-[1320px] text-sm leading-[1.6] text-[#9A9A9A] sm:text-base"
+            >
+              {description}
+            </motion.div>
+          )}
         </motion.div>
 
         <motion.div

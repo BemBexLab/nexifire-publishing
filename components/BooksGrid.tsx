@@ -344,7 +344,7 @@ const BooksGrid = () => {
             className="mx-auto mt-4 max-w-[890px] text-base leading-[1.65] text-[#777777] sm:text-lg"
             variants={textVariants}
           >
-            Our publishing portfolio spans fiction, romance, thriller, fantasy, memoirs, biographies, business books, self-help, children's books, educational titles, cookbooks, poetry, and many more.
+            Our portfolio spans fiction, romance, thriller, fantasy, memoirs, biographies, business books, self-help, children's books, educational titles, cookbooks, poetry, and more.
           </motion.p>
         </motion.div>
 

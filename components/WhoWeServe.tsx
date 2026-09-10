@@ -17,7 +17,7 @@ export type WhoWeServeStat = {
 };
 
 export type WhoWeServeProps = {
-  badgeText: string;
+  badgeText?: string;
   title: string;
   description: string;
   stats: WhoWeServeStat[];
@@ -174,7 +174,7 @@ const AnimatedStatValue = ({ value }: { value: string }) => {
 };
 
 const WhoWeServe = ({
-  badgeText = defaultWhoWeServeData.badgeText,
+  badgeText,
   title = defaultWhoWeServeData.title,
   description = defaultWhoWeServeData.description,
   stats = defaultWhoWeServeData.stats,
@@ -238,16 +238,18 @@ const WhoWeServe = ({
           </motion.svg>
 
           <div className="relative z-10 max-w-[640px]">
-            <motion.div
-              variants={revealItemVariants}
-              className="mb-3 flex w-fit items-center justify-center rounded-[8px] px-4 py-2 text-center text-sm text-black sm:px-5 sm:text-base"
-              style={{
-                background:
-                  "linear-gradient(90deg, rgba(178, 64, 2, 0.13) 0%, rgba(178, 64, 2, 0.00) 79.96%)",
-              }}
-            >
-              <TextFluxUnveil text={badgeText} />
-            </motion.div>
+            {badgeText ? (
+              <motion.div
+                variants={revealItemVariants}
+                className="mb-3 flex w-fit items-center justify-center rounded-[8px] px-4 py-2 text-center text-sm text-black sm:px-5 sm:text-base"
+                style={{
+                  background:
+                    "linear-gradient(90deg, rgba(178, 64, 2, 0.13) 0%, rgba(178, 64, 2, 0.00) 79.96%)",
+                }}
+              >
+                <TextFluxUnveil text={badgeText} />
+              </motion.div>
+            ) : null}
 
             <motion.h2
               variants={revealItemVariants}

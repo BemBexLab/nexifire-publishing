@@ -70,17 +70,20 @@ const WhyItMatters = () => {
               <h2
                 className="project-h2 mt-5 max-w-[500px] leading-[1.02] tracking-[-0.05em] lg:max-w-[620px] xl:max-w-[680px]"
               >
-                Understanding Audiobook Distribution Platforms in the United States
+                Why Audiobooks Matter Now
               </h2>
             </div>
 
-            <div className="space-y-6 text-[#777777] text-lg md:text-lg leading-relaxed font-light">
+            <div className="space-y-3 mt-6 text-[#777777] text-lg md:text-lg leading-relaxed font-light">
+              <h3 className="text-black font-semibold text-xl">Your Book's Audience Is Bigger Than You Think: They're Just Listening</h3>
               <p>
-                Audible remains the dominant audiobook platform in the United States, but the landscape is diversifying rapidly. Spotify launched audiobooks for American subscribers and is aggressively expanding its catalogue. Storytel has established a strong subscription base. Apple Books audiobooks reach a loyal iOS audience. Kobo Audiobooks serves existing Kobo e-reader users. OverDrive distributes to public library systems, connecting your audiobook to readers who access content through their library membership. NexiFire submits to all of these platforms simultaneously, ensuring your audiobook reaches every American listener regardless of their preferred platform.
+                Audiobook listening has grown dramatically over the past several years, and it isn't slowing down. People who'd never sit down with a physical book are getting through titles on commutes, at the gym, walking the dog, or winding down at night, and a lot of them are discovering authors they'd otherwise never have found.
               </p>
+              <p>An audiobook doesn't replace your print or ebook. It opens your book to a completely different audience. For authors building something long-term, being available in every format isn't a nice-to-have anymore; it's close to table stakes.</p>
+              <p>As an audiobook narration and production company, we manage the entire process: preparing your manuscript for narration, casting the right voice, recording and mastering to studio quality, and distributing to every platform your listeners actually use, so you're not trying to untangle ACX's technical requirements on your own at 11 pm.</p>
             </div>
 
-            <div className="text-[#777777] text-lg md:text-lg leading-relaxed font-light mt-2">
+            {/* <div className="text-[#777777] text-lg md:text-lg leading-relaxed font-light mt-2">
               <h3 className="text-3xl font-bold mt-2 text[#444444]">Professional Audiobook Services Across the United States</h3>
               <ul className="list-disc pl-5 space-y-1">
                 <li>Audiobook Production Sydney</li>
@@ -90,7 +93,7 @@ const WhyItMatters = () => {
                 <li>Audiobook Services Adelaide</li>
                 <li>Regional & Remote United States</li>
               </ul>
-            </div>
+            </div> */}
           </div>
         </div>
       </div>

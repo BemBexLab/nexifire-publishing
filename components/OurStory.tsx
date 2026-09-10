@@ -183,7 +183,7 @@ const OurStory = () => {
               className="project-h2 block w-full max-w-full text-left leading-[1.05]"
               variants={itemVariants}
             >
-              Where Stories Find Their Voice
+              Publishing Shouldn't Feel Like a Maze
             </motion.h2>
             <motion.div
               className="mt-8 space-y-4 text-base leading-[1.75] text-[#8A8A8A] sm:text-lg"

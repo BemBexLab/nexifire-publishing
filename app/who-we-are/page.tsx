@@ -14,9 +14,9 @@ const page = () => {
   return (
     <section className="overflow-hidden bg-white">
       <PageHero
-        eyebrow="About"
-        title={`About NexiFire Publishing`}
-        description="At NexiFire Publishing, we help authors turn their ideas into professionally published books that reach and inspire readers worldwide."
+        eyebrow="Who We Are"
+        title={`We Help Authors Become Published Authors`}
+        description="NexiFire Publishing is a full-service self-publishing company in the USA, built to help authors turn a manuscript into a real, professionally published book, without giving up their rights or royalties along the way."
         buttonLabel="Start Your Publishing Journey"
       />
       <OurStory />

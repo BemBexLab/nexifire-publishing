@@ -10,7 +10,7 @@ type WhatsIncludedItem = {
 };
 
 type WhatsIncludedProps = {
-  badgeText: string;
+  badgeText?: string;
   title: string;
   description?: string | React.ReactNode;
   items?: WhatsIncludedItem[];
@@ -123,16 +123,18 @@ const WhatsIncluded = ({
           variants={contentVariants}
           className="max-w-[680px] xl:flex xl:h-[460px] xl:max-w-none xl:flex-col 2xl:h-[520px]"
         >
-          <motion.div
-            variants={revealItemVariants}
-            className="mb-6 flex w-fit items-center justify-center rounded-[9px] px-4 py-2 text-sm text-[#4E4741] sm:px-5 sm:text-base"
-            style={{
-              background:
+          {badgeText ? (
+            <motion.div
+              variants={revealItemVariants}
+              className="mb-6 flex w-fit items-center justify-center rounded-[9px] px-4 py-2 text-sm text-[#4E4741] sm:px-5 sm:text-base"
+              style={{
+                background:
                   "linear-gradient(90deg, rgba(178, 64, 2, 0.10) 0%, rgba(178, 64, 2, 0.00) 82%)",
-            }}
-          >
-            <TextFluxUnveil text={badgeText} />
-          </motion.div>
+              }}
+            >
+              <TextFluxUnveil text={badgeText} />
+            </motion.div>
+          ) : null}
 
           <motion.h2
             variants={revealItemVariants}

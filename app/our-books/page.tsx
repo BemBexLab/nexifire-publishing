@@ -1,4 +1,5 @@
 import BooksGrid from "@/components/BooksGrid";
+import FAQs from "@/components/FAQs";
 import GetInTouchContact from "@/components/GetInTouchContact";
 import PageHero from "@/components/PageHero";
 import PublishYourBook from "@/components/PublishYourBook";
@@ -10,35 +11,28 @@ const page = () => {
   return (
     <section className="overflow-hidden bg-white">
       <PageHero
-        eyebrow="Professionally Published Books by NexiFire Publishing"
-        title={`Discover Books We've Helped Bring to Life Across Every Genre`}
-        description="Browse a growing collection of professionally published books created through our complete self-publishing services. Every project showcases our expertise in manuscript formatting, interior book design, ebook publishing, print-on-demand production, audiobook creation, and worldwide book distribution."
+        eyebrow="Our Books"
+        title={`Professionally Published Books by NexiFire Publishing`}
+        description="Browse a growing collection of books published through our complete book publishing packages for authors, covering manuscript formatting, interior design, ebook conversion, print-on-demand, audiobook production, and global distribution."
         buttonLabel="Publish Your Book"
       />
       <BooksGrid />
       <WhatsIncluded
-        badgeText="Books Stand Out"
+        badgeText=""
         title="Publishing Books That Stand Out on Every Platform"
         description={
           <div className="space-y-4">
             <p>
-              Every successful book begins with a great story, but reaching
-              readers requires much more than simply uploading a manuscript. At
-              NexiFire Publishing, we guide American authors through every
-              stage of professional self-publishing, combining editorial
-              expertise, industry-standard production, and strategic publishing
-              support to create books that compete confidently in today's
-              marketplace.
+              A great story is the starting point. Getting it in front of readers takes professional book publishing services behind it, real editorial work, production that meets industry standards, and a distribution plan that actually reaches the platforms readers use.
             </p>
             <p>
-              From manuscript formatting and book layout design to paperback,
-              hardcover, ebook conversion, audiobook production, global
-              distribution, and author marketing, our team ensures every title
-              meets the publishing standards expected by readers and major
-              retailers. Whether your book is available through Amazon, Apple
-              Books, Kobo, Google Play Books, Booktopia, or international
-              bookstores, our focus is delivering a professional product that
-              authors are proud to publish.
+              At NexiFire Publishing, we guide American authors through the full process, whichever path fits their book. That might mean a straightforward self-publishing package with ISBN included and full manuscript-to-market support, or something closer to hybrid publishing services, where you get more hands-on editorial and strategic input than typical self-publishing but keep the rights and control that traditional publishing takes away. If you're weighing traditional vs. self-publishing and not sure which fits, that's a conversation worth having before you pick a package, not after.
+            </p>
+            <p>
+              From manuscript formatting and interior layout to paperback, hardcover, and ebook conversion, audiobook production, and book publishing with global distribution, every title is built to meet the standard readers and major retailers expect, on Amazon, Apple Books, Kobo, Google Play Books, and beyond.
+            </p>
+            <p>
+              And regardless of package, you keep 100% of your royalty rights. We charge for the service, never a cut of what your book earns.
             </p>
           </div>
         }
@@ -49,21 +43,60 @@ const page = () => {
       <PublishYourBook
         eyebrow="Publish With NexiFire"
         title="Your Book Could Be Our Next Success Story"
-        description="Join hundreds of authors who have trusted NexiFire Publishing to professionally publish, distribute, and promote their books worldwide. Whether you're writing your first manuscript or preparing your next release, we're here to help you publish with confidence."
+        description="Hundreds of authors have trusted NexiFire Publishing to professionally publish, distribute, and promote their books. Whether you're writing your first manuscript or planning your next release, we're here to help you publish with confidence."
         backgroundImageSrc="/Frame 2147225872.webp"
         backgroundAlt="Book Reading"
         buttonLabel="Start Your Publishing Journey"
       />
+      <FAQs
+        badgeText="Author Experiences"
+        title="Frequently Asked Questions"
+        items={[
+          {
+            question:
+              "What's the difference between traditional and self-publishing?",
+            answer:
+              "Traditional publishing means a publisher takes on production costs and typically pays you a smaller royalty percentage in exchange for the risk they're carrying, and you usually give up creative control and rights along the way. Self-publishing means you own the whole process and 100% of your royalties, but you need the right team handling editing, formatting, and distribution so the finished book doesn't look self-published in a bad way. Hybrid publishing sits in between, with more editorial and strategic support than typical self-publishing, while you keep your rights.",
+          },
+          {
+            question:
+              "Does every publishing package include an ISBN?",
+            answer:
+              "Yes, every NexiFire self-publishing package includes ISBN assignment as standard, not an add-on you have to remember to ask for.",
+          },
+          {
+            question:
+              "Do your publishing packages include global distribution?",
+            answer:
+              "Yes. Every package includes distribution to major digital and print retailers, not just a single storefront listing.",
+          },
+          {
+            question:
+              "Is there a publishing package specifically for children's book authors?",
+            answer:
+              "Yes, our children's book publishing package covers illustration coordination, print-on-demand production, and distribution built around how children's books actually sell.",
+          },
+          {
+            question: "Do I keep 100% of my royalties?",
+            answer:
+              "Yes, on every package. We charge a flat fee for the service, never a percentage of what your book earns.",
+          },
+        ]}
+        sidebarTitle="Do You Have More Questions?"
+        sidebarDescription="Speak with the NexiFire team for clear answers, tailored guidance, and help choosing the right next step for your book."
+        sidebarButtonLabel="Contact Us"
+        sidebarButtonHref="/contact"
+      />
       <Testimonials
         badgeText="Author Stories"
         title="What American Authors Say About NexiFire"
-        description="Over 2,000 American authors have trusted NexiFire Publishing to bring their books to life. Here's what a few of them have to say."
-        buttonLabel="View All Review"
+        description="Thousands of American authors have trusted NexiFire Publishing to bring their books to life."
+        buttonLabel="View All Reviews"
         buttonHref="#"
         testimonials={[
           {
             quote:
-              "I'd been sitting on my memoir manuscript for three years, afraid of the publishing process. NexiFire made it feel completely manageable. My editor was thoughtful, the cover design exceeded my expectations, and within 10 weeks, my book was on Booktopia and Amazon. I couldn't recommend them more.",
+              "I'd been sitting on my memoir manuscript for three years, scared of the publishing process. NexiFire made it manageable. Thoughtful editing, a cover that exceeded what I expected, and within 10 weeks my book was live on Amazon.",
             name: "Sarah Phill",
             avatarSrc:
               "https://images.unsplash.com/photo-1494790108377-be9c29b29330?auto=format&fit=crop&w=120&q=80",
@@ -72,7 +105,7 @@ const page = () => {
           },
           {
             quote:
-              "As a first-time children's book author, I was nervous about finding the right publishing company. NexiFire's children's publishing team understood exactly what illustrations my story needed and handled everything beautifully. My daughter's face when she held the printed book said it all.",
+              "As a first-time children's book author, I was nervous about finding the right publisher. Their children's publishing team understood exactly what my story needed and handled everything beautifully.",
             name: "James Kelvin",
             avatarSrc:
               "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&w=120&q=80",
@@ -81,7 +114,7 @@ const page = () => {
           },
           {
             quote:
-              "My business book needed to look credible and professional to stand up next to traditionally published titles. NexiFire delivered on every front; the editing was sharp, the design was contemporary, and my book was in Dymocks within six weeks of final approval. Exceptional service.",
+              "My business book needed to look credible next to traditionally published titles. NexiFire delivered on every front: sharp editing, contemporary design, and my book was on major retail shelves within six weeks of final approval.",
             name: "Dr. Priya Gary",
             avatarSrc:
               "https://images.unsplash.com/photo-1438761681033-6461ffad8d80?auto=format&fit=crop&w=120&q=80",
@@ -91,8 +124,8 @@ const page = () => {
         ]}
       />
       <GetInTouchContact
-        title="Ready To Publish Your Book?"
-        description="Whether you're planning to publish your first novel or expand your author catalogue, our portfolio demonstrates what's possible when experienced publishing specialists support your journey from manuscript to marketplace."
+        title="Ready to Publish Your Book?"
+        description="Whether you're publishing your first novel or expanding your catalogue, our portfolio shows what's possible with real publishing specialists behind you, manuscript to marketplace."
       />
     </section>
   );
