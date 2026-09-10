@@ -195,6 +195,14 @@ const introItemVariants: Variants = {
   },
 };
 
+// Add this helper function before the Portfolio component
+const truncateText = (text: string, maxLength: number) => {
+  if (!text) return "";
+  if (text.length <= maxLength) return text;
+  // Slice to max length, remove any trailing spaces, and add "..."
+  return text.slice(0, maxLength).trim() + "...";
+};
+
 const Portfolio = () => {
   const carouselItems = [...portfolioItems, ...portfolioItems];
   const carouselStyle = {
@@ -271,11 +279,11 @@ const Portfolio = () => {
                 </div>
 
                 <h3 className="mt-5 text-2xl font-semibold leading-[1.12] tracking-[-0.035em] text-[#282828]">
-                  {item.title}
-                </h3>
+  {truncateText(item.title, 15)}
+</h3>
                 <p className="mt-2 text-base leading-none tracking-[-0.02em] text-[#444444] sm:text-lg">
-                  {item.author}
-                </p>
+  {truncateText(item.author, 30)}
+</p>
 
                 <Link
                   href={item.amazonHref}
