@@ -140,7 +140,7 @@ const WhatsIncluded = ({
           >
             {title}
           </motion.h2>
-          <div className="mt-5 overflow-y-auto pr-2 xl:min-h-0 xl:flex-1 [scrollbar-width:thin] [scrollbar-color:rgba(178,64,2,0.45)_transparent] [&::-webkit-scrollbar]:w-1 [&::-webkit-scrollbar-track]:bg-transparent [&::-webkit-scrollbar-thumb]:rounded-full [&::-webkit-scrollbar-thumb]:bg-[rgba(178,64,2,0.45)]">
+          <div className="mt-5 max-h-[50vh] overflow-y-auto pr-2 xl:min-h-0 xl:max-h-none xl:flex-1 [scrollbar-width:thin] [scrollbar-color:rgba(178,64,2,0.45)_transparent] [&::-webkit-scrollbar]:w-1 [&::-webkit-scrollbar-track]:bg-transparent [&::-webkit-scrollbar-thumb]:rounded-full [&::-webkit-scrollbar-thumb]:bg-[rgba(178,64,2,0.45)]">
             <motion.div
               variants={revealItemVariants}
               className="text-base font-light leading-[1.45] text-[#444444] sm:text-lg"

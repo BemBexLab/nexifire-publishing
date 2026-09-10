@@ -295,6 +295,13 @@ const ctaVariants: Variants = {
   },
 };
 
+// Add this helper function right before the BooksGrid component
+const truncateText = (text: string, maxLength: number) => {
+  if (!text) return "";
+  if (text.length <= maxLength) return text;
+  return text.slice(0, maxLength).trim() + "...";
+};
+
 const BooksGrid = () => {
   const initialVisibleCount = 12;
   const loadMoreCount = 8;
@@ -384,17 +391,19 @@ const BooksGrid = () => {
               </motion.div>
 
               <motion.h3
-                className="text-lg font-medium leading-[1.25] tracking-[-0.03em] text-[#272727] sm:text-xl"
-                variants={textVariants}
-              >
-                {book.title}
-              </motion.h3>
+  className="text-lg font-medium leading-[1.25] tracking-[-0.03em] text-[#272727] sm:text-xl"
+  variants={textVariants}
+  title={book.title}
+>
+  {truncateText(book.title, 20)}
+</motion.h3>
               <motion.p
-                className="mt-2 text-sm leading-none text-[#444444] sm:text-base"
-                variants={textVariants}
-              >
-                {book.author}
-              </motion.p>
+  className="mt-2 text-sm leading-none text-[#444444] sm:text-base"
+  variants={textVariants}
+  title={book.author}
+>
+  {truncateText(book.author, 20)}
+</motion.p>
 
               <motion.div
                 variants={ctaVariants}
