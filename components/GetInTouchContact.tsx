@@ -321,9 +321,10 @@ const GetInTouchContact = ({
             {description}
           </motion.div>
 
+          {/* Vertical list: Hidden on < xl, shown as vertical list on xl+ */}
           <motion.div
             variants={contactListVariants}
-            className="mx-auto mt-8 w-full max-w-[840px] space-y-4 sm:space-y-5 xl:mx-0 xl:max-w-none"
+            className="mx-auto mt-8 hidden w-full max-w-[840px] flex-col space-y-4 sm:space-y-5 xl:mx-0 xl:flex xl:max-w-none"
           >
             {contactItems.map((item) => {
               const isAddressItem = item.kind === "location";
@@ -368,7 +369,7 @@ const GetInTouchContact = ({
 
         <motion.div
           variants={formWrapVariants}
-          className="relative flex w-full justify-center xl:justify-start"
+          className="relative flex w-full flex-col items-center xl:items-start"
         >
           <motion.div
             initial={{ opacity: 0, scale: 0.82, rotate: -12 }}
@@ -390,6 +391,7 @@ const GetInTouchContact = ({
             <ContactFormCurve />
           </motion.div>
 
+          {/* Contact Form Card */}
           <motion.div
             variants={formWrapVariants}
             className="relative z-10 w-full max-w-[620px] rounded-[14px] border border-[#e7e7e7] bg-white px-4 py-5 shadow-[0_8px_24px_rgba(0,0,0,0.08)] sm:px-5 sm:py-5 lg:px-6 xl:w-full xl:max-w-none"
@@ -576,6 +578,51 @@ const GetInTouchContact = ({
               </motion.button>
             </motion.form>
           </motion.div>
+
+          {/* MOVED HERE: Horizontal contact items OUTSIDE and BELOW the contact form card for < xl screens */}
+          <motion.div
+  variants={contactListVariants}
+  className="mt-8 flex w-full max-w-[620px] flex-col items-start gap-4 min-[534px]:flex-row md:flex-wrap md:items-center md:justify-center md:gap-x-6 md:gap-y-3 xl:hidden"
+>
+  {contactItems.map((item) => {
+    const isAddressItem = item.kind === "location";
+    const contentClassName = isAddressItem
+      ? "text-sm font-normal tracking-[-0.01em] text-[#777777] sm:text-base"
+      : "text-sm font-normal text-[#777777] transition-colors hover:text-[#B24002] sm:text-base";
+
+    return (
+      <motion.div
+        key={item.id}
+        variants={contactItemVariants}
+        className="flex items-center justify-start gap-2"
+      >
+        <motion.div
+          whileHover={{
+            y: -2,
+            scale: 1.04,
+            transition: { duration: 0.2, ease: "easeOut" },
+          }}
+          className="flex h-[34px] w-[34px] shrink-0 items-center justify-center rounded-[5px] bg-[#B24002]"
+        >
+          <span
+            aria-label={item.kind}
+            className="flex h-[18px] w-[18px] items-center justify-center [&>svg]:h-full [&>svg]:w-full"
+          >
+            {contactItemIcons[item.kind]}
+          </span>
+        </motion.div>
+
+        {item.href ? (
+          <a href={item.href} className={contentClassName}>
+            {item.label}
+          </a>
+        ) : (
+          <span className={contentClassName}>{item.label}</span>
+        )}
+      </motion.div>
+    );
+  })}
+</motion.div>
         </motion.div>
       </motion.div>
     </section>
