@@ -642,7 +642,7 @@ const Portfolio = () => {
   {truncateText(item.author, 30)}
 </p>
 
-                <Link
+                {/* <Link
                   href={item.amazonHref}
                   className="mt-6 inline-flex items-center justify-center rounded-[8px] bg-[linear-gradient(90deg,#B24002_0%,#FF5B01_100%)] px-4 py-[8px] text-base font-light leading-none text-white shadow-[0_8px_18px_rgba(255,91,1,0.24)] transition hover:brightness-[1.03] sm:text-lg"
                 >
@@ -668,7 +668,7 @@ const Portfolio = () => {
                       />
                     </svg>
                   </span>
-                </Link>
+                </Link> */}
               </article>
             ))}
           </div>
