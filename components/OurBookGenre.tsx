@@ -11,7 +11,7 @@ export type OurBookGenreItem = {
 };
 
 export type OurBookGenreProps = {
-  badgeText: string;
+  badgeText?: string;
   title: string;
   genres: OurBookGenreItem[];
 };
@@ -105,15 +105,17 @@ const OurBookGenre = ({ badgeText, title, genres }: OurBookGenreProps) => {
           variants={itemVariants}
           className="flex w-full max-w-[340px] flex-col items-start text-left sm:max-w-[560px] xl:max-w-[400px] 2xl:max-w-[480px] max-sm:mx-auto max-sm:items-center max-sm:text-center"
         >
-          <motion.div
-            className="flex w-fit items-center justify-center rounded-[8px] px-4 py-2 text-center text-sm text-black sm:px-5 sm:text-base"
-            style={{
-              background:
-                "linear-gradient(90deg, rgba(178, 64, 2, 0.13) 0%, rgba(178, 64, 2, 0.00) 79.96%)",
-            }}
-          >
-            <TextFluxUnveil text={badgeText} />
-          </motion.div>
+          {badgeText ? (
+            <motion.div
+              className="flex w-fit items-center justify-center rounded-[8px] px-4 py-2 text-center text-sm text-black sm:px-5 sm:text-base"
+              style={{
+                background:
+                  "linear-gradient(90deg, rgba(178, 64, 2, 0.13) 0%, rgba(178, 64, 2, 0.00) 79.96%)",
+              }}
+            >
+              <TextFluxUnveil text={badgeText} />
+            </motion.div>
+          ) : null}
 
           <h2 className="project-h2 block w-full max-w-full text-left leading-[1.05] max-sm:mt-1 max-sm:text-center">
             {title}

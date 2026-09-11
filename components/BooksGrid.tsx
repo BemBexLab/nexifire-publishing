@@ -16,142 +16,497 @@ type BookItem = {
 
 const books: BookItem[] = [
   {
-    title: "Messi and Ronaldo: The soccer Goats",
-    author: "The Scribbling Stricker",
-    imageSrc: "/books2/image 65.webp",
-    amazonHref: "https://a.co/d/06WVsHpw",
+    title:
+      "BE POSITIVE!: Choosing Joy, Faith, and Resilience No Matter What Life Sends Your Way",
+    author: "VERONICA NASH “Pooh”",
+    imageSrc: "https://m.media-amazon.com/images/I/51T8JE34b4L._SY522_.jpg",
+
+    amazonHref: "https://a.co/d/0eMh9NpH",
   },
   {
-    title: "The Secret Playbook of Life",
-    author: "Renee Marie",
-    imageSrc: "/books2/image 65 (1).webp",
-    amazonHref: "https://a.co/d/06bhKLJU",
+    title: "THE BURIED TRUTH",
+    author: "SCOTT J. MILLER",
+    imageSrc: "https://m.media-amazon.com/images/I/710RLphkgrL._SY466_.jpg",
+
+    amazonHref: "https://a.co/d/08rleSkd",
   },
   {
-    title: "Exit Without Selling",
-    author: "Renee Marie",
-    imageSrc: "/books2/image 65 (2).webp",
-    amazonHref: "https://a.co/d/07pktj32",
+    title: "WHAT THE HELL IS WRONG WITH MY DOG?: YOU ARE WHAT'S WRONG!",
+    author: "ALISA PETERSON-WHITE",
+    imageSrc: "https://m.media-amazon.com/images/I/71bjP13zCkL._SY466_.jpg",
+
+    amazonHref: "https://a.co/d/0iPTgRoJ",
   },
   {
-    title: "Eliminate: A Murder Mystery Puzzle Book",
-    author: "Kimberley Kreates",
-    imageSrc: "/books2/image 65 (3).webp",
-    amazonHref: "https://a.co/d/0hfTGRA5",
+    title: "Talon: The Great Dragonfly",
+    author: " John C Blackford",
+    imageSrc: "https://m.media-amazon.com/images/I/71RQJxojWjL._SY466_.jpg",
+
+    amazonHref: "https://a.co/d/02RD5Tsi",
   },
   {
-    title: "God Will Make A Way",
-    author: "Stephen Sainato",
-    imageSrc: "/books2/image 65 (4).webp",
-    amazonHref: "https://a.co/d/0dBtO9Hb",
+    title: "THE VSO PLAYBOOK: Volume 1",
+    author: " Pamela K. Robertson",
+    imageSrc: "https://m.media-amazon.com/images/I/51RdielPYYL._SY385_.jpg",
+
+    amazonHref: "https://a.co/d/020nlti6",
   },
   {
-    title: "The Blueprint of Leadership",
-    author: "Gifford Thomas",
-    imageSrc: "/books2/image 65 (5).webp",
-    amazonHref: "https://a.co/d/0dSYJpfm",
+    title: "THE VSO PLAYBOOK: Volume 2",
+    author: " Pamela K. Robertson",
+    imageSrc: "https://m.media-amazon.com/images/I/61LS5RFstNL._SY385_.jpg",
+
+    amazonHref: "https://a.co/d/05ws6l7C",
   },
   {
-    title: "The Lottery Killer",
-    author: "A. S. Remington",
-    imageSrc: "/books2/image 65 (6).webp",
-    amazonHref: "https://a.co/d/03LlPskE",
+    title: "THE VSO PLAYBOOK: Volume 3",
+    author: "Pamela K. Robertson",
+    imageSrc: "https://m.media-amazon.com/images/I/61HXJmvohaL._SY385_.jpg",
+
+    amazonHref: "https://a.co/d/0jkmTgSl",
   },
   {
-    title: "Detoxify",
-    author: "Robert M. Drake",
-    imageSrc: "/books2/image 65 (7).webp",
-    amazonHref: "https://a.co/d/0fChdSx0",
+    title:
+      "Returning to the Prayer of Jabez & God Answered: A Spiritual Journey Through Scripture",
+    author: " Benjamin Harrison Bennett Jr",
+    imageSrc: "https://m.media-amazon.com/images/I/71vn8t9NJPL._SY466_.jpg",
+
+    amazonHref: "https://a.co/d/0iNubjwn",
   },
   {
-    title: "The Art of Intentional Living",
-    author: "Connect With GROWTH",
-    imageSrc: "/books2/image 70.webp",
-    amazonHref: "https://a.co/d/06rMje5a",
+    title: "The Messages of Faith and The Love of God: From Our Blessed Mother",
+    author: " J. Bernard Reyes",
+    imageSrc: "https://m.media-amazon.com/images/I/61frnxUrH6L._SY522_.jpg",
+
+    amazonHref: "https://a.co/d/0cSyfyU1",
   },
   {
-    title: "Pope Leo XIV Magnifica Humanitas",
-    author: "Pope Leo XIV",
-    imageSrc: "/books2/image 71.webp",
-    amazonHref: "https://a.co/d/03pCwbIX",
+    title: "DON'T CUT the GRASS on Sunday",
+    author: "K.Stephen Jumper",
+    imageSrc: "https://m.media-amazon.com/images/I/71ia4fQ4a3L._SL1499_.jpg",
+
+    amazonHref: "https://a.co/d/0ee4hTIt",
   },
   {
-    title: "Necesitaba Perderte",
-    author: "Fabian Garcia",
-    imageSrc: "/books2/image 72.webp",
-    amazonHref: "https://a.co/d/0bAxsxJQ",
+    title:
+      "HIP HOP HERMENEUTICS: A TOOL TO HELP THE BLACK CHURCH RECAPTURE AFRICAN AMERICAN YOUTH",
+    author: " DR. BURTON LEROY MACK",
+    imageSrc: "https://m.media-amazon.com/images/I/61PX0O8kpCL._SY466_.jpg",
+
+    amazonHref: "https://a.co/d/0gR8fCxy",
   },
   {
-    title: "Tactical Barbell III: Operational Athlete",
-    author: "K. Black",
-    imageSrc: "/books2/image 73.webp",
-    amazonHref: "https://a.co/d/0gyPZUvf",
+    title: "A LIFERAFT for The SUDDENLY SINGLE PARENT",
+    author: "SHARON YODER",
+    imageSrc: "https://m.media-amazon.com/images/I/810D2faZOoL._SY385_.jpg",
+
+    amazonHref: "https://a.co/d/0hPrYFXh",
   },
   {
-    title: "Quédate contigo",
-    author: "Skye Reeds",
-    imageSrc: "/books2/image 74.webp",
-    amazonHref: "https://a.co/d/0gdY10iv",
+    title: "On Lightness and Being: Becoming Human: Learning to See",
+    author: "Carron Hairabedian",
+    imageSrc: "https://m.media-amazon.com/images/I/61bey9pTYEL._SY522_.jpg",
+
+    amazonHref: "https://a.co/d/0eVNdG2M",
   },
   {
-    title: "SAFE: The Minimum Standard for Intimacy",
-    author: "Scott Austin Martin",
-    imageSrc: "/books2/image 76.webp",
-    amazonHref: "https://a.co/d/0aYJEGvA",
+    title: "On Lightness and Being: Love, Loss, and Letting Go",
+    author: "Carron Hairabedian",
+    imageSrc: "https://m.media-amazon.com/images/I/71pNKStRVhL._SY425_.jpg",
+
+    amazonHref: "https://a.co/d/01p7ZBw8",
   },
   {
-    title: "Rule Your Tech",
-    author: "Jedd Medefind",
-    imageSrc: "/books2/image 77.webp",
-    amazonHref: "https://a.co/d/0fVHddjU",
+    title: "On Lightness and Being: Becoming Whole: Healing, Wisdom, and Peace",
+    author: "Carron Hairabedian",
+    imageSrc: "https://m.media-amazon.com/images/I/61IQQ3DHzxL._SY522_.jpg",
+
+    amazonHref: "https://a.co/d/01eDTdbD",
   },
   {
-    title: "The Last of the Dawson Gang",
-    author: "Dr. Gerald Murray",
-    imageSrc: "/books2/image 78.webp",
-    amazonHref: "https://a.co/d/07adIJwm",
+    title: "The Bee's Colony, The Rise of the New Queen",
+    author: "Joel B.Gindo",
+    imageSrc: "https://m.media-amazon.com/images/I/41q8C4eBeoL._SY445_SX342_FMwebp_.jpg",
+
+    amazonHref: "https://a.co/d/03dFgTaS",
   },
   {
-    title: "The Art Of Legal Tax Avoidance",
-    author: "Karlton Dennis",
-    imageSrc: "/books2/image 79.webp",
-    amazonHref: "https://a.co/d/0iBqZjUf",
+    title: "Tales of the Hippie Dippie Gardener",
+    author: "Jim Fritz",
+    imageSrc: "https://m.media-amazon.com/images/I/41qpNvU5baL._SY445_SX342_QL70_FMwebp_.jpg",
+
+    amazonHref: "https://a.co/d/01RL87Q4",
   },
   {
-    title: "The Christian Nationalist Vision",
-    author: "Andrew Torba",
-    imageSrc: "/books2/image 80.webp",
-    amazonHref: "https://a.co/d/02Fb9wH3",
+    title: "God Carried Me: A Testament to Faith Through Life's Storms",
+    author: "Bertha Stumon",
+    imageSrc: "https://m.media-amazon.com/images/I/61SwnA42oIL._SY466_.jpg",
+
+    amazonHref: "https://a.co/d/084ustJB",
   },
   {
-    title: "Bow Your Neck",
-    author: "Matt Courson",
-    imageSrc: "/books2/image 81.webp",
-    amazonHref: "https://a.co/d/0dv0aPQA",
+    title: "THE LABYRINTH",
+    author: "Keith Cuvo",
+    imageSrc: "https://m.media-amazon.com/images/I/613v0rxTVpL._SY466_.jpg",
+
+    amazonHref: "https://a.co/d/0fpe2YQe",
   },
   {
-    title: "Are You Talking To Me?",
-    author: "Joanie Floethe Morrison",
-    imageSrc: "/books2/image 86.webp",
-    amazonHref: "https://a.co/d/090wP3tP",
+    title: "THE TIME CAPSULE MYSTERY",
+    author: "Jenny Lynn",
+    imageSrc: "https://m.media-amazon.com/images/I/613ypngHL7L._SY466_.jpg",
+
+    amazonHref: "https://a.co/d/0eaNfhXz",
   },
   {
-    title: "10-Minute Tai Chi Walking for Weight Loss",
-    author: "Laura Mei Turner",
-    imageSrc: "/books2/image 82.webp",
-    amazonHref: "https://a.co/d/08JOlKxR",
+    title: "LAFLAPS: Living A Fruitful Life After Prison System",
+    author: "Gary Alan Early",
+    imageSrc: "https://m.media-amazon.com/images/I/71juM83U+cL._SY466_.jpg",
+
+    amazonHref: "https://a.co/d/0gZbtRPp",
   },
   {
-    title: "The Qur’an Speaks: will you listen?",
-    author: "Aiisha Dahir",
-    imageSrc: "/books2/image 87.webp",
-    amazonHref: "https://a.co/d/0eVu9ZKt",
+    title: "THROUGH THE EYE OF THE STORM",
+    author: "Andre Goldson",
+    imageSrc: "https://m.media-amazon.com/images/I/61HZcMSR5EL._SY522_.jpg",
+
+    amazonHref: "https://a.co/d/0ciIvs0L",
   },
   {
-    title: "Our Happy Valley Home",
-    author: "Susannah B. Lewis",
-    imageSrc: "/books2/image 84.webp",
-    amazonHref: "https://a.co/d/07e1c9XE",
+    title: "FRESH PATHS UNFOLDING: VERA’S JOURNEY CONTINUES",
+    author: "Sara Tessier",
+    imageSrc: "https://m.media-amazon.com/images/I/41hiD1dnPwL._SY445_SX342_QL70_FMwebp_.jpg",
+
+    amazonHref: "https://a.co/d/0h3gl6A6",
+  },
+  {
+    title: "Forged in the Mountains: A Family's Resilience",
+    author: "Wilma Gibson Smith",
+    imageSrc: "https://m.media-amazon.com/images/I/71+QHcaqVKL._SY466_.jpg",
+
+    amazonHref: "https://a.co/d/02fR7S9m",
+  },
+  {
+    title:
+      "Discovering the Root Causes of Cancer: A Journey of Self-Discovery",
+    author: "Valerie B. Irons",
+    imageSrc: "https://m.media-amazon.com/images/I/71Dtq5IS8ZL._SY385_.jpg",
+
+    amazonHref: "https://a.co/d/0eB0OwID",
+  },
+  {
+    title: "Dreams from my Grandfather: An International Inheritance",
+    author: "A. D. Bradley",
+    imageSrc: "https://m.media-amazon.com/images/I/71bPwpz8H3L._SY425_.jpg",
+
+    amazonHref: "https://a.co/d/0ie4oXLR",
+  },
+  {
+    title: "THE BOOK OF UNFOLDING INTEGRATION",
+    author: "Anthony Deans",
+    imageSrc: "https://m.media-amazon.com/images/I/61k9Mvcj71L._SY466_.jpg",
+
+    amazonHref: "https://a.co/d/01TnBqeA",
+  },
+  {
+    title: "BROKEN DREAMS: A Journey Through the Trials and Tribulations of the Texas Gulf Coast",
+    author: "Bobby Bee",
+    imageSrc: "https://m.media-amazon.com/images/I/71I8zG+CARL._SY466_.jpg",
+
+    amazonHref: "https://a.co/d/07omlcAE",
+  },
+  {
+    title: "The Bounce Back: A Journey of Survival, Identity, and Resilience",
+    author: "Craig Powell",
+    imageSrc: "https://m.media-amazon.com/images/I/61+6CDkYLuL._SY522_.jpg",
+
+    amazonHref: "https://a.co/d/077L9M4Y",
+  },
+  {
+    title: "IT WAS NOT YOUR FAULT: BREAKING THE SILENCE ON MALE SEXUAL ABUSE AND FINDING HEALING THROUGH FAITH",
+    author: "Jerry L. Morgan",
+    imageSrc: "https://m.media-amazon.com/images/I/51IdDAJKOvL._SY466_.jpg",
+
+    amazonHref: "https://a.co/d/00INdTu4",
+  },
+  {
+    title: "The Adventure Of Scott And Lenny: Learn How To Fly",
+    author: "Leonard Serratore",
+    imageSrc: "https://m.media-amazon.com/images/I/61KHsUOqXwL._SY522_.jpg",
+
+    amazonHref: "https://a.co/d/04i1QzPC",
+  },
+  {
+    title: "Proverbial Spirits : Spiritual messages A medium told me to find the Philosopher's stone. I did just that.",
+    author: "Ray Kaczar",
+    imageSrc: "https://m.media-amazon.com/images/I/814tG0xPcUL._SY425_.jpg",
+
+    amazonHref: "https://a.co/d/0eTrzJDj",
+  },
+  {
+    title: "Leading With Purpose: A Leadership Framework For Non-Native School Leaders Serving in Predominately Native Schools",
+    author: "Dr. Ralph M. Watkins Ph.D.",
+    imageSrc: "https://m.media-amazon.com/images/I/51WzU0zNfwL._SY466_.jpg",
+
+    amazonHref: "https://a.co/d/02Ghlu41",
+  },
+  {
+    title: "JETHRO & KASHU & Friends: Plant a Forest",
+    author: "Sara Tessier",
+    imageSrc: "https://m.media-amazon.com/images/I/614zsxPblEL._SY522_.jpg",
+
+    amazonHref: "https://a.co/d/0dowUcE8",
+  },
+  {
+    title: "Kael and the Whale with the Polka-Dot Tail",
+    author: "Scott Frank",
+    imageSrc: "https://m.media-amazon.com/images/I/81rJAyRvPgL._SY342_.jpg",
+
+    amazonHref: "https://a.co/d/0aj4vVbz",
+  },
+  {
+    title: "THE ARCHIVE OF A. D. BRADLEY: Summer in Rome (2005)",
+    author: "A. D. BRADLEY",
+    imageSrc: "https://m.media-amazon.com/images/I/816xIM3kXML._SX445_.jpg",
+
+    amazonHref: "https://a.co/d/0iMWfNUy",
+  },
+  {
+    title: "Mr. Mogley Muck: The House Mouse",
+    author: "Janice Balo",
+    imageSrc: "https://m.media-amazon.com/images/I/71Io4cttdDL._SY342_.jpg",
+
+    amazonHref: "https://a.co/d/0aF4lnuo",
+  },
+  {
+    title: "The Man of Light, and the Man of Dark: A Journey Through Poetry",
+    author: "Mike The Voice",
+    imageSrc: "https://m.media-amazon.com/images/I/61BDjfG7tmL._SY466_.jpg",
+
+    amazonHref: "https://a.co/d/014CkQCA",
+  },
+  {
+    title: "Faith Over Feelings: Discovering Purpose in Your Hardest Places",
+    author: "Peter E. Martins",
+    imageSrc: "https://m.media-amazon.com/images/I/81Dn+Smkv5L._SY466_.jpg",
+
+    amazonHref: "https://a.co/d/0iz5TW4E",
+  },
+  {
+    title: "STILL I RISE: The Life of Rachel",
+    author: "Rachel Anderson",
+    imageSrc: "https://m.media-amazon.com/images/I/61lOw6kwfJL._SY466_.jpg",
+
+    amazonHref: "https://a.co/d/09xqIhbN",
+  },
+  {
+    title: "BEFORE ONE GOD: The Ancient Gods Behind the Biblical Tradition",
+    author: "ROB CLIFF LOWE",
+    imageSrc: "https://m.media-amazon.com/images/I/61cWQbQ9WQL._SY522_.jpg",
+
+    amazonHref: "https://a.co/d/04YBpyNT",
+  },
+  {
+    title: "RHYME WITH REASON",
+    author: " Gene Van Alstyne",
+    imageSrc: "https://m.media-amazon.com/images/I/61XNBRiq1DL._SY466_.jpg",
+
+    amazonHref: "https://a.co/d/0bVw3K7a",
+  },
+  {
+    title: "The Adventures of Jenny: Not What We Expected",
+    author: " John H Lake",
+    imageSrc: "https://m.media-amazon.com/images/I/71NrTA8TnrL._SY466_.jpg",
+
+    amazonHref: "https://a.co/d/025Z9puW",
+  },
+  {
+    title: "ASHES OF THE OBSIDIAN SHORE",
+    author: "Roger Dale Faubush II",
+    imageSrc: "https://m.media-amazon.com/images/I/71scCT35IyL._SY466_.jpg",
+
+    amazonHref: "https://a.co/d/06XrCqUG",
+  },
+  {
+    title:
+      "SCORCHING WINGS OF AN EMPTY NESTER: An empty nester adventure that I wasn't ready for",
+    author: "KEN NOBLE",
+    imageSrc: "https://m.media-amazon.com/images/I/71lfsR4AbhL._SY466_.jpg",
+
+    amazonHref: "https://a.co/d/0jdoebVy",
+  },
+  {
+    title:
+      "The Keeper of Tears: A Tale of Lost Rain, Brave Hearts, and the Power of Tears",
+    author: "John C Blackford",
+    imageSrc: "https://m.media-amazon.com/images/I/71KObra5lZL._SY466_.jpg",
+
+    amazonHref: "https://a.co/d/098t5Wdp",
+  },
+  {
+    title: "Drawn 2 Danger: A Memoir of Duty, Danger, and DisimageSrcy",
+    author: "J P Sexton",
+    imageSrc: "https://m.media-amazon.com/images/I/71EjxGKCmEL._SY466_.jpg",
+
+    amazonHref: "https://a.co/d/01Bs2kl9",
+  },
+  {
+    title: "THE PUBLICAN",
+    author: "David Nava Monreal",
+    imageSrc: "https://m.media-amazon.com/images/I/61xM8pwkQkL._SY466_.jpg",
+
+    amazonHref: "https://a.co/d/01SaWxIa",
+  },
+  {
+    title: "OLD LORE & BONES: Poems, Ballads & Adventures of the Sea",
+    author: " UNCLE SCOTTY",
+    imageSrc: "https://m.media-amazon.com/images/I/717h0aKKWJL._SY466_.jpg",
+
+    amazonHref: "https://a.co/d/0hEL6zyk",
+  },
+  {
+    title: "The Table: Conversations Across Time",
+    author: " Dr. Carl L. Young PhD",
+    imageSrc: "https://m.media-amazon.com/images/I/61ANOQzt8vL._SY522_.jpg",
+
+    amazonHref: "https://a.co/d/0hvI02XW",
+  },
+  {
+    title: "Healing Your Heart: Understanding the Root Causes of Breast Cancer",
+    author: " Valerie B. Irons",
+    imageSrc: "https://m.media-amazon.com/images/I/71uF6YRwfhL._SY385_.jpg",
+
+    amazonHref: "https://a.co/d/0iPpg8TL",
+  },
+  {
+    title: "JAMIE, HATTIE & JACKIE and the Otherworldly Friends",
+    author: "Ankit Arora",
+    imageSrc: "https://m.media-amazon.com/images/I/71iHOyp46zL._SY466_.jpg",
+
+    amazonHref: "https://a.co/d/08g4V2iB",
+  },
+  {
+    title: "IMPULSE: A Story About Loss, Love, and Life Lessons",
+    author: " Dr. Sandra Dennis",
+    imageSrc: "https://m.media-amazon.com/images/I/61VoKsdSsnL._SY522_.jpg",
+
+    amazonHref: "https://a.co/d/0eDuDm9p",
+  },
+
+  {
+    title: "A View from the Palace",
+    author: " Robbie Munn Bayler",
+    imageSrc: "https://m.media-amazon.com/images/I/81t9ZodeQ-L._SY385_.jpg",
+
+    amazonHref: "https://a.co/d/05xtglqn",
+  },
+  {
+    title: "CROWNED in SILENCE",
+    author: " Toya Bounds",
+    imageSrc: "https://m.media-amazon.com/images/I/61u5a1G4OrL._SY522_.jpg",
+
+    amazonHref: "https://a.co/d/02a32XsM",
+  },
+  {
+    title: "DECEIVED WOMAN",
+    author: "LUZ ARDELYS DÍAZ PERALTA",
+    imageSrc: "https://m.media-amazon.com/images/I/61cdChR7i2L._SY522_.jpg",
+
+    amazonHref: "https://a.co/d/00S0v12I",
+  },
+  {
+    title: "MUJER ENGAÑADA (Spanish Edition)",
+    author: "LUZ ARDELYS DÍAZ PERALTA",
+    imageSrc: "https://m.media-amazon.com/images/I/610582YMoxL._SY522_.jpg",
+
+    amazonHref: "https://a.co/d/02b8lhUI",
+  },
+  {
+    title:
+      "Can I Survive Widowhood: The struggle With Grief, Shock, and Reestablishing a New Life",
+    author: " Robbie Munn Bayler",
+    imageSrc: "https://m.media-amazon.com/images/I/81FAqqLB3YL._SY466_.jpg",
+
+    amazonHref: "https://a.co/d/00AOB2Hr",
+  },
+  {
+    title: "LAFLAPS: THE BON VOYAGE",
+    author: "Gary Alan Early",
+    imageSrc: "https://m.media-amazon.com/images/I/61Kd4YLH0CL._SY522_.jpg",
+
+    amazonHref: "https://a.co/d/01vp7Adj",
+  },
+  {
+    title: "Preston",
+    author: "David Bales",
+    imageSrc: "https://m.media-amazon.com/images/I/81GQhuLY7RL._SY466_.jpg",
+
+    amazonHref: "https://a.co/d/0eR3izAk",
+  },
+  {
+    title: "The Little Butterfly Girl: Revised Tenth Anniversary Edition",
+    author: "Brooke Brown",
+    imageSrc: "https://m.media-amazon.com/images/I/61ZmECNYshL._SY522_.jpg",
+
+    amazonHref: "https://a.co/d/0j3UkTFL",
+  },
+
+  {
+    title: "Growing Together: A Christian mother and daughter journal",
+    author: "Allison Sullins",
+    imageSrc: "https://m.media-amazon.com/images/I/714wiOGioqL._SY466_.jpg",
+
+    amazonHref: "https://a.co/d/0h1r5jAM",
+  },
+  {
+    title: "MY BUG BOOK",
+    author: "Wanda Jenkins Smith",
+    imageSrc: "https://m.media-amazon.com/images/I/514s7yxj1FL._SY342_.jpg",
+
+    amazonHref: "https://a.co/d/09kbk7rw",
+  },
+  {
+    title: "IF I HAD A COW",
+    author: "Wanda Jenkins Smith",
+    imageSrc: "https://m.media-amazon.com/images/I/51iOyU37yKL._SY342_.jpg",
+
+    amazonHref: "https://a.co/d/05OKpCCe",
+  },
+  {
+    title: "A SNOWY DAY",
+    author: " Wanda Jenkins-smith",
+    imageSrc: "https://m.media-amazon.com/images/I/61nGY2mBArL._SY522_.jpg",
+
+    amazonHref: "https://a.co/d/07RInouK",
+  },
+  {
+    title: "THE STORMY NIGHT",
+    author: "Wanda Jenkins-Smith",
+    imageSrc: "https://m.media-amazon.com/images/I/61tou7wZZJL._SY522_.jpg",
+
+    amazonHref: "https://a.co/d/01HxUOni",
+  },
+  {
+    title: "Monkey Feet",
+    author: "Wanda Jenkins-Smith",
+    imageSrc: "https://m.media-amazon.com/images/I/61jaDj6bQAL._SY522_.jpg",
+
+    amazonHref: "https://a.co/d/03HzI9Bp",
+  },
+  {
+    title:
+      "El Color del Renacer: Memorias de Fe, Tierra y Renacimiento (Spanish Edition)",
+    author: "Luz Diaz",
+    imageSrc: "https://m.media-amazon.com/images/I/51kKrXJP3ZL._SY522_.jpg",
+
+    amazonHref: "https://a.co/d/080ryfQM",
+  },
+  {
+    title: "THE COLOR OF REBIRTH: Memoirs of Faith, Land, and Renewal",
+    author: "Luz Diaz",
+    imageSrc: "https://m.media-amazon.com/images/I/51EBMyMqVsL._SY522_.jpg",
+
+    amazonHref: "https://a.co/d/0427EwRh",
   },
 ];
 
@@ -344,7 +699,9 @@ const BooksGrid = () => {
             className="mx-auto mt-4 max-w-[890px] text-base leading-[1.65] text-[#777777] sm:text-lg"
             variants={textVariants}
           >
-            Our portfolio spans fiction, romance, thriller, fantasy, memoirs, biographies, business books, self-help, children's books, educational titles, cookbooks, poetry, and more.
+            Our portfolio spans fiction, romance, thriller, fantasy, memoirs,
+            biographies, business books, self-help, children's books,
+            educational titles, cookbooks, poetry, and more.
           </motion.p>
         </motion.div>
 
@@ -375,7 +732,7 @@ const BooksGrid = () => {
                 </motion.div>
 
                 <motion.div
-                  className="relative z-10 mx-auto w-[90%]"
+                  className="relative z-10 mx-auto aspect-[2/3] w-[90%]"
                   initial={{ opacity: 0, y: 30, rotate: -2, scale: 0.94 }}
                   animate={{ opacity: 1, y: 0, rotate: 0, scale: 1 }}
                   transition={{ duration: 0.85, ease: booksEase }}
@@ -383,29 +740,29 @@ const BooksGrid = () => {
                   <Image
                     src={book.imageSrc}
                     alt={book.title}
-                    width={258}
-                    height={386}
-                    className="h-auto w-full rounded-[4px]"
+                    fill
+                    sizes="(max-width: 640px) 90vw, (max-width: 1024px) 40vw, 232px"
+                    className="rounded-[4px] object-contain"
                   />
                 </motion.div>
               </motion.div>
 
               <motion.h3
-  className="text-lg font-medium leading-[1.25] tracking-[-0.03em] text-[#272727] sm:text-xl"
-  variants={textVariants}
-  title={book.title}
->
-  {truncateText(book.title, 20)}
-</motion.h3>
+                className="text-lg font-medium leading-[1.25] tracking-[-0.03em] text-[#272727] sm:text-xl"
+                variants={textVariants}
+                title={book.title}
+              >
+                {truncateText(book.title, 20)}
+              </motion.h3>
               <motion.p
-  className="mt-2 text-sm leading-none text-[#444444] sm:text-base"
-  variants={textVariants}
-  title={book.author}
->
-  {truncateText(book.author, 20)}
-</motion.p>
+                className="mt-2 text-sm leading-none text-[#444444] sm:text-base"
+                variants={textVariants}
+                title={book.author}
+              >
+                {truncateText(book.author, 20)}
+              </motion.p>
 
-              <motion.div
+              {/* <motion.div
                 variants={ctaVariants}
                 whileHover={{ y: -2 }}
                 whileTap={{ scale: 0.98 }}
@@ -419,7 +776,7 @@ const BooksGrid = () => {
                     <AmazonBagIcon />
                   </span>
                 </Link>
-              </motion.div>
+              </motion.div> */}
             </motion.article>
           ))}
         </motion.div>
