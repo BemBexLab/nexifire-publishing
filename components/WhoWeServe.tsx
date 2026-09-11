@@ -20,6 +20,7 @@ export type WhoWeServeProps = {
   badgeText?: string;
   title: string;
   description: string;
+  footnote?: React.ReactNode;
   stats: WhoWeServeStat[];
   genres: string[];
   buttonLabel?: string;
@@ -177,6 +178,7 @@ const WhoWeServe = ({
   badgeText,
   title = defaultWhoWeServeData.title,
   description = defaultWhoWeServeData.description,
+  footnote,
   stats = defaultWhoWeServeData.stats,
   genres = defaultWhoWeServeData.genres,
   buttonLabel,
@@ -285,6 +287,15 @@ const WhoWeServe = ({
                 </motion.span>
               ))}
             </motion.div>
+
+            {footnote ? (
+              <motion.div
+                variants={revealItemVariants}
+                className="mt-5 text-sm italic leading-[1.6] text-[#8C8C8C] sm:text-base"
+              >
+                {footnote}
+              </motion.div>
+            ) : null}
 
             {resolvedButtonLabel && buttonHref ? (
               <motion.div

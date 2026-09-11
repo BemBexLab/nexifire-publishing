@@ -69,8 +69,8 @@ const defaultFooterData: FooterData = {
     { label: "LinkedIn", href: "#", icon: "linkedin" },
   ],
   copyrightText: "© 2026 NexiFire Publishing All Rights Reserved.",
-  privacyPolicy: { label: "Privacy Policy", href: "#" },
-  termsAndConditions: { label: "Terms & Conditions", href: "#" },
+  privacyPolicy: { label: "Privacy Policy", href: "/privacy-policy" },
+  termsAndConditions: { label: "Terms & Conditions", href: "/terms-condition" },
 };
 
 const socialIcons = {

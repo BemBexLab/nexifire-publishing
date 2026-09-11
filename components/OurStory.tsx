@@ -190,21 +190,16 @@ const OurStory = () => {
               variants={contentVariants}
             >
               <motion.p variants={itemVariants}>
-                NexiFire Publishing was created with a simple mission: to make
-                professional publishing accessible to authors at every stage of
-                their journey.
+                Most authors don't quit because their book isn't good enough. They quit because the process between "finished manuscript" and "published book" feels impossible to navigate alone: editing, formatting, ISBN registration, cover design, distribution, marketing, each one its own learning curve, each one a place to get stuck.
               </motion.p>
               <motion.p variants={itemVariants}>
-                We understand that publishing a book can feel overwhelming. From
-                editing and design to distribution and promotion, there are
-                countless steps involved. That's why we've built a team of
-                publishing professionals dedicated to guiding authors through
-                every phase of the process.
+                NexiFire Publishing exists because we watched too many good books never make it to readers, not for lack of talent, but for lack of a team that could carry the technical weight of publishing so the author didn't have to.
               </motion.p>
               <motion.p variants={itemVariants}>
-                Whether you're publishing your first book or growing your
-                portfolio as an established author, we're here to help transform
-                your vision into a professionally published work.
+                We built NexiFire to be the full-service book publishing company we wished existed when we started: one team, one point of contact, every stage of the journey covered, from a rough first draft to a book selling on Amazon and beyond.
+              </motion.p>
+              <motion.p variants={itemVariants}>
+                Whether you're publishing your first book or your fifth, our job is the same: take the parts of publishing that usually trip people up, and handle them properly, so you can stay focused on the book itself.
               </motion.p>
             </motion.div>
             <motion.div
@@ -304,7 +299,7 @@ const OurStory = () => {
               className="mt-4 max-w-[520px] text-base leading-[1.7] text-[#909090] sm:text-lg"
               variants={itemVariants}
             >
-              To empower authors with the tools, expertise, and support needed to publish exceptional books and reach readers around the world.
+              To give authors the tools, expertise, and support they need to publish genuinely excellent books, and get those books in front of the readers who are waiting for them.
             </motion.p>
           </motion.article>
 
@@ -324,7 +319,7 @@ const OurStory = () => {
               className="mt-4 max-w-[520px] text-base leading-[1.7] text-[#909090] sm:text-lg"
               variants={itemVariants}
             >
-              To become a trusted publishing partner for authors worldwide by delivering innovative publishing solutions and helping meaningful stories find their audience.
+              To be the most reliable self-publishing company for authors across the USA, known not for being the biggest, but for being the most honest and the most thorough.
             </motion.p>
           </motion.article>
         </motion.div>

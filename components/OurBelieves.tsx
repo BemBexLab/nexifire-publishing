@@ -12,25 +12,25 @@ const beliefs = [
   {
     title: "Author First",
     description:
-      "Your story, vision, and goals remain at the center of everything we do.",
+      "Your story, your voice, and your goals stay at the center of every decision we make. We're here to execute your vision, not replace it with ours.",
     iconSrc: "/image 2.svg",
   },
   {
-    title: "Excellence In Publishing",
+    title: "Excellence in Publishing",
     description:
-      "Great books are built through collaboration.",
+      "A great book is the result of real collaboration between an author and a team that knows the craft, not a rushed, templated process.",
     iconSrc: "/image 2 (1).svg",
   },
   {
     title: "Creative Collaboration",
     description:
-      "We deliver professional publishing services with excellence.",
+      "We work with you at every stage, not around you. You approve the direction before we run with it.",
     iconSrc: "/image 2 (2).svg",
   },
   {
-    title: "Long-Term Success",
+    title: "Long-Term Author Success",
     description:
-      "We don't just publish books. We help authors build lasting careers.",
+      "We're not interested in publishing one book and disappearing. We want to help authors build publishing careers, one book at a time.",
     iconSrc: "/image 2 (3).svg",
   },
 ];
@@ -230,7 +230,7 @@ const OurBelieves = () => {
                 ) : null}
               </motion.div>
               <motion.h3
-                className="mt-5 text-3xl font-medium leading-[1.15] tracking-[-0.03em] text-[#4D4D4D] sm:text-4xl"
+                className="mt-5 text-2xl font-medium leading-[1.15] tracking-[-0.03em] text-[#4D4D4D]"
                 variants={itemVariants}
               >
                 {belief.title}

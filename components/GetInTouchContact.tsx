@@ -190,19 +190,20 @@ const contactItems: GetInTouchContactItem[] = [
   {
     id: "phone-us",
     kind: "phone",
-    label: "(0468) 285-539",
-    href: "tel:+61468285539",
+    label: "470 205 2227",
+    href: "tel:+14702052227",
   },
   {
     id: "email",
     kind: "email",
-    label: "contact@nexifire.com",
-    href: "mailto:contact@nexifire.com",
+    label: "contact@nexifirepublishing.com",
+    href: "mailto:contact@nexifirepublishing.com",
   },
   {
     id: "address-us",
     kind: "location",
-    label: "United States",
+    label: "1221 Brickell Ave,Miami, FL 33131, United States",
+    href: "https://maps.app.goo.gl/mibAgwMcMGF8A8ig7",
   },
 ];
 

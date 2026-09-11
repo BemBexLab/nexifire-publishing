@@ -24,26 +24,51 @@ const page = () => {
       <Portfolio />
       <div className="h-10" />
       <PublishYourBook
-        eyebrow="Publish With NexiFire"
-        title="Your Story Could Be Next"
-        description="Whether you're writing your first manuscript or preparing your next release, NexiFire Publishing is ready to help you bring your vision to life."
+        eyebrow=""
+        title="Ready to Publish Your Book?"
+        description="Tell us where you are in your journey and where you want to go. We'll design the right plan, assign the right specialists, and help you move forward with confidence."
         buttonLabel="Publish Your Book"
         buttonHref="/contact"
         backgroundImageSrc="/Frame 2147225865.webp"
         backgroundAlt="Person Reading Book"
       />
       <div className="h-10" />
-      <WhoWeServe {...defaultWhoWeServeData} />
+      <WhoWeServe
+        {...{
+          badgeText: "",
+          title: "Real Numbers, Real Experience",
+          description:
+            "We proudly work with authors across a wide range of genres and backgrounds, including:",
+          stats: [
+            { value: "10+", label: "Years of Publishing Experience", highlighted: true },
+            { value: "45+", label: "Editors, Designers & Ghostwriters" },
+            { value: "1,200+", label: "Authors Served" },
+            { value: "1,800+", label: "Books Published", highlighted: true },
+          ],
+          genres: [
+            "Fiction & Novels",
+            "Non-Fiction",
+            "Business & Leadership",
+            "Self-Help & Personal Development",
+            "Memoirs & Biography",
+            "Children's Books",
+            "Poetry",
+            "Educational Books",
+            "Inspirational & Faith-Based Titles",
+          ],
+          footnote: ""
+        }}
+      />
       <Testimonials
         badgeText="Author Stories"
-        title="What American Authors Say About NexiFire"
-        description="Over 2,000 American authors have trusted NexiFire Publishing to bring their books to life. Here's what a few of them have to say."
+        title="What Authors Are Saying"
+        description=""
         buttonLabel="View All Review"
         buttonHref="#"
         testimonials={[
           {
             quote:
-              "I'd been sitting on my memoir manuscript for three years, afraid of the publishing process. NexiFire made it feel completely manageable. My editor was thoughtful, the cover design exceeded my expectations, and within 10 weeks, my book was on Booktopia and Amazon. I couldn't recommend them more.",
+              "I'd been sitting on my memoir manuscript for three years, afraid of the publishing process. NexiFire made it feel completely manageable. My editor was thoughtful, the cover exceeded my expectations, and within ten weeks my book was live on Amazon. I couldn't recommend them more.",
             name: "Sarah Phill",
             avatarSrc:
               "https://images.unsplash.com/photo-1494790108377-be9c29b29330?auto=format&fit=crop&w=120&q=80",
@@ -52,7 +77,7 @@ const page = () => {
           },
           {
             quote:
-              "As a first-time children's book author, I was nervous about finding the right publishing company. NexiFire's children's publishing team understood exactly what illustrations my story needed and handled everything beautifully. My daughter's face when she held the printed book said it all.",
+              "As a first-time children's book author, I was nervous about finding the right publishing company. NexiFire's team understood exactly what illustrations my story needed and handled everything beautifully. My daughter's face when she held the printed book said it all.",
             name: "James Kelvin",
             avatarSrc:
               "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&w=120&q=80",
@@ -61,7 +86,7 @@ const page = () => {
           },
           {
             quote:
-              "My business book needed to look credible and professional to stand up next to traditionally published titles. NexiFire delivered on every front; the editing was sharp, the design was contemporary, and my book was in Dymocks within six weeks of final approval. Exceptional service.",
+              "My business book needed to look credible enough to stand up next to traditionally published titles. NexiFire delivered on every front — the editing was sharp, the design was contemporary, and my book was in stores within weeks of final approval.",
             name: "Dr. Priya Gary",
             avatarSrc:
               "https://images.unsplash.com/photo-1438761681033-6461ffad8d80?auto=format&fit=crop&w=120&q=80",
@@ -75,38 +100,57 @@ const page = () => {
         title="Frequently Asked Questions"
         items={[
           {
-            question: "How do I publish a book in the United States with NexiFire?",
+            question:
+              "What is the best self-publishing company for first-time authors?",
             answer:
-              "The process of publishing a book with NexiFire begins with a free, no-obligation consultation. We assess your manuscript, discuss your goals and budget, then let you know the right package and team.",
+              "The best self-publishing company for a first-time author is one that manages the entire process end to end, editing, formatting, cover design, ISBN and copyright, distribution, and marketing, under one team, with transparent pricing and no royalty share. That's the model NexiFire was built around specifically.",
           },
           {
             question:
-              "What's the difference between self-publishing and traditional publishing?",
+              "How do I publish a book in the United States with NexiFire?",
             answer:
-              "With traditional publishing, a publisher acquires your rights, controls the timeline, and pays royalties of 8-15%. Self-publishing lets you retain full rights, earn up to 70% royalties, and get your book to market on your own schedule, with professional support from a team like NexiFire handling the rest.",
+              "The process starts with a free, no-obligation consultation. We review your manuscript, talk through your goals and budget, and recommend the right package and team for your project, no pressure, no obligation to continue.",
           },
           {
             question:
-              "Does NexiFire offer children's book publishing services in the United States?",
+              "What's the difference between self-publishing and going with a traditional publishing company?",
             answer:
-              "Yes. NexiFire is one of the most reliable and leading children's book publishing companies in the United States. We offer full-colour illustration sourcing or coordination, age-appropriate formatting, picture book and early reader layouts, hardcover and softcover printing, and full national and international distribution through Amazon and library networks.",
+              "Traditional publishers take a percentage of royalties and control creative decisions in exchange for their name and distribution network. Self-publishing companies like NexiFire charge a flat production fee, leave 100% of royalties and rights with the author, and give the author full creative control, while still providing professional editing, design, and distribution.",
           },
           {
-            question: "Can NexiFire produce an audiobook from my manuscript?",
+            question: "Does NexiFire offer children's book publishing services?",
             answer:
-              "Absolutely. Our audiobook formation service covers everything: professional voice casting from our American narrator network or guidance for author-narrated recordings, studio-quality audio production, editing, mastering, and distribution to Audible, Apple Books, Google Play, Spotify, and Storytel.",
+              "Yes. Our children's publishing team handles everything from manuscript editing to custom illustration, formatting for picture books and early readers, and printing, so your finished book actually works the way a children's book needs to.",
+          },
+          {
+            question:
+              "Can NexiFire produce an audiobook from my manuscript?",
+            answer:
+              "Yes. We offer full audiobook production, including narrator matching or author-narrated coaching, professional recording, editing, and mastering to Audible (ACX) and platform specifications.",
           },
           {
             question:
               "How much does it cost to self-publish a book in the United States?",
             answer:
-              "NexiFire offers affordable book publishing packages in the United States, starting from entry-level eBook-only packages through to comprehensive hardcover and global distribution bundles. We provide transparent, flat-rate pricing. Contact us for a custom quote based on your manuscript length, genre, and publishing goals.",
+              "Cost depends on your manuscript's length, genre, and which services you need: editing, illustration, audiobook, translation, or marketing. NexiFire uses transparent, flat-rate pricing with no hidden fees, so reach out for a free quote based on your specific project.",
           },
           {
             question:
               "Do I retain the rights to my book when publishing with NexiFire?",
             answer:
-              "Yes, always. NexiFire is a publishing services company, not a rights-acquiring publisher. You retain 100% ownership of your manuscript, copyright, ISBN, and all derivative rights. This means you can take your book elsewhere at any time, license it internationally, or adapt it into other formats without restriction.",
+              "Yes, completely. NexiFire never takes ownership, royalties, or rights to your work. You retain full copyright and 100% of your earnings across every platform your book is sold on, permanently.",
+          },
+          {
+            question:
+              "Is there a self-publishing company near me, or do I have to work in person?",
+            answer:
+              "NexiFire works with authors across the entire USA remotely, including dedicated support for authors in Miami, Florida, and other major markets. Every consultation, review, and revision happens over video call and email, so location is never a barrier.",
+          },
+          {
+            question:
+              "What makes NexiFire different from other self-publishing companies?",
+            answer:
+              "Most self-publishing companies specialize in one or two services and refer you elsewhere for the rest. NexiFire manages the entire journey ghostwriting, editing, design, production, distribution, and marketing, under one roof, with one team that knows your book from the first consultation through launch day.",
           },
         ]}
         sidebarTitle="Do You Have More Questions?"
@@ -116,8 +160,9 @@ const page = () => {
       />
       <GetInTouchContact
         backgroundClassName="bg-[#FDF7F4]"
-        title="Ready To Publish Your Book?"
-        description="Tell us where you are and where you want to go. NexiFire will design the system, align the right specialists, and help you move forward with confidence."
+        title="Ready to Publish Your Book?"
+        description="Tell us where you are in your journey and where you want to go. We'll design the right plan, assign the right specialists, and help you move forward with confidence."
+        buttonLable="Publish Your Book"
       />
     </section>
   );

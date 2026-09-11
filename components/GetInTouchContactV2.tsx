@@ -61,8 +61,8 @@ const socialLinks = [
 const infoCards = [
   {
     id: "phone",
-    label: "(0468) 285-539",
-    link: "tel:+61468285539",
+    label: "470 205 2227",
+    link: "tel:+14702052227",
     highlighted: false,
     icon: (
       <svg
@@ -81,8 +81,8 @@ const infoCards = [
   },
   {
     id: "email",
-    label: "contact@nexifire.com",
-    link: "mailto:contact@nexifire.com",
+    label: "contact@nexifirepublishing.com",
+    link: "mailto:contact@nexifirepublishing.com",
     highlighted: true,
     icon: (
       <svg
@@ -101,8 +101,8 @@ const infoCards = [
   },
   {
     id: "address",
-    label: "UNITED STATES",
-    link: "#",
+    label: "1221 Brickell Ave,Miami, FL 33131, United States",
+    link: "https://maps.app.goo.gl/mibAgwMcMGF8A8ig7",
     highlighted: false,
     icon: (
       <svg
