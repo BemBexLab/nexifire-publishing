@@ -3,7 +3,7 @@
 import { motion, type Variants } from "motion/react";
 import Image from "next/image";
 import Link from "next/link";
-import React from "react";
+import type React from "react";
 import TextFluxUnveil from "./TextFluxUnveil";
 import { FiArrowUpRight } from "react-icons/fi";
 
@@ -138,23 +138,14 @@ const ImageDesc = ({
             variants={listVariants}
             className="mt-8 w-full space-y-3 text-base leading-[1.55] text-[#7E7E7E] sm:text-lg sm:leading-[1.6]"
           >
-            {paragraphs.map((paragraph, index) =>
-              React.isValidElement(paragraph) ? (
-                <motion.div
-                  key={`paragraph-${index}`}
-                  variants={revealItemVariants}
-                >
-                  {paragraph}
-                </motion.div>
-              ) : (
-                <motion.p
-                  key={`paragraph-${index}`}
-                  variants={revealItemVariants}
-                >
-                  {paragraph}
-                </motion.p>
-              ),
-            )}
+            {paragraphs.map((paragraph, index) => (
+              <motion.div
+                key={`paragraph-${index}`}
+                variants={revealItemVariants}
+              >
+                {paragraph}
+              </motion.div>
+            ))}
             {listItems?.length ? (
               <motion.ul
                 variants={listVariants}
@@ -169,9 +160,9 @@ const ImageDesc = ({
             ) : null}
 
             {footnote ? (
-              <motion.p variants={revealItemVariants} className="italic">
+              <motion.div variants={revealItemVariants} className="italic">
                 {footnote}
-              </motion.p>
+              </motion.div>
             ) : null}
 
             {buttonLabel ? (

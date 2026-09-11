@@ -59,9 +59,9 @@ const defaultFooterData: FooterData = {
     { label: "Book Cover Design", href: "/publishing-services/book-cover-design" },
     { label: "Audio Book", href: "/publishing-services/audio-book" },
   ],
-  phone: { label: "(0468) 285-539", href: "tel:+61468285539" },
-  email: { label: "contact@nexifire.com", href: "mailto:contact@nexifire.com" },
-  location: { label: "United States", href: "" },
+  phone: { label: "470 205 2227", href: "tel:+61468285539" },
+  email: { label: "contact@nexifirepublishing.com", href: "mailto:contact@nexifire.com" },
+  location: { label: "1221 Brickell Ave,Miami, FL 33131, United States", href: "" },
   socialLinks: [
     { label: "Facebook", href: "#", icon: "facebook" },
     { label: "Instagram", href: "#", icon: "instagram" },

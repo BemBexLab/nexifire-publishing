@@ -13,8 +13,8 @@ const heroDescription =
 
 const heroBooks = [
   {
-    src: "/books2/Stephen 2.webp",
-    alt: "Messi & Ronaldo: The Soccer Goats",
+    src: "/books/Stephen 2.png",
+    alt: "FreshPathsUnfolding",
     width: 188,
     className:
       "w-[18.2%] min-w-[70px] max-w-[104px] sm:w-[19.4%] sm:min-w-[122px] sm:max-w-[196px] md:min-w-[168px] md:max-w-[270px] lg:w-[20%] lg:min-w-[190px] lg:max-w-[300px] xl:w-[22.2%] xl:min-w-[260px] xl:max-w-[390px]",
@@ -22,8 +22,8 @@ const heroBooks = [
       "mb-[-2px] sm:mb-[-8px] md:mb-[-10px] lg:mb-[-10px] xl:mb-[-18px] 2xl:mb-[-12px]",
   },
   {
-    src: "/books2/Stephen 3.webp",
-    alt: "My Secret Playbook of Life",
+    src: "/books/Stephen 3.png",
+    alt: "The Book of Unfolding Integration",
     width: 208,
     className:
       "w-[18.2%] min-w-[70px] max-w-[104px] sm:w-[19.4%] sm:min-w-[122px] sm:max-w-[196px] md:min-w-[168px] md:max-w-[270px] lg:w-[20%] lg:min-w-[190px] lg:max-w-[300px] xl:w-[22.2%] xl:min-w-[260px] xl:max-w-[390px]",
@@ -31,8 +31,8 @@ const heroBooks = [
       "mb-[8px] sm:mb-[24px] md:mb-[34px] lg:mb-[36px] xl:mb-[22px] 2xl:mb-[50px]",
   },
   {
-    src: "/books2/Stephen 4.webp",
-    alt: "Eliminate: A Murder Mystery Puzzle Book",
+    src: "/books/Stephen 4.png",
+    alt: "The Labyrinth",
     width: 220,
     className:
       "w-[18.2%] min-w-[70px] max-w-[104px] sm:w-[19.4%] sm:min-w-[122px] sm:max-w-[196px] md:min-w-[168px] md:max-w-[270px] lg:w-[20%] lg:min-w-[190px] lg:max-w-[300px] xl:w-[22.2%] xl:min-w-[260px] xl:max-w-[390px]",
@@ -40,8 +40,8 @@ const heroBooks = [
       "mb-[16px] sm:mb-[42px] md:mb-[66px] lg:mb-[74px] xl:mb-[46px] 2xl:mb-[100px]",
   },
   {
-    src: "/books2/Stephen 6.webp",
-    alt: "The Blueprint Of Leadership",
+    src: "/books/Stephen 5.png",
+    alt: "The Bee's Colony",
     width: 208,
     className:
       "w-[18.2%] min-w-[70px] max-w-[104px] sm:w-[19.4%] sm:min-w-[122px] sm:max-w-[196px] md:min-w-[168px] md:max-w-[270px] lg:w-[20%] lg:min-w-[190px] lg:max-w-[300px] xl:w-[22.2%] xl:min-w-[260px] xl:max-w-[390px]",
@@ -49,7 +49,7 @@ const heroBooks = [
       "mb-[8px] sm:mb-[24px] md:mb-[34px] lg:mb-[36px] xl:mb-[22px] 2xl:mb-[50px]",
   },
   {
-    src: "/books2/Stephen 5.webp",
+    src: "/books/Stephen 6.png",
     alt: "The Lottery Killer",
     width: 188,
     className:
@@ -148,13 +148,11 @@ const heroTextRevealVariants: Variants = {
     opacity: 0,
     y: 34,
     filter: "blur(16px)",
-    clipPath: "inset(0 0 100% 0)",
   },
   visible: {
     opacity: 1,
     y: 0,
     filter: "blur(0px)",
-    clipPath: "inset(0 0 0% 0)",
     transition: {
       duration: 0.95,
       ease: [0.22, 1, 0.36, 1],
