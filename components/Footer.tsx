@@ -40,7 +40,7 @@ export type FooterProps = Partial<FooterData>;
 const defaultFooterData: FooterData = {
   title: "NEXIFIRE PUBLISHING",
   description:
-    "NexiFire Publishing is a trusted self-publishing company for authors ready to get their book into the world. We help authors publish ebooks, print books, and audiobooks with full-service support, ghostwriting, editing, formatting, cover design, and global distribution, all under one roof. As one of the best self-publishing companies for first-time authors, we handle the parts that usually trip people up, so you can focus on the book itself.",
+    "NexiFire Publishing is a full-service self-publishing company helping authors take their books from manuscript to marketplace. From editing, design, and publishing to global distribution and marketing, we handle it all under one roof while protecting your voice, creative control, rights, and 100% of your royalties.",
   ctaLabel: "Publish Your Book",
   ctaHref: "/contact",
   quickLinks: [

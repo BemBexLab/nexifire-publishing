@@ -52,7 +52,7 @@ export default async function PublishingServicePage({
       <FAQs {...pageData.faqs} />
       <Testimonials {...pageData.testimonials} />
       <GetInTouchContact {...pageData.contact} />
-      <Footer {...pageData.footer} />
+      {/* <Footer {...pageData.footer} /> */}
     </section>
   );
 }
