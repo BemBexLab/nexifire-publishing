@@ -1,6 +1,7 @@
 "use client";
 
 import React from "react";
+import { usePathname } from "next/navigation";
 import { motion, type Variants } from "motion/react";
 import TextFluxUnveil from "./TextFluxUnveil";
 import Image from "next/image";
@@ -191,7 +192,9 @@ const PageHero = ({
   buttonLabel = defaultButtonLabel,
   buttonHref = defaultButtonHref,
 }: PageHeroProps) => {
+  const pathname = usePathname();
   const hasEyebrow = eyebrow.trim().length > 0;
+  const showButton = pathname !== "/contact" && pathname !== "/contact/";
   const descriptionIsText =
     typeof description === "string" || typeof description === "number";
   const marqueeLogos = [...logos, ...logos, ...logos, ...logos];
@@ -275,29 +278,31 @@ const PageHero = ({
               {description}
             </motion.div>
           )}
-          <motion.div
-            variants={heroItemVariants}
-            className="relative z-10 mt-8"
-          >
-            <Link
-              href={buttonHref}
-              className="inline-flex min-h-[52px] items-center gap-1 rounded-[10px] bg-[linear-gradient(90deg,#B24002_0%,#FF5B01_100%)] px-5 text-sm font-light text-white shadow-[0_10px_24px_rgba(178,64,2,0.28)] transition-all duration-200 hover:-translate-y-0.5 hover:shadow-[0_14px_30px_rgba(178,64,2,0.34)] sm:px-6 sm:text-base"
+          {showButton && (
+            <motion.div
+              variants={heroItemVariants}
+              className="relative z-10 mt-8"
             >
-              <span>{buttonLabel}</span>
-              <motion.span
-                aria-hidden="true"
-                className="text-base leading-none sm:text-lg"
-                whileHover={{ x: 4, y: -2 }}
-                transition={{
-                  type: "spring",
-                  stiffness: 320,
-                  damping: 20,
-                }}
+              <Link
+                href={buttonHref}
+                className="inline-flex min-h-[52px] items-center gap-1 rounded-[10px] bg-[linear-gradient(90deg,#B24002_0%,#FF5B01_100%)] px-5 text-sm font-light text-white shadow-[0_10px_24px_rgba(178,64,2,0.28)] transition-all duration-200 hover:-translate-y-0.5 hover:shadow-[0_14px_30px_rgba(178,64,2,0.34)] sm:px-6 sm:text-base"
               >
-                <GoArrowUpRight className="text-white size-6" />
-              </motion.span>
-            </Link>
-          </motion.div>
+                <span>{buttonLabel}</span>
+                <motion.span
+                  aria-hidden="true"
+                  className="text-base leading-none sm:text-lg"
+                  whileHover={{ x: 4, y: -2 }}
+                  transition={{
+                    type: "spring",
+                    stiffness: 320,
+                    damping: 20,
+                  }}
+                >
+                  <GoArrowUpRight className="text-white size-6" />
+                </motion.span>
+              </Link>
+            </motion.div>
+          )}
         </motion.div>
 
         <motion.div
