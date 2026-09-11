@@ -310,17 +310,14 @@ const GetInTouchContactV2 = () => {
               className="project-h2 max-w-[670px]"
               variants={itemVariants}
             >
-              Ready To Publish Your Book?
+              Ready to Publish Your Book?
             </motion.h2>
 
             <motion.p
               className="mt-5 max-w-[570px] text-base leading-[1.75] text-[#888888] sm:text-lg"
               variants={itemVariants}
             >
-              Whether you're starting with an idea or have a completed
-              manuscript, our publishing specialists are here to help. Contact
-              NexiFire Publishing today and take the first step toward becoming
-              a published author.
+              Whether you're starting with just an idea or you've already got a completed manuscript, our publishing specialists are here to help. Reach out to NexiFire Publishing today and take the first step toward becoming a published author.
             </motion.p>
             <motion.div
               className="mt-5 h-px max-w-6/7 border border-1"
