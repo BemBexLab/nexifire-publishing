@@ -238,12 +238,13 @@ const AnimatedText = ({
       variants={heroTextLineVariants}
       className={className}
     >
-      {words.map((word, index) => (
-        <motion.span
-          key={`${word}-${index}`}
-          variants={heroWordRevealVariants}
-          className="inline-block"
-        >
+          {words.map((word, index) => (
+            <motion.span
+              key={`${word}-${index}`}
+              variants={heroWordRevealVariants}
+              className="inline-block"
+              data-hero-word="true"
+            >
           {word}
           {index < words.length - 1 ? "\u00A0" : ""}
         </motion.span>
@@ -356,6 +357,54 @@ const MobileBooksCarousel = () => {
 };
 
 const DesktopHero = () => {
+  const headingRef = React.useRef<HTMLHeadingElement>(null);
+  const [lastLineWidth, setLastLineWidth] = React.useState<number | null>(null);
+
+  React.useLayoutEffect(() => {
+    const heading = headingRef.current;
+
+    if (!heading) {
+      return;
+    }
+
+    const measureLastLine = () => {
+      const words = Array.from(
+        heading.querySelectorAll<HTMLElement>("[data-hero-word]")
+      );
+
+      if (words.length === 0) {
+        return;
+      }
+
+      // offsetTop is used to identify lines because the reveal animation
+      // temporarily translates each word vertically.
+      const lastLineTop = Math.max(...words.map((word) => word.offsetTop));
+      const lastLineWords = words.filter(
+        (word) => word.offsetTop === lastLineTop
+      );
+      const lineLeft = Math.min(
+        ...lastLineWords.map((word) => word.offsetLeft)
+      );
+      const lineRight = Math.max(
+        ...lastLineWords.map((word) => word.offsetLeft + word.offsetWidth)
+      );
+
+      setLastLineWidth(Math.round(lineRight - lineLeft));
+    };
+
+    measureLastLine();
+
+    const resizeObserver = new ResizeObserver(measureLastLine);
+    resizeObserver.observe(heading);
+
+    const fontReady = document.fonts?.ready.then(measureLastLine);
+
+    return () => {
+      resizeObserver.disconnect();
+      void fontReady;
+    };
+  }, []);
+
   return (
     <div className="relative">
       <LogoMarquee
@@ -386,17 +435,19 @@ const DesktopHero = () => {
             </motion.div>
 
             <motion.h1
+              ref={headingRef}
               variants={heroTextRevealVariants}
               className="relative isolate mx-auto mt-6 max-w-[980px] text-center text-[1.5rem] font-medium uppercase leading-[0.95] tracking-[-0.05em] text-black sm:mt-7 sm:max-w-[1260px] sm:text-[2.7rem] sm:leading-[1] sm:tracking-[-0.04em] xl:max-w-[1460px] xl:text-[3.8rem] 2xl:max-w-[1600px] 2xl:text-[4.45rem]"
             >
               <Image
                 src={heroEllipse}
                 alt=""
-                width={500}
-                height={500}
+                width={861}
+                height={94}
                 preload
                 placeholder="blur"
-                className="pointer-events-none absolute left-1/2 top-[-2px] -z-10 w-[220px] max-w-none -translate-x-1/2 translate-y-4 rotate-2 sm:top-4 sm:w-[320px] sm:translate-y-7 md:top-6 md:w-[360px] md:translate-y-8 xl:top-8 xl:w-[420px] xl:translate-y-9 2xl:top-10 2xl:w-[500px] 2xl:translate-y-12"
+                className="pointer-events-none absolute bottom-0 left-1/2 -z-10 h-auto w-[220px] max-w-none -translate-x-1/2 rotate-2 sm:w-[320px] md:w-[360px] xl:w-[420px] 2xl:w-[500px]"
+                style={lastLineWidth ? { width: `${lastLineWidth}px` } : undefined}
                 aria-hidden="true"
               />
               <motion.span

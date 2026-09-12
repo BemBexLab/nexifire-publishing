@@ -154,7 +154,7 @@ export default function BooksSection() {
 
             <motion.a
               variants={ctaVariants}
-              href="#"
+              href="/publishing-services/book-publishing"
               className="mt-6 inline-flex min-h-[46px] items-center gap-2 rounded-[7px] bg-[linear-gradient(90deg,#B24002_0%,#FF5B01_100%)] px-5 py-2.5 text-sm font-light text-white transition hover:brightness-[0.98] sm:text-base"
             >
               Start Your Publishing Journey

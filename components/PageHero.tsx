@@ -184,6 +184,27 @@ const logoItemVariants: Variants = {
   }),
 };
 
+const renderPageHeroTitle = (title: string) =>
+  title.split("\n").map((line, lineIndex) => {
+    const words = line.trim().split(/\s+/).filter(Boolean);
+
+    return (
+      <React.Fragment key={`title-line-${lineIndex}`}>
+        {lineIndex > 0 && <br />}
+        {words.map((word, wordIndex) => (
+          <span
+            key={`${word}-${wordIndex}`}
+            data-page-hero-word="true"
+            className="inline-block"
+          >
+            {word}
+            {wordIndex < words.length - 1 ? "\u00A0" : ""}
+          </span>
+        ))}
+      </React.Fragment>
+    );
+  });
+
 const PageHero = ({
   eyebrow = defaultEyebrow,
   title = defaultTitle,
@@ -198,6 +219,51 @@ const PageHero = ({
   const descriptionIsText =
     typeof description === "string" || typeof description === "number";
   const marqueeLogos = [...logos, ...logos, ...logos, ...logos];
+  const headingRef = React.useRef<HTMLHeadingElement>(null);
+  const [lastLineWidth, setLastLineWidth] = React.useState<number | null>(null);
+
+  React.useLayoutEffect(() => {
+    const heading = headingRef.current;
+
+    if (!heading) {
+      return;
+    }
+
+    const measureLastLine = () => {
+      const words = Array.from(
+        heading.querySelectorAll<HTMLElement>("[data-page-hero-word]")
+      );
+
+      if (words.length === 0) {
+        return;
+      }
+
+      // offsetTop identifies the wrapped line without being affected by motion transforms.
+      const lastLineTop = Math.max(...words.map((word) => word.offsetTop));
+      const lastLineWords = words.filter(
+        (word) => word.offsetTop === lastLineTop
+      );
+      const lineLeft = Math.min(
+        ...lastLineWords.map((word) => word.offsetLeft)
+      );
+      const lineRight = Math.max(
+        ...lastLineWords.map((word) => word.offsetLeft + word.offsetWidth)
+      );
+
+      setLastLineWidth(Math.round(lineRight - lineLeft));
+    };
+
+    measureLastLine();
+
+    const resizeObserver = new ResizeObserver(measureLastLine);
+    resizeObserver.observe(heading);
+    const fontReady = document.fonts?.ready.then(measureLastLine);
+
+    return () => {
+      resizeObserver.disconnect();
+      void fontReady;
+    };
+  }, [title]);
 
   return (
     <section className="w-full bg-white">
@@ -235,33 +301,25 @@ const PageHero = ({
             </motion.div>
           )}
           <motion.h1
+            ref={headingRef}
             variants={heroItemVariants}
             className="font-jakarta relative isolate z-10 mx-auto mt-5 max-w-[1040px] whitespace-pre-line text-center text-[1.5rem] font-medium uppercase leading-[0.95] [word-spacing:0.5rem] tracking-[-0.05em] text-black sm:text-[2.5rem] sm:leading-[1.02] sm:tracking-[-0.04em] xl:max-w-[1200px] xl:text-[3.35rem] 2xl:text-[4.05rem]"
           >
             <motion.div
               variants={heroGlowVariants}
-              animate={{
-                y: [0, -10, 0],
-                rotate: [2, 4, 2],
-              }}
-              transition={{
-                duration: 7.2,
-                repeat: Infinity,
-                repeatType: "mirror",
-                ease: "easeInOut",
-              }}
-              className="pointer-events-none absolute left-1/2 top-10 -z-10 -translate-x-1/2 -translate-y-1/2"
+              className="pointer-events-none absolute bottom-0 left-1/2 -z-10 w-[260px] -translate-x-1/2 rotate-2 max-w-none sm:w-[350px] md:w-[350px] lg:w-[400px]"
+              style={lastLineWidth ? { width: `${lastLineWidth}px` } : undefined}
             >
               <Image
                 src="/Ellipse 19.webp"
                 alt=""
-                width={500}
-                height={500}
-                className="w-[260px] max-w-none sm:w-[350px] md:w-[350px] lg:w-[400px]"
+                width={861}
+                height={94}
+                className="h-auto w-full max-w-none"
                 aria-hidden="true"
               />
             </motion.div>
-            {title}
+            {renderPageHeroTitle(title)}
           </motion.h1>
           {descriptionIsText ? (
             <motion.p

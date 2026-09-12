@@ -59,13 +59,13 @@ const defaultFooterData: FooterData = {
     { label: "Book Cover Design", href: "/publishing-services/book-cover-design" },
     { label: "Audio Book", href: "/publishing-services/audio-book" },
   ],
-  phone: { label: "470 205 2227", href: "tel:+61468285539" },
-  email: { label: "contact@nexifirepublishing.com", href: "mailto:contact@nexifire.com" },
-  location: { label: "1221 Brickell Ave,Miami, FL 33131, United States", href: "" },
+  phone: { label: "+1 (470) 205 2227", href: "tel:+14702052227" },
+  email: { label: "contact@nexifirepublishing.com", href: "mailto:contact@nexifirepublishing.com" },
+  location: { label: "1221 Brickell Ave, Miami, FL 33131, United States", href: "" },
   socialLinks: [
     { label: "Facebook", href: "#", icon: "facebook" },
     { label: "Instagram", href: "#", icon: "instagram" },
-    { label: "Twitter", href: "#", icon: "twitter" },
+    // { label: "Twitter", href: "#", icon: "twitter" },
     { label: "LinkedIn", href: "#", icon: "linkedin" },
   ],
   copyrightText: "© 2026 NexiFire Publishing All Rights Reserved.",
@@ -219,7 +219,7 @@ const FooterCTA = (props: FooterProps) => {
   };
 
   return (
-    <section className="w-full bg-[#F3F3F3] px-4 pt-12 font-jakarta sm:px-6 sm:pt-14 lg:px-8 lg:pt-16 xl:px-12 xl:pt-20">
+    <section className="w-full overflow-hidden border-t border-[#e9e3dd] bg-[#f8f7f6] px-4 pt-12 font-jakarta sm:px-6 sm:pt-14 lg:px-8 lg:pt-16 xl:px-12 xl:pt-20">
       <motion.div
         className="mx-auto flex w-full max-w-[1640px] flex-col"
         variants={footerVariants}
@@ -227,7 +227,7 @@ const FooterCTA = (props: FooterProps) => {
         whileInView="visible"
         viewport={{ once: true, amount: 0.16 }}
       >
-        <div className="grid w-full grid-cols-1 gap-12 lg:gap-14 xl:grid-cols-[minmax(0,1.1fr)_minmax(0,0.9fr)] xl:items-start xl:gap-16 2xl:gap-24">
+        <div className="grid w-full grid-cols-1 gap-12 lg:gap-14 xl:grid-cols-[minmax(0,1fr)_minmax(0,1.1fr)] xl:items-start xl:gap-20 2xl:gap-28">
           <motion.div
             className="flex w-full max-w-[760px] flex-col items-center text-center md:items-start md:text-left xl:max-w-[720px]"
             variants={heroColumnVariants}
@@ -275,30 +275,36 @@ const FooterCTA = (props: FooterProps) => {
           </motion.div>
 
           <motion.div
-            className="grid w-full grid-cols-1 gap-8 sm:grid-cols-2 sm:gap-x-8 sm:gap-y-8 lg:grid-cols-[minmax(0,1.2fr)_minmax(0,0.8fr)] lg:gap-x-10 xl:grid-cols-[minmax(0,240px)_minmax(0,230px)_minmax(0,240px)] xl:items-start xl:gap-x-8"
+            className="grid w-full grid-cols-1 gap-10 sm:grid-cols-2 sm:gap-x-8 sm:gap-y-10 lg:grid-cols-[minmax(0,1fr)_minmax(0,1fr)] lg:gap-x-12 xl:grid-cols-[minmax(0,160px)_minmax(0,180px)_minmax(0,1fr)] xl:items-start xl:gap-x-3"
             variants={linksGridVariants}
           >
             <motion.div className="w-full min-w-0" variants={linkColumnVariants}>
               <motion.h4
                 variants={revealVariants}
-                className="mb-3 text-[1.2rem] font-medium text-[#B24002] sm:text-[1.35rem]"
+                className="mb-4 text-[1.2rem] font-medium tracking-[-0.03em] text-[#B24002] sm:text-[1.35rem]"
               >
                 Quick Links
               </motion.h4>
               <motion.ul
                 variants={listVariants}
-                className="list-inside list-disc space-y-2.5 text-base font-medium text-[#777777]"
+                className="list-none space-y-3 text-[0.95rem] font-medium text-[#777777] sm:text-base"
               >
                 {data.quickLinks.map((link) => (
                   <motion.li
                     key={`${link.href}-${link.label}`}
                     variants={listItemVariants}
-                    className="pl-1"
+                    className="group"
                   >
                     <Link
-                      className="transition hover:text-[#B24002]"
+                      className="inline-flex items-center gap-2 transition hover:text-[#B24002]"
                       href={link.href}
                     >
+                      <span
+                        aria-hidden="true"
+                        className="text-[#B24002] transition-transform duration-200 group-hover:translate-x-1"
+                      >
+                        ›
+                      </span>
                       {link.label}
                     </Link>
                   </motion.li>
@@ -309,24 +315,30 @@ const FooterCTA = (props: FooterProps) => {
             <motion.div className="w-full min-w-0" variants={linkColumnVariants}>
               <motion.h4
                 variants={revealVariants}
-                className="mb-3 text-[1.2rem] font-medium text-[#B24002] sm:text-[1.35rem]"
+                className="mb-4 text-[1.2rem] font-medium tracking-[-0.03em] text-[#B24002] sm:text-[1.35rem]"
               >
                 Our Services
               </motion.h4>
               <motion.ul
                 variants={listVariants}
-                className="list-inside list-disc space-y-2.5 text-base font-medium text-[#777777]"
+                className="list-none space-y-3 text-[0.95rem] font-medium text-[#777777] sm:text-base"
               >
                 {data.serviceLinks.map((link) => (
                   <motion.li
                     key={`${link.href}-${link.label}`}
                     variants={listItemVariants}
-                    className="pl-1"
+                    className="group"
                   >
                     <Link
-                      className="transition hover:text-[#B24002]"
+                      className="inline-flex items-center gap-2 transition hover:text-[#B24002]"
                       href={link.href}
                     >
+                      <span
+                        aria-hidden="true"
+                        className="text-[#B24002] transition-transform duration-200 group-hover:translate-x-1"
+                      >
+                        ›
+                      </span>
                       {link.label}
                     </Link>
                   </motion.li>
@@ -340,32 +352,38 @@ const FooterCTA = (props: FooterProps) => {
             >
               <motion.h4
                 variants={revealVariants}
-                className="mb-3 text-[1.2rem] font-medium text-[#B24002] sm:text-[1.35rem]"
+                className="mb-4 text-[1.2rem] font-medium tracking-[-0.03em] text-[#B24002] sm:text-[1.35rem]"
               >
                 Contact Info
               </motion.h4>
-              <motion.ul variants={listVariants} className="space-y-3 text-base font-medium text-[#777777]">
-                <motion.li variants={listItemVariants} className="flex items-start">
-                  <LuPhoneCall className="mt-1 shrink-0" />
+              <motion.ul
+                variants={listVariants}
+                className="space-y-3 text-[0.95rem] font-medium leading-[1.45] text-[#777777] sm:text-base"
+              >
+                <motion.li variants={listItemVariants} className="flex items-start gap-3">
+                  <LuPhoneCall className="mt-1 shrink-0 text-[#B24002]" />
                   <a
                     href={data.phone.href}
-                    className="ml-2 min-w-0 break-words transition hover:text-[#B24002]"
+                    className="min-w-0 break-words transition hover:text-[#B24002]"
                   >
                     {data.phone.label}
                   </a>
                 </motion.li>
-                <motion.li variants={listItemVariants} className="flex items-start">
-                  <MdOutlineEmail className="mt-1 shrink-0" />
+                <motion.li variants={listItemVariants} className="flex items-start gap-3">
+                  <MdOutlineEmail className="mt-1 shrink-0 text-[#B24002]" />
                   <a
                     href={data.email.href}
-                    className="ml-2 min-w-0 break-words transition hover:text-[#B24002]"
+                    className="min-w-0 break-words transition hover:text-[#B24002]"
                   >
                     {data.email.label}
                   </a>
                 </motion.li>
-                <motion.li variants={listItemVariants} className="flex items-start">
-                  <SlLocationPin className="mt-1 shrink-0" />
-                  <a href={data.location.href} className="ml-2 min-w-0 break-words">
+                <motion.li variants={listItemVariants} className="flex items-start gap-3">
+                  <SlLocationPin className="mt-1 shrink-0 text-[#B24002]" />
+                  <a
+                    href={data.location.href}
+                    className="min-w-0 break-words transition hover:text-[#B24002]"
+                  >
                     {data.location.label}
                   </a>
                 </motion.li>
@@ -374,7 +392,7 @@ const FooterCTA = (props: FooterProps) => {
               <motion.div variants={revealVariants} className="mt-8 sm:mt-10">
                 <motion.h4
                   variants={revealVariants}
-                  className="mb-4 text-[1.2rem] font-medium text-[#B24002] sm:text-[1.35rem]"
+                  className="mb-4 text-[1.2rem] font-medium tracking-[-0.03em] text-[#B24002] sm:text-[1.35rem]"
                 >
                   Social Media
                 </motion.h4>
@@ -390,7 +408,7 @@ const FooterCTA = (props: FooterProps) => {
                         transition={{ duration: 0.2, ease: "easeOut" }}
                         href={social.href}
                         aria-label={social.label}
-                        className="flex h-9 w-9 items-center justify-center bg-[#8d8d8d] text-white shadow-[0_4px_10px_rgba(0,0,0,0.18)] transition hover:bg-[#B24002]"
+                        className="flex h-10 w-10 items-center justify-center rounded-[7px] border border-white/70 bg-[#686868] text-white shadow-[0_5px_12px_rgba(0,0,0,0.14)] transition hover:-translate-y-0.5 hover:bg-[#B24002]"
                       >
                         <SocialIcon size={20} />
                       </motion.a>
@@ -405,7 +423,7 @@ const FooterCTA = (props: FooterProps) => {
         <motion.div variants={footerBarVariants} className="mt-14 w-full">
           <div className="border-t border-[#77777766]" />
 
-          <div className="flex w-full flex-col gap-3 py-5 text-sm font-semibold text-[#777777] md:flex-row md:items-center md:justify-between">
+          <div className="flex w-full flex-col gap-3 py-5 text-sm font-medium text-[#777777] md:flex-row md:items-center md:justify-between">
             <p className="text-center md:text-left">
               {data.copyrightText}
             </p>

@@ -54,14 +54,14 @@ const ContactAccentShape = () => (
 const socialLinks = [
   { id: "facebook", icon: <FaFacebookF className="size-5" />, href: "#" },
   { id: "instagram", icon: <FaInstagram className="size-5" />, href: "#" },
-  { id: "twitter", icon: <FaTwitter className="size-5" />, href: "#" },
+  // { id: "twitter", icon: <FaTwitter className="size-5" />, href: "#" },
   { id: "linkedin", icon: <FaLinkedinIn className="size-5" />, href: "#" },
 ];
 
 const infoCards = [
   {
     id: "phone",
-    label: "470 205 2227",
+    label: "+1 (470) 205 2227",
     link: "tel:+14702052227",
     highlighted: false,
     icon: (
@@ -494,7 +494,7 @@ const GetInTouchContactV2 = () => {
           {infoCards.map((item) => (
             <motion.article
               key={item.id}
-              className={`flex min-h-[158px] flex-col items-center justify-center rounded-[20px] border px-6 py-8 text-center shadow-[0_10px_24px_rgba(0,0,0,0.06)] ${
+              className={`flex min-h-[158px] items-center justify-center rounded-[20px] border px-6 py-8 text-center shadow-[0_10px_24px_rgba(0,0,0,0.06)] ${
                 item.highlighted
                   ? "border-[#F3E4D7] bg-[linear-gradient(180deg,#FFF9F5_0%,#FFF2E8_100%)]"
                   : "border-[#ECE8E2] bg-white"
@@ -503,20 +503,25 @@ const GetInTouchContactV2 = () => {
               whileHover={{ y: -6 }}
               transition={{ duration: 0.28, ease: contactEase }}
             >
-              <motion.div
-                className="flex h-[36px] w-[36px] items-center justify-center rounded-[6px] bg-[#B24002]"
-                variants={itemVariants}
-              >
-                {item.icon}
-              </motion.div>
-              <Link href={item.link}>
-                <motion.p
-                  className="mt-5 max-w-[240px] text-lg leading-[1.45] tracking-[-0.02em] text-[#8B8B8B] sm:text-xl"
+              <div className="flex w-full flex-col items-center justify-center gap-5 text-center">
+                <motion.div
+                  className="flex h-[36px] w-[36px] shrink-0 items-center justify-center rounded-[6px] bg-[#B24002]"
                   variants={itemVariants}
                 >
-                  {item.label}
-                </motion.p>
-              </Link>
+                  {item.icon}
+                </motion.div>
+                <Link
+                  href={item.link}
+                  className="flex w-full items-center justify-center text-center"
+                >
+                  <motion.p
+                    className="mx-auto w-full max-w-[280px] text-center text-lg leading-[1.45] tracking-[-0.02em] text-[#8B8B8B] sm:text-xl"
+                    variants={itemVariants}
+                  >
+                    {item.label}
+                  </motion.p>
+                </Link>
+              </div>
             </motion.article>
           ))}
         </motion.div>

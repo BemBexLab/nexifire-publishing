@@ -258,6 +258,7 @@ export default function Home() {
         title="Full-Service. Full Ownership."
         description="NexiFire is a complete-service book publishing company in the USA, built to give independent authors traditional-publisher quality, editorial standards, and real-world visibility, without ever asking for your rights or a cut of your royalties."
         buttonLabel="Let’s Build Your Publishing Plan"
+        buttonHref="/contact"
       />
       <div className="h-20"></div>
       <LatestBlogs />

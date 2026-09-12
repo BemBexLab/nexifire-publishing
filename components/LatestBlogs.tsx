@@ -1,43 +1,13 @@
 "use client";
 
 import Image from "next/image";
+import Link from "next/link";
 import React from "react";
 import { LazyMotion, domAnimation, m } from "motion/react";
 import { SlArrowRight } from "react-icons/sl";
+import { getRecentBlogPosts } from "@/data/blogs";
 
-type BlogCard = {
-  id: number;
-  title: string;
-  description: string;
-  image: string;
-};
-
-const blogs: BlogCard[] = [
-  {
-    id: 1,
-    title: "The Nexifire Ecosystem: One Brand, Six Pillars, Infinite Growth",
-    description:
-      "Lorem Ipsum is simply dummy text of the printing and typesetting industry.",
-    image:
-      "https://images.unsplash.com/photo-1521737604893-d14cc237f11d?auto=format&fit=crop&w=900&q=80",
-  },
-  {
-    id: 2,
-    title: "How to Build a Scalable Content to Growth System",
-    description:
-      "Lorem Ipsum is simply dummy text of the printing and typesetting industry.",
-    image:
-      "https://images.unsplash.com/photo-1552664730-d307ca884978?auto=format&fit=crop&w=900&q=80",
-  },
-  {
-    id: 3,
-    title: "How to Self-Publish a Book in 2026",
-    description:
-      "Lorem Ipsum is simply dummy text of the printing and typesetting industry.",
-    image:
-      "https://images.unsplash.com/photo-1551836022-d5d88e9218df?auto=format&fit=crop&w=900&q=80",
-  },
-];
+const blogs = getRecentBlogPosts(3);
 
 const LatestBlogs = () => {
   return (
@@ -71,7 +41,7 @@ const LatestBlogs = () => {
                 <div className="relative h-[190px] w-full overflow-hidden rounded-t-2xl sm:h-[210px] md:h-[180px] lg:h-[160px]">
                   <Image
                     src={blog.image}
-                    alt={blog.title}
+                    alt={blog.cardTitle ?? blog.title}
                     fill
                     className="object-cover"
                     unoptimized
@@ -82,20 +52,20 @@ const LatestBlogs = () => {
 
                 <div className="px-4 pb-5 pt-4 sm:px-5">
                   <h3 className="min-h-[56px] text-base font-normal leading-[1.45] text-[#444444] sm:min-h-[64px] sm:text-lg">
-                    {blog.title}
+                    {blog.cardTitle ?? blog.title}
                   </h3>
 
                   <p className="mt-2 text-base leading-[1.65] text-[#777777]">
                     {blog.description}
                   </p>
 
-                  <a
-                    href="#"
+                  <Link
+                    href={`/blogs/${blog.slug}`}
                     className="mt-4 inline-flex items-center gap-2 border-b border-[#f26a21] pb-[1px] text-base font-normal leading-loose text-[#B24002]"
                   >
                     Learn More
                     <span className="text-base leading-none"><SlArrowRight size={13} /></span>
-                  </a>
+                  </Link>
                 </div>
               </m.article>
             ))}
