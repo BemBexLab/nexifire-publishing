@@ -273,8 +273,7 @@ const page = () => {
       <GetInTouchContact
         title="Ready to Publish Your Book?"
         description={
-          <>Whether you have a finished manuscript, a half-written draft, or just a powerful idea you don't know how to start, our publishing specialists are here to help. At NexiFire Publishing, we work with American authors at every stage of their journey, from first conversation to final distribution. <br />
-        <div className="h-2" /> Tell us about your project today and take the first step toward becoming a published author.</>
+          <>Tell us where you are and where you want to go. As a self-publishing company built for authors, NexiFire Publishing will design the right plan, bring in the right specialists, and help you move forward with confidence, whether this is your first book or your fifth.</>
         }
       />
       {/* <FooterCTA title="NEXIFIRE PUBLISHING" description="NexiFire Publishing is a trusted self-publishing company for authors ready to get their book into the world. We help authors publish ebooks, print books, and audiobooks with full-service support, ghostwriting, editing, formatting, cover design, and global distribution, all under one roof. As one of the best self-publishing companies for first-time authors, we handle the parts that usually trip people up, so you can focus on the book itself." /> */}
