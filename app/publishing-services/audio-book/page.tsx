@@ -55,7 +55,7 @@ const page = () => {
             </p>
           </div>
         }
-        imageSrc="/0eee94f7-4643-4e46-8b95-cc9232497a79 1 (2).webp"
+        imageSrc="/0eee94f7-4643-4e46-8b95-cc9232497a79 1 (3).png"
       />
       <div className="bg-[#fffaf6] py-14 sm:py-16 md:py-20 lg:py-24">
         <OurProcess
@@ -184,7 +184,7 @@ const page = () => {
           { label: "Distribution to 20+ platforms simultaneously" },
           { label: "100% royalties to author, no commission" },
         ]}
-        imageSrc="/Rectangle 23830 (3).webp"
+        imageSrc="/Rectangle 23830 (6).png"
         imageAlt="Complete publishing solutions"
         iconSrc="/Mask group.svg"
       />

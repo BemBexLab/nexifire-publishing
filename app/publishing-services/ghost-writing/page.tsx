@@ -120,16 +120,15 @@ const page = () => {
       <div className="h-10" />
       <WhatsIncluded
         badgeText="What's Included"
-        title="PROFESSIONAL GHOSTWRITING SERVICES DESIGNED FOR EVERY AUTHOR"
+        title="WRITTEN TO BE PUBLISHED, NOT JUST FINISHED"
+        description="A ghostwritten manuscript from NexiFire isn't just well-written, it's built ready for whatever comes next. Every manuscript is structured, formatted, and delivered to move straight into publishing, without needing rework."
         items={[
-          { label: "Dedicated American Ghostwriter" },
-          { label: "Discovery & Strategy Sessions" },
-          { label: "Chapter Planning & Book Outline" },
-          { label: "Professional Manuscript Writing" },
-          { label: "Unlimited Collaboration & Feedback" },
-          { label: "Editing & Manuscript Refinement" },
-          { label: "Full Copyright & Intellectual Property Transfer" },
-          { label: "Confidentiality & Non-Disclosure Agreement" },
+          { label: "Publisher-Ready Manuscript Structure" },
+          { label: "Clean, Submission-Ready Formatting" },
+          { label: "Full Copyright & IP Transfer Included" },
+          { label: "Ready for Print, Ebook, or Audiobook" },
+          { label: "Compatible With Amazon KDP & IngramSpark" },
+          { label: "Seamless Handoff to Editing & Design" },
         ]}
         imageSrc="/Rectangle 23830.png"
         imageAlt="Complete publishing solutions"

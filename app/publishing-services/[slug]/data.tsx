@@ -363,7 +363,7 @@ export const publishingServicePageData: Record<
           </ul>
         </>
       ),
-      imageSrc: "/0eee94f7-4643-4e46-8b95-cc9232497a79 1 (1).webp",
+      imageSrc: "/0eee94f7-4643-4e46-8b95-cc9232497a79 1 (2).png",
     },
     process: {
       badgeText: "",
@@ -499,7 +499,7 @@ export const publishingServicePageData: Record<
         { label: "Fast revision turnaround" },
         { label: "Transparent, flat-rate pricing, no surprise add-ons" },
       ],
-      imageSrc: "/Rectangle 23830 (2).webp",
+      imageSrc: "/Rectangle 23830 (4).png",
       imageAlt: "Book cover design deliverables",
       iconSrc: "/Mask group.svg",
     },

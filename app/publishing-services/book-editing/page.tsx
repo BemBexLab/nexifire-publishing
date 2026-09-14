@@ -178,7 +178,7 @@ const page = () => {
           { label: "Guaranteed delivery by an agreed deadline" },
           { label: "Transparent, flat-rate pricing" },
         ]}
-        imageSrc="/Rectangle 23830.webp"
+        imageSrc="/Rectangle 23830 (3).png"
         imageAlt="Complete Editing solutions"
         iconSrc="/Mask group.svg"
       />
