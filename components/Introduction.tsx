@@ -86,7 +86,7 @@ const Introduction = ({
   return (
     <section className="bg-white px-4 py-10 sm:px-6 lg:px-8 xl:px-10">
       <motion.div
-        className="mx-auto grid w-full max-w-[1760px] items-center gap-12 lg:grid-cols-[1.04fr_0.96fr] lg:gap-12 xl:gap-16"
+        className="mx-auto grid w-full max-w-[1760px] items-stretch gap-12 lg:grid-cols-2 lg:gap-12 xl:gap-16"
         variants={sectionVariants}
         initial="hidden"
         whileInView="visible"
@@ -94,7 +94,7 @@ const Introduction = ({
       >
         <motion.div
           variants={mediaVariants}
-          className="relative order-2 min-h-[280px] sm:min-h-[360px] lg:order-1 lg:min-h-[520px]"
+          className="relative order-2 min-h-[280px] sm:min-h-[360px] lg:order-1 lg:min-h-[520px] lg:h-full"
         >
           <motion.div
             initial={{ opacity: 0, scale: 0.82 }}
@@ -111,15 +111,15 @@ const Introduction = ({
                 whileInView={{ opacity: 1, y: 0, scale: 1 }}
                 viewport={{ once: true, amount: 0.2 }}
                 transition={{ duration: 0.86, ease: introEase, delay: 0.12 }}
-                className="w-full"
+                className="h-full w-full"
               >
                 <Image
                   src={imageSrc}
                   alt="Introduction visual"
                   width={920}
                   height={620}
-                  sizes="(min-width: 1280px) 46vw, (min-width: 1024px) 50vw, 100vw"
-                  className="h-auto max-h-[620px] w-full max-w-[920px] object-contain"
+                  sizes="(min-width: 1024px) 50vw, 100vw"
+                  className="h-full w-full max-h-none max-w-none object-contain"
                 />
               </motion.div>
             ) : (
@@ -138,7 +138,7 @@ const Introduction = ({
 
         <motion.div
           variants={contentVariants}
-          className="order-1 max-w-[520px] lg:order-2 lg:max-w-[760px] xl:max-w-[860px]"
+          className="order-1 w-full max-w-[520px] lg:order-2 lg:max-w-none"
         >
           {eyebrow ? (
             <motion.div

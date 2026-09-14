@@ -113,7 +113,7 @@ const WhatsIncluded = ({
   return (
     <section className="bg-white px-4 py-16 sm:px-6 lg:px-8 lg:py-24">
       <motion.div
-        className="mx-auto grid w-full max-w-[1460px] items-center gap-6 xl:items-stretch xl:grid-cols-[minmax(0,560px)_minmax(0,1fr)] xl:gap-6 2xl:grid-cols-[minmax(0,600px)_minmax(0,1fr)] 2xl:gap-8"
+        className="mx-auto grid w-full max-w-[1460px] items-stretch gap-6 xl:grid-cols-2 xl:gap-12 2xl:gap-16"
         variants={sectionVariants}
         initial="hidden"
         whileInView="visible"
@@ -121,7 +121,7 @@ const WhatsIncluded = ({
       >
         <motion.div
           variants={contentVariants}
-          className="max-w-[680px] xl:flex xl:h-[460px] xl:max-w-none xl:flex-col 2xl:h-[520px]"
+          className="w-full max-w-[680px] xl:flex xl:h-full xl:max-w-none xl:flex-col"
         >
           {badgeText ? (
             <motion.div
@@ -176,13 +176,13 @@ const WhatsIncluded = ({
           </div>
         </motion.div>
 
-        <motion.div variants={imageVariants} className="w-full">
+        <motion.div variants={imageVariants} className="h-full w-full">
           <motion.div
             whileHover={{
               y: -4,
               transition: { duration: 0.22, ease: "easeOut" },
             }}
-            className="relative mx-auto w-full max-w-[760px] xl:ml-0 xl:mr-0 xl:h-[460px] 2xl:h-[520px]"
+            className="relative mx-auto h-full w-full max-w-none xl:ml-0 xl:mr-0"
           >
             <motion.div
               initial={{ opacity: 0, scale: 1.04 }}
@@ -195,8 +195,8 @@ const WhatsIncluded = ({
                 alt={imageAlt}
                 width={900}
                 height={520}
-                sizes="(min-width: 1280px) 820px, (min-width: 1024px) 58vw, 100vw"
-                className="h-auto w-full object-contain"
+                sizes="(min-width: 1280px) 50vw, (min-width: 1024px) 50vw, 100vw"
+                className="h-full w-full max-h-none max-w-none object-contain"
                 loading="eager"
               />
             </motion.div>
