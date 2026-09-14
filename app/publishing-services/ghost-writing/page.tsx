@@ -32,12 +32,13 @@ const page = () => {
           
           Whether you are looking to hire a ghostwriter for a book, a full nonfiction book, a fiction book, or a memoir, NexiFire pairs you with a writer who works specifically in your genre, not a generalist juggling five projects at once.
 `}
-        imageSrc="/image 67.webp"
+        imageSrc="/image 67.png"
       />
       <MosiacCards />
       <div className="bg-[#fffaf6] py-14 sm:py-16 md:py-20 lg:py-24">
         <OurProcess
           badgeText="How It Works"
+          layout="open-circle"
           title="Why Authors Choose NexiFire's Ghostwriting Services"
           description=""
           steps={[
@@ -122,7 +123,7 @@ const page = () => {
           { label: "Full Copyright & Intellectual Property Transfer" },
           { label: "Confidentiality & Non-Disclosure Agreement" },
         ]}
-        imageSrc="/439230f4-7c82-4411-9ce5-487944ae406f 1.webp"
+        imageSrc="/Rectangle 23830.png"
         imageAlt="Complete publishing solutions"
         iconSrc="/Mask group.svg"
       />

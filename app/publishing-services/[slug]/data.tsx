@@ -117,7 +117,7 @@ export const publishingServicePageData: Record<
         `Marketing built around your actual book, not a script we reuse. Publishing and marketing under one roof, so your marketing team already knows your metadata, your production, and your distribution setup instead of inheriting a mess from somewhere else. Transparent deliverables instead of vague promises about "visibility." And we're thinking about your author brand long-term, not just this one launch.
         
         Among book marketers in the USA, that combination, full publishing knowledge plus real marketing execution, is honestly not that common. Most marketing companies are working blind, without ever having touched your file, your ISBN, or your metadata.`,
-      imageSrc: "/image 69.webp",
+      imageSrc: "/image 69.png",
     },
     process: {
       badgeText: "",
@@ -234,7 +234,7 @@ export const publishingServicePageData: Record<
         { label: "ARC Distribution & Early Reviews" },
         { label: "Book Launch Campaign Management" },
       ],
-      imageSrc: "/Rectangle 23830 (1).webp",
+      imageSrc: "/Rectangle 23830 (1).png",
       imageAlt: "Book marketing deliverables",
       iconSrc: "/Mask group.svg",
     },

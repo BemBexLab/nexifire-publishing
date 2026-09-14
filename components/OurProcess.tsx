@@ -16,6 +16,7 @@ export type OurProcessProps = {
   title: string;
   description: string;
   steps: OurProcessStep[];
+  layout?: "grid" | "open-circle";
 };
 
 type ScrollState = {
@@ -283,6 +284,45 @@ const sixStepLayoutClasses = [
   },
 ];
 
+const openCircleLayoutClasses = [
+  {
+    outerPosition: "xl:left-[280px] xl:top-[60px]",
+    cardHeight: "xl:h-[220px]",
+    cardWidth: "xl:w-[210px]",
+    pinPosition: "left-1/2 top-[-20px] -translate-x-1/2",
+  },
+  {
+    outerPosition: "xl:left-[552px] xl:top-0",
+    cardHeight: "xl:h-[220px]",
+    cardWidth: "xl:w-[210px]",
+    pinPosition: "left-1/2 top-[-20px] -translate-x-1/2",
+  },
+  {
+    outerPosition: "xl:left-[824px] xl:top-[60px]",
+    cardHeight: "xl:h-[220px]",
+    cardWidth: "xl:w-[210px]",
+    pinPosition: "left-1/2 top-[-20px] -translate-x-1/2",
+  },
+  {
+    outerPosition: "xl:left-[824px] xl:top-[480px]",
+    cardHeight: "xl:h-[220px]",
+    cardWidth: "xl:w-[210px]",
+    pinPosition: "left-1/2 top-[-20px] -translate-x-1/2",
+  },
+  {
+    outerPosition: "xl:left-[552px] xl:top-[540px]",
+    cardHeight: "xl:h-[220px]",
+    cardWidth: "xl:w-[210px]",
+    pinPosition: "left-1/2 top-[-20px] -translate-x-1/2",
+  },
+  {
+    outerPosition: "xl:left-[280px] xl:top-[480px]",
+    cardHeight: "xl:h-[220px]",
+    cardWidth: "xl:w-[210px]",
+    pinPosition: "left-1/2 top-[-20px] -translate-x-1/2",
+  },
+];
+
 const nineStepLayoutClasses = [
   ...fourStepLayoutClasses,
   {
@@ -322,6 +362,7 @@ const OurProcess = ({
   title,
   description,
   steps,
+  layout = "grid",
 }: OurProcessProps) => {
   const contentRefs = useRef<Record<string, HTMLParagraphElement | null>>({});
   const [scrollStates, setScrollStates] = useState<Record<string, ScrollState>>(
@@ -331,9 +372,12 @@ const OurProcess = ({
   // New state for mobile carousel navigation
   const [currentIndex, setCurrentIndex] = useState(0);
 
+  const isOpenCircleLayout = layout === "open-circle";
   const isNineStepLayout = steps.length === 9;
   const isSixStepLayout = steps.length === 6;
-  const stepLayoutClasses = isNineStepLayout
+  const stepLayoutClasses = isOpenCircleLayout
+    ? openCircleLayoutClasses
+    : isNineStepLayout
     ? nineStepLayoutClasses
     : isSixStepLayout
       ? sixStepLayoutClasses
@@ -347,7 +391,13 @@ const OurProcess = ({
     : steps.length === 5
       ? fiveStepDashedPaths
       : fourStepDashedPaths;
-  const canvasHeight = isNineStepLayout ? 860 : isSixStepLayout ? 540 : 420;
+  const canvasHeight = isOpenCircleLayout
+    ? 760
+    : isNineStepLayout
+      ? 860
+      : isSixStepLayout
+        ? 540
+        : 420;
   const displayedSteps = steps.map((step, index) => ({
     ...step,
     ...stepLayoutClasses[index % stepLayoutClasses.length],
@@ -595,28 +645,49 @@ const OurProcess = ({
         {/* ========================================== */}
         {/* DESKTOP/TABLET VIEW (>= md screens)        */}
         {/* ========================================== */}
-        <div className={`hidden md:block relative mt-14 lg:mt-16 ${isNineStepLayout ? "xl:min-h-[860px]" : isSixStepLayout ? "xl:min-h-[540px]" : "xl:min-h-[420px]"}`}>
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            width="1314"
-            height={canvasHeight}
-            viewBox={`0 0 1314 ${canvasHeight}`}
-            fill="none"
-            className="pointer-events-none absolute left-1/2 top-[8px] z-0 hidden h-auto w-full max-w-[1314px] -translate-x-1/2 xl:block"
-            aria-hidden="true"
-          >
-            {dashedPaths.map((path) => (
-              <motion.path
-                key={path}
-                variants={connectorVariants}
-                d={path}
+        <div className={`relative mt-14 hidden md:block lg:mt-16 ${isOpenCircleLayout ? "xl:min-h-[760px]" : isNineStepLayout ? "xl:min-h-[860px]" : isSixStepLayout ? "xl:min-h-[540px]" : "xl:min-h-[420px]"}`}>
+          {isOpenCircleLayout ? (
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="1314"
+              height="760"
+              viewBox="0 0 1314 760"
+              fill="none"
+              className="pointer-events-none absolute inset-0 z-0 hidden h-full w-full xl:block"
+              aria-hidden="true"
+            >
+              <path
+                d="M657 110A344 344 0 1 1 385 170"
                 stroke="#FF8A4A"
                 strokeWidth="3"
                 strokeLinecap="round"
                 strokeDasharray="10 10"
+                opacity="0.55"
               />
-            ))}
-          </svg>
+            </svg>
+          ) : (
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="1314"
+              height={canvasHeight}
+              viewBox={`0 0 1314 ${canvasHeight}`}
+              fill="none"
+              className="pointer-events-none absolute left-1/2 top-[8px] z-0 hidden h-auto w-full max-w-[1314px] -translate-x-1/2 xl:block"
+              aria-hidden="true"
+            >
+              {dashedPaths.map((path) => (
+                <motion.path
+                  key={path}
+                  variants={connectorVariants}
+                  d={path}
+                  stroke="#FF8A4A"
+                  strokeWidth="3"
+                  strokeLinecap="round"
+                  strokeDasharray="10 10"
+                />
+              ))}
+            </svg>
+          )}
 
           <motion.div
             variants={cardsContainerVariants}

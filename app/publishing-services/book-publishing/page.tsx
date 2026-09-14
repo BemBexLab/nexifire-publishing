@@ -47,7 +47,7 @@ const page = () => {
             <p className="my-5 text-base font-light sm:text-lg leading-[1.45] text-[#444444]">One team, whole job, not one piece of it.</p>
           </>
         }
-        imageSrc="/0eee94f7-4643-4e46-8b95-cc9232497a79 1.webp"
+        imageSrc="/0eee94f7-4643-4e46-8b95-cc9232497a79 1.png"
       />
       <div className="bg-[#fffaf6] py-14 sm:py-16 md:py-20 lg:py-24">
         <OurProcess
@@ -149,7 +149,7 @@ const page = () => {
         //   { label: "Barnes & Noble Nook" },
         //   { label: "Scribd & Library Networks" },
         // ]}
-        imageSrc="/439230f4-7c82-4411-9ce5-487944ae406f 1.webp"
+        imageSrc="/439230f4-7c82-4411-9ce5-487944ae406f 1.png"
         imageAlt="Complete publishing solutions"
         iconSrc="/Mask group.svg"
       />
