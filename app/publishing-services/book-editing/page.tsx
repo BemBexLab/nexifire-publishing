@@ -391,15 +391,7 @@ const page = () => {
         description={
           <>
             <p>
-              Whether you have a finished manuscript, a half-written draft, or
-              just a powerful idea you don't know how to start, our publishing
-              specialists are here to help. At NexiFire Publishing, we work with
-              American authors at every stage of their journey, from first
-              conversation to final distribution.
-            </p>
-            <p className="mt-2">
-              Tell us about your project today and take the first step toward
-              becoming a published author.
+              NexiFire Publishing is a full-service self-publishing company helping authors take their books from manuscript to marketplace. From editing, design, and publishing to global distribution and marketing, we handle it all under one roof while protecting your voice, creative control, rights, and 100% of your royalties.
             </p>
           </>
         }

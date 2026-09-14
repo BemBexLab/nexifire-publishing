@@ -143,14 +143,21 @@ export default function BooksSection() {
               variants={textRevealVariants}
               className="project-h2 inline-block leading-[1.02]"
             >
-              Not Just Publishing. Everything a Book Needs.
+              Complete Publishing Services
             </motion.h2>
 
             <motion.p
               variants={textRevealVariants}
               className="body-copy mt-4 w-full text-base leading-[1.65] text-[#777777] sm:mt-5 sm:text-lg lg:max-w-[38rem]"
             >
-              Most self-publishing companies hand you a formatted file and call it done. NexiFire is different. We build our process around a simple idea: A self-published book should look, read, and feel every bit as professional as a traditionally published title, and have a real strategy for reaching readers. <br />Whether you are a first-time author with a manuscript on your laptop or an experienced writer looking for a better self-publishing package than your last one, our team manages the entire journey, book publishing services for authors who want it done properly, from manuscript to marketplace to the reader's hands.
+              Most self-publishing companies hand you a formatted file and call it done. NexiFire is different. We build our process around a simple idea: A self-published book should look, read, and feel every bit as professional as a traditionally published title, and have a real strategy for reaching readers.
+            </motion.p>
+
+            <motion.p
+              variants={textRevealVariants}
+              className="body-copy mt-4 w-full text-base leading-[1.65] text-[#777777] sm:mt-5 sm:text-lg lg:max-w-[38rem]"
+            >
+              Whether you are a first-time author with a manuscript on your laptop or an experienced writer looking for a better self-publishing package than your last one, our team manages the entire journey, book publishing services for authors who want it done properly, from manuscript to marketplace to the reader's hands.
             </motion.p>
 
             <motion.a

@@ -169,7 +169,7 @@ const page = () => {
       <GetInTouchContact
         backgroundClassName="bg-[#FDF7F4]"
         title="Ready to Publish Your Book?"
-        description="Tell us where you are in your journey and where you want to go. We'll design the right plan, assign the right specialists, and help you move forward with confidence."
+        description="Tell us where you are and where you want to go. As a self-publishing company built for authors, NexiFire Publishing will design the right plan, bring in the right specialists, and help you move forward with confidence, whether this is your first book or your fifth."
         buttonLable="Publish Your Book"
       />
     </section>
