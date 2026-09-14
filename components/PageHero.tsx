@@ -315,7 +315,7 @@ const PageHero = ({
                 alt=""
                 width={861}
                 height={94}
-                className="h-auto w-full max-w-none"
+                className="h-auto -rotate-3 w-full max-w-none"
                 aria-hidden="true"
               />
             </motion.div>
