@@ -48,6 +48,14 @@ const sixStepDashedPaths = [
   "M1204 254C1204 268 1204 276 1204 290",
 ];
 
+const openCircleDashedPaths = [
+  "M183 193C320 100 500 100 657 123",
+  "M657 123C814 100 994 100 1131 193",
+  "M1131 193C1215 270 1215 406 1131 483",
+  "M1131 483C994 560 814 580 657 553",
+  "M657 553C500 580 320 560 183 483",
+];
+
 const nineStepDashedPaths = [
   ...fourStepDashedPaths,
   "M1200 350C1300 360 1300 452 1200 486",
@@ -286,39 +294,39 @@ const sixStepLayoutClasses = [
 
 const openCircleLayoutClasses = [
   {
-    outerPosition: "xl:left-[280px] xl:top-[60px]",
+    outerPosition: "xl:left-[48px] xl:top-[55px]",
     cardHeight: "xl:h-[220px]",
-    cardWidth: "xl:w-[210px]",
+    cardWidth: "xl:w-[270px]",
     pinPosition: "left-1/2 top-[-20px] -translate-x-1/2",
   },
   {
-    outerPosition: "xl:left-[552px] xl:top-0",
+    outerPosition: "xl:left-[522px] xl:top-0",
     cardHeight: "xl:h-[220px]",
-    cardWidth: "xl:w-[210px]",
+    cardWidth: "xl:w-[270px]",
     pinPosition: "left-1/2 top-[-20px] -translate-x-1/2",
   },
   {
-    outerPosition: "xl:left-[824px] xl:top-[60px]",
+    outerPosition: "xl:right-[48px] xl:top-[55px]",
     cardHeight: "xl:h-[220px]",
-    cardWidth: "xl:w-[210px]",
+    cardWidth: "xl:w-[270px]",
     pinPosition: "left-1/2 top-[-20px] -translate-x-1/2",
   },
   {
-    outerPosition: "xl:left-[824px] xl:top-[480px]",
+    outerPosition: "xl:right-[48px] xl:top-[390px]",
     cardHeight: "xl:h-[220px]",
-    cardWidth: "xl:w-[210px]",
+    cardWidth: "xl:w-[270px]",
     pinPosition: "left-1/2 top-[-20px] -translate-x-1/2",
   },
   {
-    outerPosition: "xl:left-[552px] xl:top-[540px]",
+    outerPosition: "xl:left-[522px] xl:top-[445px]",
     cardHeight: "xl:h-[220px]",
-    cardWidth: "xl:w-[210px]",
+    cardWidth: "xl:w-[270px]",
     pinPosition: "left-1/2 top-[-20px] -translate-x-1/2",
   },
   {
-    outerPosition: "xl:left-[280px] xl:top-[480px]",
+    outerPosition: "xl:left-[48px] xl:top-[390px]",
     cardHeight: "xl:h-[220px]",
-    cardWidth: "xl:w-[210px]",
+    cardWidth: "xl:w-[270px]",
     pinPosition: "left-1/2 top-[-20px] -translate-x-1/2",
   },
 ];
@@ -656,14 +664,17 @@ const OurProcess = ({
               className="pointer-events-none absolute inset-0 z-0 hidden h-full w-full xl:block"
               aria-hidden="true"
             >
-              <path
-                d="M657 110A344 344 0 1 1 385 170"
-                stroke="#FF8A4A"
-                strokeWidth="3"
-                strokeLinecap="round"
-                strokeDasharray="10 10"
-                opacity="0.55"
-              />
+              {openCircleDashedPaths.map((path) => (
+                <motion.path
+                  key={path}
+                  variants={connectorVariants}
+                  d={path}
+                  stroke="#FF8A4A"
+                  strokeWidth="3"
+                  strokeLinecap="round"
+                  strokeDasharray="10 10"
+                />
+              ))}
             </svg>
           ) : (
             <svg
@@ -698,7 +709,7 @@ const OurProcess = ({
                 key={step.number}
                 custom={index}
                 variants={stepCardVariants}
-                className={`relative rounded-[24px] bg-[#f6eee8] px-[14px] pb-[14px] pt-[40px] shadow-[0_8px_18px_rgba(73,47,27,0.06)] sm:h-[216px] xl:absolute xl:h-[220px] ${step.cardWidth} ${step.outerPosition}`}
+                className={`relative rounded-[24px] bg-[#f6eee8] px-[14px] pb-[14px] pt-[40px] shadow-[0_8px_18px_rgba(73,47,27,0.06)] sm:h-[216px] xl:absolute ${isOpenCircleLayout ? "xl:h-[276px]" : "xl:h-[220px]"} ${step.cardWidth} ${step.outerPosition}`}
                 whileHover={{ y: -8, scale: 1.015 }}
                 transition={{ type: "spring", stiffness: 260, damping: 22 }}
               >
