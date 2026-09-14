@@ -66,6 +66,89 @@ p {
   text-transform: uppercase;
 }
 
+.nexifire-alert-container {
+  padding: 1rem;
+  backdrop-filter: blur(5px);
+}
+
+.nexifire-alert {
+  width: min(92vw, 480px);
+  border: 1px solid rgba(178, 64, 2, 0.14);
+  border-radius: 20px;
+  padding: 2rem 2rem 1.75rem;
+  background: #ffffff;
+  box-shadow: 0 24px 70px rgba(58, 30, 14, 0.24);
+  font-family: var(--font-plus-jakarta-sans), sans-serif;
+}
+
+.nexifire-alert .swal2-icon {
+  margin: 0 auto 1.35rem;
+  border-width: 3px;
+}
+
+.nexifire-alert .swal2-icon.swal2-success {
+  border-color: rgba(178, 64, 2, 0.2);
+  color: #b24002;
+}
+
+.nexifire-alert .swal2-icon.swal2-success [class^="swal2-success-line"] {
+  background-color: #ff5b01;
+}
+
+.nexifire-alert .swal2-icon.swal2-success .swal2-success-ring {
+  border-color: rgba(255, 91, 1, 0.2);
+}
+
+.nexifire-alert .swal2-icon.swal2-error {
+  border-color: rgba(178, 64, 2, 0.2);
+  color: #b24002;
+}
+
+.nexifire-alert .swal2-icon.swal2-error [class^="swal2-x-mark-line"] {
+  background-color: #b24002;
+}
+
+.nexifire-alert-title {
+  margin: 0;
+  color: #3d3d3d;
+  font-size: clamp(1.35rem, 4vw, 1.75rem);
+  font-weight: 600;
+  letter-spacing: -0.04em;
+}
+
+.nexifire-alert-text {
+  margin: 0.85rem auto 1.5rem;
+  color: #777777;
+  font-size: 0.98rem;
+  line-height: 1.65;
+}
+
+.nexifire-alert-button {
+  min-width: 96px;
+  border: 0;
+  border-radius: 8px;
+  padding: 0.72rem 1.45rem;
+  background: linear-gradient(90deg, #b24002 0%, #ff5b01 100%);
+  color: #ffffff;
+  font-family: var(--font-plus-jakarta-sans), sans-serif;
+  font-size: 0.95rem;
+  font-weight: 600;
+  box-shadow: 0 8px 18px rgba(178, 64, 2, 0.24);
+  transition: transform 180ms ease, box-shadow 180ms ease;
+}
+
+.nexifire-alert-button:hover {
+  background: linear-gradient(90deg, #9f3900 0%, #ed5000 100%);
+  box-shadow: 0 11px 24px rgba(178, 64, 2, 0.32);
+  transform: translateY(-2px);
+}
+
+@media (max-width: 640px) {
+  .nexifire-alert {
+    padding: 1.75rem 1.25rem 1.5rem;
+  }
+}
+
 @media (min-width: 640px) {
   .project-h2 {
     font-size: 1.7rem;

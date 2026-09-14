@@ -7,33 +7,39 @@ export async function submitContactForm(
   source: string,
 ): Promise<ContactFormSubmitResult> {
   const formData = new FormData(form);
+  try {
+    const response = await fetch("/api/contact", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({
+        name: formData.get("name"),
+        email: formData.get("email"),
+        countryCode: formData.get("countryCode"),
+        phone: formData.get("phone"),
+        message: formData.get("message"),
+        source,
+      }),
+    });
 
-  const response = await fetch("/api/contact", {
-    method: "POST",
-    headers: {
-      "Content-Type": "application/json",
-    },
-    body: JSON.stringify({
-      name: formData.get("name"),
-      email: formData.get("email"),
-      countryCode: formData.get("countryCode"),
-      phone: formData.get("phone"),
-      message: formData.get("message"),
-      source,
-    }),
-  });
+    const result = (await response.json().catch(() => ({}))) as {
+      error?: string;
+    };
 
-  const result = (await response.json().catch(() => ({}))) as {
-    error?: string;
-  };
+    if (!response.ok) {
+      return {
+        ok: false,
+        error: result.error || "Unable to send your message right now.",
+      };
+    }
 
-  if (!response.ok) {
+    form.reset();
+    return { ok: true };
+  } catch {
     return {
       ok: false,
-      error: result.error || "Unable to send your message right now.",
+      error: "Unable to send your message right now. Please try again later.",
     };
   }
-
-  form.reset();
-  return { ok: true };
 }

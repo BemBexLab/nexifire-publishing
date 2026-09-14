@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { Geist_Mono, Plus_Jakarta_Sans } from "next/font/google";
+import "sweetalert2/dist/sweetalert2.min.css";
 import "./globals.css";
 import NavBar from "@/components/NavBar";
 import ConditionalFooter from "@/components/ConditionalFooter";
