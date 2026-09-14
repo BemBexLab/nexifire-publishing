@@ -1,6 +1,14 @@
 import GetInTouchContactV2 from "@/components/GetInTouchContactV2";
 import PageHero from "@/components/PageHero";
+import { createPageMetadata } from "@/lib/seo";
 import React from "react";
+
+export const metadata = createPageMetadata({
+  title: "Contact NexiFire Publishing | Author Support",
+  description:
+    "Get in touch with NexiFire Publishing for questions about book writing, editing, publishing, design, marketing, and author support services.",
+  path: "/contact",
+});
 
 const page = () => {
   return (

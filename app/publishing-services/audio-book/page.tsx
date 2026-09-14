@@ -13,7 +13,15 @@ import WhoWeServe from "@/components/WhoWeServe";
 import WhyChoose from "@/components/WhyChoose";
 import WhyItMatters from "@/components/WhyItMatters";
 import { defaultWhoWeServeData } from "@/data/whoWeServe";
+import { createPageMetadata } from "@/lib/seo";
 import React from "react";
+
+export const metadata = createPageMetadata({
+  title: "Audiobook Publishing Service | NexiFire Publishing",
+  description:
+    "Professional audiobook publishing service for authors, including narration, audio production, editing, mastering, and distribution support for major audiobook platforms.",
+  path: "/publishing-services/audio-book",
+});
 
 const page = () => {
   return (

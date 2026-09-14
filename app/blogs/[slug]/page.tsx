@@ -1,13 +1,40 @@
 import Image from "next/image";
+import type { Metadata } from "next";
 import { notFound } from "next/navigation";
 import PageHero from "@/components/PageHero";
 import { blogPosts, getBlogPostBySlug } from "@/data/blogs";
+import { createPageMetadata } from "@/lib/seo";
 
 export function generateStaticParams() {
   return blogPosts.map(({ slug }) => ({ slug }));
 }
 
 export const dynamicParams = false;
+
+export async function generateMetadata({
+  params,
+}: {
+  params: Promise<{ slug: string }>;
+}): Promise<Metadata> {
+  const { slug } = await params;
+  const post = getBlogPostBySlug(slug);
+
+  if (!post) {
+    return createPageMetadata({
+      title: "Blog Post Not Found",
+      description: "The requested NexiFire Publishing blog post could not be found.",
+      path: `/blogs/${slug}`,
+      noIndex: true,
+    });
+  }
+
+  return createPageMetadata({
+    title: post.title,
+    description: post.description,
+    path: `/blogs/${post.slug}`,
+    image: post.image,
+  });
+}
 
 export default async function BlogPostPage({
   params,

@@ -1,4 +1,5 @@
 import { notFound } from "next/navigation";
+import type { Metadata } from "next";
 
 import FAQs from "@/components/FAQs";
 import GetInTouchContact from "@/components/GetInTouchContact";
@@ -13,6 +14,7 @@ import WhoWeServe from "@/components/WhoWeServe";
 import WhyChoose from "@/components/WhyChoose";
 import { defaultWhoWeServeData } from "@/data/whoWeServe";
 import Footer from "@/components/Footer";
+import { createPageMetadata, serviceSeo } from "@/lib/seo";
 
 import { publishingServicePageData, publishingServiceSlugs } from "./data";
 
@@ -21,6 +23,25 @@ export function generateStaticParams() {
 }
 
 export const dynamicParams = false;
+
+export async function generateMetadata({
+  params,
+}: {
+  params: Promise<{ slug: string }>;
+}): Promise<Metadata> {
+  const { slug } = await params;
+  const pageData = publishingServicePageData[slug];
+  const seo = serviceSeo[slug as keyof typeof serviceSeo];
+
+  return createPageMetadata({
+    title: seo?.title ?? pageData?.hero.title ?? "Publishing Services",
+    description:
+      seo?.description ??
+      "Professional book publishing services from NexiFire Publishing for authors in the USA.",
+    path: `/publishing-services/${slug}`,
+    noIndex: !pageData,
+  });
+}
 
 export default async function PublishingServicePage({
   params,

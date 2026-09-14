@@ -12,7 +12,15 @@ import WhatsIncluded from "@/components/WhatsIncluded";
 import WhoWeServe from "@/components/WhoWeServe";
 import WhyChoose from "@/components/WhyChoose";
 import { defaultWhoWeServeData } from "@/data/whoWeServe";
+import { createPageMetadata } from "@/lib/seo";
 import React from "react";
+
+export const metadata = createPageMetadata({
+  title: "Book Ghostwriting Services | Hire a Ghostwriter",
+  description:
+    "Professional Book ghostwriting services for first-time authors. Hire a ghostwriter for your Book and get expert writing, editing, and publishing support from start to finish.",
+  path: "/publishing-services/ghost-writing",
+});
 
 const page = () => {
   return (

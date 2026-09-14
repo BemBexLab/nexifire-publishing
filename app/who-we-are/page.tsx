@@ -8,7 +8,15 @@ import PublishYourBook from "@/components/PublishYourBook";
 import Testimonials from "@/components/Testimonials";
 import WhoWeServe from "@/components/WhoWeServe";
 import { defaultWhoWeServeData } from "@/data/whoWeServe";
+import { createPageMetadata } from "@/lib/seo";
 import React from "react";
+
+export const metadata = createPageMetadata({
+  title: "Self Publishing Company USA | Who We Are",
+  description:
+    "Learn about NexiFire Publishing, a self publishing company in the USA helping authors with writing, editing, design, publishing, distribution, and book marketing.",
+  path: "/who-we-are",
+});
 
 const page = () => {
   return (

@@ -1,7 +1,15 @@
 import BlogGrid from "@/components/BlogGrid";
 import PageHero from "@/components/PageHero";
 import PublishYourBook from "@/components/PublishYourBook";
+import { createPageMetadata } from "@/lib/seo";
 import React from "react";
+
+export const metadata = createPageMetadata({
+  title: "Publishing Insights for Authors",
+  description:
+    "Explore NexiFire Publishing insights, writing advice, marketing strategies, and practical guidance for authors at every stage of publishing.",
+  path: "/blogs",
+});
 
 const page = () => {
   return (

@@ -11,7 +11,15 @@ import WhatsIncluded from "@/components/WhatsIncluded";
 import WhoWeServe from "@/components/WhoWeServe";
 import WhyChoose from "@/components/WhyChoose";
 import { defaultWhoWeServeData } from "@/data/whoWeServe";
+import { createPageMetadata } from "@/lib/seo";
 import React from "react";
+
+export const metadata = createPageMetadata({
+  title: "Book Editing and Proofreading Services | NexiFire Publishing",
+  description:
+    "Professional book editing and proofreading services for authors. Improve clarity, grammar, structure, and flow with expert manuscript editing tailored to your book.",
+  path: "/publishing-services/book-editing",
+});
 
 const page = () => {
   return (

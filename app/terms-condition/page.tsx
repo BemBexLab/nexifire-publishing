@@ -1,7 +1,10 @@
-export const metadata = {
+import { createPageMetadata } from "@/lib/seo";
+
+export const metadata = createPageMetadata({
   title: "Terms & Conditions | NexiFire Publishing",
-  description: "NexiFire Publishing terms and conditions.",
-};
+  description: "Review the Terms & Conditions for using the NexiFire Publishing website, services, content, and related publishing solutions.",
+  path: "/terms-condition",
+});
 
 const page = () => {
   return (

@@ -5,7 +5,15 @@ import PageHero from "@/components/PageHero";
 import PublishYourBook from "@/components/PublishYourBook";
 import Testimonials from "@/components/Testimonials";
 import WhatsIncluded from "@/components/WhatsIncluded";
+import { createPageMetadata } from "@/lib/seo";
 import React from "react";
+
+export const metadata = createPageMetadata({
+  title: "Professional Book Publishing Services | Our Books",
+  description:
+    "Explore books published with NexiFire’s professional book publishing services. Discover titles from authors across different genres and see the quality of our publishing work.",
+  path: "/our-books",
+});
 
 const page = () => {
   return (

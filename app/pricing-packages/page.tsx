@@ -1,6 +1,14 @@
 import PageHero from "@/components/PageHero";
 import PricingPackages from "@/components/PricingPackages";
+import { createPageMetadata } from "@/lib/seo";
 import React from "react";
+
+export const metadata = createPageMetadata({
+  title: "Book Publishing Packages & Pricing | NexiFire Publishing",
+  description:
+    "Explore affordable book publishing packages for authors, including writing, editing, formatting, publishing, and marketing services.",
+  path: "/pricing-packages",
+});
 
 const page = () => {
   return (

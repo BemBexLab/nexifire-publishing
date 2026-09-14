@@ -12,7 +12,15 @@ import WhatsIncluded from "@/components/WhatsIncluded";
 import WhoWeServe from "@/components/WhoWeServe";
 import WhyChoose from "@/components/WhyChoose";
 import { defaultWhoWeServeData } from "@/data/whoWeServe";
+import { createPageMetadata } from "@/lib/seo";
 import React from "react";
+
+export const metadata = createPageMetadata({
+  title: "Book Publishing Service for Authors | NexiFire Publishing",
+  description:
+    "Professional Book publishing service for authors, including formatting and Amazon publishing support. Get your book prepared, published, and ready for readers.",
+  path: "/publishing-services/book-publishing",
+});
 
 const page = () => {
   return (
