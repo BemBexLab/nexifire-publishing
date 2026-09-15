@@ -56,7 +56,7 @@ const page = () => {
         backgroundAlt="Book Reading"
         buttonLabel="Start Your Publishing Journey"
       />
-      <div className="h-30"></div>
+      <div className="h-10 sm:h-13 lg:h-30"></div>
       <FAQs
         badgeText="Author Experiences"
         title="Frequently Asked Questions"
