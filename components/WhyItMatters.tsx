@@ -11,7 +11,7 @@ const WhyItMatters = () => {
         <div className="flex flex-col items-center gap-12 lg:flex-row lg:items-center lg:gap-16 xl:gap-20">
           {/* Left Side: 3D Audiobook Illustration */}
           <div className="flex w-full justify-center lg:flex-[1.05]">
-            <div className="relative w-full max-w-[700px]">
+            <div className="relative w-full max-w-[700px] pb-10">
               <div className="pointer-events-none absolute bottom-[calc(4%+10px)] left-[calc(16%-50px)] z-0 hidden lg:block">
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
@@ -48,7 +48,7 @@ const WhyItMatters = () => {
 
               {/* This asset should be the combined player and earphones image */}
               <img
-                src="/Audiobook.webp"
+                src="/Rectangle 23834.png"
                 alt="3D Audiobook player with earphones"
                 className="relative z-10 top-10 h-auto w-full object-contain transform transition-transform duration-700 hover:rotate-0 lg:-rotate-6"
               />

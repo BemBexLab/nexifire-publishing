@@ -55,7 +55,7 @@ const page = () => {
             </p>
           </div>
         }
-        imageSrc="/0eee94f7-4643-4e46-8b95-cc9232497a79 1 (3).png"
+        imageSrc="/0eee94f7-4643-4e46-8b95-cc9232497a79 1 (4).png"
       />
       <div className="bg-[#fffaf6] py-10 sm:py-16 md:py-20 lg:py-24">
         <OurProcess

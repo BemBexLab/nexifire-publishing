@@ -259,7 +259,7 @@ const HeroButtons = () => {
   return (
     <motion.div
       variants={heroItemVariants}
-      className="mt-6 flex w-full max-w-[760px] flex-col items-stretch justify-center gap-3 px-4 sm:mt-7 sm:flex-row sm:flex-wrap sm:items-center sm:gap-4 sm:px-0"
+      className="mt-6 flex w-full max-w-[760px] flex-col items-stretch justify-center gap-3 px-4 sm:mt-7 sm:flex-row sm:flex-wrap sm:items-center sm:gap-4 sm:px-0 [word-spacing:2px]"
     >
       <a
         href="/contact"
@@ -419,7 +419,7 @@ const DesktopHero = () => {
 
         <div className="relative z-30 mx-auto flex w-full flex-col">
           <motion.div
-            className="relative z-30 mx-auto flex w-full flex-col items-center px-1 pb-[56px] min-[380px]:pb-[76px] pt-10 text-center text-black sm:px-3 sm:pb-[105px] sm:pt-18 md:pb-[70px] md:pt-20 lg:pb-[200px] lg:pt-24 xl:px-4 xl:pb-[230px] xl:pt-28 2xl:pb-[350px] 2xl:pt-[132px]"
+            className="relative z-30 mx-auto flex w-full flex-col items-center px-1 pb-[140px] min-[380px]:pb-[160px] pt-10 text-center text-black sm:px-3 sm:pb-[170px] sm:pt-18 md:pb-[200px] md:pt-20 lg:pb-[220px] lg:pt-24 xl:px-4 xl:pb-[230px] xl:pt-28 2xl:pb-[350px] 2xl:pt-[132px]"
             variants={heroContainerVariants}
             initial="hidden"
             animate="visible"
@@ -488,7 +488,7 @@ const DesktopHero = () => {
           variants={heroBooksFanContainerVariants}
           initial="hidden"
           animate="visible"
-          className="pointer-events-none absolute inset-x-0 bottom-[84px] z-20 hidden h-[13%] w-full sm:bottom-[-18px] sm:flex sm:h-[31%] md:bottom-[-24px] md:h-[32%] lg:bottom-[-30px] lg:h-[34%] xl:bottom-[-46px] xl:h-[38%] 2xl:bottom-[-88px] 2xl:h-[42%]"
+          className="pointer-events-none absolute inset-x-0 bottom-[84px] z-10 hidden h-[13%] w-full sm:bottom-[-18px] sm:flex sm:h-[31%] md:bottom-[-24px] md:h-[32%] lg:bottom-[-30px] lg:h-[34%] xl:bottom-[-46px] xl:h-[38%] 2xl:bottom-[-88px] 2xl:h-[42%]"
         >
           <div className="flex h-full w-full items-end justify-center gap-[3px] px-2 sm:gap-0 sm:px-3 xl:px-4 2xl:px-10">
             {heroBooks.map((book) => (
