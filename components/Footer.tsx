@@ -219,7 +219,7 @@ const FooterCTA = (props: FooterProps) => {
   };
 
   return (
-    <section className="w-full overflow-hidden border-t border-[#e9e3dd] bg-[#f8f7f6] px-4 pt-12 font-jakarta sm:px-6 sm:pt-14 lg:px-8 lg:pt-16 xl:px-12 xl:pt-20">
+    <section className="w-full overflow-hidden border-t border-[#e9e3dd] bg-[#f8f7f6] px-4 pt-10 font-jakarta sm:px-6 sm:pt-14 lg:px-8 lg:pt-16 xl:px-12 xl:pt-20">
       <motion.div
         className="mx-auto flex w-full max-w-[1640px] flex-col"
         variants={footerVariants}

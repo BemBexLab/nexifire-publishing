@@ -56,7 +56,7 @@ export default async function BlogPostPage({
         description={post.description}
       />
 
-      <article className="mx-auto max-w-[980px] px-4 py-14 sm:px-6 sm:py-16 lg:px-8 lg:py-20">
+      <article className="mx-auto max-w-[980px] px-4 py-10 sm:px-6 sm:py-16 lg:px-8 lg:py-20">
         <div className="relative aspect-[1.9] overflow-hidden rounded-[18px] bg-[#f4f4f4]">
           <Image
             src={post.image}

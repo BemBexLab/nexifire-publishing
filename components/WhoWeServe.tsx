@@ -186,9 +186,10 @@ const WhoWeServe = ({
   buttonHref,
 }: WhoWeServeProps) => {
   const resolvedButtonLabel = buttonLabel ?? buttonLable;
+  const normalizedBadgeText = badgeText?.trim() ?? "";
 
   return (
-    <section className="overflow-hidden bg-transparent px-4 py-16 sm:px-6 lg:px-10 lg:py-20">
+    <section className="overflow-hidden bg-transparent px-4 py-10 sm:px-6 lg:px-10 lg:py-20">
       <motion.div
         className="mx-auto grid max-w-[1380px] items-center gap-12 lg:grid-cols-[1fr_0.92fr] lg:gap-14"
         variants={sectionVariants}
@@ -240,7 +241,7 @@ const WhoWeServe = ({
           </motion.svg>
 
           <div className="relative z-10 max-w-[640px]">
-            {badgeText ? (
+            {normalizedBadgeText ? (
               <motion.div
                 variants={revealItemVariants}
                 className="mb-3 flex w-fit items-center justify-center rounded-[8px] px-4 py-2 text-center text-sm text-black sm:px-5 sm:text-base"
@@ -249,7 +250,7 @@ const WhoWeServe = ({
                     "linear-gradient(90deg, rgba(178, 64, 2, 0.13) 0%, rgba(178, 64, 2, 0.00) 79.96%)",
                 }}
               >
-                <TextFluxUnveil text={badgeText} />
+                <TextFluxUnveil text={normalizedBadgeText} />
               </motion.div>
             ) : null}
 

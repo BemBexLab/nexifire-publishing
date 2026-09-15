@@ -84,7 +84,7 @@ const Introduction = ({
       : [];
 
   return (
-    <section className="bg-white px-4 py-10 sm:px-6 lg:px-8 xl:px-10">
+    <section className="bg-white px-4 py-8 sm:px-6 lg:px-8 xl:px-10">
       <motion.div
         className="mx-auto grid w-full max-w-[1760px] items-stretch gap-12 lg:grid-cols-2 lg:gap-12 xl:gap-16"
         variants={sectionVariants}

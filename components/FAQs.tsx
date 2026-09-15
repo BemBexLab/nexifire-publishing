@@ -113,7 +113,7 @@ const FAQs = ({
   const [openIndex, setOpenIndex] = useState(0);
 
   return (
-    <section className="bg-white px-4 pb-14 sm:px-6 sm:pb-16 md:px-10 lg:px-16 lg:pb-20">
+    <section className="bg-white px-4 pb-10 sm:px-6 sm:pb-16 md:px-10 lg:px-16 lg:pb-20">
       <motion.div
         className="mx-auto w-full max-w-[1440px]"
         variants={sectionVariants}
@@ -262,7 +262,7 @@ const FAQs = ({
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, amount: 0.45 }}
               transition={{ duration: 0.6, ease: sectionEase, delay: 0.08 }}
-              className="mx-auto mt-4 max-w-[300px] text-[1.8rem] font-normal uppercase leading-[0.98] tracking-[-0.045em] text-[#4a4a4a] sm:mt-5 sm:max-w-[390px] sm:text-[2.2rem]"
+              className="mx-auto mt-4 max-w-[300px] text-[1.5rem] font-normal uppercase leading-[0.98] tracking-[0.05em] text-[#4a4a4a] sm:mt-5 sm:max-w-[390px]"
             >
               {sidebarTitle}
             </motion.h3>

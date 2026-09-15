@@ -566,7 +566,7 @@ const Portfolio = () => {
   } as CSSProperties;
 
   return (
-    <section className="overflow-hidden bg-white px-4 pt-16 sm:px-6 md:px-10 lg:px-16">
+    <section className="overflow-hidden bg-white px-4 pt-10 sm:px-6 md:px-10 lg:px-16">
       <div className="mx-auto max-w-[1380px]">
         <motion.div
           className="mx-auto mb-9 max-w-[920px] text-center"

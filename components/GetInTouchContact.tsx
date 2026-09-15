@@ -253,7 +253,7 @@ const GetInTouchContact = ({
   if (!hasMounted) {
     return (
       <section
-        className={`flex w-full items-center justify-center overflow-hidden py-14 md:py-20 ${backgroundClassName ?? "bg-white"}`.trim()}
+        className={`flex w-full items-center justify-center overflow-hidden py-10 md:py-20 ${backgroundClassName ?? "bg-white"}`.trim()}
       >
         <div className="mx-auto grid w-full max-w-[1560px] grid-cols-1 items-start gap-12 px-4 sm:px-6 md:px-8 xl:grid-cols-[minmax(0,840px)_minmax(0,560px)] xl:gap-10">
           <div className="mx-auto flex w-full max-w-[960px] flex-col items-center pt-2 xl:mx-0 xl:block xl:max-w-none">
@@ -285,7 +285,7 @@ const GetInTouchContact = ({
 
   return (
     <section
-      className={`flex w-full items-center justify-center overflow-hidden py-14 md:py-20 ${backgroundClassName ?? "bg-white"}`.trim()}
+      className={`flex w-full items-center justify-center overflow-hidden py-10 md:py-20 ${backgroundClassName ?? "bg-white"}`.trim()}
     >
       <motion.div
         className="mx-auto grid w-full max-w-[1560px] grid-cols-1 items-start gap-12 px-4 sm:px-6 md:px-8 xl:grid-cols-[minmax(0,840px)_minmax(0,560px)] xl:gap-10"

@@ -32,7 +32,7 @@ const itemVariants: Variants = {
 
 const CustomSection = () => {
   return (
-    <section className="relative isolate overflow-hidden bg-white px-4 py-16 sm:px-6 lg:px-8 lg:py-24">
+    <section className="relative isolate overflow-hidden bg-white px-4 py-10 sm:px-6 lg:px-8 lg:py-24">
       <div
         aria-hidden="true"
         className="pointer-events-none absolute left-[-120px] top-[-140px] -z-10 h-[360px] w-[360px] rounded-full bg-[#ff5b01]/[0.08] blur-3xl"

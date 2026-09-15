@@ -30,7 +30,7 @@ const page = () => {
         eyebrow="NexiFire Publishing"
         title={`Audiobook Production Services in the USA`}
         description={ <div>
-          <h3 className="text-black font-semibold text-xl">Professional Narration, Editing, and Distribution: Start to Finish</h3>
+          <span className="text-black font-semibold">Professional Narration, Editing, and Distribution: Start to Finish</span>
           <p>NexiFire Publishing is a full audiobook production company for authors: professional narration, studio-quality recording, expert audio mastering, and global distribution to Audible, Apple Books, Spotify, and 20+ platforms. Whether you need to hire a voice actor for an audiobook, want to narrate it yourself, or just need someone to fix a mastering issue before ACX rejects your file, we handle it from manuscript to a live, listenable title.</p>
         </div> }
         buttonLabel="Start My Audiobook Today"
@@ -57,7 +57,7 @@ const page = () => {
         }
         imageSrc="/0eee94f7-4643-4e46-8b95-cc9232497a79 1 (3).png"
       />
-      <div className="bg-[#fffaf6] py-14 sm:py-16 md:py-20 lg:py-24">
+      <div className="bg-[#fffaf6] py-10 sm:py-16 md:py-20 lg:py-24">
         <OurProcess
           badgeText=""
           title="How It Works"

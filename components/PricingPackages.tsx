@@ -224,7 +224,7 @@ const PricingPackages = ({
     typeof description === "string" || typeof description === "number";
 
   return (
-    <section className="bg-white px-4 py-14 sm:px-6 lg:px-8 lg:py-20">
+    <section className="bg-white px-4 py-10 sm:px-6 lg:px-8 lg:py-20">
       <motion.div
         className="mx-auto w-full max-w-[1540px]"
         variants={sectionVariants}

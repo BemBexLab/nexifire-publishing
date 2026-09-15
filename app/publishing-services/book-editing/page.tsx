@@ -29,7 +29,7 @@ const page = () => {
         title={`Professional Book Editing Services USA`}
         description={
           <>
-            <span className="text-black font-bold text-2xl">
+            <span className="text-black font-bold">
               Your Manuscript Deserves a Real Editor
             </span>{" "}
             <br /> Professional book editing and proofreading services for
@@ -101,7 +101,7 @@ const page = () => {
         }
         imageSrc="/0eee94f7-4643-4e46-8b95-cc9232497a79 1 (1).png"
       />
-      <div className="bg-[#fffaf6] py-14 sm:py-16 md:py-20 lg:py-24">
+      <div className="bg-[#fffaf6] py-10 sm:py-16 md:py-20 lg:py-24">
         <OurProcess
           badgeText="How It Works"
           title="How Our Editing Process Works"

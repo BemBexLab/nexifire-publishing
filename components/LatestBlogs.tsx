@@ -12,7 +12,7 @@ const blogs = getRecentBlogPosts(3);
 const LatestBlogs = () => {
   return (
     <LazyMotion features={domAnimation}>
-      <section className="flex w-full items-center justify-center bg-[#FDF7F4] py-12 sm:py-16 lg:py-20">
+      <section className="flex w-full items-center justify-center bg-[#FDF7F4] py-10 sm:py-16 lg:py-20">
         <div className="mx-auto flex w-full max-w-[1180px] flex-col px-4 sm:px-6 lg:px-8">
           <m.h2
             className="project-h2 pb-8 text-center leading-tight sm:pb-10"
@@ -70,20 +70,21 @@ const LatestBlogs = () => {
               </m.article>
             ))}
           </div>
+
+          <style jsx global>{`
+            .latest-blogs-scroll-view {
+              -webkit-overflow-scrolling: touch;
+              scrollbar-width: none;
+              -ms-overflow-style: none;
+              touch-action: pan-x;
+            }
+
+            .latest-blogs-scroll-view::-webkit-scrollbar {
+              display: none;
+            }
+          `}</style>
         </div>
 
-        <style jsx global>{`
-          .latest-blogs-scroll-view {
-            -webkit-overflow-scrolling: touch;
-            scrollbar-width: none;
-            -ms-overflow-style: none;
-            touch-action: pan-x;
-          }
-
-          .latest-blogs-scroll-view::-webkit-scrollbar {
-            display: none;
-          }
-        `}</style>
       </section>
     </LazyMotion>
   );

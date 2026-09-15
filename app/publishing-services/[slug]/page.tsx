@@ -59,7 +59,7 @@ export default async function PublishingServicePage({
     <section className="overflow-hidden bg-white">
       <PageHero {...pageData.hero} />
       <Introduction {...pageData.introduction} />
-      <div className="bg-[#fffaf6] py-14 sm:py-16 md:py-20 lg:py-24">
+      <div className="bg-[#fffaf6] py-10 sm:py-16 md:py-20 lg:py-24">
         <OurProcess {...pageData.process} />
       </div>
       <WhyChoose {...pageData.whyChoose} />

@@ -53,7 +53,7 @@ export default function Home() {
         ]}
       />
       <WhoWeAre />
-      <div className="bg-[#fffaf6] py-14 sm:py-16 md:py-20 lg:py-24">
+      <div className="bg-[#fffaf6] py-10 sm:py-16 md:py-20 lg:py-24">
         <OurProcess
           badgeText="How It Works"
           title="How Our Self-Publishing Process Works"

@@ -144,7 +144,7 @@ const dividerVariants: Variants = {
 const OurBelieves = () => {
   return (
     <motion.section
-      className="relative overflow-hidden bg-[#FCF8F5] px-4 py-16 sm:px-6 lg:px-10 lg:py-20"
+      className="relative overflow-hidden bg-[#FCF8F5] px-4 py-10 sm:px-6 lg:px-10 lg:py-20"
       variants={sectionVariants}
       initial="hidden"
       whileInView="visible"

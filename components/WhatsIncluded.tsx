@@ -111,7 +111,7 @@ const WhatsIncluded = ({
   iconAlt = "",
 }: WhatsIncludedProps) => {
   return (
-    <section className="bg-white px-4 py-16 sm:px-6 lg:px-8 lg:py-24">
+    <section className="bg-white px-4 py-10 sm:px-6 lg:px-8 lg:py-24">
       <motion.div
         className="mx-auto grid w-full max-w-[1460px] items-stretch gap-6 xl:grid-cols-2 xl:gap-12 2xl:gap-16"
         variants={sectionVariants}

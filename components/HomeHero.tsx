@@ -236,18 +236,19 @@ const AnimatedText = ({
   return (
     <motion.span
       variants={heroTextLineVariants}
-      className={className}
+      className={`flex w-full flex-wrap justify-center gap-x-[0.25em] ${className}`}
     >
-          {words.map((word, index) => (
-            <motion.span
-              key={`${word}-${index}`}
-              variants={heroWordRevealVariants}
-              className="inline-block"
-              data-hero-word="true"
-            >
-          {word}
-          {index < words.length - 1 ? "\u00A0" : ""}
-        </motion.span>
+      {words.map((word, index) => (
+        <React.Fragment key={`${word}-${index}`}>
+          <motion.span
+            variants={heroWordRevealVariants}
+            className="inline-block"
+            data-hero-word="true"
+          >
+            {word}
+          </motion.span>
+          {index < words.length - 1 ? " " : ""}
+        </React.Fragment>
       ))}
     </motion.span>
   );
@@ -412,13 +413,13 @@ const DesktopHero = () => {
         cardClassName="h-[42px] min-w-[86px] rounded-[12px] px-2.5 sm:h-[68px] sm:min-w-[136px] sm:rounded-none sm:border-0 sm:bg-transparent sm:px-4 sm:shadow-none sm:backdrop-blur-0 xl:min-w-[148px] 2xl:min-w-[168px] lg:px-5"
       />
 
-      <section className="relative min-h-[770px] overflow-hidden bg-[url('/Rectangle%201.webp')] bg-cover bg-center bg-no-repeat px-2 pb-[168px] pt-12 text-[#1f1f1f] sm:px-5 sm:pb-[160px] sm:pt-15 md:min-h-[900px] md:pb-[185px] md:pt-15 lg:min-h-[960px] lg:px-6 lg:pb-[220px] lg:pt-15 xl:min-h-[900px] xl:px-6 xl:pb-[220px] xl:pt-5 2xl:min-h-[1020px] 2xl:px-8 2xl:pb-[236px] 2xl:pt-6 [clip-path:polygon(0%_0%,100%_0%,100%_100%,82%_100%,76%_92%,24%_92%,18%_100%,0%_100%)]">
+      <section className="relative min-h-[770px] overflow-hidden bg-[url('/Rectangle%201.webp')] bg-cover bg-center bg-no-repeat px-2 pb-[140px] pt-10 text-[#1f1f1f] sm:px-5 sm:pb-[160px] sm:pt-15 md:min-h-[900px] md:pb-[185px] md:pt-15 lg:min-h-[960px] lg:px-6 lg:pb-[220px] lg:pt-15 xl:min-h-[900px] xl:px-6 xl:pb-[220px] xl:pt-5 2xl:min-h-[1020px] 2xl:px-8 2xl:pb-[236px] 2xl:pt-6 [clip-path:polygon(0%_0%,100%_0%,100%_100%,82%_100%,76%_92%,24%_92%,18%_100%,0%_100%)]">
         <HeroAccent className="pointer-events-none absolute left-[-10%] top-[22%] z-10 h-[78px] w-[78px] -rotate-90 opacity-90 sm:left-[2%] sm:h-[124px] sm:w-[124px] 2xl:h-[176px] 2xl:w-[176px]" />
         <HeroAccent className="pointer-events-none absolute right-[-8%] top-[14%] z-10 h-[84px] w-[84px] opacity-90 sm:right-[2%] sm:top-[12%] sm:h-[124px] sm:w-[124px] 2xl:h-[176px] 2xl:w-[176px]" />
 
         <div className="relative z-30 mx-auto flex w-full flex-col">
           <motion.div
-            className="relative z-30 mx-auto flex w-full flex-col items-center px-1 pb-[70px] min-[380px]:pb-[100px] pt-14 text-center text-black sm:px-3 sm:pb-[105px] sm:pt-18 md:pb-[70px] md:pt-20 lg:pb-[200px] lg:pt-24 xl:px-4 xl:pb-[230px] xl:pt-28 2xl:pb-[350px] 2xl:pt-[132px]"
+            className="relative z-30 mx-auto flex w-full flex-col items-center px-1 pb-[56px] min-[380px]:pb-[76px] pt-10 text-center text-black sm:px-3 sm:pb-[105px] sm:pt-18 md:pb-[70px] md:pt-20 lg:pb-[200px] lg:pt-24 xl:px-4 xl:pb-[230px] xl:pt-28 2xl:pb-[350px] 2xl:pt-[132px]"
             variants={heroContainerVariants}
             initial="hidden"
             animate="visible"
@@ -437,7 +438,7 @@ const DesktopHero = () => {
             <motion.h1
               ref={headingRef}
               variants={heroTextRevealVariants}
-              className="relative isolate mx-auto mt-6 max-w-[980px] text-center text-[1.5rem] font-medium uppercase leading-[0.95] tracking-[-0.05em] text-black sm:mt-7 sm:max-w-[1260px] sm:text-[2.7rem] sm:leading-[1] sm:tracking-[-0.04em] xl:max-w-[1460px] xl:text-[3.8rem] 2xl:max-w-[1600px] 2xl:text-[4.45rem]"
+              className="relative isolate mx-auto mt-6 w-full max-w-[980px] px-3 text-center text-[clamp(1.32rem,6vw,1.55rem)] font-medium uppercase leading-[1.02] tracking-[-0.05em] text-black sm:mt-7 sm:max-w-[1260px] sm:px-0 sm:text-[2.7rem] sm:leading-[1] sm:tracking-[-0.04em] xl:max-w-[1460px] xl:text-[3.8rem] 2xl:max-w-[1600px] 2xl:text-[4.45rem]"
             >
               <Image
                 src={heroEllipse}
@@ -452,7 +453,7 @@ const DesktopHero = () => {
               />
               <motion.span
                 variants={heroItemVariants}
-                className="relative inline-block w-fit max-w-[1040px] px-4 sm:px-16 md:px-28 xl:max-w-[1380px] xl:px-36 2xl:max-w-[1520px] 2xl:px-40"
+                className="relative block w-full max-w-[1040px] px-3 sm:inline-block sm:w-fit sm:px-16 md:px-28 xl:max-w-[1380px] xl:px-36 2xl:max-w-[1520px] 2xl:px-40"
               >
                 <Image
                   src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?auto=format&fit=crop&w=240&q=80"
@@ -465,14 +466,14 @@ const DesktopHero = () => {
                 <HeroHeadingMark className="pointer-events-none absolute left-12 top-[-0.45rem] z-10 hidden h-auto w-[60px] -rotate-16 sm:block sm:left-[4.6rem] sm:top-0 sm:w-[76px] md:left-[5.1rem] md:top-[0.98em] md:w-[88px] xl:left-[5.9rem] xl:w-[102px] 2xl:left-[6.6rem] 2xl:w-[116px]" />
                 <AnimatedText
                   text={heroTitle}
-                  className="relative z-30 block max-w-[1040px] text-center xl:max-w-[1380px] 2xl:max-w-[1520px]"
+                  className="relative z-30 max-w-[1040px] text-center xl:max-w-[1380px] 2xl:max-w-[1520px]"
                 />
               </motion.span>
             </motion.h1>
 
             <motion.p
               variants={heroTextRevealVariants}
-              className="body-copy mx-auto mt-6 max-w-[1050px] text-center text-[0.95rem] leading-[1.55] text-[#777777] sm:text-base xl:text-lg"
+              className="body-copy mx-auto mt-6 w-full max-w-[1050px] px-4 text-center text-[0.95rem] leading-[1.55] text-[#777777] sm:px-0 sm:text-base xl:text-lg"
             >
               <AnimatedText text={heroDescription} />
             </motion.p>

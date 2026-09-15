@@ -665,7 +665,7 @@ const BooksGrid = () => {
   const allItemsDisplayed = visibleCount >= books.length;
 
   return (
-    <section className="bg-white px-4 py-16 sm:px-6 lg:px-8 lg:py-20">
+    <section className="bg-white px-4 py-10 sm:px-6 lg:px-8 lg:py-20">
       <motion.div
         className="mx-auto max-w-[1260px]"
         variants={sectionVariants}

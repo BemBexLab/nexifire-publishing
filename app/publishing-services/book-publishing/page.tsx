@@ -30,7 +30,7 @@ const page = () => {
         title={`Book Publishing Services for Authors in the USA`}
         description={
           <>
-            <span className="font-bold text-black text-2xl">
+            <span className="font-bold text-black">
               Everything Your Book Needs, Handled by One Team
             </span>{" "}
             <br /> NexiFire Publishing is a full-service book publishing company for authors in the USA one team for the whole thing. If you're trying to figure out how to publish a book on Amazon, need a book publishing service that actually includes formatting and an ISBN, or want to publish on Kindle and Apple Books at the same time, this is what we do, start to finish.
@@ -57,7 +57,7 @@ const page = () => {
         }
         imageSrc="/0eee94f7-4643-4e46-8b95-cc9232497a79 1.png"
       />
-      <div className="bg-[#fffaf6] py-14 sm:py-16 md:py-20 lg:py-24">
+      <div className="bg-[#fffaf6] py-10 sm:py-16 md:py-20 lg:py-24">
         <OurProcess
           badgeText="How It Works"
           title="Publish Your Book in 4 Clear Steps"

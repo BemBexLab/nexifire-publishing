@@ -214,7 +214,7 @@ const AnimatedStatValue = ({ value }: { value: string }) => {
 
 const WhoWeAre = () => {
   return (
-    <section className="relative overflow-hidden bg-white px-4 py-12 sm:px-6 sm:py-14 md:px-10 md:py-16 lg:px-16 lg:py-18">
+    <section className="relative overflow-hidden bg-white px-4 py-10 sm:px-6 sm:py-14 md:px-10 md:py-16 lg:px-16 lg:py-18">
       <motion.div
         variants={backdropVariants}
         initial="hidden"

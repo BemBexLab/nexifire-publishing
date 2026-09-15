@@ -309,7 +309,7 @@ const HomeServices = () => {
           initial="hidden"
           whileInView="visible"
           viewport={{ once: true, amount: 0.15 }}
-          className="relative z-10 mx-auto flex w-full max-w-[1440px] flex-col px-4 pb-12 pt-14 sm:px-6 sm:pb-14 md:px-10 md:pt-16 lg:px-16 lg:pb-24 lg:pt-20"
+          className="relative z-10 mx-auto flex w-full max-w-[1440px] flex-col px-4 pb-10 pt-10 sm:px-6 sm:pb-14 md:px-10 md:pt-16 lg:px-16 lg:pb-24 lg:pt-20"
         >
           <motion.div
             variants={headingClusterVariants}

@@ -101,7 +101,7 @@ const ImageDesc = ({
   reverse = false,
 }: ImageDescProps) => {
   return (
-    <section className="bg-white px-4 pt-16 sm:px-6 lg:px-8 lg:pt-24">
+    <section className="bg-white px-4 pt-10 sm:px-6 lg:px-8 lg:pt-24">
       <motion.div
         className={`mx-auto flex w-full max-w-[1540px] flex-col gap-8 lg:items-stretch lg:gap-8 xl:gap-10 ${
           reverse ? "lg:flex-row-reverse" : "lg:flex-row"

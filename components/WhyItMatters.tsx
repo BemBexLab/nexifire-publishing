@@ -7,7 +7,7 @@ import TextFluxUnveil from "./TextFluxUnveil";
 const WhyItMatters = () => {
   return (
     <section className="overflow-hidden">
-      <div className="container mx-auto max-w-[1640px] px-2 py-10 sm:px-6 lg:px-8">
+      <div className="container mx-auto max-w-[1640px] px-2 py-8 sm:px-6 lg:px-8">
         <div className="flex flex-col items-center gap-12 lg:flex-row lg:items-center lg:gap-16 xl:gap-20">
           {/* Left Side: 3D Audiobook Illustration */}
           <div className="flex w-full justify-center lg:flex-[1.05]">

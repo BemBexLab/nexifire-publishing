@@ -28,7 +28,7 @@ const page = () => {
       <PageHero
         eyebrow="Nexifire Publishing"
         title={`Ghostwriting Services USA`}
-        description={<><span className="text-black text-2xl"><b>We Write It. You Publish It.</b></span> <br />Professional ghostwriting services for authors, entrepreneurs, coaches, and first-time writers across the USA: your story, your voice, your name on the cover.</>}
+        description={<><span className="text-black"><b>We Write It. You Publish It.</b></span> <br />Professional ghostwriting services for authors, entrepreneurs, coaches, and first-time writers across the USA: your story, your voice, your name on the cover.</>}
         buttonLabel="Get a Free Ghostwriting Consultation"
       />
       <Introduction
@@ -43,7 +43,7 @@ const page = () => {
         imageSrc="/image 67.png"
       />
       <MosiacCards />
-      <div className="bg-[#fffaf6] py-14 sm:py-16 md:py-20 lg:py-24">
+      <div className="bg-[#fffaf6] py-10 sm:py-16 md:py-20 lg:py-24">
         <OurProcess
           badgeText="How It Works"
           layout="open-circle"

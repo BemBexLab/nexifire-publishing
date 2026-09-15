@@ -6,7 +6,7 @@ import { blogPosts } from "@/data/blogs";
 
 const BlogGrid = () => {
   return (
-    <section className="bg-white px-4 py-14 sm:px-6 sm:py-16 lg:px-8 lg:py-20">
+    <section className="bg-white px-4 py-10 sm:px-6 sm:py-16 lg:px-8 lg:py-20">
       <div className="mx-auto max-w-[1000px]">
         <h2 className="project-h2 block w-full max-w-full text-center">
           Our Latest Blogs

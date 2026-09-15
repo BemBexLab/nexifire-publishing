@@ -102,9 +102,9 @@ export const publishingServicePageData: Record<
       eyebrow: "NexiFire Publishing",
       title: "Book Marketing Services for Authors in the USA",
       description: <div className="">
-        <h3 className="text-black font-semibold text-xl">
+        <span className="text-black font-semibold">
           Your Book Is Written. Now Let's Make Sure Readers Find It.
-        </h3>
+        </span>
         <p>Publishing your book is only half the job. NexiFire Publishing delivers real book marketing services for authors in the USA, Amazon advertising, social media campaigns, book publicity, and global print-on-demand distribution across 40+ countries. We are not here to just list your book somewhere. We are here to get it in front of readers who are already looking for something like it.</p>
       </div>,
       buttonLabel: "Get a Free Marketing Consultation",
@@ -340,7 +340,7 @@ export const publishingServicePageData: Record<
       eyebrow: "NexiFire Publishing",
       title: "Book Cover Design Services in the USA",
       description:
-        (<><span className="font-bold text-black text-2xl">A Cover That Stops the Scroll</span> <br /> NexiFire Publishing connects authors with professional book cover designers who actually understand genre, typography, and what makes a browsing reader stop and click. Whether you need custom book cover design for indie authors, a full hardcover jacket, or an ebook cover design service with unlimited revisions, every design we create is built to sell your book before a single page gets read.</>),
+        (<><span className="font-bold text-black">A Cover That Stops the Scroll</span> <br /> NexiFire Publishing connects authors with professional book cover designers who actually understand genre, typography, and what makes a browsing reader stop and click. Whether you need custom book cover design for indie authors, a full hardcover jacket, or an ebook cover design service with unlimited revisions, every design we create is built to sell your book before a single page gets read.</>),
       buttonLabel: "Start the Design Process",
       buttonHref: "/contact",
     },

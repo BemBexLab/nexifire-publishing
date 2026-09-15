@@ -94,7 +94,7 @@ const ctaVariants: Variants = {
 
 export default function BooksSection() {
   return (
-    <section className="w-full bg-white px-4 py-14 sm:px-6 sm:py-16 md:px-10 md:py-20 lg:px-16 lg:py-24">
+    <section className="w-full bg-white px-4 py-10 sm:px-6 sm:py-16 md:px-10 md:py-20 lg:px-16 lg:py-24">
       <motion.div
         variants={sectionContainerVariants}
         initial="hidden"

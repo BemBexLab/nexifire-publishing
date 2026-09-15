@@ -92,7 +92,7 @@ const OurBookGenre = ({ badgeText, title, genres }: OurBookGenreProps) => {
   return (
     <section
       id="our-book-genre"
-      className="bg-white px-4 py-12 sm:px-6 sm:py-14 md:px-10 md:py-16 lg:px-16 lg:py-18"
+      className="bg-white px-4 py-10 sm:px-6 sm:py-14 md:px-10 md:py-16 lg:px-16 lg:py-18"
     >
       <motion.div
         variants={containerVariants}
@@ -117,7 +117,7 @@ const OurBookGenre = ({ badgeText, title, genres }: OurBookGenreProps) => {
             </motion.div>
           ) : null}
 
-          <h2 className="project-h2 block w-full max-w-full text-left leading-[1.05] max-sm:mt-1 max-sm:text-center">
+          <h2 className="project-h2 block w-full max-w-full text-left leading-[1.05] max-sm:mt-1 max-sm:text-left">
             {title}
           </h2>
         </motion.div>

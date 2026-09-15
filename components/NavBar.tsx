@@ -1,8 +1,8 @@
 "use client";
 
-import { label } from "motion/react-client";
 import Image from "next/image";
 import Link from "next/link";
+import { AnimatePresence, motion } from "motion/react";
 import { usePathname } from "next/navigation";
 import { useEffect, useState } from "react";
 
@@ -103,6 +103,21 @@ export default function NavBar() {
     return () => {
       document.body.style.overflow = "";
     };
+  }, [mobileOpen]);
+
+  useEffect(() => {
+    if (!mobileOpen) {
+      return;
+    }
+
+    const closeOnEscape = (event: KeyboardEvent) => {
+      if (event.key === "Escape") {
+        setMobileOpen(false);
+      }
+    };
+
+    window.addEventListener("keydown", closeOnEscape);
+    return () => window.removeEventListener("keydown", closeOnEscape);
   }, [mobileOpen]);
 
   return (
@@ -220,13 +235,61 @@ export default function NavBar() {
           </button>
         </div>
 
-        {/* Mobile Nav Menu */}
-        {mobileOpen && (
+        {/* Mobile Nav Drawer */}
+        <AnimatePresence initial={false}>
+          {mobileOpen && (
+            <>
+              <motion.button
+                type="button"
+                aria-label="Close navigation menu"
+                className="fixed inset-0 z-[105] bg-[#21150f]/35 backdrop-blur-[2px] lg:hidden"
+                initial={{ opacity: 0 }}
+                animate={{ opacity: 1 }}
+                exit={{ opacity: 0 }}
+                transition={{ duration: 0.22, ease: "easeOut" }}
+                onClick={() => setMobileOpen(false)}
+              />
+              <motion.aside
+                id="mobile-nav-menu"
+                role="dialog"
+                aria-modal="true"
+                aria-label="Mobile navigation"
+                className="fixed left-[-0.8125rem] right-[-0.8125rem] top-0 z-[110] flex h-[100dvh] w-auto flex-col overflow-y-auto border-l border-[#f1ddd1] bg-[linear-gradient(160deg,#fffdfb_0%,#fff8f3_56%,#fff1e8_100%)] px-5 pb-6 pt-5 shadow-none lg:hidden sm:left-[-1.0625rem] sm:right-[-1.0625rem] sm:px-7"
+                initial={{ x: "100%" }}
+                animate={{ x: 0 }}
+                exit={{ x: "100%" }}
+                transition={{ duration: 0.3, ease: [0.22, 1, 0.36, 1] }}
+              >
+                <div className="flex items-center justify-between border-b border-[#edd9cd] pb-5">
+                  <Link
+                    href="/"
+                    aria-label="NexiFire Publishing home"
+                    onClick={() => setMobileOpen(false)}
+                  >
+                    <Image
+                      src="/Group 427320871.webp"
+                      alt="NexiFire Logo"
+                      width={240}
+                      height={64}
+                      className="h-auto w-[125px]"
+                    />
+                  </Link>
+                  <button
+                    type="button"
+                    onClick={() => setMobileOpen(false)}
+                    aria-label="Close navigation menu"
+                    className="relative flex h-10 w-10 items-center justify-center rounded-full border border-[#e8cdbd] text-transparent transition-colors before:absolute before:h-px before:w-4 before:rotate-45 before:bg-[#8d3e12] after:absolute after:h-px after:w-4 after:-rotate-45 after:bg-[#8d3e12] hover:bg-[#fff0e7]"
+                  >
+                    <span aria-hidden="true">×</span>
+                  </button>
+                </div>
+                <p className="mb-3 mt-7 text-xs font-semibold uppercase tracking-[0.2em] text-[#b24002]/70">
+                  Explore NexiFire
+                </p>
           <div
-            id="mobile-nav-menu"
-            className="max-h-[calc(100dvh-96px)] overflow-y-auto rounded-[24px] border border-white/24 bg-[linear-gradient(145deg,rgba(255,255,255,0.14)_0%,rgba(255,255,255,0.05)_42%,rgba(255,255,255,0.10)_100%)] px-4 py-4 shadow-sm backdrop-blur-[3px] backdrop-saturate-[1.08] lg:hidden sm:px-5 sm:py-5 mt-3"
+            className="flex flex-1 flex-col"
           >
-            <div className="grid gap-2">
+            <div className="flex flex-1 flex-col gap-1">
               {navLinks.map((link) => {
                 if (link.hasDropdown) {
                   return (
@@ -237,19 +300,34 @@ export default function NavBar() {
                           setMobileServicesOpen((open) => !open)
                         }
                         aria-expanded={mobileServicesOpen}
-                        className="flex w-full items-center justify-between rounded-md bg-gray-100 px-3 py-2.5 text-left text-sm font-medium text-gray-800"
+                        className={`flex w-full items-center justify-between rounded-xl px-3 py-3.5 text-left text-base transition-colors ${
+                          isPublishingServicesActive
+                            ? "bg-[#fff0e7] font-semibold text-[#B24002]"
+                            : "font-medium text-[#39312d] hover:bg-[#fff0e7]"
+                        }`}
                       >
                         {link.label}
-                        <span>{mobileServicesOpen ? "▲" : "▼"}</span>
+                        <span
+                          aria-hidden="true"
+                          className={`h-2.5 w-2.5 rotate-45 border-b-2 border-r-2 border-[#B24002] text-transparent transition-transform duration-200 ${
+                            mobileServicesOpen ? "rotate-180" : ""
+                          }`}
+                        >
+                          ↓
+                        </span>
                       </button>
                       {mobileServicesOpen && (
-                        <div className="mt-2 ml-2 grid gap-1 sm:ml-4">
+                        <div className="mt-2 ml-3 grid gap-1 border-l border-[#e8cdbd] pl-3 sm:ml-4">
                           {publishingServiceLinks.map((s) => (
                             <Link
                               key={s.href}
                               href={s.href}
                               onClick={() => setMobileOpen(false)}
-                              className="rounded px-2 py-2 text-sm text-gray-700 hover:bg-gray-200"
+                              className={`rounded-lg px-3 py-2.5 text-sm transition-colors ${
+                                isActiveLink(s.href)
+                                  ? "font-semibold text-[#B24002]"
+                                  : "text-[#665b55] hover:bg-[#fff0e7] hover:text-[#B24002]"
+                              }`}
                             >
                               {s.label}
                             </Link>
@@ -265,7 +343,11 @@ export default function NavBar() {
                     key={link.label}
                     href={link.href}
                     onClick={() => setMobileOpen(false)}
-                    className="block rounded px-3 py-2.5 text-sm text-gray-800 hover:bg-gray-100"
+                    className={`rounded-xl px-3 py-3.5 text-base transition-colors ${
+                      isActiveLink(link.href)
+                        ? "bg-[#fff0e7] font-semibold text-[#B24002]"
+                        : "font-medium text-[#39312d] hover:bg-[#fff0e7] hover:text-[#B24002]"
+                    }`}
                   >
                     {link.label}
                   </Link>
@@ -276,14 +358,19 @@ export default function NavBar() {
               <Link
                 href="/contact"
                 onClick={() => setMobileOpen(false)}
-                className="mt-4 inline-flex min-h-[46px] w-full items-center justify-center gap-2 rounded-xl border border-[#B24002] bg-transparent px-5 py-3 text-sm font-medium text-[#B24002] transition-all duration-200 hover:bg-[#B24002] hover:text-white"
+                className="mt-auto inline-flex min-h-[50px] w-full items-center justify-center gap-2 rounded-xl bg-[linear-gradient(90deg,#B24002_0%,#FF5B01_100%)] px-5 py-3 text-sm font-medium text-white shadow-[0_10px_22px_rgba(178,64,2,0.24)] transition-transform hover:-translate-y-0.5"
               >
                 Request a Call
-                <RequestCallIcon />
+                <span className="brightness-0 invert">
+                  <RequestCallIcon />
+                </span>
               </Link>
             </div>
           </div>
-        )}
+              </motion.aside>
+            </>
+          )}
+        </AnimatePresence>
       </div>
     </nav>
   );

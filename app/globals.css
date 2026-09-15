@@ -22,6 +22,19 @@
 body {
   background: var(--background);
   color: var(--foreground);
+  font-size: 1rem;
+  line-height: 1.5;
+}
+
+/* Keep the two primary heading levels ordered throughout the project. */
+h1,
+h1[class] {
+  font-size: clamp(2rem, 7vw, 4rem) !important;
+}
+
+h2,
+h2[class] {
+  font-size: clamp(1.5rem, 5vw, 2.8rem) !important;
 }
 
 h1,
@@ -170,5 +183,32 @@ p {
 @media (min-width: 1280px) {
   .project-h2 {
     font-size: 2.7rem;
+  }
+}
+
+@media (max-width: 767px) {
+  h1,
+  h2,
+  h3,
+  h4,
+  p,
+  li {
+    word-spacing: normal;
+  }
+
+  .project-h2 {
+    word-spacing: 0.08em;
+    line-height: 1.06;
+  }
+}
+
+@media (max-width: 639px) {
+  .project-h2 {
+    font-size: clamp(1.55rem, 7.4vw, 2rem);
+  }
+
+  .body-copy {
+    font-size: 0.98rem;
+    line-height: 1.6;
   }
 }

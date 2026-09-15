@@ -192,14 +192,12 @@ const renderPageHeroTitle = (title: string) =>
       <React.Fragment key={`title-line-${lineIndex}`}>
         {lineIndex > 0 && <br />}
         {words.map((word, wordIndex) => (
-          <span
-            key={`${word}-${wordIndex}`}
-            data-page-hero-word="true"
-            className="inline-block"
-          >
-            {word}
-            {wordIndex < words.length - 1 ? "\u00A0" : ""}
-          </span>
+          <React.Fragment key={`${word}-${wordIndex}`}>
+            <span data-page-hero-word="true">
+              {word}
+            </span>
+            {wordIndex < words.length - 1 ? " " : ""}
+          </React.Fragment>
         ))}
       </React.Fragment>
     );
@@ -269,7 +267,7 @@ const PageHero = ({
     <section className="w-full bg-white">
       <div className="relative max-w-full">
         <motion.div
-          className="shape-section relative flex min-h-[520px] flex-col items-center overflow-hidden px-4 pb-28 pt-34 text-black sm:min-h-[600px] sm:px-8 sm:pb-32 sm:pt-28 md:px-10 md:pb-36 lg:min-h-[550px] lg:px-14 lg:pb-40 lg:pt-45"
+          className="shape-section relative flex min-h-[520px] flex-col items-center overflow-hidden px-4 pb-20 pt-24 text-black sm:min-h-[600px] sm:px-8 sm:pb-32 sm:pt-28 md:px-10 md:pb-36 lg:min-h-[550px] lg:px-14 lg:pb-40 lg:pt-45"
           variants={heroContainerVariants}
           initial="hidden"
           animate="visible"
@@ -303,7 +301,7 @@ const PageHero = ({
           <motion.h1
             ref={headingRef}
             variants={heroItemVariants}
-            className="font-jakarta relative isolate z-10 mx-auto mt-5 max-w-[1040px] whitespace-pre-line text-center text-[1.5rem] font-medium uppercase leading-[0.95] [word-spacing:0.5rem] tracking-[-0.05em] text-black sm:text-[2.5rem] sm:leading-[1.02] sm:tracking-[-0.04em] xl:max-w-[1200px] xl:text-[3.35rem] 2xl:text-[4.05rem]"
+            className="font-jakarta relative isolate z-10 mx-auto mt-5 w-full max-w-[1040px] whitespace-pre-line px-3 text-center text-[clamp(1.5rem,7.5vw,2rem)] font-medium uppercase leading-[1.02] [word-spacing:0.08em] tracking-[-0.045em] text-black sm:px-0 sm:text-[2.5rem] sm:leading-[1.02] sm:tracking-[-0.04em] sm:[word-spacing:normal] xl:max-w-[1200px] xl:text-[3.35rem] 2xl:text-[4.05rem]"
           >
             <motion.div
               variants={heroGlowVariants}
@@ -324,14 +322,14 @@ const PageHero = ({
           {descriptionIsText ? (
             <motion.p
               variants={heroItemVariants}
-              className="font-jakarta relative z-10 mx-auto mt-4 max-w-[1200px] whitespace-pre-line text-center text-base leading-[1.7] [word-spacing:0.3rem] text-[#777777] sm:text-lg md:leading-[1.65]"
+              className="font-jakarta relative z-10 mx-auto mt-4 w-full max-w-[1200px] whitespace-pre-line px-3 text-center text-base leading-[1.6] [word-spacing:normal] text-[#777777] sm:px-0 sm:text-lg sm:leading-[1.65]"
             >
               {description}
             </motion.p>
           ) : (
             <motion.div
               variants={heroItemVariants}
-              className="font-jakarta relative z-10 mx-auto mt-4 max-w-[1200px] text-center text-base leading-[1.7] [word-spacing:0.3rem] text-[#777777] sm:text-lg md:leading-[1.65]"
+              className="font-jakarta relative z-10 mx-auto mt-4 w-full max-w-[1200px] px-3 text-center text-base leading-[1.6] [word-spacing:normal] text-[#777777] [&_b]:text-base [&_b]:leading-[1.6] sm:px-0 sm:text-lg sm:leading-[1.65] sm:[&_b]:text-lg sm:[&_b]:leading-[1.65]"
             >
               {description}
             </motion.div>

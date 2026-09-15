@@ -10,7 +10,7 @@ export type WhyChooseReason = {
 };
 
 export type WhyChooseProps = {
-  badgeText: string;
+  badgeText?: string;
   title: string;
   description?: string;
   reasons: WhyChooseReason[];
@@ -86,8 +86,10 @@ const WhyChoose = ({
   description,
   reasons,
 }: WhyChooseProps) => {
+  const normalizedBadgeText = badgeText?.trim() ?? "";
+
   return (
-    <section className="relative overflow-hidden bg-white px-4 py-12 sm:px-6 lg:px-8 xl:px-10">
+    <section className="relative overflow-hidden bg-white px-4 py-10 sm:px-6 lg:px-8 xl:px-10">
       <motion.div
         initial={{ opacity: 0, x: -42, y: -18 }}
         whileInView={{ opacity: 1, x: 0, y: 0 }}
@@ -139,7 +141,7 @@ const WhyChoose = ({
       </motion.div>
 
       <motion.div
-        className="relative z-10 mx-auto grid w-full max-w-[1540px] gap-8 lg:grid-cols-[540px_minmax(0,1fr)] lg:items-start lg:gap-0 xl:grid-cols-[620px_minmax(0,1fr)] xl:gap-1"
+        className="relative z-10 mx-auto grid w-full max-w-[1540px] gap-2 lg:grid-cols-[540px_minmax(0,1fr)] lg:items-start lg:gap-0 xl:grid-cols-[620px_minmax(0,1fr)] xl:gap-1"
         variants={sectionVariants}
         initial="hidden"
         whileInView="visible"
@@ -149,16 +151,18 @@ const WhyChoose = ({
           variants={introVariants}
           className="max-w-[360px] sm:max-w-[730px] lg:max-w-[540px] lg:pt-7 xl:max-w-[620px] xl:pt-9"
         >
-          <motion.div
-            variants={revealItemVariants}
-            className="mb-5 flex w-fit items-center justify-center rounded-[8px] px-4 py-2 text-sm text-[#4E4741] sm:px-5 sm:text-base"
-            style={{
-              background:
-                "linear-gradient(90deg, rgba(178, 64, 2, 0.13) 0%, rgba(178, 64, 2, 0.00) 79.96%)",
-            }}
-          >
-            <TextFluxUnveil text={badgeText} />
-          </motion.div>
+          {normalizedBadgeText ? (
+            <motion.div
+              variants={revealItemVariants}
+              className="mb-5 flex w-fit items-center justify-center rounded-[8px] px-4 py-2 text-sm text-[#4E4741] sm:px-5 sm:text-base"
+              style={{
+                background:
+                  "linear-gradient(90deg, rgba(178, 64, 2, 0.13) 0%, rgba(178, 64, 2, 0.00) 79.96%)",
+              }}
+            >
+              <TextFluxUnveil text={normalizedBadgeText} />
+            </motion.div>
+          ) : null}
 
           <motion.h2
             variants={revealItemVariants}
@@ -178,7 +182,7 @@ const WhyChoose = ({
           variants={reasonsListVariants}
           className="relative lg:pt-7 xl:pt-10"
         >
-          <div className="rounded-[22px] px-5 py-6 sm:px-6 sm:py-8 lg:px-2 lg:py-8 xl:px-3 xl:py-10">
+          <div className="rounded-[22px] px-5 py-0 sm:px-6 sm:py-8 lg:px-2 lg:py-8 xl:px-3 xl:py-10">
             {reasons.map((reason, index) => (
               <motion.div
                 key={`${reason.title}-${index}`}
@@ -187,7 +191,7 @@ const WhyChoose = ({
                   x: 4,
                   transition: { duration: 0.2, ease: "easeOut" },
                 }}
-                className={`grid grid-cols-[12px_minmax(0,1fr)] gap-4 py-5 sm:gap-5 sm:py-6 lg:grid-cols-[18px_minmax(0,1fr)] lg:gap-6 ${
+                className={`grid grid-cols-[12px_minmax(0,1fr)] gap-4 py-2 sm:gap-5 sm:py-6 lg:grid-cols-[18px_minmax(0,1fr)] lg:gap-6 ${
                   index !== reasons.length - 1
                     ? "border-b border-[#EEE6E0]"
                     : ""
