@@ -671,7 +671,7 @@ const BooksGrid = () => {
         variants={sectionVariants}
         initial="hidden"
         whileInView="visible"
-        viewport={{ once: true, amount: 0.14 }}
+        viewport={{ once: true, amount: "some" }}
       >
         <motion.div
           className="mx-auto max-w-[1020px] text-center"
