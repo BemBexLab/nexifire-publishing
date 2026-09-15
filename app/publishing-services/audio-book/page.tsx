@@ -185,7 +185,7 @@ const page = () => {
           { label: "Distribution to 20+ platforms simultaneously" },
           { label: "100% royalties to author, no commission" },
         ]}
-        imageSrc="/Rectangle 23830 (6).png"
+        imageSrc="/Rectangle 23830 (8).png"
         imageAlt="Complete publishing solutions"
         iconSrc="/Mask group.svg"
       />
