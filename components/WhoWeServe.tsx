@@ -122,10 +122,10 @@ const chipVariants: Variants = {
 
 const parseStatValue = (value: string) => {
   const trimmedValue = value.trim();
-  const numericPortion = trimmedValue.match(/[\d.]+/)?.[0] ?? "0";
-  const numberValue = Number.parseFloat(numericPortion);
+  const numericPortion = trimmedValue.match(/[\d,]+(?:\.\d+)?/)?.[0] ?? "0";
+  const numberValue = Number.parseFloat(numericPortion.replace(/,/g, ""));
   const hasK = trimmedValue.toUpperCase().includes("K");
-  const suffix = trimmedValue.replace(/[\d.\s]/g, "");
+  const suffix = trimmedValue.replace(/[\d,.\s]/g, "");
 
   return {
     numericValue: Number.isFinite(numberValue) ? numberValue : 0,
@@ -160,13 +160,13 @@ const AnimatedStatValue = ({ value }: { value: string }) => {
   const formattedValue = hasK
     ? `${Math.round(displayValue)}K`
     : Number.isInteger(numericValue)
-      ? `${Math.round(displayValue)}`
+      ? Math.round(displayValue).toLocaleString("en-US")
       : `${displayValue.toFixed(1).replace(/\.0$/, "")}`;
 
   return (
     <div
       ref={ref}
-      className="bg-[linear-gradient(90deg,#282828_0%,#8C8C8C_100%)] bg-clip-text text-6xl font-medium leading-none tracking-[-0.06em] text-transparent sm:text-7xl"
+      className="min-w-0 whitespace-nowrap bg-[linear-gradient(90deg,#282828_0%,#8C8C8C_100%)] bg-clip-text text-[clamp(2.25rem,12vw,3.75rem)] font-medium leading-none tracking-[-0.06em] text-transparent sm:text-7xl"
     >
       {formattedValue}
       {!hasK && suffix}
@@ -209,7 +209,7 @@ const WhoWeServe = ({
     y: -4,
     transition: { duration: 0.22, ease: "easeOut" },
   }}
-  className={`rounded-[16px] border px-3 py-5 shadow-[0_8px_24px_rgba(44,44,44,0.08)] sm:rounded-[22px] sm:px-7 sm:py-8 ${
+  className={`min-w-0 rounded-[16px] border px-3 py-5 shadow-[0_8px_24px_rgba(44,44,44,0.08)] sm:rounded-[22px] sm:px-7 sm:py-8 ${
     stat.highlighted
       ? "border-[#F3E4D7] bg-[linear-gradient(180deg,#FFF9F5_0%,#FFF2E8_100%)]"
       : "border-[#EEE8E1] bg-white"
