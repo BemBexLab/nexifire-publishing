@@ -14,6 +14,7 @@ export type WhyChooseProps = {
   title: string;
   description?: string;
   reasons: WhyChooseReason[];
+  sectionClassName?: string;
 };
 
 const chooseEase = [0.22, 1, 0.36, 1] as const;
@@ -85,11 +86,14 @@ const WhyChoose = ({
   title,
   description,
   reasons,
+  sectionClassName,
 }: WhyChooseProps) => {
   const normalizedBadgeText = badgeText?.trim() ?? "";
 
   return (
-    <section className="relative overflow-hidden bg-white px-4 py-10 sm:px-6 lg:px-8 xl:px-10">
+    <section
+      className={`relative overflow-hidden bg-white px-4 py-10 sm:px-6 lg:px-8 xl:px-10 ${sectionClassName ?? ""}`}
+    >
       <motion.div
         initial={{ opacity: 0, x: -42, y: -18 }}
         whileInView={{ opacity: 1, x: 0, y: 0 }}

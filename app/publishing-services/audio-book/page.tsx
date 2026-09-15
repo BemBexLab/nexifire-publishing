@@ -92,6 +92,7 @@ const page = () => {
       </div>
       <WhyItMatters />
       <WhyChoose
+        sectionClassName="pt-0 lg:pt-10"
         badgeText=""
         title="Audiobook Editing & Post-Production"
         description="A lot of authors, especially author-narrators, get the recording done and then hit a wall with everything after. That's the part we specialize in."

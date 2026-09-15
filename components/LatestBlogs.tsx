@@ -76,7 +76,7 @@ const LatestBlogs = () => {
               -webkit-overflow-scrolling: touch;
               scrollbar-width: none;
               -ms-overflow-style: none;
-              touch-action: pan-x;
+              touch-action: pan-x pan-y;
             }
 
             .latest-blogs-scroll-view::-webkit-scrollbar {

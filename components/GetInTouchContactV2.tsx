@@ -52,10 +52,10 @@ const ContactAccentShape = () => (
 );
 
 const socialLinks = [
-  { id: "facebook", icon: <FaFacebookF className="size-5" />, href: "#" },
-  { id: "instagram", icon: <FaInstagram className="size-5" />, href: "#" },
+  { id: "facebook", icon: <FaFacebookF className="size-5" />, href: "https://www.facebook.com/NexifirePublishing05" },
+  { id: "instagram", icon: <FaInstagram className="size-5" />, href: "https://www.instagram.com/nexifirepublishing/" },
   // { id: "twitter", icon: <FaTwitter className="size-5" />, href: "#" },
-  { id: "linkedin", icon: <FaLinkedinIn className="size-5" />, href: "#" },
+  // { id: "linkedin", icon: <FaLinkedinIn className="size-5" />, href: "#" },
 ];
 
 const infoCards = [

@@ -63,10 +63,10 @@ const defaultFooterData: FooterData = {
   email: { label: "contact@nexifirepublishing.com", href: "mailto:contact@nexifirepublishing.com" },
   location: { label: "1221 Brickell Ave, Miami, FL 33131, United States", href: "" },
   socialLinks: [
-    { label: "Facebook", href: "#", icon: "facebook" },
-    { label: "Instagram", href: "#", icon: "instagram" },
+    { label: "Facebook", href: "https://www.facebook.com/NexifirePublishing05", icon: "facebook" },
+    { label: "Instagram", href: "https://www.instagram.com/nexifirepublishing/", icon: "instagram" },
     // { label: "Twitter", href: "#", icon: "twitter" },
-    { label: "LinkedIn", href: "#", icon: "linkedin" },
+    // { label: "LinkedIn", href: "#", icon: "linkedin" },
   ],
   copyrightText: "© 2026 NexiFire Publishing All Rights Reserved.",
   privacyPolicy: { label: "Privacy Policy", href: "/privacy-policy" },
