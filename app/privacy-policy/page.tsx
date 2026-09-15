@@ -13,10 +13,10 @@ const page = () => {
     <section className="overflow-x-hidden">
       <PageHero eyebrow="Nexifire Publishing" title="Privacy Policy" />
       <main className="relative isolate overflow-hidden bg-white px-4 py-10 sm:px-6 lg:px-8 lg:py-24">
-        <div
+        {/* <div
           aria-hidden="true"
           className="pointer-events-none absolute -right-32 top-[-120px] -z-10 h-[420px] w-[420px] rounded-full bg-[#ff5b01]/10 blur-3xl"
-        />
+        /> */}
         <div
           aria-hidden="true"
           className="pointer-events-none absolute -bottom-40 -left-32 -z-10 h-[460px] w-[460px] rounded-full bg-[#b24002]/[0.07] blur-3xl"

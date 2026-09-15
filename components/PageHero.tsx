@@ -93,7 +93,7 @@ const defaultLogos: Logo[] = [
 const defaultEyebrow = "";
 const defaultTitle = "Default";
 const defaultDescription =
-  "This is Default Text Fix the Hero Section";
+  "";
 const defaultButtonLabel = "Start Your Publishing Journey";
 const defaultButtonHref = "/contact";
 const heroEase = [0.22, 1, 0.36, 1] as const;
@@ -218,7 +218,8 @@ const PageHero = ({
     typeof description === "string" || typeof description === "number";
   const hasTextDescription =
     descriptionIsText && String(description).trim().length > 0;
-  const isCompactHero = !hasEyebrow && descriptionIsText && !hasTextDescription;
+  const hasDescription = hasTextDescription || (!descriptionIsText && Boolean(description));
+  const isCompactHero = !hasDescription;
   const marqueeLogos = [...logos, ...logos, ...logos, ...logos];
   const headingRef = React.useRef<HTMLHeadingElement>(null);
   const [lastLineWidth, setLastLineWidth] = React.useState<number | null>(null);
@@ -272,7 +273,7 @@ const PageHero = ({
         <motion.div
           className={`shape-section relative flex flex-col items-center overflow-hidden px-4 text-black sm:px-8 md:px-10 lg:min-h-[550px] lg:px-14 lg:pb-40 lg:pt-45 ${
             isCompactHero
-              ? "min-h-[300px] pb-12 pt-20 sm:min-h-[380px] sm:pb-20 sm:pt-24 md:min-h-[420px] md:pb-24"
+              ? "min-h-[300px] pb-20 pt-20 sm:min-h-[380px] sm:pb-24 sm:pt-24 md:min-h-[420px] md:pb-28"
               : "min-h-[520px] pb-20 pt-24 sm:min-h-[600px] sm:pb-32 sm:pt-28 md:pb-36"
           }`}
           variants={heroContainerVariants}

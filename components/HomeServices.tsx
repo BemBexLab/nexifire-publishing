@@ -451,7 +451,7 @@ const HomeServices = () => {
       <style jsx global>{`
         .services-scroll-view {
           -webkit-overflow-scrolling: touch;
-          touch-action: pan-x;
+          touch-action: pan-x pan-y;
         }
 
         @media (max-width: 639px) {
@@ -464,6 +464,7 @@ const HomeServices = () => {
             max-height: 92px;
             overflow-y: auto;
             padding-right: 0.35rem;
+            touch-action: pan-y;
             scrollbar-width: thin;
             scrollbar-color: rgba(178, 64, 2, 0.68) rgba(178, 64, 2, 0.12);
           }
