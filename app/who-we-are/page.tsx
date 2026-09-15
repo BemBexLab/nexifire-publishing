@@ -44,7 +44,7 @@ const page = () => {
       <WhoWeServe
         {...{
           badgeText: "",
-          title: "Real Numbers, Real Experience",
+          title: "Who We Serve",
           description:
             "We proudly work with authors across a wide range of genres and backgrounds, including:",
           stats: [
