@@ -102,7 +102,7 @@ const infoCards = [
   {
     id: "address",
     label: "1221 Brickell Ave,Miami, FL 33131, United States",
-    link: "https://maps.app.goo.gl/mibAgwMcMGF8A8ig7",
+    link: "",
     highlighted: false,
     icon: (
       <svg
