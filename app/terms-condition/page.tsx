@@ -289,7 +289,7 @@ const page = () => {
                 <p>Questions about these Terms? Reach out:</p>
                 <div className="space-y-2">
                   <p>Email: contact@nexifirepublishing.com</p>
-                  <p>Number: 470 205 2227</p>
+                  <p>Number: (786) 652-3127</p>
                   <p>
                     Address: USA Office: 1221 Brickell Ave, Miami, FL 33131,
                     United States

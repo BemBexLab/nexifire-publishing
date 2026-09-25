@@ -626,7 +626,7 @@ const Portfolio = () => {
                         src={item.imageSrc}
                         alt={item.title}
                         fill
-                        sizes="(max-width: 639px) 216px, (max-width: 1023px) 235px, 253px"
+                        sizes="(max-width: 639px) 170px, (max-width: 1023px) 200px, 253px"
                         className="rounded-[4px] object-contain"
                       />
                     </div>
@@ -677,16 +677,16 @@ const Portfolio = () => {
 
       <style jsx>{`
         .portfolio-carousel-track {
-          --portfolio-card-width: 220px;
-          --portfolio-gap: 5rem;
+          --portfolio-card-width: 170px;
+          --portfolio-gap: 2.5rem;
           gap: var(--portfolio-gap);
           animation: portfolio-marquee var(--portfolio-duration) linear infinite;
         }
 
         @media (min-width: 640px) {
           .portfolio-carousel-track {
-            --portfolio-card-width: 240px;
-            --portfolio-gap: 5.5rem;
+            --portfolio-card-width: 200px;
+            --portfolio-gap: 4rem;
           }
         }
 

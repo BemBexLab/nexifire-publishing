@@ -190,8 +190,8 @@ const contactItems: GetInTouchContactItem[] = [
   {
     id: "phone-us",
     kind: "phone",
-    label: "+1 (470) 205 2227",
-    href: "tel:+14702052227",
+    label: "(786) 652-3127",
+    href: "tel:+17866523127",
   },
   {
     id: "email",

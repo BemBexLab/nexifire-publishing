@@ -61,8 +61,8 @@ const socialLinks = [
 const infoCards = [
   {
     id: "phone",
-    label: "+1 (470) 205 2227",
-    link: "tel:+14702052227",
+    label: "(786) 652-3127",
+    link: "tel:+17866523127",
     highlighted: false,
     icon: (
       <svg
