@@ -2,7 +2,7 @@
 
 import Image from "next/image";
 import { motion, Variants } from "motion/react";
-import booksDisplay from "../public/196ebd2f-51ba-42c8-926d-bed044c542a7 1.png";
+import booksDisplay from "../public/196ebd2f-51ba-42c8-926d-bed044c542a7 1.webp";
 import TextFluxUnveil from "./TextFluxUnveil";
 
 const sectionContainerVariants: Variants = {
@@ -112,10 +112,8 @@ export default function BooksSection() {
           >
             <Image
               src={booksDisplay}
-              // src="/196ebd2f-51ba-42c8-926d-bed044c542a7 1.png"
               alt="Books published by NexiFire Publishing"
               fill
-              placeholder="blur"
               sizes="(max-width: 639px) 100vw, (max-width: 1023px) 88vw, (max-width: 1279px) 54vw, 58vw"
               className="object-contain object-center lg:object-left"
               priority

@@ -44,9 +44,9 @@ const page = () => {
             </p>
           </div>
         }
-        imageSrc="/Rectangle 23830 (3).webp"
+        imageSrc="/image 66.webp"
         imageAlt="Complete publishing solutions"
-        iconSrc="/Mask group.svg"
+        iconSrc="/Mask group.webp"
       />
       <PublishYourBook
         eyebrow="Publish With NexiFire"

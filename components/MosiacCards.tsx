@@ -5,7 +5,7 @@ import Image from "next/image";
 import React from "react";
 import TextFluxUnveil from "./TextFluxUnveil";
 
-const checkIcon = "/Mask group.svg";
+const checkIcon = "/Mask group.webp";
 
 const writingThatReflectsYou = [
   "Your story, captured in your voice.",

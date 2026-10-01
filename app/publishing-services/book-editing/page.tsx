@@ -99,7 +99,7 @@ const page = () => {
             </ul>
           </>
         }
-        imageSrc="/0eee94f7-4643-4e46-8b95-cc9232497a79 1 (1).png"
+        imageSrc="/0eee94f7-4643-4e46-8b95-cc9232497a79 1 (1).webp"
       />
       <div className="bg-[#fffaf6] py-10 sm:py-16 md:py-20 lg:py-24">
         <OurProcess
@@ -178,9 +178,9 @@ const page = () => {
           { label: "Guaranteed delivery by an agreed deadline" },
           { label: "Transparent, flat-rate pricing" },
         ]}
-        imageSrc="/Rectangle 23830 (3).png"
+        imageSrc="/Rectangle 23830123.webp"
         imageAlt="Complete Editing solutions"
-        iconSrc="/Mask group.svg"
+        iconSrc="/Mask group.webp"
       />
       <div className="bg-[#FDF7F4]">
         <WhoWeServe

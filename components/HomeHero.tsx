@@ -13,7 +13,7 @@ const heroDescription =
 
 const heroBooks = [
   {
-    src: "/books/Stephen 2.png",
+    src: "/book images/biography/1.png",
     alt: "FreshPathsUnfolding",
     width: 188,
     className:
@@ -22,7 +22,7 @@ const heroBooks = [
       "mb-[-2px] sm:mb-[-8px] md:mb-[-10px] lg:mb-[-10px] xl:mb-[-18px] 2xl:mb-[-12px]",
   },
   {
-    src: "/books/Stephen 3.png",
+    src: "/book images/childern book/1.png",
     alt: "The Book of Unfolding Integration",
     width: 208,
     className:
@@ -31,7 +31,7 @@ const heroBooks = [
       "mb-[8px] sm:mb-[24px] md:mb-[34px] lg:mb-[36px] xl:mb-[22px] 2xl:mb-[50px]",
   },
   {
-    src: "/books/Stephen 4.png",
+    src: "/book images/biography/3.png",
     alt: "The Labyrinth",
     width: 220,
     className:
@@ -40,7 +40,7 @@ const heroBooks = [
       "mb-[16px] sm:mb-[42px] md:mb-[66px] lg:mb-[74px] xl:mb-[46px] 2xl:mb-[100px]",
   },
   {
-    src: "/books/Stephen 5.png",
+    src: "/book images/biography/4.png",
     alt: "The Bee's Colony",
     width: 208,
     className:
@@ -49,7 +49,7 @@ const heroBooks = [
       "mb-[8px] sm:mb-[24px] md:mb-[34px] lg:mb-[36px] xl:mb-[22px] 2xl:mb-[50px]",
   },
   {
-    src: "/books/Stephen 6.png",
+    src: "/book images/biography/5.png",
     alt: "The Lottery Killer",
     width: 188,
     className:
@@ -65,8 +65,6 @@ const heroLogos = [
   { src: "/clients/logo03.webp", alt: "Client logo 3" },
   { src: "/clients/logo04.webp", alt: "Client logo 4" },
   { src: "/clients/logo05.webp", alt: "Client logo 5" },
-  // { src: "/clients/logo06.webp", alt: "Client logo 6" },
-  // { src: "/clients/logo07.webp", alt: "Client logo 7" },
   { src: "/clients/logo08.webp", alt: "Client logo 8" },
   { src: "/clients/logo09.webp", alt: "Client logo 9" },
   { src: "/clients/logo10.webp", alt: "Client logo 10" },

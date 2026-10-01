@@ -187,7 +187,7 @@ const page = () => {
         ]}
         imageSrc="/Rectangle 23830 (8).png"
         imageAlt="Complete publishing solutions"
-        iconSrc="/Mask group.svg"
+        iconSrc="/Mask group.webp"
       />
       <CustomSection />
       <FAQs

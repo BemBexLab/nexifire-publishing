@@ -111,9 +111,9 @@ const WhatsIncluded = ({
   iconAlt = "",
 }: WhatsIncludedProps) => {
   return (
-    <section className="bg-white px-4 py-10 sm:px-6 lg:px-8 lg:py-24">
+    <section className="bg-white px-4 py-8 sm:px-6 lg:px-10">
       <motion.div
-        className="mx-auto grid w-full max-w-[1460px] items-stretch gap-6 xl:grid-cols-2 xl:gap-12 2xl:gap-16"
+        className="mx-auto grid w-full max-w-[1450px] items-stretch gap-8 lg:min-h-[28rem] lg:grid-cols-[minmax(0,1fr)_minmax(0,1fr)] lg:gap-12 xl:min-h-[30rem] xl:gap-16"
         variants={sectionVariants}
         initial="hidden"
         whileInView="visible"
@@ -121,7 +121,7 @@ const WhatsIncluded = ({
       >
         <motion.div
           variants={contentVariants}
-          className="w-full max-w-[680px] xl:flex xl:h-full xl:max-w-none xl:flex-col"
+          className="order-1 w-full max-w-[720px] lg:flex lg:max-w-none lg:flex-col lg:justify-center"
         >
           {badgeText ? (
             <motion.div
@@ -138,14 +138,14 @@ const WhatsIncluded = ({
 
           <motion.h2
             variants={revealItemVariants}
-            className="project-h2 max-w-[14ch] leading-[0.98] tracking-[-0.06em] sm:max-w-[16ch] lg:max-w-[18ch] xl:max-w-none"
+            className="project-h2 leading-[1.02]"
           >
             {title}
           </motion.h2>
-          <div className="mt-5 max-h-[50vh] overflow-y-auto pr-2 xl:min-h-0 xl:max-h-none xl:flex-1 [scrollbar-width:thin] [scrollbar-color:rgba(178,64,2,0.45)_transparent] [&::-webkit-scrollbar]:w-1 [&::-webkit-scrollbar-track]:bg-transparent [&::-webkit-scrollbar-thumb]:rounded-full [&::-webkit-scrollbar-thumb]:bg-[rgba(178,64,2,0.45)] scrollbar-none">
+          <div className="mt-4">
             <motion.div
               variants={revealItemVariants}
-              className="text-base font-light leading-[1.45] text-[#444444] sm:text-lg"
+              className="max-w-[700px] text-base font-light leading-[1.5] text-[#444444] sm:text-lg"
             >
               {description}
             </motion.div>
@@ -176,27 +176,30 @@ const WhatsIncluded = ({
           </div>
         </motion.div>
 
-        <motion.div variants={imageVariants} className="h-full w-full">
+        <motion.div
+          variants={imageVariants}
+          className="relative order-2 aspect-[1.55/1] w-full lg:self-center"
+        >
           <motion.div
             whileHover={{
               y: -4,
               transition: { duration: 0.22, ease: "easeOut" },
             }}
-            className="relative mx-auto h-full w-full max-w-none xl:ml-0 xl:mr-0"
+            className="relative h-full w-full"
           >
             <motion.div
               initial={{ opacity: 0, scale: 1.04 }}
               whileInView={{ opacity: 1, scale: 1 }}
               viewport={{ once: true, amount: 0.2 }}
               transition={{ duration: 0.9, ease: includedEase, delay: 0.1 }}
+              className="absolute inset-0"
             >
               <Image
                 src={imageSrc}
                 alt={imageAlt}
-                width={900}
-                height={520}
+                fill
                 sizes="(min-width: 1280px) 50vw, (min-width: 1024px) 50vw, 100vw"
-                className="h-full w-full max-h-none max-w-none object-contain"
+                className="object-contain"
                 loading="eager"
               />
             </motion.div>

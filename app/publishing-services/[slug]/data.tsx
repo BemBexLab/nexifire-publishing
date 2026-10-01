@@ -117,7 +117,7 @@ export const publishingServicePageData: Record<
         `Marketing built around your actual book, not a script we reuse. Publishing and marketing under one roof, so your marketing team already knows your metadata, your production, and your distribution setup instead of inheriting a mess from somewhere else. Transparent deliverables instead of vague promises about "visibility." And we're thinking about your author brand long-term, not just this one launch.
         
         Among book marketers in the USA, that combination, full publishing knowledge plus real marketing execution, is honestly not that common. Most marketing companies are working blind, without ever having touched your file, your ISBN, or your metadata.`,
-      imageSrc: "/image 69.png",
+      imageSrc: "/Group 427320879.webp",
     },
     process: {
       badgeText: "",
@@ -234,9 +234,9 @@ export const publishingServicePageData: Record<
         { label: "ARC Distribution & Early Reviews" },
         { label: "Book Launch Campaign Management" },
       ],
-      imageSrc: "/Rectangle 23830 (1).png",
+      imageSrc: "/Rectangle 23830 (1).webp",
       imageAlt: "Book marketing deliverables",
-      iconSrc: "/Mask group.svg",
+      iconSrc: "/Mask group.webp",
     },
     faqs: {
       badgeText: "FAQs",
@@ -363,7 +363,7 @@ export const publishingServicePageData: Record<
           </ul>
         </>
       ),
-      imageSrc: "/0eee94f7-4643-4e46-8b95-cc9232497a79 1 (2).png",
+      imageSrc: "/0eee94f7-4643-4e46-8b95-cc9232497a79 1 (1).webp",
     },
     process: {
       badgeText: "",
@@ -499,9 +499,9 @@ export const publishingServicePageData: Record<
         { label: "Fast revision turnaround" },
         { label: "Transparent, flat-rate pricing, no surprise add-ons" },
       ],
-      imageSrc: "/Rectangle 23830 (4).png",
+      imageSrc: "/Rectangle 23830.webp",
       imageAlt: "Book cover design deliverables",
-      iconSrc: "/Mask group.svg",
+      iconSrc: "/Mask group.webp",
     },
     faqs: {
       badgeText: "FAQs",

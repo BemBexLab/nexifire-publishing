@@ -99,19 +99,7 @@ export default function GlassyCursor() {
         } as CSSProperties
       }
     >
-      <svg
-        className="glassy-cursor__pointer"
-        viewBox="0 0 36 52"
-        xmlns="http://www.w3.org/2000/svg"
-      >
-        <path
-          d="M4.156 1.915C2.668 1.082 1 2.157 1 3.86v41.667c0 1.933 2.265 2.976 3.734 1.72l9.537-8.157c.73-.625 1.855-.402 2.281.453l4.645 9.332c.49.986 1.69 1.407 2.7.946l6.286-2.865c1.093-.498 1.575-1.792 1.071-2.883l-4.598-9.969c-.38-.823-.05-1.799.75-2.219l6.774-3.561c1.646-.866 1.695-3.201.083-4.135L4.156 1.915Z"
-          fill="#000000"
-          stroke="#ffffff"
-          strokeWidth="1.6"
-          strokeLinejoin="round"
-        />
-      </svg>
+      <span className="glassy-cursor__pointer" />
     </div>
   );
 }

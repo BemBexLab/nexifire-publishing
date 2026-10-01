@@ -84,9 +84,9 @@ const Introduction = ({
       : [];
 
   return (
-    <section className="bg-white px-4 py-8 sm:px-6 lg:px-8 xl:px-10">
+    <section className="bg-white px-4 py-8 sm:px-6 lg:px-10">
       <motion.div
-        className="mx-auto grid w-full max-w-[1760px] items-stretch gap-2 lg:grid-cols-2 lg:gap-12 xl:gap-16"
+        className="mx-auto grid w-full max-w-[1450px] items-stretch gap-8 lg:min-h-[28rem] lg:grid-cols-[minmax(0,1fr)_minmax(0,1fr)] lg:gap-12 xl:min-h-[30rem] xl:gap-16"
         variants={sectionVariants}
         initial="hidden"
         whileInView="visible"
@@ -94,32 +94,23 @@ const Introduction = ({
       >
         <motion.div
           variants={mediaVariants}
-          className="relative order-2 min-h-[280px] sm:min-h-[360px] lg:order-1 lg:min-h-[520px] lg:h-full"
+          className="relative order-2 aspect-[1.55/1] w-full lg:order-2 lg:self-center"
         >
-          <motion.div
-            initial={{ opacity: 0, scale: 0.82 }}
-            whileInView={{ opacity: 1, scale: 1 }}
-            viewport={{ once: true, amount: 0.2 }}
-            transition={{ duration: 0.9, ease: introEase, delay: 0.15 }}
-            className="absolute inset-x-[10%] bottom-[7%] h-[15%] rounded-[999px] bg-[radial-gradient(circle,rgba(91,44,11,0.32)_0%,rgba(91,44,11,0.14)_42%,rgba(91,44,11,0)_78%)] blur-[24px]"
-          />
-
-          <div className="relative mx-auto flex h-full w-full items-center justify-center">
+          <div className="relative h-full w-full">
             {imageSrc ? (
               <motion.div
                 initial={{ opacity: 0, y: 24, scale: 0.96 }}
                 whileInView={{ opacity: 1, y: 0, scale: 1 }}
                 viewport={{ once: true, amount: 0.2 }}
                 transition={{ duration: 0.86, ease: introEase, delay: 0.12 }}
-                className="h-full w-full"
+                className="absolute inset-0"
               >
                 <Image
                   src={imageSrc}
                   alt="Introduction visual"
-                  width={920}
-                  height={620}
+                  fill
                   sizes="(min-width: 1024px) 50vw, 100vw"
-                  className="h-full w-full max-h-none max-w-none object-contain"
+                  className="object-contain"
                 />
               </motion.div>
             ) : (
@@ -128,7 +119,7 @@ const Introduction = ({
                 whileInView={{ opacity: 1, y: 0, scale: 1 }}
                 viewport={{ once: true, amount: 0.2 }}
                 transition={{ duration: 0.86, ease: introEase, delay: 0.12 }}
-                className="flex h-[280px] w-full max-w-[920px] items-center justify-center rounded-[28px] border border-dashed border-[#d8cabb] bg-[linear-gradient(180deg,#fffdfb_0%,#f8f0ea_100%)] text-center text-sm tracking-[0.18em] text-[#b6a08d] uppercase sm:h-[360px] lg:h-[520px] xl:h-[620px]"
+                className="absolute inset-0 flex items-center justify-center rounded-[20px] border border-dashed border-[#d8cabb] bg-[linear-gradient(180deg,#fffdfb_0%,#f8f0ea_100%)] text-center text-sm tracking-[0.18em] text-[#b6a08d] uppercase"
               >
                 Add Introduction Image
               </motion.div>
@@ -138,7 +129,7 @@ const Introduction = ({
 
         <motion.div
           variants={contentVariants}
-          className="order-1 w-full max-w-[520px] lg:order-2 lg:max-w-none"
+          className="order-1 w-full max-w-[720px] lg:order-1 lg:flex lg:max-w-none lg:flex-col lg:justify-center"
         >
           {eyebrow ? (
             <motion.div
@@ -155,7 +146,7 @@ const Introduction = ({
 
           <motion.h2
             variants={itemVariants}
-            className={`project-h2 max-w-[500px] leading-[1.02] lg:max-w-[760px] xl:max-w-[860px] ${eyebrow ? "mt-5" : ""}`}
+            className={`project-h2 leading-[1.02] ${eyebrow ? "mt-5" : ""}`}
           >
             {title}
           </motion.h2>
@@ -165,8 +156,8 @@ const Introduction = ({
               <motion.p
                 key={`${part.slice(0, 40)}-${index}`}
                 variants={itemVariants}
-                className={`max-w-[520px] text-base leading-[1.7] text-[#777777] sm:text-lg lg:max-w-[760px] xl:max-w-[820px] ${
-                  index === 0 ? "mt-6" : "mt-5"
+                className={`max-w-[700px] text-base leading-[1.5] text-[#777777] sm:text-lg ${
+                  index === 0 ? "mt-4" : "mt-3"
                 }`}
               >
                 {part}
@@ -175,7 +166,7 @@ const Introduction = ({
           ) : (
             <motion.div
               variants={itemVariants}
-              className="mt-6 max-w-[520px] text-base leading-[1.7] text-[#777777] sm:text-lg lg:max-w-[760px] xl:max-w-[820px]"
+              className="mt-4 max-w-[700px] text-base leading-[1.5] text-[#777777] sm:text-lg"
             >
               {description}
             </motion.div>

@@ -24,31 +24,31 @@ export default function Home() {
         genres={[
           {
             title: "Fiction & Novels",
-            icon: "/Rectangle 23818.svg",
+            icon: "/Rectangle 23818.webp",
           },
           {
             title: "Christian & Faith-Based Books",
-            icon: "/Rectangle 23818 (1).svg",
+            icon: "/Rectangle 23818 (1).webp",
           },
           {
             title: "Memoir & Biography",
-            icon: "/Rectangle 23818 (2).svg",
+            icon: "/Rectangle 23818 (2).webp",
           },
           {
             title: "Self-Help & Personal Development",
-            icon: "/Rectangle 23818 (3).svg",
+            icon: "/Rectangle 23818 (3).webp",
           },
           {
             title: "Business & Leadership",
-            icon: "/Rectangle 23818 (4).svg",
+            icon: "/Rectangle 23818 (4).webp",
           },
           {
             title: "Children's Books & Illustrated Titles",
-            icon: "/Rectangle 23818 (5).svg",
+            icon: "/Rectangle 23818 (5).webp",
           },
           {
             title: "Academic & Educational Titles",
-            icon: "/Rectangle 23818 (1).svg",
+            icon: "/Rectangle 23818 (1).webp",
           },
         ]}
       />
