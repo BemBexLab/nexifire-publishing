@@ -13,7 +13,7 @@ const heroDescription =
 
 const heroBooks = [
   {
-    src: "/book images/biography/1.png",
+    src: "/book images/biography/1.webp",
     alt: "FreshPathsUnfolding",
     width: 188,
     className:
@@ -22,7 +22,7 @@ const heroBooks = [
       "mb-[-2px] sm:mb-[-8px] md:mb-[-10px] lg:mb-[-10px] xl:mb-[-18px] 2xl:mb-[-12px]",
   },
   {
-    src: "/book images/childern book/1.png",
+    src: "/book images/childern book/1.webp",
     alt: "The Book of Unfolding Integration",
     width: 208,
     className:
@@ -31,7 +31,7 @@ const heroBooks = [
       "mb-[8px] sm:mb-[24px] md:mb-[34px] lg:mb-[36px] xl:mb-[22px] 2xl:mb-[50px]",
   },
   {
-    src: "/book images/biography/3.png",
+    src: "/book images/biography/3.webp",
     alt: "The Labyrinth",
     width: 220,
     className:
@@ -40,7 +40,7 @@ const heroBooks = [
       "mb-[16px] sm:mb-[42px] md:mb-[66px] lg:mb-[74px] xl:mb-[46px] 2xl:mb-[100px]",
   },
   {
-    src: "/book images/biography/4.png",
+    src: "/book images/biography/4.webp",
     alt: "The Bee's Colony",
     width: 208,
     className:
@@ -49,7 +49,7 @@ const heroBooks = [
       "mb-[8px] sm:mb-[24px] md:mb-[34px] lg:mb-[36px] xl:mb-[22px] 2xl:mb-[50px]",
   },
   {
-    src: "/book images/biography/5.png",
+    src: "/book images/biography/5.webp",
     alt: "The Lottery Killer",
     width: 188,
     className:
@@ -145,12 +145,10 @@ const heroTextRevealVariants: Variants = {
   hidden: {
     opacity: 0,
     y: 34,
-    filter: "blur(16px)",
   },
   visible: {
     opacity: 1,
     y: 0,
-    filter: "blur(0px)",
     transition: {
       duration: 0.95,
       ease: [0.22, 1, 0.36, 1],
@@ -172,12 +170,10 @@ const heroWordRevealVariants: Variants = {
   hidden: {
     opacity: 0,
     y: 28,
-    filter: "blur(10px)",
   },
   visible: {
     opacity: 1,
     y: 0,
-    filter: "blur(0px)",
     transition: {
       duration: 0.65,
       ease: [0.22, 1, 0.36, 1],
@@ -205,7 +201,6 @@ const heroBooksFanVariants: Variants = {
       y: 120 - Math.abs(centerOffset) * 10,
       rotate: centerOffset * 7,
       scale: 0.76,
-      filter: "blur(10px)",
     };
   },
   visible: {
@@ -214,7 +209,6 @@ const heroBooksFanVariants: Variants = {
     y: 0,
     rotate: 0,
     scale: 1,
-    filter: "blur(0px)",
     transition: {
       duration: 0.9,
       ease: [0.22, 1, 0.36, 1],
@@ -345,7 +339,6 @@ const MobileBooksCarousel = () => {
                 fill
                 sizes="(max-width: 639px) 26vw, 0px"
                 className="object-cover"
-                priority
               />
             </div>
           </div>
@@ -489,10 +482,10 @@ const DesktopHero = () => {
           className="pointer-events-none absolute inset-x-0 bottom-[84px] z-10 hidden h-[13%] w-full sm:bottom-[-18px] sm:flex sm:h-[31%] md:bottom-[-24px] md:h-[32%] lg:bottom-[-30px] lg:h-[34%] xl:bottom-[-46px] xl:h-[38%] 2xl:bottom-[-88px] 2xl:h-[42%]"
         >
           <div className="flex h-full w-full items-end justify-center gap-[3px] px-2 sm:gap-0 sm:px-3 xl:px-4 2xl:px-10">
-            {heroBooks.map((book) => (
+            {heroBooks.map((book, index) => (
               <motion.div
                 key={book.src}
-                custom={heroBooks.findIndex((heroBook) => heroBook.src === book.src)}
+                custom={index}
                 variants={heroBooksFanVariants}
                 className={`${book.className} ${book.offsetClass}`}
               >
@@ -503,7 +496,6 @@ const DesktopHero = () => {
                   height={Math.round((book.width * 504) / 355)}
                   sizes="(max-width: 639px) 20vw, (min-width: 1536px) 22vw, (min-width: 1280px) 19vw, 0px"
                   className="h-auto w-full drop-shadow-[0_20px_36px_rgba(0,0,0,0.22)]"
-                  priority
                 />
               </motion.div>
             ))}

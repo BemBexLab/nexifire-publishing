@@ -32,13 +32,11 @@ const imageRevealVariants: Variants = {
     opacity: 0,
     x: -36,
     scale: 0.94,
-    filter: "blur(10px)",
   },
   visible: {
     opacity: 1,
     x: 0,
     scale: 1,
-    filter: "blur(0px)",
     transition: {
       duration: 0.95,
       ease: [0.22, 1, 0.36, 1],
@@ -60,13 +58,11 @@ const textRevealVariants: Variants = {
   hidden: {
     opacity: 0,
     y: 26,
-    filter: "blur(8px)",
     clipPath: "inset(0 0 100% 0)",
   },
   visible: {
     opacity: 1,
     y: 0,
-    filter: "blur(0px)",
     clipPath: "inset(0 0 0% 0)",
     transition: {
       duration: 0.82,
@@ -116,7 +112,6 @@ export default function BooksSection() {
               fill
               sizes="(max-width: 639px) 100vw, (max-width: 1023px) 88vw, (max-width: 1279px) 54vw, 58vw"
               className="object-contain object-center lg:object-left"
-              priority
             />
           </motion.div>
         </motion.div>

@@ -273,7 +273,6 @@ const OurStory = () => {
                 width={920}
                 height={680}
                 className="h-auto w-full object-contain"
-                priority
               />
             </motion.div>
           </motion.div>

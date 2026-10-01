@@ -104,12 +104,10 @@ const revealVariants: Variants = {
   hidden: {
     opacity: 0,
     y: 26,
-    filter: "blur(10px)",
   },
   visible: {
     opacity: 1,
     y: 0,
-    filter: "blur(0px)",
     transition: {
       duration: 0.72,
       ease: footerEase,
@@ -131,12 +129,10 @@ const linkColumnVariants: Variants = {
   hidden: {
     opacity: 0,
     x: 22,
-    filter: "blur(10px)",
   },
   visible: {
     opacity: 1,
     x: 0,
-    filter: "blur(0px)",
     transition: {
       duration: 0.65,
       ease: footerEase,

@@ -16,11 +16,10 @@ const sectionVariants: Variants = {
 };
 
 const itemVariants: Variants = {
-  hidden: { opacity: 0, y: 28, filter: "blur(10px)" },
+  hidden: { opacity: 0, y: 28 },
   visible: {
     opacity: 1,
     y: 0,
-    filter: "blur(0px)",
     transition: {
       duration: 0.75,
       ease: [0.22, 1, 0.36, 1],
@@ -32,12 +31,10 @@ const backgroundVariants: Variants = {
   hidden: {
     opacity: 0,
     scale: 1.06,
-    filter: "blur(10px)",
   },
   visible: {
     opacity: 0.9,
     scale: 1,
-    filter: "blur(0px)",
     transition: {
       duration: 1.2,
       ease: [0.22, 1, 0.36, 1],
@@ -59,13 +56,11 @@ const headingRevealVariants: Variants = {
   hidden: {
     opacity: 0,
     y: 30,
-    filter: "blur(12px)",
     clipPath: "inset(0 0 100% 0)",
   },
   visible: {
     opacity: 1,
     y: 0,
-    filter: "blur(0px)",
     clipPath: "inset(0 0 0% 0)",
     transition: {
       duration: 0.85,
@@ -91,7 +86,6 @@ const serviceCardVariants: Variants = {
     x: index % 2 === 0 ? -18 : 18,
     rotate: index % 2 === 0 ? -2.5 : 2.5,
     scale: 0.94,
-    filter: "blur(10px)",
   }),
   visible: {
     opacity: 1,
@@ -99,7 +93,6 @@ const serviceCardVariants: Variants = {
     x: 0,
     rotate: 0,
     scale: 1,
-    filter: "blur(0px)",
     transition: {
       duration: 0.82,
       ease: [0.22, 1, 0.36, 1],
@@ -134,13 +127,11 @@ const bannerVariants: Variants = {
     opacity: 0,
     y: 44,
     scale: 0.97,
-    filter: "blur(10px)",
   },
   visible: {
     opacity: 1,
     y: 0,
     scale: 1,
-    filter: "blur(0px)",
     transition: {
       duration: 0.95,
       ease: [0.22, 1, 0.36, 1],

@@ -288,7 +288,7 @@ const PageHero = ({
               src="/Rectangle 23820.webp"
               alt=""
               fill
-              priority
+              preload
               sizes="100vw"
               className="absolute inset-0 object-cover"
               aria-hidden="true"

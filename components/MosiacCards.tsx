@@ -82,12 +82,10 @@ const revealItemVariants: Variants = {
   hidden: {
     opacity: 0,
     y: 26,
-    filter: "blur(10px)",
   },
   visible: {
     opacity: 1,
     y: 0,
-    filter: "blur(0px)",
     transition: {
       duration: 0.72,
       ease: mosaicEase,

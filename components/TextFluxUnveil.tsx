@@ -35,11 +35,11 @@ export default function TextFluxUnveil({
       {chars.map((char, index) => (
         <motion.span
           key={`${char}-${index}`}
-          initial={{ opacity: 0, y: 6, filter: "blur(4px)" }}
+          initial={{ opacity: 0, y: 6 }}
           animate={
             enabled
-              ? { opacity: 1, y: 0, filter: "blur(0px)" }
-              : { opacity: 0, y: 6, filter: "blur(4px)" }
+              ? { opacity: 1, y: 0 }
+              : { opacity: 0, y: 6 }
           }
           transition={{
             duration: 0.35,

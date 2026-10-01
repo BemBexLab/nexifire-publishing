@@ -16,11 +16,10 @@ const containerVariants: Variants = {
 };
 
 const itemVariants: Variants = {
-  hidden: { opacity: 0, y: 22, filter: "blur(8px)" },
+  hidden: { opacity: 0, y: 22 },
   visible: {
     opacity: 1,
     y: 0,
-    filter: "blur(0px)",
     transition: {
       duration: 0.72,
       ease: [0.22, 1, 0.36, 1],
@@ -33,13 +32,11 @@ const backdropVariants: Variants = {
     opacity: 0,
     x: -36,
     scale: 1.05,
-    filter: "blur(10px)",
   },
   visible: {
     opacity: 0.7,
     x: 0,
     scale: 1,
-    filter: "blur(0px)",
     transition: {
       duration: 1.15,
       ease: [0.22, 1, 0.36, 1],
@@ -61,13 +58,11 @@ const textRevealVariants: Variants = {
   hidden: {
     opacity: 0,
     y: 28,
-    filter: "blur(10px)",
     clipPath: "inset(0 0 100% 0)",
   },
   visible: {
     opacity: 1,
     y: 0,
-    filter: "blur(0px)",
     clipPath: "inset(0 0 0% 0)",
     transition: {
       duration: 0.82,
@@ -91,13 +86,11 @@ const imageAccentVariants: Variants = {
     opacity: 0,
     scale: 0.72,
     rotate: -12,
-    filter: "blur(10px)",
   },
   visible: {
     opacity: 0.1,
     scale: 1,
     rotate: 0,
-    filter: "blur(0px)",
     transition: {
       duration: 0.9,
       ease: [0.22, 1, 0.36, 1],
@@ -112,7 +105,6 @@ const imageRevealVariants: Variants = {
     y: 24,
     scale: 0.95,
     rotate: 1.5,
-    filter: "blur(12px)",
   },
   visible: {
     opacity: 1,
@@ -120,7 +112,6 @@ const imageRevealVariants: Variants = {
     y: 0,
     scale: 1,
     rotate: 0,
-    filter: "blur(0px)",
     transition: {
       duration: 0.95,
       ease: [0.22, 1, 0.36, 1],
@@ -144,14 +135,12 @@ const statCardVariants: Variants = {
     y: 32,
     scale: 0.94,
     x: index % 2 === 0 ? -14 : 14,
-    filter: "blur(8px)",
   }),
   visible: {
     opacity: 1,
     y: 0,
     x: 0,
     scale: 1,
-    filter: "blur(0px)",
     transition: {
       duration: 0.72,
       ease: [0.22, 1, 0.36, 1],

@@ -44,12 +44,10 @@ const revealItemVariants: Variants = {
   hidden: {
     opacity: 0,
     y: 26,
-    filter: "blur(10px)",
   },
   visible: {
     opacity: 1,
     y: 0,
-    filter: "blur(0px)",
     transition: {
       duration: 0.72,
       ease: imageDescEase,
@@ -73,14 +71,12 @@ const imageWrapVariants: Variants = {
     x: 30,
     y: 18,
     scale: 0.98,
-    filter: "blur(12px)",
   },
   visible: {
     opacity: 1,
     x: 0,
     y: 0,
     scale: 1,
-    filter: "blur(0px)",
     transition: {
       duration: 0.84,
       ease: imageDescEase,

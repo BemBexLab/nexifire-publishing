@@ -89,13 +89,11 @@ const headingRevealVariants: Variants = {
   hidden: {
     opacity: 0,
     y: 30,
-    filter: "blur(10px)",
     clipPath: "inset(0 0 100% 0)",
   },
   visible: {
     opacity: 1,
     y: 0,
-    filter: "blur(0px)",
     clipPath: "inset(0 0 0% 0)",
     transition: {
       duration: 0.82,
@@ -136,7 +134,6 @@ const stepCardVariants: Variants = {
     x: index % 2 === 0 ? -20 : 20,
     rotate: index % 2 === 0 ? -1.8 : 1.8,
     scale: 0.95,
-    filter: "blur(10px)",
   }),
   visible: {
     opacity: 1,
@@ -144,7 +141,6 @@ const stepCardVariants: Variants = {
     x: 0,
     rotate: 0,
     scale: 1,
-    filter: "blur(0px)",
     transition: {
       duration: 0.82,
       ease: [0.22, 1, 0.36, 1],

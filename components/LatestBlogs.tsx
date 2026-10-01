@@ -16,8 +16,8 @@ const LatestBlogs = () => {
         <div className="mx-auto flex w-full max-w-[1180px] flex-col px-4 sm:px-6 lg:px-8">
           <m.h2
             className="project-h2 pb-8 text-center leading-tight sm:pb-10"
-            initial={{ opacity: 0, y: 20, filter: "blur(8px)" }}
-            whileInView={{ opacity: 1, y: 0, filter: "blur(0px)" }}
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, amount: 0.6 }}
             transition={{ duration: 0.55, ease: "easeOut" }}
           >

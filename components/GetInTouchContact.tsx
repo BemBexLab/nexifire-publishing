@@ -78,12 +78,10 @@ const revealItemVariants: Variants = {
   hidden: {
     opacity: 0,
     y: 28,
-    filter: "blur(12px)",
   },
   visible: {
     opacity: 1,
     y: 0,
-    filter: "blur(0px)",
     transition: {
       duration: 0.75,
       ease: sectionEase,
@@ -121,13 +119,11 @@ const formWrapVariants: Variants = {
     opacity: 0,
     x: 34,
     y: 18,
-    filter: "blur(14px)",
   },
   visible: {
     opacity: 1,
     x: 0,
     y: 0,
-    filter: "blur(0px)",
     transition: {
       duration: 0.85,
       ease: sectionEase,

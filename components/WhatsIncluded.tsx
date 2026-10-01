@@ -44,12 +44,10 @@ const revealItemVariants: Variants = {
   hidden: {
     opacity: 0,
     y: 26,
-    filter: "blur(10px)",
   },
   visible: {
     opacity: 1,
     y: 0,
-    filter: "blur(0px)",
     transition: {
       duration: 0.72,
       ease: includedEase,
@@ -73,14 +71,12 @@ const imageVariants: Variants = {
     x: 34,
     y: 18,
     scale: 0.985,
-    filter: "blur(12px)",
   },
   visible: {
     opacity: 1,
     x: 0,
     y: 0,
     scale: 1,
-    filter: "blur(0px)",
     transition: {
       duration: 0.84,
       ease: includedEase,
@@ -200,7 +196,6 @@ const WhatsIncluded = ({
                 fill
                 sizes="(min-width: 1280px) 50vw, (min-width: 1024px) 50vw, 100vw"
                 className="object-contain"
-                loading="eager"
               />
             </motion.div>
           </motion.div>

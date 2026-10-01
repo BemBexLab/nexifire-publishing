@@ -131,7 +131,7 @@ export default function NavBar() {
               width={240}
               height={64}
               className="h-auto w-[100px] sm:w-[130px] md:w-[176px] lg:w-[190px] xl:w-[200px]"
-              priority
+              preload
             />
           </Link>
 
