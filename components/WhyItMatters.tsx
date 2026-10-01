@@ -48,7 +48,7 @@ const WhyItMatters = () => {
 
               {/* This asset should be the combined player and earphones image */}
               <img
-                src="/Rectangle 23834.png"
+                src="/Rectangle 23834.svg"
                 alt="3D Audiobook player with earphones"
                 className="relative z-10 top-10 h-auto w-full object-contain transform transition-transform duration-700 hover:rotate-0 lg:-rotate-6"
               />
