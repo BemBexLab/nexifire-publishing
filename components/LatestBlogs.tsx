@@ -51,17 +51,17 @@ const LatestBlogs = () => {
                 </div>
 
                 <div className="px-4 pb-5 pt-4 sm:px-5">
-                  <h3 className="min-h-[56px] text-base font-normal leading-[1.45] text-[#444444] sm:min-h-[64px] sm:text-lg">
+                  <h3 className="h-[2.9em] line-clamp-2 text-base font-normal leading-[1.45] text-[#444444] sm:text-lg">
                     {blog.cardTitle ?? blog.title}
                   </h3>
 
-                  <p className="mt-2 text-base leading-[1.65] text-[#777777]">
+                  <p className="mt-2 line-clamp-3 text-base leading-[1.65] text-[#777777]">
                     {blog.description}
                   </p>
 
                   <Link
                     href={`/blogs/${blog.slug}`}
-                    className="mt-4 inline-flex items-center gap-2 border-b border-[#f26a21] pb-[1px] text-base font-normal leading-loose text-[#B24002]"
+                    className="mt-4 inline-flex items-center gap-2 border-b border-[#f26a21] pb-[1px] text-base font-normal leading-loose text-[#B24002] relative bottom-0 left-0 transition-all duration-200 hover:translate-x-[2px] hover:gap-3"
                   >
                     Learn More
                     <span className="text-base leading-none"><SlArrowRight size={13} /></span>

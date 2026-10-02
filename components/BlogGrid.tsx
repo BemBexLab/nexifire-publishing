@@ -4,6 +4,10 @@ import React from "react";
 import { SlArrowRight } from "react-icons/sl";
 import { blogPosts } from "@/data/blogs";
 
+const sortedBlogPosts = [...blogPosts].sort((a, b) =>
+  b.publishedAt.localeCompare(a.publishedAt),
+);
+
 const BlogGrid = () => {
   return (
     <section className="bg-white px-4 py-10 sm:px-6 sm:py-16 lg:px-8 lg:py-20">
@@ -13,7 +17,7 @@ const BlogGrid = () => {
         </h2>
 
         <div className="mt-9 grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-3 lg:gap-4">
-          {blogPosts.map((blog) => (
+          {sortedBlogPosts.map((blog) => (
             <article
               key={blog.id}
               className="overflow-hidden rounded-[16px] border border-[#ececec] bg-white"
@@ -30,17 +34,17 @@ const BlogGrid = () => {
               </div>
 
               <div className="px-[18px] pb-[20px] pt-[16px]">
-                <h3 className="text-lg font-normal leading-[1.35] tracking-[-0.03em] text-[#373737] sm:text-xl">
+                <h3 className="text-lg font-normal leading-[1.35] tracking-[-0.03em] text-[#373737] sm:text-xl line-clamp-3">
                   {blog.cardTitle ?? blog.title}
                 </h3>
 
-                <p className="mt-3 text-sm leading-[1.65] text-[#8b8b8b]">
+                <p className="mt-3 line-clamp-3 text-sm leading-[1.65] text-[#8b8b8b]">
                   {blog.description}
                 </p>
 
                 <Link
                   href={`/blogs/${blog.slug}`}
-                  className="mt-4 inline-flex items-center gap-2 text-sm font-normal text-[#e96d2d] sm:text-base"
+                  className="mt-4 inline-flex items-center border-b border-[#e96d2d] gap-2 text-sm font-normal text-[#e96d2d] sm:text-base relative bottom-0 left-0 transition-all duration-200 hover:translate-x-[2px] hover:gap-3"
                 >
                   Learn More
                   <SlArrowRight size={11} />
