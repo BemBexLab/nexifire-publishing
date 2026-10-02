@@ -112,7 +112,7 @@ export const blogPosts: BlogPost[] = [
             overwrite it with their own style.
           </div>,
           <div>
-            <h3 className="text-2xl font-semibold">
+            <h3 className="mt-3 border-l-4 border-[#b24002] pl-4 text-xl font-semibold leading-tight tracking-[-0.02em] text-[#282828] sm:text-2xl">
               What to do at this stage:
             </h3>
           </div>,
@@ -213,7 +213,7 @@ export const blogPosts: BlogPost[] = [
             later as an afterthought.
           </>,
           <>
-            <h3 className="text-2xl font-semibold">
+            <h3 className="mt-3 border-l-4 border-[#b24002] pl-4 text-xl font-semibold leading-tight tracking-[-0.02em] text-[#282828] sm:text-2xl">
               How long does it take to publish a book in the USA?
             </h3>
           </>,
@@ -264,7 +264,7 @@ export const blogPosts: BlogPost[] = [
       {
         heading: "Editing & Proofreading: The Questions Authors Ask Most",
         paragraphs: [
-          <h3 className="font-semibold text-2xl">
+          <h3 className="mt-3 border-l-4 border-[#b24002] pl-4 text-xl font-semibold leading-tight tracking-[-0.02em] text-[#282828] sm:text-2xl">
             What's the difference between editing and proofreading?
           </h3>,
           <>
@@ -274,7 +274,7 @@ export const blogPosts: BlogPost[] = [
             during layout, like spacing or typesetting mistakes. Most
             manuscripts benefit from both, in that order.
           </>,
-          <h3 className="font-semibold text-2xl">
+          <h3 className="mt-3 border-l-4 border-[#b24002] pl-4 text-xl font-semibold leading-tight tracking-[-0.02em] text-[#282828] sm:text-2xl">
             What's the difference between copyediting and proofreading
             specifically?
           </h3>,
@@ -284,7 +284,7 @@ export const blogPosts: BlogPost[] = [
             lighter, final check after the book is typeset, focused on catching
             anything that slipped through or was introduced during formatting.
           </>,
-          <h3 className="font-semibold text-2xl">
+          <h3 className="mt-3 border-l-4 border-[#b24002] pl-4 text-xl font-semibold leading-tight tracking-[-0.02em] text-[#282828] sm:text-2xl">
             Do I need a developmental edit or just a copyedit?
           </h3>,
           <>
@@ -293,7 +293,7 @@ export const blogPosts: BlogPost[] = [
             you just need language and consistency refined, a copyedit is the
             better, more affordable fit.
           </>,
-          <h3 className="font-semibold text-2xl">
+          <h3 className="mt-3 border-l-4 border-[#b24002] pl-4 text-xl font-semibold leading-tight tracking-[-0.02em] text-[#282828] sm:text-2xl">
             Is professional book editing worth the cost for a self-published
             author?
           </h3>,
@@ -337,13 +337,13 @@ export const blogPosts: BlogPost[] = [
     slug: "how-to-turn-your-book-idea-into-a-published-book",
     title: "How to Turn Your Book Idea Into a Published Book: A Step-by-Step Guide for First-Time Authors",
     description:
-      "Having a book idea is exciting. You may have been carrying the idea...",
+      "Having a book idea is exciting. You may have been carrying the idea around for years, writing notes in your phone, filling notebooks with thoughts, or simply imagining what it would feel like to finally see your name on the cover of a book.",
     image: "/image 69.webp",
-    publishedAt: "2026-01-15",
+    // yyyy-mm-dd
+    publishedAt: "2026-10-03",
     content: [
       {
         paragraphs: [
-          "Having a book idea is exciting. You may have been carrying the idea around for years, writing notes in your phone, filling notebooks with thoughts, or simply imagining what it would feel like to finally see your name on the cover of a book.",
           "But there is a big difference between having a book idea and having a finished, published book.",
           "Many first-time authors get stuck somewhere between those two points. They may not know how to structure their manuscript, where editing fits into the process, what kind of book formatting is required, or how publishing and distribution actually work.",
           "The good news is that you do not have to figure everything out at once.",
@@ -352,7 +352,7 @@ export const blogPosts: BlogPost[] = [
         ],
       },
       {
-        heading: "1. Start With the Book Idea",
+        heading: "Start With the Book Idea",
         paragraphs: [
           "Every book begins with an idea.",
           `It could be a personal story, a business concept, a memoir, a novel, a children's book, a collection of poetry, a devotional, or something completely different. There is no single "right" type of book to write.`,
@@ -361,7 +361,7 @@ export const blogPosts: BlogPost[] = [
             <div className="relative overflow-hidden bg-[linear-gradient(115deg,#8f3207_0%,#b24002_58%,#e45a14_100%)] px-6 py-6 text-white sm:px-8 sm:py-7">
               <span className="absolute -right-8 -top-16 h-44 w-44 rounded-full border border-white/15" />
               <span className="absolute -right-1 -top-9 h-28 w-28 rounded-full border border-white/15" />
-              <h3 className="relative text-2xl font-semibold tracking-[-0.03em] sm:text-3xl">
+              <h3 className="relative text-white text-2xl font-semibold tracking-[-0.03em] sm:text-3xl">
                 Ask yourself
               </h3>
             </div>
@@ -394,7 +394,7 @@ export const blogPosts: BlogPost[] = [
         ],
       },
       {
-        heading: "2. Develop the Manuscript",
+        heading: "Develop the Manuscript",
         paragraphs: [
           "Once your idea is clear, the next step is turning that idea into a manuscript.",
           "For some authors, this means sitting down and writing chapter after chapter themselves. For others, getting the words onto the page is the hardest part.",
@@ -451,7 +451,7 @@ export const blogPosts: BlogPost[] = [
         ],
       },
       {
-        heading: "3. Edit the Manuscript",
+        heading: "Edit the Manuscript",
         paragraphs: [
           "Finishing your manuscript is an accomplishment, but it does not necessarily mean the book is finished.",
           "This is one of the most important things for first-time authors to understand.",
@@ -478,7 +478,7 @@ export const blogPosts: BlogPost[] = [
         ],
       },
       {
-        heading: "4. Preserve Your Voice",
+        heading: "Preserve Your Voice",
         paragraphs: [
           "One of the biggest concerns authors have when working with an editor or ghostwriter is losing their voice.",
           "That concern is understandable.",
@@ -489,7 +489,7 @@ export const blogPosts: BlogPost[] = [
         ],
       },
       {
-        heading: "5. Prepare the Book for Publication",
+        heading: "Prepare the Book for Publication",
         paragraphs: [
           "Once the manuscript is edited and approved, it needs to be prepared for publication.",
           "This is where book formatting becomes important.",
@@ -552,7 +552,7 @@ export const blogPosts: BlogPost[] = [
         ],
       },
       {
-        heading: "6. Create a Cover That Fits the Book",
+        heading: "Create a Cover That Fits the Book",
         paragraphs: [
           "Readers absolutely do judge books by their covers.",
           "Your cover is often the first thing a potential reader sees, whether they discover your book online, in a bookstore, or through social media.",
@@ -564,7 +564,7 @@ export const blogPosts: BlogPost[] = [
         ],
       },
       {
-        heading: "7. Understand ISBNs and Publishing Requirements",
+        heading: "Understand ISBNs and Publishing Requirements",
         paragraphs: [
           "There are also technical details involved in publishing a book.",
           "An ISBN, for example, is a unique identifier used for books and book-related products. Depending on where and how you publish, you may also need to consider copyright information, metadata, pricing, trim size, print specifications, and distribution requirements.",
@@ -573,7 +573,7 @@ export const blogPosts: BlogPost[] = [
         ],
       },
       {
-        heading: "8. Choose Your Publishing Route",
+        heading: "Choose Your Publishing Route",
         paragraphs: [
           "Authors today have more publishing options than ever.",
           "You can pursue traditional publishing, self-publishing, or work with a professional publishing company that helps manage some or all of the publishing process.",
@@ -585,7 +585,7 @@ export const blogPosts: BlogPost[] = [
         ],
       },
       {
-        heading: "9. Think Beyond Publication",
+        heading: "Think Beyond Publication",
         paragraphs: [
           "Getting your book published is a major milestone.",
           "But publication is not necessarily the end of the journey.",
@@ -602,7 +602,7 @@ export const blogPosts: BlogPost[] = [
         ],
       },
       {
-        heading: "10. Consider an Audiobook",
+        heading: "Consider an Audiobook",
         paragraphs: [
           "Audiobooks have become an important format for readers who prefer to listen rather than read.",
           "For many authors, creating an audiobook can provide another way to connect with an audience.",
@@ -611,7 +611,7 @@ export const blogPosts: BlogPost[] = [
         ],
       },
       {
-        heading: "11. Review Everything Before Publication",
+        heading: "Review Everything Before Publication",
         paragraphs: [
           "Before giving final approval, take the time to review the complete book.",
           "Read the final manuscript carefully.",

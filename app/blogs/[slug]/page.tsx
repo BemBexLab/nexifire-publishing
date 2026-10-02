@@ -1,9 +1,10 @@
 import Image from "next/image";
+import Link from "next/link";
 import type { Metadata } from "next";
 import { notFound } from "next/navigation";
-import PageHero from "@/components/PageHero";
 import { blogPosts, getBlogPostBySlug } from "@/data/blogs";
 import { createPageMetadata } from "@/lib/seo";
+import styles from "./page.module.css";
 
 export function generateStaticParams() {
   return blogPosts.map(({ slug }) => ({ slug }));
@@ -44,47 +45,69 @@ export default async function BlogPostPage({
   const { slug } = await params;
   const post = getBlogPostBySlug(slug);
 
-  if (!post) {
-    notFound();
-  }
+  if (!post) notFound();
+
+  const publishedAt = new Intl.DateTimeFormat("en-US", {
+    month: "long",
+    day: "numeric",
+    year: "numeric",
+    timeZone: "UTC",
+  }).format(new Date(`${post.publishedAt}T00:00:00Z`));
 
   return (
-    <section className="overflow-hidden bg-white">
-      <PageHero
-        eyebrow="NexiFire Publishing Blog"
-        title={post.title}
-        description={post.description}
-      />
-
-      <article className="mx-auto max-w-[980px] px-4 py-10 sm:px-6 sm:py-16 lg:px-8 lg:py-20">
-        <div className="relative aspect-[1.9] overflow-hidden rounded-[18px] bg-[#f4f4f4]">
-          <Image
-            src={post.image}
-            alt={post.title}
-            fill
-            unoptimized
-            sizes="(max-width: 1023px) 100vw, 980px"
-            className="object-cover"
-          />
+    <main className={styles.page}>
+      <header className={styles.header}>
+        <div className={styles.headlineBlock}>
+          <p className={styles.kicker}>Ideas for the independent author</p>
+          <h1>{post.title}</h1>
+          <p className={styles.dek}>{post.description}</p>
+          <div className={styles.byline}>
+            <span className={styles.authorMark} aria-hidden="true">NF</span>
+            <span className={styles.author}>NexiFire Publishing Team</span>
+            <span className={styles.bylineDivider} aria-hidden="true" />
+            <time dateTime={post.publishedAt}>{publishedAt}</time>
+          </div>
         </div>
+      </header>
 
-        <p className="mt-5 italic text-sm text-[#8b8b8b] sm:text-base">
-          {/* By NexiFire Publishing Team | {post.publishedAt} */}
-          By NexiFire Publishing Team | 8 min Read
-        </p>
+      <figure className={styles.cover}>
+        <Image
+          src={post.image}
+          alt={post.title}
+          fill
+          unoptimized
+          priority
+          sizes="(max-width: 1400px) 100vw, 1400px"
+          className={styles.coverImage}
+        />
+      </figure>
 
-        <div className="mt-7 space-y-10">
+      <article className={styles.article}>
+        <aside className={styles.articleRail} aria-label="Article details">
+          <span className={styles.railLabel}>From the journal</span>
+          <span className={styles.railRule} aria-hidden="true" />
+          <span className={styles.railDate}>{publishedAt}</span>
+          <Link href="/blogs" className={styles.railLink}>
+            More stories <span aria-hidden="true">↗</span>
+          </Link>
+        </aside>
+
+        <div className={styles.articleBody}>
           {post.content.map((section, sectionIndex) => (
             <section
               key={`${section.heading ?? "introduction"}-${sectionIndex}`}
+              className={styles.section}
             >
               {section.heading && (
-                <h2 className="text-2xl font-medium leading-[1.15] tracking-[-0.035em] text-[#282828] sm:text-3xl">
+                <h2>
+                  <span className={styles.sectionNumber} aria-hidden="true">
+                    {String(sectionIndex).padStart(2, "0")}
+                  </span>
                   {section.heading}
                 </h2>
               )}
 
-              <div className="space-y-5 text-base leading-[1.8] text-[#555555] sm:text-lg">
+              <div className={styles.prose}>
                 {section.paragraphs.map((paragraph, paragraphIndex) => (
                   <div key={`${sectionIndex}-${paragraphIndex}`}>
                     {paragraph}
@@ -95,6 +118,6 @@ export default async function BlogPostPage({
           ))}
         </div>
       </article>
-    </section>
+    </main>
   );
 }
