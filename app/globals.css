@@ -46,48 +46,6 @@ p {
   word-spacing: 5px;
 }
 
-@media (pointer: fine) {
-  html.custom-cursor-ready,
-  html.custom-cursor-ready body,
-  html.custom-cursor-ready body * {
-    cursor: none !important;
-  }
-
-  .glassy-cursor {
-    position: fixed;
-    top: 0;
-    left: 0;
-    z-index: 9999;
-    pointer-events: none;
-    opacity: 0;
-    transform: translate3d(-7px, 0, 0);
-    transition: opacity 80ms ease;
-    will-change: transform;
-  }
-
-  .glassy-cursor.is-visible {
-    opacity: 1;
-  }
-
-  .glassy-cursor__pointer {
-    display: block;
-    width: 32px;
-    height: 32px;
-    background: url("/busy%20(1).webp") center / contain no-repeat;
-    filter: drop-shadow(0 2px 3px rgb(0 0 0 / 24%));
-    transform-origin: 7px 0;
-    transition: transform 140ms ease;
-  }
-
-  .glassy-cursor.is-pressed .glassy-cursor__pointer {
-    transform: scale(0.84);
-  }
-
-  .glassy-cursor.is-interactive .glassy-cursor__pointer {
-    filter: drop-shadow(0 2px 4px rgb(178 64 2 / 48%));
-  }
-}
-
 .body-copy {
   font-size: 1rem;
   line-height: 1.65;

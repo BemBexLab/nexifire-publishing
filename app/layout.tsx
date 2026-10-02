@@ -4,7 +4,6 @@ import "sweetalert2/dist/sweetalert2.min.css";
 import "./globals.css";
 import NavBar from "@/components/NavBar";
 import ConditionalFooter from "@/components/ConditionalFooter";
-import GlassyCursor from "@/components/GlassyCursor";
 import {
   defaultDescription,
   defaultOgImage,
@@ -95,7 +94,6 @@ export default function RootLayout({
       <body className={`${plusJakartaSans.className} min-h-full flex flex-col`}>
         <NavBar />
         {children}
-        <GlassyCursor />
         <ConditionalFooter />
       </body>
     </html>
