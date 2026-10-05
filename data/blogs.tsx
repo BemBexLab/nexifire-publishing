@@ -25,7 +25,7 @@ export const blogPosts: BlogPost[] = [
     title: "How to Self-Publish a Book in the USA: The Complete 2026 Guide",
     description:
       "Self-publishing a book in the United States has never been more achievable, or more competitive.",
-    image: "/image 69.webp",
+    image: "/image (7).png",
     publishedAt: "2026-01-15",
     content: [
       {
@@ -338,7 +338,7 @@ export const blogPosts: BlogPost[] = [
     title: "How to Turn Your Book Idea Into a Published Book: A Step-by-Step Guide for First-Time Authors",
     description:
       "Having a book idea is exciting. You may have been carrying the idea around for years, writing notes in your phone, filling notebooks with thoughts, or simply imagining what it would feel like to finally see your name on the cover of a book.",
-    image: "/image 69.webp",
+    image: "/image (6).png",
     // yyyy-mm-dd
     publishedAt: "2026-10-03",
     content: [
@@ -647,7 +647,7 @@ export const blogPosts: BlogPost[] = [
     title: "How Much Does It Cost to Publish a Book in 2026? A Complete Guide for Authors",
     description:
       "One of the first questions most new authors ask after finishing a manuscript is simple:",
-    image: "/image 69.webp",
+    image: "/image (5).png",
     // yyyy-mm-dd
     publishedAt: "2026-11-03",
     content: [
