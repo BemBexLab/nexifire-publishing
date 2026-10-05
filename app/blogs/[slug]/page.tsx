@@ -76,7 +76,7 @@ export default async function BlogPostPage({
           alt={post.title}
           fill
           unoptimized
-          priority
+          preload
           sizes="(max-width: 1400px) 100vw, 1400px"
           className={styles.coverImage}
         />

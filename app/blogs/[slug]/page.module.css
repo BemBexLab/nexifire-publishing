@@ -134,7 +134,7 @@
 .cover {
   position: relative;
   width: min(100% - 48px, 1440px);
-  aspect-ratio: 2.12 / 1;
+  aspect-ratio: 16 / 9;
   margin: 0 auto;
   overflow: hidden;
   background: #e9e2d9;
@@ -350,10 +350,6 @@
 
   .headlineBlock h1 {
     font-size: clamp(2.75rem, 13vw, 5rem);
-  }
-
-  .cover {
-    aspect-ratio: 1.25 / 1;
   }
 
   .article {
