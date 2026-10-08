@@ -98,6 +98,7 @@ export async function POST(request: Request) {
       replyTo: email,
       subject: "New contact form submission - NexifirePublishing.com",
       text: [
+        `This email was sent from the contact form on NexifirePublishing.com.`,
         `Source: ${source}`,
         `Name: ${name}`,
         `Email: ${email}`,
@@ -106,7 +107,7 @@ export async function POST(request: Request) {
         message,
       ].join("\n"),
       html: `
-        <h2>New contact form submission</h2>
+        <h2>New contact form submission - NexifirePublishing.com</h2>
         <p><strong>Source:</strong> ${safeSource}</p>
         <p><strong>Name:</strong> ${safeName}</p>
         <p><strong>Email:</strong> ${safeEmail}</p>
