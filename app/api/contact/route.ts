@@ -96,7 +96,7 @@ export async function POST(request: Request) {
       from: process.env.SMTP_FROM ?? DEFAULT_SMTP_USER,
       to: process.env.CONTACT_EMAIL_TO ?? DEFAULT_RECIPIENT,
       replyTo: email,
-      subject: "New contact form submission",
+      subject: "New contact form submission - NexifirePublishing.com",
       text: [
         `Source: ${source}`,
         `Name: ${name}`,
