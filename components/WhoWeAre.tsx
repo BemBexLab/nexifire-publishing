@@ -203,7 +203,7 @@ const AnimatedStatValue = ({ value }: { value: string }) => {
 
 const WhoWeAre = () => {
   return (
-    <section className="relative overflow-hidden bg-white px-4 py-10 sm:px-6 sm:py-14 md:px-10 md:py-16 lg:px-16 lg:py-18">
+    <section className="relative overflow-hidden bg-white px-4 pt-4 pb-10 sm:px-6 sm:pt-6 sm:pb-14 md:px-10 md:pt-8 md:pb-16 lg:px-16 lg:pt-10 lg:pb-18">
       <motion.div
         variants={backdropVariants}
         initial="hidden"
@@ -211,62 +211,64 @@ const WhoWeAre = () => {
         viewport={{ once: true, amount: 0.15 }}
         className="pointer-events-none absolute bottom-[-8rem] left-[-13rem] z-0 opacity-70 sm:left-[-11rem] md:left-[-10rem] lg:bottom-[-14rem] lg:left-[-14rem]"
       >
-        <svg
-          xmlns="http://www.w3.org/2000/svg"
-          width="988"
-          height="929"
-          viewBox="0 0 988 929"
-          fill="none"
-          className="h-[720px] w-[350px] sm:h-[900px] sm:w-[438px] lg:h-[1180px] lg:w-[572px] xl:h-[1320px] xl:w-[640px]"
-          aria-hidden="true"
-        >
-          <g opacity="0.1" filter="url(#who-we-are-text-backdrop)">
-            <path
-              d={textBackdropPath}
-              stroke="#B24002"
-              strokeWidth="44"
-              strokeLinecap="round"
-              shapeRendering="crispEdges"
-            />
-          </g>
-          <defs>
-            <filter
-              id="who-we-are-text-backdrop"
-              x="0"
-              y="0"
-              width="987.124"
-              height="928.249"
-              filterUnits="userSpaceOnUse"
-              colorInterpolationFilters="sRGB"
-            >
-              <feFlood floodOpacity="0" result="BackgroundImageFix" />
-              <feColorMatrix
-                in="SourceAlpha"
-                type="matrix"
-                values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0"
-                result="hardAlpha"
+        <div className="translate-y-[5%]">
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="988"
+            height="929"
+            viewBox="0 0 988 929"
+            fill="none"
+            className="h-[720px] w-[350px] sm:h-[900px] sm:w-[438px] lg:h-[1180px] lg:w-[572px] xl:h-[1320px] xl:w-[640px]"
+            aria-hidden="true"
+          >
+            <g opacity="0.1" filter="url(#who-we-are-text-backdrop)">
+              <path
+                d={textBackdropPath}
+                stroke="#B24002"
+                strokeWidth="44"
+                strokeLinecap="round"
+                shapeRendering="crispEdges"
               />
-              <feOffset dy="4" />
-              <feGaussianBlur stdDeviation="2" />
-              <feComposite in2="hardAlpha" operator="out" />
-              <feColorMatrix
-                type="matrix"
-                values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.25 0"
-              />
-              <feBlend
-                mode="normal"
-                in2="BackgroundImageFix"
-                result="effect1_dropShadow_30_670"
-              />
-              <feBlend
-                mode="normal"
-                in="SourceGraphic"
-                in2="effect1_dropShadow_30_670"
-                result="shape"
-              />
-            </filter>
-          </defs>
-        </svg>
+            </g>
+            <defs>
+              <filter
+                id="who-we-are-text-backdrop"
+                x="0"
+                y="0"
+                width="987.124"
+                height="928.249"
+                filterUnits="userSpaceOnUse"
+                colorInterpolationFilters="sRGB"
+              >
+                <feFlood floodOpacity="0" result="BackgroundImageFix" />
+                <feColorMatrix
+                  in="SourceAlpha"
+                  type="matrix"
+                  values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0"
+                  result="hardAlpha"
+                />
+                <feOffset dy="4" />
+                <feGaussianBlur stdDeviation="2" />
+                <feComposite in2="hardAlpha" operator="out" />
+                <feColorMatrix
+                  type="matrix"
+                  values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.25 0"
+                />
+                <feBlend
+                  mode="normal"
+                  in2="BackgroundImageFix"
+                  result="effect1_dropShadow_30_670"
+                />
+                <feBlend
+                  mode="normal"
+                  in="SourceGraphic"
+                  in2="effect1_dropShadow_30_670"
+                  result="shape"
+                />
+              </filter>
+            </defs>
+          </svg>
+        </div>
       </motion.div>
 
       <motion.div
