@@ -13,7 +13,7 @@ const heroDescription =
 
 const heroBooks = [
   {
-    src: "/book images/biography/1.webp",
+    src: "/hero-books/fresh-paths.webp",
     alt: "FreshPathsUnfolding",
     width: 188,
     className:
@@ -22,7 +22,7 @@ const heroBooks = [
       "mb-[-2px] sm:mb-[-8px] md:mb-[-10px] lg:mb-[-10px] xl:mb-[-18px] 2xl:mb-[-12px]",
   },
   {
-    src: "/book images/childern book/1.webp",
+    src: "/hero-books/unfolding-integration.webp",
     alt: "The Book of Unfolding Integration",
     width: 208,
     className:
@@ -31,7 +31,7 @@ const heroBooks = [
       "mb-[8px] sm:mb-[24px] md:mb-[34px] lg:mb-[36px] xl:mb-[22px] 2xl:mb-[50px]",
   },
   {
-    src: "/book images/biography/3.webp",
+    src: "/hero-books/the-labyrinth.webp",
     alt: "The Labyrinth",
     width: 220,
     className:
@@ -40,7 +40,7 @@ const heroBooks = [
       "mb-[16px] sm:mb-[42px] md:mb-[66px] lg:mb-[74px] xl:mb-[46px] 2xl:mb-[100px]",
   },
   {
-    src: "/book images/biography/4.webp",
+    src: "/hero-books/bees-colony.webp",
     alt: "The Bee's Colony",
     width: 208,
     className:
@@ -49,7 +49,7 @@ const heroBooks = [
       "mb-[8px] sm:mb-[24px] md:mb-[34px] lg:mb-[36px] xl:mb-[22px] 2xl:mb-[50px]",
   },
   {
-    src: "/book images/biography/5.webp",
+    src: "/hero-books/lottery-killer.webp",
     alt: "The Lottery Killer",
     width: 188,
     className:
@@ -338,6 +338,8 @@ const MobileBooksCarousel = () => {
                 alt={book.alt}
                 fill
                 sizes="(max-width: 639px) 26vw, 0px"
+                loading={book.alt === "The Labyrinth" ? "eager" : "lazy"}
+                fetchPriority={book.alt === "The Labyrinth" ? "high" : "auto"}
                 className="object-cover"
               />
             </div>
@@ -447,7 +449,7 @@ const DesktopHero = () => {
                 className="relative block w-full max-w-[1040px] px-3 sm:inline-block sm:w-fit sm:px-16 md:px-28 xl:max-w-[1380px] xl:px-36 2xl:max-w-[1520px] 2xl:px-40"
               >
                 <Image
-                  src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?auto=format&fit=crop&w=240&q=80"
+                  src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?auto=format&fit=crop&w=160&q=80"
                   alt=""
                   width={84}
                   height={84}
@@ -495,6 +497,8 @@ const DesktopHero = () => {
                   width={book.width}
                   height={Math.round((book.width * 504) / 355)}
                   sizes="(max-width: 639px) 20vw, (min-width: 1536px) 22vw, (min-width: 1280px) 19vw, 0px"
+                  loading={book.alt === "The Labyrinth" ? "eager" : "lazy"}
+                  fetchPriority={book.alt === "The Labyrinth" ? "high" : "auto"}
                   className="h-auto w-full drop-shadow-[0_20px_36px_rgba(0,0,0,0.22)]"
                 />
               </motion.div>
