@@ -14,7 +14,7 @@ import FooterCTA from "@/components/Footer";
 
 export default function Home() {
   return (
-    <section className="bg-white overflow-hidden">
+    <section className="bg-white overflow-x-clip">
       <HomeHero />
       <BooksSection />
       <HomeServices />
@@ -53,7 +53,7 @@ export default function Home() {
         ]}
       />
       <WhoWeAre />
-      <div className="bg-[#fffaf6] py-10 sm:py-16 md:py-20 lg:py-24">
+      <div className="bg-[#fffaf6] pt-6 pb-10 sm:pt-10 sm:pb-16 md:pt-12 md:pb-20 lg:pt-6 lg:pb-24">
         <OurProcess
           badgeText="How It Works"
           title="How Our Self-Publishing Process Works"

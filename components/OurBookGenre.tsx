@@ -92,18 +92,18 @@ const OurBookGenre = ({ badgeText, title, genres }: OurBookGenreProps) => {
   return (
     <section
       id="our-book-genre"
-      className="bg-white px-4 py-10 sm:px-6 sm:py-14 md:px-10 md:py-16 lg:px-16 lg:py-18"
+      className="bg-white px-4 pb-10 sm:px-6 sm:pb-14 md:px-10 md:pb-16 lg:px-16 lg:pb-18"
     >
       <motion.div
         variants={containerVariants}
         initial="hidden"
         whileInView="visible"
         viewport={{ once: true, amount: 0.2 }}
-        className="mx-auto flex w-full max-w-[1380px] flex-col gap-6 sm:gap-8 xl:flex-row xl:items-center xl:justify-between xl:gap-12 2xl:gap-14"
+        className="mx-auto flex w-full max-w-[1380px] flex-col items-center gap-6 sm:gap-8 2xl:flex-row 2xl:items-center 2xl:justify-between 2xl:gap-8"
       >
         <motion.div
           variants={itemVariants}
-          className="flex w-full max-w-[340px] flex-col items-start text-left sm:max-w-[560px] xl:max-w-[400px] 2xl:max-w-[480px] max-sm:mx-auto max-sm:items-center max-sm:text-center"
+          className="flex w-full max-w-none flex-col items-center text-center 2xl:mx-0 2xl:max-w-[500px] 2xl:items-start 2xl:text-left"
         >
           {badgeText ? (
             <motion.div
@@ -117,14 +117,21 @@ const OurBookGenre = ({ badgeText, title, genres }: OurBookGenreProps) => {
             </motion.div>
           ) : null}
 
-          <h2 className="project-h2 block w-full max-w-full text-left leading-[1.05] max-sm:mt-1 max-sm:text-left">
+          <h2
+            className="project-h2 mt-1 block w-full max-w-full text-center 2xl:text-left"
+            style={{
+              fontSize: "clamp(1.55rem, 3vw, 2.5rem)",
+              lineHeight: 1.05,
+              wordSpacing: 0,
+            }}
+          >
             {title}
           </h2>
         </motion.div>
 
         <motion.div
           variants={containerVariants}
-          className="flex w-full flex-col gap-4 sm:gap-5 xl:max-w-[760px] 2xl:max-w-[920px]"
+          className="flex w-full max-w-[1080px] flex-col gap-4 sm:gap-5 2xl:max-w-[848px]"
         >
           <div className="genre-scroll-view -mx-4 flex gap-3 overflow-x-auto overflow-y-hidden px-4 pb-2 sm:hidden">
             {genres.map((genre) => (
@@ -149,7 +156,7 @@ const OurBookGenre = ({ badgeText, title, genres }: OurBookGenreProps) => {
                     sizes="48px"
                     className="relative z-10 h-11 w-11 object-contain"
                   />
-                  <h3 className="relative z-10 mt-4 text-[1.15rem] font-semibold leading-none tracking-[-0.03em] text-[#282828]">
+                  <h3 className="relative z-10 mt-4 text-base font-semibold leading-tight tracking-[-0.03em] text-[#282828]">
                     {genre.title}
                   </h3>
                 </div>
@@ -157,7 +164,7 @@ const OurBookGenre = ({ badgeText, title, genres }: OurBookGenreProps) => {
             ))}
           </div>
 
-          <div className="hidden w-full max-w-[360px] overflow-hidden sm:block sm:max-w-[760px] md:max-w-[920px] xl:max-w-none">
+          <div className="hidden w-full max-w-[360px] overflow-hidden sm:block sm:max-w-[760px] md:max-w-[920px] xl:max-w-[1080px] 2xl:max-w-none">
             <motion.div
               animate={{ x: `-${visibleActiveIndex * slideWidth}%` }}
               transition={{ duration: 0.65, ease: [0.22, 1, 0.36, 1] }}
@@ -188,7 +195,7 @@ const OurBookGenre = ({ badgeText, title, genres }: OurBookGenreProps) => {
                       sizes="52px"
                       className="relative z-10 h-11 w-11 object-contain sm:h-12 sm:w-12 md:h-[52px] md:w-[52px]"
                     />
-                    <h3 className="relative z-10 mt-4 text-base font-semibold leading-none tracking-[-0.03em] text-[#282828] sm:mt-5 sm:text-lg md:text-xl lg:text-2xl">
+                    <h3 className="relative z-10 mt-4 text-sm font-semibold leading-tight tracking-[-0.03em] text-[#282828] sm:mt-5 sm:text-base md:text-lg lg:text-lg">
                       {genre.title}
                     </h3>
                   </div>

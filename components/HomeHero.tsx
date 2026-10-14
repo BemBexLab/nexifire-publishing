@@ -17,7 +17,7 @@ const heroBooks = [
     alt: "FreshPathsUnfolding",
     width: 188,
     className:
-      "w-[18.2%] min-w-[70px] max-w-[104px] sm:w-[19.4%] sm:min-w-[122px] sm:max-w-[196px] md:min-w-[168px] md:max-w-[270px] lg:w-[20%] lg:min-w-[190px] lg:max-w-[300px] xl:w-[22.2%] xl:min-w-[260px] xl:max-w-[390px]",
+      "w-[18.2%] min-w-[70px] max-w-[104px] sm:w-[19%] sm:min-w-0 sm:max-w-[196px] md:w-[19%] md:min-w-0 md:max-w-[240px] lg:w-[20%] lg:min-w-0 lg:max-w-[300px] xl:w-[20%] xl:max-w-[390px]",
     offsetClass:
       "mb-[-2px] sm:mb-[-8px] md:mb-[-10px] lg:mb-[-10px] xl:mb-[-18px] 2xl:mb-[-12px]",
   },
@@ -26,7 +26,7 @@ const heroBooks = [
     alt: "The Book of Unfolding Integration",
     width: 208,
     className:
-      "w-[18.2%] min-w-[70px] max-w-[104px] sm:w-[19.4%] sm:min-w-[122px] sm:max-w-[196px] md:min-w-[168px] md:max-w-[270px] lg:w-[20%] lg:min-w-[190px] lg:max-w-[300px] xl:w-[22.2%] xl:min-w-[260px] xl:max-w-[390px]",
+      "w-[18.2%] min-w-[70px] max-w-[104px] sm:w-[19%] sm:min-w-0 sm:max-w-[196px] md:w-[19%] md:min-w-0 md:max-w-[240px] lg:w-[20%] lg:min-w-0 lg:max-w-[300px] xl:w-[20%] xl:max-w-[390px]",
     offsetClass:
       "mb-[8px] sm:mb-[24px] md:mb-[34px] lg:mb-[36px] xl:mb-[22px] 2xl:mb-[50px]",
   },
@@ -35,7 +35,7 @@ const heroBooks = [
     alt: "The Labyrinth",
     width: 220,
     className:
-      "w-[18.2%] min-w-[70px] max-w-[104px] sm:w-[19.4%] sm:min-w-[122px] sm:max-w-[196px] md:min-w-[168px] md:max-w-[270px] lg:w-[20%] lg:min-w-[190px] lg:max-w-[300px] xl:w-[22.2%] xl:min-w-[260px] xl:max-w-[390px]",
+      "w-[18.2%] min-w-[70px] max-w-[104px] sm:w-[19%] sm:min-w-0 sm:max-w-[196px] md:w-[19%] md:min-w-0 md:max-w-[240px] lg:w-[20%] lg:min-w-0 lg:max-w-[300px] xl:w-[20%] xl:max-w-[390px]",
     offsetClass:
       "mb-[16px] sm:mb-[42px] md:mb-[66px] lg:mb-[74px] xl:mb-[46px] 2xl:mb-[100px]",
   },
@@ -44,7 +44,7 @@ const heroBooks = [
     alt: "The Bee's Colony",
     width: 208,
     className:
-      "w-[18.2%] min-w-[70px] max-w-[104px] sm:w-[19.4%] sm:min-w-[122px] sm:max-w-[196px] md:min-w-[168px] md:max-w-[270px] lg:w-[20%] lg:min-w-[190px] lg:max-w-[300px] xl:w-[22.2%] xl:min-w-[260px] xl:max-w-[390px]",
+      "w-[18.2%] min-w-[70px] max-w-[104px] sm:w-[19%] sm:min-w-0 sm:max-w-[196px] md:w-[19%] md:min-w-0 md:max-w-[240px] lg:w-[20%] lg:min-w-0 lg:max-w-[300px] xl:w-[20%] xl:max-w-[390px]",
     offsetClass:
       "mb-[8px] sm:mb-[24px] md:mb-[34px] lg:mb-[36px] xl:mb-[22px] 2xl:mb-[50px]",
   },
@@ -53,7 +53,7 @@ const heroBooks = [
     alt: "The Lottery Killer",
     width: 188,
     className:
-      "w-[18.2%] min-w-[70px] max-w-[104px] sm:w-[19.4%] sm:min-w-[122px] sm:max-w-[196px] md:min-w-[168px] md:max-w-[270px] lg:w-[20%] lg:min-w-[190px] lg:max-w-[300px] xl:w-[22.2%] xl:min-w-[260px] xl:max-w-[390px]",
+      "w-[18.2%] min-w-[70px] max-w-[104px] sm:w-[19%] sm:min-w-0 sm:max-w-[196px] md:w-[19%] md:min-w-0 md:max-w-[240px] lg:w-[20%] lg:min-w-0 lg:max-w-[300px] xl:w-[20%] xl:max-w-[390px]",
     offsetClass:
       "mb-[-2px] sm:mb-[-8px] md:mb-[-10px] lg:mb-[-10px] xl:mb-[-18px] 2xl:mb-[-12px]",
   },
@@ -251,7 +251,7 @@ const HeroButtons = () => {
   return (
     <motion.div
       variants={heroItemVariants}
-      className="mt-6 flex w-full max-w-[760px] flex-col items-stretch justify-center gap-3 px-4 sm:mt-7 sm:flex-row sm:flex-wrap sm:items-center sm:gap-4 sm:px-0 [word-spacing:2px]"
+      className="mt-4 flex w-full max-w-[760px] flex-col items-stretch justify-center gap-3 px-4 sm:mt-5 sm:flex-row sm:flex-wrap sm:items-center sm:gap-4 sm:px-0 [word-spacing:2px]"
     >
       <a
         href="/contact"
@@ -298,7 +298,7 @@ const LogoMarquee = ({
         {marqueeLogos.map((logo, index) => (
           <div
             key={`${logo.src}-${index}`}
-            className={`flex h-[90px] sm:h-[38px] min-w-[150px] items-center justify-center px-5 sm:h-[76px] sm:min-w-[170px] lg:h-[84px] lg:min-w-[188px] lg:px-6 ${cardClassName}`}
+            className={`flex h-[42px] min-w-[86px] items-center justify-center px-2.5 sm:h-[68px] sm:min-w-[136px] sm:px-4 lg:h-[84px] lg:min-w-[148px] lg:px-5 2xl:min-w-[168px] ${cardClassName}`}
           >
             <Image
               src={logo.src}
@@ -318,7 +318,7 @@ const LogoMarquee = ({
 const MobileBooksCarousel = () => {
   return (
     <div
-      className="absolute inset-x-0 bottom-[1px] z-0 w-full sm:hidden"
+      className="relative z-10 mt-[calc(1.75rem_-_3svh)] w-full translate-y-[3svh] sm:hidden"
       aria-label="Featured books"
     >
       <div className="flex w-full items-end justify-center px-2">
@@ -332,12 +332,12 @@ const MobileBooksCarousel = () => {
               ${index === 2 ? "-ml-3 translate-y-[18px]" : ""}
             `}
           >
-            <div className="relative aspect-[355/504] w-[36vw] min-w-[130px] max-w-[165px] overflow-hidden">
+            <div className="relative aspect-[355/504] w-[36vw] min-w-[100px] max-w-[165px] overflow-hidden">
               <Image
                 src={book.src}
                 alt={book.alt}
                 fill
-                sizes="(max-width: 639px) 26vw, 0px"
+                sizes="(max-width: 639px) 36vw, 0px"
                 loading={book.alt === "The Labyrinth" ? "eager" : "lazy"}
                 fetchPriority={book.alt === "The Labyrinth" ? "high" : "auto"}
                 className="object-cover"
@@ -402,17 +402,17 @@ const DesktopHero = () => {
   return (
     <div className="relative">
       <LogoMarquee
-        className="bottom-[-18px] left-1/2 z-0 w-[98%] max-w-none -translate-x-1/2 sm:bottom-0 sm:w-[82%] sm:max-w-[1180px] 2xl:w-[74%]"
-        cardClassName="h-[42px] min-w-[86px] rounded-[12px] px-2.5 sm:h-[68px] sm:min-w-[136px] sm:rounded-none sm:border-0 sm:bg-transparent sm:px-4 sm:shadow-none sm:backdrop-blur-0 xl:min-w-[148px] 2xl:min-w-[168px] lg:px-5"
+        className="bottom-0 left-0 z-0 w-full max-w-none"
+        cardClassName="rounded-[12px] sm:rounded-none sm:border-0 sm:bg-transparent sm:shadow-none sm:backdrop-blur-0"
       />
 
-      <section className="relative min-h-[770px] overflow-hidden bg-[url('/Rectangle%201.webp')] bg-cover bg-center bg-no-repeat px-2 pb-[140px] pt-10 text-[#1f1f1f] sm:px-5 sm:pb-[160px] sm:pt-15 md:min-h-[900px] md:pb-[185px] md:pt-15 lg:min-h-[960px] lg:px-6 lg:pb-[220px] lg:pt-15 xl:min-h-[900px] xl:px-6 xl:pb-[220px] xl:pt-5 2xl:min-h-[1020px] 2xl:px-8 2xl:pb-[236px] 2xl:pt-6 [clip-path:polygon(0%_0%,100%_0%,100%_100%,82%_100%,76%_92%,24%_92%,18%_100%,0%_100%)]">
+      <section className="relative overflow-hidden bg-[url('/Rectangle%201.webp')] bg-cover bg-center bg-no-repeat px-2 pt-24 text-[#1f1f1f] sm:px-5 sm:pt-24 md:px-10 md:pt-28 lg:px-6 lg:pt-28 xl:px-6 xl:pt-28 2xl:px-8 2xl:pt-28 [clip-path:polygon(0%_0%,100%_0%,100%_100%,82%_100%,76%_calc(100%_-_48px),24%_calc(100%_-_48px),18%_100%,0%_100%)] sm:[clip-path:polygon(0%_0%,100%_0%,100%_100%,82%_100%,76%_calc(100%_-_76px),24%_calc(100%_-_76px),18%_100%,0%_100%)] lg:[clip-path:polygon(0%_0%,100%_0%,100%_100%,82%_100%,76%_calc(100%_-_92px),24%_calc(100%_-_92px),18%_100%,0%_100%)]">
         <HeroAccent className="pointer-events-none absolute left-[-10%] top-[22%] z-10 h-[78px] w-[78px] -rotate-90 opacity-90 sm:left-[2%] sm:h-[124px] sm:w-[124px] 2xl:h-[176px] 2xl:w-[176px]" />
         <HeroAccent className="pointer-events-none absolute right-[-8%] top-[14%] z-10 h-[84px] w-[84px] opacity-90 sm:right-[2%] sm:top-[12%] sm:h-[124px] sm:w-[124px] 2xl:h-[176px] 2xl:w-[176px]" />
 
         <div className="relative z-30 mx-auto flex w-full flex-col">
           <motion.div
-            className="relative z-30 mx-auto flex w-full flex-col items-center px-1 pb-[140px] min-[380px]:pb-[160px] pt-10 text-center text-black sm:px-3 sm:pb-[170px] sm:pt-18 md:pb-[200px] md:pt-20 lg:pb-[220px] lg:pt-24 xl:px-4 xl:pb-[230px] xl:pt-28 2xl:pb-[350px] 2xl:pt-[132px]"
+            className="relative z-30 mx-auto flex w-full flex-col items-center px-1 pt-4 text-center text-black sm:px-3 sm:pt-6 md:pt-8 lg:pt-8 xl:px-4 xl:pt-8 2xl:pt-8"
             variants={heroContainerVariants}
             initial="hidden"
             animate="visible"
@@ -431,7 +431,7 @@ const DesktopHero = () => {
             <motion.h1
               ref={headingRef}
               variants={heroTextRevealVariants}
-              className="relative isolate mx-auto mt-6 w-full max-w-[980px] px-3 text-center text-[clamp(1.32rem,6vw,1.55rem)] font-medium uppercase leading-[1.02] tracking-[-0.05em] text-black sm:mt-7 sm:max-w-[1260px] sm:px-0 sm:text-[2.7rem] sm:leading-[1] sm:tracking-[-0.04em] xl:max-w-[1460px] xl:text-[3.8rem] 2xl:max-w-[1600px] 2xl:text-[4.45rem]"
+              className="relative isolate mx-auto mt-4 w-full max-w-[980px] px-3 text-center text-[clamp(1.32rem,6vw,1.55rem)] font-medium uppercase leading-[1.02] tracking-[-0.05em] text-black sm:mt-5 sm:max-w-[1260px] sm:px-0 sm:text-[2.7rem] sm:leading-[1] sm:tracking-[-0.04em] xl:max-w-[1460px] xl:text-[3.8rem] 2xl:max-w-[1600px] 2xl:text-[4.45rem]"
             >
               <Image
                 src={heroEllipse}
@@ -466,7 +466,7 @@ const DesktopHero = () => {
 
             <motion.p
               variants={heroTextRevealVariants}
-              className="body-copy mx-auto mt-6 w-full max-w-[1050px] px-4 text-center text-[0.95rem] leading-[1.55] text-[#777777] sm:px-0 sm:text-base xl:text-lg"
+              className="body-copy mx-auto mt-4 w-full max-w-[1050px] px-4 text-center text-[0.95rem] leading-[1.55] text-[#777777] sm:px-0 sm:text-base xl:text-lg"
             >
               <AnimatedText text={heroDescription} />
             </motion.p>
@@ -481,9 +481,9 @@ const DesktopHero = () => {
           variants={heroBooksFanContainerVariants}
           initial="hidden"
           animate="visible"
-          className="pointer-events-none absolute inset-x-0 bottom-[84px] z-10 hidden h-[13%] w-full sm:bottom-[-18px] sm:flex sm:h-[31%] md:bottom-[-24px] md:h-[32%] lg:bottom-[-30px] lg:h-[34%] xl:bottom-[-46px] xl:h-[38%] 2xl:bottom-[-88px] 2xl:h-[42%]"
+          className="pointer-events-none relative z-10 mt-[calc(2rem_-_3svh)] hidden w-full sm:flex"
         >
-          <div className="flex h-full w-full items-end justify-center gap-[3px] px-2 sm:gap-0 sm:px-3 xl:px-4 2xl:px-10">
+          <div className="flex w-full translate-y-[3svh] items-end justify-center gap-[3px] px-2 sm:gap-0 sm:px-3 xl:px-4 2xl:px-10">
             {heroBooks.map((book, index) => (
               <motion.div
                 key={book.src}
@@ -496,7 +496,7 @@ const DesktopHero = () => {
                   alt={book.alt}
                   width={book.width}
                   height={Math.round((book.width * 504) / 355)}
-                  sizes="(max-width: 639px) 20vw, (min-width: 1536px) 22vw, (min-width: 1280px) 19vw, 0px"
+                  sizes="(min-width: 640px) 20vw, 0px"
                   loading={book.alt === "The Labyrinth" ? "eager" : "lazy"}
                   fetchPriority={book.alt === "The Labyrinth" ? "high" : "auto"}
                   className="h-auto w-full drop-shadow-[0_20px_36px_rgba(0,0,0,0.22)]"
@@ -505,6 +505,7 @@ const DesktopHero = () => {
             ))}
           </div>
         </motion.div>
+
       </section>
     </div>
   );
